@@ -1,0 +1,414 @@
+{
+ "scenes": 192,
+ "n_families": 24,
+ "family_definition": "(evidence template 0-3) x (changed pair of positions, 6)",
+ "scenes_per_family": {
+  "8": 24
+ },
+ "changed_pair": {
+  "(1, 3)": 32,
+  "(0, 2)": 32,
+  "(0, 3)": 32,
+  "(1, 2)": 32,
+  "(2, 3)": 32,
+  "(0, 1)": 32
+ },
+ "unchanged_target_position": {
+  "0": 48,
+  "3": 48,
+  "1": 48,
+  "2": 48
+ },
+ "queried_color": {
+  "green": 48,
+  "red": 48,
+  "orange": 48,
+  "yellow": 48
+ },
+ "queried_material": {
+  "rubber": 48,
+  "copper": 48,
+  "plastic": 48,
+  "glass": 48
+ },
+ "changed_answer_position_world0": {
+  "1": 48,
+  "0": 48,
+  "2": 48,
+  "3": 48
+ },
+ "alias_position_counts": {
+  "BAVK": {
+   "3": 8,
+   "1": 8,
+   "0": 8,
+   "2": 8
+  },
+  "COLN": {
+   "3": 8,
+   "1": 8,
+   "2": 8,
+   "0": 8
+  },
+  "DURP": {
+   "3": 8,
+   "0": 8,
+   "2": 8,
+   "1": 8
+  },
+  "FASK": {
+   "3": 8,
+   "0": 8,
+   "2": 8,
+   "1": 8
+  },
+  "GEVL": {
+   "2": 8,
+   "3": 8,
+   "1": 8,
+   "0": 8
+  },
+  "HIMZ": {
+   "3": 8,
+   "2": 8,
+   "1": 8,
+   "0": 8
+  },
+  "JOTV": {
+   "0": 8,
+   "2": 8,
+   "1": 8,
+   "3": 8
+  },
+  "KELB": {
+   "0": 8,
+   "2": 8,
+   "3": 8,
+   "1": 8
+  },
+  "LAQS": {
+   "0": 8,
+   "1": 8,
+   "3": 8,
+   "2": 8
+  },
+  "MONV": {
+   "0": 8,
+   "1": 8,
+   "3": 8,
+   "2": 8
+  },
+  "NURK": {
+   "3": 8,
+   "0": 8,
+   "2": 8,
+   "1": 8
+  },
+  "POLF": {
+   "0": 8,
+   "3": 8,
+   "2": 8,
+   "1": 8
+  },
+  "QEMB": {
+   "1": 8,
+   "3": 8,
+   "2": 8,
+   "0": 8
+  },
+  "RUSV": {
+   "1": 8,
+   "3": 8,
+   "0": 8,
+   "2": 8
+  },
+  "SIKM": {
+   "1": 8,
+   "2": 8,
+   "0": 8,
+   "3": 8
+  },
+  "TABL": {
+   "1": 8,
+   "2": 8,
+   "0": 8,
+   "3": 8
+  },
+  "VUNK": {
+   "0": 8,
+   "1": 8,
+   "3": 8,
+   "2": 8
+  },
+  "WIPS": {
+   "1": 8,
+   "0": 8,
+   "3": 8,
+   "2": 8
+  },
+  "YOMR": {
+   "2": 8,
+   "0": 8,
+   "3": 8,
+   "1": 8
+  },
+  "ZELT": {
+   "2": 8,
+   "0": 8,
+   "1": 8,
+   "3": 8
+  },
+  "BIRX": {
+   "2": 8,
+   "3": 8,
+   "1": 8,
+   "0": 8
+  },
+  "GANV": {
+   "2": 8,
+   "3": 8,
+   "1": 8,
+   "0": 8
+  },
+  "KOPT": {
+   "1": 8,
+   "2": 8,
+   "0": 8,
+   "3": 8
+  },
+  "MUKL": {
+   "2": 8,
+   "1": 8,
+   "0": 8,
+   "3": 8
+  }
+ },
+ "skeletons": [
+  "<A> is one of the blocks; its material is <V> and its paint is <V>.",
+  "Painted <V>, block <A> is built from <V>.",
+  "Shelf record for block <A>: material <V>, paint color <V>.",
+  "The <V> block labelled <A> carries a coat of <V> paint."
+ ],
+ "skeletons_shared_with_prior": [],
+ "aliases_shared_with_prior": [],
+ "families": [
+  {
+   "family": "1d0dc768b8a40e71",
+   "domain": "block4",
+   "template": 0,
+   "changed_pair": [
+    0,
+    1
+   ]
+  },
+  {
+   "family": "dbd280b1a5029629",
+   "domain": "block4",
+   "template": 0,
+   "changed_pair": [
+    0,
+    2
+   ]
+  },
+  {
+   "family": "9c7ed851f65a008b",
+   "domain": "block4",
+   "template": 0,
+   "changed_pair": [
+    0,
+    3
+   ]
+  },
+  {
+   "family": "f404d7bd24993a5c",
+   "domain": "block4",
+   "template": 0,
+   "changed_pair": [
+    1,
+    2
+   ]
+  },
+  {
+   "family": "10fa25e0a5fa1da3",
+   "domain": "block4",
+   "template": 0,
+   "changed_pair": [
+    1,
+    3
+   ]
+  },
+  {
+   "family": "e6f28377b1fdaf6a",
+   "domain": "block4",
+   "template": 0,
+   "changed_pair": [
+    2,
+    3
+   ]
+  },
+  {
+   "family": "569461a7af7c2a83",
+   "domain": "block4",
+   "template": 1,
+   "changed_pair": [
+    0,
+    1
+   ]
+  },
+  {
+   "family": "26f607074cd8ea8b",
+   "domain": "block4",
+   "template": 1,
+   "changed_pair": [
+    0,
+    2
+   ]
+  },
+  {
+   "family": "fdedbf9dea102008",
+   "domain": "block4",
+   "template": 1,
+   "changed_pair": [
+    0,
+    3
+   ]
+  },
+  {
+   "family": "b559f41af94b8c4b",
+   "domain": "block4",
+   "template": 1,
+   "changed_pair": [
+    1,
+    2
+   ]
+  },
+  {
+   "family": "386b22dd39ebdee1",
+   "domain": "block4",
+   "template": 1,
+   "changed_pair": [
+    1,
+    3
+   ]
+  },
+  {
+   "family": "41d9e351e94eae12",
+   "domain": "block4",
+   "template": 1,
+   "changed_pair": [
+    2,
+    3
+   ]
+  },
+  {
+   "family": "211402b3611ae285",
+   "domain": "block4",
+   "template": 2,
+   "changed_pair": [
+    0,
+    1
+   ]
+  },
+  {
+   "family": "c9e5f94f34b58a0a",
+   "domain": "block4",
+   "template": 2,
+   "changed_pair": [
+    0,
+    2
+   ]
+  },
+  {
+   "family": "e52a84a27f4bef9a",
+   "domain": "block4",
+   "template": 2,
+   "changed_pair": [
+    0,
+    3
+   ]
+  },
+  {
+   "family": "d38afc2cb2857fe3",
+   "domain": "block4",
+   "template": 2,
+   "changed_pair": [
+    1,
+    2
+   ]
+  },
+  {
+   "family": "0796f03612a94a1f",
+   "domain": "block4",
+   "template": 2,
+   "changed_pair": [
+    1,
+    3
+   ]
+  },
+  {
+   "family": "95e2202139e878dd",
+   "domain": "block4",
+   "template": 2,
+   "changed_pair": [
+    2,
+    3
+   ]
+  },
+  {
+   "family": "1287406505955c84",
+   "domain": "block4",
+   "template": 3,
+   "changed_pair": [
+    0,
+    1
+   ]
+  },
+  {
+   "family": "9987ec7dbf2322e8",
+   "domain": "block4",
+   "template": 3,
+   "changed_pair": [
+    0,
+    2
+   ]
+  },
+  {
+   "family": "e22cfcdc2c926445",
+   "domain": "block4",
+   "template": 3,
+   "changed_pair": [
+    0,
+    3
+   ]
+  },
+  {
+   "family": "a8d22b903d97b26c",
+   "domain": "block4",
+   "template": 3,
+   "changed_pair": [
+    1,
+    2
+   ]
+  },
+  {
+   "family": "81b4f8c6a4dd4b36",
+   "domain": "block4",
+   "template": 3,
+   "changed_pair": [
+    1,
+    3
+   ]
+  },
+  {
+   "family": "535ffcfd2c711bac",
+   "domain": "block4",
+   "template": 3,
+   "changed_pair": [
+    2,
+    3
+   ]
+  }
+ ],
+ "note": "A separate four-object protocol; not pooled with R3. Same finite attribute vocabulary; no open-world claim.",
+ "bank_sha256": "5a1bf14ca5029143f260ab883a63a6850dc721f940839857bfee5f2b369d06d8"
+}

@@ -1,0 +1,166 @@
+{
+ "constructions": {
+  "c12": "the current twelve-context mean at the frozen depth-0.2 layer (asserted equal to the stored R0 direction)",
+  "single_t0": "single fitting context at list position 0",
+  "single_t6": "single fitting context at list position 6 (= 12//2)",
+  "single_t11": "single fitting context at list position 11",
+  "single_nm": "each single-context direction rescaled by ONE receiver-local scalar s = median over words of ||c12[w]||/||single[w]|| (fitting contexts only); gamma 1 only; a norm diagnostic, no grid",
+  "source": "all from the per-word R0 fit blobs (stored per-context contrasts); no refit, no new fitting forward; no fitting context contains a scene or an answer",
+  "context_strings": {
+   "single_t0": {
+    "position": {
+     "width": 2,
+     "object": 0,
+     "index": 0,
+     "position": 84
+    },
+    "message": "Selected words and exact relative weights (integers divided by 255): XOPA: <WORD> [255/255], unknown [255/255]; YUME: unknown [255/255], unknown [255/255]."
+   },
+   "single_t6": {
+    "position": {
+     "width": 4,
+     "object": 0,
+     "index": 2,
+     "position": 104
+    },
+    "message": "Selected words and exact relative weights (integers divided by 255): XOPA: unknown [255/255], unknown [255/255], <WORD> [255/255], unknown [255/255]; YUME: unknown [255/255], unknown [255/255], unknown [255/255], unknown [255/255]."
+   },
+   "single_t11": {
+    "position": {
+     "width": 4,
+     "object": 1,
+     "index": 3,
+     "position": 157
+    },
+    "message": "Selected words and exact relative weights (integers divided by 255): XOPA: unknown [255/255], unknown [255/255], unknown [255/255], unknown [255/255]; YUME: unknown [255/255], unknown [255/255], unknown [255/255], <WORD> [255/255]."
+   }
+  },
+  "nm_scalars": {
+   "qwen3-32b": {
+    "single_t0": 0.989883303642273,
+    "single_t6": 0.9832692742347717,
+    "single_t11": 0.9647812247276306
+   },
+   "qwen3-14b-base": {
+    "single_t0": 0.9491068720817566,
+    "single_t6": 0.9865555763244629,
+    "single_t11": 0.9728450179100037
+   },
+   "glm-4-9b": {
+    "single_t0": 0.9789089560508728,
+    "single_t6": 0.9423217177391052,
+    "single_t11": 0.8884097337722778
+   },
+   "gemma-3-27b-it": {
+    "single_t0": 1.0266566276550293,
+    "single_t6": 0.9757436513900757,
+    "single_t11": 0.9145220518112183
+   }
+  },
+  "pre_outcome_geometry": {
+   "cos_single_vs_c12_median": {
+    "qwen3-32b": {
+     "single_t0": 0.9522,
+     "single_t6": 0.9864,
+     "single_t11": 0.982
+    },
+    "qwen3-14b-base": {
+     "single_t0": 0.9401,
+     "single_t6": 0.9808,
+     "single_t11": 0.9701
+    },
+    "glm-4-9b": {
+     "single_t0": 0.863,
+     "single_t6": 0.975,
+     "single_t11": 0.9413
+    },
+    "gemma-3-27b-it": {
+     "single_t0": 0.9203,
+     "single_t6": 0.9929,
+     "single_t11": 0.9655
+    }
+   },
+   "note": "at depth 0.2 the single-context directions are already 0.86-0.99 cosine to the twelve-context mean (measured before any outcome); a small difference between constructions is therefore the prior expectation"
+  }
+ },
+ "embedding": {
+  "module": "receiver.model.get_input_embeddings() \u2014 the receiver's own input-embedding module at its native input location (Gemma's scaled embedding included; no projection, no training)",
+  "full_span": "engineering identity: the packet-text prompt run through inputs_embeds = embedding_module(ids) must reproduce the ids-path logits (max |diff| <= 1e-4); the text rows then stand for that route; recorded as an identity, not as evidence",
+  "one_position": "emb1@g: at each active slot the neutral token's embedding e_n is replaced by e_n + g * relative_weight * (pool(e(word tokens in the field context)) - e_n); pool = MEAN over the word's tokens as split in its actual field context (the prompt with the words in their slots); a POOLING ADAPTATION for multi-token words",
+  "identity_on_this_bank": "measured before any outcome (p0a_dev_token_strata.json): on the development bank EVERY active word is a single token in its field for all four receivers and both sources (92/92 scenes), so emb1@1 is EXACTLY the packet-text route there \u2014 an identity, not an independent baseline; the dose grid for emb1 is the only non-identical part",
+  "strata": {
+   "file": "artifacts/word_interface_followup/p0a_dev_token_strata.json",
+   "sha256": "90113b8d58ca7579bed344dd0b5bd56c3613d68e2e6f3acf3595e2fbc93910df",
+   "counts": {
+    "gemma-3-27b-it": {
+     "actual": [
+      92,
+      92
+     ],
+     "literal": [
+      92,
+      92
+     ]
+    },
+    "glm-4-9b": {
+     "actual": [
+      92,
+      92
+     ],
+     "literal": [
+      92,
+      92
+     ]
+    },
+    "qwen3-14b-base": {
+     "actual": [
+      92,
+      92
+     ],
+     "literal": [
+      92,
+      92
+     ]
+    },
+    "qwen3-32b": {
+     "actual": [
+      92,
+      92
+     ],
+     "literal": [
+      92,
+      92
+     ]
+    }
+   }
+  }
+ },
+ "amendments": [
+  {
+   "utc": "2026-09-23T11:12:55.164868+00:00",
+   "stage": "engineering only (no development row existed; engineering rows are not evidence)",
+   "defect": "emb1 edit-norm REPORT read 0: in FP32 `out[0,pos].float()` is a view, so `before` aliased the written row; edit_norm was always 0 and neutral_norm was the edited row's norm. The embedding edit itself was applied correctly (glm engineering: emb1 correct counts vary with gamma 0/3/4/4/3 of 4).",
+   "fix": "`before = out[0, pos].float().clone()` \u2014 reporting only; no computed input, output or score changes",
+   "runner_sha256": {
+    "old": "05887254ca958241393e82a95982028222dc7ece6ba73298be2e7b99bf0802e5",
+    "new": "e2eb4aaae2cc09a845fe17c861cdfd65453605040eef0668093d44774e96a5ed"
+   },
+   "manifests_sha256": {
+    "old": {
+     "qwen3-32b": "e8badc951561984b2b64f15c4e198ce743d40ef869347476493484d7aa6b3d67",
+     "qwen3-14b-base": "1cc75e68e86d0ee27f07c9695e09167bc2fedc5d2b820849a5417af12df60e55",
+     "glm-4-9b": "d78a4fb87c121adefc55b2ec89fb3a9267f229be96c9a8ab83435da3ff36a33a",
+     "gemma-3-27b-it": "66b111aedc4a76c05bf9efc9047bdd93d33439328e68cbaebd35d0ce120f0095"
+    },
+    "new": {
+     "qwen3-32b": "54f90144f2357d9b6181da37406a998fed998c7ba72c0427f168b90a739be5d5",
+     "qwen3-14b-base": "aea8cd2b98cc21c7cebd632b775d77dd3673a8aa9f5129630aae3b2b95f8f4f9",
+     "glm-4-9b": "d096ca474536219c348ba1c937ba4ed0dc0c1c8dd86ef3f2b0aeb507ac93bc89",
+     "gemma-3-27b-it": "ab5e33c854186c62672fdab8f83dcfebcf52f0b6c39bf3bbf9165c6b165e9b58"
+    }
+   },
+   "superseded_rows": "p0a_dev/{glm-4-9b,qwen3-14b-base}/raw/engineering_*_s0.jsonl.superseded_reportbug (244 and a partial scene; preserved, not used); all four engineering gates re-run from zero under the new manifests",
+   "unchanged": "constructions, contexts, embedding site/pooling, grid, selection rule, banks, packets, arms"
+  }
+ ]
+}

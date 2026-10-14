@@ -1,0 +1,317 @@
+{
+  "status": "PASS_SECOND_COUNT_MATCHES_AUDIT",
+  "utc": "2026-09-23T00:43:28.394569+00:00",
+  "audit_sha256": "d16dabed7cdd7cc5be140f0542269dc0484e56bc49cfcea93f79ffa273542724",
+  "holm": {
+    "qwen3-14b-base/selected-original": true,
+    "qwen3-14b-base/selected-mean_reassignment": true,
+    "glm-4-9b/selected-original": true,
+    "glm-4-9b/selected-mean_reassignment": true,
+    "gemma-3-27b-it/selected-original": true,
+    "gemma-3-27b-it/selected-mean_reassignment": true
+  },
+  "n_disagreements": 0,
+  "disagreements": [],
+  "results": {
+    "qwen3-32b": {
+      "receiver": "qwen3-32b",
+      "scenes": 572,
+      "J": {
+        "actual/identity_write": 0.0,
+        "actual/none": 0.0,
+        "actual/original": 0.944212962962963,
+        "actual/other_world": 0.0,
+        "actual/packet_text": 0.9704861111111112,
+        "actual/selected": 0.9704861111111112,
+        "actual/sham0": 0.019328703703703702,
+        "actual/sham1": 0.008680555555555556,
+        "actual/sham2": 0.006944444444444444,
+        "literal/full_text": 0.9947916666666666,
+        "literal/native": 1.0,
+        "literal/original": 0.977314814814815,
+        "literal/packet_text": 0.9982638888888888,
+        "literal/selected": 0.9982638888888888
+      },
+      "coverage_selected": 0.9956597222222222,
+      "contrasts": {
+        "actual_selected_minus_original": {
+          "family": {
+            "mean": 0.026273148148148146,
+            "lo": 0.012152777777777778,
+            "hi": 0.04178240740740741,
+            "clusters": 36,
+            "p_two_sided": 0.00013333333333333334
+          },
+          "template": {
+            "mean": 0.026115543735224584,
+            "lo": 0.015625,
+            "hi": 0.03667996453900709,
+            "clusters": 12,
+            "p_two_sided": 1.6666666666666667e-05
+          }
+        },
+        "actual_selected_minus_mean_sham": {
+          "family": {
+            "mean": 0.9588348765432099,
+            "lo": 0.9212191358024691,
+            "hi": 0.984375,
+            "clusters": 36,
+            "p_two_sided": 1.6666666666666667e-05
+          },
+          "template": {
+            "mean": 0.958739657210402,
+            "lo": 0.9083921271670607,
+            "hi": 0.9889061268715524,
+            "clusters": 12,
+            "p_two_sided": 1.6666666666666667e-05
+          }
+        },
+        "actual_selected_minus_packet_text": {
+          "family": {
+            "mean": 0.0,
+            "lo": -0.005208333333333333,
+            "hi": 0.005208333333333333,
+            "clusters": 36,
+            "p_two_sided": 1.0
+          },
+          "template": {
+            "mean": -3.6938534278959864e-05,
+            "lo": -0.005319148936170213,
+            "hi": 0.005208333333333333,
+            "clusters": 12,
+            "p_two_sided": 0.934
+          }
+        }
+      },
+      "verdict": {
+        "useful_additional_receiver": true,
+        "substantial_recovery": false
+      }
+    },
+    "qwen3-14b-base": {
+      "receiver": "qwen3-14b-base",
+      "scenes": 572,
+      "J": {
+        "actual/identity_write": 0.0,
+        "actual/none": 0.0,
+        "actual/original": 0.3099537037037037,
+        "actual/other_world": 0.0,
+        "actual/packet_text": 0.9774305555555556,
+        "actual/selected": 0.9774305555555556,
+        "actual/sham0": 0.024537037037037038,
+        "actual/sham1": 0.020949074074074075,
+        "actual/sham2": 0.024421296296296295,
+        "literal/full_text": 1.0,
+        "literal/native": 0.9982638888888888,
+        "literal/original": 0.2710648148148148,
+        "literal/packet_text": 1.0,
+        "literal/selected": 0.9947916666666666
+      },
+      "coverage_selected": 0.9995659722222222,
+      "contrasts": {
+        "actual_selected_minus_original": {
+          "family": {
+            "mean": 0.6674768518518519,
+            "lo": 0.6314814814814815,
+            "hi": 0.7023148148148148,
+            "clusters": 36,
+            "p_two_sided": 1.6666666666666667e-05
+          },
+          "template": {
+            "mean": 0.6678486997635934,
+            "lo": 0.6297281323877069,
+            "hi": 0.7062278368794326,
+            "clusters": 12,
+            "p_two_sided": 1.6666666666666667e-05
+          }
+        },
+        "actual_selected_minus_mean_sham": {
+          "family": {
+            "mean": 0.9541280864197531,
+            "lo": 0.9280092592592593,
+            "hi": 0.9755401234567902,
+            "clusters": 36,
+            "p_two_sided": 1.6666666666666667e-05
+          },
+          "template": {
+            "mean": 0.9540607762017337,
+            "lo": 0.9094636524822696,
+            "hi": 0.9813337273443655,
+            "clusters": 12,
+            "p_two_sided": 1.6666666666666667e-05
+          }
+        },
+        "actual_selected_minus_packet_text": {
+          "family": {
+            "mean": 0.0,
+            "lo": -0.006944444444444444,
+            "hi": 0.008680555555555556,
+            "clusters": 36,
+            "p_two_sided": 1.0
+          },
+          "template": {
+            "mean": -3.6938534278959864e-05,
+            "lo": -0.005319148936170213,
+            "hi": 0.005208333333333333,
+            "clusters": 12,
+            "p_two_sided": 0.9345666666666667
+          }
+        }
+      },
+      "verdict": {
+        "useful_additional_receiver": true,
+        "substantial_recovery": true
+      }
+    },
+    "glm-4-9b": {
+      "receiver": "glm-4-9b",
+      "scenes": 572,
+      "J": {
+        "actual/identity_write": 0.0,
+        "actual/none": 0.0,
+        "actual/original": 0.005208333333333333,
+        "actual/other_world": 0.0,
+        "actual/packet_text": 0.8778935185185185,
+        "actual/selected": 0.743287037037037,
+        "actual/sham0": 0.010532407407407407,
+        "actual/sham1": 0.005208333333333333,
+        "actual/sham2": 0.003472222222222222,
+        "literal/full_text": 0.9947916666666666,
+        "literal/native": 0.7559027777777777,
+        "literal/original": 0.0,
+        "literal/packet_text": 0.9302083333333333,
+        "literal/selected": 0.7646990740740741
+      },
+      "coverage_selected": 0.9231481481481482,
+      "contrasts": {
+        "actual_selected_minus_original": {
+          "family": {
+            "mean": 0.7380787037037037,
+            "lo": 0.6645833333333333,
+            "hi": 0.8075260416666664,
+            "clusters": 36,
+            "p_two_sided": 1.6666666666666667e-05
+          },
+          "template": {
+            "mean": 0.7381427304964538,
+            "lo": 0.6200465425531914,
+            "hi": 0.8480727319739954,
+            "clusters": 12,
+            "p_two_sided": 1.6666666666666667e-05
+          }
+        },
+        "actual_selected_minus_mean_sham": {
+          "family": {
+            "mean": 0.7368827160493827,
+            "lo": 0.6634259259259259,
+            "hi": 0.8064052854938271,
+            "clusters": 36,
+            "p_two_sided": 1.6666666666666667e-05
+          },
+          "template": {
+            "mean": 0.7369483845547675,
+            "lo": 0.6189913317572892,
+            "hi": 0.8463113795311268,
+            "clusters": 12,
+            "p_two_sided": 1.6666666666666667e-05
+          }
+        },
+        "actual_selected_minus_packet_text": {
+          "family": {
+            "mean": -0.13460648148148147,
+            "lo": -0.18275462962962963,
+            "hi": -0.08946759259259258,
+            "clusters": 36,
+            "p_two_sided": 1.6666666666666667e-05
+          },
+          "template": {
+            "mean": -0.13423463356973997,
+            "lo": -0.2040881722813239,
+            "hi": -0.07546542553191489,
+            "clusters": 12,
+            "p_two_sided": 1.6666666666666667e-05
+          }
+        }
+      },
+      "verdict": {
+        "useful_additional_receiver": true,
+        "substantial_recovery": true
+      }
+    },
+    "gemma-3-27b-it": {
+      "receiver": "gemma-3-27b-it",
+      "scenes": 572,
+      "J": {
+        "actual/identity_write": 0.0,
+        "actual/none": 0.0,
+        "actual/original": 0.3046296296296296,
+        "actual/other_world": 0.0,
+        "actual/packet_text": 0.9791666666666666,
+        "actual/selected": 0.9774305555555556,
+        "actual/sham0": 0.019212962962962963,
+        "actual/sham1": 0.04710648148148148,
+        "actual/sham2": 0.024652777777777777,
+        "literal/full_text": 1.0,
+        "literal/native": 1.0,
+        "literal/original": 0.2673611111111111,
+        "literal/packet_text": 1.0,
+        "literal/selected": 1.0
+      },
+      "coverage_selected": 1.0,
+      "contrasts": {
+        "actual_selected_minus_original": {
+          "family": {
+            "mean": 0.6728009259259259,
+            "lo": 0.6172453703703703,
+            "hi": 0.7259259259259259,
+            "clusters": 36,
+            "p_two_sided": 1.6666666666666667e-05
+          },
+          "template": {
+            "mean": 0.6730570330969269,
+            "lo": 0.608451536643026,
+            "hi": 0.7266927083333332,
+            "clusters": 12,
+            "p_two_sided": 1.6666666666666667e-05
+          }
+        },
+        "actual_selected_minus_mean_sham": {
+          "family": {
+            "mean": 0.9471064814814815,
+            "lo": 0.9138888888888889,
+            "hi": 0.9718749999999999,
+            "clusters": 36,
+            "p_two_sided": 1.6666666666666667e-05
+          },
+          "template": {
+            "mean": 0.9471532702915683,
+            "lo": 0.896165780141844,
+            "hi": 0.9779233771670606,
+            "clusters": 12,
+            "p_two_sided": 1.6666666666666667e-05
+          }
+        },
+        "actual_selected_minus_packet_text": {
+          "family": {
+            "mean": -0.001736111111111111,
+            "lo": -0.005208333333333333,
+            "hi": 0.0,
+            "clusters": 36,
+            "p_two_sided": 0.7278666666666667
+          },
+          "template": {
+            "mean": -0.001736111111111111,
+            "lo": -0.005208333333333333,
+            "hi": 0.0,
+            "clusters": 12,
+            "p_two_sided": 0.7087333333333333
+          }
+        }
+      },
+      "verdict": {
+        "useful_additional_receiver": true,
+        "substantial_recovery": true
+      }
+    }
+  }
+}

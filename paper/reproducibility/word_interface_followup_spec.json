@@ -1,0 +1,141 @@
+{
+  "scope": "Frozen word-interface follow-up; distinct from receiver-recovery confirmation.",
+  "conjunction": {
+    "evaluation_scenes": 576,
+    "separate_engineering_scenes": 4,
+    "development_scenes": 96,
+    "colors": [
+      "green",
+      "orange",
+      "red",
+      "yellow"
+    ],
+    "materials": [
+      "plastic",
+      "glass",
+      "rubber",
+      "copper"
+    ],
+    "evidence_templates": [
+      "Block {a} is painted {color} and is made of {material}.",
+      "Block {a}: {material} body, {color} surface paint.",
+      "The block called {a} has {color} paint over a {material} body.",
+      "Made of {material}, block {a} carries a {color} coat of paint.",
+      "Catalogue line for {a}: surface paint {color}; material {material}.",
+      "Block {a} was cast in {material} and then painted {color}.",
+      "On the shelf sits {a}, a {material} block with {color} paint.",
+      "Paint on block {a}: {color}. Material of block {a}: {material}.",
+      "{a} is a block; its paint is {color} and its material is {material}.",
+      "Block {a}, {color}-painted, has a body of {material}.",
+      "Inventory card {a}: a block of {material}, painted {color}.",
+      "The {color} paint on block {a} covers a body made of {material}."
+    ],
+    "query_templates": [
+      "Which block has {color} surface paint and is made of {material}?",
+      "Which block is made of {material} and has {color} surface paint?"
+    ],
+    "groups": 36,
+    "scenes_per_group": 16,
+    "templates_crossed_with_groups": 12,
+    "world_change": "Exchange one attribute between two objects sharing the other attribute; retain all four combinations.",
+    "component_ambiguity": "Each queried color and material independently matches exactly two objects in either world.",
+    "receivers": {
+      "qwen3-32b": {
+        "zero_based_layers": [
+          13
+        ],
+        "gamma": 1
+      },
+      "qwen3-14b-base": {
+        "zero_based_layers": [
+          8
+        ],
+        "gamma": 1
+      },
+      "glm-4-9b": {
+        "zero_based_layers": [
+          8
+        ],
+        "gamma": 1
+      },
+      "gemma-3-27b-it": {
+        "zero_based_layers": [
+          12
+        ],
+        "gamma": 1
+      }
+    },
+    "sender": "The existing four-object prompted Llama-3.1-8B-Instruct sender; questions and the counterworld are never supplied.",
+    "primary_metric": "All four answers correct: two questions in each of two worlds.",
+    "primary_budget": 64,
+    "sensitivity_budget": 256,
+    "intervals": "Enclose separate 36-group and 12-template bootstrap intervals: 20,000 draws for each of three seeds."
+  },
+  "representation_controls": {
+    "confirmation_scenes": 576,
+    "separate_engineering_scenes": 4,
+    "single_contexts": {
+      "single_t0": {
+        "position": {
+          "width": 2,
+          "object": 0,
+          "index": 0,
+          "position": 84
+        },
+        "message": "Selected words and exact relative weights (integers divided by 255): XOPA: <WORD> [255/255], unknown [255/255]; YUME: unknown [255/255], unknown [255/255]."
+      },
+      "single_t6": {
+        "position": {
+          "width": 4,
+          "object": 0,
+          "index": 2,
+          "position": 104
+        },
+        "message": "Selected words and exact relative weights (integers divided by 255): XOPA: unknown [255/255], unknown [255/255], <WORD> [255/255], unknown [255/255]; YUME: unknown [255/255], unknown [255/255], unknown [255/255], unknown [255/255]."
+      },
+      "single_t11": {
+        "position": {
+          "width": 4,
+          "object": 1,
+          "index": 3,
+          "position": 157
+        },
+        "message": "Selected words and exact relative weights (integers divided by 255): XOPA: unknown [255/255], unknown [255/255], unknown [255/255], unknown [255/255]; YUME: unknown [255/255], unknown [255/255], unknown [255/255], <WORD> [255/255]."
+      }
+    },
+    "selected_strengths": {
+      "qwen3-32b": {
+        "c12": 1,
+        "single_t0": 1,
+        "single_t6": 1,
+        "single_t11": 1,
+        "emb1": 1
+      },
+      "qwen3-14b-base": {
+        "c12": 1,
+        "single_t0": 1,
+        "single_t6": 1,
+        "single_t11": 1,
+        "emb1": 1
+      },
+      "glm-4-9b": {
+        "c12": 1,
+        "single_t0": 4,
+        "single_t6": 1,
+        "single_t11": 1,
+        "emb1": 2
+      },
+      "gemma-3-27b-it": {
+        "c12": 1,
+        "single_t0": 1,
+        "single_t6": 1,
+        "single_t11": 1,
+        "emb1": 1
+      }
+    },
+    "input_embedding_location": "Native input-embedding module, including receiver-specific scaling.",
+    "unit_strength_identity": "All active words are single tokens in their field context; embedding replacement equals packet text.",
+    "multi_token_pooling_evaluated": false
+  },
+  "availability": "Specification only; full banks, executable code and raw predictions belong in the separate experiment archive."
+}

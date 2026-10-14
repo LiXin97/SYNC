@@ -1,0 +1,62 @@
+{
+  "utc": "2026-09-23T02:13:43.150704+00:00",
+  "exporter_sha256": "ddb4d625af64f426e0d8c284dbfb619c36ea0cb4a852425d38a6d7c918840670",
+  "audits": {
+    "r1_audit.json": {
+      "sha256": "165b179aabc73e61ee62197f338d61377032a77925c2434cc64c504d1992b3b5",
+      "status": "PASS_INDEPENDENT_R1_AUDIT"
+    },
+    "r2_audit.json": {
+      "sha256": "b227ce438cf5520743a10d531a7fa59361caf41878f2277942c3d09efdd94e20",
+      "status": "PASS_INDEPENDENT_R1_AUDIT"
+    },
+    "r2_audit_gemma.json": {
+      "sha256": "868c776ef7564b2907321372191dd95a6c45909c62282c10698a10ef2f4d5581",
+      "status": "PASS_INDEPENDENT_R1_AUDIT"
+    },
+    "rescreen_audit.json": {
+      "sha256": "1c6e731f673f6fc705211151bf47d28bc7472f9aabb1ab82066822f05115a03f",
+      "status": "PASS_INDEPENDENT_R3_AUDIT"
+    },
+    "r3_audit.json": {
+      "sha256": "d16dabed7cdd7cc5be140f0542269dc0484e56bc49cfcea93f79ffa273542724",
+      "status": "PASS_INDEPENDENT_R3_AUDIT"
+    },
+    "r3_recount.json": {
+      "sha256": "9adb0a7a5c779bd4ba0a4baadbdd2c855e0ce486fc1faa4ddeb28e80d358e092",
+      "status": "PASS_SECOND_COUNT_MATCHES_AUDIT"
+    },
+    "r4_audit.json": {
+      "sha256": "ad3b5e2cd3c9c8f0f07a8d622217b26fe41081fc2b5a95484968fe761375238f",
+      "status": "PASS_INDEPENDENT_R3_AUDIT"
+    },
+    "r4_recount.json": {
+      "sha256": "8c660f58ffec7ce0158f83ab8783047e9780d3acd578a358b37d56ba35921464",
+      "status": "PASS_SECOND_COUNT_MATCHES_AUDIT"
+    }
+  },
+  "locks": {
+    "prior_banks_exclusion_20260923.json": "60ef84c78e666f974df6821256074be28d32550a3ab34cc1d55376a85f77d832",
+    "prior_banks_exclusion_r4_20260923.json": "b04ef5c193c219848a43a98a1814b52ad104a45248b7fd70935252935720f58f",
+    "r1_audit_snapshot.json": "165b179aabc73e61ee62197f338d61377032a77925c2434cc64c504d1992b3b5",
+    "r1_runner_lineage.json": "1d7cc853893b68c9c45cef965279d8c6b5cd421dec495eb41c80b457f04015c8",
+    "r2_gemma_presearch_rule.lock.json": "3da09a0d43f65c46c265295210ab7514ac8ab86af29a40df959a35f62968c9dd",
+    "r3_audit_snapshot.json": "d16dabed7cdd7cc5be140f0542269dc0484e56bc49cfcea93f79ffa273542724",
+    "r3_bank.lock.json": "668df50ad971f0e639baa12851c16a2010844d38bf7810d53df807f686ad1a73",
+    "r3_protocol.lock.json": "c29f873a903be93d2f7093b9b37f376ef4e325e94c058275ff41ad9764de7308",
+    "r3_recount_snapshot.json": "9adb0a7a5c779bd4ba0a4baadbdd2c855e0ce486fc1faa4ddeb28e80d358e092",
+    "r4_protocol.lock.json": "60a25d39acb32a4b7b0a76dc99eac014115b37cf86d0fc0056cdee6363ee342e",
+    "rescreen_audit_snapshot.json": "1c6e731f673f6fc705211151bf47d28bc7472f9aabb1ab82066822f05115a03f"
+  },
+  "counts": {
+    "conditions": 692,
+    "contrasts": 218,
+    "norm_rows": 362
+  },
+  "row_totals": {
+    "R1": "4 x 14,720 development + 736 engineering",
+    "R2": "4 x 4,784 + 224",
+    "R2_rescreen": "4 x 4,784 + 208",
+    "R3": "4 x 32,032 + 728"
+  }
+}

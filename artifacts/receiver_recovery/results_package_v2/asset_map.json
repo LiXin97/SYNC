@@ -1,0 +1,40 @@
+{
+  "reused_frozen": {
+    "fitter_recipe": "artifacts/mechanism0920/word_memory_fit_v1/snapshot/fit_word_memory.py (twelve generic contexts, word-final read-out, neutral comparison)",
+    "layout": "memory_layout.render, four public slots per object",
+    "sender": "candidate A (ADR-b6-candidate-a-20260922), unchanged",
+    "receiver_primitives": "frozen framing_reference / discovery_v3 Receiver, decode, cache fingerprint/clone, strict parser",
+    "permutations": "the three frozen reassignment permutations of b1_core"
+  },
+  "new": {
+    "multi_layer_fitter": {
+      "path": "src/syncomm/recovery/fit_layers.py",
+      "verification": "reproduces word_memory_fit_v1 at 663/663 shared cells per receiver"
+    },
+    "depth_runner": {
+      "path": "src/syncomm/recovery/evaluate_depth.py",
+      "sha256": "9e8d153129e8b61bc496444558f0dfa4b6f6aff4be00eebb7589f613b8ce8a01"
+    },
+    "confirm_runner": {
+      "path": "src/syncomm/recovery/evaluate_confirm.py",
+      "sha256": "76796972e52e328b57b173a06d7ea6251aed2957d8020b47f8ac76b8332e4b75"
+    },
+    "r3_bank": {
+      "path": "artifacts/receiver_recovery/r3_bank/bank.json",
+      "sha256": "c88ff3197717a338eb84cbaec5c0a3c9fa9b5504f6ab077c1cb4ca78c5b15927"
+    }
+  },
+  "changed_with_record": {
+    "r1_runner_lineage": "gates/receiver_recovery/r1_runner_lineage.json (one R2-only line, unreachable for R1)",
+    "r2_engineering_duplicate_append": "artifacts/receiver_recovery/r2/*/raw/duplicate_engineering_note_*.json (bit-identical replays; originals preserved)",
+    "rescreen_literal_packet": "field-name-free construction, asserted byte-identical to the frozen helper wherever the frozen assertion passes",
+    "recount_tolerance": "1e-12 absolute on means for the different-code-path recount (two 1-ULP differences)"
+  },
+  "condition_identity": {
+    "R1": "complete facts, four slots per object, native transplant vs raw fitted write at six frozen configurations, gamma grid {0.25,0.5,1,2,4}",
+    "R2": "depth 0.2 only: local scale x five gammas, fitted matched to native, native matched to fitted",
+    "R2_rescreen": "selected vs original configuration, automatic packets + complete facts, text, three reassignments, native; exposed fibre/metal bank",
+    "R3": "as the rescreen plus the other world's own packet scored against both golds and evidence text; new locked 576-scene bank"
+  },
+  "not_reused": "no row from any earlier package is reused: every condition here was re-run under the common four-position layout, which differs from the historical two-position complete-fact arm"
+}

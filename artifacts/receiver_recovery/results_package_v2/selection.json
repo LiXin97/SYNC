@@ -1,0 +1,1516 @@
+{
+  "rule_native_depth": "best NATIVE depth by development J among coverage>=0.90 cells; ties -> fewer layers, then the frozen R1 order",
+  "rule_candidate": "largest development J with coverage>=0.90 across the 30 R1 raw cells and the 5 R2 local cells; ties -> higher U, fewer layers, raw scale, smaller gamma, R1 order",
+  "receivers": {
+    "qwen3-32b": {
+      "local_scale": {
+        "13": 1.023313045501709,
+        "22": 1.0688025951385498,
+        "26": 1.0701992511749268,
+        "32": 1.0559650659561157,
+        "38": 1.076854944229126,
+        "42": 1.1178209781646729,
+        "51": 1.1301816701889038
+      },
+      "r1_native_grid": {
+        "band": {
+          "J": 1.0,
+          "coverage": 1.0,
+          "accuracy": 1.0,
+          "U": 1.0,
+          "layers": [
+            26,
+            32,
+            38
+          ],
+          "eligible": true
+        },
+        "d20": {
+          "J": 1.0,
+          "coverage": 1.0,
+          "accuracy": 1.0,
+          "U": 1.0,
+          "layers": [
+            13
+          ],
+          "eligible": true
+        },
+        "d35": {
+          "J": 1.0,
+          "coverage": 1.0,
+          "accuracy": 1.0,
+          "U": 1.0,
+          "layers": [
+            22
+          ],
+          "eligible": true
+        },
+        "d50": {
+          "J": 0.9791666666666666,
+          "coverage": 0.9973958333333334,
+          "accuracy": 0.9947916666666666,
+          "U": 0.9895833333333334,
+          "layers": [
+            32
+          ],
+          "eligible": true
+        },
+        "d65": {
+          "J": 0.020833333333333332,
+          "coverage": 0.7135416666666666,
+          "accuracy": 0.4140625,
+          "U": 0.40625,
+          "layers": [
+            42
+          ],
+          "eligible": false
+        },
+        "d80": {
+          "J": 0.0,
+          "coverage": 0.8463541666666666,
+          "accuracy": 0.4192708333333333,
+          "U": 0.40625,
+          "layers": [
+            51
+          ],
+          "eligible": false
+        }
+      },
+      "r1_fitted_grid": {
+        "band": {
+          "0.25": {
+            "J": 0.0,
+            "coverage": 0.7890625,
+            "accuracy": 0.3958333333333333,
+            "U": 0.375,
+            "eligible": false
+          },
+          "0.5": {
+            "J": 0.020833333333333332,
+            "coverage": 0.7395833333333334,
+            "accuracy": 0.421875,
+            "U": 0.2708333333333333,
+            "eligible": false
+          },
+          "1": {
+            "J": 0.96875,
+            "coverage": 0.9921875,
+            "accuracy": 0.9921875,
+            "U": 0.9895833333333334,
+            "eligible": true
+          },
+          "2": {
+            "J": 0.7604166666666666,
+            "coverage": 0.9479166666666666,
+            "accuracy": 0.9348958333333334,
+            "U": 0.8958333333333334,
+            "eligible": true
+          },
+          "4": {
+            "J": 0.09375,
+            "coverage": 0.6875,
+            "accuracy": 0.4947916666666667,
+            "U": 0.4479166666666667,
+            "eligible": false
+          }
+        },
+        "d20": {
+          "0.25": {
+            "J": 0.010416666666666666,
+            "coverage": 0.8567708333333334,
+            "accuracy": 0.4166666666666667,
+            "U": 0.375,
+            "eligible": false
+          },
+          "0.5": {
+            "J": 0.14583333333333334,
+            "coverage": 0.7916666666666666,
+            "accuracy": 0.6171875,
+            "U": 0.53125,
+            "eligible": false
+          },
+          "1": {
+            "J": 1.0,
+            "coverage": 1.0,
+            "accuracy": 1.0,
+            "U": 1.0,
+            "eligible": true
+          },
+          "2": {
+            "J": 1.0,
+            "coverage": 1.0,
+            "accuracy": 1.0,
+            "U": 1.0,
+            "eligible": true
+          },
+          "4": {
+            "J": 0.84375,
+            "coverage": 1.0,
+            "accuracy": 0.9583333333333334,
+            "U": 0.9375,
+            "eligible": true
+          }
+        },
+        "d35": {
+          "0.25": {
+            "J": 0.010416666666666666,
+            "coverage": 0.828125,
+            "accuracy": 0.4244791666666667,
+            "U": 0.40625,
+            "eligible": false
+          },
+          "0.5": {
+            "J": 0.10416666666666667,
+            "coverage": 0.8046875,
+            "accuracy": 0.5651041666666666,
+            "U": 0.46875,
+            "eligible": false
+          },
+          "1": {
+            "J": 1.0,
+            "coverage": 1.0,
+            "accuracy": 1.0,
+            "U": 1.0,
+            "eligible": true
+          },
+          "2": {
+            "J": 0.9895833333333334,
+            "coverage": 0.9973958333333334,
+            "accuracy": 0.9973958333333334,
+            "U": 1.0,
+            "eligible": true
+          },
+          "4": {
+            "J": 0.4791666666666667,
+            "coverage": 0.8828125,
+            "accuracy": 0.8359375,
+            "U": 0.7604166666666666,
+            "eligible": false
+          }
+        },
+        "d50": {
+          "0.25": {
+            "J": 0.0,
+            "coverage": 0.8125,
+            "accuracy": 0.4088541666666667,
+            "U": 0.40625,
+            "eligible": false
+          },
+          "0.5": {
+            "J": 0.10416666666666667,
+            "coverage": 0.7213541666666666,
+            "accuracy": 0.484375,
+            "U": 0.4375,
+            "eligible": false
+          },
+          "1": {
+            "J": 0.96875,
+            "coverage": 0.9921875,
+            "accuracy": 0.9921875,
+            "U": 0.9791666666666666,
+            "eligible": true
+          },
+          "2": {
+            "J": 0.75,
+            "coverage": 0.9479166666666666,
+            "accuracy": 0.9322916666666666,
+            "U": 0.8645833333333334,
+            "eligible": true
+          },
+          "4": {
+            "J": 0.2916666666666667,
+            "coverage": 0.8880208333333334,
+            "accuracy": 0.6901041666666666,
+            "U": 0.5729166666666666,
+            "eligible": false
+          }
+        },
+        "d65": {
+          "0.25": {
+            "J": 0.0,
+            "coverage": 0.8229166666666666,
+            "accuracy": 0.4140625,
+            "U": 0.4166666666666667,
+            "eligible": false
+          },
+          "0.5": {
+            "J": 0.010416666666666666,
+            "coverage": 0.7057291666666666,
+            "accuracy": 0.375,
+            "U": 0.3645833333333333,
+            "eligible": false
+          },
+          "1": {
+            "J": 0.010416666666666666,
+            "coverage": 0.5963541666666666,
+            "accuracy": 0.3098958333333333,
+            "U": 0.28125,
+            "eligible": false
+          },
+          "2": {
+            "J": 0.0,
+            "coverage": 0.5546875,
+            "accuracy": 0.2552083333333333,
+            "U": 0.20833333333333334,
+            "eligible": false
+          },
+          "4": {
+            "J": 0.0,
+            "coverage": 0.4921875,
+            "accuracy": 0.22135416666666666,
+            "U": 0.16666666666666666,
+            "eligible": false
+          }
+        },
+        "d80": {
+          "0.25": {
+            "J": 0.0,
+            "coverage": 0.859375,
+            "accuracy": 0.4244791666666667,
+            "U": 0.40625,
+            "eligible": false
+          },
+          "0.5": {
+            "J": 0.0,
+            "coverage": 0.8385416666666666,
+            "accuracy": 0.4114583333333333,
+            "U": 0.3958333333333333,
+            "eligible": false
+          },
+          "1": {
+            "J": 0.0,
+            "coverage": 0.796875,
+            "accuracy": 0.3880208333333333,
+            "U": 0.375,
+            "eligible": false
+          },
+          "2": {
+            "J": 0.0,
+            "coverage": 0.7109375,
+            "accuracy": 0.3489583333333333,
+            "U": 0.3541666666666667,
+            "eligible": false
+          },
+          "4": {
+            "J": 0.0,
+            "coverage": 0.6484375,
+            "accuracy": 0.328125,
+            "U": 0.3333333333333333,
+            "eligible": false
+          }
+        }
+      },
+      "native_selected_depth": "d20",
+      "coverage_limited": false,
+      "r2_local_cells_at_selected_depth": {
+        "0.25": {
+          "J": 0.010416666666666666,
+          "coverage": 0.8489583333333334
+        },
+        "0.5": {
+          "J": 0.3125,
+          "coverage": 0.8567708333333334
+        },
+        "1": {
+          "J": 1.0,
+          "coverage": 1.0
+        },
+        "2": {
+          "J": 1.0,
+          "coverage": 1.0
+        },
+        "4": {
+          "J": 0.8333333333333334,
+          "coverage": 1.0
+        }
+      },
+      "r2_matched_diagnostics": {
+        "fitted_matchnative": 1.0,
+        "native_matchfitted": 1.0
+      },
+      "selected": {
+        "depth": 0.2,
+        "layers": [
+          13
+        ],
+        "scale": "raw",
+        "gamma": 1
+      },
+      "did_not_advance": "every R2 local cell tied or trailed the raw cell at the same gamma and the rule breaks ties to raw scale; every other R1 depth trailed depth 0.2",
+      "rescreen": {
+        "J_selected": 1.0,
+        "J_original": 0.78125,
+        "J_text": 1.0,
+        "coverage": 1.0,
+        "target_clauses": {
+          "in_holm_family": false,
+          "J": 1.0,
+          "coverage": 1.0,
+          "useful_additional_receiver": true,
+          "substantial_recovery": true,
+          "sham_contrast": {
+            "mean": 0.9930555555555557,
+            "lo": 0.982638888888889,
+            "hi": 1.0,
+            "clusters": 12,
+            "p_two_sided": 1.6666666666666667e-05
+          },
+          "original_contrast": {
+            "mean": 0.21875,
+            "lo": 0.09375,
+            "hi": 0.3645833333333333,
+            "clusters": 12,
+            "p_two_sided": 1.6666666666666667e-05
+          },
+          "holm": {
+            "selected_minus_original": null,
+            "selected_minus_mean_reassignment": null
+          },
+          "note": "anchor receiver: reported, not in the multiplicity family"
+        }
+      }
+    },
+    "qwen3-14b-base": {
+      "local_scale": {
+        "14": 1.0600754022598267,
+        "16": 1.0760756731033325,
+        "20": 1.1186240911483765,
+        "24": 1.1357760429382324,
+        "26": 1.1388479471206665,
+        "32": 1.1039443016052246,
+        "8": 1.0275583267211914
+      },
+      "r1_native_grid": {
+        "band": {
+          "J": 0.78125,
+          "coverage": 1.0,
+          "accuracy": 0.9401041666666666,
+          "U": 0.8854166666666666,
+          "layers": [
+            16,
+            20,
+            24
+          ],
+          "eligible": true
+        },
+        "d20": {
+          "J": 1.0,
+          "coverage": 1.0,
+          "accuracy": 1.0,
+          "U": 1.0,
+          "layers": [
+            8
+          ],
+          "eligible": true
+        },
+        "d35": {
+          "J": 0.96875,
+          "coverage": 1.0,
+          "accuracy": 0.9921875,
+          "U": 0.9791666666666666,
+          "layers": [
+            14
+          ],
+          "eligible": true
+        },
+        "d50": {
+          "J": 0.22916666666666666,
+          "coverage": 1.0,
+          "accuracy": 0.6822916666666666,
+          "U": 0.65625,
+          "layers": [
+            20
+          ],
+          "eligible": true
+        },
+        "d65": {
+          "J": 0.0,
+          "coverage": 1.0,
+          "accuracy": 0.5026041666666666,
+          "U": 0.5,
+          "layers": [
+            26
+          ],
+          "eligible": true
+        },
+        "d80": {
+          "J": 0.0,
+          "coverage": 1.0,
+          "accuracy": 0.4947916666666667,
+          "U": 0.4895833333333333,
+          "layers": [
+            32
+          ],
+          "eligible": true
+        }
+      },
+      "r1_fitted_grid": {
+        "band": {
+          "0.25": {
+            "J": 0.0,
+            "coverage": 1.0,
+            "accuracy": 0.5182291666666666,
+            "U": 0.5208333333333334,
+            "eligible": true
+          },
+          "0.5": {
+            "J": 0.03125,
+            "coverage": 0.9947916666666666,
+            "accuracy": 0.5208333333333334,
+            "U": 0.5208333333333334,
+            "eligible": true
+          },
+          "1": {
+            "J": 0.13541666666666666,
+            "coverage": 1.0,
+            "accuracy": 0.6380208333333334,
+            "U": 0.6145833333333334,
+            "eligible": true
+          },
+          "2": {
+            "J": 0.15625,
+            "coverage": 1.0,
+            "accuracy": 0.6197916666666666,
+            "U": 0.6041666666666666,
+            "eligible": true
+          },
+          "4": {
+            "J": 0.0625,
+            "coverage": 1.0,
+            "accuracy": 0.546875,
+            "U": 0.5416666666666666,
+            "eligible": true
+          }
+        },
+        "d20": {
+          "0.25": {
+            "J": 0.0,
+            "coverage": 1.0,
+            "accuracy": 0.5,
+            "U": 0.5,
+            "eligible": true
+          },
+          "0.5": {
+            "J": 0.4166666666666667,
+            "coverage": 1.0,
+            "accuracy": 0.796875,
+            "U": 0.7395833333333334,
+            "eligible": true
+          },
+          "1": {
+            "J": 1.0,
+            "coverage": 1.0,
+            "accuracy": 1.0,
+            "U": 1.0,
+            "eligible": true
+          },
+          "2": {
+            "J": 0.9375,
+            "coverage": 1.0,
+            "accuracy": 0.984375,
+            "U": 0.96875,
+            "eligible": true
+          },
+          "4": {
+            "J": 0.71875,
+            "coverage": 1.0,
+            "accuracy": 0.921875,
+            "U": 0.875,
+            "eligible": true
+          }
+        },
+        "d35": {
+          "0.25": {
+            "J": 0.0,
+            "coverage": 1.0,
+            "accuracy": 0.5026041666666666,
+            "U": 0.5,
+            "eligible": true
+          },
+          "0.5": {
+            "J": 0.13541666666666666,
+            "coverage": 0.9947916666666666,
+            "accuracy": 0.6067708333333334,
+            "U": 0.5729166666666666,
+            "eligible": true
+          },
+          "1": {
+            "J": 0.875,
+            "coverage": 1.0,
+            "accuracy": 0.9635416666666666,
+            "U": 0.9583333333333334,
+            "eligible": true
+          },
+          "2": {
+            "J": 0.7708333333333334,
+            "coverage": 1.0,
+            "accuracy": 0.9375,
+            "U": 0.9375,
+            "eligible": true
+          },
+          "4": {
+            "J": 0.14583333333333334,
+            "coverage": 1.0,
+            "accuracy": 0.6432291666666666,
+            "U": 0.6041666666666666,
+            "eligible": true
+          }
+        },
+        "d50": {
+          "0.25": {
+            "J": 0.0,
+            "coverage": 1.0,
+            "accuracy": 0.5052083333333334,
+            "U": 0.5104166666666666,
+            "eligible": true
+          },
+          "0.5": {
+            "J": 0.010416666666666666,
+            "coverage": 1.0,
+            "accuracy": 0.5130208333333334,
+            "U": 0.5104166666666666,
+            "eligible": true
+          },
+          "1": {
+            "J": 0.0625,
+            "coverage": 1.0,
+            "accuracy": 0.5442708333333334,
+            "U": 0.5208333333333334,
+            "eligible": true
+          },
+          "2": {
+            "J": 0.03125,
+            "coverage": 1.0,
+            "accuracy": 0.5286458333333334,
+            "U": 0.5104166666666666,
+            "eligible": true
+          },
+          "4": {
+            "J": 0.010416666666666666,
+            "coverage": 1.0,
+            "accuracy": 0.5052083333333334,
+            "U": 0.5,
+            "eligible": true
+          }
+        },
+        "d65": {
+          "0.25": {
+            "J": 0.0,
+            "coverage": 1.0,
+            "accuracy": 0.5052083333333334,
+            "U": 0.5104166666666666,
+            "eligible": true
+          },
+          "0.5": {
+            "J": 0.0,
+            "coverage": 1.0,
+            "accuracy": 0.5,
+            "U": 0.5,
+            "eligible": true
+          },
+          "1": {
+            "J": 0.010416666666666666,
+            "coverage": 1.0,
+            "accuracy": 0.5,
+            "U": 0.4895833333333333,
+            "eligible": true
+          },
+          "2": {
+            "J": 0.0,
+            "coverage": 1.0,
+            "accuracy": 0.4973958333333333,
+            "U": 0.4895833333333333,
+            "eligible": true
+          },
+          "4": {
+            "J": 0.0,
+            "coverage": 1.0,
+            "accuracy": 0.5,
+            "U": 0.5,
+            "eligible": true
+          }
+        },
+        "d80": {
+          "0.25": {
+            "J": 0.0,
+            "coverage": 1.0,
+            "accuracy": 0.5,
+            "U": 0.5,
+            "eligible": true
+          },
+          "0.5": {
+            "J": 0.010416666666666666,
+            "coverage": 1.0,
+            "accuracy": 0.4973958333333333,
+            "U": 0.4895833333333333,
+            "eligible": true
+          },
+          "1": {
+            "J": 0.0,
+            "coverage": 1.0,
+            "accuracy": 0.4973958333333333,
+            "U": 0.4895833333333333,
+            "eligible": true
+          },
+          "2": {
+            "J": 0.010416666666666666,
+            "coverage": 1.0,
+            "accuracy": 0.4947916666666667,
+            "U": 0.4791666666666667,
+            "eligible": true
+          },
+          "4": {
+            "J": 0.010416666666666666,
+            "coverage": 1.0,
+            "accuracy": 0.4973958333333333,
+            "U": 0.4895833333333333,
+            "eligible": true
+          }
+        }
+      },
+      "native_selected_depth": "d20",
+      "coverage_limited": false,
+      "r2_local_cells_at_selected_depth": {
+        "0.25": {
+          "J": 0.0,
+          "coverage": 1.0
+        },
+        "0.5": {
+          "J": 0.5520833333333334,
+          "coverage": 1.0
+        },
+        "1": {
+          "J": 1.0,
+          "coverage": 1.0
+        },
+        "2": {
+          "J": 0.9375,
+          "coverage": 1.0
+        },
+        "4": {
+          "J": 0.6770833333333334,
+          "coverage": 1.0
+        }
+      },
+      "r2_matched_diagnostics": {
+        "fitted_matchnative": 1.0,
+        "native_matchfitted": 1.0
+      },
+      "selected": {
+        "depth": 0.2,
+        "layers": [
+          8
+        ],
+        "scale": "raw",
+        "gamma": 1
+      },
+      "did_not_advance": "every R2 local cell tied or trailed the raw cell at the same gamma and the rule breaks ties to raw scale; every other R1 depth trailed depth 0.2",
+      "rescreen": {
+        "J_selected": 1.0,
+        "J_original": 0.5833333333333334,
+        "J_text": 1.0,
+        "coverage": 1.0,
+        "target_clauses": {
+          "in_holm_family": true,
+          "J": 1.0,
+          "coverage": 1.0,
+          "useful_additional_receiver": true,
+          "substantial_recovery": true,
+          "sham_contrast": {
+            "mean": 0.9756944444444445,
+            "lo": 0.9618055555555555,
+            "hi": 0.9895833333333335,
+            "clusters": 12,
+            "p_two_sided": 1.6666666666666667e-05
+          },
+          "original_contrast": {
+            "mean": 0.4166666666666667,
+            "lo": 0.3541666666666667,
+            "hi": 0.4791666666666667,
+            "clusters": 12,
+            "p_two_sided": 1.6666666666666667e-05
+          },
+          "holm": {
+            "selected_minus_original": {
+              "p": 1.6666666666666667e-05,
+              "threshold": 0.008333333333333333,
+              "reject": true
+            },
+            "selected_minus_mean_reassignment": {
+              "p": 1.6666666666666667e-05,
+              "threshold": 0.01,
+              "reject": true
+            }
+          },
+          "note": "in the frozen six-test Holm family"
+        }
+      }
+    },
+    "glm-4-9b": {
+      "local_scale": {
+        "14": 1.1298041343688965,
+        "16": 1.149944543838501,
+        "20": 1.2500030994415283,
+        "24": 1.174652338027954,
+        "26": 1.1212214231491089,
+        "32": 1.0982697010040283,
+        "8": 1.0595723390579224
+      },
+      "r1_native_grid": {
+        "band": {
+          "J": 0.08333333333333333,
+          "coverage": 0.9479166666666666,
+          "accuracy": 0.5625,
+          "U": 0.5208333333333334,
+          "layers": [
+            16,
+            20,
+            24
+          ],
+          "eligible": true
+        },
+        "d20": {
+          "J": 0.90625,
+          "coverage": 0.9791666666666666,
+          "accuracy": 0.9739583333333334,
+          "U": 0.9583333333333334,
+          "layers": [
+            8
+          ],
+          "eligible": true
+        },
+        "d35": {
+          "J": 0.6666666666666666,
+          "coverage": 0.9583333333333334,
+          "accuracy": 0.8802083333333334,
+          "U": 0.78125,
+          "layers": [
+            14
+          ],
+          "eligible": true
+        },
+        "d50": {
+          "J": 0.0,
+          "coverage": 0.53125,
+          "accuracy": 0.2421875,
+          "U": 0.22916666666666666,
+          "layers": [
+            20
+          ],
+          "eligible": false
+        },
+        "d65": {
+          "J": 0.0,
+          "coverage": 0.5885416666666666,
+          "accuracy": 0.265625,
+          "U": 0.23958333333333334,
+          "layers": [
+            26
+          ],
+          "eligible": false
+        },
+        "d80": {
+          "J": 0.0,
+          "coverage": 0.2265625,
+          "accuracy": 0.10416666666666667,
+          "U": 0.09375,
+          "layers": [
+            32
+          ],
+          "eligible": false
+        }
+      },
+      "r1_fitted_grid": {
+        "band": {
+          "0.25": {
+            "J": 0.0,
+            "coverage": 0.005208333333333333,
+            "accuracy": 0.0,
+            "U": 0.0,
+            "eligible": false
+          },
+          "0.5": {
+            "J": 0.0,
+            "coverage": 0.4453125,
+            "accuracy": 0.20052083333333334,
+            "U": 0.17708333333333334,
+            "eligible": false
+          },
+          "1": {
+            "J": 0.0,
+            "coverage": 0.8984375,
+            "accuracy": 0.4401041666666667,
+            "U": 0.4270833333333333,
+            "eligible": false
+          },
+          "2": {
+            "J": 0.03125,
+            "coverage": 0.8229166666666666,
+            "accuracy": 0.4583333333333333,
+            "U": 0.4270833333333333,
+            "eligible": false
+          },
+          "4": {
+            "J": 0.020833333333333332,
+            "coverage": 0.4973958333333333,
+            "accuracy": 0.3125,
+            "U": 0.2916666666666667,
+            "eligible": false
+          }
+        },
+        "d20": {
+          "0.25": {
+            "J": 0.0,
+            "coverage": 0.0,
+            "accuracy": 0.0,
+            "U": 0.0,
+            "eligible": false
+          },
+          "0.5": {
+            "J": 0.0,
+            "coverage": 0.8125,
+            "accuracy": 0.3958333333333333,
+            "U": 0.3333333333333333,
+            "eligible": false
+          },
+          "1": {
+            "J": 0.8854166666666666,
+            "coverage": 0.984375,
+            "accuracy": 0.96875,
+            "U": 0.9479166666666666,
+            "eligible": true
+          },
+          "2": {
+            "J": 0.8229166666666666,
+            "coverage": 0.9817708333333334,
+            "accuracy": 0.9505208333333334,
+            "U": 0.9166666666666666,
+            "eligible": true
+          },
+          "4": {
+            "J": 0.3125,
+            "coverage": 0.9635416666666666,
+            "accuracy": 0.7369791666666666,
+            "U": 0.65625,
+            "eligible": true
+          }
+        },
+        "d35": {
+          "0.25": {
+            "J": 0.0,
+            "coverage": 0.010416666666666666,
+            "accuracy": 0.005208333333333333,
+            "U": 0.0,
+            "eligible": false
+          },
+          "0.5": {
+            "J": 0.0,
+            "coverage": 0.71875,
+            "accuracy": 0.3229166666666667,
+            "U": 0.3020833333333333,
+            "eligible": false
+          },
+          "1": {
+            "J": 0.08333333333333333,
+            "coverage": 0.984375,
+            "accuracy": 0.5651041666666666,
+            "U": 0.5104166666666666,
+            "eligible": true
+          },
+          "2": {
+            "J": 0.11458333333333333,
+            "coverage": 0.96875,
+            "accuracy": 0.6614583333333334,
+            "U": 0.6041666666666666,
+            "eligible": true
+          },
+          "4": {
+            "J": 0.125,
+            "coverage": 0.7994791666666666,
+            "accuracy": 0.5416666666666666,
+            "U": 0.4791666666666667,
+            "eligible": false
+          }
+        },
+        "d50": {
+          "0.25": {
+            "J": 0.0,
+            "coverage": 0.0,
+            "accuracy": 0.0,
+            "U": 0.0,
+            "eligible": false
+          },
+          "0.5": {
+            "J": 0.0,
+            "coverage": 0.234375,
+            "accuracy": 0.09635416666666667,
+            "U": 0.07291666666666667,
+            "eligible": false
+          },
+          "1": {
+            "J": 0.0,
+            "coverage": 0.5703125,
+            "accuracy": 0.265625,
+            "U": 0.25,
+            "eligible": false
+          },
+          "2": {
+            "J": 0.0,
+            "coverage": 0.5989583333333334,
+            "accuracy": 0.2942708333333333,
+            "U": 0.3020833333333333,
+            "eligible": false
+          },
+          "4": {
+            "J": 0.0,
+            "coverage": 0.3984375,
+            "accuracy": 0.20833333333333334,
+            "U": 0.1875,
+            "eligible": false
+          }
+        },
+        "d65": {
+          "0.25": {
+            "J": 0.0,
+            "coverage": 0.005208333333333333,
+            "accuracy": 0.0,
+            "U": 0.0,
+            "eligible": false
+          },
+          "0.5": {
+            "J": 0.0,
+            "coverage": 0.234375,
+            "accuracy": 0.09895833333333333,
+            "U": 0.08333333333333333,
+            "eligible": false
+          },
+          "1": {
+            "J": 0.0,
+            "coverage": 0.4192708333333333,
+            "accuracy": 0.171875,
+            "U": 0.14583333333333334,
+            "eligible": false
+          },
+          "2": {
+            "J": 0.0,
+            "coverage": 0.2890625,
+            "accuracy": 0.125,
+            "U": 0.09375,
+            "eligible": false
+          },
+          "4": {
+            "J": 0.0,
+            "coverage": 0.171875,
+            "accuracy": 0.078125,
+            "U": 0.0625,
+            "eligible": false
+          }
+        },
+        "d80": {
+          "0.25": {
+            "J": 0.0,
+            "coverage": 0.005208333333333333,
+            "accuracy": 0.0,
+            "U": 0.0,
+            "eligible": false
+          },
+          "0.5": {
+            "J": 0.0,
+            "coverage": 0.06770833333333333,
+            "accuracy": 0.033854166666666664,
+            "U": 0.03125,
+            "eligible": false
+          },
+          "1": {
+            "J": 0.0,
+            "coverage": 0.21614583333333334,
+            "accuracy": 0.09635416666666667,
+            "U": 0.08333333333333333,
+            "eligible": false
+          },
+          "2": {
+            "J": 0.0,
+            "coverage": 0.10677083333333333,
+            "accuracy": 0.0390625,
+            "U": 0.020833333333333332,
+            "eligible": false
+          },
+          "4": {
+            "J": 0.0,
+            "coverage": 0.0625,
+            "accuracy": 0.020833333333333332,
+            "U": 0.010416666666666666,
+            "eligible": false
+          }
+        }
+      },
+      "native_selected_depth": "d20",
+      "coverage_limited": false,
+      "r2_local_cells_at_selected_depth": {
+        "0.25": {
+          "J": 0.0,
+          "coverage": 0.0
+        },
+        "0.5": {
+          "J": 0.03125,
+          "coverage": 0.8880208333333334
+        },
+        "1": {
+          "J": 0.8854166666666666,
+          "coverage": 0.984375
+        },
+        "2": {
+          "J": 0.7916666666666666,
+          "coverage": 0.9817708333333334
+        },
+        "4": {
+          "J": 0.2708333333333333,
+          "coverage": 0.9557291666666666
+        }
+      },
+      "r2_matched_diagnostics": {
+        "fitted_matchnative": 0.875,
+        "native_matchfitted": 0.8958333333333334
+      },
+      "selected": {
+        "depth": 0.2,
+        "layers": [
+          8
+        ],
+        "scale": "raw",
+        "gamma": 1
+      },
+      "did_not_advance": "every R2 local cell tied or trailed the raw cell at the same gamma and the rule breaks ties to raw scale; every other R1 depth trailed depth 0.2",
+      "rescreen": {
+        "J_selected": 0.4791666666666667,
+        "J_original": 0.020833333333333332,
+        "J_text": 0.6979166666666666,
+        "coverage": 0.7942708333333334,
+        "target_clauses": {
+          "in_holm_family": true,
+          "J": 0.4791666666666667,
+          "coverage": 0.7942708333333334,
+          "useful_additional_receiver": false,
+          "substantial_recovery": false,
+          "sham_contrast": {
+            "mean": 0.4756944444444445,
+            "lo": 0.3298611111111111,
+            "hi": 0.625,
+            "clusters": 12,
+            "p_two_sided": 1.6666666666666667e-05
+          },
+          "original_contrast": {
+            "mean": 0.4583333333333333,
+            "lo": 0.3229166666666667,
+            "hi": 0.59375,
+            "clusters": 12,
+            "p_two_sided": 1.6666666666666667e-05
+          },
+          "holm": {
+            "selected_minus_original": {
+              "p": 1.6666666666666667e-05,
+              "threshold": 0.0125,
+              "reject": true
+            },
+            "selected_minus_mean_reassignment": {
+              "p": 1.6666666666666667e-05,
+              "threshold": 0.016666666666666666,
+              "reject": true
+            }
+          },
+          "note": "in the frozen six-test Holm family"
+        }
+      }
+    },
+    "gemma-3-27b-it": {
+      "local_scale": {
+        "12": 1.0282092094421387,
+        "22": 1.089351773262024,
+        "25": 1.1192673444747925,
+        "31": 1.214199185371399,
+        "37": 1.1722631454467773,
+        "40": 1.1504015922546387,
+        "50": 1.1536171436309814
+      },
+      "r1_native_grid": {
+        "band": {
+          "J": 0.4375,
+          "coverage": 1.0,
+          "accuracy": 0.7942708333333334,
+          "U": 0.7916666666666666,
+          "layers": [
+            25,
+            31,
+            37
+          ],
+          "eligible": true
+        },
+        "d20": {
+          "J": 1.0,
+          "coverage": 1.0,
+          "accuracy": 1.0,
+          "U": 1.0,
+          "layers": [
+            12
+          ],
+          "eligible": true
+        },
+        "d35": {
+          "J": 0.96875,
+          "coverage": 1.0,
+          "accuracy": 0.9921875,
+          "U": 0.9895833333333334,
+          "layers": [
+            22
+          ],
+          "eligible": true
+        },
+        "d50": {
+          "J": 0.0,
+          "coverage": 1.0,
+          "accuracy": 0.5130208333333334,
+          "U": 0.5104166666666666,
+          "layers": [
+            31
+          ],
+          "eligible": true
+        },
+        "d65": {
+          "J": 0.0,
+          "coverage": 1.0,
+          "accuracy": 0.4973958333333333,
+          "U": 0.4895833333333333,
+          "layers": [
+            40
+          ],
+          "eligible": true
+        },
+        "d80": {
+          "J": 0.0,
+          "coverage": 0.9947916666666666,
+          "accuracy": 0.484375,
+          "U": 0.46875,
+          "layers": [
+            50
+          ],
+          "eligible": true
+        }
+      },
+      "r1_fitted_grid": {
+        "band": {
+          "0.25": {
+            "J": 0.0,
+            "coverage": 0.9947916666666666,
+            "accuracy": 0.4895833333333333,
+            "U": 0.4583333333333333,
+            "eligible": true
+          },
+          "0.5": {
+            "J": 0.010416666666666666,
+            "coverage": 1.0,
+            "accuracy": 0.546875,
+            "U": 0.5520833333333334,
+            "eligible": true
+          },
+          "1": {
+            "J": 0.3333333333333333,
+            "coverage": 1.0,
+            "accuracy": 0.7552083333333334,
+            "U": 0.75,
+            "eligible": true
+          },
+          "2": {
+            "J": 0.15625,
+            "coverage": 1.0,
+            "accuracy": 0.6536458333333334,
+            "U": 0.625,
+            "eligible": true
+          },
+          "4": {
+            "J": 0.03125,
+            "coverage": 1.0,
+            "accuracy": 0.5572916666666666,
+            "U": 0.5416666666666666,
+            "eligible": true
+          }
+        },
+        "d20": {
+          "0.25": {
+            "J": 0.0,
+            "coverage": 0.9557291666666666,
+            "accuracy": 0.4557291666666667,
+            "U": 0.4375,
+            "eligible": true
+          },
+          "0.5": {
+            "J": 0.84375,
+            "coverage": 1.0,
+            "accuracy": 0.9583333333333334,
+            "U": 0.9583333333333334,
+            "eligible": true
+          },
+          "1": {
+            "J": 1.0,
+            "coverage": 1.0,
+            "accuracy": 1.0,
+            "U": 1.0,
+            "eligible": true
+          },
+          "2": {
+            "J": 1.0,
+            "coverage": 1.0,
+            "accuracy": 1.0,
+            "U": 1.0,
+            "eligible": true
+          },
+          "4": {
+            "J": 1.0,
+            "coverage": 1.0,
+            "accuracy": 1.0,
+            "U": 1.0,
+            "eligible": true
+          }
+        },
+        "d35": {
+          "0.25": {
+            "J": 0.010416666666666666,
+            "coverage": 0.9921875,
+            "accuracy": 0.484375,
+            "U": 0.46875,
+            "eligible": true
+          },
+          "0.5": {
+            "J": 0.03125,
+            "coverage": 1.0,
+            "accuracy": 0.5208333333333334,
+            "U": 0.4895833333333333,
+            "eligible": true
+          },
+          "1": {
+            "J": 0.8541666666666666,
+            "coverage": 0.9973958333333334,
+            "accuracy": 0.9609375,
+            "U": 0.96875,
+            "eligible": true
+          },
+          "2": {
+            "J": 0.6458333333333334,
+            "coverage": 1.0,
+            "accuracy": 0.8802083333333334,
+            "U": 0.8645833333333334,
+            "eligible": true
+          },
+          "4": {
+            "J": 0.2708333333333333,
+            "coverage": 1.0,
+            "accuracy": 0.7161458333333334,
+            "U": 0.6666666666666666,
+            "eligible": true
+          }
+        },
+        "d50": {
+          "0.25": {
+            "J": 0.020833333333333332,
+            "coverage": 0.9947916666666666,
+            "accuracy": 0.4921875,
+            "U": 0.46875,
+            "eligible": true
+          },
+          "0.5": {
+            "J": 0.0,
+            "coverage": 1.0,
+            "accuracy": 0.4921875,
+            "U": 0.46875,
+            "eligible": true
+          },
+          "1": {
+            "J": 0.0,
+            "coverage": 1.0,
+            "accuracy": 0.4973958333333333,
+            "U": 0.4895833333333333,
+            "eligible": true
+          },
+          "2": {
+            "J": 0.0,
+            "coverage": 1.0,
+            "accuracy": 0.5052083333333334,
+            "U": 0.5,
+            "eligible": true
+          },
+          "4": {
+            "J": 0.0,
+            "coverage": 0.9973958333333334,
+            "accuracy": 0.515625,
+            "U": 0.53125,
+            "eligible": true
+          }
+        },
+        "d65": {
+          "0.25": {
+            "J": 0.0,
+            "coverage": 0.9947916666666666,
+            "accuracy": 0.4791666666666667,
+            "U": 0.4583333333333333,
+            "eligible": true
+          },
+          "0.5": {
+            "J": 0.0,
+            "coverage": 1.0,
+            "accuracy": 0.4895833333333333,
+            "U": 0.46875,
+            "eligible": true
+          },
+          "1": {
+            "J": 0.0,
+            "coverage": 1.0,
+            "accuracy": 0.4973958333333333,
+            "U": 0.4895833333333333,
+            "eligible": true
+          },
+          "2": {
+            "J": 0.0,
+            "coverage": 1.0,
+            "accuracy": 0.5052083333333334,
+            "U": 0.5104166666666666,
+            "eligible": true
+          },
+          "4": {
+            "J": 0.010416666666666666,
+            "coverage": 1.0,
+            "accuracy": 0.4947916666666667,
+            "U": 0.5,
+            "eligible": true
+          }
+        },
+        "d80": {
+          "0.25": {
+            "J": 0.0,
+            "coverage": 0.9869791666666666,
+            "accuracy": 0.4791666666666667,
+            "U": 0.46875,
+            "eligible": true
+          },
+          "0.5": {
+            "J": 0.0,
+            "coverage": 0.9947916666666666,
+            "accuracy": 0.484375,
+            "U": 0.46875,
+            "eligible": true
+          },
+          "1": {
+            "J": 0.0,
+            "coverage": 0.9947916666666666,
+            "accuracy": 0.4817708333333333,
+            "U": 0.46875,
+            "eligible": true
+          },
+          "2": {
+            "J": 0.0,
+            "coverage": 0.9895833333333334,
+            "accuracy": 0.4921875,
+            "U": 0.4895833333333333,
+            "eligible": true
+          },
+          "4": {
+            "J": 0.010416666666666666,
+            "coverage": 0.9817708333333334,
+            "accuracy": 0.4921875,
+            "U": 0.46875,
+            "eligible": true
+          }
+        }
+      },
+      "native_selected_depth": "d20",
+      "coverage_limited": false,
+      "r2_local_cells_at_selected_depth": {
+        "0.25": {
+          "J": 0.0,
+          "coverage": 0.9557291666666666
+        },
+        "0.5": {
+          "J": 0.9791666666666666,
+          "coverage": 1.0
+        },
+        "1": {
+          "J": 1.0,
+          "coverage": 1.0
+        },
+        "2": {
+          "J": 1.0,
+          "coverage": 1.0
+        },
+        "4": {
+          "J": 1.0,
+          "coverage": 1.0
+        }
+      },
+      "r2_matched_diagnostics": {
+        "fitted_matchnative": 1.0,
+        "native_matchfitted": 1.0
+      },
+      "selected": {
+        "depth": 0.2,
+        "layers": [
+          12
+        ],
+        "scale": "raw",
+        "gamma": 1
+      },
+      "did_not_advance": "every R2 local cell tied or trailed the raw cell at the same gamma and the rule breaks ties to raw scale; every other R1 depth trailed depth 0.2",
+      "rescreen": {
+        "J_selected": 1.0,
+        "J_original": 0.5416666666666666,
+        "J_text": 1.0,
+        "coverage": 1.0,
+        "target_clauses": {
+          "in_holm_family": true,
+          "J": 1.0,
+          "coverage": 1.0,
+          "useful_additional_receiver": true,
+          "substantial_recovery": true,
+          "sham_contrast": {
+            "mean": 0.9652777777777778,
+            "lo": 0.9375,
+            "hi": 0.9895833333333335,
+            "clusters": 12,
+            "p_two_sided": 1.6666666666666667e-05
+          },
+          "original_contrast": {
+            "mean": 0.4583333333333333,
+            "lo": 0.34375,
+            "hi": 0.5833333333333334,
+            "clusters": 12,
+            "p_two_sided": 1.6666666666666667e-05
+          },
+          "holm": {
+            "selected_minus_original": {
+              "p": 1.6666666666666667e-05,
+              "threshold": 0.025,
+              "reject": true
+            },
+            "selected_minus_mean_reassignment": {
+              "p": 1.6666666666666667e-05,
+              "threshold": 0.05,
+              "reject": true
+            }
+          },
+          "note": "in the frozen six-test Holm family"
+        }
+      }
+    }
+  },
+  "gemma_presearch_rule": {
+    "lock": "gates/receiver_recovery/r2_gemma_presearch_rule.lock.json",
+    "sha256": "3da09a0d43f65c46c265295210ab7514ac8ab86af29a40df959a35f62968c9dd",
+    "committed": "f9b9521 before any Gemma fitted cell was read",
+    "selected_depth": "d20",
+    "layers": [
+      12
+    ],
+    "local_scale": {
+      "12": 1.0282092094421387
+    },
+    "development_J_of_the_rule": 1.0,
+    "note": "the searched winner (raw, gamma 1, same depth) and the pre-search rule coincide up to c=1.028; both reported"
+  }
+}

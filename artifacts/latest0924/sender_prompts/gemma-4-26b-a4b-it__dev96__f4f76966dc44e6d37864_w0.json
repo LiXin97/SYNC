@@ -1,0 +1,120 @@
+{
+ "sender": "gemma-4-26b-a4b-it",
+ "checkpoint": "/path/to/models/gemma-4-26B-A4B-it",
+ "split": "dev96",
+ "bank": "artifacts/mechanism0919/discovery_v1/exposed_development.json",
+ "bank_sha256": "97b7622418ba13eaae739a45ba675a8d838821c01f3f169eee84092a77056177",
+ "scene": "f4f76966dc44e6d37864",
+ "world": 0,
+ "aliases": [
+  "QUAN",
+  "FEP"
+ ],
+ "evidence": [
+  "QUAN is a red candy. It is sour.",
+  "FEP is a yellow candy. It is sweet."
+ ],
+ "prompt_file": "gemma-4-26b-a4b-it__dev96__f4f76966dc44e6d37864_w0.txt",
+ "rendered_prompt_sha256": "7de34ee0882101fc66fc5470152349fd2ac62126ea6685b033e7c1046f0a0ed5",
+ "frozen_prompt_sha256": "328c8b5df9d196724cdabd6cc7a291c0cfc7ca13ab524bd3cb70239de7183e0b",
+ "chat_template_kwargs": {},
+ "chat_template_sha256": "36e3a42e5cf14cd0020e72d92e1fdd9970f59b82170e421f0cbe1bb42bead3f0",
+ "tokenizer_class": "GemmaTokenizer",
+ "prompt_tokens": 623,
+ "first_ids": [
+  2,
+  105,
+  9731,
+  107,
+  3048,
+  21407,
+  2495,
+  29141
+ ],
+ "last_ids": [
+  11058,
+  3017,
+  99471,
+  106,
+  107,
+  105,
+  4368,
+  107,
+  100,
+  45518,
+  107,
+  101
+ ],
+ "last_tokens": [
+  "\u2581[\"",
+  "word",
+  "\"]}",
+  "<turn|>",
+  "\n",
+  "<|turn>",
+  "model",
+  "\n",
+  "<|channel>",
+  "thought",
+  "\n",
+  "<channel|>"
+ ],
+ "rendered_prompt_head": "<bos><|turn>system\nYou compress object descriptions into a fixed public vocabulary. You will be given a vocabulary of words and a description of two objects. For each object, choose up to four vocabulary words that the description explicitly supports. Use only words from the vocabulary, spelled exactly as given. Do not invent facts. Answer with one JSON object and nothing else.<turn|>\n<|turn>user\n",
+ "rendered_prompt_tail": "<turn|>\n<|turn>model\n<|channel>thought\n<channel|>",
+ "scaffold_identical_across_bank": true,
+ "n_worlds_checked": 192,
+ "prompt_tokens_over_bank": {
+  "n": 192,
+  "min": 623,
+  "max": 639,
+  "mean": 630.5208333333334,
+  "total": 121060
+ },
+ "template_checks": {
+  "default_equals_enable_thinking_false": true,
+  "ends_with_empty_thought_block": true,
+  "native_system_turn": true
+ },
+ "answer_rule": "gemma4",
+ "adapter": {
+  "key": "gemma-4-26b-a4b-it",
+  "spec": {
+   "path": "/path/to/models/gemma-4-26B-A4B-it",
+   "family": "gemma4",
+   "chat": "True",
+   "env": "tflatest",
+   "python": "python",
+   "dtype": "float32",
+   "gpus": "1",
+   "n_layers": "30",
+   "loader": "causal_lm",
+   "chat_render": "template",
+   "turn_end": "<turn|>",
+   "roles": "('receiver', 'sender')",
+   "eos_token_ids": "None",
+   "ignorable_unexpected": "()",
+   "key_mapping": "None",
+   "tokenizer": "auto",
+   "max_memory_gib": "None",
+   "notes": "Gemma4ForConditionalGeneration (AutoModelForCausalLM maps gemma4 to it; vision tower is kept, text-only forwards). 128-expert MoE, 25 sliding-window (1024) + 5 full-attention layers, no KV sharing. Optional receiver; sender. transformers 5.3.0 cannot load it."
+  },
+  "chat_kwargs": {
+   "enable_thinking": false
+  },
+  "chat_kwargs_differ": true,
+  "chat_kwargs_render_identical": true
+ },
+ "env": {
+  "python": "/path/to/miniconda3/envs/env-q35/bin/python",
+  "python_version": "3.12.12",
+  "hostname": "mlxlabvo9zh2uz6aa2425c-20260910053837-ood6ad-master",
+  "cuda_visible_devices": null,
+  "torch": "2.11.0+cu130",
+  "transformers": "5.12.1",
+  "tokenizers": "0.22.2",
+  "accelerate": "1.14.0",
+  "fla_available": true
+ },
+ "utc": "2026-09-24T13:24:40Z",
+ "script_sha256": "26945067fd587313afdc186c0318f9fdce406f000c334843871493320a000a0d"
+}

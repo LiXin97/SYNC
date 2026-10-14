@@ -1,0 +1,19 @@
+{
+  "sources": {
+    "artifacts/latest0924/expA/analysis/expA_results.json": "5c38eb6f5f30830ff5ab33df6df7a9d46c69447bf71ed9dc57f82f59fa151f72",
+    "artifacts/latest0924/graded/analysis.json": "75adeb036c46e5bf79c9724c64012a4d190ea1984d5d060a875a33bd5686ba83",
+    "artifacts/latest0924/diag/analysis/diag_results.json": "190a929fc1ca9da83710cfd7757463c85a894bbc0b8a9df1ef4f7f784df31c1c",
+    "artifacts/latest0924/predict/score.json": "ab87524ca46f237b2af02d53bc41a0eadb2e23f4ddcacb885f589ac7fe745170",
+    "artifacts/latest0924/predict/predictions.json": "1ce34d5de63e2c9ef9414638641d1b6d88c7d9699e25198eb211aecf564c48ee",
+    "artifacts/latest0924/layout/analysis/layout_results.json": "b5f0cccb8caf3bb3a52edebfd876d262139a1bfe8eecb8d537fc79cb969638fb",
+    "artifacts/latest0924/realtask/analysis/expD_results.json": "ca38ac70d808d9fcd37c9da2d3208de82162e6ea194203ec8980efc2f805fac0"
+  },
+  "renderer_sha256": "f3c353d2bb739d1e92b51518d705e671ef65b5d766583b283d28f51aa557dc95",
+  "info": {
+    "recovered": 25,
+    "evaluated": 28,
+    "predict_correct": 45,
+    "depth_only_wrong": 7,
+    "layout_transfers": 14
+  }
+}

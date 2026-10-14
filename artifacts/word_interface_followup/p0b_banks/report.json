@@ -1,0 +1,170 @@
+{
+ "eval": {
+  "scenes": 576,
+  "groups": 36,
+  "templates": {
+   "0": 48,
+   "1": 48,
+   "2": 48,
+   "3": 48,
+   "4": 48,
+   "5": 48,
+   "6": 48,
+   "7": 48,
+   "8": 48,
+   "9": 48,
+   "10": 48,
+   "11": 48
+  },
+  "changed_field": {
+   "color": 288,
+   "material": 288
+  },
+  "wording": {
+   "0": 288,
+   "1": 288
+  },
+  "changed_answer_position_w0": {
+   "0": 144,
+   "1": 144,
+   "3": 144,
+   "2": 144
+  },
+  "unchanged_answer_position": {
+   "1": 144,
+   "3": 144,
+   "2": 144,
+   "0": 144
+  },
+  "group_x_template_counts": {
+   "2": 144,
+   "1": 288
+  }
+ },
+ "dev": {
+  "scenes": 96,
+  "groups": 6,
+  "templates": {
+   "5": 7,
+   "6": 8,
+   "7": 9,
+   "8": 10,
+   "9": 10,
+   "10": 10,
+   "11": 9,
+   "0": 8,
+   "1": 7,
+   "2": 6,
+   "3": 6,
+   "4": 6
+  },
+  "changed_field": {
+   "color": 48,
+   "material": 48
+  },
+  "wording": {
+   "0": 48,
+   "1": 48
+  },
+  "changed_answer_position_w0": {
+   "0": 24,
+   "1": 24,
+   "3": 24,
+   "2": 24
+  },
+  "unchanged_answer_position": {
+   "1": 24,
+   "3": 24,
+   "2": 24,
+   "0": 24
+  },
+  "group_x_template_counts": {
+   "2": 24,
+   "1": 48
+  }
+ },
+ "alias_pools": {
+  "eval": [
+   "GIDL",
+   "DIVL",
+   "NETK",
+   "NILM",
+   "KEFZ",
+   "MELB",
+   "HIDS",
+   "HAPD",
+   "VURG",
+   "GULS",
+   "FIHD",
+   "BIHB",
+   "KATD",
+   "FABM",
+   "MOPL",
+   "PAPH",
+   "PODZ",
+   "PEVN",
+   "TUSN",
+   "HORZ",
+   "RETM",
+   "VOZD",
+   "DAGF",
+   "SEVB"
+  ],
+  "dev": [
+   "KORN",
+   "BODM",
+   "FODF",
+   "TOTM",
+   "VEKF",
+   "PUZD",
+   "DADG",
+   "HOBM",
+   "VIKR",
+   "FEPN",
+   "DEGS",
+   "GUVF",
+   "LIVP",
+   "PABT",
+   "ZODH",
+   "ZEPL",
+   "DISP",
+   "MIHG",
+   "MUVL",
+   "PETG",
+   "PIDB",
+   "HIFS",
+   "KUBK",
+   "TUDK"
+  ],
+  "engineering": [
+   "GOFT",
+   "KAKD",
+   "SUVB",
+   "MULR",
+   "GUFM",
+   "NENB",
+   "BOMR",
+   "HIBF"
+  ]
+ },
+ "aliases_shared_with_prior": [],
+ "skeletons": [
+  "<A> is a block; its paint is <V> and its material is <V>.",
+  "Block <A> is painted <V> and is made of <V>.",
+  "Block <A> was cast in <V> and then painted <V>.",
+  "Block <A>, <V>-painted, has a body of <V>.",
+  "Block <A>: <V> body, <V> surface paint.",
+  "Catalogue line for <A>: surface paint <V>; material <V>.",
+  "Inventory card <A>: a block of <V>, painted <V>.",
+  "Made of <V>, block <A> carries a <V> coat of paint.",
+  "On the shelf sits <A>, a <V> block with <V> paint.",
+  "Paint on block <A>: <V>. Material of block <A>: <V>.",
+  "The <V> paint on block <A> covers a body made of <V>.",
+  "The block called <A> has <V> paint over a <V> body."
+ ],
+ "skeletons_shared_with_prior": [],
+ "verification": "asserted per scene and world: conjunction answer unique; each queried color and each queried material held by exactly two objects; all four combinations present in both worlds; changed answer moves, unchanged answer stays; query wording parsed back symbolically",
+ "reused_by_design": "the four colors and the four approved materials (inventory words), the painted-block object class and the \"surface paint\"/\"made of\" question vocabulary; not an open-vocabulary test",
+ "eval_sha256": "68f5ce7498b3e74380dd6f57a21635bf34ae003e4a5b41944be95629f30ec43b",
+ "dev_sha256": "424981827a29da333f2e6fd37312f116a9e49358722ed6483aa83ceadc2144a8"
+}

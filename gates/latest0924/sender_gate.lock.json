@@ -1,0 +1,18 @@
+{
+ "name": "latest0924_sender_gate",
+ "utc": "2026-09-24T133200Z",
+ "derived_from": "gates/latest0924/expA_protocol.lock.json :: sender_gate (thresholds copied verbatim, frozen before any new-sender output exists)",
+ "population": "all",
+ "require_integrity": true,
+ "bank_sha256": "97b7622418ba13eaae739a45ba675a8d838821c01f3f169eee84092a77056177",
+ "thresholds": {
+  "parse_fully_rate": {"op": ">=", "value": 0.99},
+  "required_fact_recall": {"op": ">=", "value": 0.95},
+  "complete_packet_rate": {"op": ">=", "value": 0.90}
+ },
+ "execution_choices": {
+  "loader": "direct for all three senders (BF16, checkpoint model class, default attention)",
+  "gptoss_mode": "analysis_low (template 'Reasoning: low', final channel parsed); this is the minimal reasoning the template supports, as the expA sender_protocol requires; final_prefill is not used",
+  "decoding": "greedy, 256 new tokens, batch 1"
+ }
+}

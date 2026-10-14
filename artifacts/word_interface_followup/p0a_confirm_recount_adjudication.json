@@ -1,0 +1,58 @@
+{
+ "utc": "2026-09-23T19:50:23.704552+00:00",
+ "recount": {
+  "path": "artifacts/word_interface_followup/p0a_confirm_recount.json",
+  "sha256": "9e8c3ebcb659f59f4f4e88ca4068be600e00006181f8258e529b64056a143fda",
+  "status": "FAIL_SECOND_COUNT_DISAGREES",
+  "n_disagreements": 4
+ },
+ "first_recount": {
+  "path": "artifacts/word_interface_followup/p0a_confirm_recount_sortedkey_sensitivity.json",
+  "note": "154 bound/p-only differences from ordering clusters by sorted key (the R3/R4/P0-B convention) instead of the P0-A audit's first-appearance order; 0 estimate or Holm-decision differences; kept as a Monte Carlo sensitivity"
+ },
+ "residual": [
+  {
+   "where": "qwen3-14b-base/literal_A1_twelve_minus_mean_single_selected/template",
+   "field": "p_two_sided",
+   "recount": 0.39786666666666665,
+   "audit": 0.3979666666666667
+  },
+  {
+   "where": "qwen3-14b-base/literal_A1_twelve_minus_mean_single_selected/conservative",
+   "recount": {
+    "estimate": 0.004629629629629632,
+    "lo": -0.008101851851851848,
+    "p": 0.39786666666666665
+   },
+   "audit": {
+    "lo": -0.00810185185185185,
+    "p": 0.3979666666666667
+   }
+  },
+  {
+   "where": "qwen3-14b-base/literal_A1_twelve_minus_mean_single_gamma1/template",
+   "field": "p_two_sided",
+   "recount": 0.39786666666666665,
+   "audit": 0.3979666666666667
+  },
+  {
+   "where": "qwen3-14b-base/literal_A1_twelve_minus_mean_single_gamma1/conservative",
+   "recount": {
+    "estimate": 0.004629629629629632,
+    "lo": -0.008101851851851848,
+    "p": 0.39786666666666665
+   },
+   "audit": {
+    "lo": -0.00810185185185185,
+    "p": 0.3979666666666667
+   }
+  }
+ ],
+ "cause": "floating-point ties at zero: cluster means differ by <= 1.4e-17 between summation orders; 1,609 of 60,000 bootstrap means are |mean| < 1e-12; np.mean leaves 3 exactly zero (counted in both tails), the other order none; p moves 0.39797 -> 0.39787",
+ "verification": {
+  "script": "scripts/verify_p0a_recount_ties.py",
+  "output": "artifacts/word_interface_followup/p0a_confirm_recount_tie_check.json"
+ },
+ "decision_impact": "none: every estimate, J numerator, interval (to 1e-9) and all 16 Holm decisions agree; the affected contrast (qwen3-14b-base literal A1, p ~ 0.398) is far from any threshold",
+ "verdict": "ACCEPTED_WITH_DOCUMENTED_FLOAT_TIE (the recount status string stays FAIL as produced; tolerances were not changed after the fact)"
+}

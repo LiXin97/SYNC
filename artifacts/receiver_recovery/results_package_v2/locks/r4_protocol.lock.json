@@ -1,0 +1,145 @@
+{
+ "lock": "r4_protocol_20260923",
+ "utc": "2026-09-23T00:55:22.131373+00:00",
+ "status": "FROZEN_BEFORE_ANY_R4_SENDER_OR_RECEIVER_OUTPUT",
+ "authority": "[internal approval note removed for anonymity]",
+ "question": "Can the same fixed interface bind facts to FOUR same-class objects, with the two-object receiver configurations frozen and the sender adapted only in its object count?",
+ "receivers": {
+  "chosen": [
+   "qwen3-32b",
+   "gemma-3-27b-it"
+  ],
+  "rule": "Qwen3-32B plus the highest-RESCREEN-J non-Qwen receiver (ties: GLM before Gemma), chosen before R3 outcomes",
+  "rescreen_selected_J": {
+   "qwen3-32b": 1.0,
+   "qwen3-14b-base": 1.0,
+   "glm-4-9b": 0.4791666666666667,
+   "gemma-3-27b-it": 1.0
+  },
+  "evidence_of_timing": "the rescreen audit snapshot was committed at 2026-09-22T2132Z (90b23e3); the first R3 receiver audit was produced at 23:53Z (qwen3-32b only) and the non-Qwen R3 results after 00:10Z",
+  "note": "this is a selected receiver, not an unselected receiver success rate"
+ },
+ "bank": {
+  "path": "artifacts/receiver_recovery/r4_bank/bank.json",
+  "sha256": "5a1bf14ca5029143f260ab883a63a6850dc721f940839857bfee5f2b369d06d8",
+  "generator": {
+   "path": "scripts/build_r4_bank_20260923.py",
+   "sha256": "8154cd8a41d9ce5da3ad82a3cd341507ccce51d1d62d5e79b49978ebb51f6c80"
+  },
+  "scenes": 192,
+  "family_cells": 24,
+  "family_definition": "(evidence template 0-3) x (changed pair of positions, 6)",
+  "balance": {
+   "changed_pair": {
+    "(1, 3)": 32,
+    "(0, 2)": 32,
+    "(0, 3)": 32,
+    "(1, 2)": 32,
+    "(2, 3)": 32,
+    "(0, 1)": 32
+   },
+   "unchanged_target_position": {
+    "0": 48,
+    "3": 48,
+    "1": 48,
+    "2": 48
+   },
+   "queried_color": {
+    "green": 48,
+    "red": 48,
+    "orange": 48,
+    "yellow": 48
+   },
+   "queried_material": {
+    "rubber": 48,
+    "copper": 48,
+    "plastic": 48,
+    "glass": 48
+   },
+   "changed_answer_position_world0": {
+    "1": 48,
+    "0": 48,
+    "2": 48,
+    "3": 48
+   }
+  },
+  "semantics": "four painted blocks; each has exactly one surface paint color and one constitutive material (permutations, so every queried value is unique); world 2 exchanges the colors of one pair; materials and the other two objects fixed; Q1 changed color, Q2 unchanged material with its target balanced over all four positions; every object position holds every value 48 times; aliases balanced over positions (8 per name per position); 0 skeletons and 0 aliases shared with any earlier bank",
+  "pre_output_rebuild": "one deterministic rebuild before any output: the first generator imbalanced the queried materials (80/48/48/16); rebuilt so queried colors and materials are exactly 48 each"
+ },
+ "sender": {
+  "module": "src/syncomm/recovery/sender_candidate_a4.py",
+  "sha256": "8fad218361d0e536e273dc182d7a12a39fc022220339c3d8470fb89b985a93cc",
+  "change_from_frozen": "system text says four objects; user template lists four aliases and a four-key JSON shape; model, greedy decoding, max_new_tokens, inventory, parse rule, no-retry, equal q=255 and ordering imported unchanged from sender_candidate_a.py",
+  "label": "a declared four-object sender adaptation, not byte-identical reuse of the two-object prompt; one prompt, no search, no retries"
+ },
+ "receiver_side": {
+  "configurations": "frozen from R2: selected = raw fitted word-contrast write at relative depth 0.2 (qwen3-32b layer 13, gemma layer 12), gamma 1; original = the three-layer band; dictionaries unchanged; no refit, no position search on four-object material",
+  "layout": {
+   "module": "src/syncomm/recovery/layout_n.py",
+   "sha256": "5a2dd59f5fa2bbe864ad0b21cbf39857df766dcda0f9778bd9a9cd6c030288e7",
+   "extension": "the frozen renderer's object loop extended to four objects; identical to the frozen renderer for two objects (self-test)"
+  },
+  "runner": {
+   "module": "src/syncomm/recovery/evaluate_confirm4.py",
+   "sha256": "23661790a79ee506fa31f10cdcc0f5d33c471669cfe9ed566f0b19b4e3812ada",
+   "derived_by": "scripts/build_r4_runner_20260923.py (anchored replacements only)"
+  },
+  "parser": "strict first-line match against the four predefined aliases (content_counterfactual.score_answer; mechanically unchanged)",
+  "fewshot_note": "the receiver prompt keeps its frozen two-object few-shot demonstration"
+ },
+ "conditions": {
+  "actual (automatic)": [
+   "none",
+   "identity_write (engineering gate + reported)",
+   "original",
+   "selected",
+   "packet_text (identical packet as padded text)",
+   "sham0",
+   "sham1",
+   "sham2"
+  ],
+  "literal (complete facts)": [
+   "original",
+   "selected",
+   "packet_text",
+   "full_text (evidence)",
+   "native (at the selected depth)"
+  ]
+ },
+ "endpoints": {
+  "primary": "J = all four answers correct across both worlds, 64-token budget, 188 scenes (4 engineering scenes excluded), with four candidate aliases (chance J = 0.25^4 = 0.004)",
+  "secondary": [
+   "per-answer accuracy",
+   "strict format coverage",
+   "R (changed color, both worlds)",
+   "U (unchanged material, both worlds)",
+   "256-token sensitivity",
+   "sender extraction recall and object errors (post hoc, from the packets)"
+  ]
+ },
+ "analysis": {
+  "ci": "cluster bootstrap over the 24 family cells and the 4 evidence templates, 20000 draws x seeds [190919,290919,390919]",
+  "multiplicity": "none — no pre-declared test family or target for R4; every contrast is descriptive",
+  "contrasts": [
+   "selected - none",
+   "selected - mean reassignment",
+   "selected - identical packet as text",
+   "selected - original",
+   "literal selected - literal original"
+  ],
+  "audit": {
+   "path": "scripts/audit_r4_20260923.py",
+   "sha256": "b9af553eae834120178ad2a3180f0dcf52a7189bbdfacbc12430d861bca6104a"
+  },
+  "recount": {
+   "path": "scripts/recount_r4_20260923.py",
+   "sha256": "4bcf9c65a4a31dac2d6578294e9730c7c4148d34aa834300eac25541c72ed848"
+  }
+ },
+ "not_pooled": "a separate protocol and sample count; never pooled with R3",
+ "not_claims": [
+  "no open-world or general relational reasoning claim",
+  "the same finite vocabulary and attribute operation as R3"
+ ],
+ "stop_rule": "if implementing the extension had required a scientifically different writer, R4 would stop and export the incompatibility; it did not (only the object loop changed)"
+}

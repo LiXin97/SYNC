@@ -1,0 +1,137 @@
+{
+  "band": {
+    "gemma-3-27b-it": [
+      25,
+      31,
+      37
+    ],
+    "glm-4-9b": [
+      16,
+      20,
+      24
+    ],
+    "qwen3-14b-base": [
+      16,
+      20,
+      24
+    ],
+    "qwen3-32b": [
+      26,
+      32,
+      38
+    ]
+  },
+  "base_models": [
+    "qwen3-14b-base"
+  ],
+  "context_widths": [
+    2,
+    4
+  ],
+  "depths": [
+    0.2,
+    0.35,
+    0.4,
+    0.5,
+    0.6,
+    0.65,
+    0.8
+  ],
+  "existing_fits": {
+    "glm-4-9b": "artifacts/mechanism0920/word_memory_glm_fit_v1/directions_p0.pt",
+    "qwen3-14b-base": "artifacts/mechanism0920/word_memory_fit_v1/directions_p0.pt",
+    "qwen3-32b": "artifacts/mechanism0920/word_memory_fit_v1/directions_p1.pt"
+  },
+  "layers": {
+    "gemma-3-27b-it": [
+      12,
+      22,
+      25,
+      31,
+      37,
+      40,
+      50
+    ],
+    "glm-4-9b": [
+      8,
+      14,
+      16,
+      20,
+      24,
+      26,
+      32
+    ],
+    "qwen3-14b-base": [
+      8,
+      14,
+      16,
+      20,
+      24,
+      26,
+      32
+    ],
+    "qwen3-32b": [
+      13,
+      22,
+      26,
+      32,
+      38,
+      42,
+      51
+    ]
+  },
+  "models": {
+    "gemma-3-27b-it": "/path/to/models/gemma-3-27b-it",
+    "glm-4-9b": "/path/to/models/GLM-4-9B-0414",
+    "qwen3-14b-base": "/path/to/models/Qwen3-14B-Base",
+    "qwen3-32b": "/path/to/models/Qwen3-32B"
+  },
+  "n_blocks": {
+    "gemma-3-27b-it": 62,
+    "glm-4-9b": 40,
+    "qwen3-14b-base": 40,
+    "qwen3-32b": 64
+  },
+  "pins": {
+    "artifacts/mechanism0920/word_memory_fit_v1/directions_p0.pt": "2895d37a430839dc2b7337d810113594170001455fab5d32894727ee2afe9aa3",
+    "artifacts/mechanism0920/word_memory_fit_v1/directions_p1.pt": "73d0da9546b9f38a1c3f97ff1f5b70a8c7ff2ecedbb52e4bb3046ca9206b53f7",
+    "artifacts/mechanism0920/word_memory_glm_fit_v1/directions_p0.pt": "dcf4da418c68357fcf8008817f753b25655aecdc01c296cde410575c86e26110",
+    "artifacts/receiver_recovery/words_221.json": "b7c686ee1c47392ee2499f31c4784a4d3427e1d981a624e8ed77af49aca5767e",
+    "src/syncomm/recovery/fit_layers.py": "0c5604102bc6b3af220fad5ce53e61e9f08686b69d41007589b17bb44dbc079f"
+  },
+  "plan": "the study protocol \u00a76; lock artifacts/receiver_recovery/locks/r1_depth_scan.lock.json",
+  "purpose": "Word-contrast fits at the frozen R1 depth set for every roster receiver; same recipe as word_memory_fit_v1, several layers per pass. No communication outcome.",
+  "root": "artifacts/receiver_recovery",
+  "singles": {
+    "gemma-3-27b-it": [
+      12,
+      22,
+      31,
+      40,
+      50
+    ],
+    "glm-4-9b": [
+      8,
+      14,
+      20,
+      26,
+      32
+    ],
+    "qwen3-14b-base": [
+      8,
+      14,
+      20,
+      26,
+      32
+    ],
+    "qwen3-32b": [
+      13,
+      22,
+      32,
+      42,
+      51
+    ]
+  },
+  "study": "RECEIVER_RECOVERY_R0R1_FITS_V1",
+  "words_file": "artifacts/receiver_recovery/words_221.json"
+}

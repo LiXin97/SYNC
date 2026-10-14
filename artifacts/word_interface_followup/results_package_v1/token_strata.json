@@ -1,0 +1,95 @@
+{
+ "development": {
+  "file": "artifacts/word_interface_followup/p0a_dev_token_strata.json",
+  "sha256": "90113b8d58ca7579bed344dd0b5bd56c3613d68e2e6f3acf3595e2fbc93910df",
+  "counts": {
+   "gemma-3-27b-it": {
+    "actual": [
+     92,
+     92
+    ],
+    "literal": [
+     92,
+     92
+    ]
+   },
+   "glm-4-9b": {
+    "actual": [
+     92,
+     92
+    ],
+    "literal": [
+     92,
+     92
+    ]
+   },
+   "qwen3-14b-base": {
+    "actual": [
+     92,
+     92
+    ],
+    "literal": [
+     92,
+     92
+    ]
+   },
+   "qwen3-32b": {
+    "actual": [
+     92,
+     92
+    ],
+    "literal": [
+     92,
+     92
+    ]
+   }
+  }
+ },
+ "confirmation": {
+  "path": "artifacts/word_interface_followup/p0a_confirm_token_strata.json",
+  "sha256": "ccec4c993c3fe4942d9c69df774f094789d989741b87c2eb6f18f592752efea6",
+  "counts": {
+   "gemma-3-27b-it": {
+    "actual": [
+     576,
+     576
+    ],
+    "literal": [
+     576,
+     576
+    ]
+   },
+   "glm-4-9b": {
+    "actual": [
+     576,
+     576
+    ],
+    "literal": [
+     576,
+     576
+    ]
+   },
+   "qwen3-14b-base": {
+    "actual": [
+     576,
+     576
+    ],
+    "literal": [
+     576,
+     576
+    ]
+   },
+   "qwen3-32b": {
+    "actual": [
+     576,
+     576
+    ],
+    "literal": [
+     576,
+     576
+    ]
+   }
+  },
+  "meaning": "where every active word is one token in its field context, emb1@1 is exactly the packet-text route (an identity, not an independent baseline); multi-token words make emb1 a mean-pooling adaptation that must not be read as a complete word; results are reported by stratum"
+ }
+}

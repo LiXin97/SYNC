@@ -1,0 +1,12 @@
+{
+  "elapsed_seconds": 809.3831973075867,
+  "manifest_sha256": "b2c08a9d6604f267dad7b78a115c217d84c48a5e5b511a12fdbe8dc3162f8305",
+  "phase": "development",
+  "raw_sha256": "e5b36bcc79113757a07d93f8ef4a92f72472f49cfbb2412c10a0485e0b38f6b9",
+  "receiver": "glm-4-9b",
+  "rows": 4416,
+  "scenes": 46,
+  "shard": 1,
+  "shards": 2,
+  "status": "PASS"
+}

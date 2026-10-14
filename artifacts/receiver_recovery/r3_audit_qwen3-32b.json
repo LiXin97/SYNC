@@ -1,0 +1,4985 @@
+{
+  "status": "PASS_INDEPENDENT_R3_AUDIT",
+  "utc": "2026-09-22T23:54:01.771837+00:00",
+  "script_sha256": "ddcd7f591d03eba65d5047018ac053038d9b6c4359d2c678dd4d48e5dbdcfca3",
+  "stage": "r3",
+  "holm_family": {},
+  "verdicts": {
+    "qwen3-32b": {
+      "in_holm_family": false,
+      "J": 0.9704861111111112,
+      "coverage": 0.9956597222222222,
+      "useful_additional_receiver": true,
+      "substantial_recovery": false,
+      "sham_contrast": {
+        "mean": 0.9588348765432099,
+        "lo": 0.9212191358024692,
+        "hi": 0.984375,
+        "clusters": 36,
+        "p_two_sided": 1.6666666666666667e-05
+      },
+      "original_contrast": {
+        "mean": 0.026273148148148146,
+        "lo": 0.012152777777777778,
+        "hi": 0.04178240740740741,
+        "clusters": 36,
+        "p_two_sided": 0.00013333333333333334
+      },
+      "holm": {
+        "selected_minus_original": null,
+        "selected_minus_mean_reassignment": null
+      },
+      "note": "anchor receiver: reported, not in the multiplicity family"
+    }
+  },
+  "receivers": {
+    "qwen3-32b": {
+      "root": "artifacts/receiver_recovery/r3/qwen3-32b",
+      "receiver": "qwen3-32b",
+      "manifest_sha256": "976311f110bb917b741487a78590a125ecb155856c5c10120d4579ad99f5dd60",
+      "receipts": 4,
+      "original_layers": [
+        26,
+        32,
+        38
+      ],
+      "selected_layers": [
+        13
+      ],
+      "gamma": 1,
+      "bank": "artifacts/receiver_recovery/r3_bank/bank.json",
+      "bank_size": 576,
+      "phases": {
+        "engineering": {
+          "scenes": 4,
+          "rows": 224,
+          "conditions": [
+            {
+              "source": "actual",
+              "arm": "identity_write",
+              "budget": 64,
+              "accuracy": {
+                "family": {
+                  "mean": 0.3125,
+                  "lo": 0.0625,
+                  "hi": 0.625,
+                  "clusters": 4
+                },
+                "template": {
+                  "mean": 0.3125,
+                  "lo": 0.0625,
+                  "hi": 0.625,
+                  "clusters": 4
+                }
+              },
+              "all_four": {
+                "family": {
+                  "mean": 0.0,
+                  "lo": 0.0,
+                  "hi": 0.0,
+                  "clusters": 4
+                },
+                "template": {
+                  "mean": 0.0,
+                  "lo": 0.0,
+                  "hi": 0.0,
+                  "clusters": 4
+                }
+              },
+              "coverage": {
+                "family": {
+                  "mean": 0.875,
+                  "lo": 0.625,
+                  "hi": 1.0,
+                  "clusters": 4
+                },
+                "template": {
+                  "mean": 0.875,
+                  "lo": 0.625,
+                  "hi": 1.0,
+                  "clusters": 4
+                }
+              },
+              "relevant_both": {
+                "family": {
+                  "mean": 0.0,
+                  "lo": 0.0,
+                  "hi": 0.0,
+                  "clusters": 4
+                },
+                "template": {
+                  "mean": 0.0,
+                  "lo": 0.0,
+                  "hi": 0.0,
+                  "clusters": 4
+                }
+              },
+              "unrelated_both": {
+                "family": {
+                  "mean": 0.25,
+                  "lo": 0.0,
+                  "hi": 0.75,
+                  "clusters": 4
+                },
+                "template": {
+                  "mean": 0.25,
+                  "lo": 0.0,
+                  "hi": 0.75,
+                  "clusters": 4
+                }
+              }
+            },
+            {
+              "source": "actual",
+              "arm": "identity_write",
+              "budget": 256,
+              "accuracy": {
+                "family": {
+                  "mean": 0.3125,
+                  "lo": 0.0625,
+                  "hi": 0.625,
+                  "clusters": 4
+                },
+                "template": {
+                  "mean": 0.3125,
+                  "lo": 0.0625,
+                  "hi": 0.625,
+                  "clusters": 4
+                }
+              },
+              "all_four": {
+                "family": {
+                  "mean": 0.0,
+                  "lo": 0.0,
+                  "hi": 0.0,
+                  "clusters": 4
+                },
+                "template": {
+                  "mean": 0.0,
+                  "lo": 0.0,
+                  "hi": 0.0,
+                  "clusters": 4
+                }
+              },
+              "coverage": {
+                "family": {
+                  "mean": 0.875,
+                  "lo": 0.625,
+                  "hi": 1.0,
+                  "clusters": 4
+                },
+                "template": {
+                  "mean": 0.875,
+                  "lo": 0.625,
+                  "hi": 1.0,
+                  "clusters": 4
+                }
+              },
+              "relevant_both": {
+                "family": {
+                  "mean": 0.0,
+                  "lo": 0.0,
+                  "hi": 0.0,
+                  "clusters": 4
+                },
+                "template": {
+                  "mean": 0.0,
+                  "lo": 0.0,
+                  "hi": 0.0,
+                  "clusters": 4
+                }
+              },
+              "unrelated_both": {
+                "family": {
+                  "mean": 0.25,
+                  "lo": 0.0,
+                  "hi": 0.75,
+                  "clusters": 4
+                },
+                "template": {
+                  "mean": 0.25,
+                  "lo": 0.0,
+                  "hi": 0.75,
+                  "clusters": 4
+                }
+              }
+            },
+            {
+              "source": "actual",
+              "arm": "none",
+              "budget": 64,
+              "accuracy": {
+                "family": {
+                  "mean": 0.3125,
+                  "lo": 0.0625,
+                  "hi": 0.625,
+                  "clusters": 4
+                },
+                "template": {
+                  "mean": 0.3125,
+                  "lo": 0.0625,
+                  "hi": 0.625,
+                  "clusters": 4
+                }
+              },
+              "all_four": {
+                "family": {
+                  "mean": 0.0,
+                  "lo": 0.0,
+                  "hi": 0.0,
+                  "clusters": 4
+                },
+                "template": {
+                  "mean": 0.0,
+                  "lo": 0.0,
+                  "hi": 0.0,
+                  "clusters": 4
+                }
+              },
+              "coverage": {
+                "family": {
+                  "mean": 0.875,
+                  "lo": 0.625,
+                  "hi": 1.0,
+                  "clusters": 4
+                },
+                "template": {
+                  "mean": 0.875,
+                  "lo": 0.625,
+                  "hi": 1.0,
+                  "clusters": 4
+                }
+              },
+              "relevant_both": {
+                "family": {
+                  "mean": 0.0,
+                  "lo": 0.0,
+                  "hi": 0.0,
+                  "clusters": 4
+                },
+                "template": {
+                  "mean": 0.0,
+                  "lo": 0.0,
+                  "hi": 0.0,
+                  "clusters": 4
+                }
+              },
+              "unrelated_both": {
+                "family": {
+                  "mean": 0.25,
+                  "lo": 0.0,
+                  "hi": 0.75,
+                  "clusters": 4
+                },
+                "template": {
+                  "mean": 0.25,
+                  "lo": 0.0,
+                  "hi": 0.75,
+                  "clusters": 4
+                }
+              }
+            },
+            {
+              "source": "actual",
+              "arm": "none",
+              "budget": 256,
+              "accuracy": {
+                "family": {
+                  "mean": 0.3125,
+                  "lo": 0.0625,
+                  "hi": 0.625,
+                  "clusters": 4
+                },
+                "template": {
+                  "mean": 0.3125,
+                  "lo": 0.0625,
+                  "hi": 0.625,
+                  "clusters": 4
+                }
+              },
+              "all_four": {
+                "family": {
+                  "mean": 0.0,
+                  "lo": 0.0,
+                  "hi": 0.0,
+                  "clusters": 4
+                },
+                "template": {
+                  "mean": 0.0,
+                  "lo": 0.0,
+                  "hi": 0.0,
+                  "clusters": 4
+                }
+              },
+              "coverage": {
+                "family": {
+                  "mean": 0.875,
+                  "lo": 0.625,
+                  "hi": 1.0,
+                  "clusters": 4
+                },
+                "template": {
+                  "mean": 0.875,
+                  "lo": 0.625,
+                  "hi": 1.0,
+                  "clusters": 4
+                }
+              },
+              "relevant_both": {
+                "family": {
+                  "mean": 0.0,
+                  "lo": 0.0,
+                  "hi": 0.0,
+                  "clusters": 4
+                },
+                "template": {
+                  "mean": 0.0,
+                  "lo": 0.0,
+                  "hi": 0.0,
+                  "clusters": 4
+                }
+              },
+              "unrelated_both": {
+                "family": {
+                  "mean": 0.25,
+                  "lo": 0.0,
+                  "hi": 0.75,
+                  "clusters": 4
+                },
+                "template": {
+                  "mean": 0.25,
+                  "lo": 0.0,
+                  "hi": 0.75,
+                  "clusters": 4
+                }
+              }
+            },
+            {
+              "source": "actual",
+              "arm": "original",
+              "budget": 64,
+              "accuracy": {
+                "family": {
+                  "mean": 1.0,
+                  "lo": 1.0,
+                  "hi": 1.0,
+                  "clusters": 4
+                },
+                "template": {
+                  "mean": 1.0,
+                  "lo": 1.0,
+                  "hi": 1.0,
+                  "clusters": 4
+                }
+              },
+              "all_four": {
+                "family": {
+                  "mean": 1.0,
+                  "lo": 1.0,
+                  "hi": 1.0,
+                  "clusters": 4
+                },
+                "template": {
+                  "mean": 1.0,
+                  "lo": 1.0,
+                  "hi": 1.0,
+                  "clusters": 4
+                }
+              },
+              "coverage": {
+                "family": {
+                  "mean": 1.0,
+                  "lo": 1.0,
+                  "hi": 1.0,
+                  "clusters": 4
+                },
+                "template": {
+                  "mean": 1.0,
+                  "lo": 1.0,
+                  "hi": 1.0,
+                  "clusters": 4
+                }
+              },
+              "relevant_both": {
+                "family": {
+                  "mean": 1.0,
+                  "lo": 1.0,
+                  "hi": 1.0,
+                  "clusters": 4
+                },
+                "template": {
+                  "mean": 1.0,
+                  "lo": 1.0,
+                  "hi": 1.0,
+                  "clusters": 4
+                }
+              },
+              "unrelated_both": {
+                "family": {
+                  "mean": 1.0,
+                  "lo": 1.0,
+                  "hi": 1.0,
+                  "clusters": 4
+                },
+                "template": {
+                  "mean": 1.0,
+                  "lo": 1.0,
+                  "hi": 1.0,
+                  "clusters": 4
+                }
+              }
+            },
+            {
+              "source": "actual",
+              "arm": "original",
+              "budget": 256,
+              "accuracy": {
+                "family": {
+                  "mean": 1.0,
+                  "lo": 1.0,
+                  "hi": 1.0,
+                  "clusters": 4
+                },
+                "template": {
+                  "mean": 1.0,
+                  "lo": 1.0,
+                  "hi": 1.0,
+                  "clusters": 4
+                }
+              },
+              "all_four": {
+                "family": {
+                  "mean": 1.0,
+                  "lo": 1.0,
+                  "hi": 1.0,
+                  "clusters": 4
+                },
+                "template": {
+                  "mean": 1.0,
+                  "lo": 1.0,
+                  "hi": 1.0,
+                  "clusters": 4
+                }
+              },
+              "coverage": {
+                "family": {
+                  "mean": 1.0,
+                  "lo": 1.0,
+                  "hi": 1.0,
+                  "clusters": 4
+                },
+                "template": {
+                  "mean": 1.0,
+                  "lo": 1.0,
+                  "hi": 1.0,
+                  "clusters": 4
+                }
+              },
+              "relevant_both": {
+                "family": {
+                  "mean": 1.0,
+                  "lo": 1.0,
+                  "hi": 1.0,
+                  "clusters": 4
+                },
+                "template": {
+                  "mean": 1.0,
+                  "lo": 1.0,
+                  "hi": 1.0,
+                  "clusters": 4
+                }
+              },
+              "unrelated_both": {
+                "family": {
+                  "mean": 1.0,
+                  "lo": 1.0,
+                  "hi": 1.0,
+                  "clusters": 4
+                },
+                "template": {
+                  "mean": 1.0,
+                  "lo": 1.0,
+                  "hi": 1.0,
+                  "clusters": 4
+                }
+              }
+            },
+            {
+              "source": "actual",
+              "arm": "other_world",
+              "budget": 64,
+              "accuracy": {
+                "family": {
+                  "mean": 0.5,
+                  "lo": 0.5,
+                  "hi": 0.5,
+                  "clusters": 4
+                },
+                "template": {
+                  "mean": 0.5,
+                  "lo": 0.5,
+                  "hi": 0.5,
+                  "clusters": 4
+                }
+              },
+              "all_four": {
+                "family": {
+                  "mean": 0.0,
+                  "lo": 0.0,
+                  "hi": 0.0,
+                  "clusters": 4
+                },
+                "template": {
+                  "mean": 0.0,
+                  "lo": 0.0,
+                  "hi": 0.0,
+                  "clusters": 4
+                }
+              },
+              "coverage": {
+                "family": {
+                  "mean": 1.0,
+                  "lo": 1.0,
+                  "hi": 1.0,
+                  "clusters": 4
+                },
+                "template": {
+                  "mean": 1.0,
+                  "lo": 1.0,
+                  "hi": 1.0,
+                  "clusters": 4
+                }
+              },
+              "relevant_both": {
+                "family": {
+                  "mean": 0.0,
+                  "lo": 0.0,
+                  "hi": 0.0,
+                  "clusters": 4
+                },
+                "template": {
+                  "mean": 0.0,
+                  "lo": 0.0,
+                  "hi": 0.0,
+                  "clusters": 4
+                }
+              },
+              "unrelated_both": {
+                "family": {
+                  "mean": 1.0,
+                  "lo": 1.0,
+                  "hi": 1.0,
+                  "clusters": 4
+                },
+                "template": {
+                  "mean": 1.0,
+                  "lo": 1.0,
+                  "hi": 1.0,
+                  "clusters": 4
+                }
+              },
+              "supplied_all_four": {
+                "family": {
+                  "mean": 1.0,
+                  "lo": 1.0,
+                  "hi": 1.0,
+                  "clusters": 4
+                },
+                "template": {
+                  "mean": 1.0,
+                  "lo": 1.0,
+                  "hi": 1.0,
+                  "clusters": 4
+                }
+              },
+              "supplied_accuracy": {
+                "family": {
+                  "mean": 1.0,
+                  "lo": 1.0,
+                  "hi": 1.0,
+                  "clusters": 4
+                },
+                "template": {
+                  "mean": 1.0,
+                  "lo": 1.0,
+                  "hi": 1.0,
+                  "clusters": 4
+                }
+              },
+              "changed_q_supplied_both": {
+                "family": {
+                  "mean": 1.0,
+                  "lo": 1.0,
+                  "hi": 1.0,
+                  "clusters": 4
+                },
+                "template": {
+                  "mean": 1.0,
+                  "lo": 1.0,
+                  "hi": 1.0,
+                  "clusters": 4
+                }
+              }
+            },
+            {
+              "source": "actual",
+              "arm": "other_world",
+              "budget": 256,
+              "accuracy": {
+                "family": {
+                  "mean": 0.5,
+                  "lo": 0.5,
+                  "hi": 0.5,
+                  "clusters": 4
+                },
+                "template": {
+                  "mean": 0.5,
+                  "lo": 0.5,
+                  "hi": 0.5,
+                  "clusters": 4
+                }
+              },
+              "all_four": {
+                "family": {
+                  "mean": 0.0,
+                  "lo": 0.0,
+                  "hi": 0.0,
+                  "clusters": 4
+                },
+                "template": {
+                  "mean": 0.0,
+                  "lo": 0.0,
+                  "hi": 0.0,
+                  "clusters": 4
+                }
+              },
+              "coverage": {
+                "family": {
+                  "mean": 1.0,
+                  "lo": 1.0,
+                  "hi": 1.0,
+                  "clusters": 4
+                },
+                "template": {
+                  "mean": 1.0,
+                  "lo": 1.0,
+                  "hi": 1.0,
+                  "clusters": 4
+                }
+              },
+              "relevant_both": {
+                "family": {
+                  "mean": 0.0,
+                  "lo": 0.0,
+                  "hi": 0.0,
+                  "clusters": 4
+                },
+                "template": {
+                  "mean": 0.0,
+                  "lo": 0.0,
+                  "hi": 0.0,
+                  "clusters": 4
+                }
+              },
+              "unrelated_both": {
+                "family": {
+                  "mean": 1.0,
+                  "lo": 1.0,
+                  "hi": 1.0,
+                  "clusters": 4
+                },
+                "template": {
+                  "mean": 1.0,
+                  "lo": 1.0,
+                  "hi": 1.0,
+                  "clusters": 4
+                }
+              },
+              "supplied_all_four": {
+                "family": {
+                  "mean": 1.0,
+                  "lo": 1.0,
+                  "hi": 1.0,
+                  "clusters": 4
+                },
+                "template": {
+                  "mean": 1.0,
+                  "lo": 1.0,
+                  "hi": 1.0,
+                  "clusters": 4
+                }
+              },
+              "supplied_accuracy": {
+                "family": {
+                  "mean": 1.0,
+                  "lo": 1.0,
+                  "hi": 1.0,
+                  "clusters": 4
+                },
+                "template": {
+                  "mean": 1.0,
+                  "lo": 1.0,
+                  "hi": 1.0,
+                  "clusters": 4
+                }
+              },
+              "changed_q_supplied_both": {
+                "family": {
+                  "mean": 1.0,
+                  "lo": 1.0,
+                  "hi": 1.0,
+                  "clusters": 4
+                },
+                "template": {
+                  "mean": 1.0,
+                  "lo": 1.0,
+                  "hi": 1.0,
+                  "clusters": 4
+                }
+              }
+            },
+            {
+              "source": "actual",
+              "arm": "packet_text",
+              "budget": 64,
+              "accuracy": {
+                "family": {
+                  "mean": 1.0,
+                  "lo": 1.0,
+                  "hi": 1.0,
+                  "clusters": 4
+                },
+                "template": {
+                  "mean": 1.0,
+                  "lo": 1.0,
+                  "hi": 1.0,
+                  "clusters": 4
+                }
+              },
+              "all_four": {
+                "family": {
+                  "mean": 1.0,
+                  "lo": 1.0,
+                  "hi": 1.0,
+                  "clusters": 4
+                },
+                "template": {
+                  "mean": 1.0,
+                  "lo": 1.0,
+                  "hi": 1.0,
+                  "clusters": 4
+                }
+              },
+              "coverage": {
+                "family": {
+                  "mean": 1.0,
+                  "lo": 1.0,
+                  "hi": 1.0,
+                  "clusters": 4
+                },
+                "template": {
+                  "mean": 1.0,
+                  "lo": 1.0,
+                  "hi": 1.0,
+                  "clusters": 4
+                }
+              },
+              "relevant_both": {
+                "family": {
+                  "mean": 1.0,
+                  "lo": 1.0,
+                  "hi": 1.0,
+                  "clusters": 4
+                },
+                "template": {
+                  "mean": 1.0,
+                  "lo": 1.0,
+                  "hi": 1.0,
+                  "clusters": 4
+                }
+              },
+              "unrelated_both": {
+                "family": {
+                  "mean": 1.0,
+                  "lo": 1.0,
+                  "hi": 1.0,
+                  "clusters": 4
+                },
+                "template": {
+                  "mean": 1.0,
+                  "lo": 1.0,
+                  "hi": 1.0,
+                  "clusters": 4
+                }
+              }
+            },
+            {
+              "source": "actual",
+              "arm": "packet_text",
+              "budget": 256,
+              "accuracy": {
+                "family": {
+                  "mean": 1.0,
+                  "lo": 1.0,
+                  "hi": 1.0,
+                  "clusters": 4
+                },
+                "template": {
+                  "mean": 1.0,
+                  "lo": 1.0,
+                  "hi": 1.0,
+                  "clusters": 4
+                }
+              },
+              "all_four": {
+                "family": {
+                  "mean": 1.0,
+                  "lo": 1.0,
+                  "hi": 1.0,
+                  "clusters": 4
+                },
+                "template": {
+                  "mean": 1.0,
+                  "lo": 1.0,
+                  "hi": 1.0,
+                  "clusters": 4
+                }
+              },
+              "coverage": {
+                "family": {
+                  "mean": 1.0,
+                  "lo": 1.0,
+                  "hi": 1.0,
+                  "clusters": 4
+                },
+                "template": {
+                  "mean": 1.0,
+                  "lo": 1.0,
+                  "hi": 1.0,
+                  "clusters": 4
+                }
+              },
+              "relevant_both": {
+                "family": {
+                  "mean": 1.0,
+                  "lo": 1.0,
+                  "hi": 1.0,
+                  "clusters": 4
+                },
+                "template": {
+                  "mean": 1.0,
+                  "lo": 1.0,
+                  "hi": 1.0,
+                  "clusters": 4
+                }
+              },
+              "unrelated_both": {
+                "family": {
+                  "mean": 1.0,
+                  "lo": 1.0,
+                  "hi": 1.0,
+                  "clusters": 4
+                },
+                "template": {
+                  "mean": 1.0,
+                  "lo": 1.0,
+                  "hi": 1.0,
+                  "clusters": 4
+                }
+              }
+            },
+            {
+              "source": "actual",
+              "arm": "selected",
+              "budget": 64,
+              "accuracy": {
+                "family": {
+                  "mean": 1.0,
+                  "lo": 1.0,
+                  "hi": 1.0,
+                  "clusters": 4
+                },
+                "template": {
+                  "mean": 1.0,
+                  "lo": 1.0,
+                  "hi": 1.0,
+                  "clusters": 4
+                }
+              },
+              "all_four": {
+                "family": {
+                  "mean": 1.0,
+                  "lo": 1.0,
+                  "hi": 1.0,
+                  "clusters": 4
+                },
+                "template": {
+                  "mean": 1.0,
+                  "lo": 1.0,
+                  "hi": 1.0,
+                  "clusters": 4
+                }
+              },
+              "coverage": {
+                "family": {
+                  "mean": 1.0,
+                  "lo": 1.0,
+                  "hi": 1.0,
+                  "clusters": 4
+                },
+                "template": {
+                  "mean": 1.0,
+                  "lo": 1.0,
+                  "hi": 1.0,
+                  "clusters": 4
+                }
+              },
+              "relevant_both": {
+                "family": {
+                  "mean": 1.0,
+                  "lo": 1.0,
+                  "hi": 1.0,
+                  "clusters": 4
+                },
+                "template": {
+                  "mean": 1.0,
+                  "lo": 1.0,
+                  "hi": 1.0,
+                  "clusters": 4
+                }
+              },
+              "unrelated_both": {
+                "family": {
+                  "mean": 1.0,
+                  "lo": 1.0,
+                  "hi": 1.0,
+                  "clusters": 4
+                },
+                "template": {
+                  "mean": 1.0,
+                  "lo": 1.0,
+                  "hi": 1.0,
+                  "clusters": 4
+                }
+              }
+            },
+            {
+              "source": "actual",
+              "arm": "selected",
+              "budget": 256,
+              "accuracy": {
+                "family": {
+                  "mean": 1.0,
+                  "lo": 1.0,
+                  "hi": 1.0,
+                  "clusters": 4
+                },
+                "template": {
+                  "mean": 1.0,
+                  "lo": 1.0,
+                  "hi": 1.0,
+                  "clusters": 4
+                }
+              },
+              "all_four": {
+                "family": {
+                  "mean": 1.0,
+                  "lo": 1.0,
+                  "hi": 1.0,
+                  "clusters": 4
+                },
+                "template": {
+                  "mean": 1.0,
+                  "lo": 1.0,
+                  "hi": 1.0,
+                  "clusters": 4
+                }
+              },
+              "coverage": {
+                "family": {
+                  "mean": 1.0,
+                  "lo": 1.0,
+                  "hi": 1.0,
+                  "clusters": 4
+                },
+                "template": {
+                  "mean": 1.0,
+                  "lo": 1.0,
+                  "hi": 1.0,
+                  "clusters": 4
+                }
+              },
+              "relevant_both": {
+                "family": {
+                  "mean": 1.0,
+                  "lo": 1.0,
+                  "hi": 1.0,
+                  "clusters": 4
+                },
+                "template": {
+                  "mean": 1.0,
+                  "lo": 1.0,
+                  "hi": 1.0,
+                  "clusters": 4
+                }
+              },
+              "unrelated_both": {
+                "family": {
+                  "mean": 1.0,
+                  "lo": 1.0,
+                  "hi": 1.0,
+                  "clusters": 4
+                },
+                "template": {
+                  "mean": 1.0,
+                  "lo": 1.0,
+                  "hi": 1.0,
+                  "clusters": 4
+                }
+              }
+            },
+            {
+              "source": "actual",
+              "arm": "sham0",
+              "budget": 64,
+              "accuracy": {
+                "family": {
+                  "mean": 0.125,
+                  "lo": 0.0,
+                  "hi": 0.25,
+                  "clusters": 4
+                },
+                "template": {
+                  "mean": 0.125,
+                  "lo": 0.0,
+                  "hi": 0.25,
+                  "clusters": 4
+                }
+              },
+              "all_four": {
+                "family": {
+                  "mean": 0.0,
+                  "lo": 0.0,
+                  "hi": 0.0,
+                  "clusters": 4
+                },
+                "template": {
+                  "mean": 0.0,
+                  "lo": 0.0,
+                  "hi": 0.0,
+                  "clusters": 4
+                }
+              },
+              "coverage": {
+                "family": {
+                  "mean": 0.5,
+                  "lo": 0.1875,
+                  "hi": 0.75,
+                  "clusters": 4
+                },
+                "template": {
+                  "mean": 0.5,
+                  "lo": 0.1875,
+                  "hi": 0.75,
+                  "clusters": 4
+                }
+              },
+              "relevant_both": {
+                "family": {
+                  "mean": 0.0,
+                  "lo": 0.0,
+                  "hi": 0.0,
+                  "clusters": 4
+                },
+                "template": {
+                  "mean": 0.0,
+                  "lo": 0.0,
+                  "hi": 0.0,
+                  "clusters": 4
+                }
+              },
+              "unrelated_both": {
+                "family": {
+                  "mean": 0.0,
+                  "lo": 0.0,
+                  "hi": 0.0,
+                  "clusters": 4
+                },
+                "template": {
+                  "mean": 0.0,
+                  "lo": 0.0,
+                  "hi": 0.0,
+                  "clusters": 4
+                }
+              }
+            },
+            {
+              "source": "actual",
+              "arm": "sham0",
+              "budget": 256,
+              "accuracy": {
+                "family": {
+                  "mean": 0.125,
+                  "lo": 0.0,
+                  "hi": 0.25,
+                  "clusters": 4
+                },
+                "template": {
+                  "mean": 0.125,
+                  "lo": 0.0,
+                  "hi": 0.25,
+                  "clusters": 4
+                }
+              },
+              "all_four": {
+                "family": {
+                  "mean": 0.0,
+                  "lo": 0.0,
+                  "hi": 0.0,
+                  "clusters": 4
+                },
+                "template": {
+                  "mean": 0.0,
+                  "lo": 0.0,
+                  "hi": 0.0,
+                  "clusters": 4
+                }
+              },
+              "coverage": {
+                "family": {
+                  "mean": 0.5,
+                  "lo": 0.1875,
+                  "hi": 0.75,
+                  "clusters": 4
+                },
+                "template": {
+                  "mean": 0.5,
+                  "lo": 0.1875,
+                  "hi": 0.75,
+                  "clusters": 4
+                }
+              },
+              "relevant_both": {
+                "family": {
+                  "mean": 0.0,
+                  "lo": 0.0,
+                  "hi": 0.0,
+                  "clusters": 4
+                },
+                "template": {
+                  "mean": 0.0,
+                  "lo": 0.0,
+                  "hi": 0.0,
+                  "clusters": 4
+                }
+              },
+              "unrelated_both": {
+                "family": {
+                  "mean": 0.0,
+                  "lo": 0.0,
+                  "hi": 0.0,
+                  "clusters": 4
+                },
+                "template": {
+                  "mean": 0.0,
+                  "lo": 0.0,
+                  "hi": 0.0,
+                  "clusters": 4
+                }
+              }
+            },
+            {
+              "source": "actual",
+              "arm": "sham1",
+              "budget": 64,
+              "accuracy": {
+                "family": {
+                  "mean": 0.3125,
+                  "lo": 0.0625,
+                  "hi": 0.625,
+                  "clusters": 4
+                },
+                "template": {
+                  "mean": 0.3125,
+                  "lo": 0.0625,
+                  "hi": 0.625,
+                  "clusters": 4
+                }
+              },
+              "all_four": {
+                "family": {
+                  "mean": 0.0,
+                  "lo": 0.0,
+                  "hi": 0.0,
+                  "clusters": 4
+                },
+                "template": {
+                  "mean": 0.0,
+                  "lo": 0.0,
+                  "hi": 0.0,
+                  "clusters": 4
+                }
+              },
+              "coverage": {
+                "family": {
+                  "mean": 0.5625,
+                  "lo": 0.125,
+                  "hi": 1.0,
+                  "clusters": 4
+                },
+                "template": {
+                  "mean": 0.5625,
+                  "lo": 0.125,
+                  "hi": 1.0,
+                  "clusters": 4
+                }
+              },
+              "relevant_both": {
+                "family": {
+                  "mean": 0.0,
+                  "lo": 0.0,
+                  "hi": 0.0,
+                  "clusters": 4
+                },
+                "template": {
+                  "mean": 0.0,
+                  "lo": 0.0,
+                  "hi": 0.0,
+                  "clusters": 4
+                }
+              },
+              "unrelated_both": {
+                "family": {
+                  "mean": 0.25,
+                  "lo": 0.0,
+                  "hi": 0.75,
+                  "clusters": 4
+                },
+                "template": {
+                  "mean": 0.25,
+                  "lo": 0.0,
+                  "hi": 0.75,
+                  "clusters": 4
+                }
+              }
+            },
+            {
+              "source": "actual",
+              "arm": "sham1",
+              "budget": 256,
+              "accuracy": {
+                "family": {
+                  "mean": 0.3125,
+                  "lo": 0.0625,
+                  "hi": 0.625,
+                  "clusters": 4
+                },
+                "template": {
+                  "mean": 0.3125,
+                  "lo": 0.0625,
+                  "hi": 0.625,
+                  "clusters": 4
+                }
+              },
+              "all_four": {
+                "family": {
+                  "mean": 0.0,
+                  "lo": 0.0,
+                  "hi": 0.0,
+                  "clusters": 4
+                },
+                "template": {
+                  "mean": 0.0,
+                  "lo": 0.0,
+                  "hi": 0.0,
+                  "clusters": 4
+                }
+              },
+              "coverage": {
+                "family": {
+                  "mean": 0.5625,
+                  "lo": 0.125,
+                  "hi": 1.0,
+                  "clusters": 4
+                },
+                "template": {
+                  "mean": 0.5625,
+                  "lo": 0.125,
+                  "hi": 1.0,
+                  "clusters": 4
+                }
+              },
+              "relevant_both": {
+                "family": {
+                  "mean": 0.0,
+                  "lo": 0.0,
+                  "hi": 0.0,
+                  "clusters": 4
+                },
+                "template": {
+                  "mean": 0.0,
+                  "lo": 0.0,
+                  "hi": 0.0,
+                  "clusters": 4
+                }
+              },
+              "unrelated_both": {
+                "family": {
+                  "mean": 0.25,
+                  "lo": 0.0,
+                  "hi": 0.75,
+                  "clusters": 4
+                },
+                "template": {
+                  "mean": 0.25,
+                  "lo": 0.0,
+                  "hi": 0.75,
+                  "clusters": 4
+                }
+              }
+            },
+            {
+              "source": "actual",
+              "arm": "sham2",
+              "budget": 64,
+              "accuracy": {
+                "family": {
+                  "mean": 0.3125,
+                  "lo": 0.0625,
+                  "hi": 0.625,
+                  "clusters": 4
+                },
+                "template": {
+                  "mean": 0.3125,
+                  "lo": 0.0625,
+                  "hi": 0.625,
+                  "clusters": 4
+                }
+              },
+              "all_four": {
+                "family": {
+                  "mean": 0.0,
+                  "lo": 0.0,
+                  "hi": 0.0,
+                  "clusters": 4
+                },
+                "template": {
+                  "mean": 0.0,
+                  "lo": 0.0,
+                  "hi": 0.0,
+                  "clusters": 4
+                }
+              },
+              "coverage": {
+                "family": {
+                  "mean": 0.625,
+                  "lo": 0.375,
+                  "hi": 0.875,
+                  "clusters": 4
+                },
+                "template": {
+                  "mean": 0.625,
+                  "lo": 0.375,
+                  "hi": 0.875,
+                  "clusters": 4
+                }
+              },
+              "relevant_both": {
+                "family": {
+                  "mean": 0.0,
+                  "lo": 0.0,
+                  "hi": 0.0,
+                  "clusters": 4
+                },
+                "template": {
+                  "mean": 0.0,
+                  "lo": 0.0,
+                  "hi": 0.0,
+                  "clusters": 4
+                }
+              },
+              "unrelated_both": {
+                "family": {
+                  "mean": 0.25,
+                  "lo": 0.0,
+                  "hi": 0.75,
+                  "clusters": 4
+                },
+                "template": {
+                  "mean": 0.25,
+                  "lo": 0.0,
+                  "hi": 0.75,
+                  "clusters": 4
+                }
+              }
+            },
+            {
+              "source": "actual",
+              "arm": "sham2",
+              "budget": 256,
+              "accuracy": {
+                "family": {
+                  "mean": 0.3125,
+                  "lo": 0.0625,
+                  "hi": 0.625,
+                  "clusters": 4
+                },
+                "template": {
+                  "mean": 0.3125,
+                  "lo": 0.0625,
+                  "hi": 0.625,
+                  "clusters": 4
+                }
+              },
+              "all_four": {
+                "family": {
+                  "mean": 0.0,
+                  "lo": 0.0,
+                  "hi": 0.0,
+                  "clusters": 4
+                },
+                "template": {
+                  "mean": 0.0,
+                  "lo": 0.0,
+                  "hi": 0.0,
+                  "clusters": 4
+                }
+              },
+              "coverage": {
+                "family": {
+                  "mean": 0.625,
+                  "lo": 0.375,
+                  "hi": 0.875,
+                  "clusters": 4
+                },
+                "template": {
+                  "mean": 0.625,
+                  "lo": 0.375,
+                  "hi": 0.875,
+                  "clusters": 4
+                }
+              },
+              "relevant_both": {
+                "family": {
+                  "mean": 0.0,
+                  "lo": 0.0,
+                  "hi": 0.0,
+                  "clusters": 4
+                },
+                "template": {
+                  "mean": 0.0,
+                  "lo": 0.0,
+                  "hi": 0.0,
+                  "clusters": 4
+                }
+              },
+              "unrelated_both": {
+                "family": {
+                  "mean": 0.25,
+                  "lo": 0.0,
+                  "hi": 0.75,
+                  "clusters": 4
+                },
+                "template": {
+                  "mean": 0.25,
+                  "lo": 0.0,
+                  "hi": 0.75,
+                  "clusters": 4
+                }
+              }
+            },
+            {
+              "source": "literal",
+              "arm": "full_text",
+              "budget": 64,
+              "accuracy": {
+                "family": {
+                  "mean": 1.0,
+                  "lo": 1.0,
+                  "hi": 1.0,
+                  "clusters": 4
+                },
+                "template": {
+                  "mean": 1.0,
+                  "lo": 1.0,
+                  "hi": 1.0,
+                  "clusters": 4
+                }
+              },
+              "all_four": {
+                "family": {
+                  "mean": 1.0,
+                  "lo": 1.0,
+                  "hi": 1.0,
+                  "clusters": 4
+                },
+                "template": {
+                  "mean": 1.0,
+                  "lo": 1.0,
+                  "hi": 1.0,
+                  "clusters": 4
+                }
+              },
+              "coverage": {
+                "family": {
+                  "mean": 1.0,
+                  "lo": 1.0,
+                  "hi": 1.0,
+                  "clusters": 4
+                },
+                "template": {
+                  "mean": 1.0,
+                  "lo": 1.0,
+                  "hi": 1.0,
+                  "clusters": 4
+                }
+              },
+              "relevant_both": {
+                "family": {
+                  "mean": 1.0,
+                  "lo": 1.0,
+                  "hi": 1.0,
+                  "clusters": 4
+                },
+                "template": {
+                  "mean": 1.0,
+                  "lo": 1.0,
+                  "hi": 1.0,
+                  "clusters": 4
+                }
+              },
+              "unrelated_both": {
+                "family": {
+                  "mean": 1.0,
+                  "lo": 1.0,
+                  "hi": 1.0,
+                  "clusters": 4
+                },
+                "template": {
+                  "mean": 1.0,
+                  "lo": 1.0,
+                  "hi": 1.0,
+                  "clusters": 4
+                }
+              }
+            },
+            {
+              "source": "literal",
+              "arm": "full_text",
+              "budget": 256,
+              "accuracy": {
+                "family": {
+                  "mean": 1.0,
+                  "lo": 1.0,
+                  "hi": 1.0,
+                  "clusters": 4
+                },
+                "template": {
+                  "mean": 1.0,
+                  "lo": 1.0,
+                  "hi": 1.0,
+                  "clusters": 4
+                }
+              },
+              "all_four": {
+                "family": {
+                  "mean": 1.0,
+                  "lo": 1.0,
+                  "hi": 1.0,
+                  "clusters": 4
+                },
+                "template": {
+                  "mean": 1.0,
+                  "lo": 1.0,
+                  "hi": 1.0,
+                  "clusters": 4
+                }
+              },
+              "coverage": {
+                "family": {
+                  "mean": 1.0,
+                  "lo": 1.0,
+                  "hi": 1.0,
+                  "clusters": 4
+                },
+                "template": {
+                  "mean": 1.0,
+                  "lo": 1.0,
+                  "hi": 1.0,
+                  "clusters": 4
+                }
+              },
+              "relevant_both": {
+                "family": {
+                  "mean": 1.0,
+                  "lo": 1.0,
+                  "hi": 1.0,
+                  "clusters": 4
+                },
+                "template": {
+                  "mean": 1.0,
+                  "lo": 1.0,
+                  "hi": 1.0,
+                  "clusters": 4
+                }
+              },
+              "unrelated_both": {
+                "family": {
+                  "mean": 1.0,
+                  "lo": 1.0,
+                  "hi": 1.0,
+                  "clusters": 4
+                },
+                "template": {
+                  "mean": 1.0,
+                  "lo": 1.0,
+                  "hi": 1.0,
+                  "clusters": 4
+                }
+              }
+            },
+            {
+              "source": "literal",
+              "arm": "native",
+              "budget": 64,
+              "accuracy": {
+                "family": {
+                  "mean": 1.0,
+                  "lo": 1.0,
+                  "hi": 1.0,
+                  "clusters": 4
+                },
+                "template": {
+                  "mean": 1.0,
+                  "lo": 1.0,
+                  "hi": 1.0,
+                  "clusters": 4
+                }
+              },
+              "all_four": {
+                "family": {
+                  "mean": 1.0,
+                  "lo": 1.0,
+                  "hi": 1.0,
+                  "clusters": 4
+                },
+                "template": {
+                  "mean": 1.0,
+                  "lo": 1.0,
+                  "hi": 1.0,
+                  "clusters": 4
+                }
+              },
+              "coverage": {
+                "family": {
+                  "mean": 1.0,
+                  "lo": 1.0,
+                  "hi": 1.0,
+                  "clusters": 4
+                },
+                "template": {
+                  "mean": 1.0,
+                  "lo": 1.0,
+                  "hi": 1.0,
+                  "clusters": 4
+                }
+              },
+              "relevant_both": {
+                "family": {
+                  "mean": 1.0,
+                  "lo": 1.0,
+                  "hi": 1.0,
+                  "clusters": 4
+                },
+                "template": {
+                  "mean": 1.0,
+                  "lo": 1.0,
+                  "hi": 1.0,
+                  "clusters": 4
+                }
+              },
+              "unrelated_both": {
+                "family": {
+                  "mean": 1.0,
+                  "lo": 1.0,
+                  "hi": 1.0,
+                  "clusters": 4
+                },
+                "template": {
+                  "mean": 1.0,
+                  "lo": 1.0,
+                  "hi": 1.0,
+                  "clusters": 4
+                }
+              }
+            },
+            {
+              "source": "literal",
+              "arm": "native",
+              "budget": 256,
+              "accuracy": {
+                "family": {
+                  "mean": 1.0,
+                  "lo": 1.0,
+                  "hi": 1.0,
+                  "clusters": 4
+                },
+                "template": {
+                  "mean": 1.0,
+                  "lo": 1.0,
+                  "hi": 1.0,
+                  "clusters": 4
+                }
+              },
+              "all_four": {
+                "family": {
+                  "mean": 1.0,
+                  "lo": 1.0,
+                  "hi": 1.0,
+                  "clusters": 4
+                },
+                "template": {
+                  "mean": 1.0,
+                  "lo": 1.0,
+                  "hi": 1.0,
+                  "clusters": 4
+                }
+              },
+              "coverage": {
+                "family": {
+                  "mean": 1.0,
+                  "lo": 1.0,
+                  "hi": 1.0,
+                  "clusters": 4
+                },
+                "template": {
+                  "mean": 1.0,
+                  "lo": 1.0,
+                  "hi": 1.0,
+                  "clusters": 4
+                }
+              },
+              "relevant_both": {
+                "family": {
+                  "mean": 1.0,
+                  "lo": 1.0,
+                  "hi": 1.0,
+                  "clusters": 4
+                },
+                "template": {
+                  "mean": 1.0,
+                  "lo": 1.0,
+                  "hi": 1.0,
+                  "clusters": 4
+                }
+              },
+              "unrelated_both": {
+                "family": {
+                  "mean": 1.0,
+                  "lo": 1.0,
+                  "hi": 1.0,
+                  "clusters": 4
+                },
+                "template": {
+                  "mean": 1.0,
+                  "lo": 1.0,
+                  "hi": 1.0,
+                  "clusters": 4
+                }
+              }
+            },
+            {
+              "source": "literal",
+              "arm": "original",
+              "budget": 64,
+              "accuracy": {
+                "family": {
+                  "mean": 1.0,
+                  "lo": 1.0,
+                  "hi": 1.0,
+                  "clusters": 4
+                },
+                "template": {
+                  "mean": 1.0,
+                  "lo": 1.0,
+                  "hi": 1.0,
+                  "clusters": 4
+                }
+              },
+              "all_four": {
+                "family": {
+                  "mean": 1.0,
+                  "lo": 1.0,
+                  "hi": 1.0,
+                  "clusters": 4
+                },
+                "template": {
+                  "mean": 1.0,
+                  "lo": 1.0,
+                  "hi": 1.0,
+                  "clusters": 4
+                }
+              },
+              "coverage": {
+                "family": {
+                  "mean": 1.0,
+                  "lo": 1.0,
+                  "hi": 1.0,
+                  "clusters": 4
+                },
+                "template": {
+                  "mean": 1.0,
+                  "lo": 1.0,
+                  "hi": 1.0,
+                  "clusters": 4
+                }
+              },
+              "relevant_both": {
+                "family": {
+                  "mean": 1.0,
+                  "lo": 1.0,
+                  "hi": 1.0,
+                  "clusters": 4
+                },
+                "template": {
+                  "mean": 1.0,
+                  "lo": 1.0,
+                  "hi": 1.0,
+                  "clusters": 4
+                }
+              },
+              "unrelated_both": {
+                "family": {
+                  "mean": 1.0,
+                  "lo": 1.0,
+                  "hi": 1.0,
+                  "clusters": 4
+                },
+                "template": {
+                  "mean": 1.0,
+                  "lo": 1.0,
+                  "hi": 1.0,
+                  "clusters": 4
+                }
+              }
+            },
+            {
+              "source": "literal",
+              "arm": "original",
+              "budget": 256,
+              "accuracy": {
+                "family": {
+                  "mean": 1.0,
+                  "lo": 1.0,
+                  "hi": 1.0,
+                  "clusters": 4
+                },
+                "template": {
+                  "mean": 1.0,
+                  "lo": 1.0,
+                  "hi": 1.0,
+                  "clusters": 4
+                }
+              },
+              "all_four": {
+                "family": {
+                  "mean": 1.0,
+                  "lo": 1.0,
+                  "hi": 1.0,
+                  "clusters": 4
+                },
+                "template": {
+                  "mean": 1.0,
+                  "lo": 1.0,
+                  "hi": 1.0,
+                  "clusters": 4
+                }
+              },
+              "coverage": {
+                "family": {
+                  "mean": 1.0,
+                  "lo": 1.0,
+                  "hi": 1.0,
+                  "clusters": 4
+                },
+                "template": {
+                  "mean": 1.0,
+                  "lo": 1.0,
+                  "hi": 1.0,
+                  "clusters": 4
+                }
+              },
+              "relevant_both": {
+                "family": {
+                  "mean": 1.0,
+                  "lo": 1.0,
+                  "hi": 1.0,
+                  "clusters": 4
+                },
+                "template": {
+                  "mean": 1.0,
+                  "lo": 1.0,
+                  "hi": 1.0,
+                  "clusters": 4
+                }
+              },
+              "unrelated_both": {
+                "family": {
+                  "mean": 1.0,
+                  "lo": 1.0,
+                  "hi": 1.0,
+                  "clusters": 4
+                },
+                "template": {
+                  "mean": 1.0,
+                  "lo": 1.0,
+                  "hi": 1.0,
+                  "clusters": 4
+                }
+              }
+            },
+            {
+              "source": "literal",
+              "arm": "packet_text",
+              "budget": 64,
+              "accuracy": {
+                "family": {
+                  "mean": 1.0,
+                  "lo": 1.0,
+                  "hi": 1.0,
+                  "clusters": 4
+                },
+                "template": {
+                  "mean": 1.0,
+                  "lo": 1.0,
+                  "hi": 1.0,
+                  "clusters": 4
+                }
+              },
+              "all_four": {
+                "family": {
+                  "mean": 1.0,
+                  "lo": 1.0,
+                  "hi": 1.0,
+                  "clusters": 4
+                },
+                "template": {
+                  "mean": 1.0,
+                  "lo": 1.0,
+                  "hi": 1.0,
+                  "clusters": 4
+                }
+              },
+              "coverage": {
+                "family": {
+                  "mean": 1.0,
+                  "lo": 1.0,
+                  "hi": 1.0,
+                  "clusters": 4
+                },
+                "template": {
+                  "mean": 1.0,
+                  "lo": 1.0,
+                  "hi": 1.0,
+                  "clusters": 4
+                }
+              },
+              "relevant_both": {
+                "family": {
+                  "mean": 1.0,
+                  "lo": 1.0,
+                  "hi": 1.0,
+                  "clusters": 4
+                },
+                "template": {
+                  "mean": 1.0,
+                  "lo": 1.0,
+                  "hi": 1.0,
+                  "clusters": 4
+                }
+              },
+              "unrelated_both": {
+                "family": {
+                  "mean": 1.0,
+                  "lo": 1.0,
+                  "hi": 1.0,
+                  "clusters": 4
+                },
+                "template": {
+                  "mean": 1.0,
+                  "lo": 1.0,
+                  "hi": 1.0,
+                  "clusters": 4
+                }
+              }
+            },
+            {
+              "source": "literal",
+              "arm": "packet_text",
+              "budget": 256,
+              "accuracy": {
+                "family": {
+                  "mean": 1.0,
+                  "lo": 1.0,
+                  "hi": 1.0,
+                  "clusters": 4
+                },
+                "template": {
+                  "mean": 1.0,
+                  "lo": 1.0,
+                  "hi": 1.0,
+                  "clusters": 4
+                }
+              },
+              "all_four": {
+                "family": {
+                  "mean": 1.0,
+                  "lo": 1.0,
+                  "hi": 1.0,
+                  "clusters": 4
+                },
+                "template": {
+                  "mean": 1.0,
+                  "lo": 1.0,
+                  "hi": 1.0,
+                  "clusters": 4
+                }
+              },
+              "coverage": {
+                "family": {
+                  "mean": 1.0,
+                  "lo": 1.0,
+                  "hi": 1.0,
+                  "clusters": 4
+                },
+                "template": {
+                  "mean": 1.0,
+                  "lo": 1.0,
+                  "hi": 1.0,
+                  "clusters": 4
+                }
+              },
+              "relevant_both": {
+                "family": {
+                  "mean": 1.0,
+                  "lo": 1.0,
+                  "hi": 1.0,
+                  "clusters": 4
+                },
+                "template": {
+                  "mean": 1.0,
+                  "lo": 1.0,
+                  "hi": 1.0,
+                  "clusters": 4
+                }
+              },
+              "unrelated_both": {
+                "family": {
+                  "mean": 1.0,
+                  "lo": 1.0,
+                  "hi": 1.0,
+                  "clusters": 4
+                },
+                "template": {
+                  "mean": 1.0,
+                  "lo": 1.0,
+                  "hi": 1.0,
+                  "clusters": 4
+                }
+              }
+            },
+            {
+              "source": "literal",
+              "arm": "selected",
+              "budget": 64,
+              "accuracy": {
+                "family": {
+                  "mean": 1.0,
+                  "lo": 1.0,
+                  "hi": 1.0,
+                  "clusters": 4
+                },
+                "template": {
+                  "mean": 1.0,
+                  "lo": 1.0,
+                  "hi": 1.0,
+                  "clusters": 4
+                }
+              },
+              "all_four": {
+                "family": {
+                  "mean": 1.0,
+                  "lo": 1.0,
+                  "hi": 1.0,
+                  "clusters": 4
+                },
+                "template": {
+                  "mean": 1.0,
+                  "lo": 1.0,
+                  "hi": 1.0,
+                  "clusters": 4
+                }
+              },
+              "coverage": {
+                "family": {
+                  "mean": 1.0,
+                  "lo": 1.0,
+                  "hi": 1.0,
+                  "clusters": 4
+                },
+                "template": {
+                  "mean": 1.0,
+                  "lo": 1.0,
+                  "hi": 1.0,
+                  "clusters": 4
+                }
+              },
+              "relevant_both": {
+                "family": {
+                  "mean": 1.0,
+                  "lo": 1.0,
+                  "hi": 1.0,
+                  "clusters": 4
+                },
+                "template": {
+                  "mean": 1.0,
+                  "lo": 1.0,
+                  "hi": 1.0,
+                  "clusters": 4
+                }
+              },
+              "unrelated_both": {
+                "family": {
+                  "mean": 1.0,
+                  "lo": 1.0,
+                  "hi": 1.0,
+                  "clusters": 4
+                },
+                "template": {
+                  "mean": 1.0,
+                  "lo": 1.0,
+                  "hi": 1.0,
+                  "clusters": 4
+                }
+              }
+            },
+            {
+              "source": "literal",
+              "arm": "selected",
+              "budget": 256,
+              "accuracy": {
+                "family": {
+                  "mean": 1.0,
+                  "lo": 1.0,
+                  "hi": 1.0,
+                  "clusters": 4
+                },
+                "template": {
+                  "mean": 1.0,
+                  "lo": 1.0,
+                  "hi": 1.0,
+                  "clusters": 4
+                }
+              },
+              "all_four": {
+                "family": {
+                  "mean": 1.0,
+                  "lo": 1.0,
+                  "hi": 1.0,
+                  "clusters": 4
+                },
+                "template": {
+                  "mean": 1.0,
+                  "lo": 1.0,
+                  "hi": 1.0,
+                  "clusters": 4
+                }
+              },
+              "coverage": {
+                "family": {
+                  "mean": 1.0,
+                  "lo": 1.0,
+                  "hi": 1.0,
+                  "clusters": 4
+                },
+                "template": {
+                  "mean": 1.0,
+                  "lo": 1.0,
+                  "hi": 1.0,
+                  "clusters": 4
+                }
+              },
+              "relevant_both": {
+                "family": {
+                  "mean": 1.0,
+                  "lo": 1.0,
+                  "hi": 1.0,
+                  "clusters": 4
+                },
+                "template": {
+                  "mean": 1.0,
+                  "lo": 1.0,
+                  "hi": 1.0,
+                  "clusters": 4
+                }
+              },
+              "unrelated_both": {
+                "family": {
+                  "mean": 1.0,
+                  "lo": 1.0,
+                  "hi": 1.0,
+                  "clusters": 4
+                },
+                "template": {
+                  "mean": 1.0,
+                  "lo": 1.0,
+                  "hi": 1.0,
+                  "clusters": 4
+                }
+              }
+            }
+          ],
+          "realized_norms": {
+            "actual/identity_write": {
+              "L13": {
+                "edit_norm": 0.0,
+                "residual_norm": 319.38412857055664,
+                "ratio": 0.0,
+                "delta_state_cosine": 0.0,
+                "n": 16
+              }
+            },
+            "actual/original": {
+              "L26": {
+                "edit_norm": 418.1178283691406,
+                "residual_norm": 451.2059631347656,
+                "ratio": 0.9237713142729094,
+                "delta_state_cosine": 0.5156718455255032,
+                "n": 16
+              },
+              "L32": {
+                "edit_norm": 151.7660617828369,
+                "residual_norm": 510.0444526672363,
+                "ratio": 0.29693979429661,
+                "delta_state_cosine": 0.2322098594158888,
+                "n": 16
+              },
+              "L38": {
+                "edit_norm": 200.39311027526855,
+                "residual_norm": 519.7343101501465,
+                "ratio": 0.38505355597728996,
+                "delta_state_cosine": 0.3471844010055065,
+                "n": 16
+              }
+            },
+            "actual/other_world": {
+              "L13": {
+                "edit_norm": 317.00175857543945,
+                "residual_norm": 319.38412857055664,
+                "ratio": 0.9883228590541783,
+                "delta_state_cosine": 0.5694033429026604,
+                "n": 16
+              }
+            },
+            "actual/selected": {
+              "L13": {
+                "edit_norm": 317.00175857543945,
+                "residual_norm": 319.38412857055664,
+                "ratio": 0.9883228590541783,
+                "delta_state_cosine": 0.5694033429026604,
+                "n": 16
+              }
+            },
+            "actual/sham0": {
+              "L13": {
+                "edit_norm": 317.001745223999,
+                "residual_norm": 319.38412857055664,
+                "ratio": 0.9883228187783664,
+                "delta_state_cosine": 0.6551006808876991,
+                "n": 16
+              }
+            },
+            "actual/sham1": {
+              "L13": {
+                "edit_norm": 317.0017509460449,
+                "residual_norm": 319.38412857055664,
+                "ratio": 0.988322839251321,
+                "delta_state_cosine": 0.6331551373004913,
+                "n": 16
+              }
+            },
+            "actual/sham2": {
+              "L13": {
+                "edit_norm": 317.00174140930176,
+                "residual_norm": 319.38412857055664,
+                "ratio": 0.9883228054240898,
+                "delta_state_cosine": 0.6407172456383705,
+                "n": 16
+              }
+            },
+            "literal/native": {
+              "L13": {
+                "edit_norm": 283.4001274108887,
+                "residual_norm": 279.6532516479492,
+                "ratio": 1.0135703023828637,
+                "delta_state_cosine": 0.5735744684934616,
+                "n": 16
+              }
+            },
+            "literal/original": {
+              "L26": {
+                "edit_norm": 363.79051208496094,
+                "residual_norm": 395.1786651611328,
+                "ratio": 0.9206375670564997,
+                "delta_state_cosine": 0.519968718290329,
+                "n": 16
+              },
+              "L32": {
+                "edit_norm": 130.04836559295654,
+                "residual_norm": 453.79663848876953,
+                "ratio": 0.286576031650107,
+                "delta_state_cosine": 0.23583408072590828,
+                "n": 16
+              },
+              "L38": {
+                "edit_norm": 170.31355667114258,
+                "residual_norm": 461.0017967224121,
+                "ratio": 0.3694855135975043,
+                "delta_state_cosine": 0.3492506705224514,
+                "n": 16
+              }
+            },
+            "literal/selected": {
+              "L13": {
+                "edit_norm": 274.4523620605469,
+                "residual_norm": 279.6532516479492,
+                "ratio": 0.9816200680410139,
+                "delta_state_cosine": 0.5670050084590912,
+                "n": 16
+              }
+            }
+          },
+          "cluster_counts": {
+            "family": 4,
+            "template": 4
+          }
+        },
+        "development": {
+          "scenes": 572,
+          "rows": 32032,
+          "conditions": [
+            {
+              "source": "actual",
+              "arm": "identity_write",
+              "budget": 64,
+              "accuracy": {
+                "family": {
+                  "mean": 0.47326388888888893,
+                  "lo": 0.4544849537037037,
+                  "hi": 0.4911176215277777,
+                  "clusters": 36
+                },
+                "template": {
+                  "mean": 0.47337655141843976,
+                  "lo": 0.45410387115839246,
+                  "hi": 0.4903133311170213,
+                  "clusters": 12
+                }
+              },
+              "all_four": {
+                "family": {
+                  "mean": 0.0,
+                  "lo": 0.0,
+                  "hi": 0.0,
+                  "clusters": 36
+                },
+                "template": {
+                  "mean": 0.0,
+                  "lo": 0.0,
+                  "hi": 0.0,
+                  "clusters": 12
+                }
+              },
+              "coverage": {
+                "family": {
+                  "mean": 0.955324074074074,
+                  "lo": 0.9368634259259259,
+                  "hi": 0.9711241319444444,
+                  "clusters": 36
+                },
+                "template": {
+                  "mean": 0.9554151891252954,
+                  "lo": 0.9345079787234042,
+                  "hi": 0.971908244680851,
+                  "clusters": 12
+                }
+              },
+              "relevant_both": {
+                "family": {
+                  "mean": 0.0,
+                  "lo": 0.0,
+                  "hi": 0.0,
+                  "clusters": 36
+                },
+                "template": {
+                  "mean": 0.0,
+                  "lo": 0.0,
+                  "hi": 0.0,
+                  "clusters": 12
+                }
+              },
+              "unrelated_both": {
+                "family": {
+                  "mean": 0.4666666666666667,
+                  "lo": 0.43333333333333335,
+                  "hi": 0.4993055555555556,
+                  "clusters": 36
+                },
+                "template": {
+                  "mean": 0.4668661347517731,
+                  "lo": 0.43458185579196223,
+                  "hi": 0.49656471631205673,
+                  "clusters": 12
+                }
+              }
+            },
+            {
+              "source": "actual",
+              "arm": "identity_write",
+              "budget": 256,
+              "accuracy": {
+                "family": {
+                  "mean": 0.47326388888888893,
+                  "lo": 0.4544849537037037,
+                  "hi": 0.4911176215277777,
+                  "clusters": 36
+                },
+                "template": {
+                  "mean": 0.47337655141843976,
+                  "lo": 0.45410387115839246,
+                  "hi": 0.4903133311170213,
+                  "clusters": 12
+                }
+              },
+              "all_four": {
+                "family": {
+                  "mean": 0.0,
+                  "lo": 0.0,
+                  "hi": 0.0,
+                  "clusters": 36
+                },
+                "template": {
+                  "mean": 0.0,
+                  "lo": 0.0,
+                  "hi": 0.0,
+                  "clusters": 12
+                }
+              },
+              "coverage": {
+                "family": {
+                  "mean": 0.955324074074074,
+                  "lo": 0.9368634259259259,
+                  "hi": 0.9711241319444444,
+                  "clusters": 36
+                },
+                "template": {
+                  "mean": 0.9554151891252954,
+                  "lo": 0.9345079787234042,
+                  "hi": 0.971908244680851,
+                  "clusters": 12
+                }
+              },
+              "relevant_both": {
+                "family": {
+                  "mean": 0.0,
+                  "lo": 0.0,
+                  "hi": 0.0,
+                  "clusters": 36
+                },
+                "template": {
+                  "mean": 0.0,
+                  "lo": 0.0,
+                  "hi": 0.0,
+                  "clusters": 12
+                }
+              },
+              "unrelated_both": {
+                "family": {
+                  "mean": 0.4666666666666667,
+                  "lo": 0.43333333333333335,
+                  "hi": 0.4993055555555556,
+                  "clusters": 36
+                },
+                "template": {
+                  "mean": 0.4668661347517731,
+                  "lo": 0.43458185579196223,
+                  "hi": 0.49656471631205673,
+                  "clusters": 12
+                }
+              }
+            },
+            {
+              "source": "actual",
+              "arm": "none",
+              "budget": 64,
+              "accuracy": {
+                "family": {
+                  "mean": 0.47326388888888893,
+                  "lo": 0.4544849537037037,
+                  "hi": 0.4911176215277777,
+                  "clusters": 36
+                },
+                "template": {
+                  "mean": 0.47337655141843976,
+                  "lo": 0.45410387115839246,
+                  "hi": 0.4903133311170213,
+                  "clusters": 12
+                }
+              },
+              "all_four": {
+                "family": {
+                  "mean": 0.0,
+                  "lo": 0.0,
+                  "hi": 0.0,
+                  "clusters": 36
+                },
+                "template": {
+                  "mean": 0.0,
+                  "lo": 0.0,
+                  "hi": 0.0,
+                  "clusters": 12
+                }
+              },
+              "coverage": {
+                "family": {
+                  "mean": 0.955324074074074,
+                  "lo": 0.9368634259259259,
+                  "hi": 0.9711241319444444,
+                  "clusters": 36
+                },
+                "template": {
+                  "mean": 0.9554151891252954,
+                  "lo": 0.9345079787234042,
+                  "hi": 0.971908244680851,
+                  "clusters": 12
+                }
+              },
+              "relevant_both": {
+                "family": {
+                  "mean": 0.0,
+                  "lo": 0.0,
+                  "hi": 0.0,
+                  "clusters": 36
+                },
+                "template": {
+                  "mean": 0.0,
+                  "lo": 0.0,
+                  "hi": 0.0,
+                  "clusters": 12
+                }
+              },
+              "unrelated_both": {
+                "family": {
+                  "mean": 0.4666666666666667,
+                  "lo": 0.43333333333333335,
+                  "hi": 0.4993055555555556,
+                  "clusters": 36
+                },
+                "template": {
+                  "mean": 0.4668661347517731,
+                  "lo": 0.43458185579196223,
+                  "hi": 0.49656471631205673,
+                  "clusters": 12
+                }
+              }
+            },
+            {
+              "source": "actual",
+              "arm": "none",
+              "budget": 256,
+              "accuracy": {
+                "family": {
+                  "mean": 0.47326388888888893,
+                  "lo": 0.4544849537037037,
+                  "hi": 0.4911176215277777,
+                  "clusters": 36
+                },
+                "template": {
+                  "mean": 0.47337655141843976,
+                  "lo": 0.45410387115839246,
+                  "hi": 0.4903133311170213,
+                  "clusters": 12
+                }
+              },
+              "all_four": {
+                "family": {
+                  "mean": 0.0,
+                  "lo": 0.0,
+                  "hi": 0.0,
+                  "clusters": 36
+                },
+                "template": {
+                  "mean": 0.0,
+                  "lo": 0.0,
+                  "hi": 0.0,
+                  "clusters": 12
+                }
+              },
+              "coverage": {
+                "family": {
+                  "mean": 0.955324074074074,
+                  "lo": 0.9368634259259259,
+                  "hi": 0.9711241319444444,
+                  "clusters": 36
+                },
+                "template": {
+                  "mean": 0.9554151891252954,
+                  "lo": 0.9345079787234042,
+                  "hi": 0.971908244680851,
+                  "clusters": 12
+                }
+              },
+              "relevant_both": {
+                "family": {
+                  "mean": 0.0,
+                  "lo": 0.0,
+                  "hi": 0.0,
+                  "clusters": 36
+                },
+                "template": {
+                  "mean": 0.0,
+                  "lo": 0.0,
+                  "hi": 0.0,
+                  "clusters": 12
+                }
+              },
+              "unrelated_both": {
+                "family": {
+                  "mean": 0.4666666666666667,
+                  "lo": 0.43333333333333335,
+                  "hi": 0.4993055555555556,
+                  "clusters": 36
+                },
+                "template": {
+                  "mean": 0.4668661347517731,
+                  "lo": 0.43458185579196223,
+                  "hi": 0.49656471631205673,
+                  "clusters": 12
+                }
+              }
+            },
+            {
+              "source": "actual",
+              "arm": "original",
+              "budget": 64,
+              "accuracy": {
+                "family": {
+                  "mean": 0.9843171296296297,
+                  "lo": 0.9709201388888888,
+                  "hi": 0.9930266203703704,
+                  "clusters": 36
+                },
+                "template": {
+                  "mean": 0.9843288268321512,
+                  "lo": 0.9681880725472812,
+                  "hi": 0.9943114657210402,
+                  "clusters": 12
+                }
+              },
+              "all_four": {
+                "family": {
+                  "mean": 0.944212962962963,
+                  "lo": 0.9025462962962963,
+                  "hi": 0.9737268518518518,
+                  "clusters": 36
+                },
+                "template": {
+                  "mean": 0.9442966903073285,
+                  "lo": 0.8902556146572106,
+                  "hi": 0.9774305555555554,
+                  "clusters": 12
+                }
+              },
+              "coverage": {
+                "family": {
+                  "mean": 0.989988425925926,
+                  "lo": 0.9804398148148148,
+                  "hi": 0.9964699074074075,
+                  "clusters": 36
+                },
+                "template": {
+                  "mean": 0.9899988918439716,
+                  "lo": 0.9791666666666666,
+                  "hi": 0.996943336288416,
+                  "clusters": 12
+                }
+              },
+              "relevant_both": {
+                "family": {
+                  "mean": 0.9686342592592594,
+                  "lo": 0.9409722222222222,
+                  "hi": 0.9895833333333334,
+                  "clusters": 36
+                },
+                "template": {
+                  "mean": 0.9686391843971632,
+                  "lo": 0.9252724216903071,
+                  "hi": 0.9947177895981087,
+                  "clusters": 12
+                }
+              },
+              "unrelated_both": {
+                "family": {
+                  "mean": 0.9703703703703704,
+                  "lo": 0.9444444444444444,
+                  "hi": 0.9893518518518518,
+                  "clusters": 36
+                },
+                "template": {
+                  "mean": 0.9704122340425533,
+                  "lo": 0.9495789007092199,
+                  "hi": 0.9860372340425533,
+                  "clusters": 12
+                }
+              }
+            },
+            {
+              "source": "actual",
+              "arm": "original",
+              "budget": 256,
+              "accuracy": {
+                "family": {
+                  "mean": 0.9843171296296297,
+                  "lo": 0.9709201388888888,
+                  "hi": 0.9930266203703704,
+                  "clusters": 36
+                },
+                "template": {
+                  "mean": 0.9843288268321512,
+                  "lo": 0.9681880725472812,
+                  "hi": 0.9943114657210402,
+                  "clusters": 12
+                }
+              },
+              "all_four": {
+                "family": {
+                  "mean": 0.944212962962963,
+                  "lo": 0.9025462962962963,
+                  "hi": 0.9737268518518518,
+                  "clusters": 36
+                },
+                "template": {
+                  "mean": 0.9442966903073285,
+                  "lo": 0.8902556146572106,
+                  "hi": 0.9774305555555554,
+                  "clusters": 12
+                }
+              },
+              "coverage": {
+                "family": {
+                  "mean": 0.989988425925926,
+                  "lo": 0.9804398148148148,
+                  "hi": 0.9964699074074075,
+                  "clusters": 36
+                },
+                "template": {
+                  "mean": 0.9899988918439716,
+                  "lo": 0.9791666666666666,
+                  "hi": 0.996943336288416,
+                  "clusters": 12
+                }
+              },
+              "relevant_both": {
+                "family": {
+                  "mean": 0.9686342592592594,
+                  "lo": 0.9409722222222222,
+                  "hi": 0.9895833333333334,
+                  "clusters": 36
+                },
+                "template": {
+                  "mean": 0.9686391843971632,
+                  "lo": 0.9252724216903071,
+                  "hi": 0.9947177895981087,
+                  "clusters": 12
+                }
+              },
+              "unrelated_both": {
+                "family": {
+                  "mean": 0.9703703703703704,
+                  "lo": 0.9444444444444444,
+                  "hi": 0.9893518518518518,
+                  "clusters": 36
+                },
+                "template": {
+                  "mean": 0.9704122340425533,
+                  "lo": 0.9495789007092199,
+                  "hi": 0.9860372340425533,
+                  "clusters": 12
+                }
+              }
+            },
+            {
+              "source": "actual",
+              "arm": "other_world",
+              "budget": 64,
+              "accuracy": {
+                "family": {
+                  "mean": 0.4991319444444444,
+                  "lo": 0.4947916666666667,
+                  "hi": 0.5026041666666666,
+                  "clusters": 36
+                },
+                "template": {
+                  "mean": 0.4991319444444445,
+                  "lo": 0.49782986111111116,
+                  "hi": 0.5,
+                  "clusters": 12
+                }
+              },
+              "all_four": {
+                "family": {
+                  "mean": 0.0,
+                  "lo": 0.0,
+                  "hi": 0.0,
+                  "clusters": 36
+                },
+                "template": {
+                  "mean": 0.0,
+                  "lo": 0.0,
+                  "hi": 0.0,
+                  "clusters": 12
+                }
+              },
+              "coverage": {
+                "family": {
+                  "mean": 0.9956597222222222,
+                  "lo": 0.9887152777777778,
+                  "hi": 0.9995659722222222,
+                  "clusters": 36
+                },
+                "template": {
+                  "mean": 0.9956597222222222,
+                  "lo": 0.9874131944444443,
+                  "hi": 1.0,
+                  "clusters": 12
+                }
+              },
+              "relevant_both": {
+                "family": {
+                  "mean": 0.0,
+                  "lo": 0.0,
+                  "hi": 0.0,
+                  "clusters": 36
+                },
+                "template": {
+                  "mean": 0.0,
+                  "lo": 0.0,
+                  "hi": 0.0,
+                  "clusters": 12
+                }
+              },
+              "unrelated_both": {
+                "family": {
+                  "mean": 0.9878472222222222,
+                  "lo": 0.9670138888888888,
+                  "hi": 1.0,
+                  "clusters": 36
+                },
+                "template": {
+                  "mean": 0.9878102836879433,
+                  "lo": 0.9687130614657211,
+                  "hi": 1.0,
+                  "clusters": 12
+                }
+              },
+              "supplied_all_four": {
+                "family": {
+                  "mean": 0.9704861111111112,
+                  "lo": 0.9322916666666666,
+                  "hi": 0.9947916666666666,
+                  "clusters": 36
+                },
+                "template": {
+                  "mean": 0.9704122340425533,
+                  "lo": 0.9199911347517732,
+                  "hi": 1.0,
+                  "clusters": 12
+                }
+              },
+              "supplied_accuracy": {
+                "family": {
+                  "mean": 0.9913194444444444,
+                  "lo": 0.9791666666666666,
+                  "hi": 0.9986979166666666,
+                  "clusters": 36
+                },
+                "template": {
+                  "mean": 0.991300975177305,
+                  "lo": 0.9760915336879434,
+                  "hi": 1.0,
+                  "clusters": 12
+                }
+              },
+              "changed_q_supplied_both": {
+                "family": {
+                  "mean": 0.9791666666666666,
+                  "lo": 0.953125,
+                  "hi": 0.9982638888888888,
+                  "clusters": 36
+                },
+                "template": {
+                  "mean": 0.9791297281323877,
+                  "lo": 0.9391622340425533,
+                  "hi": 1.0,
+                  "clusters": 12
+                }
+              }
+            },
+            {
+              "source": "actual",
+              "arm": "other_world",
+              "budget": 256,
+              "accuracy": {
+                "family": {
+                  "mean": 0.4991319444444444,
+                  "lo": 0.4947916666666667,
+                  "hi": 0.5026041666666666,
+                  "clusters": 36
+                },
+                "template": {
+                  "mean": 0.4991319444444445,
+                  "lo": 0.49782986111111116,
+                  "hi": 0.5,
+                  "clusters": 12
+                }
+              },
+              "all_four": {
+                "family": {
+                  "mean": 0.0,
+                  "lo": 0.0,
+                  "hi": 0.0,
+                  "clusters": 36
+                },
+                "template": {
+                  "mean": 0.0,
+                  "lo": 0.0,
+                  "hi": 0.0,
+                  "clusters": 12
+                }
+              },
+              "coverage": {
+                "family": {
+                  "mean": 0.9956597222222222,
+                  "lo": 0.9887152777777778,
+                  "hi": 0.9995659722222222,
+                  "clusters": 36
+                },
+                "template": {
+                  "mean": 0.9956597222222222,
+                  "lo": 0.9874131944444443,
+                  "hi": 1.0,
+                  "clusters": 12
+                }
+              },
+              "relevant_both": {
+                "family": {
+                  "mean": 0.0,
+                  "lo": 0.0,
+                  "hi": 0.0,
+                  "clusters": 36
+                },
+                "template": {
+                  "mean": 0.0,
+                  "lo": 0.0,
+                  "hi": 0.0,
+                  "clusters": 12
+                }
+              },
+              "unrelated_both": {
+                "family": {
+                  "mean": 0.9878472222222222,
+                  "lo": 0.9670138888888888,
+                  "hi": 1.0,
+                  "clusters": 36
+                },
+                "template": {
+                  "mean": 0.9878102836879433,
+                  "lo": 0.9687130614657211,
+                  "hi": 1.0,
+                  "clusters": 12
+                }
+              },
+              "supplied_all_four": {
+                "family": {
+                  "mean": 0.9704861111111112,
+                  "lo": 0.9322916666666666,
+                  "hi": 0.9947916666666666,
+                  "clusters": 36
+                },
+                "template": {
+                  "mean": 0.9704122340425533,
+                  "lo": 0.9199911347517732,
+                  "hi": 1.0,
+                  "clusters": 12
+                }
+              },
+              "supplied_accuracy": {
+                "family": {
+                  "mean": 0.9913194444444444,
+                  "lo": 0.9791666666666666,
+                  "hi": 0.9986979166666666,
+                  "clusters": 36
+                },
+                "template": {
+                  "mean": 0.991300975177305,
+                  "lo": 0.9760915336879434,
+                  "hi": 1.0,
+                  "clusters": 12
+                }
+              },
+              "changed_q_supplied_both": {
+                "family": {
+                  "mean": 0.9791666666666666,
+                  "lo": 0.953125,
+                  "hi": 0.9982638888888888,
+                  "clusters": 36
+                },
+                "template": {
+                  "mean": 0.9791297281323877,
+                  "lo": 0.9391622340425533,
+                  "hi": 1.0,
+                  "clusters": 12
+                }
+              }
+            },
+            {
+              "source": "actual",
+              "arm": "packet_text",
+              "budget": 64,
+              "accuracy": {
+                "family": {
+                  "mean": 0.9908854166666666,
+                  "lo": 0.9787326388888888,
+                  "hi": 0.9986979166666666,
+                  "clusters": 36
+                },
+                "template": {
+                  "mean": 0.9908669473995272,
+                  "lo": 0.9756759751773049,
+                  "hi": 0.9995659722222222,
+                  "clusters": 12
+                }
+              },
+              "all_four": {
+                "family": {
+                  "mean": 0.9704861111111112,
+                  "lo": 0.9322916666666666,
+                  "hi": 0.9947916666666666,
+                  "clusters": 36
+                },
+                "template": {
+                  "mean": 0.9704491725768322,
+                  "lo": 0.9201388888888888,
+                  "hi": 0.9982638888888888,
+                  "clusters": 12
+                }
+              },
+              "coverage": {
+                "family": {
+                  "mean": 0.9939236111111112,
+                  "lo": 0.9865451388888888,
+                  "hi": 0.9986979166666666,
+                  "clusters": 36
+                },
+                "template": {
+                  "mean": 0.9939051418439715,
+                  "lo": 0.9847905585106381,
+                  "hi": 0.9995659722222222,
+                  "clusters": 12
+                }
+              },
+              "relevant_both": {
+                "family": {
+                  "mean": 0.9791666666666666,
+                  "lo": 0.953125,
+                  "hi": 0.9982638888888888,
+                  "clusters": 36
+                },
+                "template": {
+                  "mean": 0.9791666666666666,
+                  "lo": 0.9392361111111112,
+                  "hi": 1.0,
+                  "clusters": 12
+                }
+              },
+              "unrelated_both": {
+                "family": {
+                  "mean": 0.9878472222222222,
+                  "lo": 0.9670138888888888,
+                  "hi": 1.0,
+                  "clusters": 36
+                },
+                "template": {
+                  "mean": 0.9878102836879433,
+                  "lo": 0.9687130614657211,
+                  "hi": 1.0,
+                  "clusters": 12
+                }
+              }
+            },
+            {
+              "source": "actual",
+              "arm": "packet_text",
+              "budget": 256,
+              "accuracy": {
+                "family": {
+                  "mean": 0.9908854166666666,
+                  "lo": 0.9787326388888888,
+                  "hi": 0.9986979166666666,
+                  "clusters": 36
+                },
+                "template": {
+                  "mean": 0.9908669473995272,
+                  "lo": 0.9756759751773049,
+                  "hi": 0.9995659722222222,
+                  "clusters": 12
+                }
+              },
+              "all_four": {
+                "family": {
+                  "mean": 0.9704861111111112,
+                  "lo": 0.9322916666666666,
+                  "hi": 0.9947916666666666,
+                  "clusters": 36
+                },
+                "template": {
+                  "mean": 0.9704491725768322,
+                  "lo": 0.9201388888888888,
+                  "hi": 0.9982638888888888,
+                  "clusters": 12
+                }
+              },
+              "coverage": {
+                "family": {
+                  "mean": 0.9939236111111112,
+                  "lo": 0.9865451388888888,
+                  "hi": 0.9986979166666666,
+                  "clusters": 36
+                },
+                "template": {
+                  "mean": 0.9939051418439715,
+                  "lo": 0.9847905585106381,
+                  "hi": 0.9995659722222222,
+                  "clusters": 12
+                }
+              },
+              "relevant_both": {
+                "family": {
+                  "mean": 0.9791666666666666,
+                  "lo": 0.953125,
+                  "hi": 0.9982638888888888,
+                  "clusters": 36
+                },
+                "template": {
+                  "mean": 0.9791666666666666,
+                  "lo": 0.9392361111111112,
+                  "hi": 1.0,
+                  "clusters": 12
+                }
+              },
+              "unrelated_both": {
+                "family": {
+                  "mean": 0.9878472222222222,
+                  "lo": 0.9670138888888888,
+                  "hi": 1.0,
+                  "clusters": 36
+                },
+                "template": {
+                  "mean": 0.9878102836879433,
+                  "lo": 0.9687130614657211,
+                  "hi": 1.0,
+                  "clusters": 12
+                }
+              }
+            },
+            {
+              "source": "actual",
+              "arm": "selected",
+              "budget": 64,
+              "accuracy": {
+                "family": {
+                  "mean": 0.9913194444444444,
+                  "lo": 0.9791666666666666,
+                  "hi": 0.9986979166666666,
+                  "clusters": 36
+                },
+                "template": {
+                  "mean": 0.991300975177305,
+                  "lo": 0.9760915336879434,
+                  "hi": 1.0,
+                  "clusters": 12
+                }
+              },
+              "all_four": {
+                "family": {
+                  "mean": 0.9704861111111112,
+                  "lo": 0.9322916666666666,
+                  "hi": 0.9947916666666666,
+                  "clusters": 36
+                },
+                "template": {
+                  "mean": 0.9704122340425533,
+                  "lo": 0.9199911347517732,
+                  "hi": 1.0,
+                  "clusters": 12
+                }
+              },
+              "coverage": {
+                "family": {
+                  "mean": 0.9956597222222222,
+                  "lo": 0.9887152777777778,
+                  "hi": 0.9995659722222222,
+                  "clusters": 36
+                },
+                "template": {
+                  "mean": 0.9956597222222222,
+                  "lo": 0.9874131944444443,
+                  "hi": 1.0,
+                  "clusters": 12
+                }
+              },
+              "relevant_both": {
+                "family": {
+                  "mean": 0.9791666666666666,
+                  "lo": 0.953125,
+                  "hi": 0.9982638888888888,
+                  "clusters": 36
+                },
+                "template": {
+                  "mean": 0.9791297281323877,
+                  "lo": 0.9391622340425533,
+                  "hi": 1.0,
+                  "clusters": 12
+                }
+              },
+              "unrelated_both": {
+                "family": {
+                  "mean": 0.9878472222222222,
+                  "lo": 0.9670138888888888,
+                  "hi": 1.0,
+                  "clusters": 36
+                },
+                "template": {
+                  "mean": 0.9878102836879433,
+                  "lo": 0.9687130614657211,
+                  "hi": 1.0,
+                  "clusters": 12
+                }
+              }
+            },
+            {
+              "source": "actual",
+              "arm": "selected",
+              "budget": 256,
+              "accuracy": {
+                "family": {
+                  "mean": 0.9913194444444444,
+                  "lo": 0.9791666666666666,
+                  "hi": 0.9986979166666666,
+                  "clusters": 36
+                },
+                "template": {
+                  "mean": 0.991300975177305,
+                  "lo": 0.9760915336879434,
+                  "hi": 1.0,
+                  "clusters": 12
+                }
+              },
+              "all_four": {
+                "family": {
+                  "mean": 0.9704861111111112,
+                  "lo": 0.9322916666666666,
+                  "hi": 0.9947916666666666,
+                  "clusters": 36
+                },
+                "template": {
+                  "mean": 0.9704122340425533,
+                  "lo": 0.9199911347517732,
+                  "hi": 1.0,
+                  "clusters": 12
+                }
+              },
+              "coverage": {
+                "family": {
+                  "mean": 0.9956597222222222,
+                  "lo": 0.9887152777777778,
+                  "hi": 0.9995659722222222,
+                  "clusters": 36
+                },
+                "template": {
+                  "mean": 0.9956597222222222,
+                  "lo": 0.9874131944444443,
+                  "hi": 1.0,
+                  "clusters": 12
+                }
+              },
+              "relevant_both": {
+                "family": {
+                  "mean": 0.9791666666666666,
+                  "lo": 0.953125,
+                  "hi": 0.9982638888888888,
+                  "clusters": 36
+                },
+                "template": {
+                  "mean": 0.9791297281323877,
+                  "lo": 0.9391622340425533,
+                  "hi": 1.0,
+                  "clusters": 12
+                }
+              },
+              "unrelated_both": {
+                "family": {
+                  "mean": 0.9878472222222222,
+                  "lo": 0.9670138888888888,
+                  "hi": 1.0,
+                  "clusters": 36
+                },
+                "template": {
+                  "mean": 0.9878102836879433,
+                  "lo": 0.9687130614657211,
+                  "hi": 1.0,
+                  "clusters": 12
+                }
+              }
+            },
+            {
+              "source": "actual",
+              "arm": "sham0",
+              "budget": 64,
+              "accuracy": {
+                "family": {
+                  "mean": 0.31663773148148144,
+                  "lo": 0.278443287037037,
+                  "hi": 0.35546875,
+                  "clusters": 36
+                },
+                "template": {
+                  "mean": 0.3168218085106383,
+                  "lo": 0.28148917700945625,
+                  "hi": 0.3562172170508274,
+                  "clusters": 12
+                }
+              },
+              "all_four": {
+                "family": {
+                  "mean": 0.019328703703703702,
+                  "lo": 0.008680555555555556,
+                  "hi": 0.03148148148148148,
+                  "clusters": 36
+                },
+                "template": {
+                  "mean": 0.01928191489361702,
+                  "lo": 0.008680555555555554,
+                  "hi": 0.031619385342789595,
+                  "clusters": 12
+                }
+              },
+              "coverage": {
+                "family": {
+                  "mean": 0.5953414351851851,
+                  "lo": 0.5339120370370369,
+                  "hi": 0.6568590856481481,
+                  "clusters": 36
+                },
+                "template": {
+                  "mean": 0.5958554964539007,
+                  "lo": 0.5276745807476358,
+                  "hi": 0.6716718380614656,
+                  "clusters": 12
+                }
+              },
+              "relevant_both": {
+                "family": {
+                  "mean": 0.08576388888888889,
+                  "lo": 0.06076388888888889,
+                  "hi": 0.1130787037037037,
+                  "clusters": 36
+                },
+                "template": {
+                  "mean": 0.08599290780141844,
+                  "lo": 0.059175531914893616,
+                  "hi": 0.1159869976359338,
+                  "clusters": 12
+                }
+              },
+              "unrelated_both": {
+                "family": {
+                  "mean": 0.2027777777777778,
+                  "lo": 0.16643518518518519,
+                  "hi": 0.2399305555555556,
+                  "clusters": 36
+                },
+                "template": {
+                  "mean": 0.20301418439716312,
+                  "lo": 0.18480348699763594,
+                  "hi": 0.22229609929078017,
+                  "clusters": 12
+                }
+              }
+            },
+            {
+              "source": "actual",
+              "arm": "sham0",
+              "budget": 256,
+              "accuracy": {
+                "family": {
+                  "mean": 0.31663773148148144,
+                  "lo": 0.278443287037037,
+                  "hi": 0.35546875,
+                  "clusters": 36
+                },
+                "template": {
+                  "mean": 0.3168218085106383,
+                  "lo": 0.28148917700945625,
+                  "hi": 0.3562172170508274,
+                  "clusters": 12
+                }
+              },
+              "all_four": {
+                "family": {
+                  "mean": 0.019328703703703702,
+                  "lo": 0.008680555555555556,
+                  "hi": 0.03148148148148148,
+                  "clusters": 36
+                },
+                "template": {
+                  "mean": 0.01928191489361702,
+                  "lo": 0.008680555555555554,
+                  "hi": 0.031619385342789595,
+                  "clusters": 12
+                }
+              },
+              "coverage": {
+                "family": {
+                  "mean": 0.5953414351851851,
+                  "lo": 0.5339120370370369,
+                  "hi": 0.6568590856481481,
+                  "clusters": 36
+                },
+                "template": {
+                  "mean": 0.5958554964539007,
+                  "lo": 0.5276745807476358,
+                  "hi": 0.6716718380614656,
+                  "clusters": 12
+                }
+              },
+              "relevant_both": {
+                "family": {
+                  "mean": 0.08576388888888889,
+                  "lo": 0.06076388888888889,
+                  "hi": 0.1130787037037037,
+                  "clusters": 36
+                },
+                "template": {
+                  "mean": 0.08599290780141844,
+                  "lo": 0.059175531914893616,
+                  "hi": 0.1159869976359338,
+                  "clusters": 12
+                }
+              },
+              "unrelated_both": {
+                "family": {
+                  "mean": 0.2027777777777778,
+                  "lo": 0.16643518518518519,
+                  "hi": 0.2399305555555556,
+                  "clusters": 36
+                },
+                "template": {
+                  "mean": 0.20301418439716312,
+                  "lo": 0.18480348699763594,
+                  "hi": 0.22229609929078017,
+                  "clusters": 12
+                }
+              }
+            },
+            {
+              "source": "actual",
+              "arm": "sham1",
+              "budget": 64,
+              "accuracy": {
+                "family": {
+                  "mean": 0.31302083333333336,
+                  "lo": 0.2809020543981481,
+                  "hi": 0.3460358796296297,
+                  "clusters": 36
+                },
+                "template": {
+                  "mean": 0.31299867021276595,
+                  "lo": 0.27785096224881795,
+                  "hi": 0.34580078124999997,
+                  "clusters": 12
+                }
+              },
+              "all_four": {
+                "family": {
+                  "mean": 0.008680555555555556,
+                  "lo": 0.0,
+                  "hi": 0.019097222222222224,
+                  "clusters": 36
+                },
+                "template": {
+                  "mean": 0.008680555555555554,
+                  "lo": 0.0,
+                  "hi": 0.01909722222222222,
+                  "clusters": 12
+                }
+              },
+              "coverage": {
+                "family": {
+                  "mean": 0.6254050925925926,
+                  "lo": 0.5774008969907407,
+                  "hi": 0.6739872685185184,
+                  "clusters": 36
+                },
+                "template": {
+                  "mean": 0.625498670212766,
+                  "lo": 0.5683434452570921,
+                  "hi": 0.6812204491725767,
+                  "clusters": 12
+                }
+              },
+              "relevant_both": {
+                "family": {
+                  "mean": 0.05046296296296296,
+                  "lo": 0.03298611111111111,
+                  "hi": 0.06944444444444445,
+                  "clusters": 36
+                },
+                "template": {
+                  "mean": 0.05060579196217494,
+                  "lo": 0.02951388888888889,
+                  "hi": 0.0749113475177305,
+                  "clusters": 12
+                }
+              },
+              "unrelated_both": {
+                "family": {
+                  "mean": 0.20092592592592592,
+                  "lo": 0.15416377314814816,
+                  "hi": 0.2502343749999998,
+                  "clusters": 36
+                },
+                "template": {
+                  "mean": 0.2010195035460993,
+                  "lo": 0.15743203309692674,
+                  "hi": 0.24342678782505897,
+                  "clusters": 12
+                }
+              }
+            },
+            {
+              "source": "actual",
+              "arm": "sham1",
+              "budget": 256,
+              "accuracy": {
+                "family": {
+                  "mean": 0.31302083333333336,
+                  "lo": 0.2809020543981481,
+                  "hi": 0.3460358796296297,
+                  "clusters": 36
+                },
+                "template": {
+                  "mean": 0.31299867021276595,
+                  "lo": 0.27785096224881795,
+                  "hi": 0.34580078124999997,
+                  "clusters": 12
+                }
+              },
+              "all_four": {
+                "family": {
+                  "mean": 0.008680555555555556,
+                  "lo": 0.0,
+                  "hi": 0.019097222222222224,
+                  "clusters": 36
+                },
+                "template": {
+                  "mean": 0.008680555555555554,
+                  "lo": 0.0,
+                  "hi": 0.01909722222222222,
+                  "clusters": 12
+                }
+              },
+              "coverage": {
+                "family": {
+                  "mean": 0.6254050925925926,
+                  "lo": 0.5774008969907407,
+                  "hi": 0.6739872685185184,
+                  "clusters": 36
+                },
+                "template": {
+                  "mean": 0.625498670212766,
+                  "lo": 0.5683434452570921,
+                  "hi": 0.6812204491725767,
+                  "clusters": 12
+                }
+              },
+              "relevant_both": {
+                "family": {
+                  "mean": 0.05046296296296296,
+                  "lo": 0.03298611111111111,
+                  "hi": 0.06944444444444445,
+                  "clusters": 36
+                },
+                "template": {
+                  "mean": 0.05060579196217494,
+                  "lo": 0.02951388888888889,
+                  "hi": 0.0749113475177305,
+                  "clusters": 12
+                }
+              },
+              "unrelated_both": {
+                "family": {
+                  "mean": 0.20092592592592592,
+                  "lo": 0.15416377314814816,
+                  "hi": 0.2502343749999998,
+                  "clusters": 36
+                },
+                "template": {
+                  "mean": 0.2010195035460993,
+                  "lo": 0.15743203309692674,
+                  "hi": 0.24342678782505897,
+                  "clusters": 12
+                }
+              }
+            },
+            {
+              "source": "actual",
+              "arm": "sham2",
+              "budget": 64,
+              "accuracy": {
+                "family": {
+                  "mean": 0.32488425925925923,
+                  "lo": 0.29265046296296293,
+                  "hi": 0.3579000289351851,
+                  "clusters": 36
+                },
+                "template": {
+                  "mean": 0.32509604018912525,
+                  "lo": 0.28380799349881797,
+                  "hi": 0.3673077811022459,
+                  "clusters": 12
+                }
+              },
+              "all_four": {
+                "family": {
+                  "mean": 0.006944444444444444,
+                  "lo": 0.001736111111111111,
+                  "hi": 0.013888888888888888,
+                  "clusters": 36
+                },
+                "template": {
+                  "mean": 0.007055260047281323,
+                  "lo": 0.0,
+                  "hi": 0.015883569739952717,
+                  "clusters": 12
+                }
+              },
+              "coverage": {
+                "family": {
+                  "mean": 0.6445023148148148,
+                  "lo": 0.5912319155092592,
+                  "hi": 0.6976562500000001,
+                  "clusters": 36
+                },
+                "template": {
+                  "mean": 0.6450483894799055,
+                  "lo": 0.5720947842789598,
+                  "hi": 0.7176141400709221,
+                  "clusters": 12
+                }
+              },
+              "relevant_both": {
+                "family": {
+                  "mean": 0.050694444444444445,
+                  "lo": 0.03333333333333333,
+                  "hi": 0.06979166666666667,
+                  "clusters": 36
+                },
+                "template": {
+                  "mean": 0.050605791962174934,
+                  "lo": 0.03154550827423168,
+                  "hi": 0.07328605200945626,
+                  "clusters": 12
+                }
+              },
+              "unrelated_both": {
+                "family": {
+                  "mean": 0.22141203703703705,
+                  "lo": 0.17928240740740742,
+                  "hi": 0.26539641203703684,
+                  "clusters": 36
+                },
+                "template": {
+                  "mean": 0.2218158983451537,
+                  "lo": 0.18129432624113476,
+                  "hi": 0.2619311465721041,
+                  "clusters": 12
+                }
+              }
+            },
+            {
+              "source": "actual",
+              "arm": "sham2",
+              "budget": 256,
+              "accuracy": {
+                "family": {
+                  "mean": 0.32488425925925923,
+                  "lo": 0.29265046296296293,
+                  "hi": 0.3579000289351851,
+                  "clusters": 36
+                },
+                "template": {
+                  "mean": 0.32509604018912525,
+                  "lo": 0.28380799349881797,
+                  "hi": 0.3673077811022459,
+                  "clusters": 12
+                }
+              },
+              "all_four": {
+                "family": {
+                  "mean": 0.006944444444444444,
+                  "lo": 0.001736111111111111,
+                  "hi": 0.013888888888888888,
+                  "clusters": 36
+                },
+                "template": {
+                  "mean": 0.007055260047281323,
+                  "lo": 0.0,
+                  "hi": 0.015883569739952717,
+                  "clusters": 12
+                }
+              },
+              "coverage": {
+                "family": {
+                  "mean": 0.6445023148148148,
+                  "lo": 0.5912319155092592,
+                  "hi": 0.6976562500000001,
+                  "clusters": 36
+                },
+                "template": {
+                  "mean": 0.6450483894799055,
+                  "lo": 0.5720947842789598,
+                  "hi": 0.7176141400709221,
+                  "clusters": 12
+                }
+              },
+              "relevant_both": {
+                "family": {
+                  "mean": 0.050694444444444445,
+                  "lo": 0.03333333333333333,
+                  "hi": 0.06979166666666667,
+                  "clusters": 36
+                },
+                "template": {
+                  "mean": 0.050605791962174934,
+                  "lo": 0.03154550827423168,
+                  "hi": 0.07328605200945626,
+                  "clusters": 12
+                }
+              },
+              "unrelated_both": {
+                "family": {
+                  "mean": 0.22141203703703705,
+                  "lo": 0.17928240740740742,
+                  "hi": 0.26539641203703684,
+                  "clusters": 36
+                },
+                "template": {
+                  "mean": 0.2218158983451537,
+                  "lo": 0.18129432624113476,
+                  "hi": 0.2619311465721041,
+                  "clusters": 12
+                }
+              }
+            },
+            {
+              "source": "literal",
+              "arm": "full_text",
+              "budget": 64,
+              "accuracy": {
+                "family": {
+                  "mean": 0.9986979166666666,
+                  "lo": 0.9965277777777778,
+                  "hi": 1.0,
+                  "clusters": 36
+                },
+                "template": {
+                  "mean": 0.9986979166666666,
+                  "lo": 0.9965277777777778,
+                  "hi": 1.0,
+                  "clusters": 12
+                }
+              },
+              "all_four": {
+                "family": {
+                  "mean": 0.9947916666666666,
+                  "lo": 0.9861111111111112,
+                  "hi": 1.0,
+                  "clusters": 36
+                },
+                "template": {
+                  "mean": 0.9947916666666666,
+                  "lo": 0.9861111111111112,
+                  "hi": 1.0,
+                  "clusters": 12
+                }
+              },
+              "coverage": {
+                "family": {
+                  "mean": 0.9995659722222222,
+                  "lo": 0.9986979166666666,
+                  "hi": 1.0,
+                  "clusters": 36
+                },
+                "template": {
+                  "mean": 0.9995659722222222,
+                  "lo": 0.9986979166666665,
+                  "hi": 1.0,
+                  "clusters": 12
+                }
+              },
+              "relevant_both": {
+                "family": {
+                  "mean": 0.9965277777777778,
+                  "lo": 0.9913194444444444,
+                  "hi": 1.0,
+                  "clusters": 36
+                },
+                "template": {
+                  "mean": 0.9965277777777777,
+                  "lo": 0.9913194444444443,
+                  "hi": 1.0,
+                  "clusters": 12
+                }
+              },
+              "unrelated_both": {
+                "family": {
+                  "mean": 0.9982638888888888,
+                  "lo": 0.9947916666666666,
+                  "hi": 1.0,
+                  "clusters": 36
+                },
+                "template": {
+                  "mean": 0.9982638888888888,
+                  "lo": 0.9947916666666665,
+                  "hi": 1.0,
+                  "clusters": 12
+                }
+              }
+            },
+            {
+              "source": "literal",
+              "arm": "full_text",
+              "budget": 256,
+              "accuracy": {
+                "family": {
+                  "mean": 0.9986979166666666,
+                  "lo": 0.9965277777777778,
+                  "hi": 1.0,
+                  "clusters": 36
+                },
+                "template": {
+                  "mean": 0.9986979166666666,
+                  "lo": 0.9965277777777778,
+                  "hi": 1.0,
+                  "clusters": 12
+                }
+              },
+              "all_four": {
+                "family": {
+                  "mean": 0.9947916666666666,
+                  "lo": 0.9861111111111112,
+                  "hi": 1.0,
+                  "clusters": 36
+                },
+                "template": {
+                  "mean": 0.9947916666666666,
+                  "lo": 0.9861111111111112,
+                  "hi": 1.0,
+                  "clusters": 12
+                }
+              },
+              "coverage": {
+                "family": {
+                  "mean": 0.9995659722222222,
+                  "lo": 0.9986979166666666,
+                  "hi": 1.0,
+                  "clusters": 36
+                },
+                "template": {
+                  "mean": 0.9995659722222222,
+                  "lo": 0.9986979166666665,
+                  "hi": 1.0,
+                  "clusters": 12
+                }
+              },
+              "relevant_both": {
+                "family": {
+                  "mean": 0.9965277777777778,
+                  "lo": 0.9913194444444444,
+                  "hi": 1.0,
+                  "clusters": 36
+                },
+                "template": {
+                  "mean": 0.9965277777777777,
+                  "lo": 0.9913194444444443,
+                  "hi": 1.0,
+                  "clusters": 12
+                }
+              },
+              "unrelated_both": {
+                "family": {
+                  "mean": 0.9982638888888888,
+                  "lo": 0.9947916666666666,
+                  "hi": 1.0,
+                  "clusters": 36
+                },
+                "template": {
+                  "mean": 0.9982638888888888,
+                  "lo": 0.9947916666666665,
+                  "hi": 1.0,
+                  "clusters": 12
+                }
+              }
+            },
+            {
+              "source": "literal",
+              "arm": "native",
+              "budget": 64,
+              "accuracy": {
+                "family": {
+                  "mean": 1.0,
+                  "lo": 1.0,
+                  "hi": 1.0,
+                  "clusters": 36
+                },
+                "template": {
+                  "mean": 1.0,
+                  "lo": 1.0,
+                  "hi": 1.0,
+                  "clusters": 12
+                }
+              },
+              "all_four": {
+                "family": {
+                  "mean": 1.0,
+                  "lo": 1.0,
+                  "hi": 1.0,
+                  "clusters": 36
+                },
+                "template": {
+                  "mean": 1.0,
+                  "lo": 1.0,
+                  "hi": 1.0,
+                  "clusters": 12
+                }
+              },
+              "coverage": {
+                "family": {
+                  "mean": 1.0,
+                  "lo": 1.0,
+                  "hi": 1.0,
+                  "clusters": 36
+                },
+                "template": {
+                  "mean": 1.0,
+                  "lo": 1.0,
+                  "hi": 1.0,
+                  "clusters": 12
+                }
+              },
+              "relevant_both": {
+                "family": {
+                  "mean": 1.0,
+                  "lo": 1.0,
+                  "hi": 1.0,
+                  "clusters": 36
+                },
+                "template": {
+                  "mean": 1.0,
+                  "lo": 1.0,
+                  "hi": 1.0,
+                  "clusters": 12
+                }
+              },
+              "unrelated_both": {
+                "family": {
+                  "mean": 1.0,
+                  "lo": 1.0,
+                  "hi": 1.0,
+                  "clusters": 36
+                },
+                "template": {
+                  "mean": 1.0,
+                  "lo": 1.0,
+                  "hi": 1.0,
+                  "clusters": 12
+                }
+              }
+            },
+            {
+              "source": "literal",
+              "arm": "native",
+              "budget": 256,
+              "accuracy": {
+                "family": {
+                  "mean": 1.0,
+                  "lo": 1.0,
+                  "hi": 1.0,
+                  "clusters": 36
+                },
+                "template": {
+                  "mean": 1.0,
+                  "lo": 1.0,
+                  "hi": 1.0,
+                  "clusters": 12
+                }
+              },
+              "all_four": {
+                "family": {
+                  "mean": 1.0,
+                  "lo": 1.0,
+                  "hi": 1.0,
+                  "clusters": 36
+                },
+                "template": {
+                  "mean": 1.0,
+                  "lo": 1.0,
+                  "hi": 1.0,
+                  "clusters": 12
+                }
+              },
+              "coverage": {
+                "family": {
+                  "mean": 1.0,
+                  "lo": 1.0,
+                  "hi": 1.0,
+                  "clusters": 36
+                },
+                "template": {
+                  "mean": 1.0,
+                  "lo": 1.0,
+                  "hi": 1.0,
+                  "clusters": 12
+                }
+              },
+              "relevant_both": {
+                "family": {
+                  "mean": 1.0,
+                  "lo": 1.0,
+                  "hi": 1.0,
+                  "clusters": 36
+                },
+                "template": {
+                  "mean": 1.0,
+                  "lo": 1.0,
+                  "hi": 1.0,
+                  "clusters": 12
+                }
+              },
+              "unrelated_both": {
+                "family": {
+                  "mean": 1.0,
+                  "lo": 1.0,
+                  "hi": 1.0,
+                  "clusters": 36
+                },
+                "template": {
+                  "mean": 1.0,
+                  "lo": 1.0,
+                  "hi": 1.0,
+                  "clusters": 12
+                }
+              }
+            },
+            {
+              "source": "literal",
+              "arm": "original",
+              "budget": 64,
+              "accuracy": {
+                "family": {
+                  "mean": 0.9943287037037037,
+                  "lo": 0.9908564814814815,
+                  "hi": 0.9973668981481482,
+                  "clusters": 36
+                },
+                "template": {
+                  "mean": 0.9943391696217493,
+                  "lo": 0.9904513888888888,
+                  "hi": 0.9973958333333334,
+                  "clusters": 12
+                }
+              },
+              "all_four": {
+                "family": {
+                  "mean": 0.977314814814815,
+                  "lo": 0.963425925925926,
+                  "hi": 0.9894675925925926,
+                  "clusters": 36
+                },
+                "template": {
+                  "mean": 0.9773566784869976,
+                  "lo": 0.9618055555555555,
+                  "hi": 0.9895833333333334,
+                  "clusters": 12
+                }
+              },
+              "coverage": {
+                "family": {
+                  "mean": 0.9964988425925926,
+                  "lo": 0.9930555555555556,
+                  "hi": 0.9991319444444444,
+                  "clusters": 36
+                },
+                "template": {
+                  "mean": 0.996518543144208,
+                  "lo": 0.9926215277777777,
+                  "hi": 0.9991319444444443,
+                  "clusters": 12
+                }
+              },
+              "relevant_both": {
+                "family": {
+                  "mean": 0.9912037037037038,
+                  "lo": 0.9840277777777777,
+                  "hi": 0.9982638888888888,
+                  "clusters": 36
+                },
+                "template": {
+                  "mean": 0.9912455673758865,
+                  "lo": 0.9824911347517729,
+                  "hi": 0.9982638888888888,
+                  "clusters": 12
+                }
+              },
+              "unrelated_both": {
+                "family": {
+                  "mean": 0.9861111111111112,
+                  "lo": 0.9722222222222222,
+                  "hi": 0.9965277777777778,
+                  "clusters": 36
+                },
+                "template": {
+                  "mean": 0.986111111111111,
+                  "lo": 0.9756944444444442,
+                  "hi": 0.9947916666666666,
+                  "clusters": 12
+                }
+              }
+            },
+            {
+              "source": "literal",
+              "arm": "original",
+              "budget": 256,
+              "accuracy": {
+                "family": {
+                  "mean": 0.9943287037037037,
+                  "lo": 0.9908564814814815,
+                  "hi": 0.9973668981481482,
+                  "clusters": 36
+                },
+                "template": {
+                  "mean": 0.9943391696217493,
+                  "lo": 0.9904513888888888,
+                  "hi": 0.9973958333333334,
+                  "clusters": 12
+                }
+              },
+              "all_four": {
+                "family": {
+                  "mean": 0.977314814814815,
+                  "lo": 0.963425925925926,
+                  "hi": 0.9894675925925926,
+                  "clusters": 36
+                },
+                "template": {
+                  "mean": 0.9773566784869976,
+                  "lo": 0.9618055555555555,
+                  "hi": 0.9895833333333334,
+                  "clusters": 12
+                }
+              },
+              "coverage": {
+                "family": {
+                  "mean": 0.9964988425925926,
+                  "lo": 0.9930555555555556,
+                  "hi": 0.9991319444444444,
+                  "clusters": 36
+                },
+                "template": {
+                  "mean": 0.996518543144208,
+                  "lo": 0.9926215277777777,
+                  "hi": 0.9991319444444443,
+                  "clusters": 12
+                }
+              },
+              "relevant_both": {
+                "family": {
+                  "mean": 0.9912037037037038,
+                  "lo": 0.9840277777777777,
+                  "hi": 0.9982638888888888,
+                  "clusters": 36
+                },
+                "template": {
+                  "mean": 0.9912455673758865,
+                  "lo": 0.9824911347517729,
+                  "hi": 0.9982638888888888,
+                  "clusters": 12
+                }
+              },
+              "unrelated_both": {
+                "family": {
+                  "mean": 0.9861111111111112,
+                  "lo": 0.9722222222222222,
+                  "hi": 0.9965277777777778,
+                  "clusters": 36
+                },
+                "template": {
+                  "mean": 0.986111111111111,
+                  "lo": 0.9756944444444442,
+                  "hi": 0.9947916666666666,
+                  "clusters": 12
+                }
+              }
+            },
+            {
+              "source": "literal",
+              "arm": "packet_text",
+              "budget": 64,
+              "accuracy": {
+                "family": {
+                  "mean": 0.9995659722222222,
+                  "lo": 0.9986979166666666,
+                  "hi": 1.0,
+                  "clusters": 36
+                },
+                "template": {
+                  "mean": 0.9995659722222222,
+                  "lo": 0.9986979166666665,
+                  "hi": 1.0,
+                  "clusters": 12
+                }
+              },
+              "all_four": {
+                "family": {
+                  "mean": 0.9982638888888888,
+                  "lo": 0.9947916666666666,
+                  "hi": 1.0,
+                  "clusters": 36
+                },
+                "template": {
+                  "mean": 0.9982638888888888,
+                  "lo": 0.9947916666666665,
+                  "hi": 1.0,
+                  "clusters": 12
+                }
+              },
+              "coverage": {
+                "family": {
+                  "mean": 0.9995659722222222,
+                  "lo": 0.9986979166666666,
+                  "hi": 1.0,
+                  "clusters": 36
+                },
+                "template": {
+                  "mean": 0.9995659722222222,
+                  "lo": 0.9986979166666665,
+                  "hi": 1.0,
+                  "clusters": 12
+                }
+              },
+              "relevant_both": {
+                "family": {
+                  "mean": 0.9982638888888888,
+                  "lo": 0.9947916666666666,
+                  "hi": 1.0,
+                  "clusters": 36
+                },
+                "template": {
+                  "mean": 0.9982638888888888,
+                  "lo": 0.9947916666666665,
+                  "hi": 1.0,
+                  "clusters": 12
+                }
+              },
+              "unrelated_both": {
+                "family": {
+                  "mean": 1.0,
+                  "lo": 1.0,
+                  "hi": 1.0,
+                  "clusters": 36
+                },
+                "template": {
+                  "mean": 1.0,
+                  "lo": 1.0,
+                  "hi": 1.0,
+                  "clusters": 12
+                }
+              }
+            },
+            {
+              "source": "literal",
+              "arm": "packet_text",
+              "budget": 256,
+              "accuracy": {
+                "family": {
+                  "mean": 0.9995659722222222,
+                  "lo": 0.9986979166666666,
+                  "hi": 1.0,
+                  "clusters": 36
+                },
+                "template": {
+                  "mean": 0.9995659722222222,
+                  "lo": 0.9986979166666665,
+                  "hi": 1.0,
+                  "clusters": 12
+                }
+              },
+              "all_four": {
+                "family": {
+                  "mean": 0.9982638888888888,
+                  "lo": 0.9947916666666666,
+                  "hi": 1.0,
+                  "clusters": 36
+                },
+                "template": {
+                  "mean": 0.9982638888888888,
+                  "lo": 0.9947916666666665,
+                  "hi": 1.0,
+                  "clusters": 12
+                }
+              },
+              "coverage": {
+                "family": {
+                  "mean": 0.9995659722222222,
+                  "lo": 0.9986979166666666,
+                  "hi": 1.0,
+                  "clusters": 36
+                },
+                "template": {
+                  "mean": 0.9995659722222222,
+                  "lo": 0.9986979166666665,
+                  "hi": 1.0,
+                  "clusters": 12
+                }
+              },
+              "relevant_both": {
+                "family": {
+                  "mean": 0.9982638888888888,
+                  "lo": 0.9947916666666666,
+                  "hi": 1.0,
+                  "clusters": 36
+                },
+                "template": {
+                  "mean": 0.9982638888888888,
+                  "lo": 0.9947916666666665,
+                  "hi": 1.0,
+                  "clusters": 12
+                }
+              },
+              "unrelated_both": {
+                "family": {
+                  "mean": 1.0,
+                  "lo": 1.0,
+                  "hi": 1.0,
+                  "clusters": 36
+                },
+                "template": {
+                  "mean": 1.0,
+                  "lo": 1.0,
+                  "hi": 1.0,
+                  "clusters": 12
+                }
+              }
+            },
+            {
+              "source": "literal",
+              "arm": "selected",
+              "budget": 64,
+              "accuracy": {
+                "family": {
+                  "mean": 0.9995659722222222,
+                  "lo": 0.9986979166666666,
+                  "hi": 1.0,
+                  "clusters": 36
+                },
+                "template": {
+                  "mean": 0.9995659722222222,
+                  "lo": 0.9986979166666665,
+                  "hi": 1.0,
+                  "clusters": 12
+                }
+              },
+              "all_four": {
+                "family": {
+                  "mean": 0.9982638888888888,
+                  "lo": 0.9947916666666666,
+                  "hi": 1.0,
+                  "clusters": 36
+                },
+                "template": {
+                  "mean": 0.9982638888888888,
+                  "lo": 0.9947916666666665,
+                  "hi": 1.0,
+                  "clusters": 12
+                }
+              },
+              "coverage": {
+                "family": {
+                  "mean": 0.9995659722222222,
+                  "lo": 0.9986979166666666,
+                  "hi": 1.0,
+                  "clusters": 36
+                },
+                "template": {
+                  "mean": 0.9995659722222222,
+                  "lo": 0.9986979166666665,
+                  "hi": 1.0,
+                  "clusters": 12
+                }
+              },
+              "relevant_both": {
+                "family": {
+                  "mean": 0.9982638888888888,
+                  "lo": 0.9947916666666666,
+                  "hi": 1.0,
+                  "clusters": 36
+                },
+                "template": {
+                  "mean": 0.9982638888888888,
+                  "lo": 0.9947916666666665,
+                  "hi": 1.0,
+                  "clusters": 12
+                }
+              },
+              "unrelated_both": {
+                "family": {
+                  "mean": 1.0,
+                  "lo": 1.0,
+                  "hi": 1.0,
+                  "clusters": 36
+                },
+                "template": {
+                  "mean": 1.0,
+                  "lo": 1.0,
+                  "hi": 1.0,
+                  "clusters": 12
+                }
+              }
+            },
+            {
+              "source": "literal",
+              "arm": "selected",
+              "budget": 256,
+              "accuracy": {
+                "family": {
+                  "mean": 0.9995659722222222,
+                  "lo": 0.9986979166666666,
+                  "hi": 1.0,
+                  "clusters": 36
+                },
+                "template": {
+                  "mean": 0.9995659722222222,
+                  "lo": 0.9986979166666665,
+                  "hi": 1.0,
+                  "clusters": 12
+                }
+              },
+              "all_four": {
+                "family": {
+                  "mean": 0.9982638888888888,
+                  "lo": 0.9947916666666666,
+                  "hi": 1.0,
+                  "clusters": 36
+                },
+                "template": {
+                  "mean": 0.9982638888888888,
+                  "lo": 0.9947916666666665,
+                  "hi": 1.0,
+                  "clusters": 12
+                }
+              },
+              "coverage": {
+                "family": {
+                  "mean": 0.9995659722222222,
+                  "lo": 0.9986979166666666,
+                  "hi": 1.0,
+                  "clusters": 36
+                },
+                "template": {
+                  "mean": 0.9995659722222222,
+                  "lo": 0.9986979166666665,
+                  "hi": 1.0,
+                  "clusters": 12
+                }
+              },
+              "relevant_both": {
+                "family": {
+                  "mean": 0.9982638888888888,
+                  "lo": 0.9947916666666666,
+                  "hi": 1.0,
+                  "clusters": 36
+                },
+                "template": {
+                  "mean": 0.9982638888888888,
+                  "lo": 0.9947916666666665,
+                  "hi": 1.0,
+                  "clusters": 12
+                }
+              },
+              "unrelated_both": {
+                "family": {
+                  "mean": 1.0,
+                  "lo": 1.0,
+                  "hi": 1.0,
+                  "clusters": 36
+                },
+                "template": {
+                  "mean": 1.0,
+                  "lo": 1.0,
+                  "hi": 1.0,
+                  "clusters": 12
+                }
+              }
+            }
+          ],
+          "realized_norms": {
+            "actual/identity_write": {
+              "L13": {
+                "edit_norm": 0.0,
+                "residual_norm": 320.7390737867022,
+                "ratio": 0.0,
+                "delta_state_cosine": 0.0,
+                "n": 2288
+              }
+            },
+            "actual/original": {
+              "L26": {
+                "edit_norm": 417.56342598441597,
+                "residual_norm": 454.00980027738984,
+                "ratio": 0.920787256220767,
+                "delta_state_cosine": 0.5151904882876189,
+                "n": 2288
+              },
+              "L32": {
+                "edit_norm": 152.38527023208724,
+                "residual_norm": 516.0025813229435,
+                "ratio": 0.29476629892680806,
+                "delta_state_cosine": 0.22861053871472817,
+                "n": 2288
+              },
+              "L38": {
+                "edit_norm": 205.5837869244022,
+                "residual_norm": 524.6492385597496,
+                "ratio": 0.3908314539171751,
+                "delta_state_cosine": 0.34173545045973536,
+                "n": 2288
+              }
+            },
+            "actual/other_world": {
+              "L13": {
+                "edit_norm": 317.55839645279036,
+                "residual_norm": 320.7390737867022,
+                "ratio": 0.9911952186435375,
+                "delta_state_cosine": 0.5750020290692369,
+                "n": 2288
+              }
+            },
+            "actual/selected": {
+              "L13": {
+                "edit_norm": 317.55839645279036,
+                "residual_norm": 320.7390737867022,
+                "ratio": 0.9911952186435375,
+                "delta_state_cosine": 0.5750020290692369,
+                "n": 2288
+              }
+            },
+            "actual/sham0": {
+              "L13": {
+                "edit_norm": 317.55839295820755,
+                "residual_norm": 320.7390737867022,
+                "ratio": 0.991195207755427,
+                "delta_state_cosine": 0.6282191737131639,
+                "n": 2288
+              }
+            },
+            "actual/sham1": {
+              "L13": {
+                "edit_norm": 317.5583977999387,
+                "residual_norm": 320.7390737867022,
+                "ratio": 0.9911952238955262,
+                "delta_state_cosine": 0.6167766811339171,
+                "n": 2288
+              }
+            },
+            "actual/sham2": {
+              "L13": {
+                "edit_norm": 317.5583932383077,
+                "residual_norm": 320.7390737867022,
+                "ratio": 0.9911952075541537,
+                "delta_state_cosine": 0.6094188983259085,
+                "n": 2288
+              }
+            },
+            "literal/native": {
+              "L13": {
+                "edit_norm": 286.1209687986574,
+                "residual_norm": 279.2169572523424,
+                "ratio": 1.0247818108748625,
+                "delta_state_cosine": 0.5830210241508651,
+                "n": 2288
+              }
+            },
+            "literal/original": {
+              "L26": {
+                "edit_norm": 365.44812265142696,
+                "residual_norm": 395.2626499095997,
+                "ratio": 0.9246149381669063,
+                "delta_state_cosine": 0.5259994780840157,
+                "n": 2288
+              },
+              "L32": {
+                "edit_norm": 131.19800541617653,
+                "residual_norm": 457.62567704207413,
+                "ratio": 0.2868713513090186,
+                "delta_state_cosine": 0.22864656891491447,
+                "n": 2288
+              },
+              "L38": {
+                "edit_norm": 173.78118417646502,
+                "residual_norm": 465.6048820335548,
+                "ratio": 0.3734687420625133,
+                "delta_state_cosine": 0.3423607616939328,
+                "n": 2288
+              }
+            },
+            "literal/selected": {
+              "L13": {
+                "edit_norm": 276.33073817433177,
+                "residual_norm": 279.2169572523424,
+                "ratio": 0.9897403702650533,
+                "delta_state_cosine": 0.5762606495274947,
+                "n": 2288
+              }
+            }
+          },
+          "cluster_counts": {
+            "family": 36,
+            "template": 12
+          }
+        }
+      },
+      "contrasts": {
+        "actual_selected_minus_original": {
+          "family": {
+            "mean": 0.026273148148148146,
+            "lo": 0.012152777777777778,
+            "hi": 0.04178240740740741,
+            "clusters": 36,
+            "p_two_sided": 0.00013333333333333334
+          },
+          "template": {
+            "mean": 0.026115543735224584,
+            "lo": 0.015625,
+            "hi": 0.03667996453900709,
+            "clusters": 12,
+            "p_two_sided": 1.6666666666666667e-05
+          }
+        },
+        "actual_selected_minus_mean_sham": {
+          "family": {
+            "mean": 0.9588348765432099,
+            "lo": 0.9212191358024692,
+            "hi": 0.984375,
+            "clusters": 36,
+            "p_two_sided": 1.6666666666666667e-05
+          },
+          "template": {
+            "mean": 0.958739657210402,
+            "lo": 0.9083921271670607,
+            "hi": 0.9889061268715524,
+            "clusters": 12,
+            "p_two_sided": 1.6666666666666667e-05
+          }
+        },
+        "actual_selected_minus_sham0": {
+          "family": {
+            "mean": 0.9511574074074074,
+            "lo": 0.9114583333333334,
+            "hi": 0.9806712962962963,
+            "clusters": 36,
+            "p_two_sided": 1.6666666666666667e-05
+          },
+          "template": {
+            "mean": 0.9511303191489362,
+            "lo": 0.8971261820330968,
+            "hi": 0.9877364066193852,
+            "clusters": 12,
+            "p_two_sided": 1.6666666666666667e-05
+          }
+        },
+        "actual_selected_minus_sham1": {
+          "family": {
+            "mean": 0.9618055555555556,
+            "lo": 0.9236111111111112,
+            "hi": 0.9878472222222222,
+            "clusters": 36,
+            "p_two_sided": 1.6666666666666667e-05
+          },
+          "template": {
+            "mean": 0.9617316784869977,
+            "lo": 0.9097222222222223,
+            "hi": 0.9930555555555557,
+            "clusters": 12,
+            "p_two_sided": 1.6666666666666667e-05
+          }
+        },
+        "actual_selected_minus_sham2": {
+          "family": {
+            "mean": 0.9635416666666666,
+            "lo": 0.9253472222222222,
+            "hi": 0.9895833333333334,
+            "clusters": 36,
+            "p_two_sided": 1.6666666666666667e-05
+          },
+          "template": {
+            "mean": 0.963356973995272,
+            "lo": 0.9129728132387708,
+            "hi": 0.9929816784869976,
+            "clusters": 12,
+            "p_two_sided": 1.6666666666666667e-05
+          }
+        },
+        "actual_selected_minus_none": {
+          "family": {
+            "mean": 0.9704861111111112,
+            "lo": 0.9322916666666666,
+            "hi": 0.9947916666666666,
+            "clusters": 36,
+            "p_two_sided": 1.6666666666666667e-05
+          },
+          "template": {
+            "mean": 0.9704122340425533,
+            "lo": 0.9199911347517732,
+            "hi": 1.0,
+            "clusters": 12,
+            "p_two_sided": 1.6666666666666667e-05
+          }
+        },
+        "actual_original_minus_none": {
+          "family": {
+            "mean": 0.944212962962963,
+            "lo": 0.9025462962962963,
+            "hi": 0.9737268518518518,
+            "clusters": 36,
+            "p_two_sided": 1.6666666666666667e-05
+          },
+          "template": {
+            "mean": 0.9442966903073285,
+            "lo": 0.8902556146572106,
+            "hi": 0.9774305555555554,
+            "clusters": 12,
+            "p_two_sided": 1.6666666666666667e-05
+          }
+        },
+        "actual_selected_minus_packet_text": {
+          "family": {
+            "mean": 0.0,
+            "lo": -0.005208333333333333,
+            "hi": 0.005208333333333333,
+            "clusters": 36,
+            "p_two_sided": 1.0
+          },
+          "template": {
+            "mean": -3.6938534278959864e-05,
+            "lo": -0.005319148936170213,
+            "hi": 0.005208333333333333,
+            "clusters": 12,
+            "p_two_sided": 0.934
+          }
+        },
+        "actual_selected_minus_other_world": {
+          "family": {
+            "mean": 0.9704861111111112,
+            "lo": 0.9322916666666666,
+            "hi": 0.9947916666666666,
+            "clusters": 36,
+            "p_two_sided": 1.6666666666666667e-05
+          },
+          "template": {
+            "mean": 0.9704122340425533,
+            "lo": 0.9199911347517732,
+            "hi": 1.0,
+            "clusters": 12,
+            "p_two_sided": 1.6666666666666667e-05
+          }
+        },
+        "literal_selected_minus_original": {
+          "family": {
+            "mean": 0.020949074074074075,
+            "lo": 0.008912037037037036,
+            "hi": 0.03483796296296296,
+            "clusters": 36,
+            "p_two_sided": 1.6666666666666667e-05
+          },
+          "template": {
+            "mean": 0.020907210401891252,
+            "lo": 0.008680555555555554,
+            "hi": 0.03645833333333333,
+            "clusters": 12,
+            "p_two_sided": 0.0001
+          }
+        },
+        "literal_selected_minus_packet_text": {
+          "family": {
+            "mean": 0.0,
+            "lo": -0.005208333333333333,
+            "hi": 0.005208333333333333,
+            "clusters": 36,
+            "p_two_sided": 1.0
+          },
+          "template": {
+            "mean": 0.0,
+            "lo": -0.005208333333333333,
+            "hi": 0.005208333333333333,
+            "clusters": 12,
+            "p_two_sided": 1.0
+          }
+        },
+        "literal_selected_minus_full_text": {
+          "family": {
+            "mean": 0.003472222222222222,
+            "lo": -0.003472222222222222,
+            "hi": 0.012152777777777778,
+            "clusters": 36,
+            "p_two_sided": 0.5700333333333333
+          },
+          "template": {
+            "mean": 0.003472222222222222,
+            "lo": 0.0,
+            "hi": 0.010416666666666666,
+            "clusters": 12,
+            "p_two_sided": 0.7024333333333334
+          }
+        },
+        "literal_selected_minus_native": {
+          "family": {
+            "mean": -0.001736111111111111,
+            "lo": -0.005208333333333333,
+            "hi": 0.0,
+            "clusters": 36,
+            "p_two_sided": 0.7255
+          },
+          "template": {
+            "mean": -0.001736111111111111,
+            "lo": -0.005208333333333333,
+            "hi": 0.0,
+            "clusters": 12,
+            "p_two_sided": 0.7063333333333334
+          }
+        },
+        "actual_selected_minus_literal_selected": {
+          "family": {
+            "mean": -0.027777777777777776,
+            "lo": -0.06597222222222222,
+            "hi": -0.001736111111111111,
+            "clusters": 36,
+            "p_two_sided": 0.030166666666666668
+          },
+          "template": {
+            "mean": -0.0278516548463357,
+            "lo": -0.07993498817966903,
+            "hi": 0.001736111111111111,
+            "clusters": 12,
+            "p_two_sided": 0.15536666666666665
+          }
+        }
+      },
+      "summary": {
+        "J": {
+          "actual/identity_write": 0.0,
+          "actual/none": 0.0,
+          "actual/original": 0.944212962962963,
+          "actual/other_world": 0.0,
+          "actual/packet_text": 0.9704861111111112,
+          "actual/selected": 0.9704861111111112,
+          "actual/sham0": 0.019328703703703702,
+          "actual/sham1": 0.008680555555555556,
+          "actual/sham2": 0.006944444444444444,
+          "literal/full_text": 0.9947916666666666,
+          "literal/native": 1.0,
+          "literal/original": 0.977314814814815,
+          "literal/packet_text": 0.9982638888888888,
+          "literal/selected": 0.9982638888888888
+        },
+        "coverage_selected": 0.9956597222222222,
+        "accuracy_selected": 0.9913194444444444,
+        "R_selected": 0.9791666666666666,
+        "U_selected": 0.9878472222222222,
+        "other_world_supplied": 0.9704861111111112,
+        "J256": 0.9704861111111112
+      },
+      "targets_inputs": {
+        "J": {
+          "family": {
+            "mean": 0.9704861111111112,
+            "lo": 0.9322916666666666,
+            "hi": 0.9947916666666666,
+            "clusters": 36
+          },
+          "template": {
+            "mean": 0.9704122340425533,
+            "lo": 0.9199911347517732,
+            "hi": 1.0,
+            "clusters": 12
+          }
+        },
+        "coverage": 0.9956597222222222,
+        "sham_contrast": {
+          "family": {
+            "mean": 0.9588348765432099,
+            "lo": 0.9212191358024692,
+            "hi": 0.984375,
+            "clusters": 36,
+            "p_two_sided": 1.6666666666666667e-05
+          },
+          "template": {
+            "mean": 0.958739657210402,
+            "lo": 0.9083921271670607,
+            "hi": 0.9889061268715524,
+            "clusters": 12,
+            "p_two_sided": 1.6666666666666667e-05
+          }
+        },
+        "original_contrast": {
+          "family": {
+            "mean": 0.026273148148148146,
+            "lo": 0.012152777777777778,
+            "hi": 0.04178240740740741,
+            "clusters": 36,
+            "p_two_sided": 0.00013333333333333334
+          },
+          "template": {
+            "mean": 0.026115543735224584,
+            "lo": 0.015625,
+            "hi": 0.03667996453900709,
+            "clusters": 12,
+            "p_two_sided": 1.6666666666666667e-05
+          }
+        }
+      },
+      "status": "PASS_INDEPENDENT_R3_ROOT_AUDIT"
+    }
+  },
+  "limits": "Scene-paired repeated measures: arms, sources and worlds live on the same scenes and add no independent N. Intervals are cluster-bootstrap envelopes over three seeds at the family and evidence-template levels; bootstrap seeds are not model replications. The other-world arm is a repeated measure, not new scenes. No-message J = 0 is structural. Native transplantation is an instrument, not a deployable method."
+}

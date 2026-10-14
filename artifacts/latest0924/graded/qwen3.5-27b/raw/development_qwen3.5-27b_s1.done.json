@@ -1,0 +1,94 @@
+{
+  "adapter": {
+    "installed": true,
+    "path": "src/syncomm/latest/adapter.py",
+    "policy": "required",
+    "priors_patched": 1,
+    "sha256": "0f4cc649a611c3f985414e4b4f9b69a680829dbb35c25ec83f6de8763e777b19"
+  },
+  "adapter_model_info": {
+    "attn_implementation": "eager",
+    "chat_render": "template",
+    "dtype": "torch.float32",
+    "env": {
+      "declared": "tflatest",
+      "match": true,
+      "python": "python",
+      "transformers": "5.12.1"
+    },
+    "experts_implementation": "eager",
+    "key": "qwen3.5-27b",
+    "load_seconds": 23.9,
+    "loader": "qwen3_5_text",
+    "loading": {
+      "clean": true,
+      "conversion_errors": {},
+      "error_msgs": [],
+      "mismatched": [],
+      "missing": [],
+      "n_mismatched": 0,
+      "n_missing": 0,
+      "n_unexpected": 0,
+      "stray_unexpected": [],
+      "unexpected_sample": []
+    },
+    "model_class": "Qwen3_5ForCausalLM",
+    "n_layers": 64,
+    "placement": {
+      "device_map": "cuda:0"
+    },
+    "stops": {
+      "after": [
+        248046,
+        248044
+      ],
+      "before": [
+        248046,
+        248044
+      ],
+      "stop_ids": [
+        248044,
+        248046
+      ],
+      "turn_end_id": 248046
+    },
+    "upcast_numel_by_dtype": {}
+  },
+  "arms": [
+    "none",
+    "internal_L000",
+    "text_L000",
+    "internal_L064",
+    "text_L064",
+    "internal_L128",
+    "sham0_L128",
+    "text_L128",
+    "internal_L191",
+    "text_L191",
+    "internal_L255",
+    "text_L255"
+  ],
+  "attn_implementation": "eager",
+  "cuda_devices": 1,
+  "elapsed_seconds": 2769.8245782852173,
+  "l255_world_mismatches": 0,
+  "manifest_sha256": "8060518e5e09f2cd2352c64178674bc4fb8bab89bcaaebe15346959e6e889338",
+  "model_dtype": "torch.float32",
+  "phase": "development",
+  "python": "python",
+  "raw_sha256": "5edfedd87f4bfb334030ac60ebab9241812c7d281cfc93862d4b41ad0d9a8097",
+  "receiver": "qwen3.5-27b",
+  "rows": 3456,
+  "rows_computed_this_process": 3456,
+  "scenes": 72,
+  "seconds_per_computed_row": 0.8014538710316023,
+  "shard": 1,
+  "shards": 2,
+  "status": "PASS",
+  "study": "LATEST0924_GRADED_B_V1",
+  "tiers": [
+    1,
+    2
+  ],
+  "transformers": "5.12.1"
+}

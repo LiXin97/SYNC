@@ -1,0 +1,16 @@
+{
+ "file": "src/syncomm/recovery/evaluate_depth.py",
+ "utc": "2026-09-22T18:57:53.059953+00:00",
+ "retired": {
+  "sha256": "7cfb87c8693fc17396ecc7a694b43908b7673b3f7bc3ff34cffc4a4e7077c658",
+  "commit": "032ae64",
+  "used_for": "every R1 engineering and development row of all four receivers"
+ },
+ "current": {
+  "sha256": "9e8d153129e8b61bc496444558f0dfa4b6f6aff4be00eebb7589f613b8ce8a01",
+  "commit": "f711b48",
+  "change": "configurations(): the local arm reads m[\"local_gammas\"] when present instead of m[\"gammas\"]"
+ },
+ "why_rows_are_unaffected": "R1 manifests carry local_scale_labels=[] and match_labels=[], so the edited branch is unreachable for every R1 configuration; the single changed line is inside `if label in (m.get(\"local_scale_labels\") or [])`. The diff was taken between the two git blobs and touches exactly that one line (verified, no other hunk). R1 rows are therefore identical under either version, and the audit accepts the retired hash for R1 roots through this lineage file rather than re-pinning the manifests to a file the rows did not run under.",
+ "sole_difference": "one line in configurations(), unreachable for R1"
+}

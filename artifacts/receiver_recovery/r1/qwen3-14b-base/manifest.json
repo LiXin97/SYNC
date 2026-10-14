@@ -1,0 +1,131 @@
+{
+  "all_layers": [
+    8,
+    14,
+    16,
+    20,
+    24,
+    26,
+    32
+  ],
+  "bank": "artifacts/mechanism0919/discovery_v1/exposed_development.json",
+  "bank_size": 96,
+  "bank_split": "dev",
+  "base_models": [
+    "qwen3-14b-base"
+  ],
+  "configs": [
+    [
+      "band",
+      [
+        0.4,
+        0.5,
+        0.6
+      ],
+      [
+        16,
+        20,
+        24
+      ]
+    ],
+    [
+      "d20",
+      [
+        0.2
+      ],
+      [
+        8
+      ]
+    ],
+    [
+      "d35",
+      [
+        0.35
+      ],
+      [
+        14
+      ]
+    ],
+    [
+      "d50",
+      [
+        0.5
+      ],
+      [
+        20
+      ]
+    ],
+    [
+      "d65",
+      [
+        0.65
+      ],
+      [
+        26
+      ]
+    ],
+    [
+      "d80",
+      [
+        0.8
+      ],
+      [
+        32
+      ]
+    ]
+  ],
+  "directions": "artifacts/receiver_recovery/fits/directions_qwen3-14b-base.pt",
+  "engineering_scene_ids": [
+    "f4f76966dc44e6d37864",
+    "b73fde4e7a35ca546d46",
+    "db403b268b2fefe0481d",
+    "c33d9d12d547e1a6fef8"
+  ],
+  "gammas": [
+    0.25,
+    0.5,
+    1,
+    2,
+    4
+  ],
+  "local_scale_labels": [],
+  "lock": "artifacts/receiver_recovery/locks/r1_depth_scan.lock.json",
+  "match_labels": [],
+  "models": {
+    "gemma-3-27b-it": "/path/to/models/gemma-3-27b-it",
+    "glm-4-9b": "/path/to/models/GLM-4-9B-0414",
+    "qwen3-14b-base": "/path/to/models/Qwen3-14B-Base",
+    "qwen3-32b": "/path/to/models/Qwen3-32B"
+  },
+  "n_blocks": 40,
+  "numerics": {
+    "budgets": [
+      64,
+      256
+    ],
+    "dtype": "FP32 eager, TF32 off, batch 1",
+    "parser": "strict first-line alias"
+  },
+  "pins": {
+    "artifacts/mechanism0919/discovery_v1/exposed_development.json": "97b7622418ba13eaae739a45ba675a8d838821c01f3f169eee84092a77056177",
+    "artifacts/receiver_recovery/fits/directions_qwen3-14b-base.pt": "75661419f45f3eec5697831bb75a1cf3811f3c79429828b15ad27aef0ae3a119",
+    "artifacts/receiver_recovery/words_221.json": "b7c686ee1c47392ee2499f31c4784a4d3427e1d981a624e8ed77af49aca5767e",
+    "src/syncomm/recovery/evaluate_depth.py": "7cfb87c8693fc17396ecc7a694b43908b7673b3f7bc3ff34cffc4a4e7077c658"
+  },
+  "plan": "the study protocol \u00a75-\u00a76",
+  "purpose": "R1 bounded depth scan on qwen3-14b-base: native fact-state transplantation vs raw fitted word-direction writing at six frozen write configurations, complete-fact packets, exposed dev-96 minus 4 engineering scenes. Development.",
+  "receiver": "qwen3-14b-base",
+  "root": "artifacts/receiver_recovery/r1/qwen3-14b-base",
+  "row_split": "exposed_development_r1",
+  "scale": {
+    "14": 1.0600754022598267,
+    "16": 1.0760756731033325,
+    "20": 1.1186240911483765,
+    "24": 1.1357760429382324,
+    "26": 1.1388479471206665,
+    "32": 1.1039443016052246,
+    "8": 1.0275583267211914
+  },
+  "study": "RECEIVER_RECOVERY_R1_QWEN3_14B_BASE_V1",
+  "words_file": "artifacts/receiver_recovery/words_221.json"
+}

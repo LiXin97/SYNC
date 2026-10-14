@@ -1,0 +1,288 @@
+{
+  "arms": {
+    "actual": [
+      [
+        "packet_text",
+        0
+      ],
+      [
+        "w:c12",
+        0.25
+      ],
+      [
+        "w:c12",
+        0.5
+      ],
+      [
+        "w:c12",
+        1
+      ],
+      [
+        "w:c12",
+        2
+      ],
+      [
+        "w:c12",
+        4
+      ],
+      [
+        "w:single_t0",
+        0.25
+      ],
+      [
+        "w:single_t0",
+        0.5
+      ],
+      [
+        "w:single_t0",
+        1
+      ],
+      [
+        "w:single_t0",
+        2
+      ],
+      [
+        "w:single_t0",
+        4
+      ],
+      [
+        "w:single_t6",
+        0.25
+      ],
+      [
+        "w:single_t6",
+        0.5
+      ],
+      [
+        "w:single_t6",
+        1
+      ],
+      [
+        "w:single_t6",
+        2
+      ],
+      [
+        "w:single_t6",
+        4
+      ],
+      [
+        "w:single_t11",
+        0.25
+      ],
+      [
+        "w:single_t11",
+        0.5
+      ],
+      [
+        "w:single_t11",
+        1
+      ],
+      [
+        "w:single_t11",
+        2
+      ],
+      [
+        "w:single_t11",
+        4
+      ],
+      [
+        "w:single_t0_nm",
+        1
+      ],
+      [
+        "w:single_t6_nm",
+        1
+      ],
+      [
+        "w:single_t11_nm",
+        1
+      ],
+      [
+        "emb1",
+        0.25
+      ],
+      [
+        "emb1",
+        0.5
+      ],
+      [
+        "emb1",
+        1
+      ],
+      [
+        "emb1",
+        2
+      ],
+      [
+        "emb1",
+        4
+      ]
+    ],
+    "literal": [
+      [
+        "none",
+        0
+      ],
+      [
+        "full_text",
+        0
+      ],
+      [
+        "packet_text",
+        0
+      ],
+      [
+        "w:c12",
+        0.25
+      ],
+      [
+        "w:c12",
+        0.5
+      ],
+      [
+        "w:c12",
+        1
+      ],
+      [
+        "w:c12",
+        2
+      ],
+      [
+        "w:c12",
+        4
+      ],
+      [
+        "w:single_t0",
+        0.25
+      ],
+      [
+        "w:single_t0",
+        0.5
+      ],
+      [
+        "w:single_t0",
+        1
+      ],
+      [
+        "w:single_t0",
+        2
+      ],
+      [
+        "w:single_t0",
+        4
+      ],
+      [
+        "w:single_t6",
+        0.25
+      ],
+      [
+        "w:single_t6",
+        0.5
+      ],
+      [
+        "w:single_t6",
+        1
+      ],
+      [
+        "w:single_t6",
+        2
+      ],
+      [
+        "w:single_t6",
+        4
+      ],
+      [
+        "w:single_t11",
+        0.25
+      ],
+      [
+        "w:single_t11",
+        0.5
+      ],
+      [
+        "w:single_t11",
+        1
+      ],
+      [
+        "w:single_t11",
+        2
+      ],
+      [
+        "w:single_t11",
+        4
+      ],
+      [
+        "w:single_t0_nm",
+        1
+      ],
+      [
+        "w:single_t6_nm",
+        1
+      ],
+      [
+        "w:single_t11_nm",
+        1
+      ],
+      [
+        "emb1",
+        0.25
+      ],
+      [
+        "emb1",
+        0.5
+      ],
+      [
+        "emb1",
+        1
+      ],
+      [
+        "emb1",
+        2
+      ],
+      [
+        "emb1",
+        4
+      ]
+    ]
+  },
+  "bank": "artifacts/mechanism0919/discovery_v1/exposed_development.json",
+  "bank_size": 96,
+  "bank_split": "dev",
+  "base_models": [
+    "qwen3-14b-base"
+  ],
+  "directions": "artifacts/word_interface_followup/directions/p0a_directions_qwen3-32b.pt",
+  "engineering_scene_ids": [
+    "f4f76966dc44e6d37864",
+    "b73fde4e7a35ca546d46",
+    "db403b268b2fefe0481d",
+    "c33d9d12d547e1a6fef8"
+  ],
+  "layer": 13,
+  "lock": "gates/word_interface_followup/p0a_dev.lock.json",
+  "models": {
+    "gemma-3-27b-it": "/path/to/models/gemma-3-27b-it",
+    "glm-4-9b": "/path/to/models/GLM-4-9B-0414",
+    "qwen3-14b-base": "/path/to/models/Qwen3-14B-Base",
+    "qwen3-32b": "/path/to/models/Qwen3-32B"
+  },
+  "n_blocks": 64,
+  "pins": {
+    "artifacts/receiver_recovery/words_221.json": "b7c686ee1c47392ee2499f31c4784a4d3427e1d981a624e8ed77af49aca5767e",
+    "artifacts/word_interface_followup/directions/p0a_directions_qwen3-32b.pt": "827844a1b86c08ed927a881d92a0f99f1f64e3404351f33067201ba9394221f3",
+    "src/syncomm/recovery/evaluate_confirm.py": "76796972e52e328b57b173a06d7ea6251aed2957d8020b47f8ac76b8332e4b75",
+    "src/syncomm/recovery/evaluate_depth.py": "9e8d153129e8b61bc496444558f0dfa4b6f6aff4be00eebb7589f613b8ce8a01",
+    "src/syncomm/wordif/evaluate_localrep.py": "e2eb4aaae2cc09a845fe17c861cdfd65453605040eef0668093d44774e96a5ed",
+    "artifacts/mechanism0919/discovery_v1/exposed_development.json": "97b7622418ba13eaae739a45ba675a8d838821c01f3f169eee84092a77056177",
+    "artifacts/routeb0921/b6a_packets/candidateA_dev96.json": "aed8ace8bc37821afaf3243c5b3b82edd623edea4868d799878ae8863c8b9be2"
+  },
+  "receiver": "qwen3-32b",
+  "root": "artifacts/word_interface_followup/p0a_dev/qwen3-32b",
+  "row_split": "p0a_dev",
+  "sources": {
+    "actual": "artifacts/routeb0921/b6a_packets/candidateA_dev96.json",
+    "literal": null
+  },
+  "study": "WORDIF_P0A_DEV_QWEN3_32B",
+  "words_file": "artifacts/receiver_recovery/words_221.json"
+}

@@ -1,0 +1,59 @@
+{
+ "utc": "2026-09-23T19:50:50.346101+00:00",
+ "exporter_sha256": "918565b1b855f92081111bc0d7c6bcdd33076f5132b56211da64d01b43f8b00e",
+ "inputs": {
+  "p0a_dev": {
+   "path": "artifacts/word_interface_followup/p0a_dev_audit.json",
+   "sha256": "caad25548e5ee8f564a55d4814297c8af603f5d55b2be8178c344ed36a968ab1",
+   "status": null
+  },
+  "p0a_confirm": {
+   "path": "artifacts/word_interface_followup/p0a_confirm_audit.json",
+   "sha256": "b63c7ecf76d220aa4499e3a7dc229dd87c4b585956df5ebcbcb74856298cc2b6",
+   "status": null
+  },
+  "p0a_recount": {
+   "path": "artifacts/word_interface_followup/p0a_confirm_recount.json",
+   "sha256": "9e8c3ebcb659f59f4f4e88ca4068be600e00006181f8258e529b64056a143fda",
+   "status": "FAIL_SECOND_COUNT_DISAGREES"
+  },
+  "p0b_dev": {
+   "path": "artifacts/word_interface_followup/p0b_dev_audit.json",
+   "sha256": "0606fcc6e8495979353e40c9e206b402a6fa51308269df44a6ad54fdcdc78545",
+   "status": "PASS_INDEPENDENT_P0B_AUDIT"
+  },
+  "p0b_eval": {
+   "path": "artifacts/word_interface_followup/p0b_eval_audit.json",
+   "sha256": "b4e023c4da43701f56abf9c14e4c7eb1d54062c012b0a8f50b5c8b6ff6eb13f0",
+   "status": "PASS_INDEPENDENT_P0B_AUDIT"
+  },
+  "p0b_recount": {
+   "path": "artifacts/word_interface_followup/p0b_eval_recount.json",
+   "sha256": "4a6d9c6cebf61c71e8939c4461e5ee3feeb87b0c7f72b441d6ba1d87254245b2",
+   "status": "PASS_SECOND_COUNT_MATCHES_AUDIT"
+  }
+ },
+ "locks": {
+  "p0a_bank.lock.json": "5fbada547db6c749db6d21517c05565a97202e1b8960814ff37059d7ebfa7387",
+  "p0a_confirm.lock.json": "09bfa43929240ab4928b8e1e2da2c8b70144513b316b6fc1a2ca858016054cf6",
+  "p0a_dev.lock.json": "2db9d535f78ba49fc9ed77b2ec00ac306a174a0eb5bf5aa8158244e87f708da9",
+  "p0b_bank.lock.json": "8f5e00a6b4373464855893593e82b8d7db13e69d6b92a822c1b2dac898443899",
+  "p0b_manifests.lock.json": "ef9bff839708d4b05dd33dbd30e9de8985c8a6525b1d380e2d49809441c0971d",
+  "p0b_protocol.lock.json": "7c899be3544bb448b89e14f9197f73632e7db27e47af2a66252601549934ca26",
+  "prior_banks_exclusion_wi_20260923.json": "ae81d8038708a9c6d02cfd2fee26e28ba2ebb2775eea67ac1095a6677522e67e"
+ },
+ "scripts": {
+  "src/syncomm/wordif/evaluate_localrep.py": "e2eb4aaae2cc09a845fe17c861cdfd65453605040eef0668093d44774e96a5ed",
+  "src/syncomm/recovery/evaluate_confirm4.py": "23661790a79ee506fa31f10cdcc0f5d33c471669cfe9ed566f0b19b4e3812ada",
+  "scripts/p0a_audit.py": "ed76b409125ed0888b733682a5720f394ea14e28d001db78979e59bc6d6226f0",
+  "scripts/p0b_audit.py": "4d274dffe71f37b694568c8f3b36b2ffc71a05d824e7063e3d03fd795a97906c",
+  "scripts/recount_wordif.py": "22e323c092bd6bdbd05668b337905d7ad88e8e1c38fc192a46f5665ecdc2a0e6",
+  "scripts/p0b_build_banks.py": "dba5bc37ebd68707029d16a0ad59e38d2501cef9884cb642724dc323fce3107e",
+  "scripts/p0a_build_bank.py": "fa4f3dcca3a6201b24a6ef16208648732bd2c1be13282bca91770b0a8acaef3e"
+ },
+ "p0a_recount_adjudication": {
+  "path": "artifacts/word_interface_followup/p0a_confirm_recount_adjudication.json",
+  "sha256": "1cff976fb68db75fc2e228e28275beb9f04707668adfb78f1dd34d3eeeca46ec",
+  "verdict": "ACCEPTED_WITH_DOCUMENTED_FLOAT_TIE (the recount status string stays FAIL as produced; tolerances were not changed after the fact)"
+ }
+}

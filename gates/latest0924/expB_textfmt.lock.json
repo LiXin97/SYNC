@@ -1,0 +1,86 @@
+{
+ "lock": "latest0924_expB_textfmt",
+ "utc": "2026-09-24T234127Z",
+ "status": "LOCKED before any GPU row of this study",
+ "authority": "[internal approval note removed for anonymity]",
+ "design": "artifacts/latest0924/graded_textfmt/DESIGN.md",
+ "receivers": [
+  "qwen3-32b",
+  "qwen3.5-27b"
+ ],
+ "formats": {
+  "F1_pct": "header \"Selected words and exact relative weights (percent): \", slot \"word [round(100*w/255)%]\", unfilled \"unknown [100%]\"",
+  "F2_verbal": "header \"Selected words and relative weights (strong, fairly strong, moderate, weak): \", slot \"word [label]\" with 255 strong, 191 fairly strong, 128 moderate, 64 weak; unfilled \"unknown [strong]\"",
+  "F3_instr": "Experiment B \"[w/255]\" message; prompt gains the line \"If an object lists two values for the same attribute, the value with the higher weight is the true one.\" immediately before \"Message:\\n\"; the internal route gets the same line (internal_instr arms)"
+ },
+ "primary_contrasts": [
+  "{r}:pct",
+  "{r}:verbal",
+  "{r}:instr",
+  "{r}:instr_internal"
+ ],
+ "primary_definition": "pct/verbal/instr: mean over L in {64,128,191} of J_internal(L) [Experiment B development internal_L* rows] minus J_text_format(L); instr_internal: J_internal_instr(L) minus J_textinstr(L); family-macro four-answer success at 64 tokens, paired by scene",
+ "holm": "alpha 0.05 across all 8 (2 receivers x 4 contrasts)",
+ "labels": "internal still better (Holm reject and enclosing lower > 0); text better (Holm reject and enclosing upper < 0); similar (enclosing interval within [-3,+3] points); else unresolved; NOT INTERPRETABLE if either arm fails the L=0 positive control (J>=0.90, coverage>=0.90) or the L=255 structural zero",
+ "ci": "Experiment B statistics imported unchanged from scripts/latest0924/analyze_graded.py: cluster bootstrap over 36 families and 12 domain x template clusters, 20,000 draws x seeds 20260924-6, enclosing interval, p = larger of the two",
+ "reporting": "Results are reported whichever way they come out, including if a text format closes or reverses the gap.",
+ "pins": {
+  "artifacts/latest0924/graded_textfmt/DESIGN.md": "ec6b367e3700eba1e31c7e5c41d68588f39f54c500967d1b3b8f14172c9b4f05",
+  "artifacts/latest0924/graded_textfmt/qwen3-32b/manifest.json": "f1f801eb22110f0b471dfadcf3c93f72c6e40e7198b06783b810c79cd733d079",
+  "artifacts/latest0924/graded_textfmt/qwen3.5-27b/manifest.json": "ac99c42b8df58f85f75cf6755b8c5b496793aff85d4cb91c7d4ed1e7a7e9b660",
+  "artifacts/latest0924/graded_textfmt/qwen3-32b/dryrun.json": "6fcb96660289d63da27abe6b26b05400bc6880c038da4e90c0afacee43a44400",
+  "artifacts/latest0924/graded_textfmt/qwen3.5-27b/dryrun.json": "b2dadb3612602c5653832154466a83a100e5d419581e37c1dae28555da915a22",
+  "src/syncomm/latest/evaluate_graded_textfmt.py": "0683c4efb5c1e5203b1c15135f935f2161e318d7e3220e2be53ed12a6a4b3766",
+  "scripts/latest0924/textfmt/analyze_textfmt.py": "ac4d1e5ee0de092a6d34062b0bbf827600cefa799bebb51634a854b5e622e3c4",
+  "scripts/latest0924/textfmt/run_shard.sh": "b361929780b4f5890605d63c6fbe6c24972131f2fc2474e2e0386a01d6adaf27",
+  "scripts/latest0924/analyze_graded.py": "352a8d3bb0303db8cee351be15b31416e44523b353bdf4ecf1f1d90283e2f15c",
+  "src/syncomm/latest/evaluate_graded.py": "39644f2bf3e99ffe062f56b950011fdc259d97e9720f4ba618214fd5fce979ca",
+  "scripts/latest0924/build_graded_bank.py": "62d3622e339f3ddab47cc1ed886812386a00eea337bdb3c2a6e7b7f1da01443d",
+  "src/syncomm/latest/adapter.py": "0f4cc649a611c3f985414e4b4f9b69a680829dbb35c25ec83f6de8763e777b19",
+  "gates/latest0924/expB_graded.lock.json": "108ffa3a672cfc9e1ae90afecf86bc4d4f47b7564a8b919e6913611d900e3657",
+  "artifacts/latest0924/graded/bank.json": "b437e067d49b81e4071a8865938729af106cb6f03141efed444d1799f969df80",
+  "artifacts/latest0924/graded/packets_L0.json": "c9801c0bae673f341521ecfb317c80a90ba2e72a880dcff67e403d9cc92cd454",
+  "artifacts/latest0924/graded/packets_L64.json": "dba2034904c29278c45bafb652c3f4189a3c3d3f1159770354631be2dc236e15",
+  "artifacts/latest0924/graded/packets_L128.json": "b953922e85fc37be601c882196571a6d30972ffbf743d541d2304ca137028d67",
+  "artifacts/latest0924/graded/packets_L191.json": "f6fef2ebee6ee9d990ebe46160d8d3e05738caa5354e5fc5c008766a98757ce3",
+  "artifacts/latest0924/graded/packets_L255.json": "c6cad1162c9a40f6f381c4c523f7445ab4943c1467fa958e30c656d529cbde0b"
+ },
+ "comparator_pins": {
+  "artifacts/latest0924/graded/qwen3-32b/raw/development_qwen3-32b_s0.done.json": "369749cd1fac8328fea9a62a852824bbc807008f7777511fbecccc11637c832c",
+  "artifacts/latest0924/graded/qwen3-32b/raw/development_qwen3-32b_s0.jsonl": "8ab8362ddf8e72a549615cb01843b5bc4e01a665c10075878f14af40a924c6cf",
+  "artifacts/latest0924/graded/qwen3-32b/raw/development_qwen3-32b_s1.done.json": "a5fd098f77d97ed3d24c99705369f57c9e29253127372cd4bec4ed94332ee1ca",
+  "artifacts/latest0924/graded/qwen3-32b/raw/development_qwen3-32b_s1.jsonl": "146d3e63ad4f526bd19c3172341bbfa7ebee23d09d066e20055de55e15cc5aca",
+  "artifacts/latest0924/graded/qwen3-32b/raw/engineering_qwen3-32b_s0.done.json": "0083a1b805a18b3df00b680ec3cc869670c81cb3767419e872bc56b027babc24",
+  "artifacts/latest0924/graded/qwen3-32b/raw/engineering_qwen3-32b_s0.jsonl": "1917f2c1a6bec1b3f7f8a03f42a61ee9450bbcab42a616f09b0fa225dbf95fec",
+  "artifacts/latest0924/graded/qwen3.5-27b/raw/development_qwen3.5-27b_s0.done.json": "e377cabf7514fdedb17ca501876aeec3776e16ab9bdceef6a5c6cebd7adbf5a6",
+  "artifacts/latest0924/graded/qwen3.5-27b/raw/development_qwen3.5-27b_s0.jsonl": "2b889a6253ec09f0cff478cf7cbf5f5d6e952a6282c68b4a283c166450ccbf82",
+  "artifacts/latest0924/graded/qwen3.5-27b/raw/development_qwen3.5-27b_s1.done.json": "dae5e939cbff2fca9f9383a6055341d9c58deff83aeaf9c6b870da06aa99b085",
+  "artifacts/latest0924/graded/qwen3.5-27b/raw/development_qwen3.5-27b_s1.jsonl": "5edfedd87f4bfb334030ac60ebab9241812c7d281cfc93862d4b41ad0d9a8097",
+  "artifacts/latest0924/graded/qwen3.5-27b/raw/engineering_qwen3.5-27b_s0.done.json": "64a1b90f8e03ec656827e795058da57b087f9c6691e7e77a44a3dfe25ad7f562",
+  "artifacts/latest0924/graded/qwen3.5-27b/raw/engineering_qwen3.5-27b_s0.jsonl": "4b785015a4b7b0bad3fed55d324224584a36c0d862dd2984e4d9609dc52eb354"
+ },
+ "amendments": [
+  {
+   "utc": "2026-09-25T002011Z",
+   "before": "any amendment-1 row; no F1-F3 outcome inspected",
+   "adds": {
+    "F4_sorted": "Experiment B \"[w/255]\" message, words within each object in descending weight order (stable)",
+    "F5_hedged": "header \"Selected words, each preceded by a qualifier expressing confidence (definitely, probably, possibly, unlikely): \", slot \"<qualifier> <word>\" with 255 definitely, 191 probably, 128 possibly, 64 unlikely; unfilled \"unknown\"",
+    "embedding": "e_unknown + (q_w/q_max)(e_symbol - e_unknown) at each active slot input embedding, neutral visible layout (emb1 at gamma 1)"
+   },
+   "holm": "family grows from 8 to 16: per receiver pct, verbal, instr, instr_internal, sorted, hedged, internal_minus_emb, emb_minus_text",
+   "analysis": "scripts/latest0924/textfmt/analyze_textfmt_v2.py",
+   "pins": {
+    "a dated decision record": "edde84368d1caa5d4f90614759704e14de62b501984ab0b4074dd56310d21406",
+    "src/syncomm/latest/evaluate_graded_textfmt_a1.py": "2a77d7a2211e82b4387703a1caa9a69c2331a72cf962a95bf28701b8fcfcccf4",
+    "src/syncomm/wordif/evaluate_localrep.py": "e2eb4aaae2cc09a845fe17c861cdfd65453605040eef0668093d44774e96a5ed",
+    "scripts/latest0924/textfmt/analyze_textfmt_v2.py": "0bb797bde69480249326c545e3c8225c84ac9dbcadcb4b9ee925bfbfed5a300c",
+    "scripts/latest0924/textfmt/run_shard_a1.sh": "864629c1f32adcf6914f328fae9d433f539be373e2bc7c032a02dee08249f641",
+    "artifacts/latest0924/graded_textfmt/qwen3-32b/a1/manifest.json": "78d1f1f305f8019f4201ed6425d277bcf15960a306bf8f57ea88f2a371c7671f",
+    "artifacts/latest0924/graded_textfmt/qwen3.5-27b/a1/manifest.json": "f169bf5ba1b297392d9a6617986e466b2d87b11228867a3c2cfc033f6f2b4606",
+    "artifacts/latest0924/graded_textfmt/qwen3-32b/a1/dryrun.json": "0997b60d36f01cda89d534ed4088d2fd4153ce9860d0e080e9e792047230a4a6",
+    "artifacts/latest0924/graded_textfmt/qwen3.5-27b/a1/dryrun.json": "cddcc8ebad14122e64c434d5d5c63e1f736b9cc3730452e50371c8145f870e83"
+   }
+  }
+ ]
+}

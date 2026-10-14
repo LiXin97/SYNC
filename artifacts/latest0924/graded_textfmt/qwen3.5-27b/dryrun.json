@@ -1,0 +1,36 @@
+{
+ "manifest_sha256": "ac99c42b8df58f85f75cf6755b8c5b496793aff85d4cb91c7d4ed1e7a7e9b660",
+ "problems": [],
+ "receiver": "qwen3.5-27b",
+ "sample_instructed_prompt": "<|im_start|>user\nAnswer with exactly one object name on one line.\nDEMOX is large. DEMOY is small.\nQ: Which object is large?\nA: DEMOX\n\nDEMOX is smooth. DEMOY is rough.\nQ: Which object is rough?\nA: DEMOY\n\nIf an object lists two values for the same attribute, the value with the higher weight is the true one.\nMessage:\nSelected words and exact relative weights (integers divided by 255): YUMB: unknown [255/255], unknown [255/255], unknown [255/255], unknown [255/255]; WERN: unknown [255/255], unknown [255/255], unknown [255/255], unknown [255/255].\nObjects:\nYUMB is an object. WERN is an object.\nQ: Which object is sweet?\nA:<|im_end|>\n<|im_start|>assistant\n<think>\n\n</think>\n\n",
+ "samples": {
+  "text_L064": "Selected words and exact relative weights (integers divided by 255): BANQ: gold [255/255], green [255/255], red [64/255], unknown [255/255]; CIRV: steel [255/255], green [64/255], red [255/255], unknown [255/255].",
+  "textinstr_L000": "Selected words and exact relative weights (integers divided by 255): BANQ: gold [255/255], green [255/255], unknown [255/255], unknown [255/255]; CIRV: steel [255/255], red [255/255], unknown [255/255], unknown [255/255].",
+  "textinstr_L064": "Selected words and exact relative weights (integers divided by 255): BANQ: gold [255/255], green [255/255], red [64/255], unknown [255/255]; CIRV: steel [255/255], green [64/255], red [255/255], unknown [255/255].",
+  "textinstr_L128": "Selected words and exact relative weights (integers divided by 255): BANQ: gold [255/255], green [255/255], red [128/255], unknown [255/255]; CIRV: steel [255/255], green [128/255], red [255/255], unknown [255/255].",
+  "textinstr_L191": "Selected words and exact relative weights (integers divided by 255): BANQ: gold [255/255], green [255/255], red [191/255], unknown [255/255]; CIRV: steel [255/255], green [191/255], red [255/255], unknown [255/255].",
+  "textinstr_L255": "Selected words and exact relative weights (integers divided by 255): BANQ: gold [255/255], green [255/255], red [255/255], unknown [255/255]; CIRV: steel [255/255], green [255/255], red [255/255], unknown [255/255].",
+  "textpct_L000": "Selected words and exact relative weights (percent): BANQ: gold [100%], green [100%], unknown [100%], unknown [100%]; CIRV: steel [100%], red [100%], unknown [100%], unknown [100%].",
+  "textpct_L064": "Selected words and exact relative weights (percent): BANQ: gold [100%], green [100%], red [25%], unknown [100%]; CIRV: steel [100%], green [25%], red [100%], unknown [100%].",
+  "textpct_L128": "Selected words and exact relative weights (percent): BANQ: gold [100%], green [100%], red [50%], unknown [100%]; CIRV: steel [100%], green [50%], red [100%], unknown [100%].",
+  "textpct_L191": "Selected words and exact relative weights (percent): BANQ: gold [100%], green [100%], red [75%], unknown [100%]; CIRV: steel [100%], green [75%], red [100%], unknown [100%].",
+  "textpct_L255": "Selected words and exact relative weights (percent): BANQ: gold [100%], green [100%], red [100%], unknown [100%]; CIRV: steel [100%], green [100%], red [100%], unknown [100%].",
+  "textverbal_L000": "Selected words and relative weights (strong, fairly strong, moderate, weak): BANQ: gold [strong], green [strong], unknown [strong], unknown [strong]; CIRV: steel [strong], red [strong], unknown [strong], unknown [strong].",
+  "textverbal_L064": "Selected words and relative weights (strong, fairly strong, moderate, weak): BANQ: gold [strong], green [strong], red [weak], unknown [strong]; CIRV: steel [strong], green [weak], red [strong], unknown [strong].",
+  "textverbal_L128": "Selected words and relative weights (strong, fairly strong, moderate, weak): BANQ: gold [strong], green [strong], red [moderate], unknown [strong]; CIRV: steel [strong], green [moderate], red [strong], unknown [strong].",
+  "textverbal_L191": "Selected words and relative weights (strong, fairly strong, moderate, weak): BANQ: gold [strong], green [strong], red [fairly strong], unknown [strong]; CIRV: steel [strong], green [fairly strong], red [strong], unknown [strong].",
+  "textverbal_L255": "Selected words and relative weights (strong, fairly strong, moderate, weak): BANQ: gold [strong], green [strong], red [strong], unknown [strong]; CIRV: steel [strong], green [strong], red [strong], unknown [strong]."
+ },
+ "stats": {
+  "instructed_prompt_differs_only_by_instruction": 296,
+  "scenes_development": 144,
+  "scenes_engineering": 4,
+  "text_prompts_checked:instr": 1480,
+  "text_prompts_checked:pct": 1480,
+  "text_prompts_checked:plain": 8,
+  "text_prompts_checked:verbal": 1480
+ },
+ "status": "PASS_DRY_RUN",
+ "study": "LATEST0924_GRADED_B_TEXTFMT_V1",
+ "transformers": "5.12.1"
+}

@@ -1,0 +1,57 @@
+{
+ "p0b_development": {
+  "n_packets": 192,
+  "parse_status": {
+   "ok": 191,
+   "partial": 1
+  },
+  "fact_recall": 0.9973958333333334,
+  "complete_packet_rate": 0.9895833333333334,
+  "complete_packets": 190,
+  "object_assignment_errors_per_packet": 0.005208333333333333,
+  "packets_with_assignment_error": 1,
+  "extraneous_words_per_packet": 2.625,
+  "note": "recall = gold values present in the right object lane / 8; an assignment error = a scene attribute value placed in a lane whose object does not hold it; extraneous = inventory words that are no attribute value of the scene"
+ },
+ "p0b_development_parse": {
+  "n": 200,
+  "ok": 199,
+  "partial": 1,
+  "empty": 0,
+  "malformed": 0,
+  "mean_decode_seconds": 1.0500570034980774,
+  "mean_bytes": 37.28
+ },
+ "p0b_evaluation": {
+  "n_packets": 1152,
+  "parse_status": {
+   "ok": 1150,
+   "partial": 2
+  },
+  "fact_recall": 0.9985894097222222,
+  "complete_packet_rate": 0.9913194444444444,
+  "complete_packets": 1142,
+  "object_assignment_errors_per_packet": 0.003472222222222222,
+  "packets_with_assignment_error": 4,
+  "extraneous_words_per_packet": 2.359375,
+  "note": "recall = gold values present in the right object lane / 8; an assignment error = a scene attribute value placed in a lane whose object does not hold it; extraneous = inventory words that are no attribute value of the scene"
+ },
+ "p0b_evaluation_parse": {
+  "n": 1160,
+  "ok": 1158,
+  "partial": 2,
+  "empty": 0,
+  "malformed": 0,
+  "mean_decode_seconds": 0.988353472742541,
+  "mean_bytes": 36.71896551724138
+ },
+ "p0a_confirmation_parse": {
+  "n": 1160,
+  "ok": 1160,
+  "partial": 0,
+  "empty": 0,
+  "malformed": 0,
+  "mean_decode_seconds": 0.531830088229015,
+  "mean_bytes": 22.458620689655174
+ }
+}

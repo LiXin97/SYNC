@@ -1,0 +1,91 @@
+{
+  "all_layers": [
+    12,
+    22,
+    25,
+    31,
+    37,
+    40,
+    50
+  ],
+  "bank": "artifacts/mechanism0919/discovery_v1/exposed_development.json",
+  "bank_size": 96,
+  "bank_split": "dev",
+  "base_models": [
+    "qwen3-14b-base"
+  ],
+  "configs": [
+    [
+      "d20",
+      [
+        0.2
+      ],
+      [
+        12
+      ]
+    ]
+  ],
+  "directions": "artifacts/receiver_recovery/fits/directions_gemma-3-27b-it.pt",
+  "engineering_scene_ids": [
+    "f4f76966dc44e6d37864",
+    "b73fde4e7a35ca546d46",
+    "db403b268b2fefe0481d",
+    "c33d9d12d547e1a6fef8"
+  ],
+  "gammas": [
+    1
+  ],
+  "local_gammas": [
+    0.25,
+    0.5,
+    1,
+    2,
+    4
+  ],
+  "local_scale_labels": [
+    "d20"
+  ],
+  "lock": "gates/receiver_recovery/r2_scale_rule.lock.json",
+  "match_labels": [
+    "d20"
+  ],
+  "models": {
+    "gemma-3-27b-it": "/path/to/models/gemma-3-27b-it",
+    "glm-4-9b": "/path/to/models/GLM-4-9B-0414",
+    "qwen3-14b-base": "/path/to/models/Qwen3-14B-Base",
+    "qwen3-32b": "/path/to/models/Qwen3-32B"
+  },
+  "n_blocks": 62,
+  "native_selected_depth": "d20",
+  "numerics": {
+    "budgets": [
+      64,
+      256
+    ],
+    "dtype": "FP32 eager, TF32 off, batch 1",
+    "parser": "strict first-line alias"
+  },
+  "pins": {
+    "artifacts/mechanism0919/discovery_v1/exposed_development.json": "97b7622418ba13eaae739a45ba675a8d838821c01f3f169eee84092a77056177",
+    "artifacts/receiver_recovery/fits/directions_gemma-3-27b-it.pt": "aa43d9a84458454559baf7bcdd5f4b1fddb312e7e48e97d6d58f40a793980fc9",
+    "artifacts/receiver_recovery/words_221.json": "b7c686ee1c47392ee2499f31c4784a4d3427e1d981a624e8ed77af49aca5767e",
+    "src/syncomm/recovery/evaluate_depth.py": "9e8d153129e8b61bc496444558f0dfa4b6f6aff4be00eebb7589f613b8ce8a01"
+  },
+  "plan": "the study protocol \u00a77",
+  "presearch_rule_lock": "gates/receiver_recovery/r2_gemma_presearch_rule.lock.json",
+  "purpose": "R2 on gemma-3-27b-it: at the NATIVE-selected depth d20, the generic local-scale rule at the five frozen gammas plus the two realized-edit-norm matching diagnostics; complete-fact packets, exposed dev-96 minus the 4 engineering scenes. Development.",
+  "receiver": "gemma-3-27b-it",
+  "root": "artifacts/receiver_recovery/r2/gemma-3-27b-it",
+  "row_split": "exposed_development_r2",
+  "scale": {
+    "12": 1.0282092094421387,
+    "22": 1.089351773262024,
+    "25": 1.1192673444747925,
+    "31": 1.214199185371399,
+    "37": 1.1722631454467773,
+    "40": 1.1504015922546387,
+    "50": 1.1536171436309814
+  },
+  "study": "RECEIVER_RECOVERY_R2_GEMMA_3_27B_IT_V1",
+  "words_file": "artifacts/receiver_recovery/words_221.json"
+}

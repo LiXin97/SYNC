@@ -1,0 +1,12 @@
+{
+  "elapsed_seconds": 1324.5674057006836,
+  "manifest_sha256": "bde92d247c681b99d17e08812dfadc46859d84f060469bd6c87e3c7fa8b5f478",
+  "phase": "development",
+  "raw_sha256": "fa89a48eaefa5b3e7a0325fb58e108dfa1f9657cbe5642f7f1554c166423e170",
+  "receiver": "gemma-3-27b-it",
+  "rows": 1560,
+  "scenes": 30,
+  "shard": 2,
+  "shards": 3,
+  "status": "PASS"
+}

@@ -1,0 +1,101 @@
+{
+ "lock": "latest0924_diagnostics_D1_D2",
+ "utc": "2026-09-24T13:11:57.370440+00:00",
+ "status": "FROZEN_BEFORE_ANY_D1_OR_D2_OUTPUT",
+ "authority": "[internal approval note removed for anonymity]",
+ "material": {
+  "bank": "artifacts/mechanism0919/discovery_v1/exposed_development.json (96 scenes; the 4 R1 engineering scenes are the engineering phase; 92 evaluated)",
+  "messages": "complete facts (no model sender), four public slots per object, equal weights, gamma 1",
+  "directions": "existing R1 fits artifacts/receiver_recovery/fits/directions_<receiver>.pt (frozen twelve-context recipe)",
+  "status": "DIAGNOSTIC on previously evaluated development material; not confirmation."
+ },
+ "layers": {
+  "qwen3-14b-base": {
+   "d20": 8,
+   "d35": 14,
+   "d50": 20,
+   "d65": 26
+  },
+  "glm-4-9b": {
+   "d20": 8,
+   "d35": 14,
+   "d50": 20,
+   "d65": 26
+  },
+  "gemma-3-27b-it": {
+   "d20": 12,
+   "d35": 22,
+   "d50": 31,
+   "d65": 40
+  },
+  "qwen3-32b": {
+   "d20": 13,
+   "d35": 22,
+   "d50": 32,
+   "d65": 42
+  }
+ },
+ "D1_cache_read_restriction": {
+  "question": "Why does writing at the early layer work where writing at a later layer fails: because the facts are processed by the layers between them, or because question tokens need to read fact-bearing keys/values in the lower layers?",
+  "receivers": [
+   "qwen3-14b-base",
+   "glm-4-9b",
+   "gemma-3-27b-it",
+   "qwen3-32b (reference: works at later depths)"
+  ],
+  "sources": [
+   "fitted (twelve-context direction)",
+   "native (receiver states for the complete facts)"
+  ],
+  "conditions": {
+   "A_early": "write at d20; the prefix cache is kept as computed",
+   "B_write_at_cut": "write at the cut layer L in {d35, d50, d65}; layers <= L keep neutral keys/values by construction",
+   "C_early_restricted": "the same prefill as A, then the prefix keys/values of every layer <= L (L in {d35, d50, d65}) are replaced by those of the neutral prefix; layers > L keep A's values. Question tokens are processed normally with this cache.",
+   "references": "no message; the complete facts as padded public-layout text"
+  },
+  "built_in_checks": [
+   "C with L = d20 must be byte-identical (cache fingerprint) to A, because a write at the output of layer d20 does not change keys/values at layers <= d20",
+   "C with L = last layer must reproduce the no-message answers exactly",
+   "identity write inert",
+   "cached vs complete forward agreement for the A and B arms (<= 0.05 max logit difference, equal parse)"
+  ],
+  "caveat": "C mixes keys/values from two computations, so it is an intervention with a cross-layer inconsistency; it localizes where fact information must be available, not a unique mechanism.",
+  "decision_rules": {
+   "processing_suffices_at_L": "C - B >= 20 points AND A - C <= 10 points, with the C - B family-bootstrap lower limit > 0",
+   "lower_layer_reading_needed_at_L": "A - C >= 20 points with lower limit > 0",
+   "otherwise": "unresolved/partial; report the numbers"
+  }
+ },
+ "D2_matched_layout_direction": {
+  "question": "Where does the gap between reusable and scene-specific representations arise: in the layout/name/position mismatch of the generic fitting contexts, in the co-occurrence of the other facts, or in delivery itself?",
+  "receivers": [
+   "glm-4-9b (primary: native 66.7% vs fitted 8.3% at d35 in R1)",
+   "qwen3-14b-base (secondary)"
+  ],
+  "depths": [
+   "d20",
+   "d35",
+   "d50"
+  ],
+  "representations": {
+   "fixed": "the twelve-context mean direction (current method)",
+   "matched": "per scene and fact: the scene's own neutral prompt (real names, layout, slot) with only that fact word in its slot, minus the same prompt with the word's tokens replaced one-for-one by the neutral filler token; read at the word-final token at the write layer; written at the same target position as fixed (gamma 1). A diagnostic, not a reusable method.",
+   "native": "receiver states for all complete facts read in the same public format, copied by (object, slot)",
+   "text": "the complete facts as padded public-layout text"
+  },
+  "gaps": {
+   "G_layout": "J(matched) - J(fixed)",
+   "G_joint": "J(native) - J(matched)",
+   "G_delivery": "J(text) - J(native)"
+  },
+  "interpretation": "Operational gaps with paired family-bootstrap intervals, not a causal decomposition into independent mechanisms."
+ },
+ "endpoints": "four-answer (joint) success on 92 scenes (family-macro, as in R1); coverage; the logged correct-vs-incorrect alias logit gap as an auxiliary diagnostic only",
+ "ci": "paired cluster bootstrap over development families, 20,000 draws x 3 seeds (20260924-6), enclosing interval",
+ "numerics": "FP32 eager, TF32 off, batch 1, greedy, budgets 64/256 (as R1)",
+ "not_claims": [
+  "no mechanism uniqueness",
+  "development material only",
+  "no claim about new receivers until the depth scan exists for them"
+ ]
+}

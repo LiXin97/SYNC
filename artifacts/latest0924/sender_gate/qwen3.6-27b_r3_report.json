@@ -1,0 +1,227 @@
+{
+ "utc": "2026-09-24T14:15:20Z",
+ "script_sha256": "d26f188d492dc755c6f4032a46ff6a0fbf582e48a17cc1a4dc66ab38667eea2c",
+ "meta": {
+  "packets": "artifacts/latest0924/senders/qwen3.6-27b_r3.json",
+  "packets_sha256": "3c48a71ea6abdeea30bee43f3b605ba0d07e49916c4d4fb56b6df1f241ef44d4",
+  "bank": "artifacts/receiver_recovery/r3_bank/bank.json",
+  "bank_sha256": "c88ff3197717a338eb84cbaec5c0a3c9fa9b5504f6ab077c1cb4ca78c5b15927",
+  "sender": "latest0924/qwen3.6-27b",
+  "sender_checkpoint": "/path/to/models/Qwen3.6-27B",
+  "split": "r3_confirmation",
+  "prompt_sha256": "328c8b5df9d196724cdabd6cc7a291c0cfc7ca13ab524bd3cb70239de7183e0b",
+  "chat_template_kwargs": {
+   "enable_thinking": false
+  },
+  "exclude_scenes_from": "artifacts/receiver_recovery/r3/qwen3-32b/manifest.json",
+  "excluded_scene_ids": [
+   "000ab0c6e25c722375c5",
+   "006580f74136c64f5667",
+   "013a221b69bb9e33fe59",
+   "01c022ca70dbfbd8c0a1"
+  ],
+  "n_bank_scenes": 576,
+  "n_bank_worlds": 1152
+ },
+ "lock": null,
+ "integrity": {
+  "ok": true,
+  "header": {
+   "bank_sha256_matches": true,
+   "prompt_sha256_frozen": true,
+   "inventory_matches_reference": true,
+   "inventory_size": 221
+  },
+  "counts": {
+   "missing_packets": 0,
+   "extra_packets": 0,
+   "sha256_mismatch": 0,
+   "bytes_mismatch": 0,
+   "decode_error": 0,
+   "lane_ids_not_ascending_unique": 0,
+   "weight_not_255": 0,
+   "lane_slots_not_objects": 0,
+   "log_missing": 0,
+   "selection_vs_packet_mismatch": 0,
+   "reparse_mismatch": 0
+  },
+  "file_summary_matches_recount": true,
+  "examples": {}
+ },
+ "populations": {
+  "all": {
+   "n_packets": 1152,
+   "n_objects": 2304,
+   "parse_ok": 1152,
+   "parse_partial": 0,
+   "parse_empty": 0,
+   "parse_malformed": 0,
+   "parse_unknown": 0,
+   "parse_fully_rate": 1.0,
+   "parse_partial_rate": 0.0,
+   "parse_failed_rate": 0.0,
+   "required_fact_hits": 4506,
+   "required_fact_total": 4608,
+   "required_fact_recall": 0.9778645833333334,
+   "complete_objects": 2202,
+   "complete_object_rate": 0.9557291666666666,
+   "complete_packets": 1100,
+   "complete_packet_rate": 0.9548611111111112,
+   "wrong_object_lanes": 0,
+   "wrong_object_words": 0,
+   "wrong_object_lane_rate": 0.0,
+   "unsupported_attribute_lanes": 0,
+   "unsupported_attribute_lane_rate": 0.0,
+   "extra_non_attribute_lanes": 1570,
+   "extra_non_attribute_lane_rate": 0.6814236111111112,
+   "empty_lanes": 0,
+   "empty_lane_rate": 0.0,
+   "mean_words_per_object": 2.6371527777777777,
+   "words_per_object_hist": {
+    "1": 40,
+    "2": 756,
+    "3": 1508
+   },
+   "precision": 0.7416063199473337,
+   "exact_set_rate": 0.3012152777777778,
+   "mean_bytes": 22.54861111111111,
+   "recall_by_field": {
+    "buttons": {
+     "hits": 758,
+     "total": 768,
+     "recall": 0.9869791666666666
+    },
+    "color": {
+     "hits": 1536,
+     "total": 1536,
+     "recall": 1.0
+    },
+    "fibre": {
+     "hits": 768,
+     "total": 768,
+     "recall": 1.0
+    },
+    "material": {
+     "hits": 676,
+     "total": 768,
+     "recall": 0.8802083333333334
+    },
+    "taste": {
+     "hits": 768,
+     "total": 768,
+     "recall": 1.0
+    }
+   },
+   "mean_generated_tokens": 27.12152777777778,
+   "max_generated_tokens": 33,
+   "mean_decode_seconds": 1.078242043240203,
+   "hit_max_new_tokens": 0,
+   "final_channel_missing": null,
+   "reasoning_marker_in_output": 0,
+   "greedy_argmax_mismatches": 0,
+   "required_fact_recall_ci_lo": 0.9704861111111112,
+   "required_fact_recall_ci_hi": 0.9848090277777778,
+   "complete_object_rate_ci_lo": 0.9409722222222222,
+   "complete_object_rate_ci_hi": 0.9696180555555556,
+   "complete_packet_rate_ci_lo": 0.9401041666666666,
+   "complete_packet_rate_ci_hi": 0.96875,
+   "parse_fully_rate_ci_lo": 1.0,
+   "parse_fully_rate_ci_hi": 1.0,
+   "wrong_object_lane_rate_ci_lo": 0.0,
+   "wrong_object_lane_rate_ci_hi": 0.0,
+   "n_scenes": 576
+  },
+  "evaluated": {
+   "n_packets": 1144,
+   "n_objects": 2288,
+   "parse_ok": 1144,
+   "parse_partial": 0,
+   "parse_empty": 0,
+   "parse_malformed": 0,
+   "parse_unknown": 0,
+   "parse_fully_rate": 1.0,
+   "parse_partial_rate": 0.0,
+   "parse_failed_rate": 0.0,
+   "required_fact_hits": 4474,
+   "required_fact_total": 4576,
+   "required_fact_recall": 0.9777097902097902,
+   "complete_objects": 2186,
+   "complete_object_rate": 0.9554195804195804,
+   "complete_packets": 1092,
+   "complete_packet_rate": 0.9545454545454546,
+   "wrong_object_lanes": 0,
+   "wrong_object_words": 0,
+   "wrong_object_lane_rate": 0.0,
+   "unsupported_attribute_lanes": 0,
+   "unsupported_attribute_lane_rate": 0.0,
+   "extra_non_attribute_lanes": 1558,
+   "extra_non_attribute_lane_rate": 0.6809440559440559,
+   "empty_lanes": 0,
+   "empty_lane_rate": 0.0,
+   "mean_words_per_object": 2.6363636363636362,
+   "words_per_object_hist": {
+    "1": 40,
+    "2": 752,
+    "3": 1496
+   },
+   "precision": 0.741710875331565,
+   "exact_set_rate": 0.30157342657342656,
+   "mean_bytes": 22.545454545454547,
+   "recall_by_field": {
+    "buttons": {
+     "hits": 754,
+     "total": 764,
+     "recall": 0.9869109947643979
+    },
+    "color": {
+     "hits": 1524,
+     "total": 1524,
+     "recall": 1.0
+    },
+    "fibre": {
+     "hits": 764,
+     "total": 764,
+     "recall": 1.0
+    },
+    "material": {
+     "hits": 672,
+     "total": 764,
+     "recall": 0.8795811518324608
+    },
+    "taste": {
+     "hits": 760,
+     "total": 760,
+     "recall": 1.0
+    }
+   },
+   "mean_generated_tokens": 27.113636363636363,
+   "max_generated_tokens": 33,
+   "mean_decode_seconds": 1.077285894147166,
+   "hit_max_new_tokens": 0,
+   "final_channel_missing": null,
+   "reasoning_marker_in_output": 0,
+   "greedy_argmax_mismatches": 0,
+   "required_fact_recall_ci_lo": 0.9707167832167832,
+   "required_fact_recall_ci_hi": 0.9847027972027972,
+   "complete_object_rate_ci_lo": 0.9414335664335665,
+   "complete_object_rate_ci_hi": 0.9694055944055944,
+   "complete_packet_rate_ci_lo": 0.9405594405594405,
+   "complete_packet_rate_ci_hi": 0.9685314685314685,
+   "parse_fully_rate_ci_lo": 1.0,
+   "parse_fully_rate_ci_hi": 1.0,
+   "wrong_object_lane_rate_ci_lo": 0.0,
+   "wrong_object_lane_rate_ci_hi": 0.0,
+   "n_scenes": 572
+  }
+ },
+ "verdict": {
+  "status": "NO_LOCK",
+  "checks": []
+ },
+ "bootstrap": {
+  "unit": "scene",
+  "draws": 2000,
+  "seed": 0,
+  "interval": "95% percentile"
+ }
+}

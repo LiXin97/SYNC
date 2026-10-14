@@ -1,0 +1,5701 @@
+{
+ "status": "PASS_INDEPENDENT_P0B_AUDIT",
+ "utc": "2026-09-23T13:26:24.627840+00:00",
+ "script_sha256": "4d274dffe71f37b694568c8f3b36b2ffc71a05d824e7063e3d03fd795a97906c",
+ "stage": "dev",
+ "holm_families": {},
+ "claim_gate": {},
+ "receivers": {
+  "glm-4-9b": {
+   "root": "artifacts/word_interface_followup/p0b_dev/glm-4-9b",
+   "receiver": "glm-4-9b",
+   "manifest_sha256": "f88952092800607cec4157976763661f5b533627b6628d4961285b8c7d6fa7cf",
+   "receipts": 2,
+   "selected_layers": [
+    8
+   ],
+   "gamma": 1,
+   "bank": "artifacts/word_interface_followup/p0b_banks/dev_bank_list.json",
+   "bank_size": 100,
+   "phases": {
+    "engineering": {
+     "scenes": 4,
+     "rows": 240,
+     "partial_cells": [],
+     "conditions": [
+      {
+       "source": "actual",
+       "arm": "full_text",
+       "budget": 64,
+       "scenes": 4,
+       "raw_counts": {
+        "scenes": 4,
+        "all_four": 3,
+        "answers": 16,
+        "correct": 15,
+        "valid": 16
+       },
+       "accuracy": {
+        "group": {
+         "mean": 0.9375,
+         "lo": 0.9375,
+         "hi": 0.9375,
+         "clusters": 1
+        },
+        "template": {
+         "mean": 0.9375,
+         "lo": 0.8125,
+         "hi": 1.0,
+         "clusters": 4
+        }
+       },
+       "all_four": {
+        "group": {
+         "mean": 0.75,
+         "lo": 0.75,
+         "hi": 0.75,
+         "clusters": 1
+        },
+        "template": {
+         "mean": 0.75,
+         "lo": 0.25,
+         "hi": 1.0,
+         "clusters": 4
+        }
+       },
+       "coverage": {
+        "group": {
+         "mean": 1.0,
+         "lo": 1.0,
+         "hi": 1.0,
+         "clusters": 1
+        },
+        "template": {
+         "mean": 1.0,
+         "lo": 1.0,
+         "hi": 1.0,
+         "clusters": 4
+        }
+       },
+       "changed_both": {
+        "group": {
+         "mean": 1.0,
+         "lo": 1.0,
+         "hi": 1.0,
+         "clusters": 1
+        },
+        "template": {
+         "mean": 1.0,
+         "lo": 1.0,
+         "hi": 1.0,
+         "clusters": 4
+        }
+       },
+       "unchanged_both": {
+        "group": {
+         "mean": 0.75,
+         "lo": 0.75,
+         "hi": 0.75,
+         "clusters": 1
+        },
+        "template": {
+         "mean": 0.75,
+         "lo": 0.25,
+         "hi": 1.0,
+         "clusters": 4
+        }
+       }
+      },
+      {
+       "source": "actual",
+       "arm": "full_text",
+       "budget": 256,
+       "scenes": 4,
+       "raw_counts": {
+        "scenes": 4,
+        "all_four": 3,
+        "answers": 16,
+        "correct": 15,
+        "valid": 16
+       },
+       "accuracy": {
+        "group": {
+         "mean": 0.9375,
+         "lo": 0.9375,
+         "hi": 0.9375,
+         "clusters": 1
+        },
+        "template": {
+         "mean": 0.9375,
+         "lo": 0.8125,
+         "hi": 1.0,
+         "clusters": 4
+        }
+       },
+       "all_four": {
+        "group": {
+         "mean": 0.75,
+         "lo": 0.75,
+         "hi": 0.75,
+         "clusters": 1
+        },
+        "template": {
+         "mean": 0.75,
+         "lo": 0.25,
+         "hi": 1.0,
+         "clusters": 4
+        }
+       },
+       "coverage": {
+        "group": {
+         "mean": 1.0,
+         "lo": 1.0,
+         "hi": 1.0,
+         "clusters": 1
+        },
+        "template": {
+         "mean": 1.0,
+         "lo": 1.0,
+         "hi": 1.0,
+         "clusters": 4
+        }
+       },
+       "changed_both": {
+        "group": {
+         "mean": 1.0,
+         "lo": 1.0,
+         "hi": 1.0,
+         "clusters": 1
+        },
+        "template": {
+         "mean": 1.0,
+         "lo": 1.0,
+         "hi": 1.0,
+         "clusters": 4
+        }
+       },
+       "unchanged_both": {
+        "group": {
+         "mean": 0.75,
+         "lo": 0.75,
+         "hi": 0.75,
+         "clusters": 1
+        },
+        "template": {
+         "mean": 0.75,
+         "lo": 0.25,
+         "hi": 1.0,
+         "clusters": 4
+        }
+       }
+      },
+      {
+       "source": "actual",
+       "arm": "identity_write",
+       "budget": 64,
+       "scenes": 4,
+       "raw_counts": {
+        "scenes": 4,
+        "all_four": 0,
+        "answers": 16,
+        "correct": 2,
+        "valid": 2
+       },
+       "accuracy": {
+        "group": {
+         "mean": 0.125,
+         "lo": 0.125,
+         "hi": 0.125,
+         "clusters": 1
+        },
+        "template": {
+         "mean": 0.125,
+         "lo": 0.0,
+         "hi": 0.375,
+         "clusters": 4
+        }
+       },
+       "all_four": {
+        "group": {
+         "mean": 0.0,
+         "lo": 0.0,
+         "hi": 0.0,
+         "clusters": 1
+        },
+        "template": {
+         "mean": 0.0,
+         "lo": 0.0,
+         "hi": 0.0,
+         "clusters": 4
+        }
+       },
+       "coverage": {
+        "group": {
+         "mean": 0.125,
+         "lo": 0.125,
+         "hi": 0.125,
+         "clusters": 1
+        },
+        "template": {
+         "mean": 0.125,
+         "lo": 0.0,
+         "hi": 0.375,
+         "clusters": 4
+        }
+       },
+       "changed_both": {
+        "group": {
+         "mean": 0.0,
+         "lo": 0.0,
+         "hi": 0.0,
+         "clusters": 1
+        },
+        "template": {
+         "mean": 0.0,
+         "lo": 0.0,
+         "hi": 0.0,
+         "clusters": 4
+        }
+       },
+       "unchanged_both": {
+        "group": {
+         "mean": 0.25,
+         "lo": 0.25,
+         "hi": 0.25,
+         "clusters": 1
+        },
+        "template": {
+         "mean": 0.25,
+         "lo": 0.0,
+         "hi": 0.75,
+         "clusters": 4
+        }
+       }
+      },
+      {
+       "source": "actual",
+       "arm": "identity_write",
+       "budget": 256,
+       "scenes": 4,
+       "raw_counts": {
+        "scenes": 4,
+        "all_four": 0,
+        "answers": 16,
+        "correct": 2,
+        "valid": 2
+       },
+       "accuracy": {
+        "group": {
+         "mean": 0.125,
+         "lo": 0.125,
+         "hi": 0.125,
+         "clusters": 1
+        },
+        "template": {
+         "mean": 0.125,
+         "lo": 0.0,
+         "hi": 0.375,
+         "clusters": 4
+        }
+       },
+       "all_four": {
+        "group": {
+         "mean": 0.0,
+         "lo": 0.0,
+         "hi": 0.0,
+         "clusters": 1
+        },
+        "template": {
+         "mean": 0.0,
+         "lo": 0.0,
+         "hi": 0.0,
+         "clusters": 4
+        }
+       },
+       "coverage": {
+        "group": {
+         "mean": 0.125,
+         "lo": 0.125,
+         "hi": 0.125,
+         "clusters": 1
+        },
+        "template": {
+         "mean": 0.125,
+         "lo": 0.0,
+         "hi": 0.375,
+         "clusters": 4
+        }
+       },
+       "changed_both": {
+        "group": {
+         "mean": 0.0,
+         "lo": 0.0,
+         "hi": 0.0,
+         "clusters": 1
+        },
+        "template": {
+         "mean": 0.0,
+         "lo": 0.0,
+         "hi": 0.0,
+         "clusters": 4
+        }
+       },
+       "unchanged_both": {
+        "group": {
+         "mean": 0.25,
+         "lo": 0.25,
+         "hi": 0.25,
+         "clusters": 1
+        },
+        "template": {
+         "mean": 0.25,
+         "lo": 0.0,
+         "hi": 0.75,
+         "clusters": 4
+        }
+       }
+      },
+      {
+       "source": "actual",
+       "arm": "none",
+       "budget": 64,
+       "scenes": 4,
+       "raw_counts": {
+        "scenes": 4,
+        "all_four": 0,
+        "answers": 16,
+        "correct": 2,
+        "valid": 2
+       },
+       "accuracy": {
+        "group": {
+         "mean": 0.125,
+         "lo": 0.125,
+         "hi": 0.125,
+         "clusters": 1
+        },
+        "template": {
+         "mean": 0.125,
+         "lo": 0.0,
+         "hi": 0.375,
+         "clusters": 4
+        }
+       },
+       "all_four": {
+        "group": {
+         "mean": 0.0,
+         "lo": 0.0,
+         "hi": 0.0,
+         "clusters": 1
+        },
+        "template": {
+         "mean": 0.0,
+         "lo": 0.0,
+         "hi": 0.0,
+         "clusters": 4
+        }
+       },
+       "coverage": {
+        "group": {
+         "mean": 0.125,
+         "lo": 0.125,
+         "hi": 0.125,
+         "clusters": 1
+        },
+        "template": {
+         "mean": 0.125,
+         "lo": 0.0,
+         "hi": 0.375,
+         "clusters": 4
+        }
+       },
+       "changed_both": {
+        "group": {
+         "mean": 0.0,
+         "lo": 0.0,
+         "hi": 0.0,
+         "clusters": 1
+        },
+        "template": {
+         "mean": 0.0,
+         "lo": 0.0,
+         "hi": 0.0,
+         "clusters": 4
+        }
+       },
+       "unchanged_both": {
+        "group": {
+         "mean": 0.25,
+         "lo": 0.25,
+         "hi": 0.25,
+         "clusters": 1
+        },
+        "template": {
+         "mean": 0.25,
+         "lo": 0.0,
+         "hi": 0.75,
+         "clusters": 4
+        }
+       }
+      },
+      {
+       "source": "actual",
+       "arm": "none",
+       "budget": 256,
+       "scenes": 4,
+       "raw_counts": {
+        "scenes": 4,
+        "all_four": 0,
+        "answers": 16,
+        "correct": 2,
+        "valid": 2
+       },
+       "accuracy": {
+        "group": {
+         "mean": 0.125,
+         "lo": 0.125,
+         "hi": 0.125,
+         "clusters": 1
+        },
+        "template": {
+         "mean": 0.125,
+         "lo": 0.0,
+         "hi": 0.375,
+         "clusters": 4
+        }
+       },
+       "all_four": {
+        "group": {
+         "mean": 0.0,
+         "lo": 0.0,
+         "hi": 0.0,
+         "clusters": 1
+        },
+        "template": {
+         "mean": 0.0,
+         "lo": 0.0,
+         "hi": 0.0,
+         "clusters": 4
+        }
+       },
+       "coverage": {
+        "group": {
+         "mean": 0.125,
+         "lo": 0.125,
+         "hi": 0.125,
+         "clusters": 1
+        },
+        "template": {
+         "mean": 0.125,
+         "lo": 0.0,
+         "hi": 0.375,
+         "clusters": 4
+        }
+       },
+       "changed_both": {
+        "group": {
+         "mean": 0.0,
+         "lo": 0.0,
+         "hi": 0.0,
+         "clusters": 1
+        },
+        "template": {
+         "mean": 0.0,
+         "lo": 0.0,
+         "hi": 0.0,
+         "clusters": 4
+        }
+       },
+       "unchanged_both": {
+        "group": {
+         "mean": 0.25,
+         "lo": 0.25,
+         "hi": 0.25,
+         "clusters": 1
+        },
+        "template": {
+         "mean": 0.25,
+         "lo": 0.0,
+         "hi": 0.75,
+         "clusters": 4
+        }
+       }
+      },
+      {
+       "source": "actual",
+       "arm": "other_world",
+       "budget": 64,
+       "scenes": 4,
+       "raw_counts": {
+        "scenes": 4,
+        "all_four": 0,
+        "answers": 16,
+        "correct": 9,
+        "valid": 14
+       },
+       "accuracy": {
+        "group": {
+         "mean": 0.5625,
+         "lo": 0.5625,
+         "hi": 0.5625,
+         "clusters": 1
+        },
+        "template": {
+         "mean": 0.5625,
+         "lo": 0.375,
+         "hi": 0.75,
+         "clusters": 4
+        }
+       },
+       "all_four": {
+        "group": {
+         "mean": 0.0,
+         "lo": 0.0,
+         "hi": 0.0,
+         "clusters": 1
+        },
+        "template": {
+         "mean": 0.0,
+         "lo": 0.0,
+         "hi": 0.0,
+         "clusters": 4
+        }
+       },
+       "coverage": {
+        "group": {
+         "mean": 0.875,
+         "lo": 0.875,
+         "hi": 0.875,
+         "clusters": 1
+        },
+        "template": {
+         "mean": 0.875,
+         "lo": 0.625,
+         "hi": 1.0,
+         "clusters": 4
+        }
+       },
+       "changed_both": {
+        "group": {
+         "mean": 0.0,
+         "lo": 0.0,
+         "hi": 0.0,
+         "clusters": 1
+        },
+        "template": {
+         "mean": 0.0,
+         "lo": 0.0,
+         "hi": 0.0,
+         "clusters": 4
+        }
+       },
+       "unchanged_both": {
+        "group": {
+         "mean": 0.75,
+         "lo": 0.75,
+         "hi": 0.75,
+         "clusters": 1
+        },
+        "template": {
+         "mean": 0.75,
+         "lo": 0.25,
+         "hi": 1.0,
+         "clusters": 4
+        }
+       },
+       "supplied_all_four": {
+        "group": {
+         "mean": 0.0,
+         "lo": 0.0,
+         "hi": 0.0,
+         "clusters": 1
+        },
+        "template": {
+         "mean": 0.0,
+         "lo": 0.0,
+         "hi": 0.0,
+         "clusters": 4
+        }
+       },
+       "supplied_accuracy": {
+        "group": {
+         "mean": 0.6875,
+         "lo": 0.6875,
+         "hi": 0.6875,
+         "clusters": 1
+        },
+        "template": {
+         "mean": 0.6875,
+         "lo": 0.5625,
+         "hi": 0.75,
+         "clusters": 4
+        }
+       }
+      },
+      {
+       "source": "actual",
+       "arm": "other_world",
+       "budget": 256,
+       "scenes": 4,
+       "raw_counts": {
+        "scenes": 4,
+        "all_four": 0,
+        "answers": 16,
+        "correct": 9,
+        "valid": 14
+       },
+       "accuracy": {
+        "group": {
+         "mean": 0.5625,
+         "lo": 0.5625,
+         "hi": 0.5625,
+         "clusters": 1
+        },
+        "template": {
+         "mean": 0.5625,
+         "lo": 0.375,
+         "hi": 0.75,
+         "clusters": 4
+        }
+       },
+       "all_four": {
+        "group": {
+         "mean": 0.0,
+         "lo": 0.0,
+         "hi": 0.0,
+         "clusters": 1
+        },
+        "template": {
+         "mean": 0.0,
+         "lo": 0.0,
+         "hi": 0.0,
+         "clusters": 4
+        }
+       },
+       "coverage": {
+        "group": {
+         "mean": 0.875,
+         "lo": 0.875,
+         "hi": 0.875,
+         "clusters": 1
+        },
+        "template": {
+         "mean": 0.875,
+         "lo": 0.625,
+         "hi": 1.0,
+         "clusters": 4
+        }
+       },
+       "changed_both": {
+        "group": {
+         "mean": 0.0,
+         "lo": 0.0,
+         "hi": 0.0,
+         "clusters": 1
+        },
+        "template": {
+         "mean": 0.0,
+         "lo": 0.0,
+         "hi": 0.0,
+         "clusters": 4
+        }
+       },
+       "unchanged_both": {
+        "group": {
+         "mean": 0.75,
+         "lo": 0.75,
+         "hi": 0.75,
+         "clusters": 1
+        },
+        "template": {
+         "mean": 0.75,
+         "lo": 0.25,
+         "hi": 1.0,
+         "clusters": 4
+        }
+       },
+       "supplied_all_four": {
+        "group": {
+         "mean": 0.0,
+         "lo": 0.0,
+         "hi": 0.0,
+         "clusters": 1
+        },
+        "template": {
+         "mean": 0.0,
+         "lo": 0.0,
+         "hi": 0.0,
+         "clusters": 4
+        }
+       },
+       "supplied_accuracy": {
+        "group": {
+         "mean": 0.6875,
+         "lo": 0.6875,
+         "hi": 0.6875,
+         "clusters": 1
+        },
+        "template": {
+         "mean": 0.6875,
+         "lo": 0.5625,
+         "hi": 0.75,
+         "clusters": 4
+        }
+       }
+      },
+      {
+       "source": "actual",
+       "arm": "packet_text",
+       "budget": 64,
+       "scenes": 4,
+       "raw_counts": {
+        "scenes": 4,
+        "all_four": 2,
+        "answers": 16,
+        "correct": 11,
+        "valid": 11
+       },
+       "accuracy": {
+        "group": {
+         "mean": 0.6875,
+         "lo": 0.6875,
+         "hi": 0.6875,
+         "clusters": 1
+        },
+        "template": {
+         "mean": 0.6875,
+         "lo": 0.375,
+         "hi": 1.0,
+         "clusters": 4
+        }
+       },
+       "all_four": {
+        "group": {
+         "mean": 0.5,
+         "lo": 0.5,
+         "hi": 0.5,
+         "clusters": 1
+        },
+        "template": {
+         "mean": 0.5,
+         "lo": 0.0,
+         "hi": 1.0,
+         "clusters": 4
+        }
+       },
+       "coverage": {
+        "group": {
+         "mean": 0.6875,
+         "lo": 0.6875,
+         "hi": 0.6875,
+         "clusters": 1
+        },
+        "template": {
+         "mean": 0.6875,
+         "lo": 0.375,
+         "hi": 1.0,
+         "clusters": 4
+        }
+       },
+       "changed_both": {
+        "group": {
+         "mean": 0.75,
+         "lo": 0.75,
+         "hi": 0.75,
+         "clusters": 1
+        },
+        "template": {
+         "mean": 0.75,
+         "lo": 0.25,
+         "hi": 1.0,
+         "clusters": 4
+        }
+       },
+       "unchanged_both": {
+        "group": {
+         "mean": 0.5,
+         "lo": 0.5,
+         "hi": 0.5,
+         "clusters": 1
+        },
+        "template": {
+         "mean": 0.5,
+         "lo": 0.0,
+         "hi": 1.0,
+         "clusters": 4
+        }
+       }
+      },
+      {
+       "source": "actual",
+       "arm": "packet_text",
+       "budget": 256,
+       "scenes": 4,
+       "raw_counts": {
+        "scenes": 4,
+        "all_four": 2,
+        "answers": 16,
+        "correct": 11,
+        "valid": 11
+       },
+       "accuracy": {
+        "group": {
+         "mean": 0.6875,
+         "lo": 0.6875,
+         "hi": 0.6875,
+         "clusters": 1
+        },
+        "template": {
+         "mean": 0.6875,
+         "lo": 0.375,
+         "hi": 1.0,
+         "clusters": 4
+        }
+       },
+       "all_four": {
+        "group": {
+         "mean": 0.5,
+         "lo": 0.5,
+         "hi": 0.5,
+         "clusters": 1
+        },
+        "template": {
+         "mean": 0.5,
+         "lo": 0.0,
+         "hi": 1.0,
+         "clusters": 4
+        }
+       },
+       "coverage": {
+        "group": {
+         "mean": 0.6875,
+         "lo": 0.6875,
+         "hi": 0.6875,
+         "clusters": 1
+        },
+        "template": {
+         "mean": 0.6875,
+         "lo": 0.375,
+         "hi": 1.0,
+         "clusters": 4
+        }
+       },
+       "changed_both": {
+        "group": {
+         "mean": 0.75,
+         "lo": 0.75,
+         "hi": 0.75,
+         "clusters": 1
+        },
+        "template": {
+         "mean": 0.75,
+         "lo": 0.25,
+         "hi": 1.0,
+         "clusters": 4
+        }
+       },
+       "unchanged_both": {
+        "group": {
+         "mean": 0.5,
+         "lo": 0.5,
+         "hi": 0.5,
+         "clusters": 1
+        },
+        "template": {
+         "mean": 0.5,
+         "lo": 0.0,
+         "hi": 1.0,
+         "clusters": 4
+        }
+       }
+      },
+      {
+       "source": "actual",
+       "arm": "selected",
+       "budget": 64,
+       "scenes": 4,
+       "raw_counts": {
+        "scenes": 4,
+        "all_four": 0,
+        "answers": 16,
+        "correct": 11,
+        "valid": 14
+       },
+       "accuracy": {
+        "group": {
+         "mean": 0.6875,
+         "lo": 0.6875,
+         "hi": 0.6875,
+         "clusters": 1
+        },
+        "template": {
+         "mean": 0.6875,
+         "lo": 0.5625,
+         "hi": 0.75,
+         "clusters": 4
+        }
+       },
+       "all_four": {
+        "group": {
+         "mean": 0.0,
+         "lo": 0.0,
+         "hi": 0.0,
+         "clusters": 1
+        },
+        "template": {
+         "mean": 0.0,
+         "lo": 0.0,
+         "hi": 0.0,
+         "clusters": 4
+        }
+       },
+       "coverage": {
+        "group": {
+         "mean": 0.875,
+         "lo": 0.875,
+         "hi": 0.875,
+         "clusters": 1
+        },
+        "template": {
+         "mean": 0.875,
+         "lo": 0.625,
+         "hi": 1.0,
+         "clusters": 4
+        }
+       },
+       "changed_both": {
+        "group": {
+         "mean": 0.25,
+         "lo": 0.25,
+         "hi": 0.25,
+         "clusters": 1
+        },
+        "template": {
+         "mean": 0.25,
+         "lo": 0.0,
+         "hi": 0.75,
+         "clusters": 4
+        }
+       },
+       "unchanged_both": {
+        "group": {
+         "mean": 0.75,
+         "lo": 0.75,
+         "hi": 0.75,
+         "clusters": 1
+        },
+        "template": {
+         "mean": 0.75,
+         "lo": 0.25,
+         "hi": 1.0,
+         "clusters": 4
+        }
+       }
+      },
+      {
+       "source": "actual",
+       "arm": "selected",
+       "budget": 256,
+       "scenes": 4,
+       "raw_counts": {
+        "scenes": 4,
+        "all_four": 0,
+        "answers": 16,
+        "correct": 11,
+        "valid": 14
+       },
+       "accuracy": {
+        "group": {
+         "mean": 0.6875,
+         "lo": 0.6875,
+         "hi": 0.6875,
+         "clusters": 1
+        },
+        "template": {
+         "mean": 0.6875,
+         "lo": 0.5625,
+         "hi": 0.75,
+         "clusters": 4
+        }
+       },
+       "all_four": {
+        "group": {
+         "mean": 0.0,
+         "lo": 0.0,
+         "hi": 0.0,
+         "clusters": 1
+        },
+        "template": {
+         "mean": 0.0,
+         "lo": 0.0,
+         "hi": 0.0,
+         "clusters": 4
+        }
+       },
+       "coverage": {
+        "group": {
+         "mean": 0.875,
+         "lo": 0.875,
+         "hi": 0.875,
+         "clusters": 1
+        },
+        "template": {
+         "mean": 0.875,
+         "lo": 0.625,
+         "hi": 1.0,
+         "clusters": 4
+        }
+       },
+       "changed_both": {
+        "group": {
+         "mean": 0.25,
+         "lo": 0.25,
+         "hi": 0.25,
+         "clusters": 1
+        },
+        "template": {
+         "mean": 0.25,
+         "lo": 0.0,
+         "hi": 0.75,
+         "clusters": 4
+        }
+       },
+       "unchanged_both": {
+        "group": {
+         "mean": 0.75,
+         "lo": 0.75,
+         "hi": 0.75,
+         "clusters": 1
+        },
+        "template": {
+         "mean": 0.75,
+         "lo": 0.25,
+         "hi": 1.0,
+         "clusters": 4
+        }
+       }
+      },
+      {
+       "source": "actual",
+       "arm": "sham0",
+       "budget": 64,
+       "scenes": 4,
+       "raw_counts": {
+        "scenes": 4,
+        "all_four": 0,
+        "answers": 16,
+        "correct": 3,
+        "valid": 8
+       },
+       "accuracy": {
+        "group": {
+         "mean": 0.1875,
+         "lo": 0.1875,
+         "hi": 0.1875,
+         "clusters": 1
+        },
+        "template": {
+         "mean": 0.1875,
+         "lo": 0.0,
+         "hi": 0.375,
+         "clusters": 4
+        }
+       },
+       "all_four": {
+        "group": {
+         "mean": 0.0,
+         "lo": 0.0,
+         "hi": 0.0,
+         "clusters": 1
+        },
+        "template": {
+         "mean": 0.0,
+         "lo": 0.0,
+         "hi": 0.0,
+         "clusters": 4
+        }
+       },
+       "coverage": {
+        "group": {
+         "mean": 0.5,
+         "lo": 0.5,
+         "hi": 0.5,
+         "clusters": 1
+        },
+        "template": {
+         "mean": 0.5,
+         "lo": 0.0,
+         "hi": 1.0,
+         "clusters": 4
+        }
+       },
+       "changed_both": {
+        "group": {
+         "mean": 0.0,
+         "lo": 0.0,
+         "hi": 0.0,
+         "clusters": 1
+        },
+        "template": {
+         "mean": 0.0,
+         "lo": 0.0,
+         "hi": 0.0,
+         "clusters": 4
+        }
+       },
+       "unchanged_both": {
+        "group": {
+         "mean": 0.25,
+         "lo": 0.25,
+         "hi": 0.25,
+         "clusters": 1
+        },
+        "template": {
+         "mean": 0.25,
+         "lo": 0.0,
+         "hi": 0.75,
+         "clusters": 4
+        }
+       }
+      },
+      {
+       "source": "actual",
+       "arm": "sham0",
+       "budget": 256,
+       "scenes": 4,
+       "raw_counts": {
+        "scenes": 4,
+        "all_four": 0,
+        "answers": 16,
+        "correct": 3,
+        "valid": 8
+       },
+       "accuracy": {
+        "group": {
+         "mean": 0.1875,
+         "lo": 0.1875,
+         "hi": 0.1875,
+         "clusters": 1
+        },
+        "template": {
+         "mean": 0.1875,
+         "lo": 0.0,
+         "hi": 0.375,
+         "clusters": 4
+        }
+       },
+       "all_four": {
+        "group": {
+         "mean": 0.0,
+         "lo": 0.0,
+         "hi": 0.0,
+         "clusters": 1
+        },
+        "template": {
+         "mean": 0.0,
+         "lo": 0.0,
+         "hi": 0.0,
+         "clusters": 4
+        }
+       },
+       "coverage": {
+        "group": {
+         "mean": 0.5,
+         "lo": 0.5,
+         "hi": 0.5,
+         "clusters": 1
+        },
+        "template": {
+         "mean": 0.5,
+         "lo": 0.0,
+         "hi": 1.0,
+         "clusters": 4
+        }
+       },
+       "changed_both": {
+        "group": {
+         "mean": 0.0,
+         "lo": 0.0,
+         "hi": 0.0,
+         "clusters": 1
+        },
+        "template": {
+         "mean": 0.0,
+         "lo": 0.0,
+         "hi": 0.0,
+         "clusters": 4
+        }
+       },
+       "unchanged_both": {
+        "group": {
+         "mean": 0.25,
+         "lo": 0.25,
+         "hi": 0.25,
+         "clusters": 1
+        },
+        "template": {
+         "mean": 0.25,
+         "lo": 0.0,
+         "hi": 0.75,
+         "clusters": 4
+        }
+       }
+      },
+      {
+       "source": "actual",
+       "arm": "sham1",
+       "budget": 64,
+       "scenes": 4,
+       "raw_counts": {
+        "scenes": 4,
+        "all_four": 0,
+        "answers": 16,
+        "correct": 2,
+        "valid": 15
+       },
+       "accuracy": {
+        "group": {
+         "mean": 0.125,
+         "lo": 0.125,
+         "hi": 0.125,
+         "clusters": 1
+        },
+        "template": {
+         "mean": 0.125,
+         "lo": 0.0,
+         "hi": 0.375,
+         "clusters": 4
+        }
+       },
+       "all_four": {
+        "group": {
+         "mean": 0.0,
+         "lo": 0.0,
+         "hi": 0.0,
+         "clusters": 1
+        },
+        "template": {
+         "mean": 0.0,
+         "lo": 0.0,
+         "hi": 0.0,
+         "clusters": 4
+        }
+       },
+       "coverage": {
+        "group": {
+         "mean": 0.9375,
+         "lo": 0.9375,
+         "hi": 0.9375,
+         "clusters": 1
+        },
+        "template": {
+         "mean": 0.9375,
+         "lo": 0.8125,
+         "hi": 1.0,
+         "clusters": 4
+        }
+       },
+       "changed_both": {
+        "group": {
+         "mean": 0.0,
+         "lo": 0.0,
+         "hi": 0.0,
+         "clusters": 1
+        },
+        "template": {
+         "mean": 0.0,
+         "lo": 0.0,
+         "hi": 0.0,
+         "clusters": 4
+        }
+       },
+       "unchanged_both": {
+        "group": {
+         "mean": 0.25,
+         "lo": 0.25,
+         "hi": 0.25,
+         "clusters": 1
+        },
+        "template": {
+         "mean": 0.25,
+         "lo": 0.0,
+         "hi": 0.75,
+         "clusters": 4
+        }
+       }
+      },
+      {
+       "source": "actual",
+       "arm": "sham1",
+       "budget": 256,
+       "scenes": 4,
+       "raw_counts": {
+        "scenes": 4,
+        "all_four": 0,
+        "answers": 16,
+        "correct": 2,
+        "valid": 15
+       },
+       "accuracy": {
+        "group": {
+         "mean": 0.125,
+         "lo": 0.125,
+         "hi": 0.125,
+         "clusters": 1
+        },
+        "template": {
+         "mean": 0.125,
+         "lo": 0.0,
+         "hi": 0.375,
+         "clusters": 4
+        }
+       },
+       "all_four": {
+        "group": {
+         "mean": 0.0,
+         "lo": 0.0,
+         "hi": 0.0,
+         "clusters": 1
+        },
+        "template": {
+         "mean": 0.0,
+         "lo": 0.0,
+         "hi": 0.0,
+         "clusters": 4
+        }
+       },
+       "coverage": {
+        "group": {
+         "mean": 0.9375,
+         "lo": 0.9375,
+         "hi": 0.9375,
+         "clusters": 1
+        },
+        "template": {
+         "mean": 0.9375,
+         "lo": 0.8125,
+         "hi": 1.0,
+         "clusters": 4
+        }
+       },
+       "changed_both": {
+        "group": {
+         "mean": 0.0,
+         "lo": 0.0,
+         "hi": 0.0,
+         "clusters": 1
+        },
+        "template": {
+         "mean": 0.0,
+         "lo": 0.0,
+         "hi": 0.0,
+         "clusters": 4
+        }
+       },
+       "unchanged_both": {
+        "group": {
+         "mean": 0.25,
+         "lo": 0.25,
+         "hi": 0.25,
+         "clusters": 1
+        },
+        "template": {
+         "mean": 0.25,
+         "lo": 0.0,
+         "hi": 0.75,
+         "clusters": 4
+        }
+       }
+      },
+      {
+       "source": "actual",
+       "arm": "sham2",
+       "budget": 64,
+       "scenes": 4,
+       "raw_counts": {
+        "scenes": 4,
+        "all_four": 0,
+        "answers": 16,
+        "correct": 3,
+        "valid": 16
+       },
+       "accuracy": {
+        "group": {
+         "mean": 0.1875,
+         "lo": 0.1875,
+         "hi": 0.1875,
+         "clusters": 1
+        },
+        "template": {
+         "mean": 0.1875,
+         "lo": 0.0,
+         "hi": 0.375,
+         "clusters": 4
+        }
+       },
+       "all_four": {
+        "group": {
+         "mean": 0.0,
+         "lo": 0.0,
+         "hi": 0.0,
+         "clusters": 1
+        },
+        "template": {
+         "mean": 0.0,
+         "lo": 0.0,
+         "hi": 0.0,
+         "clusters": 4
+        }
+       },
+       "coverage": {
+        "group": {
+         "mean": 1.0,
+         "lo": 1.0,
+         "hi": 1.0,
+         "clusters": 1
+        },
+        "template": {
+         "mean": 1.0,
+         "lo": 1.0,
+         "hi": 1.0,
+         "clusters": 4
+        }
+       },
+       "changed_both": {
+        "group": {
+         "mean": 0.0,
+         "lo": 0.0,
+         "hi": 0.0,
+         "clusters": 1
+        },
+        "template": {
+         "mean": 0.0,
+         "lo": 0.0,
+         "hi": 0.0,
+         "clusters": 4
+        }
+       },
+       "unchanged_both": {
+        "group": {
+         "mean": 0.25,
+         "lo": 0.25,
+         "hi": 0.25,
+         "clusters": 1
+        },
+        "template": {
+         "mean": 0.25,
+         "lo": 0.0,
+         "hi": 0.75,
+         "clusters": 4
+        }
+       }
+      },
+      {
+       "source": "actual",
+       "arm": "sham2",
+       "budget": 256,
+       "scenes": 4,
+       "raw_counts": {
+        "scenes": 4,
+        "all_four": 0,
+        "answers": 16,
+        "correct": 3,
+        "valid": 16
+       },
+       "accuracy": {
+        "group": {
+         "mean": 0.1875,
+         "lo": 0.1875,
+         "hi": 0.1875,
+         "clusters": 1
+        },
+        "template": {
+         "mean": 0.1875,
+         "lo": 0.0,
+         "hi": 0.375,
+         "clusters": 4
+        }
+       },
+       "all_four": {
+        "group": {
+         "mean": 0.0,
+         "lo": 0.0,
+         "hi": 0.0,
+         "clusters": 1
+        },
+        "template": {
+         "mean": 0.0,
+         "lo": 0.0,
+         "hi": 0.0,
+         "clusters": 4
+        }
+       },
+       "coverage": {
+        "group": {
+         "mean": 1.0,
+         "lo": 1.0,
+         "hi": 1.0,
+         "clusters": 1
+        },
+        "template": {
+         "mean": 1.0,
+         "lo": 1.0,
+         "hi": 1.0,
+         "clusters": 4
+        }
+       },
+       "changed_both": {
+        "group": {
+         "mean": 0.0,
+         "lo": 0.0,
+         "hi": 0.0,
+         "clusters": 1
+        },
+        "template": {
+         "mean": 0.0,
+         "lo": 0.0,
+         "hi": 0.0,
+         "clusters": 4
+        }
+       },
+       "unchanged_both": {
+        "group": {
+         "mean": 0.25,
+         "lo": 0.25,
+         "hi": 0.25,
+         "clusters": 1
+        },
+        "template": {
+         "mean": 0.25,
+         "lo": 0.0,
+         "hi": 0.75,
+         "clusters": 4
+        }
+       }
+      },
+      {
+       "source": "literal",
+       "arm": "other_world",
+       "budget": 64,
+       "scenes": 4,
+       "raw_counts": {
+        "scenes": 4,
+        "all_four": 0,
+        "answers": 16,
+        "correct": 9,
+        "valid": 16
+       },
+       "accuracy": {
+        "group": {
+         "mean": 0.5625,
+         "lo": 0.5625,
+         "hi": 0.5625,
+         "clusters": 1
+        },
+        "template": {
+         "mean": 0.5625,
+         "lo": 0.375,
+         "hi": 0.75,
+         "clusters": 4
+        }
+       },
+       "all_four": {
+        "group": {
+         "mean": 0.0,
+         "lo": 0.0,
+         "hi": 0.0,
+         "clusters": 1
+        },
+        "template": {
+         "mean": 0.0,
+         "lo": 0.0,
+         "hi": 0.0,
+         "clusters": 4
+        }
+       },
+       "coverage": {
+        "group": {
+         "mean": 1.0,
+         "lo": 1.0,
+         "hi": 1.0,
+         "clusters": 1
+        },
+        "template": {
+         "mean": 1.0,
+         "lo": 1.0,
+         "hi": 1.0,
+         "clusters": 4
+        }
+       },
+       "changed_both": {
+        "group": {
+         "mean": 0.0,
+         "lo": 0.0,
+         "hi": 0.0,
+         "clusters": 1
+        },
+        "template": {
+         "mean": 0.0,
+         "lo": 0.0,
+         "hi": 0.0,
+         "clusters": 4
+        }
+       },
+       "unchanged_both": {
+        "group": {
+         "mean": 0.75,
+         "lo": 0.75,
+         "hi": 0.75,
+         "clusters": 1
+        },
+        "template": {
+         "mean": 0.75,
+         "lo": 0.25,
+         "hi": 1.0,
+         "clusters": 4
+        }
+       },
+       "supplied_all_four": {
+        "group": {
+         "mean": 0.25,
+         "lo": 0.25,
+         "hi": 0.25,
+         "clusters": 1
+        },
+        "template": {
+         "mean": 0.25,
+         "lo": 0.0,
+         "hi": 0.75,
+         "clusters": 4
+        }
+       },
+       "supplied_accuracy": {
+        "group": {
+         "mean": 0.8125,
+         "lo": 0.8125,
+         "hi": 0.8125,
+         "clusters": 1
+        },
+        "template": {
+         "mean": 0.8125,
+         "lo": 0.75,
+         "hi": 0.9375,
+         "clusters": 4
+        }
+       }
+      },
+      {
+       "source": "literal",
+       "arm": "other_world",
+       "budget": 256,
+       "scenes": 4,
+       "raw_counts": {
+        "scenes": 4,
+        "all_four": 0,
+        "answers": 16,
+        "correct": 9,
+        "valid": 16
+       },
+       "accuracy": {
+        "group": {
+         "mean": 0.5625,
+         "lo": 0.5625,
+         "hi": 0.5625,
+         "clusters": 1
+        },
+        "template": {
+         "mean": 0.5625,
+         "lo": 0.375,
+         "hi": 0.75,
+         "clusters": 4
+        }
+       },
+       "all_four": {
+        "group": {
+         "mean": 0.0,
+         "lo": 0.0,
+         "hi": 0.0,
+         "clusters": 1
+        },
+        "template": {
+         "mean": 0.0,
+         "lo": 0.0,
+         "hi": 0.0,
+         "clusters": 4
+        }
+       },
+       "coverage": {
+        "group": {
+         "mean": 1.0,
+         "lo": 1.0,
+         "hi": 1.0,
+         "clusters": 1
+        },
+        "template": {
+         "mean": 1.0,
+         "lo": 1.0,
+         "hi": 1.0,
+         "clusters": 4
+        }
+       },
+       "changed_both": {
+        "group": {
+         "mean": 0.0,
+         "lo": 0.0,
+         "hi": 0.0,
+         "clusters": 1
+        },
+        "template": {
+         "mean": 0.0,
+         "lo": 0.0,
+         "hi": 0.0,
+         "clusters": 4
+        }
+       },
+       "unchanged_both": {
+        "group": {
+         "mean": 0.75,
+         "lo": 0.75,
+         "hi": 0.75,
+         "clusters": 1
+        },
+        "template": {
+         "mean": 0.75,
+         "lo": 0.25,
+         "hi": 1.0,
+         "clusters": 4
+        }
+       },
+       "supplied_all_four": {
+        "group": {
+         "mean": 0.25,
+         "lo": 0.25,
+         "hi": 0.25,
+         "clusters": 1
+        },
+        "template": {
+         "mean": 0.25,
+         "lo": 0.0,
+         "hi": 0.75,
+         "clusters": 4
+        }
+       },
+       "supplied_accuracy": {
+        "group": {
+         "mean": 0.8125,
+         "lo": 0.8125,
+         "hi": 0.8125,
+         "clusters": 1
+        },
+        "template": {
+         "mean": 0.8125,
+         "lo": 0.75,
+         "hi": 0.9375,
+         "clusters": 4
+        }
+       }
+      },
+      {
+       "source": "literal",
+       "arm": "packet_text",
+       "budget": 64,
+       "scenes": 4,
+       "raw_counts": {
+        "scenes": 4,
+        "all_four": 4,
+        "answers": 16,
+        "correct": 16,
+        "valid": 16
+       },
+       "accuracy": {
+        "group": {
+         "mean": 1.0,
+         "lo": 1.0,
+         "hi": 1.0,
+         "clusters": 1
+        },
+        "template": {
+         "mean": 1.0,
+         "lo": 1.0,
+         "hi": 1.0,
+         "clusters": 4
+        }
+       },
+       "all_four": {
+        "group": {
+         "mean": 1.0,
+         "lo": 1.0,
+         "hi": 1.0,
+         "clusters": 1
+        },
+        "template": {
+         "mean": 1.0,
+         "lo": 1.0,
+         "hi": 1.0,
+         "clusters": 4
+        }
+       },
+       "coverage": {
+        "group": {
+         "mean": 1.0,
+         "lo": 1.0,
+         "hi": 1.0,
+         "clusters": 1
+        },
+        "template": {
+         "mean": 1.0,
+         "lo": 1.0,
+         "hi": 1.0,
+         "clusters": 4
+        }
+       },
+       "changed_both": {
+        "group": {
+         "mean": 1.0,
+         "lo": 1.0,
+         "hi": 1.0,
+         "clusters": 1
+        },
+        "template": {
+         "mean": 1.0,
+         "lo": 1.0,
+         "hi": 1.0,
+         "clusters": 4
+        }
+       },
+       "unchanged_both": {
+        "group": {
+         "mean": 1.0,
+         "lo": 1.0,
+         "hi": 1.0,
+         "clusters": 1
+        },
+        "template": {
+         "mean": 1.0,
+         "lo": 1.0,
+         "hi": 1.0,
+         "clusters": 4
+        }
+       }
+      },
+      {
+       "source": "literal",
+       "arm": "packet_text",
+       "budget": 256,
+       "scenes": 4,
+       "raw_counts": {
+        "scenes": 4,
+        "all_four": 4,
+        "answers": 16,
+        "correct": 16,
+        "valid": 16
+       },
+       "accuracy": {
+        "group": {
+         "mean": 1.0,
+         "lo": 1.0,
+         "hi": 1.0,
+         "clusters": 1
+        },
+        "template": {
+         "mean": 1.0,
+         "lo": 1.0,
+         "hi": 1.0,
+         "clusters": 4
+        }
+       },
+       "all_four": {
+        "group": {
+         "mean": 1.0,
+         "lo": 1.0,
+         "hi": 1.0,
+         "clusters": 1
+        },
+        "template": {
+         "mean": 1.0,
+         "lo": 1.0,
+         "hi": 1.0,
+         "clusters": 4
+        }
+       },
+       "coverage": {
+        "group": {
+         "mean": 1.0,
+         "lo": 1.0,
+         "hi": 1.0,
+         "clusters": 1
+        },
+        "template": {
+         "mean": 1.0,
+         "lo": 1.0,
+         "hi": 1.0,
+         "clusters": 4
+        }
+       },
+       "changed_both": {
+        "group": {
+         "mean": 1.0,
+         "lo": 1.0,
+         "hi": 1.0,
+         "clusters": 1
+        },
+        "template": {
+         "mean": 1.0,
+         "lo": 1.0,
+         "hi": 1.0,
+         "clusters": 4
+        }
+       },
+       "unchanged_both": {
+        "group": {
+         "mean": 1.0,
+         "lo": 1.0,
+         "hi": 1.0,
+         "clusters": 1
+        },
+        "template": {
+         "mean": 1.0,
+         "lo": 1.0,
+         "hi": 1.0,
+         "clusters": 4
+        }
+       }
+      },
+      {
+       "source": "literal",
+       "arm": "selected",
+       "budget": 64,
+       "scenes": 4,
+       "raw_counts": {
+        "scenes": 4,
+        "all_four": 1,
+        "answers": 16,
+        "correct": 13,
+        "valid": 16
+       },
+       "accuracy": {
+        "group": {
+         "mean": 0.8125,
+         "lo": 0.8125,
+         "hi": 0.8125,
+         "clusters": 1
+        },
+        "template": {
+         "mean": 0.8125,
+         "lo": 0.75,
+         "hi": 0.9375,
+         "clusters": 4
+        }
+       },
+       "all_four": {
+        "group": {
+         "mean": 0.25,
+         "lo": 0.25,
+         "hi": 0.25,
+         "clusters": 1
+        },
+        "template": {
+         "mean": 0.25,
+         "lo": 0.0,
+         "hi": 0.75,
+         "clusters": 4
+        }
+       },
+       "coverage": {
+        "group": {
+         "mean": 1.0,
+         "lo": 1.0,
+         "hi": 1.0,
+         "clusters": 1
+        },
+        "template": {
+         "mean": 1.0,
+         "lo": 1.0,
+         "hi": 1.0,
+         "clusters": 4
+        }
+       },
+       "changed_both": {
+        "group": {
+         "mean": 0.5,
+         "lo": 0.5,
+         "hi": 0.5,
+         "clusters": 1
+        },
+        "template": {
+         "mean": 0.5,
+         "lo": 0.0,
+         "hi": 1.0,
+         "clusters": 4
+        }
+       },
+       "unchanged_both": {
+        "group": {
+         "mean": 0.75,
+         "lo": 0.75,
+         "hi": 0.75,
+         "clusters": 1
+        },
+        "template": {
+         "mean": 0.75,
+         "lo": 0.25,
+         "hi": 1.0,
+         "clusters": 4
+        }
+       }
+      },
+      {
+       "source": "literal",
+       "arm": "selected",
+       "budget": 256,
+       "scenes": 4,
+       "raw_counts": {
+        "scenes": 4,
+        "all_four": 1,
+        "answers": 16,
+        "correct": 13,
+        "valid": 16
+       },
+       "accuracy": {
+        "group": {
+         "mean": 0.8125,
+         "lo": 0.8125,
+         "hi": 0.8125,
+         "clusters": 1
+        },
+        "template": {
+         "mean": 0.8125,
+         "lo": 0.75,
+         "hi": 0.9375,
+         "clusters": 4
+        }
+       },
+       "all_four": {
+        "group": {
+         "mean": 0.25,
+         "lo": 0.25,
+         "hi": 0.25,
+         "clusters": 1
+        },
+        "template": {
+         "mean": 0.25,
+         "lo": 0.0,
+         "hi": 0.75,
+         "clusters": 4
+        }
+       },
+       "coverage": {
+        "group": {
+         "mean": 1.0,
+         "lo": 1.0,
+         "hi": 1.0,
+         "clusters": 1
+        },
+        "template": {
+         "mean": 1.0,
+         "lo": 1.0,
+         "hi": 1.0,
+         "clusters": 4
+        }
+       },
+       "changed_both": {
+        "group": {
+         "mean": 0.5,
+         "lo": 0.5,
+         "hi": 0.5,
+         "clusters": 1
+        },
+        "template": {
+         "mean": 0.5,
+         "lo": 0.0,
+         "hi": 1.0,
+         "clusters": 4
+        }
+       },
+       "unchanged_both": {
+        "group": {
+         "mean": 0.75,
+         "lo": 0.75,
+         "hi": 0.75,
+         "clusters": 1
+        },
+        "template": {
+         "mean": 0.75,
+         "lo": 0.25,
+         "hi": 1.0,
+         "clusters": 4
+        }
+       }
+      },
+      {
+       "source": "literal",
+       "arm": "sham0",
+       "budget": 64,
+       "scenes": 4,
+       "raw_counts": {
+        "scenes": 4,
+        "all_four": 0,
+        "answers": 16,
+        "correct": 3,
+        "valid": 8
+       },
+       "accuracy": {
+        "group": {
+         "mean": 0.1875,
+         "lo": 0.1875,
+         "hi": 0.1875,
+         "clusters": 1
+        },
+        "template": {
+         "mean": 0.1875,
+         "lo": 0.0,
+         "hi": 0.375,
+         "clusters": 4
+        }
+       },
+       "all_four": {
+        "group": {
+         "mean": 0.0,
+         "lo": 0.0,
+         "hi": 0.0,
+         "clusters": 1
+        },
+        "template": {
+         "mean": 0.0,
+         "lo": 0.0,
+         "hi": 0.0,
+         "clusters": 4
+        }
+       },
+       "coverage": {
+        "group": {
+         "mean": 0.5,
+         "lo": 0.5,
+         "hi": 0.5,
+         "clusters": 1
+        },
+        "template": {
+         "mean": 0.5,
+         "lo": 0.0,
+         "hi": 1.0,
+         "clusters": 4
+        }
+       },
+       "changed_both": {
+        "group": {
+         "mean": 0.0,
+         "lo": 0.0,
+         "hi": 0.0,
+         "clusters": 1
+        },
+        "template": {
+         "mean": 0.0,
+         "lo": 0.0,
+         "hi": 0.0,
+         "clusters": 4
+        }
+       },
+       "unchanged_both": {
+        "group": {
+         "mean": 0.25,
+         "lo": 0.25,
+         "hi": 0.25,
+         "clusters": 1
+        },
+        "template": {
+         "mean": 0.25,
+         "lo": 0.0,
+         "hi": 0.75,
+         "clusters": 4
+        }
+       }
+      },
+      {
+       "source": "literal",
+       "arm": "sham0",
+       "budget": 256,
+       "scenes": 4,
+       "raw_counts": {
+        "scenes": 4,
+        "all_four": 0,
+        "answers": 16,
+        "correct": 3,
+        "valid": 8
+       },
+       "accuracy": {
+        "group": {
+         "mean": 0.1875,
+         "lo": 0.1875,
+         "hi": 0.1875,
+         "clusters": 1
+        },
+        "template": {
+         "mean": 0.1875,
+         "lo": 0.0,
+         "hi": 0.375,
+         "clusters": 4
+        }
+       },
+       "all_four": {
+        "group": {
+         "mean": 0.0,
+         "lo": 0.0,
+         "hi": 0.0,
+         "clusters": 1
+        },
+        "template": {
+         "mean": 0.0,
+         "lo": 0.0,
+         "hi": 0.0,
+         "clusters": 4
+        }
+       },
+       "coverage": {
+        "group": {
+         "mean": 0.5,
+         "lo": 0.5,
+         "hi": 0.5,
+         "clusters": 1
+        },
+        "template": {
+         "mean": 0.5,
+         "lo": 0.0,
+         "hi": 1.0,
+         "clusters": 4
+        }
+       },
+       "changed_both": {
+        "group": {
+         "mean": 0.0,
+         "lo": 0.0,
+         "hi": 0.0,
+         "clusters": 1
+        },
+        "template": {
+         "mean": 0.0,
+         "lo": 0.0,
+         "hi": 0.0,
+         "clusters": 4
+        }
+       },
+       "unchanged_both": {
+        "group": {
+         "mean": 0.25,
+         "lo": 0.25,
+         "hi": 0.25,
+         "clusters": 1
+        },
+        "template": {
+         "mean": 0.25,
+         "lo": 0.0,
+         "hi": 0.75,
+         "clusters": 4
+        }
+       }
+      },
+      {
+       "source": "literal",
+       "arm": "sham1",
+       "budget": 64,
+       "scenes": 4,
+       "raw_counts": {
+        "scenes": 4,
+        "all_four": 0,
+        "answers": 16,
+        "correct": 2,
+        "valid": 16
+       },
+       "accuracy": {
+        "group": {
+         "mean": 0.125,
+         "lo": 0.125,
+         "hi": 0.125,
+         "clusters": 1
+        },
+        "template": {
+         "mean": 0.125,
+         "lo": 0.0,
+         "hi": 0.375,
+         "clusters": 4
+        }
+       },
+       "all_four": {
+        "group": {
+         "mean": 0.0,
+         "lo": 0.0,
+         "hi": 0.0,
+         "clusters": 1
+        },
+        "template": {
+         "mean": 0.0,
+         "lo": 0.0,
+         "hi": 0.0,
+         "clusters": 4
+        }
+       },
+       "coverage": {
+        "group": {
+         "mean": 1.0,
+         "lo": 1.0,
+         "hi": 1.0,
+         "clusters": 1
+        },
+        "template": {
+         "mean": 1.0,
+         "lo": 1.0,
+         "hi": 1.0,
+         "clusters": 4
+        }
+       },
+       "changed_both": {
+        "group": {
+         "mean": 0.0,
+         "lo": 0.0,
+         "hi": 0.0,
+         "clusters": 1
+        },
+        "template": {
+         "mean": 0.0,
+         "lo": 0.0,
+         "hi": 0.0,
+         "clusters": 4
+        }
+       },
+       "unchanged_both": {
+        "group": {
+         "mean": 0.25,
+         "lo": 0.25,
+         "hi": 0.25,
+         "clusters": 1
+        },
+        "template": {
+         "mean": 0.25,
+         "lo": 0.0,
+         "hi": 0.75,
+         "clusters": 4
+        }
+       }
+      },
+      {
+       "source": "literal",
+       "arm": "sham1",
+       "budget": 256,
+       "scenes": 4,
+       "raw_counts": {
+        "scenes": 4,
+        "all_four": 0,
+        "answers": 16,
+        "correct": 2,
+        "valid": 16
+       },
+       "accuracy": {
+        "group": {
+         "mean": 0.125,
+         "lo": 0.125,
+         "hi": 0.125,
+         "clusters": 1
+        },
+        "template": {
+         "mean": 0.125,
+         "lo": 0.0,
+         "hi": 0.375,
+         "clusters": 4
+        }
+       },
+       "all_four": {
+        "group": {
+         "mean": 0.0,
+         "lo": 0.0,
+         "hi": 0.0,
+         "clusters": 1
+        },
+        "template": {
+         "mean": 0.0,
+         "lo": 0.0,
+         "hi": 0.0,
+         "clusters": 4
+        }
+       },
+       "coverage": {
+        "group": {
+         "mean": 1.0,
+         "lo": 1.0,
+         "hi": 1.0,
+         "clusters": 1
+        },
+        "template": {
+         "mean": 1.0,
+         "lo": 1.0,
+         "hi": 1.0,
+         "clusters": 4
+        }
+       },
+       "changed_both": {
+        "group": {
+         "mean": 0.0,
+         "lo": 0.0,
+         "hi": 0.0,
+         "clusters": 1
+        },
+        "template": {
+         "mean": 0.0,
+         "lo": 0.0,
+         "hi": 0.0,
+         "clusters": 4
+        }
+       },
+       "unchanged_both": {
+        "group": {
+         "mean": 0.25,
+         "lo": 0.25,
+         "hi": 0.25,
+         "clusters": 1
+        },
+        "template": {
+         "mean": 0.25,
+         "lo": 0.0,
+         "hi": 0.75,
+         "clusters": 4
+        }
+       }
+      },
+      {
+       "source": "literal",
+       "arm": "sham2",
+       "budget": 64,
+       "scenes": 4,
+       "raw_counts": {
+        "scenes": 4,
+        "all_four": 0,
+        "answers": 16,
+        "correct": 3,
+        "valid": 16
+       },
+       "accuracy": {
+        "group": {
+         "mean": 0.1875,
+         "lo": 0.1875,
+         "hi": 0.1875,
+         "clusters": 1
+        },
+        "template": {
+         "mean": 0.1875,
+         "lo": 0.0,
+         "hi": 0.375,
+         "clusters": 4
+        }
+       },
+       "all_four": {
+        "group": {
+         "mean": 0.0,
+         "lo": 0.0,
+         "hi": 0.0,
+         "clusters": 1
+        },
+        "template": {
+         "mean": 0.0,
+         "lo": 0.0,
+         "hi": 0.0,
+         "clusters": 4
+        }
+       },
+       "coverage": {
+        "group": {
+         "mean": 1.0,
+         "lo": 1.0,
+         "hi": 1.0,
+         "clusters": 1
+        },
+        "template": {
+         "mean": 1.0,
+         "lo": 1.0,
+         "hi": 1.0,
+         "clusters": 4
+        }
+       },
+       "changed_both": {
+        "group": {
+         "mean": 0.0,
+         "lo": 0.0,
+         "hi": 0.0,
+         "clusters": 1
+        },
+        "template": {
+         "mean": 0.0,
+         "lo": 0.0,
+         "hi": 0.0,
+         "clusters": 4
+        }
+       },
+       "unchanged_both": {
+        "group": {
+         "mean": 0.25,
+         "lo": 0.25,
+         "hi": 0.25,
+         "clusters": 1
+        },
+        "template": {
+         "mean": 0.25,
+         "lo": 0.0,
+         "hi": 0.75,
+         "clusters": 4
+        }
+       }
+      },
+      {
+       "source": "literal",
+       "arm": "sham2",
+       "budget": 256,
+       "scenes": 4,
+       "raw_counts": {
+        "scenes": 4,
+        "all_four": 0,
+        "answers": 16,
+        "correct": 3,
+        "valid": 16
+       },
+       "accuracy": {
+        "group": {
+         "mean": 0.1875,
+         "lo": 0.1875,
+         "hi": 0.1875,
+         "clusters": 1
+        },
+        "template": {
+         "mean": 0.1875,
+         "lo": 0.0,
+         "hi": 0.375,
+         "clusters": 4
+        }
+       },
+       "all_four": {
+        "group": {
+         "mean": 0.0,
+         "lo": 0.0,
+         "hi": 0.0,
+         "clusters": 1
+        },
+        "template": {
+         "mean": 0.0,
+         "lo": 0.0,
+         "hi": 0.0,
+         "clusters": 4
+        }
+       },
+       "coverage": {
+        "group": {
+         "mean": 1.0,
+         "lo": 1.0,
+         "hi": 1.0,
+         "clusters": 1
+        },
+        "template": {
+         "mean": 1.0,
+         "lo": 1.0,
+         "hi": 1.0,
+         "clusters": 4
+        }
+       },
+       "changed_both": {
+        "group": {
+         "mean": 0.0,
+         "lo": 0.0,
+         "hi": 0.0,
+         "clusters": 1
+        },
+        "template": {
+         "mean": 0.0,
+         "lo": 0.0,
+         "hi": 0.0,
+         "clusters": 4
+        }
+       },
+       "unchanged_both": {
+        "group": {
+         "mean": 0.25,
+         "lo": 0.25,
+         "hi": 0.25,
+         "clusters": 1
+        },
+        "template": {
+         "mean": 0.25,
+         "lo": 0.0,
+         "hi": 0.75,
+         "clusters": 4
+        }
+       }
+      }
+     ],
+     "realized_norms": {
+      "actual/identity_write": {
+       "L8": {
+        "edit_norm": 0.0,
+        "residual_norm": 63.365041732788086,
+        "ratio": 0.0,
+        "n": 16
+       }
+      },
+      "actual/other_world": {
+       "L8": {
+        "edit_norm": 71.72407627105713,
+        "residual_norm": 63.365041732788086,
+        "ratio": 1.1319354647555575,
+        "n": 16
+       }
+      },
+      "actual/selected": {
+       "L8": {
+        "edit_norm": 71.72407627105713,
+        "residual_norm": 63.365041732788086,
+        "ratio": 1.1319354647555575,
+        "n": 16
+       }
+      },
+      "actual/sham0": {
+       "L8": {
+        "edit_norm": 71.72407627105713,
+        "residual_norm": 63.365041732788086,
+        "ratio": 1.1319354647555575,
+        "n": 16
+       }
+      },
+      "actual/sham1": {
+       "L8": {
+        "edit_norm": 71.72407531738281,
+        "residual_norm": 63.365041732788086,
+        "ratio": 1.1319354487486857,
+        "n": 16
+       }
+      },
+      "actual/sham2": {
+       "L8": {
+        "edit_norm": 71.72408103942871,
+        "residual_norm": 63.365041732788086,
+        "ratio": 1.131935540175696,
+        "n": 16
+       }
+      },
+      "literal/other_world": {
+       "L8": {
+        "edit_norm": 60.78162717819214,
+        "residual_norm": 53.92702007293701,
+        "ratio": 1.1271228607534916,
+        "n": 16
+       }
+      },
+      "literal/selected": {
+       "L8": {
+        "edit_norm": 60.78162717819214,
+        "residual_norm": 53.92702007293701,
+        "ratio": 1.1271228607534916,
+        "n": 16
+       }
+      },
+      "literal/sham0": {
+       "L8": {
+        "edit_norm": 60.78162431716919,
+        "residual_norm": 53.92702007293701,
+        "ratio": 1.1271228077608697,
+        "n": 16
+       }
+      },
+      "literal/sham1": {
+       "L8": {
+        "edit_norm": 60.78162384033203,
+        "residual_norm": 53.92702007293701,
+        "ratio": 1.1271227988828931,
+        "n": 16
+       }
+      },
+      "literal/sham2": {
+       "L8": {
+        "edit_norm": 60.7816276550293,
+        "residual_norm": 53.92702007293701,
+        "ratio": 1.127122869562403,
+        "n": 16
+       }
+      }
+     },
+     "cluster_counts": {
+      "group": 1,
+      "template": 4
+     }
+    },
+    "development": {
+     "scenes": 96,
+     "rows": 5760,
+     "partial_cells": [],
+     "conditions": [
+      {
+       "source": "actual",
+       "arm": "full_text",
+       "budget": 64,
+       "scenes": 96,
+       "raw_counts": {
+        "scenes": 96,
+        "all_four": 91,
+        "answers": 384,
+        "correct": 379,
+        "valid": 384
+       },
+       "accuracy": {
+        "group": {
+         "mean": 0.9869791666666666,
+         "lo": 0.9765625,
+         "hi": 0.9973958333333334,
+         "clusters": 6
+        },
+        "template": {
+         "mean": 0.9871527777777778,
+         "lo": 0.977951388888889,
+         "hi": 0.9953124999999999,
+         "clusters": 12
+        }
+       },
+       "all_four": {
+        "group": {
+         "mean": 0.9479166666666666,
+         "lo": 0.90625,
+         "hi": 0.9895833333333334,
+         "clusters": 6
+        },
+        "template": {
+         "mean": 0.9486111111111112,
+         "lo": 0.9118055555555555,
+         "hi": 0.9812500000000001,
+         "clusters": 12
+        }
+       },
+       "coverage": {
+        "group": {
+         "mean": 1.0,
+         "lo": 1.0,
+         "hi": 1.0,
+         "clusters": 6
+        },
+        "template": {
+         "mean": 1.0,
+         "lo": 1.0,
+         "hi": 1.0,
+         "clusters": 12
+        }
+       },
+       "changed_both": {
+        "group": {
+         "mean": 1.0,
+         "lo": 1.0,
+         "hi": 1.0,
+         "clusters": 6
+        },
+        "template": {
+         "mean": 1.0,
+         "lo": 1.0,
+         "hi": 1.0,
+         "clusters": 12
+        }
+       },
+       "unchanged_both": {
+        "group": {
+         "mean": 0.9479166666666666,
+         "lo": 0.90625,
+         "hi": 0.9895833333333334,
+         "clusters": 6
+        },
+        "template": {
+         "mean": 0.9486111111111112,
+         "lo": 0.9118055555555555,
+         "hi": 0.9812500000000001,
+         "clusters": 12
+        }
+       }
+      },
+      {
+       "source": "actual",
+       "arm": "full_text",
+       "budget": 256,
+       "scenes": 96,
+       "raw_counts": {
+        "scenes": 96,
+        "all_four": 91,
+        "answers": 384,
+        "correct": 379,
+        "valid": 384
+       },
+       "accuracy": {
+        "group": {
+         "mean": 0.9869791666666666,
+         "lo": 0.9765625,
+         "hi": 0.9973958333333334,
+         "clusters": 6
+        },
+        "template": {
+         "mean": 0.9871527777777778,
+         "lo": 0.977951388888889,
+         "hi": 0.9953124999999999,
+         "clusters": 12
+        }
+       },
+       "all_four": {
+        "group": {
+         "mean": 0.9479166666666666,
+         "lo": 0.90625,
+         "hi": 0.9895833333333334,
+         "clusters": 6
+        },
+        "template": {
+         "mean": 0.9486111111111112,
+         "lo": 0.9118055555555555,
+         "hi": 0.9812500000000001,
+         "clusters": 12
+        }
+       },
+       "coverage": {
+        "group": {
+         "mean": 1.0,
+         "lo": 1.0,
+         "hi": 1.0,
+         "clusters": 6
+        },
+        "template": {
+         "mean": 1.0,
+         "lo": 1.0,
+         "hi": 1.0,
+         "clusters": 12
+        }
+       },
+       "changed_both": {
+        "group": {
+         "mean": 1.0,
+         "lo": 1.0,
+         "hi": 1.0,
+         "clusters": 6
+        },
+        "template": {
+         "mean": 1.0,
+         "lo": 1.0,
+         "hi": 1.0,
+         "clusters": 12
+        }
+       },
+       "unchanged_both": {
+        "group": {
+         "mean": 0.9479166666666666,
+         "lo": 0.90625,
+         "hi": 0.9895833333333334,
+         "clusters": 6
+        },
+        "template": {
+         "mean": 0.9486111111111112,
+         "lo": 0.9118055555555555,
+         "hi": 0.9812500000000001,
+         "clusters": 12
+        }
+       }
+      },
+      {
+       "source": "actual",
+       "arm": "identity_write",
+       "budget": 64,
+       "scenes": 96,
+       "raw_counts": {
+        "scenes": 96,
+        "all_four": 0,
+        "answers": 384,
+        "correct": 3,
+        "valid": 18
+       },
+       "accuracy": {
+        "group": {
+         "mean": 0.0078125,
+         "lo": 0.0,
+         "hi": 0.018229166666666668,
+         "clusters": 6
+        },
+        "template": {
+         "mean": 0.009027777777777779,
+         "lo": 0.0,
+         "hi": 0.024999999999999998,
+         "clusters": 12
+        }
+       },
+       "all_four": {
+        "group": {
+         "mean": 0.0,
+         "lo": 0.0,
+         "hi": 0.0,
+         "clusters": 6
+        },
+        "template": {
+         "mean": 0.0,
+         "lo": 0.0,
+         "hi": 0.0,
+         "clusters": 12
+        }
+       },
+       "coverage": {
+        "group": {
+         "mean": 0.046875,
+         "lo": 0.010416666666666666,
+         "hi": 0.09375,
+         "clusters": 6
+        },
+        "template": {
+         "mean": 0.04456018518518518,
+         "lo": 0.005208333333333333,
+         "hi": 0.0943287037037037,
+         "clusters": 12
+        }
+       },
+       "changed_both": {
+        "group": {
+         "mean": 0.0,
+         "lo": 0.0,
+         "hi": 0.0,
+         "clusters": 6
+        },
+        "template": {
+         "mean": 0.0,
+         "lo": 0.0,
+         "hi": 0.0,
+         "clusters": 12
+        }
+       },
+       "unchanged_both": {
+        "group": {
+         "mean": 0.010416666666666666,
+         "lo": 0.0,
+         "hi": 0.03125,
+         "clusters": 6
+        },
+        "template": {
+         "mean": 0.013888888888888888,
+         "lo": 0.0,
+         "hi": 0.041666666666666664,
+         "clusters": 12
+        }
+       }
+      },
+      {
+       "source": "actual",
+       "arm": "identity_write",
+       "budget": 256,
+       "scenes": 96,
+       "raw_counts": {
+        "scenes": 96,
+        "all_four": 0,
+        "answers": 384,
+        "correct": 3,
+        "valid": 18
+       },
+       "accuracy": {
+        "group": {
+         "mean": 0.0078125,
+         "lo": 0.0,
+         "hi": 0.018229166666666668,
+         "clusters": 6
+        },
+        "template": {
+         "mean": 0.009027777777777779,
+         "lo": 0.0,
+         "hi": 0.024999999999999998,
+         "clusters": 12
+        }
+       },
+       "all_four": {
+        "group": {
+         "mean": 0.0,
+         "lo": 0.0,
+         "hi": 0.0,
+         "clusters": 6
+        },
+        "template": {
+         "mean": 0.0,
+         "lo": 0.0,
+         "hi": 0.0,
+         "clusters": 12
+        }
+       },
+       "coverage": {
+        "group": {
+         "mean": 0.046875,
+         "lo": 0.010416666666666666,
+         "hi": 0.09375,
+         "clusters": 6
+        },
+        "template": {
+         "mean": 0.04456018518518518,
+         "lo": 0.005208333333333333,
+         "hi": 0.0943287037037037,
+         "clusters": 12
+        }
+       },
+       "changed_both": {
+        "group": {
+         "mean": 0.0,
+         "lo": 0.0,
+         "hi": 0.0,
+         "clusters": 6
+        },
+        "template": {
+         "mean": 0.0,
+         "lo": 0.0,
+         "hi": 0.0,
+         "clusters": 12
+        }
+       },
+       "unchanged_both": {
+        "group": {
+         "mean": 0.010416666666666666,
+         "lo": 0.0,
+         "hi": 0.03125,
+         "clusters": 6
+        },
+        "template": {
+         "mean": 0.013888888888888888,
+         "lo": 0.0,
+         "hi": 0.041666666666666664,
+         "clusters": 12
+        }
+       }
+      },
+      {
+       "source": "actual",
+       "arm": "none",
+       "budget": 64,
+       "scenes": 96,
+       "raw_counts": {
+        "scenes": 96,
+        "all_four": 0,
+        "answers": 384,
+        "correct": 3,
+        "valid": 18
+       },
+       "accuracy": {
+        "group": {
+         "mean": 0.0078125,
+         "lo": 0.0,
+         "hi": 0.018229166666666668,
+         "clusters": 6
+        },
+        "template": {
+         "mean": 0.009027777777777779,
+         "lo": 0.0,
+         "hi": 0.024999999999999998,
+         "clusters": 12
+        }
+       },
+       "all_four": {
+        "group": {
+         "mean": 0.0,
+         "lo": 0.0,
+         "hi": 0.0,
+         "clusters": 6
+        },
+        "template": {
+         "mean": 0.0,
+         "lo": 0.0,
+         "hi": 0.0,
+         "clusters": 12
+        }
+       },
+       "coverage": {
+        "group": {
+         "mean": 0.046875,
+         "lo": 0.010416666666666666,
+         "hi": 0.09375,
+         "clusters": 6
+        },
+        "template": {
+         "mean": 0.04456018518518518,
+         "lo": 0.005208333333333333,
+         "hi": 0.0943287037037037,
+         "clusters": 12
+        }
+       },
+       "changed_both": {
+        "group": {
+         "mean": 0.0,
+         "lo": 0.0,
+         "hi": 0.0,
+         "clusters": 6
+        },
+        "template": {
+         "mean": 0.0,
+         "lo": 0.0,
+         "hi": 0.0,
+         "clusters": 12
+        }
+       },
+       "unchanged_both": {
+        "group": {
+         "mean": 0.010416666666666666,
+         "lo": 0.0,
+         "hi": 0.03125,
+         "clusters": 6
+        },
+        "template": {
+         "mean": 0.013888888888888888,
+         "lo": 0.0,
+         "hi": 0.041666666666666664,
+         "clusters": 12
+        }
+       }
+      },
+      {
+       "source": "actual",
+       "arm": "none",
+       "budget": 256,
+       "scenes": 96,
+       "raw_counts": {
+        "scenes": 96,
+        "all_four": 0,
+        "answers": 384,
+        "correct": 3,
+        "valid": 18
+       },
+       "accuracy": {
+        "group": {
+         "mean": 0.0078125,
+         "lo": 0.0,
+         "hi": 0.018229166666666668,
+         "clusters": 6
+        },
+        "template": {
+         "mean": 0.009027777777777779,
+         "lo": 0.0,
+         "hi": 0.024999999999999998,
+         "clusters": 12
+        }
+       },
+       "all_four": {
+        "group": {
+         "mean": 0.0,
+         "lo": 0.0,
+         "hi": 0.0,
+         "clusters": 6
+        },
+        "template": {
+         "mean": 0.0,
+         "lo": 0.0,
+         "hi": 0.0,
+         "clusters": 12
+        }
+       },
+       "coverage": {
+        "group": {
+         "mean": 0.046875,
+         "lo": 0.010416666666666666,
+         "hi": 0.09375,
+         "clusters": 6
+        },
+        "template": {
+         "mean": 0.04456018518518518,
+         "lo": 0.005208333333333333,
+         "hi": 0.0943287037037037,
+         "clusters": 12
+        }
+       },
+       "changed_both": {
+        "group": {
+         "mean": 0.0,
+         "lo": 0.0,
+         "hi": 0.0,
+         "clusters": 6
+        },
+        "template": {
+         "mean": 0.0,
+         "lo": 0.0,
+         "hi": 0.0,
+         "clusters": 12
+        }
+       },
+       "unchanged_both": {
+        "group": {
+         "mean": 0.010416666666666666,
+         "lo": 0.0,
+         "hi": 0.03125,
+         "clusters": 6
+        },
+        "template": {
+         "mean": 0.013888888888888888,
+         "lo": 0.0,
+         "hi": 0.041666666666666664,
+         "clusters": 12
+        }
+       }
+      },
+      {
+       "source": "actual",
+       "arm": "other_world",
+       "budget": 64,
+       "scenes": 96,
+       "raw_counts": {
+        "scenes": 96,
+        "all_four": 0,
+        "answers": 384,
+        "correct": 176,
+        "valid": 384
+       },
+       "accuracy": {
+        "group": {
+         "mean": 0.4583333333333333,
+         "lo": 0.4427083333333333,
+         "hi": 0.4765625,
+         "clusters": 6
+        },
+        "template": {
+         "mean": 0.46159887566137575,
+         "lo": 0.4201388888888889,
+         "hi": 0.5001984126984127,
+         "clusters": 12
+        }
+       },
+       "all_four": {
+        "group": {
+         "mean": 0.0,
+         "lo": 0.0,
+         "hi": 0.0,
+         "clusters": 6
+        },
+        "template": {
+         "mean": 0.0,
+         "lo": 0.0,
+         "hi": 0.0,
+         "clusters": 12
+        }
+       },
+       "coverage": {
+        "group": {
+         "mean": 1.0,
+         "lo": 1.0,
+         "hi": 1.0,
+         "clusters": 6
+        },
+        "template": {
+         "mean": 1.0,
+         "lo": 1.0,
+         "hi": 1.0,
+         "clusters": 12
+        }
+       },
+       "changed_both": {
+        "group": {
+         "mean": 0.0,
+         "lo": 0.0,
+         "hi": 0.0,
+         "clusters": 6
+        },
+        "template": {
+         "mean": 0.0,
+         "lo": 0.0,
+         "hi": 0.0,
+         "clusters": 12
+        }
+       },
+       "unchanged_both": {
+        "group": {
+         "mean": 0.75,
+         "lo": 0.7083333333333334,
+         "hi": 0.8020833333333334,
+         "clusters": 6
+        },
+        "template": {
+         "mean": 0.7630952380952382,
+         "lo": 0.665079365079365,
+         "hi": 0.8625099206349199,
+         "clusters": 12
+        }
+       },
+       "supplied_all_four": {
+        "group": {
+         "mean": 0.4479166666666667,
+         "lo": 0.3229166666666667,
+         "hi": 0.5729166666666666,
+         "clusters": 6
+        },
+        "template": {
+         "mean": 0.4565806878306878,
+         "lo": 0.3443452380952381,
+         "hi": 0.5648148148148149,
+         "clusters": 12
+        }
+       },
+       "supplied_accuracy": {
+        "group": {
+         "mean": 0.8046875,
+         "lo": 0.7578125,
+         "hi": 0.8489583333333334,
+         "clusters": 6
+        },
+        "template": {
+         "mean": 0.8081597222222223,
+         "lo": 0.7590265376984128,
+         "hi": 0.8556553819444443,
+         "clusters": 12
+        }
+       }
+      },
+      {
+       "source": "actual",
+       "arm": "other_world",
+       "budget": 256,
+       "scenes": 96,
+       "raw_counts": {
+        "scenes": 96,
+        "all_four": 0,
+        "answers": 384,
+        "correct": 176,
+        "valid": 384
+       },
+       "accuracy": {
+        "group": {
+         "mean": 0.4583333333333333,
+         "lo": 0.4427083333333333,
+         "hi": 0.4765625,
+         "clusters": 6
+        },
+        "template": {
+         "mean": 0.46159887566137575,
+         "lo": 0.4201388888888889,
+         "hi": 0.5001984126984127,
+         "clusters": 12
+        }
+       },
+       "all_four": {
+        "group": {
+         "mean": 0.0,
+         "lo": 0.0,
+         "hi": 0.0,
+         "clusters": 6
+        },
+        "template": {
+         "mean": 0.0,
+         "lo": 0.0,
+         "hi": 0.0,
+         "clusters": 12
+        }
+       },
+       "coverage": {
+        "group": {
+         "mean": 1.0,
+         "lo": 1.0,
+         "hi": 1.0,
+         "clusters": 6
+        },
+        "template": {
+         "mean": 1.0,
+         "lo": 1.0,
+         "hi": 1.0,
+         "clusters": 12
+        }
+       },
+       "changed_both": {
+        "group": {
+         "mean": 0.0,
+         "lo": 0.0,
+         "hi": 0.0,
+         "clusters": 6
+        },
+        "template": {
+         "mean": 0.0,
+         "lo": 0.0,
+         "hi": 0.0,
+         "clusters": 12
+        }
+       },
+       "unchanged_both": {
+        "group": {
+         "mean": 0.75,
+         "lo": 0.7083333333333334,
+         "hi": 0.8020833333333334,
+         "clusters": 6
+        },
+        "template": {
+         "mean": 0.7630952380952382,
+         "lo": 0.665079365079365,
+         "hi": 0.8625099206349199,
+         "clusters": 12
+        }
+       },
+       "supplied_all_four": {
+        "group": {
+         "mean": 0.4479166666666667,
+         "lo": 0.3229166666666667,
+         "hi": 0.5729166666666666,
+         "clusters": 6
+        },
+        "template": {
+         "mean": 0.4565806878306878,
+         "lo": 0.3443452380952381,
+         "hi": 0.5648148148148149,
+         "clusters": 12
+        }
+       },
+       "supplied_accuracy": {
+        "group": {
+         "mean": 0.8046875,
+         "lo": 0.7578125,
+         "hi": 0.8489583333333334,
+         "clusters": 6
+        },
+        "template": {
+         "mean": 0.8081597222222223,
+         "lo": 0.7590265376984128,
+         "hi": 0.8556553819444443,
+         "clusters": 12
+        }
+       }
+      },
+      {
+       "source": "actual",
+       "arm": "packet_text",
+       "budget": 64,
+       "scenes": 96,
+       "raw_counts": {
+        "scenes": 96,
+        "all_four": 73,
+        "answers": 384,
+        "correct": 355,
+        "valid": 369
+       },
+       "accuracy": {
+        "group": {
+         "mean": 0.9244791666666666,
+         "lo": 0.8802083333333334,
+         "hi": 0.9661458333333334,
+         "clusters": 6
+        },
+        "template": {
+         "mean": 0.9277364417989418,
+         "lo": 0.9056712962962963,
+         "hi": 0.9505539021164021,
+         "clusters": 12
+        }
+       },
+       "all_four": {
+        "group": {
+         "mean": 0.7604166666666666,
+         "lo": 0.625,
+         "hi": 0.8854166666666666,
+         "clusters": 6
+        },
+        "template": {
+         "mean": 0.7654431216931217,
+         "lo": 0.7034722222222222,
+         "hi": 0.832342923280423,
+         "clusters": 12
+        }
+       },
+       "coverage": {
+        "group": {
+         "mean": 0.9609375,
+         "lo": 0.9296875,
+         "hi": 0.9869791666666666,
+         "clusters": 6
+        },
+        "template": {
+         "mean": 0.9648230820105822,
+         "lo": 0.9442791005291006,
+         "hi": 0.9842013888888889,
+         "clusters": 12
+        }
+       },
+       "changed_both": {
+        "group": {
+         "mean": 0.8854166666666666,
+         "lo": 0.84375,
+         "hi": 0.9375,
+         "clusters": 6
+        },
+        "template": {
+         "mean": 0.8785052910052911,
+         "lo": 0.809126984126984,
+         "hi": 0.9453703703703704,
+         "clusters": 12
+        }
+       },
+       "unchanged_both": {
+        "group": {
+         "mean": 0.84375,
+         "lo": 0.7083333333333334,
+         "hi": 0.9583333333333334,
+         "clusters": 6
+        },
+        "template": {
+         "mean": 0.8583664021164021,
+         "lo": 0.7898478835978836,
+         "hi": 0.91984126984127,
+         "clusters": 12
+        }
+       }
+      },
+      {
+       "source": "actual",
+       "arm": "packet_text",
+       "budget": 256,
+       "scenes": 96,
+       "raw_counts": {
+        "scenes": 96,
+        "all_four": 73,
+        "answers": 384,
+        "correct": 355,
+        "valid": 369
+       },
+       "accuracy": {
+        "group": {
+         "mean": 0.9244791666666666,
+         "lo": 0.8802083333333334,
+         "hi": 0.9661458333333334,
+         "clusters": 6
+        },
+        "template": {
+         "mean": 0.9277364417989418,
+         "lo": 0.9056712962962963,
+         "hi": 0.9505539021164021,
+         "clusters": 12
+        }
+       },
+       "all_four": {
+        "group": {
+         "mean": 0.7604166666666666,
+         "lo": 0.625,
+         "hi": 0.8854166666666666,
+         "clusters": 6
+        },
+        "template": {
+         "mean": 0.7654431216931217,
+         "lo": 0.7034722222222222,
+         "hi": 0.832342923280423,
+         "clusters": 12
+        }
+       },
+       "coverage": {
+        "group": {
+         "mean": 0.9609375,
+         "lo": 0.9296875,
+         "hi": 0.9869791666666666,
+         "clusters": 6
+        },
+        "template": {
+         "mean": 0.9648230820105822,
+         "lo": 0.9442791005291006,
+         "hi": 0.9842013888888889,
+         "clusters": 12
+        }
+       },
+       "changed_both": {
+        "group": {
+         "mean": 0.8854166666666666,
+         "lo": 0.84375,
+         "hi": 0.9375,
+         "clusters": 6
+        },
+        "template": {
+         "mean": 0.8785052910052911,
+         "lo": 0.809126984126984,
+         "hi": 0.9453703703703704,
+         "clusters": 12
+        }
+       },
+       "unchanged_both": {
+        "group": {
+         "mean": 0.84375,
+         "lo": 0.7083333333333334,
+         "hi": 0.9583333333333334,
+         "clusters": 6
+        },
+        "template": {
+         "mean": 0.8583664021164021,
+         "lo": 0.7898478835978836,
+         "hi": 0.91984126984127,
+         "clusters": 12
+        }
+       }
+      },
+      {
+       "source": "actual",
+       "arm": "selected",
+       "budget": 64,
+       "scenes": 96,
+       "raw_counts": {
+        "scenes": 96,
+        "all_four": 43,
+        "answers": 384,
+        "correct": 309,
+        "valid": 384
+       },
+       "accuracy": {
+        "group": {
+         "mean": 0.8046875,
+         "lo": 0.7578125,
+         "hi": 0.8489583333333334,
+         "clusters": 6
+        },
+        "template": {
+         "mean": 0.8081597222222223,
+         "lo": 0.7590265376984128,
+         "hi": 0.8556553819444443,
+         "clusters": 12
+        }
+       },
+       "all_four": {
+        "group": {
+         "mean": 0.4479166666666667,
+         "lo": 0.3229166666666667,
+         "hi": 0.5729166666666666,
+         "clusters": 6
+        },
+        "template": {
+         "mean": 0.4565806878306878,
+         "lo": 0.3443452380952381,
+         "hi": 0.5648148148148149,
+         "clusters": 12
+        }
+       },
+       "coverage": {
+        "group": {
+         "mean": 1.0,
+         "lo": 1.0,
+         "hi": 1.0,
+         "clusters": 6
+        },
+        "template": {
+         "mean": 1.0,
+         "lo": 1.0,
+         "hi": 1.0,
+         "clusters": 12
+        }
+       },
+       "changed_both": {
+        "group": {
+         "mean": 0.6145833333333334,
+         "lo": 0.5104166666666666,
+         "hi": 0.71875,
+         "clusters": 6
+        },
+        "template": {
+         "mean": 0.6101521164021164,
+         "lo": 0.5277116402116402,
+         "hi": 0.6832671957671957,
+         "clusters": 12
+        }
+       },
+       "unchanged_both": {
+        "group": {
+         "mean": 0.75,
+         "lo": 0.7083333333333334,
+         "hi": 0.8020833333333334,
+         "clusters": 6
+        },
+        "template": {
+         "mean": 0.7630952380952382,
+         "lo": 0.665079365079365,
+         "hi": 0.8625099206349199,
+         "clusters": 12
+        }
+       }
+      },
+      {
+       "source": "actual",
+       "arm": "selected",
+       "budget": 256,
+       "scenes": 96,
+       "raw_counts": {
+        "scenes": 96,
+        "all_four": 43,
+        "answers": 384,
+        "correct": 309,
+        "valid": 384
+       },
+       "accuracy": {
+        "group": {
+         "mean": 0.8046875,
+         "lo": 0.7578125,
+         "hi": 0.8489583333333334,
+         "clusters": 6
+        },
+        "template": {
+         "mean": 0.8081597222222223,
+         "lo": 0.7590265376984128,
+         "hi": 0.8556553819444443,
+         "clusters": 12
+        }
+       },
+       "all_four": {
+        "group": {
+         "mean": 0.4479166666666667,
+         "lo": 0.3229166666666667,
+         "hi": 0.5729166666666666,
+         "clusters": 6
+        },
+        "template": {
+         "mean": 0.4565806878306878,
+         "lo": 0.3443452380952381,
+         "hi": 0.5648148148148149,
+         "clusters": 12
+        }
+       },
+       "coverage": {
+        "group": {
+         "mean": 1.0,
+         "lo": 1.0,
+         "hi": 1.0,
+         "clusters": 6
+        },
+        "template": {
+         "mean": 1.0,
+         "lo": 1.0,
+         "hi": 1.0,
+         "clusters": 12
+        }
+       },
+       "changed_both": {
+        "group": {
+         "mean": 0.6145833333333334,
+         "lo": 0.5104166666666666,
+         "hi": 0.71875,
+         "clusters": 6
+        },
+        "template": {
+         "mean": 0.6101521164021164,
+         "lo": 0.5277116402116402,
+         "hi": 0.6832671957671957,
+         "clusters": 12
+        }
+       },
+       "unchanged_both": {
+        "group": {
+         "mean": 0.75,
+         "lo": 0.7083333333333334,
+         "hi": 0.8020833333333334,
+         "clusters": 6
+        },
+        "template": {
+         "mean": 0.7630952380952382,
+         "lo": 0.665079365079365,
+         "hi": 0.8625099206349199,
+         "clusters": 12
+        }
+       }
+      },
+      {
+       "source": "actual",
+       "arm": "sham0",
+       "budget": 64,
+       "scenes": 96,
+       "raw_counts": {
+        "scenes": 96,
+        "all_four": 0,
+        "answers": 384,
+        "correct": 73,
+        "valid": 264
+       },
+       "accuracy": {
+        "group": {
+         "mean": 0.19010416666666666,
+         "lo": 0.12239583333333333,
+         "hi": 0.2552083333333333,
+         "clusters": 6
+        },
+        "template": {
+         "mean": 0.18898809523809526,
+         "lo": 0.13134920634920635,
+         "hi": 0.2516617063492063,
+         "clusters": 12
+        }
+       },
+       "all_four": {
+        "group": {
+         "mean": 0.0,
+         "lo": 0.0,
+         "hi": 0.0,
+         "clusters": 6
+        },
+        "template": {
+         "mean": 0.0,
+         "lo": 0.0,
+         "hi": 0.0,
+         "clusters": 12
+        }
+       },
+       "coverage": {
+        "group": {
+         "mean": 0.6875,
+         "lo": 0.5052083333333334,
+         "hi": 0.8515625,
+         "clusters": 6
+        },
+        "template": {
+         "mean": 0.6856150793650794,
+         "lo": 0.5977327215608466,
+         "hi": 0.7776326884920634,
+         "clusters": 12
+        }
+       },
+       "changed_both": {
+        "group": {
+         "mean": 0.010416666666666666,
+         "lo": 0.0,
+         "hi": 0.03125,
+         "clusters": 6
+        },
+        "template": {
+         "mean": 0.010416666666666666,
+         "lo": 0.0,
+         "hi": 0.03125,
+         "clusters": 12
+        }
+       },
+       "unchanged_both": {
+        "group": {
+         "mean": 0.1875,
+         "lo": 0.08333333333333333,
+         "hi": 0.2916666666666667,
+         "clusters": 6
+        },
+        "template": {
+         "mean": 0.186441798941799,
+         "lo": 0.10978670634920633,
+         "hi": 0.2671990740740738,
+         "clusters": 12
+        }
+       }
+      },
+      {
+       "source": "actual",
+       "arm": "sham0",
+       "budget": 256,
+       "scenes": 96,
+       "raw_counts": {
+        "scenes": 96,
+        "all_four": 0,
+        "answers": 384,
+        "correct": 73,
+        "valid": 264
+       },
+       "accuracy": {
+        "group": {
+         "mean": 0.19010416666666666,
+         "lo": 0.12239583333333333,
+         "hi": 0.2552083333333333,
+         "clusters": 6
+        },
+        "template": {
+         "mean": 0.18898809523809526,
+         "lo": 0.13134920634920635,
+         "hi": 0.2516617063492063,
+         "clusters": 12
+        }
+       },
+       "all_four": {
+        "group": {
+         "mean": 0.0,
+         "lo": 0.0,
+         "hi": 0.0,
+         "clusters": 6
+        },
+        "template": {
+         "mean": 0.0,
+         "lo": 0.0,
+         "hi": 0.0,
+         "clusters": 12
+        }
+       },
+       "coverage": {
+        "group": {
+         "mean": 0.6875,
+         "lo": 0.5052083333333334,
+         "hi": 0.8515625,
+         "clusters": 6
+        },
+        "template": {
+         "mean": 0.6856150793650794,
+         "lo": 0.5977327215608466,
+         "hi": 0.7776326884920634,
+         "clusters": 12
+        }
+       },
+       "changed_both": {
+        "group": {
+         "mean": 0.010416666666666666,
+         "lo": 0.0,
+         "hi": 0.03125,
+         "clusters": 6
+        },
+        "template": {
+         "mean": 0.010416666666666666,
+         "lo": 0.0,
+         "hi": 0.03125,
+         "clusters": 12
+        }
+       },
+       "unchanged_both": {
+        "group": {
+         "mean": 0.1875,
+         "lo": 0.08333333333333333,
+         "hi": 0.2916666666666667,
+         "clusters": 6
+        },
+        "template": {
+         "mean": 0.186441798941799,
+         "lo": 0.10978670634920633,
+         "hi": 0.2671990740740738,
+         "clusters": 12
+        }
+       }
+      },
+      {
+       "source": "actual",
+       "arm": "sham1",
+       "budget": 64,
+       "scenes": 96,
+       "raw_counts": {
+        "scenes": 96,
+        "all_four": 0,
+        "answers": 384,
+        "correct": 68,
+        "valid": 262
+       },
+       "accuracy": {
+        "group": {
+         "mean": 0.17708333333333334,
+         "lo": 0.14322916666666666,
+         "hi": 0.2109375,
+         "clusters": 6
+        },
+        "template": {
+         "mean": 0.17818287037037037,
+         "lo": 0.14110449735449734,
+         "hi": 0.2189980158730159,
+         "clusters": 12
+        }
+       },
+       "all_four": {
+        "group": {
+         "mean": 0.0,
+         "lo": 0.0,
+         "hi": 0.0,
+         "clusters": 6
+        },
+        "template": {
+         "mean": 0.0,
+         "lo": 0.0,
+         "hi": 0.0,
+         "clusters": 12
+        }
+       },
+       "coverage": {
+        "group": {
+         "mean": 0.6822916666666666,
+         "lo": 0.5729166666666666,
+         "hi": 0.7916666666666666,
+         "clusters": 6
+        },
+        "template": {
+         "mean": 0.6839285714285713,
+         "lo": 0.5978497023809525,
+         "hi": 0.7668981481481482,
+         "clusters": 12
+        }
+       },
+       "changed_both": {
+        "group": {
+         "mean": 0.0,
+         "lo": 0.0,
+         "hi": 0.0,
+         "clusters": 6
+        },
+        "template": {
+         "mean": 0.0,
+         "lo": 0.0,
+         "hi": 0.0,
+         "clusters": 12
+        }
+       },
+       "unchanged_both": {
+        "group": {
+         "mean": 0.1875,
+         "lo": 0.14583333333333334,
+         "hi": 0.22916666666666666,
+         "clusters": 6
+        },
+        "template": {
+         "mean": 0.19014550264550265,
+         "lo": 0.11144179894179894,
+         "hi": 0.273015873015873,
+         "clusters": 12
+        }
+       }
+      },
+      {
+       "source": "actual",
+       "arm": "sham1",
+       "budget": 256,
+       "scenes": 96,
+       "raw_counts": {
+        "scenes": 96,
+        "all_four": 0,
+        "answers": 384,
+        "correct": 68,
+        "valid": 262
+       },
+       "accuracy": {
+        "group": {
+         "mean": 0.17708333333333334,
+         "lo": 0.14322916666666666,
+         "hi": 0.2109375,
+         "clusters": 6
+        },
+        "template": {
+         "mean": 0.17818287037037037,
+         "lo": 0.14110449735449734,
+         "hi": 0.2189980158730159,
+         "clusters": 12
+        }
+       },
+       "all_four": {
+        "group": {
+         "mean": 0.0,
+         "lo": 0.0,
+         "hi": 0.0,
+         "clusters": 6
+        },
+        "template": {
+         "mean": 0.0,
+         "lo": 0.0,
+         "hi": 0.0,
+         "clusters": 12
+        }
+       },
+       "coverage": {
+        "group": {
+         "mean": 0.6822916666666666,
+         "lo": 0.5729166666666666,
+         "hi": 0.7916666666666666,
+         "clusters": 6
+        },
+        "template": {
+         "mean": 0.6839285714285713,
+         "lo": 0.5978497023809525,
+         "hi": 0.7668981481481482,
+         "clusters": 12
+        }
+       },
+       "changed_both": {
+        "group": {
+         "mean": 0.0,
+         "lo": 0.0,
+         "hi": 0.0,
+         "clusters": 6
+        },
+        "template": {
+         "mean": 0.0,
+         "lo": 0.0,
+         "hi": 0.0,
+         "clusters": 12
+        }
+       },
+       "unchanged_both": {
+        "group": {
+         "mean": 0.1875,
+         "lo": 0.14583333333333334,
+         "hi": 0.22916666666666666,
+         "clusters": 6
+        },
+        "template": {
+         "mean": 0.19014550264550265,
+         "lo": 0.11144179894179894,
+         "hi": 0.273015873015873,
+         "clusters": 12
+        }
+       }
+      },
+      {
+       "source": "actual",
+       "arm": "sham2",
+       "budget": 64,
+       "scenes": 96,
+       "raw_counts": {
+        "scenes": 96,
+        "all_four": 0,
+        "answers": 384,
+        "correct": 83,
+        "valid": 295
+       },
+       "accuracy": {
+        "group": {
+         "mean": 0.21614583333333334,
+         "lo": 0.19270833333333334,
+         "hi": 0.23697916666666666,
+         "clusters": 6
+        },
+        "template": {
+         "mean": 0.22059358465608467,
+         "lo": 0.15362929894179897,
+         "hi": 0.2948912863756613,
+         "clusters": 12
+        }
+       },
+       "all_four": {
+        "group": {
+         "mean": 0.0,
+         "lo": 0.0,
+         "hi": 0.0,
+         "clusters": 6
+        },
+        "template": {
+         "mean": 0.0,
+         "lo": 0.0,
+         "hi": 0.0,
+         "clusters": 12
+        }
+       },
+       "coverage": {
+        "group": {
+         "mean": 0.7682291666666666,
+         "lo": 0.6875,
+         "hi": 0.8463541666666666,
+         "clusters": 6
+        },
+        "template": {
+         "mean": 0.7716765873015873,
+         "lo": 0.6772519841269841,
+         "hi": 0.8585342261904759,
+         "clusters": 12
+        }
+       },
+       "changed_both": {
+        "group": {
+         "mean": 0.010416666666666666,
+         "lo": 0.0,
+         "hi": 0.03125,
+         "clusters": 6
+        },
+        "template": {
+         "mean": 0.008333333333333333,
+         "lo": 0.0,
+         "hi": 0.025000000000000005,
+         "clusters": 12
+        }
+       },
+       "unchanged_both": {
+        "group": {
+         "mean": 0.21875,
+         "lo": 0.19791666666666666,
+         "hi": 0.23958333333333334,
+         "clusters": 6
+        },
+        "template": {
+         "mean": 0.2345568783068783,
+         "lo": 0.12648809523809523,
+         "hi": 0.36081349206349206,
+         "clusters": 12
+        }
+       }
+      },
+      {
+       "source": "actual",
+       "arm": "sham2",
+       "budget": 256,
+       "scenes": 96,
+       "raw_counts": {
+        "scenes": 96,
+        "all_four": 0,
+        "answers": 384,
+        "correct": 83,
+        "valid": 295
+       },
+       "accuracy": {
+        "group": {
+         "mean": 0.21614583333333334,
+         "lo": 0.19270833333333334,
+         "hi": 0.23697916666666666,
+         "clusters": 6
+        },
+        "template": {
+         "mean": 0.22059358465608467,
+         "lo": 0.15362929894179897,
+         "hi": 0.2948912863756613,
+         "clusters": 12
+        }
+       },
+       "all_four": {
+        "group": {
+         "mean": 0.0,
+         "lo": 0.0,
+         "hi": 0.0,
+         "clusters": 6
+        },
+        "template": {
+         "mean": 0.0,
+         "lo": 0.0,
+         "hi": 0.0,
+         "clusters": 12
+        }
+       },
+       "coverage": {
+        "group": {
+         "mean": 0.7682291666666666,
+         "lo": 0.6875,
+         "hi": 0.8463541666666666,
+         "clusters": 6
+        },
+        "template": {
+         "mean": 0.7716765873015873,
+         "lo": 0.6772519841269841,
+         "hi": 0.8585342261904759,
+         "clusters": 12
+        }
+       },
+       "changed_both": {
+        "group": {
+         "mean": 0.010416666666666666,
+         "lo": 0.0,
+         "hi": 0.03125,
+         "clusters": 6
+        },
+        "template": {
+         "mean": 0.008333333333333333,
+         "lo": 0.0,
+         "hi": 0.025000000000000005,
+         "clusters": 12
+        }
+       },
+       "unchanged_both": {
+        "group": {
+         "mean": 0.21875,
+         "lo": 0.19791666666666666,
+         "hi": 0.23958333333333334,
+         "clusters": 6
+        },
+        "template": {
+         "mean": 0.2345568783068783,
+         "lo": 0.12648809523809523,
+         "hi": 0.36081349206349206,
+         "clusters": 12
+        }
+       }
+      },
+      {
+       "source": "literal",
+       "arm": "other_world",
+       "budget": 64,
+       "scenes": 96,
+       "raw_counts": {
+        "scenes": 96,
+        "all_four": 0,
+        "answers": 384,
+        "correct": 178,
+        "valid": 384
+       },
+       "accuracy": {
+        "group": {
+         "mean": 0.4635416666666667,
+         "lo": 0.4401041666666667,
+         "hi": 0.4869791666666667,
+         "clusters": 6
+        },
+        "template": {
+         "mean": 0.46776620370370364,
+         "lo": 0.44438657407407406,
+         "hi": 0.487037037037037,
+         "clusters": 12
+        }
+       },
+       "all_four": {
+        "group": {
+         "mean": 0.0,
+         "lo": 0.0,
+         "hi": 0.0,
+         "clusters": 6
+        },
+        "template": {
+         "mean": 0.0,
+         "lo": 0.0,
+         "hi": 0.0,
+         "clusters": 12
+        }
+       },
+       "coverage": {
+        "group": {
+         "mean": 1.0,
+         "lo": 1.0,
+         "hi": 1.0,
+         "clusters": 6
+        },
+        "template": {
+         "mean": 1.0,
+         "lo": 1.0,
+         "hi": 1.0,
+         "clusters": 12
+        }
+       },
+       "changed_both": {
+        "group": {
+         "mean": 0.0,
+         "lo": 0.0,
+         "hi": 0.0,
+         "clusters": 6
+        },
+        "template": {
+         "mean": 0.0,
+         "lo": 0.0,
+         "hi": 0.0,
+         "clusters": 12
+        }
+       },
+       "unchanged_both": {
+        "group": {
+         "mean": 0.7708333333333334,
+         "lo": 0.7083333333333334,
+         "hi": 0.8333333333333334,
+         "clusters": 6
+        },
+        "template": {
+         "mean": 0.7863756613756613,
+         "lo": 0.7205026455026454,
+         "hi": 0.8505985449735447,
+         "clusters": 12
+        }
+       },
+       "supplied_all_four": {
+        "group": {
+         "mean": 0.5104166666666666,
+         "lo": 0.3854166666666667,
+         "hi": 0.6041666666666666,
+         "clusters": 6
+        },
+        "template": {
+         "mean": 0.523015873015873,
+         "lo": 0.41458167989417993,
+         "hi": 0.6196097883597883,
+         "clusters": 12
+        }
+       },
+       "supplied_accuracy": {
+        "group": {
+         "mean": 0.8307291666666666,
+         "lo": 0.7760416666666666,
+         "hi": 0.8671875,
+         "clusters": 6
+        },
+        "template": {
+         "mean": 0.8361689814814816,
+         "lo": 0.8011904761904763,
+         "hi": 0.8694115823412699,
+         "clusters": 12
+        }
+       }
+      },
+      {
+       "source": "literal",
+       "arm": "other_world",
+       "budget": 256,
+       "scenes": 96,
+       "raw_counts": {
+        "scenes": 96,
+        "all_four": 0,
+        "answers": 384,
+        "correct": 178,
+        "valid": 384
+       },
+       "accuracy": {
+        "group": {
+         "mean": 0.4635416666666667,
+         "lo": 0.4401041666666667,
+         "hi": 0.4869791666666667,
+         "clusters": 6
+        },
+        "template": {
+         "mean": 0.46776620370370364,
+         "lo": 0.44438657407407406,
+         "hi": 0.487037037037037,
+         "clusters": 12
+        }
+       },
+       "all_four": {
+        "group": {
+         "mean": 0.0,
+         "lo": 0.0,
+         "hi": 0.0,
+         "clusters": 6
+        },
+        "template": {
+         "mean": 0.0,
+         "lo": 0.0,
+         "hi": 0.0,
+         "clusters": 12
+        }
+       },
+       "coverage": {
+        "group": {
+         "mean": 1.0,
+         "lo": 1.0,
+         "hi": 1.0,
+         "clusters": 6
+        },
+        "template": {
+         "mean": 1.0,
+         "lo": 1.0,
+         "hi": 1.0,
+         "clusters": 12
+        }
+       },
+       "changed_both": {
+        "group": {
+         "mean": 0.0,
+         "lo": 0.0,
+         "hi": 0.0,
+         "clusters": 6
+        },
+        "template": {
+         "mean": 0.0,
+         "lo": 0.0,
+         "hi": 0.0,
+         "clusters": 12
+        }
+       },
+       "unchanged_both": {
+        "group": {
+         "mean": 0.7708333333333334,
+         "lo": 0.7083333333333334,
+         "hi": 0.8333333333333334,
+         "clusters": 6
+        },
+        "template": {
+         "mean": 0.7863756613756613,
+         "lo": 0.7205026455026454,
+         "hi": 0.8505985449735447,
+         "clusters": 12
+        }
+       },
+       "supplied_all_four": {
+        "group": {
+         "mean": 0.5104166666666666,
+         "lo": 0.3854166666666667,
+         "hi": 0.6041666666666666,
+         "clusters": 6
+        },
+        "template": {
+         "mean": 0.523015873015873,
+         "lo": 0.41458167989417993,
+         "hi": 0.6196097883597883,
+         "clusters": 12
+        }
+       },
+       "supplied_accuracy": {
+        "group": {
+         "mean": 0.8307291666666666,
+         "lo": 0.7760416666666666,
+         "hi": 0.8671875,
+         "clusters": 6
+        },
+        "template": {
+         "mean": 0.8361689814814816,
+         "lo": 0.8011904761904763,
+         "hi": 0.8694115823412699,
+         "clusters": 12
+        }
+       }
+      },
+      {
+       "source": "literal",
+       "arm": "packet_text",
+       "budget": 64,
+       "scenes": 96,
+       "raw_counts": {
+        "scenes": 96,
+        "all_four": 83,
+        "answers": 384,
+        "correct": 371,
+        "valid": 384
+       },
+       "accuracy": {
+        "group": {
+         "mean": 0.9661458333333334,
+         "lo": 0.9322916666666666,
+         "hi": 0.9895833333333334,
+         "clusters": 6
+        },
+        "template": {
+         "mean": 0.9668733465608464,
+         "lo": 0.9516203703703702,
+         "hi": 0.9811679480820105,
+         "clusters": 12
+        }
+       },
+       "all_four": {
+        "group": {
+         "mean": 0.8645833333333334,
+         "lo": 0.7291666666666666,
+         "hi": 0.9583333333333334,
+         "clusters": 6
+        },
+        "template": {
+         "mean": 0.8674933862433863,
+         "lo": 0.8064814814814815,
+         "hi": 0.9246717923280422,
+         "clusters": 12
+        }
+       },
+       "coverage": {
+        "group": {
+         "mean": 1.0,
+         "lo": 1.0,
+         "hi": 1.0,
+         "clusters": 6
+        },
+        "template": {
+         "mean": 1.0,
+         "lo": 1.0,
+         "hi": 1.0,
+         "clusters": 12
+        }
+       },
+       "changed_both": {
+        "group": {
+         "mean": 0.9375,
+         "lo": 0.875,
+         "hi": 0.9895833333333334,
+         "clusters": 6
+        },
+        "template": {
+         "mean": 0.9324074074074075,
+         "lo": 0.8712962962962961,
+         "hi": 0.9824074074074075,
+         "clusters": 12
+        }
+       },
+       "unchanged_both": {
+        "group": {
+         "mean": 0.9270833333333334,
+         "lo": 0.8541666666666666,
+         "hi": 0.9791666666666666,
+         "clusters": 6
+        },
+        "template": {
+         "mean": 0.9350859788359789,
+         "lo": 0.8793981481481481,
+         "hi": 0.9803240740740741,
+         "clusters": 12
+        }
+       }
+      },
+      {
+       "source": "literal",
+       "arm": "packet_text",
+       "budget": 256,
+       "scenes": 96,
+       "raw_counts": {
+        "scenes": 96,
+        "all_four": 83,
+        "answers": 384,
+        "correct": 371,
+        "valid": 384
+       },
+       "accuracy": {
+        "group": {
+         "mean": 0.9661458333333334,
+         "lo": 0.9322916666666666,
+         "hi": 0.9895833333333334,
+         "clusters": 6
+        },
+        "template": {
+         "mean": 0.9668733465608464,
+         "lo": 0.9516203703703702,
+         "hi": 0.9811679480820105,
+         "clusters": 12
+        }
+       },
+       "all_four": {
+        "group": {
+         "mean": 0.8645833333333334,
+         "lo": 0.7291666666666666,
+         "hi": 0.9583333333333334,
+         "clusters": 6
+        },
+        "template": {
+         "mean": 0.8674933862433863,
+         "lo": 0.8064814814814815,
+         "hi": 0.9246717923280422,
+         "clusters": 12
+        }
+       },
+       "coverage": {
+        "group": {
+         "mean": 1.0,
+         "lo": 1.0,
+         "hi": 1.0,
+         "clusters": 6
+        },
+        "template": {
+         "mean": 1.0,
+         "lo": 1.0,
+         "hi": 1.0,
+         "clusters": 12
+        }
+       },
+       "changed_both": {
+        "group": {
+         "mean": 0.9375,
+         "lo": 0.875,
+         "hi": 0.9895833333333334,
+         "clusters": 6
+        },
+        "template": {
+         "mean": 0.9324074074074075,
+         "lo": 0.8712962962962961,
+         "hi": 0.9824074074074075,
+         "clusters": 12
+        }
+       },
+       "unchanged_both": {
+        "group": {
+         "mean": 0.9270833333333334,
+         "lo": 0.8541666666666666,
+         "hi": 0.9791666666666666,
+         "clusters": 6
+        },
+        "template": {
+         "mean": 0.9350859788359789,
+         "lo": 0.8793981481481481,
+         "hi": 0.9803240740740741,
+         "clusters": 12
+        }
+       }
+      },
+      {
+       "source": "literal",
+       "arm": "selected",
+       "budget": 64,
+       "scenes": 96,
+       "raw_counts": {
+        "scenes": 96,
+        "all_four": 49,
+        "answers": 384,
+        "correct": 319,
+        "valid": 384
+       },
+       "accuracy": {
+        "group": {
+         "mean": 0.8307291666666666,
+         "lo": 0.7760416666666666,
+         "hi": 0.8671875,
+         "clusters": 6
+        },
+        "template": {
+         "mean": 0.8361689814814816,
+         "lo": 0.8011904761904763,
+         "hi": 0.8694115823412699,
+         "clusters": 12
+        }
+       },
+       "all_four": {
+        "group": {
+         "mean": 0.5104166666666666,
+         "lo": 0.3854166666666667,
+         "hi": 0.6041666666666666,
+         "clusters": 6
+        },
+        "template": {
+         "mean": 0.523015873015873,
+         "lo": 0.41458167989417993,
+         "hi": 0.6196097883597883,
+         "clusters": 12
+        }
+       },
+       "coverage": {
+        "group": {
+         "mean": 1.0,
+         "lo": 1.0,
+         "hi": 1.0,
+         "clusters": 6
+        },
+        "template": {
+         "mean": 1.0,
+         "lo": 1.0,
+         "hi": 1.0,
+         "clusters": 12
+        }
+       },
+       "changed_both": {
+        "group": {
+         "mean": 0.6875,
+         "lo": 0.6041666666666666,
+         "hi": 0.7604166666666666,
+         "clusters": 6
+        },
+        "template": {
+         "mean": 0.6894179894179894,
+         "lo": 0.608597056878307,
+         "hi": 0.7648156415343916,
+         "clusters": 12
+        }
+       },
+       "unchanged_both": {
+        "group": {
+         "mean": 0.7708333333333334,
+         "lo": 0.7083333333333334,
+         "hi": 0.8333333333333334,
+         "clusters": 6
+        },
+        "template": {
+         "mean": 0.7863756613756613,
+         "lo": 0.7205026455026454,
+         "hi": 0.8505985449735447,
+         "clusters": 12
+        }
+       }
+      },
+      {
+       "source": "literal",
+       "arm": "selected",
+       "budget": 256,
+       "scenes": 96,
+       "raw_counts": {
+        "scenes": 96,
+        "all_four": 49,
+        "answers": 384,
+        "correct": 319,
+        "valid": 384
+       },
+       "accuracy": {
+        "group": {
+         "mean": 0.8307291666666666,
+         "lo": 0.7760416666666666,
+         "hi": 0.8671875,
+         "clusters": 6
+        },
+        "template": {
+         "mean": 0.8361689814814816,
+         "lo": 0.8011904761904763,
+         "hi": 0.8694115823412699,
+         "clusters": 12
+        }
+       },
+       "all_four": {
+        "group": {
+         "mean": 0.5104166666666666,
+         "lo": 0.3854166666666667,
+         "hi": 0.6041666666666666,
+         "clusters": 6
+        },
+        "template": {
+         "mean": 0.523015873015873,
+         "lo": 0.41458167989417993,
+         "hi": 0.6196097883597883,
+         "clusters": 12
+        }
+       },
+       "coverage": {
+        "group": {
+         "mean": 1.0,
+         "lo": 1.0,
+         "hi": 1.0,
+         "clusters": 6
+        },
+        "template": {
+         "mean": 1.0,
+         "lo": 1.0,
+         "hi": 1.0,
+         "clusters": 12
+        }
+       },
+       "changed_both": {
+        "group": {
+         "mean": 0.6875,
+         "lo": 0.6041666666666666,
+         "hi": 0.7604166666666666,
+         "clusters": 6
+        },
+        "template": {
+         "mean": 0.6894179894179894,
+         "lo": 0.608597056878307,
+         "hi": 0.7648156415343916,
+         "clusters": 12
+        }
+       },
+       "unchanged_both": {
+        "group": {
+         "mean": 0.7708333333333334,
+         "lo": 0.7083333333333334,
+         "hi": 0.8333333333333334,
+         "clusters": 6
+        },
+        "template": {
+         "mean": 0.7863756613756613,
+         "lo": 0.7205026455026454,
+         "hi": 0.8505985449735447,
+         "clusters": 12
+        }
+       }
+      },
+      {
+       "source": "literal",
+       "arm": "sham0",
+       "budget": 64,
+       "scenes": 96,
+       "raw_counts": {
+        "scenes": 96,
+        "all_four": 0,
+        "answers": 384,
+        "correct": 70,
+        "valid": 269
+       },
+       "accuracy": {
+        "group": {
+         "mean": 0.18229166666666666,
+         "lo": 0.11197916666666667,
+         "hi": 0.25,
+         "clusters": 6
+        },
+        "template": {
+         "mean": 0.1821015211640212,
+         "lo": 0.1345223627645503,
+         "hi": 0.23478009259259255,
+         "clusters": 12
+        }
+       },
+       "all_four": {
+        "group": {
+         "mean": 0.0,
+         "lo": 0.0,
+         "hi": 0.0,
+         "clusters": 6
+        },
+        "template": {
+         "mean": 0.0,
+         "lo": 0.0,
+         "hi": 0.0,
+         "clusters": 12
+        }
+       },
+       "coverage": {
+        "group": {
+         "mean": 0.7005208333333334,
+         "lo": 0.5208333333333334,
+         "hi": 0.859375,
+         "clusters": 6
+        },
+        "template": {
+         "mean": 0.694717261904762,
+         "lo": 0.5938136574074074,
+         "hi": 0.7944444444444444,
+         "clusters": 12
+        }
+       },
+       "changed_both": {
+        "group": {
+         "mean": 0.010416666666666666,
+         "lo": 0.0,
+         "hi": 0.03125,
+         "clusters": 6
+        },
+        "template": {
+         "mean": 0.010416666666666666,
+         "lo": 0.0,
+         "hi": 0.03125,
+         "clusters": 12
+        }
+       },
+       "unchanged_both": {
+        "group": {
+         "mean": 0.17708333333333334,
+         "lo": 0.07291666666666667,
+         "hi": 0.28125,
+         "clusters": 6
+        },
+        "template": {
+         "mean": 0.1806547619047619,
+         "lo": 0.11917989417989418,
+         "hi": 0.24130539021164002,
+         "clusters": 12
+        }
+       }
+      },
+      {
+       "source": "literal",
+       "arm": "sham0",
+       "budget": 256,
+       "scenes": 96,
+       "raw_counts": {
+        "scenes": 96,
+        "all_four": 0,
+        "answers": 384,
+        "correct": 70,
+        "valid": 269
+       },
+       "accuracy": {
+        "group": {
+         "mean": 0.18229166666666666,
+         "lo": 0.11197916666666667,
+         "hi": 0.25,
+         "clusters": 6
+        },
+        "template": {
+         "mean": 0.1821015211640212,
+         "lo": 0.1345223627645503,
+         "hi": 0.23478009259259255,
+         "clusters": 12
+        }
+       },
+       "all_four": {
+        "group": {
+         "mean": 0.0,
+         "lo": 0.0,
+         "hi": 0.0,
+         "clusters": 6
+        },
+        "template": {
+         "mean": 0.0,
+         "lo": 0.0,
+         "hi": 0.0,
+         "clusters": 12
+        }
+       },
+       "coverage": {
+        "group": {
+         "mean": 0.7005208333333334,
+         "lo": 0.5208333333333334,
+         "hi": 0.859375,
+         "clusters": 6
+        },
+        "template": {
+         "mean": 0.694717261904762,
+         "lo": 0.5938136574074074,
+         "hi": 0.7944444444444444,
+         "clusters": 12
+        }
+       },
+       "changed_both": {
+        "group": {
+         "mean": 0.010416666666666666,
+         "lo": 0.0,
+         "hi": 0.03125,
+         "clusters": 6
+        },
+        "template": {
+         "mean": 0.010416666666666666,
+         "lo": 0.0,
+         "hi": 0.03125,
+         "clusters": 12
+        }
+       },
+       "unchanged_both": {
+        "group": {
+         "mean": 0.17708333333333334,
+         "lo": 0.07291666666666667,
+         "hi": 0.28125,
+         "clusters": 6
+        },
+        "template": {
+         "mean": 0.1806547619047619,
+         "lo": 0.11917989417989418,
+         "hi": 0.24130539021164002,
+         "clusters": 12
+        }
+       }
+      },
+      {
+       "source": "literal",
+       "arm": "sham1",
+       "budget": 64,
+       "scenes": 96,
+       "raw_counts": {
+        "scenes": 96,
+        "all_four": 0,
+        "answers": 384,
+        "correct": 73,
+        "valid": 278
+       },
+       "accuracy": {
+        "group": {
+         "mean": 0.19010416666666666,
+         "lo": 0.15885416666666666,
+         "hi": 0.21354166666666666,
+         "clusters": 6
+        },
+        "template": {
+         "mean": 0.19276620370370368,
+         "lo": 0.14973524305555555,
+         "hi": 0.23929439484126983,
+         "clusters": 12
+        }
+       },
+       "all_four": {
+        "group": {
+         "mean": 0.0,
+         "lo": 0.0,
+         "hi": 0.0,
+         "clusters": 6
+        },
+        "template": {
+         "mean": 0.0,
+         "lo": 0.0,
+         "hi": 0.0,
+         "clusters": 12
+        }
+       },
+       "coverage": {
+        "group": {
+         "mean": 0.7239583333333334,
+         "lo": 0.6171875,
+         "hi": 0.8307291666666666,
+         "clusters": 6
+        },
+        "template": {
+         "mean": 0.722635582010582,
+         "lo": 0.64455894510582,
+         "hi": 0.8011574074074074,
+         "clusters": 12
+        }
+       },
+       "changed_both": {
+        "group": {
+         "mean": 0.0,
+         "lo": 0.0,
+         "hi": 0.0,
+         "clusters": 6
+        },
+        "template": {
+         "mean": 0.0,
+         "lo": 0.0,
+         "hi": 0.0,
+         "clusters": 12
+        }
+       },
+       "unchanged_both": {
+        "group": {
+         "mean": 0.19791666666666666,
+         "lo": 0.1875,
+         "hi": 0.21875,
+         "clusters": 6
+        },
+        "template": {
+         "mean": 0.2040343915343915,
+         "lo": 0.11574074074074074,
+         "hi": 0.2998677248677249,
+         "clusters": 12
+        }
+       }
+      },
+      {
+       "source": "literal",
+       "arm": "sham1",
+       "budget": 256,
+       "scenes": 96,
+       "raw_counts": {
+        "scenes": 96,
+        "all_four": 0,
+        "answers": 384,
+        "correct": 73,
+        "valid": 278
+       },
+       "accuracy": {
+        "group": {
+         "mean": 0.19010416666666666,
+         "lo": 0.15885416666666666,
+         "hi": 0.21354166666666666,
+         "clusters": 6
+        },
+        "template": {
+         "mean": 0.19276620370370368,
+         "lo": 0.14973524305555555,
+         "hi": 0.23929439484126983,
+         "clusters": 12
+        }
+       },
+       "all_four": {
+        "group": {
+         "mean": 0.0,
+         "lo": 0.0,
+         "hi": 0.0,
+         "clusters": 6
+        },
+        "template": {
+         "mean": 0.0,
+         "lo": 0.0,
+         "hi": 0.0,
+         "clusters": 12
+        }
+       },
+       "coverage": {
+        "group": {
+         "mean": 0.7239583333333334,
+         "lo": 0.6171875,
+         "hi": 0.8307291666666666,
+         "clusters": 6
+        },
+        "template": {
+         "mean": 0.722635582010582,
+         "lo": 0.64455894510582,
+         "hi": 0.8011574074074074,
+         "clusters": 12
+        }
+       },
+       "changed_both": {
+        "group": {
+         "mean": 0.0,
+         "lo": 0.0,
+         "hi": 0.0,
+         "clusters": 6
+        },
+        "template": {
+         "mean": 0.0,
+         "lo": 0.0,
+         "hi": 0.0,
+         "clusters": 12
+        }
+       },
+       "unchanged_both": {
+        "group": {
+         "mean": 0.19791666666666666,
+         "lo": 0.1875,
+         "hi": 0.21875,
+         "clusters": 6
+        },
+        "template": {
+         "mean": 0.2040343915343915,
+         "lo": 0.11574074074074074,
+         "hi": 0.2998677248677249,
+         "clusters": 12
+        }
+       }
+      },
+      {
+       "source": "literal",
+       "arm": "sham2",
+       "budget": 64,
+       "scenes": 96,
+       "raw_counts": {
+        "scenes": 96,
+        "all_four": 0,
+        "answers": 384,
+        "correct": 72,
+        "valid": 277
+       },
+       "accuracy": {
+        "group": {
+         "mean": 0.1875,
+         "lo": 0.1484375,
+         "hi": 0.2265625,
+         "clusters": 6
+        },
+        "template": {
+         "mean": 0.19059193121693122,
+         "lo": 0.13098524305555553,
+         "hi": 0.25354724702380943,
+         "clusters": 12
+        }
+       },
+       "all_four": {
+        "group": {
+         "mean": 0.0,
+         "lo": 0.0,
+         "hi": 0.0,
+         "clusters": 6
+        },
+        "template": {
+         "mean": 0.0,
+         "lo": 0.0,
+         "hi": 0.0,
+         "clusters": 12
+        }
+       },
+       "coverage": {
+        "group": {
+         "mean": 0.7213541666666666,
+         "lo": 0.640625,
+         "hi": 0.8229166666666666,
+         "clusters": 6
+        },
+        "template": {
+         "mean": 0.7316881613756614,
+         "lo": 0.6299094742063491,
+         "hi": 0.8240009093915343,
+         "clusters": 12
+        }
+       },
+       "changed_both": {
+        "group": {
+         "mean": 0.020833333333333332,
+         "lo": 0.0,
+         "hi": 0.041666666666666664,
+         "clusters": 6
+        },
+        "template": {
+         "mean": 0.016666666666666666,
+         "lo": 0.0,
+         "hi": 0.041666666666666664,
+         "clusters": 12
+        }
+       },
+       "unchanged_both": {
+        "group": {
+         "mean": 0.1875,
+         "lo": 0.15625,
+         "hi": 0.21875,
+         "clusters": 6
+        },
+        "template": {
+         "mean": 0.20099206349206347,
+         "lo": 0.10644841269841271,
+         "hi": 0.30644841269841266,
+         "clusters": 12
+        }
+       }
+      },
+      {
+       "source": "literal",
+       "arm": "sham2",
+       "budget": 256,
+       "scenes": 96,
+       "raw_counts": {
+        "scenes": 96,
+        "all_four": 0,
+        "answers": 384,
+        "correct": 72,
+        "valid": 277
+       },
+       "accuracy": {
+        "group": {
+         "mean": 0.1875,
+         "lo": 0.1484375,
+         "hi": 0.2265625,
+         "clusters": 6
+        },
+        "template": {
+         "mean": 0.19059193121693122,
+         "lo": 0.13098524305555553,
+         "hi": 0.25354724702380943,
+         "clusters": 12
+        }
+       },
+       "all_four": {
+        "group": {
+         "mean": 0.0,
+         "lo": 0.0,
+         "hi": 0.0,
+         "clusters": 6
+        },
+        "template": {
+         "mean": 0.0,
+         "lo": 0.0,
+         "hi": 0.0,
+         "clusters": 12
+        }
+       },
+       "coverage": {
+        "group": {
+         "mean": 0.7213541666666666,
+         "lo": 0.640625,
+         "hi": 0.8229166666666666,
+         "clusters": 6
+        },
+        "template": {
+         "mean": 0.7316881613756614,
+         "lo": 0.6299094742063491,
+         "hi": 0.8240009093915343,
+         "clusters": 12
+        }
+       },
+       "changed_both": {
+        "group": {
+         "mean": 0.020833333333333332,
+         "lo": 0.0,
+         "hi": 0.041666666666666664,
+         "clusters": 6
+        },
+        "template": {
+         "mean": 0.016666666666666666,
+         "lo": 0.0,
+         "hi": 0.041666666666666664,
+         "clusters": 12
+        }
+       },
+       "unchanged_both": {
+        "group": {
+         "mean": 0.1875,
+         "lo": 0.15625,
+         "hi": 0.21875,
+         "clusters": 6
+        },
+        "template": {
+         "mean": 0.20099206349206347,
+         "lo": 0.10644841269841271,
+         "hi": 0.30644841269841266,
+         "clusters": 12
+        }
+       }
+      }
+     ],
+     "realized_norms": {
+      "actual/identity_write": {
+       "L8": {
+        "edit_norm": 0.0,
+        "residual_norm": 61.31453686952591,
+        "ratio": 0.0,
+        "n": 384
+       }
+      },
+      "actual/other_world": {
+       "L8": {
+        "edit_norm": 69.12415486574173,
+        "residual_norm": 61.31453686952591,
+        "ratio": 1.1265327295646075,
+        "n": 384
+       }
+      },
+      "actual/selected": {
+       "L8": {
+        "edit_norm": 69.12415486574173,
+        "residual_norm": 61.31453686952591,
+        "ratio": 1.1265327295646075,
+        "n": 384
+       }
+      },
+      "actual/sham0": {
+       "L8": {
+        "edit_norm": 69.124154706796,
+        "residual_norm": 61.31453686952591,
+        "ratio": 1.1265327276163264,
+        "n": 384
+       }
+      },
+      "actual/sham1": {
+       "L8": {
+        "edit_norm": 69.12415474653244,
+        "residual_norm": 61.31453686952591,
+        "ratio": 1.1265327272570218,
+        "n": 384
+       }
+      },
+      "actual/sham2": {
+       "L8": {
+        "edit_norm": 69.12415566047032,
+        "residual_norm": 61.31453686952591,
+        "ratio": 1.1265327423288478,
+        "n": 384
+       }
+      },
+      "literal/other_world": {
+       "L8": {
+        "edit_norm": 60.6390683054924,
+        "residual_norm": 54.18017578125,
+        "ratio": 1.1192304004823275,
+        "n": 384
+       }
+      },
+      "literal/selected": {
+       "L8": {
+        "edit_norm": 60.6390683054924,
+        "residual_norm": 54.18017578125,
+        "ratio": 1.1192304004823275,
+        "n": 384
+       }
+      },
+      "literal/sham0": {
+       "L8": {
+        "edit_norm": 60.639068941275276,
+        "residual_norm": 54.18017578125,
+        "ratio": 1.119230412225509,
+        "n": 384
+       }
+      },
+      "literal/sham1": {
+       "L8": {
+        "edit_norm": 60.63906761010488,
+        "residual_norm": 54.18017578125,
+        "ratio": 1.1192303876569245,
+        "n": 384
+       }
+      },
+      "literal/sham2": {
+       "L8": {
+        "edit_norm": 60.639068841934204,
+        "residual_norm": 54.18017578125,
+        "ratio": 1.1192304103775563,
+        "n": 384
+       }
+      }
+     },
+     "cluster_counts": {
+      "group": 6,
+      "template": 12
+     }
+    }
+   },
+   "sender": {
+    "n_packets": 192,
+    "parse_status": {
+     "ok": 191,
+     "partial": 1
+    },
+    "fact_recall": 0.9973958333333334,
+    "complete_packet_rate": 0.9895833333333334,
+    "complete_packets": 190,
+    "object_assignment_errors_per_packet": 0.005208333333333333,
+    "packets_with_assignment_error": 1,
+    "extraneous_words_per_packet": 2.625,
+    "note": "recall = gold values present in the right object lane / 8; an assignment error = a scene attribute value placed in a lane whose object does not hold it; extraneous = inventory words that are no attribute value of the scene"
+   },
+   "contrasts": {
+    "actual_selected_minus_mean_sham": {
+     "group": {
+      "mean": 0.4479166666666667,
+      "lo": 0.3229166666666667,
+      "hi": 0.5729166666666666,
+      "clusters": 6,
+      "p_two_sided": 1.6666666666666667e-05
+     },
+     "template": {
+      "mean": 0.4565806878306878,
+      "lo": 0.3443452380952381,
+      "hi": 0.5648148148148149,
+      "clusters": 12,
+      "p_two_sided": 1.6666666666666667e-05
+     },
+     "conservative": {
+      "lo": 0.3229166666666667,
+      "hi": 0.5729166666666666,
+      "p": 1.6666666666666667e-05,
+      "estimate": 0.4479166666666667,
+      "scenes": 96
+     }
+    },
+    "actual_selected_minus_packet_text": {
+     "group": {
+      "mean": -0.3125,
+      "lo": -0.5104166666666666,
+      "hi": -0.125,
+      "clusters": 6,
+      "p_two_sided": 1.6666666666666667e-05
+     },
+     "template": {
+      "mean": -0.30886243386243384,
+      "lo": -0.4412037037037037,
+      "hi": -0.1783068783068783,
+      "clusters": 12,
+      "p_two_sided": 1.6666666666666667e-05
+     },
+     "conservative": {
+      "lo": -0.5104166666666666,
+      "hi": -0.125,
+      "p": 1.6666666666666667e-05,
+      "estimate": -0.3125,
+      "scenes": 96
+     }
+    },
+    "actual_selected_minus_full_text": {
+     "group": {
+      "mean": -0.5,
+      "lo": -0.6354166666666666,
+      "hi": -0.375,
+      "clusters": 6,
+      "p_two_sided": 1.6666666666666667e-05
+     },
+     "template": {
+      "mean": -0.4920304232804232,
+      "lo": -0.5773148148148147,
+      "hi": -0.40872767857142867,
+      "clusters": 12,
+      "p_two_sided": 1.6666666666666667e-05
+     },
+     "conservative": {
+      "lo": -0.6354166666666666,
+      "hi": -0.375,
+      "p": 1.6666666666666667e-05,
+      "estimate": -0.5,
+      "scenes": 96
+     }
+    },
+    "actual_packet_text_minus_full_text": {
+     "group": {
+      "mean": -0.1875,
+      "lo": -0.3229166666666667,
+      "hi": -0.07291666666666667,
+      "clusters": 6,
+      "p_two_sided": 3.3333333333333335e-05
+     },
+     "template": {
+      "mean": -0.18316798941798942,
+      "lo": -0.2552587632275133,
+      "hi": -0.11289434523809544,
+      "clusters": 12,
+      "p_two_sided": 1.6666666666666667e-05
+     },
+     "conservative": {
+      "lo": -0.3229166666666667,
+      "hi": -0.07291666666666667,
+      "p": 3.3333333333333335e-05,
+      "estimate": -0.1875,
+      "scenes": 96
+     }
+    },
+    "actual_selected_minus_other_world": {
+     "group": {
+      "mean": 0.4479166666666667,
+      "lo": 0.3229166666666667,
+      "hi": 0.5729166666666666,
+      "clusters": 6,
+      "p_two_sided": 1.6666666666666667e-05
+     },
+     "template": {
+      "mean": 0.4565806878306878,
+      "lo": 0.3443452380952381,
+      "hi": 0.5648148148148149,
+      "clusters": 12,
+      "p_two_sided": 1.6666666666666667e-05
+     },
+     "conservative": {
+      "lo": 0.3229166666666667,
+      "hi": 0.5729166666666666,
+      "p": 1.6666666666666667e-05,
+      "estimate": 0.4479166666666667,
+      "scenes": 96
+     }
+    },
+    "literal_selected_minus_mean_sham": {
+     "group": {
+      "mean": 0.5104166666666666,
+      "lo": 0.3854166666666667,
+      "hi": 0.6041666666666666,
+      "clusters": 6,
+      "p_two_sided": 1.6666666666666667e-05
+     },
+     "template": {
+      "mean": 0.523015873015873,
+      "lo": 0.41458167989417993,
+      "hi": 0.6196097883597883,
+      "clusters": 12,
+      "p_two_sided": 1.6666666666666667e-05
+     },
+     "conservative": {
+      "lo": 0.3854166666666667,
+      "hi": 0.6196097883597883,
+      "p": 1.6666666666666667e-05,
+      "estimate": 0.5104166666666666,
+      "scenes": 96
+     }
+    },
+    "literal_selected_minus_packet_text": {
+     "group": {
+      "mean": -0.3541666666666667,
+      "lo": -0.4895833333333333,
+      "hi": -0.19791666666666666,
+      "clusters": 6,
+      "p_two_sided": 0.00016666666666666666
+     },
+     "template": {
+      "mean": -0.34447751322751324,
+      "lo": -0.4715608465608465,
+      "hi": -0.22149305555555573,
+      "clusters": 12,
+      "p_two_sided": 1.6666666666666667e-05
+     },
+     "conservative": {
+      "lo": -0.4895833333333333,
+      "hi": -0.19791666666666666,
+      "p": 0.00016666666666666666,
+      "estimate": -0.3541666666666667,
+      "scenes": 96
+     }
+    },
+    "literal_selected_minus_full_text": {
+     "group": {
+      "mean": -0.4375,
+      "lo": -0.5416666666666666,
+      "hi": -0.3541666666666667,
+      "clusters": 6,
+      "p_two_sided": 1.6666666666666667e-05
+     },
+     "template": {
+      "mean": -0.4255952380952381,
+      "lo": -0.514021164021164,
+      "hi": -0.34047619047619043,
+      "clusters": 12,
+      "p_two_sided": 1.6666666666666667e-05
+     },
+     "conservative": {
+      "lo": -0.5416666666666666,
+      "hi": -0.34047619047619043,
+      "p": 1.6666666666666667e-05,
+      "estimate": -0.4375,
+      "scenes": 96
+     }
+    },
+    "literal_packet_text_minus_full_text": {
+     "group": {
+      "mean": -0.08333333333333333,
+      "lo": -0.23958333333333334,
+      "hi": 0.03125,
+      "clusters": 6,
+      "p_two_sided": 0.2739333333333333
+     },
+     "template": {
+      "mean": -0.08111772486772487,
+      "lo": -0.15648148148148147,
+      "hi": -0.012230489417989848,
+      "clusters": 12,
+      "p_two_sided": 0.018966666666666666
+     },
+     "conservative": {
+      "lo": -0.23958333333333334,
+      "hi": 0.03125,
+      "p": 0.2739333333333333,
+      "estimate": -0.08333333333333333,
+      "scenes": 96
+     }
+    },
+    "literal_selected_minus_other_world": {
+     "group": {
+      "mean": 0.5104166666666666,
+      "lo": 0.3854166666666667,
+      "hi": 0.6041666666666666,
+      "clusters": 6,
+      "p_two_sided": 1.6666666666666667e-05
+     },
+     "template": {
+      "mean": 0.523015873015873,
+      "lo": 0.41458167989417993,
+      "hi": 0.6196097883597883,
+      "clusters": 12,
+      "p_two_sided": 1.6666666666666667e-05
+     },
+     "conservative": {
+      "lo": 0.3854166666666667,
+      "hi": 0.6196097883597883,
+      "p": 1.6666666666666667e-05,
+      "estimate": 0.5104166666666666,
+      "scenes": 96
+     }
+    },
+    "actual_minus_literal_selected": {
+     "group": {
+      "mean": -0.0625,
+      "lo": -0.125,
+      "hi": -0.010416666666666666,
+      "clusters": 6,
+      "p_two_sided": 0.0314
+     },
+     "template": {
+      "mean": -0.06643518518518518,
+      "lo": -0.1643187830687831,
+      "hi": 0.01455026455026455,
+      "clusters": 12,
+      "p_two_sided": 0.11616666666666667
+     },
+     "conservative": {
+      "lo": -0.1643187830687831,
+      "hi": 0.01455026455026455,
+      "p": 0.11616666666666667,
+      "estimate": -0.0625,
+      "scenes": 96
+     }
+    }
+   },
+   "status": "PASS_INDEPENDENT_P0B_ROOT_AUDIT"
+  }
+ },
+ "limits": "Scene-paired repeated measures; groups and templates are crossed and analysed separately; the conservative interval/p is the worse of the two levels. No-message J = 0 is structural. Development rows are diagnostics only. Same finite attribute vocabulary; controlled conjunctive use only, not general reasoning or relational communication."
+}

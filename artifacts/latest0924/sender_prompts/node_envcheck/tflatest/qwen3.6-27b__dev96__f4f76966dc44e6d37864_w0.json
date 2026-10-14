@@ -1,0 +1,119 @@
+{
+ "sender": "qwen3.6-27b",
+ "checkpoint": "/path/to/models/Qwen3.6-27B",
+ "split": "dev96",
+ "bank": "artifacts/mechanism0919/discovery_v1/exposed_development.json",
+ "bank_sha256": "97b7622418ba13eaae739a45ba675a8d838821c01f3f169eee84092a77056177",
+ "scene": "f4f76966dc44e6d37864",
+ "world": 0,
+ "aliases": [
+  "QUAN",
+  "FEP"
+ ],
+ "evidence": [
+  "QUAN is a red candy. It is sour.",
+  "FEP is a yellow candy. It is sweet."
+ ],
+ "prompt_file": "qwen3.6-27b__dev96__f4f76966dc44e6d37864_w0.txt",
+ "rendered_prompt_sha256": "1ee46a12354bd5bc55e887e9390e1db528ab56265fea8a119f0789917e84b281",
+ "frozen_prompt_sha256": "328c8b5df9d196724cdabd6cc7a291c0cfc7ca13ab524bd3cb70239de7183e0b",
+ "chat_template_kwargs": {
+  "enable_thinking": false
+ },
+ "chat_template_sha256": "e84f32a23fdda27689f868aa4a1a5621f41133e51a48d7f3efcbea2839574259",
+ "tokenizer_class": "Qwen2Tokenizer",
+ "prompt_tokens": 622,
+ "first_ids": [
+  248045,
+  8678,
+  198,
+  2523,
+  23835,
+  1576,
+  26884,
+  1083
+ ],
+ "last_ids": [
+  4241,
+  1119,
+  89254,
+  248046,
+  198,
+  248045,
+  74455,
+  198,
+  248068,
+  271,
+  248069,
+  271
+ ],
+ "last_tokens": [
+  "\u0120[\"",
+  "word",
+  "\"]}",
+  "<|im_end|>",
+  "\u010a",
+  "<|im_start|>",
+  "assistant",
+  "\u010a",
+  "<think>",
+  "\u010a\u010a",
+  "</think>",
+  "\u010a\u010a"
+ ],
+ "rendered_prompt_head": "<|im_start|>system\nYou compress object descriptions into a fixed public vocabulary. You will be given a vocabulary of words and a description of two objects. For each object, choose up to four vocabulary words that the description explicitly supports. Use only words from the vocabulary, spelled exactly as given. Do not invent facts. Answer with one JSON object and nothing else.<|im_end|>\n<|im_start|>user\n",
+ "rendered_prompt_tail": "<|im_end|>\n<|im_start|>assistant\n<think>\n\n</think>\n\n",
+ "scaffold_identical_across_bank": true,
+ "n_worlds_checked": 192,
+ "prompt_tokens_over_bank": {
+  "n": 192,
+  "min": 621,
+  "max": 640,
+  "mean": 630.53125,
+  "total": 121062
+ },
+ "template_checks": {
+  "ends_with_closed_empty_think": true,
+  "native_system_turn": true
+ },
+ "answer_rule": "qwen3_5",
+ "adapter": {
+  "key": "qwen3.6-27b",
+  "spec": {
+   "path": "/path/to/models/Qwen3.6-27B",
+   "family": "qwen3_5",
+   "chat": "True",
+   "env": "tflatest",
+   "python": "python",
+   "dtype": "float32",
+   "gpus": "1",
+   "n_layers": "64",
+   "loader": "qwen3_5_text",
+   "chat_render": "template",
+   "turn_end": "<|im_end|>",
+   "roles": "('receiver', 'sender')",
+   "eos_token_ids": "None",
+   "ignorable_unexpected": "('^model\\\\.visual\\\\.', '^mtp\\\\.')",
+   "key_mapping": "None",
+   "tokenizer": "auto",
+   "max_memory_gib": "None",
+   "notes": "Text-only Qwen3_5ForCausalLM through AutoModelForCausalLM (transformers maps the composite config to the text config and drops model.visual.* / mtp.*). Hybrid: 48 Gated-DeltaNet linear-attention + 16 full-attention layers; cache = DynamicCache of LinearAttentionLayer + DynamicLayer. tflatest required (5.3.0 cached-continuation bug). ~104 GiB fp32 on one card. Also a sender."
+  },
+  "chat_kwargs": {
+   "enable_thinking": false
+  }
+ },
+ "env": {
+  "python": "python",
+  "python_version": "3.11.2",
+  "hostname": "gpu-node",
+  "cuda_visible_devices": "",
+  "torch": "2.10.0+cu128",
+  "transformers": "5.12.1",
+  "tokenizers": "0.22.2",
+  "accelerate": "1.13.0",
+  "fla_available": false
+ },
+ "utc": "2026-09-24T13:25:59Z",
+ "script_sha256": "26945067fd587313afdc186c0318f9fdce406f000c334843871493320a000a0d"
+}

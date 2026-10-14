@@ -1,0 +1,48 @@
+{
+  "package": "receiver_recovery/results_package_v2",
+  "renderer_sha256": "86d29c059431e473a80dea922d7a7edc7c8cfd08fec53ecd1dc63fea7edf9533",
+  "sources": {
+    "provenance.json": "8669779c80c9b900e29138dcc7315fb91ba445bddf11dffa7e958059b51a9a1a",
+    "conditions_long.json": "13dc8be2d85e8b43f0a528f8cece7a9e67e8ecf14f733cb660a81a71ec744994",
+    "contrasts_long.json": "51d4a507f33855702e443b907d586bfd650ecee568ae4128866e3742d3278c65",
+    "selection.json": "154a5d20586861ddadcc5e28f37788daa85d5d3963bc0b7e262edab074195b3f",
+    "cost.json": "94b4231481080d6c89218bb8a0a7c7902529b42dff0d364c41476eaad1636559"
+  },
+  "independent_recount": {
+    "path": "review/receiver_recovery_recount.json",
+    "sha256": "f5c18e3a8a7a74d7df8d68c42dae3573b6aab7b0048b1039b0ad70258cb08bcc"
+  },
+  "four_object_error_counts": [
+    {
+      "receiver": "qwen3-32b",
+      "name": "Qwen3-32B",
+      "scenes": 188,
+      "successes": 163,
+      "missing_queried_fact": 19,
+      "all_facts_present": 6
+    },
+    {
+      "receiver": "gemma-3-27b-it",
+      "name": "Gemma-3-27B-IT",
+      "scenes": 188,
+      "successes": 171,
+      "missing_queried_fact": 17,
+      "all_facts_present": 0
+    }
+  ],
+  "outputs": {
+    "paper/tables/receiver_recovery_main.tex": "aaaaa0664090ce5eeba560f04381a01f180b7c65d2c90881974d21a2e8c54915",
+    "paper/tables/receiver_recovery_native.tex": "236b4285cddc14d5e18684950f9b8d9340f3db711f547b7dbd9d669d5202ac50",
+    "paper/tables/receiver_recovery_four.tex": "54395835d44b699327057f608f68f9082f63f9a26414adf8e86869e3c654b038",
+    "paper/tables/receiver_recovery_capacity.tex": "fb4c55e8b77f4706480f401ef4268ce297de5374c8257823a8020ed8c124210e",
+    "paper/tables/receiver_recovery_controls.tex": "a865fae384f3331afc1f0c66d597dc6187ba98c3b6756b9bb40acf7fc0e6b0aa",
+    "paper/tables/receiver_recovery_contrasts.tex": "6e381e3c78f622a1308737f2387c3974f2c82852bb7b1b6604ea723e037df698",
+    "paper/tables/receiver_recovery_cost.tex": "b18bbaf75812386d36148999bdce64c9d84f957747b182165e1bcea883fce41f",
+    "paper/tables/receiver_recovery_numbers.tex": "b245a96237449c0a2d912ebf3233be7b5604f88aa2a4ba558cb7cdfcacb7f216"
+  },
+  "figures": {
+    "receiver_recovery_depth.pdf": "dfa0f4ff8f8edd4ddf636a2ded1bc0a2d38e6bec5de5a4bcbc8df746e580098e",
+    "receiver_recovery_strength.pdf": "b8b16eacbda15b5dc381d63e261baeb1d159b58c5bfa6e30750e5c97fd564e61",
+    "receiver_recovery_errors.pdf": "0e9823f32a3d69aba0bc9c911b64a318c46bf94881d7d48b13c183e91bc4ea0a"
+  }
+}

@@ -1,0 +1,1055 @@
+{
+ "overlap": {
+  "scenes": {
+   "new": 576,
+   "prior": 1920,
+   "shared": 0,
+   "shared_items": []
+  },
+  "evidence": {
+   "new": 1486,
+   "prior": 2325,
+   "shared": 0,
+   "shared_items": []
+  },
+  "skeletons": {
+   "new": 12,
+   "prior": 36,
+   "shared": 0,
+   "shared_items": []
+  },
+  "fact_tuples_field_aware": {
+   "new": 48,
+   "prior": 86,
+   "shared": 48,
+   "shared_items": [
+    "[[\"buttons\", \"copper\"], [\"fibre\", \"cotton\"]]",
+    "[[\"buttons\", \"copper\"], [\"fibre\", \"leather\"]]",
+    "[[\"buttons\", \"copper\"], [\"fibre\", \"silk\"]]",
+    "[[\"buttons\", \"copper\"], [\"fibre\", \"wool\"]]",
+    "[[\"buttons\", \"glass\"], [\"fibre\", \"cotton\"]]",
+    "[[\"buttons\", \"glass\"], [\"fibre\", \"leather\"]]",
+    "[[\"buttons\", \"glass\"], [\"fibre\", \"silk\"]]",
+    "[[\"buttons\", \"glass\"], [\"fibre\", \"wool\"]]",
+    "[[\"buttons\", \"plastic\"], [\"fibre\", \"cotton\"]]",
+    "[[\"buttons\", \"plastic\"], [\"fibre\", \"leather\"]]",
+    "[[\"buttons\", \"plastic\"], [\"fibre\", \"silk\"]]",
+    "[[\"buttons\", \"plastic\"], [\"fibre\", \"wool\"]]",
+    "[[\"buttons\", \"wooden\"], [\"fibre\", \"cotton\"]]",
+    "[[\"buttons\", \"wooden\"], [\"fibre\", \"leather\"]]",
+    "[[\"buttons\", \"wooden\"], [\"fibre\", \"silk\"]]",
+    "[[\"buttons\", \"wooden\"], [\"fibre\", \"wool\"]]",
+    "[[\"color\", \"green\"], [\"material\", \"gold\"]]",
+    "[[\"color\", \"green\"], [\"material\", \"iron\"]]",
+    "[[\"color\", \"green\"], [\"material\", \"silver\"]]",
+    "[[\"color\", \"green\"], [\"material\", \"steel\"]]",
+    "[[\"color\", \"green\"], [\"taste\", \"bitter\"]]",
+    "[[\"color\", \"green\"], [\"taste\", \"salty\"]]",
+    "[[\"color\", \"green\"], [\"taste\", \"sour\"]]",
+    "[[\"color\", \"green\"], [\"taste\", \"sweet\"]]",
+    "[[\"color\", \"orange\"], [\"material\", \"gold\"]]",
+    "[[\"color\", \"orange\"], [\"material\", \"iron\"]]",
+    "[[\"color\", \"orange\"], [\"material\", \"silver\"]]",
+    "[[\"color\", \"orange\"], [\"material\", \"steel\"]]",
+    "[[\"color\", \"orange\"], [\"taste\", \"bitter\"]]",
+    "[[\"color\", \"orange\"], [\"taste\", \"salty\"]]",
+    "[[\"color\", \"orange\"], [\"taste\", \"sour\"]]",
+    "[[\"color\", \"orange\"], [\"taste\", \"sweet\"]]",
+    "[[\"color\", \"red\"], [\"material\", \"gold\"]]",
+    "[[\"color\", \"red\"], [\"material\", \"iron\"]]",
+    "[[\"color\", \"red\"], [\"material\", \"silver\"]]",
+    "[[\"color\", \"red\"], [\"material\", \"steel\"]]",
+    "[[\"color\", \"red\"], [\"taste\", \"bitter\"]]",
+    "[[\"color\", \"red\"], [\"taste\", \"salty\"]]",
+    "[[\"color\", \"red\"], [\"taste\", \"sour\"]]",
+    "[[\"color\", \"red\"], [\"taste\", \"sweet\"]]"
+   ]
+  },
+  "fact_tuples_values_only": {
+   "new": 48,
+   "prior": 86,
+   "shared": 48,
+   "shared_items": [
+    "[\"bitter\", \"green\"]",
+    "[\"bitter\", \"orange\"]",
+    "[\"bitter\", \"red\"]",
+    "[\"bitter\", \"yellow\"]",
+    "[\"copper\", \"cotton\"]",
+    "[\"copper\", \"leather\"]",
+    "[\"copper\", \"silk\"]",
+    "[\"copper\", \"wool\"]",
+    "[\"cotton\", \"glass\"]",
+    "[\"cotton\", \"plastic\"]",
+    "[\"cotton\", \"wooden\"]",
+    "[\"glass\", \"leather\"]",
+    "[\"glass\", \"silk\"]",
+    "[\"glass\", \"wool\"]",
+    "[\"gold\", \"green\"]",
+    "[\"gold\", \"orange\"]",
+    "[\"gold\", \"red\"]",
+    "[\"gold\", \"yellow\"]",
+    "[\"green\", \"iron\"]",
+    "[\"green\", \"salty\"]",
+    "[\"green\", \"silver\"]",
+    "[\"green\", \"sour\"]",
+    "[\"green\", \"steel\"]",
+    "[\"green\", \"sweet\"]",
+    "[\"iron\", \"orange\"]",
+    "[\"iron\", \"red\"]",
+    "[\"iron\", \"yellow\"]",
+    "[\"leather\", \"plastic\"]",
+    "[\"leather\", \"wooden\"]",
+    "[\"orange\", \"salty\"]",
+    "[\"orange\", \"silver\"]",
+    "[\"orange\", \"sour\"]",
+    "[\"orange\", \"steel\"]",
+    "[\"orange\", \"sweet\"]",
+    "[\"plastic\", \"silk\"]",
+    "[\"plastic\", \"wool\"]",
+    "[\"red\", \"salty\"]",
+    "[\"red\", \"silver\"]",
+    "[\"red\", \"sour\"]",
+    "[\"red\", \"steel\"]"
+   ]
+  },
+  "world_combos": {
+   "new": 72,
+   "prior": 192,
+   "shared": 14,
+   "shared_items": [
+    "('candy', ((('color', 'green'), ('taste', 'bitter')), (('color', 'orange'), ('taste', 'salty'))))",
+    "('candy', ((('color', 'green'), ('taste', 'bitter')), (('color', 'orange'), ('taste', 'sour'))))",
+    "('candy', ((('color', 'green'), ('taste', 'bitter')), (('color', 'red'), ('taste', 'salty'))))",
+    "('candy', ((('color', 'green'), ('taste', 'bitter')), (('color', 'red'), ('taste', 'sour'))))",
+    "('candy', ((('color', 'green'), ('taste', 'salty')), (('color', 'orange'), ('taste', 'bitter'))))",
+    "('candy', ((('color', 'green'), ('taste', 'salty')), (('color', 'red'), ('taste', 'bitter'))))",
+    "('candy', ((('color', 'green'), ('taste', 'sour')), (('color', 'orange'), ('taste', 'bitter'))))",
+    "('candy', ((('color', 'green'), ('taste', 'sour')), (('color', 'red'), ('taste', 'bitter'))))",
+    "('candy', ((('color', 'orange'), ('taste', 'sour')), (('color', 'yellow'), ('taste', 'sweet'))))",
+    "('candy', ((('color', 'orange'), ('taste', 'sweet')), (('color', 'yellow'), ('taste', 'sour'))))",
+    "('candy', ((('color', 'red'), ('taste', 'salty')), (('color', 'yellow'), ('taste', 'sweet'))))",
+    "('candy', ((('color', 'red'), ('taste', 'sour')), (('color', 'yellow'), ('taste', 'sweet'))))",
+    "('candy', ((('color', 'red'), ('taste', 'sweet')), (('color', 'yellow'), ('taste', 'salty'))))",
+    "('candy', ((('color', 'red'), ('taste', 'sweet')), (('color', 'yellow'), ('taste', 'sour'))))"
+   ]
+  },
+  "value_cells": {
+   "new": 36,
+   "prior": 96,
+   "shared": 7,
+   "shared_items": [
+    "('candy', ('green', 'orange'), ('bitter', 'salty'))",
+    "('candy', ('green', 'orange'), ('bitter', 'sour'))",
+    "('candy', ('green', 'red'), ('bitter', 'salty'))",
+    "('candy', ('green', 'red'), ('bitter', 'sour'))",
+    "('candy', ('orange', 'yellow'), ('sour', 'sweet'))",
+    "('candy', ('red', 'yellow'), ('salty', 'sweet'))",
+    "('candy', ('red', 'yellow'), ('sour', 'sweet'))"
+   ]
+  },
+  "aliases": {
+   "new": 24,
+   "prior": 104,
+   "shared": 0,
+   "shared_items": []
+  },
+  "question_wordings": {
+   "new": 6,
+   "prior": 6,
+   "shared": 6,
+   "shared_items": [
+    "Which object has <V> buttons?",
+    "Which object has <V> surface paint?",
+    "Which object has a <V> color?",
+    "Which object has an <V> color?",
+    "Which object is <V>?",
+    "Which object is made of <V>?"
+   ]
+  },
+  "fact_tuples_by_domain": {
+   "candy": {
+    "fact_tuples": 16,
+    "recycled": 16
+   },
+   "block": {
+    "fact_tuples": 16,
+    "recycled": 16
+   },
+   "coat": {
+    "fact_tuples": 16,
+    "recycled": 16
+   }
+  },
+  "inventory_words_used": [
+   "bitter",
+   "copper",
+   "cotton",
+   "glass",
+   "gold",
+   "green",
+   "iron",
+   "leather",
+   "orange",
+   "plastic",
+   "red",
+   "salty",
+   "silk",
+   "silver",
+   "sour",
+   "steel",
+   "sweet",
+   "wooden",
+   "wool",
+   "yellow"
+  ],
+  "inventory_words_shared_with_prior_banks": [
+   "bitter",
+   "copper",
+   "cotton",
+   "glass",
+   "gold",
+   "green",
+   "iron",
+   "leather",
+   "orange",
+   "plastic",
+   "red",
+   "salty",
+   "silk",
+   "silver",
+   "sour",
+   "steel",
+   "sweet",
+   "wooden",
+   "wool",
+   "yellow"
+  ]
+ },
+ "balance": {
+  "scenes_per_domain": {
+   "coat": 192,
+   "candy": 192,
+   "block": 192
+  },
+  "scenes_per_family": {
+   "16": 36
+  },
+  "scenes_per_template": {
+   "block/T0": 48,
+   "block/T1": 48,
+   "block/T2": 48,
+   "block/T3": 48,
+   "candy/T0": 48,
+   "candy/T1": 48,
+   "candy/T2": 48,
+   "candy/T3": 48,
+   "coat/T0": 48,
+   "coat/T1": 48,
+   "coat/T2": 48,
+   "coat/T3": 48
+  },
+  "changed_field": {
+   "block/color": 96,
+   "block/material": 96,
+   "candy/color": 96,
+   "candy/taste": 96,
+   "coat/buttons": 96,
+   "coat/fibre": 96
+  },
+  "answer_identity_world_question": {
+   "w0_q0_first": 288,
+   "w0_q0_second": 288,
+   "w0_q1_first": 288,
+   "w0_q1_second": 288,
+   "w1_q0_first": 288,
+   "w1_q0_second": 288,
+   "w1_q1_first": 288,
+   "w1_q1_second": 288
+  },
+  "alias_usage": {
+   "VOKR": {
+    "first": 24,
+    "second": 24,
+    "answers": 96
+   },
+   "PUVN": {
+    "first": 24,
+    "second": 24,
+    "answers": 96
+   },
+   "GEFH": {
+    "first": 24,
+    "second": 24,
+    "answers": 96
+   },
+   "TODZ": {
+    "first": 24,
+    "second": 24,
+    "answers": 92
+   },
+   "MALH": {
+    "first": 24,
+    "second": 24,
+    "answers": 88
+   },
+   "FAKB": {
+    "first": 24,
+    "second": 24,
+    "answers": 94
+   },
+   "DOND": {
+    "first": 24,
+    "second": 24,
+    "answers": 94
+   },
+   "POLN": {
+    "first": 24,
+    "second": 24,
+    "answers": 96
+   },
+   "LIZS": {
+    "first": 24,
+    "second": 24,
+    "answers": 86
+   },
+   "TUHV": {
+    "first": 24,
+    "second": 24,
+    "answers": 110
+   },
+   "SOFM": {
+    "first": 24,
+    "second": 24,
+    "answers": 98
+   },
+   "MITG": {
+    "first": 24,
+    "second": 24,
+    "answers": 92
+   },
+   "NAMZ": {
+    "first": 24,
+    "second": 24,
+    "answers": 98
+   },
+   "BEFD": {
+    "first": 24,
+    "second": 24,
+    "answers": 94
+   },
+   "DASV": {
+    "first": 24,
+    "second": 24,
+    "answers": 100
+   },
+   "HODV": {
+    "first": 24,
+    "second": 24,
+    "answers": 98
+   },
+   "ROLG": {
+    "first": 24,
+    "second": 24,
+    "answers": 104
+   },
+   "KEBR": {
+    "first": 24,
+    "second": 24,
+    "answers": 100
+   },
+   "SUPL": {
+    "first": 24,
+    "second": 24,
+    "answers": 96
+   },
+   "MUPS": {
+    "first": 24,
+    "second": 24,
+    "answers": 94
+   },
+   "LEFN": {
+    "first": 24,
+    "second": 24,
+    "answers": 104
+   },
+   "MOKZ": {
+    "first": 24,
+    "second": 24,
+    "answers": 80
+   },
+   "TARK": {
+    "first": 24,
+    "second": 24,
+    "answers": 100
+   },
+   "PENT": {
+    "first": 24,
+    "second": 24,
+    "answers": 98
+   }
+  },
+  "queried_values": {
+   "plastic": 48,
+   "wool": 48,
+   "copper": 48,
+   "leather": 48,
+   "glass": 48,
+   "silk": 48,
+   "red": 96,
+   "sour": 48,
+   "orange": 96,
+   "bitter": 48,
+   "cotton": 48,
+   "green": 96,
+   "iron": 48,
+   "steel": 48,
+   "yellow": 96,
+   "salty": 48,
+   "sweet": 48,
+   "gold": 48,
+   "silver": 48,
+   "wooden": 48
+  },
+  "object_values": {
+   "wool": 96,
+   "plastic": 96,
+   "leather": 96,
+   "glass": 96,
+   "wooden": 96,
+   "copper": 96,
+   "silk": 96,
+   "orange": 192,
+   "salty": 96,
+   "red": 192,
+   "sour": 96,
+   "sweet": 96,
+   "bitter": 96,
+   "cotton": 96,
+   "steel": 96,
+   "green": 192,
+   "iron": 96,
+   "yellow": 192,
+   "gold": 96,
+   "silver": 96
+  }
+ },
+ "families": [
+  {
+   "family": "dc1065c645f4f715",
+   "domain": "candy",
+   "template_namespace": "p0aconf0923_candy",
+   "template": 0,
+   "pairs": {
+    "color": [
+     "green",
+     "orange"
+    ],
+    "taste": [
+     "bitter",
+     "salty"
+    ]
+   }
+  },
+  {
+   "family": "ea5f2b7c475bf5a7",
+   "domain": "candy",
+   "template_namespace": "p0aconf0923_candy",
+   "template": 1,
+   "pairs": {
+    "color": [
+     "green",
+     "orange"
+    ],
+    "taste": [
+     "bitter",
+     "sour"
+    ]
+   }
+  },
+  {
+   "family": "ca4faa6d626cd9f3",
+   "domain": "candy",
+   "template_namespace": "p0aconf0923_candy",
+   "template": 2,
+   "pairs": {
+    "color": [
+     "green",
+     "red"
+    ],
+    "taste": [
+     "bitter",
+     "salty"
+    ]
+   }
+  },
+  {
+   "family": "6784577b2f15ebce",
+   "domain": "candy",
+   "template_namespace": "p0aconf0923_candy",
+   "template": 3,
+   "pairs": {
+    "color": [
+     "green",
+     "red"
+    ],
+    "taste": [
+     "bitter",
+     "sour"
+    ]
+   }
+  },
+  {
+   "family": "249c72deb08dc58b",
+   "domain": "candy",
+   "template_namespace": "p0aconf0923_candy",
+   "template": 0,
+   "pairs": {
+    "color": [
+     "green",
+     "yellow"
+    ],
+    "taste": [
+     "bitter",
+     "sweet"
+    ]
+   }
+  },
+  {
+   "family": "cae4d8bf434eb8b4",
+   "domain": "candy",
+   "template_namespace": "p0aconf0923_candy",
+   "template": 1,
+   "pairs": {
+    "color": [
+     "green",
+     "yellow"
+    ],
+    "taste": [
+     "salty",
+     "sour"
+    ]
+   }
+  },
+  {
+   "family": "b9111759570d33e5",
+   "domain": "candy",
+   "template_namespace": "p0aconf0923_candy",
+   "template": 2,
+   "pairs": {
+    "color": [
+     "orange",
+     "red"
+    ],
+    "taste": [
+     "bitter",
+     "sweet"
+    ]
+   }
+  },
+  {
+   "family": "e5d2eece4eabe4e0",
+   "domain": "candy",
+   "template_namespace": "p0aconf0923_candy",
+   "template": 3,
+   "pairs": {
+    "color": [
+     "orange",
+     "red"
+    ],
+    "taste": [
+     "salty",
+     "sour"
+    ]
+   }
+  },
+  {
+   "family": "5b84895ccd966e2c",
+   "domain": "candy",
+   "template_namespace": "p0aconf0923_candy",
+   "template": 0,
+   "pairs": {
+    "color": [
+     "orange",
+     "yellow"
+    ],
+    "taste": [
+     "salty",
+     "sweet"
+    ]
+   }
+  },
+  {
+   "family": "7de402a14fc3e5c9",
+   "domain": "candy",
+   "template_namespace": "p0aconf0923_candy",
+   "template": 1,
+   "pairs": {
+    "color": [
+     "orange",
+     "yellow"
+    ],
+    "taste": [
+     "sour",
+     "sweet"
+    ]
+   }
+  },
+  {
+   "family": "179d67c7338fe593",
+   "domain": "candy",
+   "template_namespace": "p0aconf0923_candy",
+   "template": 2,
+   "pairs": {
+    "color": [
+     "red",
+     "yellow"
+    ],
+    "taste": [
+     "salty",
+     "sweet"
+    ]
+   }
+  },
+  {
+   "family": "042ba443a0051d7b",
+   "domain": "candy",
+   "template_namespace": "p0aconf0923_candy",
+   "template": 3,
+   "pairs": {
+    "color": [
+     "red",
+     "yellow"
+    ],
+    "taste": [
+     "sour",
+     "sweet"
+    ]
+   }
+  },
+  {
+   "family": "9195aa04f9ea9263",
+   "domain": "block",
+   "template_namespace": "p0aconf0923_block",
+   "template": 0,
+   "pairs": {
+    "color": [
+     "green",
+     "orange"
+    ],
+    "material": [
+     "iron",
+     "steel"
+    ]
+   }
+  },
+  {
+   "family": "ea2205ef08acde93",
+   "domain": "block",
+   "template_namespace": "p0aconf0923_block",
+   "template": 1,
+   "pairs": {
+    "color": [
+     "green",
+     "orange"
+    ],
+    "material": [
+     "silver",
+     "steel"
+    ]
+   }
+  },
+  {
+   "family": "25e373bd07a9e98b",
+   "domain": "block",
+   "template_namespace": "p0aconf0923_block",
+   "template": 2,
+   "pairs": {
+    "color": [
+     "green",
+     "red"
+    ],
+    "material": [
+     "iron",
+     "steel"
+    ]
+   }
+  },
+  {
+   "family": "8bdd46c8e2f34826",
+   "domain": "block",
+   "template_namespace": "p0aconf0923_block",
+   "template": 3,
+   "pairs": {
+    "color": [
+     "green",
+     "red"
+    ],
+    "material": [
+     "silver",
+     "steel"
+    ]
+   }
+  },
+  {
+   "family": "f639a5d48b164687",
+   "domain": "block",
+   "template_namespace": "p0aconf0923_block",
+   "template": 0,
+   "pairs": {
+    "color": [
+     "green",
+     "yellow"
+    ],
+    "material": [
+     "gold",
+     "iron"
+    ]
+   }
+  },
+  {
+   "family": "4212683ff7125795",
+   "domain": "block",
+   "template_namespace": "p0aconf0923_block",
+   "template": 1,
+   "pairs": {
+    "color": [
+     "green",
+     "yellow"
+    ],
+    "material": [
+     "gold",
+     "silver"
+    ]
+   }
+  },
+  {
+   "family": "bb6f37b12af44284",
+   "domain": "block",
+   "template_namespace": "p0aconf0923_block",
+   "template": 2,
+   "pairs": {
+    "color": [
+     "orange",
+     "red"
+    ],
+    "material": [
+     "gold",
+     "iron"
+    ]
+   }
+  },
+  {
+   "family": "1ff0f22e8c568769",
+   "domain": "block",
+   "template_namespace": "p0aconf0923_block",
+   "template": 3,
+   "pairs": {
+    "color": [
+     "orange",
+     "red"
+    ],
+    "material": [
+     "gold",
+     "silver"
+    ]
+   }
+  },
+  {
+   "family": "3be8da9cf04fa2ab",
+   "domain": "block",
+   "template_namespace": "p0aconf0923_block",
+   "template": 0,
+   "pairs": {
+    "color": [
+     "orange",
+     "yellow"
+    ],
+    "material": [
+     "gold",
+     "steel"
+    ]
+   }
+  },
+  {
+   "family": "31cb12d008d47107",
+   "domain": "block",
+   "template_namespace": "p0aconf0923_block",
+   "template": 1,
+   "pairs": {
+    "color": [
+     "orange",
+     "yellow"
+    ],
+    "material": [
+     "iron",
+     "silver"
+    ]
+   }
+  },
+  {
+   "family": "334e9f172711b927",
+   "domain": "block",
+   "template_namespace": "p0aconf0923_block",
+   "template": 2,
+   "pairs": {
+    "color": [
+     "red",
+     "yellow"
+    ],
+    "material": [
+     "gold",
+     "steel"
+    ]
+   }
+  },
+  {
+   "family": "a3683c34d17c3587",
+   "domain": "block",
+   "template_namespace": "p0aconf0923_block",
+   "template": 3,
+   "pairs": {
+    "color": [
+     "red",
+     "yellow"
+    ],
+    "material": [
+     "iron",
+     "silver"
+    ]
+   }
+  },
+  {
+   "family": "7c60c962a0bb84ed",
+   "domain": "coat",
+   "template_namespace": "p0aconf0923_coat",
+   "template": 0,
+   "pairs": {
+    "fibre": [
+     "cotton",
+     "leather"
+    ],
+    "buttons": [
+     "glass",
+     "wooden"
+    ]
+   }
+  },
+  {
+   "family": "1c32a76ae02fdcf2",
+   "domain": "coat",
+   "template_namespace": "p0aconf0923_coat",
+   "template": 1,
+   "pairs": {
+    "fibre": [
+     "cotton",
+     "leather"
+    ],
+    "buttons": [
+     "plastic",
+     "wooden"
+    ]
+   }
+  },
+  {
+   "family": "92494bc62e3bd0ee",
+   "domain": "coat",
+   "template_namespace": "p0aconf0923_coat",
+   "template": 2,
+   "pairs": {
+    "fibre": [
+     "cotton",
+     "silk"
+    ],
+    "buttons": [
+     "glass",
+     "wooden"
+    ]
+   }
+  },
+  {
+   "family": "c210dd860a0c65c0",
+   "domain": "coat",
+   "template_namespace": "p0aconf0923_coat",
+   "template": 3,
+   "pairs": {
+    "fibre": [
+     "cotton",
+     "silk"
+    ],
+    "buttons": [
+     "plastic",
+     "wooden"
+    ]
+   }
+  },
+  {
+   "family": "36464e8277db093d",
+   "domain": "coat",
+   "template_namespace": "p0aconf0923_coat",
+   "template": 0,
+   "pairs": {
+    "fibre": [
+     "cotton",
+     "wool"
+    ],
+    "buttons": [
+     "copper",
+     "glass"
+    ]
+   }
+  },
+  {
+   "family": "b32742b1fd5d9e3d",
+   "domain": "coat",
+   "template_namespace": "p0aconf0923_coat",
+   "template": 1,
+   "pairs": {
+    "fibre": [
+     "cotton",
+     "wool"
+    ],
+    "buttons": [
+     "copper",
+     "plastic"
+    ]
+   }
+  },
+  {
+   "family": "ed10b16c3f278d0b",
+   "domain": "coat",
+   "template_namespace": "p0aconf0923_coat",
+   "template": 2,
+   "pairs": {
+    "fibre": [
+     "leather",
+     "silk"
+    ],
+    "buttons": [
+     "copper",
+     "glass"
+    ]
+   }
+  },
+  {
+   "family": "e8f2005644dba52f",
+   "domain": "coat",
+   "template_namespace": "p0aconf0923_coat",
+   "template": 3,
+   "pairs": {
+    "fibre": [
+     "leather",
+     "silk"
+    ],
+    "buttons": [
+     "copper",
+     "plastic"
+    ]
+   }
+  },
+  {
+   "family": "54a6edc0c15e5f8b",
+   "domain": "coat",
+   "template_namespace": "p0aconf0923_coat",
+   "template": 0,
+   "pairs": {
+    "fibre": [
+     "leather",
+     "wool"
+    ],
+    "buttons": [
+     "copper",
+     "wooden"
+    ]
+   }
+  },
+  {
+   "family": "a59caab845278b2c",
+   "domain": "coat",
+   "template_namespace": "p0aconf0923_coat",
+   "template": 1,
+   "pairs": {
+    "fibre": [
+     "leather",
+     "wool"
+    ],
+    "buttons": [
+     "glass",
+     "plastic"
+    ]
+   }
+  },
+  {
+   "family": "fb61b509677a4b42",
+   "domain": "coat",
+   "template_namespace": "p0aconf0923_coat",
+   "template": 2,
+   "pairs": {
+    "fibre": [
+     "silk",
+     "wool"
+    ],
+    "buttons": [
+     "copper",
+     "wooden"
+    ]
+   }
+  },
+  {
+   "family": "12daed315d43401c",
+   "domain": "coat",
+   "template_namespace": "p0aconf0923_coat",
+   "template": 3,
+   "pairs": {
+    "fibre": [
+     "silk",
+     "wool"
+    ],
+    "buttons": [
+     "glass",
+     "plastic"
+    ]
+   }
+  }
+ ],
+ "aliases": [
+  "VOKR",
+  "PUVN",
+  "GEFH",
+  "TODZ",
+  "MALH",
+  "FAKB",
+  "DOND",
+  "POLN",
+  "LIZS",
+  "TUHV",
+  "SOFM",
+  "MITG",
+  "NAMZ",
+  "BEFD",
+  "DASV",
+  "HODV",
+  "ROLG",
+  "KEBR",
+  "SUPL",
+  "MUPS",
+  "LEFN",
+  "MOKZ",
+  "TARK",
+  "PENT"
+ ],
+ "value_cell_exclusion": {
+  "candy": "no balanced pattern exists avoiding the 27 cells earlier banks used (4 x 4 values give only 36 cells), so balance was kept and 12 of 12 cells repeat an earlier bank; scenes, two-object combinations, aliases and evidence constructions remain disjoint",
+  "block": "24 earlier cells avoided; balanced pattern found",
+  "coat": "24 earlier cells avoided; balanced pattern found"
+ },
+ "exclusion_reference": {
+  "path": "gates/word_interface_followup/prior_banks_exclusion_wi_20260923.json",
+  "sha256": "ae81d8038708a9c6d02cfd2fee26e28ba2ebb2775eea67ac1095a6677522e67e"
+ },
+ "bank": {
+  "path": "artifacts/word_interface_followup/p0a_bank/bank_core.json",
+  "sha256": "bce4a4663f8d7c0750adb2b526bed2ac775010f2b460510d027bcb401806613d",
+  "scenes": 576,
+  "families": 36
+ }
+}

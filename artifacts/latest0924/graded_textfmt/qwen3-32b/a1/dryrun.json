@@ -1,0 +1,30 @@
+{
+ "manifest_sha256": "78d1f1f305f8019f4201ed6425d277bcf15960a306bf8f57ea88f2a371c7671f",
+ "problems": [],
+ "receiver": "qwen3-32b",
+ "samples": {
+  "text_L064": "Selected words and exact relative weights (integers divided by 255): BANQ: gold [255/255], green [255/255], red [64/255], unknown [255/255]; CIRV: steel [255/255], green [64/255], red [255/255], unknown [255/255].",
+  "texthedged_L000": "Selected words, each preceded by a qualifier expressing confidence (definitely, probably, possibly, unlikely): BANQ: definitely gold, definitely green, unknown, unknown; CIRV: definitely steel, definitely red, unknown, unknown.",
+  "texthedged_L064": "Selected words, each preceded by a qualifier expressing confidence (definitely, probably, possibly, unlikely): BANQ: definitely gold, definitely green, unlikely red, unknown; CIRV: definitely steel, unlikely green, definitely red, unknown.",
+  "texthedged_L128": "Selected words, each preceded by a qualifier expressing confidence (definitely, probably, possibly, unlikely): BANQ: definitely gold, definitely green, possibly red, unknown; CIRV: definitely steel, possibly green, definitely red, unknown.",
+  "texthedged_L191": "Selected words, each preceded by a qualifier expressing confidence (definitely, probably, possibly, unlikely): BANQ: definitely gold, definitely green, probably red, unknown; CIRV: definitely steel, probably green, definitely red, unknown.",
+  "texthedged_L255": "Selected words, each preceded by a qualifier expressing confidence (definitely, probably, possibly, unlikely): BANQ: definitely gold, definitely green, definitely red, unknown; CIRV: definitely steel, definitely green, definitely red, unknown.",
+  "textsorted_L000": "Selected words and exact relative weights (integers divided by 255): BANQ: gold [255/255], green [255/255], unknown [255/255], unknown [255/255]; CIRV: steel [255/255], red [255/255], unknown [255/255], unknown [255/255].",
+  "textsorted_L064": "Selected words and exact relative weights (integers divided by 255): BANQ: gold [255/255], green [255/255], red [64/255], unknown [255/255]; CIRV: steel [255/255], red [255/255], green [64/255], unknown [255/255].",
+  "textsorted_L128": "Selected words and exact relative weights (integers divided by 255): BANQ: gold [255/255], green [255/255], red [128/255], unknown [255/255]; CIRV: steel [255/255], red [255/255], green [128/255], unknown [255/255].",
+  "textsorted_L191": "Selected words and exact relative weights (integers divided by 255): BANQ: gold [255/255], green [255/255], red [191/255], unknown [255/255]; CIRV: steel [255/255], red [255/255], green [191/255], unknown [255/255].",
+  "textsorted_L255": "Selected words and exact relative weights (integers divided by 255): BANQ: gold [255/255], green [255/255], red [255/255], unknown [255/255]; CIRV: steel [255/255], green [255/255], red [255/255], unknown [255/255]."
+ },
+ "stats": {
+  "emb_facts": 8288,
+  "emb_single_token_facts": 8288,
+  "scenes_development": 144,
+  "scenes_engineering": 4,
+  "sorted_equals_expB_text_at_L0_L255": 592,
+  "text_prompts_checked:text": 8,
+  "text_prompts_checked:texthedged": 1480,
+  "text_prompts_checked:textsorted": 1480
+ },
+ "status": "PASS_DRY_RUN",
+ "study": "LATEST0924_GRADED_B_TEXTFMT_A1"
+}

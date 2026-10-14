@@ -1,0 +1,1127 @@
+{
+  "elapsed_seconds": 508.25384521484375,
+  "layers": [
+    8,
+    14,
+    20,
+    26,
+    32
+  ],
+  "manifest_sha256": "7ff7fb0605a5dbc5286bbd060a80896245ff33f30184100b9855c2abf2829eca",
+  "n_blocks": 40,
+  "no_communication_outcomes": true,
+  "receiver": "mistral-small-3.2-24b",
+  "rows": [
+    {
+      "address": 0,
+      "path": "artifacts/latest0924/predict/fits/mistral-small-3.2-24b/w000.pt",
+      "sha256": "432dfd4a0a9bb14f966c1a673532a3f4a5b51ea7ba3e2db689edcbd03a9c58e7"
+    },
+    {
+      "address": 1,
+      "path": "artifacts/latest0924/predict/fits/mistral-small-3.2-24b/w001.pt",
+      "sha256": "d4a713d4ea9c5b740db12e2c8ea2232075d2fe6a12881c7427dce3c3645c9fe1"
+    },
+    {
+      "address": 2,
+      "path": "artifacts/latest0924/predict/fits/mistral-small-3.2-24b/w002.pt",
+      "sha256": "9dfcf43682b0882d23b1499f2d2373657b512826b832aafd56d78c05e850e261"
+    },
+    {
+      "address": 3,
+      "path": "artifacts/latest0924/predict/fits/mistral-small-3.2-24b/w003.pt",
+      "sha256": "1152e296a7e999816c65c9fca32d93f48aa7a1ba835ec6344f1583e233c80def"
+    },
+    {
+      "address": 4,
+      "path": "artifacts/latest0924/predict/fits/mistral-small-3.2-24b/w004.pt",
+      "sha256": "548c9ce9e7ce4ebfbfa105c1fdeabe2f89c17248d4415ac8abd0a7927b044e30"
+    },
+    {
+      "address": 5,
+      "path": "artifacts/latest0924/predict/fits/mistral-small-3.2-24b/w005.pt",
+      "sha256": "ae1156c0c2729b302e6731d6406d77275704be9e5070215d1f704842b48cd02b"
+    },
+    {
+      "address": 6,
+      "path": "artifacts/latest0924/predict/fits/mistral-small-3.2-24b/w006.pt",
+      "sha256": "86a8fa0d92d11ccf3f83b9bfa0f6013e05544d47e24edbb1386c844b8e9a88b0"
+    },
+    {
+      "address": 7,
+      "path": "artifacts/latest0924/predict/fits/mistral-small-3.2-24b/w007.pt",
+      "sha256": "9a43d876dd7c345897ac6375868973ca1700d3650f706b407485cc114186d7ff"
+    },
+    {
+      "address": 8,
+      "path": "artifacts/latest0924/predict/fits/mistral-small-3.2-24b/w008.pt",
+      "sha256": "31fb1ca12c71df99d2285848e8e0f62540941a91024c386b4c25a763dc8e0cda"
+    },
+    {
+      "address": 9,
+      "path": "artifacts/latest0924/predict/fits/mistral-small-3.2-24b/w009.pt",
+      "sha256": "2f0fdd0eb308ceea003060b809ba5b00d430dd96ee5bd2772355b7345cb35447"
+    },
+    {
+      "address": 10,
+      "path": "artifacts/latest0924/predict/fits/mistral-small-3.2-24b/w010.pt",
+      "sha256": "c0d8c698025343e09d67135597551f63a75c4335c169925ed71128b901b3d8dd"
+    },
+    {
+      "address": 11,
+      "path": "artifacts/latest0924/predict/fits/mistral-small-3.2-24b/w011.pt",
+      "sha256": "711a52468717809c5c26dd5a8bc76be4d41455e74b9a381c464f9e78462e93c9"
+    },
+    {
+      "address": 12,
+      "path": "artifacts/latest0924/predict/fits/mistral-small-3.2-24b/w012.pt",
+      "sha256": "e7956a140ff3421fe044ffa5d8c2edbccbe3dc1d3161035b9780324557c16825"
+    },
+    {
+      "address": 13,
+      "path": "artifacts/latest0924/predict/fits/mistral-small-3.2-24b/w013.pt",
+      "sha256": "fa99735e60fc793fc2baba456cd525bd14dcf3bb9e3b86449dbaa0ada0a3bd6d"
+    },
+    {
+      "address": 14,
+      "path": "artifacts/latest0924/predict/fits/mistral-small-3.2-24b/w014.pt",
+      "sha256": "c1a123e9ec69da488fc3072f8256f4f9b1a58560507802cd5a71df1317fa0328"
+    },
+    {
+      "address": 15,
+      "path": "artifacts/latest0924/predict/fits/mistral-small-3.2-24b/w015.pt",
+      "sha256": "9d97ea83c5b26eaa8ffdfa12eb2919e54cce83fcfa55a20545d5182b135099cf"
+    },
+    {
+      "address": 16,
+      "path": "artifacts/latest0924/predict/fits/mistral-small-3.2-24b/w016.pt",
+      "sha256": "953c015adff3c5d8fb24585f3cefe9ca3115e9c63563b16f60ea3765d41d3e9e"
+    },
+    {
+      "address": 17,
+      "path": "artifacts/latest0924/predict/fits/mistral-small-3.2-24b/w017.pt",
+      "sha256": "6bc2e9cece9cae1f941cb14adba7ef5b511e4f2bd884f285d255d17bc1a29e57"
+    },
+    {
+      "address": 18,
+      "path": "artifacts/latest0924/predict/fits/mistral-small-3.2-24b/w018.pt",
+      "sha256": "c599b70292f4b1caf5f81a68e4f845a8733c5bb7207427e094706070a91ab25b"
+    },
+    {
+      "address": 19,
+      "path": "artifacts/latest0924/predict/fits/mistral-small-3.2-24b/w019.pt",
+      "sha256": "90cf3fbcf3ad21e81db963ba728e5accb16944a7f0b42272ccedb7edb04ae49b"
+    },
+    {
+      "address": 20,
+      "path": "artifacts/latest0924/predict/fits/mistral-small-3.2-24b/w020.pt",
+      "sha256": "cc805043e1124a3437a25b558b69875afe1bbaec3f57883460cb2a38b3b0360d"
+    },
+    {
+      "address": 21,
+      "path": "artifacts/latest0924/predict/fits/mistral-small-3.2-24b/w021.pt",
+      "sha256": "3a2b391fc81e631c02b220201b085ccd46909c8853fd601df8e6d67ca34c1fe6"
+    },
+    {
+      "address": 22,
+      "path": "artifacts/latest0924/predict/fits/mistral-small-3.2-24b/w022.pt",
+      "sha256": "8ed1fc5cb048ed6fab13b334ec18130f666fcdedb8e03d0daeb5237aeea496ca"
+    },
+    {
+      "address": 23,
+      "path": "artifacts/latest0924/predict/fits/mistral-small-3.2-24b/w023.pt",
+      "sha256": "e06c7444b8a9f9b13aa7e67ba93674456faa6edd025817a459263250689a3197"
+    },
+    {
+      "address": 24,
+      "path": "artifacts/latest0924/predict/fits/mistral-small-3.2-24b/w024.pt",
+      "sha256": "026f6f09eeb12f4b7c1a2c3490bb628f2ddcc989197d55b5becdf348744c6696"
+    },
+    {
+      "address": 25,
+      "path": "artifacts/latest0924/predict/fits/mistral-small-3.2-24b/w025.pt",
+      "sha256": "bbf25abc11db7072523ddb15c081a5e38e5e58581b9ac2b6fcfb37ae64499f3d"
+    },
+    {
+      "address": 26,
+      "path": "artifacts/latest0924/predict/fits/mistral-small-3.2-24b/w026.pt",
+      "sha256": "73cfe61385990cbeef3e384ec1a190a82ac9f7fdd8808f2c1c37de51f2d1274c"
+    },
+    {
+      "address": 27,
+      "path": "artifacts/latest0924/predict/fits/mistral-small-3.2-24b/w027.pt",
+      "sha256": "cef2eafb937612e5b61ffc2557d8c35b4550f92e38fc149ac5d26beac02aadc5"
+    },
+    {
+      "address": 28,
+      "path": "artifacts/latest0924/predict/fits/mistral-small-3.2-24b/w028.pt",
+      "sha256": "1d9e8769877b3b8a6fe57da6009e9a8d47cbbaee3639c31eb28e0b477d9f9d78"
+    },
+    {
+      "address": 29,
+      "path": "artifacts/latest0924/predict/fits/mistral-small-3.2-24b/w029.pt",
+      "sha256": "1f3f6a3b51f173743ffa2d907317c211848ac979e010315168cbe9557a281a94"
+    },
+    {
+      "address": 30,
+      "path": "artifacts/latest0924/predict/fits/mistral-small-3.2-24b/w030.pt",
+      "sha256": "5a34262f64788b955fc5d0a3d10a63d8642ef82fc39f7ae6eabcc7adedebb1f1"
+    },
+    {
+      "address": 31,
+      "path": "artifacts/latest0924/predict/fits/mistral-small-3.2-24b/w031.pt",
+      "sha256": "a47ea62adff46de25b259d3bb1e1ed7158520d6408fc428c72bea490d69b713c"
+    },
+    {
+      "address": 32,
+      "path": "artifacts/latest0924/predict/fits/mistral-small-3.2-24b/w032.pt",
+      "sha256": "81682cf54dbc4e9809470938da5857fd5d71ab6e75f649958e22c059313fae3e"
+    },
+    {
+      "address": 33,
+      "path": "artifacts/latest0924/predict/fits/mistral-small-3.2-24b/w033.pt",
+      "sha256": "3ab0b910e3f9bc5edb8181bffa03e54e7f306a8f2dcba3827d393022293a578d"
+    },
+    {
+      "address": 34,
+      "path": "artifacts/latest0924/predict/fits/mistral-small-3.2-24b/w034.pt",
+      "sha256": "1c7f59e75cdcee5850616c8d9646e66b024e2dbaaad1018d354135eb7a7acad7"
+    },
+    {
+      "address": 35,
+      "path": "artifacts/latest0924/predict/fits/mistral-small-3.2-24b/w035.pt",
+      "sha256": "0330f09afbbbe0a2ff3ea80b8635c2ae76c2dd9d44fb05545b4c940517fba045"
+    },
+    {
+      "address": 36,
+      "path": "artifacts/latest0924/predict/fits/mistral-small-3.2-24b/w036.pt",
+      "sha256": "e533a97cb5144a3af5c13a2137b6b3d334f29bcb8ad9a421b2542fd5e0fdd120"
+    },
+    {
+      "address": 37,
+      "path": "artifacts/latest0924/predict/fits/mistral-small-3.2-24b/w037.pt",
+      "sha256": "0a62908f58114d88b7ba2ef951873c14a64ed34fbe0f6aa40a53cb074771b542"
+    },
+    {
+      "address": 38,
+      "path": "artifacts/latest0924/predict/fits/mistral-small-3.2-24b/w038.pt",
+      "sha256": "587267182ad913a8ba3a830b5b329dac390957c1b4940a196c1fae9a10d157b3"
+    },
+    {
+      "address": 39,
+      "path": "artifacts/latest0924/predict/fits/mistral-small-3.2-24b/w039.pt",
+      "sha256": "c2ca9e378b75478c8e1c10c5abac1c1ba6d0f4051b2714e54c2c9316f26c5588"
+    },
+    {
+      "address": 40,
+      "path": "artifacts/latest0924/predict/fits/mistral-small-3.2-24b/w040.pt",
+      "sha256": "9c81caa00db1a9ea7b6b6bf5493cae0d48868785decbfa83fa49d746ee9ca92c"
+    },
+    {
+      "address": 41,
+      "path": "artifacts/latest0924/predict/fits/mistral-small-3.2-24b/w041.pt",
+      "sha256": "36ae9f244c635276117706f8995f795952dcf4e0060ebab82f7e796a587e048b"
+    },
+    {
+      "address": 42,
+      "path": "artifacts/latest0924/predict/fits/mistral-small-3.2-24b/w042.pt",
+      "sha256": "59806cf4062c5544df4c054c96c5ffd6d66fae0cb8b617f29db98f8946612543"
+    },
+    {
+      "address": 43,
+      "path": "artifacts/latest0924/predict/fits/mistral-small-3.2-24b/w043.pt",
+      "sha256": "fcab9d9d21ba37aa995f8530161a0c2910f819a9ff2241da54d0bafda6a623d5"
+    },
+    {
+      "address": 44,
+      "path": "artifacts/latest0924/predict/fits/mistral-small-3.2-24b/w044.pt",
+      "sha256": "3d9492ea5ce1aebf8cd31861a3b8c65119dc590820b9e40580d72eb336721c46"
+    },
+    {
+      "address": 45,
+      "path": "artifacts/latest0924/predict/fits/mistral-small-3.2-24b/w045.pt",
+      "sha256": "8e987cbd0e3b3948911ee19a84886304b16d2d6be72d980cea31f49dc2e6ce10"
+    },
+    {
+      "address": 46,
+      "path": "artifacts/latest0924/predict/fits/mistral-small-3.2-24b/w046.pt",
+      "sha256": "95479a8cdfd932ef35fc2c2ebac43ee44d121fa57ded6508ecc33ae30fc6b0c9"
+    },
+    {
+      "address": 47,
+      "path": "artifacts/latest0924/predict/fits/mistral-small-3.2-24b/w047.pt",
+      "sha256": "db41aed7d8660ce82c8351820af5e02d887ef3b0bc881d30bfb424ec9d2ea2da"
+    },
+    {
+      "address": 48,
+      "path": "artifacts/latest0924/predict/fits/mistral-small-3.2-24b/w048.pt",
+      "sha256": "6d14dee0cbbfb29b79b19f4c8616370f8ef58dfd5a38ea103c5410fed069a147"
+    },
+    {
+      "address": 49,
+      "path": "artifacts/latest0924/predict/fits/mistral-small-3.2-24b/w049.pt",
+      "sha256": "19725fe06787a183a95590a1035b5eb625b30dee10ca8f4bcfb7bfeb80f79b56"
+    },
+    {
+      "address": 50,
+      "path": "artifacts/latest0924/predict/fits/mistral-small-3.2-24b/w050.pt",
+      "sha256": "5b22a9f0665495f9f34f063de1c00a75e303ee0ba0783ac4a5f0074a6a88f8fa"
+    },
+    {
+      "address": 51,
+      "path": "artifacts/latest0924/predict/fits/mistral-small-3.2-24b/w051.pt",
+      "sha256": "f1126f477aa2f0243490fc58b55dfc3788b41f82d63a9bbc9b441b80a9c44a38"
+    },
+    {
+      "address": 52,
+      "path": "artifacts/latest0924/predict/fits/mistral-small-3.2-24b/w052.pt",
+      "sha256": "2521e9999f4f3ee9de0f3042b87839b0226671fb21cf429aa8fb19c9c85f73f4"
+    },
+    {
+      "address": 53,
+      "path": "artifacts/latest0924/predict/fits/mistral-small-3.2-24b/w053.pt",
+      "sha256": "d9e17543b61b0c34dffcea8974ace18481114ac979e3718eb0041bcbd91cf42d"
+    },
+    {
+      "address": 54,
+      "path": "artifacts/latest0924/predict/fits/mistral-small-3.2-24b/w054.pt",
+      "sha256": "5a25bc27b053e0347e510a4e313df0c7ff086193a973bdf0318cd6c91970dd56"
+    },
+    {
+      "address": 55,
+      "path": "artifacts/latest0924/predict/fits/mistral-small-3.2-24b/w055.pt",
+      "sha256": "80bb607301c1dd474953f1fc79e9aeff040f7e86d62391288b43ce48a5b03d1c"
+    },
+    {
+      "address": 56,
+      "path": "artifacts/latest0924/predict/fits/mistral-small-3.2-24b/w056.pt",
+      "sha256": "e86b013cc5b0a6962bfc747a059f8fa87b81944ec19ecc332bff7db84b3e968e"
+    },
+    {
+      "address": 57,
+      "path": "artifacts/latest0924/predict/fits/mistral-small-3.2-24b/w057.pt",
+      "sha256": "e2c81df87974a03ab243a7235601a204d9b39ca56190e63719973d69f561b748"
+    },
+    {
+      "address": 58,
+      "path": "artifacts/latest0924/predict/fits/mistral-small-3.2-24b/w058.pt",
+      "sha256": "4a118c334cc83c39182d9519e40e3a7575faa26074d31e90dbfc4ec56f89e3fa"
+    },
+    {
+      "address": 59,
+      "path": "artifacts/latest0924/predict/fits/mistral-small-3.2-24b/w059.pt",
+      "sha256": "56dad556d173261e289270c35adfb2bb9a9d693f9a40cbff27d23d5e00c2c8c8"
+    },
+    {
+      "address": 60,
+      "path": "artifacts/latest0924/predict/fits/mistral-small-3.2-24b/w060.pt",
+      "sha256": "317c12fdcc3f53630455919cc6bf8f5b230ce7292851b81a705366169acfe6a8"
+    },
+    {
+      "address": 61,
+      "path": "artifacts/latest0924/predict/fits/mistral-small-3.2-24b/w061.pt",
+      "sha256": "d4c697c97a55d01d12ddac1fd10b29d96270435a3e86282dd551e409bf53e8e4"
+    },
+    {
+      "address": 62,
+      "path": "artifacts/latest0924/predict/fits/mistral-small-3.2-24b/w062.pt",
+      "sha256": "69c76856e2f00c774672dac0b7ebe5fe5ecfe43b38df0f8e9fc7849b26f74eaf"
+    },
+    {
+      "address": 63,
+      "path": "artifacts/latest0924/predict/fits/mistral-small-3.2-24b/w063.pt",
+      "sha256": "0845107d2240740f67780400cca6571e8452f0affd3e25ff33bc68761ba7cb6e"
+    },
+    {
+      "address": 64,
+      "path": "artifacts/latest0924/predict/fits/mistral-small-3.2-24b/w064.pt",
+      "sha256": "35c0b778de73d8c48e33284e97d5b7dc2913cad68a5498f3a02adbf054febf8e"
+    },
+    {
+      "address": 65,
+      "path": "artifacts/latest0924/predict/fits/mistral-small-3.2-24b/w065.pt",
+      "sha256": "65a39c02fe112de3c386f16cd6de599f85c7b1b44e535e1d1273785cefc4d87b"
+    },
+    {
+      "address": 66,
+      "path": "artifacts/latest0924/predict/fits/mistral-small-3.2-24b/w066.pt",
+      "sha256": "e5f52fcad7495ae1ac7988d2909a79887e193cdca8e6da894a6789936341b610"
+    },
+    {
+      "address": 67,
+      "path": "artifacts/latest0924/predict/fits/mistral-small-3.2-24b/w067.pt",
+      "sha256": "56e0c6f83799ca354b383f5c0ac9bba0a4d4f455c889ed38bee3ca01aade7166"
+    },
+    {
+      "address": 68,
+      "path": "artifacts/latest0924/predict/fits/mistral-small-3.2-24b/w068.pt",
+      "sha256": "df9ca051d3a975cbe079535df7963bcbbe075e54dbc8a84e0faf7665e0fe67c8"
+    },
+    {
+      "address": 69,
+      "path": "artifacts/latest0924/predict/fits/mistral-small-3.2-24b/w069.pt",
+      "sha256": "1cae03a955c4934319b92819d3791d44249d5c2aca779005de65e4f959235c62"
+    },
+    {
+      "address": 70,
+      "path": "artifacts/latest0924/predict/fits/mistral-small-3.2-24b/w070.pt",
+      "sha256": "aca1758e22eeca0b3662daa11f7d60f84bcdc64fbb1476a4c7ef9cc86caa3c28"
+    },
+    {
+      "address": 71,
+      "path": "artifacts/latest0924/predict/fits/mistral-small-3.2-24b/w071.pt",
+      "sha256": "f7ba1224f6cc457c5a4daaa7440b80c97277035188fd8b9c4064d0dd8b99e224"
+    },
+    {
+      "address": 72,
+      "path": "artifacts/latest0924/predict/fits/mistral-small-3.2-24b/w072.pt",
+      "sha256": "18c24700fe19dcd849476815e0f124a1f853fed2f4a0eb05798de63690dc00c0"
+    },
+    {
+      "address": 73,
+      "path": "artifacts/latest0924/predict/fits/mistral-small-3.2-24b/w073.pt",
+      "sha256": "c274bc4a15037e04fbca14789550334d39b6d3411ab5ad445fbc100420efe975"
+    },
+    {
+      "address": 74,
+      "path": "artifacts/latest0924/predict/fits/mistral-small-3.2-24b/w074.pt",
+      "sha256": "4a04b744fc5c823a9e2b644c9364b7123e74d0ffeb0ba3b93aa475e4c6bf9d3e"
+    },
+    {
+      "address": 75,
+      "path": "artifacts/latest0924/predict/fits/mistral-small-3.2-24b/w075.pt",
+      "sha256": "d3d37844e4f90a80c9222b0108126e2de1f6d261c2bee376f75bcd9fd6c66898"
+    },
+    {
+      "address": 76,
+      "path": "artifacts/latest0924/predict/fits/mistral-small-3.2-24b/w076.pt",
+      "sha256": "9e58714c9ecedd6137c53d23481730efc2c112a4f4add06fe0f58920fb67c30f"
+    },
+    {
+      "address": 77,
+      "path": "artifacts/latest0924/predict/fits/mistral-small-3.2-24b/w077.pt",
+      "sha256": "b748a87809922f3be9b666ad5b6c77b3dd26442f4397831ff474d3195bfed318"
+    },
+    {
+      "address": 78,
+      "path": "artifacts/latest0924/predict/fits/mistral-small-3.2-24b/w078.pt",
+      "sha256": "2cfdd1ebc60695f646bf9ac63d60d8fbd55fb1ba9ebcb99ac8079b960f2aa980"
+    },
+    {
+      "address": 79,
+      "path": "artifacts/latest0924/predict/fits/mistral-small-3.2-24b/w079.pt",
+      "sha256": "72bd122498f6ca0ab4c55dfe728c0c4b0b44f7fc6798511eb0ed0ee2f223b1e9"
+    },
+    {
+      "address": 80,
+      "path": "artifacts/latest0924/predict/fits/mistral-small-3.2-24b/w080.pt",
+      "sha256": "928eb9b9871abb518ed2a0384ac2632d117169b96257c3172f493bdc829190b3"
+    },
+    {
+      "address": 81,
+      "path": "artifacts/latest0924/predict/fits/mistral-small-3.2-24b/w081.pt",
+      "sha256": "be45fb8a9f6b3ad65299aa73566b1bca0b5975ae8c755db4e2490995e89e45ab"
+    },
+    {
+      "address": 82,
+      "path": "artifacts/latest0924/predict/fits/mistral-small-3.2-24b/w082.pt",
+      "sha256": "f200a5b1b6f5ed3ea0efc2c44fec0fa984ebbb90199ef32456713f4b9eac463e"
+    },
+    {
+      "address": 83,
+      "path": "artifacts/latest0924/predict/fits/mistral-small-3.2-24b/w083.pt",
+      "sha256": "57bea2b7b08d9491788300d1ad6d81148a3a60172e3187a53449e4621cf4dffb"
+    },
+    {
+      "address": 84,
+      "path": "artifacts/latest0924/predict/fits/mistral-small-3.2-24b/w084.pt",
+      "sha256": "8a8d68d9f473b1adb38b69debff3a8ed6264ffb7b098c6320d9da75f956f265a"
+    },
+    {
+      "address": 85,
+      "path": "artifacts/latest0924/predict/fits/mistral-small-3.2-24b/w085.pt",
+      "sha256": "d82b466a44a0861c839bf9e64256b80e51519cab3f2850d849a03727921650b1"
+    },
+    {
+      "address": 86,
+      "path": "artifacts/latest0924/predict/fits/mistral-small-3.2-24b/w086.pt",
+      "sha256": "7ec2b8600ad8f46a8267667acf0eebce4f1880488e679d1e3a8e3142d5deb8f3"
+    },
+    {
+      "address": 87,
+      "path": "artifacts/latest0924/predict/fits/mistral-small-3.2-24b/w087.pt",
+      "sha256": "705773a877a91dd731373afa959bdcb131a395688073a07039ca76e6421c3fc7"
+    },
+    {
+      "address": 88,
+      "path": "artifacts/latest0924/predict/fits/mistral-small-3.2-24b/w088.pt",
+      "sha256": "7b8cf76ffe51b539ea0748beb8229f05197e2b54b4453286fe12180f33d6d5bc"
+    },
+    {
+      "address": 89,
+      "path": "artifacts/latest0924/predict/fits/mistral-small-3.2-24b/w089.pt",
+      "sha256": "bf802b405af3aa4d416447ec5c46d2b220689faba9c5b19094d4fe52c9dc3b5c"
+    },
+    {
+      "address": 90,
+      "path": "artifacts/latest0924/predict/fits/mistral-small-3.2-24b/w090.pt",
+      "sha256": "e55f50a3258ea0598b7b0e234d5c24a650219cf5f75dd8361634079cb93acb33"
+    },
+    {
+      "address": 91,
+      "path": "artifacts/latest0924/predict/fits/mistral-small-3.2-24b/w091.pt",
+      "sha256": "14b4dcf1adec56f6561fba845f9c69ccf72016ec3ddab4bea30b58103cf58464"
+    },
+    {
+      "address": 92,
+      "path": "artifacts/latest0924/predict/fits/mistral-small-3.2-24b/w092.pt",
+      "sha256": "efe83518e7e0a5a879f9ad427cffdb94b1eecbf90239c6bc202b293ba9b14d08"
+    },
+    {
+      "address": 93,
+      "path": "artifacts/latest0924/predict/fits/mistral-small-3.2-24b/w093.pt",
+      "sha256": "68dc9a1a826048a0e7ffb730a2d22903e4e48d16937072157134ed301b910a6d"
+    },
+    {
+      "address": 94,
+      "path": "artifacts/latest0924/predict/fits/mistral-small-3.2-24b/w094.pt",
+      "sha256": "2bb1f9a896082aa1a1036839056e02b67470998b8411d02885a46cae9f92fb48"
+    },
+    {
+      "address": 95,
+      "path": "artifacts/latest0924/predict/fits/mistral-small-3.2-24b/w095.pt",
+      "sha256": "957bc740d62c202dd4668cd38f65e000f7c0f2daaf41359470e295370882a7ef"
+    },
+    {
+      "address": 96,
+      "path": "artifacts/latest0924/predict/fits/mistral-small-3.2-24b/w096.pt",
+      "sha256": "0b212d924653a2b2eda01a1c8cb5126dd02d396abaa987a395db003fadf6195e"
+    },
+    {
+      "address": 97,
+      "path": "artifacts/latest0924/predict/fits/mistral-small-3.2-24b/w097.pt",
+      "sha256": "8a61b9a70c71edd4061a128273d8a7a516e7b6972674452e0687e16e82e9b504"
+    },
+    {
+      "address": 98,
+      "path": "artifacts/latest0924/predict/fits/mistral-small-3.2-24b/w098.pt",
+      "sha256": "04d4dae611a8c57729c1aec3199d5324afdbbede5d868c66a320d23dd1799de4"
+    },
+    {
+      "address": 99,
+      "path": "artifacts/latest0924/predict/fits/mistral-small-3.2-24b/w099.pt",
+      "sha256": "a65388efc30620a5266af8a14c3c399dafeda0ce42bb1bfbbdb7f64257aecc04"
+    },
+    {
+      "address": 100,
+      "path": "artifacts/latest0924/predict/fits/mistral-small-3.2-24b/w100.pt",
+      "sha256": "13cde97b35b1cdab19e1c1b1d17d24893dd158200c0e893f3c0c05e3ad5771e6"
+    },
+    {
+      "address": 101,
+      "path": "artifacts/latest0924/predict/fits/mistral-small-3.2-24b/w101.pt",
+      "sha256": "d5073cde01f817553651611d81d4e57c52ce771dee3561417955e17b9add6a7f"
+    },
+    {
+      "address": 102,
+      "path": "artifacts/latest0924/predict/fits/mistral-small-3.2-24b/w102.pt",
+      "sha256": "74b2bcbf41af12553ad784badb998872645fcfc63cdfbc05e674d65db9328da9"
+    },
+    {
+      "address": 103,
+      "path": "artifacts/latest0924/predict/fits/mistral-small-3.2-24b/w103.pt",
+      "sha256": "1d79b6a784e810d302431cad3141e9d97b06625578924bde79199dbae005729e"
+    },
+    {
+      "address": 104,
+      "path": "artifacts/latest0924/predict/fits/mistral-small-3.2-24b/w104.pt",
+      "sha256": "29f518bbf024a4dfcdd009a17cbd2425d899b7ca13ac90b6f4ddd397aff2b7a5"
+    },
+    {
+      "address": 105,
+      "path": "artifacts/latest0924/predict/fits/mistral-small-3.2-24b/w105.pt",
+      "sha256": "b0109e9ffb0859f2e519e5d83af7af42c657de5ef601558460eb64e74779fcf4"
+    },
+    {
+      "address": 106,
+      "path": "artifacts/latest0924/predict/fits/mistral-small-3.2-24b/w106.pt",
+      "sha256": "acb2b963c53a8037d55f896914bc62bc0c17a6270f877543b93fc5e5a09d6098"
+    },
+    {
+      "address": 107,
+      "path": "artifacts/latest0924/predict/fits/mistral-small-3.2-24b/w107.pt",
+      "sha256": "4b04576abff0a02f5cd6c3c6183af24e5f22cd5e18dad33dbe97b0a5cf06faf0"
+    },
+    {
+      "address": 108,
+      "path": "artifacts/latest0924/predict/fits/mistral-small-3.2-24b/w108.pt",
+      "sha256": "a36da0b3ccb408a1ed1410635f574b7351de9b4353e44f43f1bd2ebc664ba149"
+    },
+    {
+      "address": 109,
+      "path": "artifacts/latest0924/predict/fits/mistral-small-3.2-24b/w109.pt",
+      "sha256": "be5c7c81c990355d4124c0197a1d23cbfdababc7d8666238b2779d2a36bf80fe"
+    },
+    {
+      "address": 110,
+      "path": "artifacts/latest0924/predict/fits/mistral-small-3.2-24b/w110.pt",
+      "sha256": "9068ccaf0642ca5b2f1098b5f5ed75491f3cceb6664b3799b2a6c78ccbd51f2b"
+    },
+    {
+      "address": 111,
+      "path": "artifacts/latest0924/predict/fits/mistral-small-3.2-24b/w111.pt",
+      "sha256": "6803bad64704c5ecb6effa1bc61448fd473d3446b2470ee94eebb3cf023bdd78"
+    },
+    {
+      "address": 112,
+      "path": "artifacts/latest0924/predict/fits/mistral-small-3.2-24b/w112.pt",
+      "sha256": "d7f2e3f4481baf03178ae144c1325c2f68c59c307849ec6e0cddd6cbfb4ad105"
+    },
+    {
+      "address": 113,
+      "path": "artifacts/latest0924/predict/fits/mistral-small-3.2-24b/w113.pt",
+      "sha256": "ffbe5a601022540128b2a2c660d67d187d6fbbbec27889708bd0793970523b4d"
+    },
+    {
+      "address": 114,
+      "path": "artifacts/latest0924/predict/fits/mistral-small-3.2-24b/w114.pt",
+      "sha256": "3a5f0dec3d6059fb5ed603c21b52e15e77b7eb76f3e39710a67fc6c9a1168d5a"
+    },
+    {
+      "address": 115,
+      "path": "artifacts/latest0924/predict/fits/mistral-small-3.2-24b/w115.pt",
+      "sha256": "1efeca426aa1358a4df7b61b9ea5a098d5f8247df391dd123cb9ba3cd425ceec"
+    },
+    {
+      "address": 116,
+      "path": "artifacts/latest0924/predict/fits/mistral-small-3.2-24b/w116.pt",
+      "sha256": "b6948f5448e710c4bcc3d740219fe28a4e087b1ca8093cbda47ed862196a210c"
+    },
+    {
+      "address": 117,
+      "path": "artifacts/latest0924/predict/fits/mistral-small-3.2-24b/w117.pt",
+      "sha256": "f190028e51386004c6ecc683cc75d3f2a131f32ae26b2b6c9c68cfc63d5d107a"
+    },
+    {
+      "address": 118,
+      "path": "artifacts/latest0924/predict/fits/mistral-small-3.2-24b/w118.pt",
+      "sha256": "dffafdda40bb3e435230b5571fc747b1ddb0a5883dfdea22c25f74d7f6d956cf"
+    },
+    {
+      "address": 119,
+      "path": "artifacts/latest0924/predict/fits/mistral-small-3.2-24b/w119.pt",
+      "sha256": "840be7797dad3a83976a70dad0f3c7ca75c3eb7cb6a31c2ab2cba4c928c8ac34"
+    },
+    {
+      "address": 120,
+      "path": "artifacts/latest0924/predict/fits/mistral-small-3.2-24b/w120.pt",
+      "sha256": "e52fb53ae7a71aea98bd5e36ab1f89d0e4775be6f7a8cc73512e0e0e10d474f1"
+    },
+    {
+      "address": 121,
+      "path": "artifacts/latest0924/predict/fits/mistral-small-3.2-24b/w121.pt",
+      "sha256": "4c98345c325770578c8d6d00268a98a76742dde29ae1668adbd03a95877ee297"
+    },
+    {
+      "address": 122,
+      "path": "artifacts/latest0924/predict/fits/mistral-small-3.2-24b/w122.pt",
+      "sha256": "12785ed6a641b43f5f4c00a705dff1a0fcffb70317601c277115d00f567975b2"
+    },
+    {
+      "address": 123,
+      "path": "artifacts/latest0924/predict/fits/mistral-small-3.2-24b/w123.pt",
+      "sha256": "e8c638d45171c0d7b1bfe75d2994cbf3430a98e843e85f515bfca72927f6e9e0"
+    },
+    {
+      "address": 124,
+      "path": "artifacts/latest0924/predict/fits/mistral-small-3.2-24b/w124.pt",
+      "sha256": "fbe73d1c3d54e8632bc8a28042fb4d593c66b66cbbee996ed26eaef3db50ea59"
+    },
+    {
+      "address": 125,
+      "path": "artifacts/latest0924/predict/fits/mistral-small-3.2-24b/w125.pt",
+      "sha256": "8c6685ab82cb31352061a1d1407f3fd73e273155a9d9030483eb324449f2ee92"
+    },
+    {
+      "address": 126,
+      "path": "artifacts/latest0924/predict/fits/mistral-small-3.2-24b/w126.pt",
+      "sha256": "c05899d649512cc9232e7686ee606e12d031c37281d448e7e4939d5ce84e3d04"
+    },
+    {
+      "address": 127,
+      "path": "artifacts/latest0924/predict/fits/mistral-small-3.2-24b/w127.pt",
+      "sha256": "fdb2914f28bbdf867819e31d258ce24df45621c11524f88a6a85f7aa548c8f0b"
+    },
+    {
+      "address": 128,
+      "path": "artifacts/latest0924/predict/fits/mistral-small-3.2-24b/w128.pt",
+      "sha256": "0700e18479b89140521742053c4e7362f829b826c7ad88c645288c1a5054e268"
+    },
+    {
+      "address": 129,
+      "path": "artifacts/latest0924/predict/fits/mistral-small-3.2-24b/w129.pt",
+      "sha256": "ece92cbb8f2b0fc0cbb5e146d99a5ed2850d524a28a609194a189a6f3d4e8f46"
+    },
+    {
+      "address": 130,
+      "path": "artifacts/latest0924/predict/fits/mistral-small-3.2-24b/w130.pt",
+      "sha256": "3efb85dead5913f8600681d63e5129c9b976ca0ba82550551e63b0152c906d9a"
+    },
+    {
+      "address": 131,
+      "path": "artifacts/latest0924/predict/fits/mistral-small-3.2-24b/w131.pt",
+      "sha256": "db63f3321f294f39278e98fba91daaa55122ae207cee7f28393f30d1edc02a9d"
+    },
+    {
+      "address": 132,
+      "path": "artifacts/latest0924/predict/fits/mistral-small-3.2-24b/w132.pt",
+      "sha256": "6168a75904b2bd9bf92fdfd5fc5e42c3b651f7e2887e064da9387a9aae9b8543"
+    },
+    {
+      "address": 133,
+      "path": "artifacts/latest0924/predict/fits/mistral-small-3.2-24b/w133.pt",
+      "sha256": "0c9aacfbbc8533f5a88e050ad97b4320c81ad66ac441288b620ce97824f577e9"
+    },
+    {
+      "address": 134,
+      "path": "artifacts/latest0924/predict/fits/mistral-small-3.2-24b/w134.pt",
+      "sha256": "672ea09f367d2757ce9805e7107d5d4eeab153e0ecdb7a13bc19a9c4e9b5c065"
+    },
+    {
+      "address": 135,
+      "path": "artifacts/latest0924/predict/fits/mistral-small-3.2-24b/w135.pt",
+      "sha256": "0778b8ca0217c5be7c864574d2039daa72ddd24f2107424cfe17cc88075e4e17"
+    },
+    {
+      "address": 136,
+      "path": "artifacts/latest0924/predict/fits/mistral-small-3.2-24b/w136.pt",
+      "sha256": "29662a5b7fe6e0d869ac9cd15a930e9c1eeabd7376f37e79c20281f228493d63"
+    },
+    {
+      "address": 137,
+      "path": "artifacts/latest0924/predict/fits/mistral-small-3.2-24b/w137.pt",
+      "sha256": "6f3a2e9fe4325587c1dbeb4bec170b83dad5b9199cf147e8bd1b90c9b9644ea0"
+    },
+    {
+      "address": 138,
+      "path": "artifacts/latest0924/predict/fits/mistral-small-3.2-24b/w138.pt",
+      "sha256": "519c67ea3f68f8e5deedbd9091b5849406c4fb664c2b563ad330917c3d614b69"
+    },
+    {
+      "address": 139,
+      "path": "artifacts/latest0924/predict/fits/mistral-small-3.2-24b/w139.pt",
+      "sha256": "fe719dc303aaff804c533c64f57a9c2ee64279f6d867d442f3b789393b344fc7"
+    },
+    {
+      "address": 140,
+      "path": "artifacts/latest0924/predict/fits/mistral-small-3.2-24b/w140.pt",
+      "sha256": "cea47da78e0add0942b8fca103c21334678a65059a8c5dba65f6009895b8617f"
+    },
+    {
+      "address": 141,
+      "path": "artifacts/latest0924/predict/fits/mistral-small-3.2-24b/w141.pt",
+      "sha256": "da15d7dcf216228d2707f715a259da258414041ca736b3ad512cbfb6ee0adf9d"
+    },
+    {
+      "address": 142,
+      "path": "artifacts/latest0924/predict/fits/mistral-small-3.2-24b/w142.pt",
+      "sha256": "5e0966106b80a6e7426ab35e9d8476c8c41c2a177e2a63a6fb7a8862f171f407"
+    },
+    {
+      "address": 143,
+      "path": "artifacts/latest0924/predict/fits/mistral-small-3.2-24b/w143.pt",
+      "sha256": "35b6af92f56baccb975eed2823e3329236898dccebb01f7fd85636f2d50eade3"
+    },
+    {
+      "address": 144,
+      "path": "artifacts/latest0924/predict/fits/mistral-small-3.2-24b/w144.pt",
+      "sha256": "24936a8e361232e3b596de4f0daeca3871c8d66cc6f85b8ed8474f6511b1d3ca"
+    },
+    {
+      "address": 145,
+      "path": "artifacts/latest0924/predict/fits/mistral-small-3.2-24b/w145.pt",
+      "sha256": "8e06bd40b7a336538c97e14ede108d6919bc98c122c02ce6475ee3f31784ac87"
+    },
+    {
+      "address": 146,
+      "path": "artifacts/latest0924/predict/fits/mistral-small-3.2-24b/w146.pt",
+      "sha256": "584b8d39b167f473000ee888171d0b09727732ff253ed9bdc6343c99dfddc6e6"
+    },
+    {
+      "address": 147,
+      "path": "artifacts/latest0924/predict/fits/mistral-small-3.2-24b/w147.pt",
+      "sha256": "b643e321b63f2d742ff0b1fa3650067931f06f5229bb94314cd63a2da3cc7deb"
+    },
+    {
+      "address": 148,
+      "path": "artifacts/latest0924/predict/fits/mistral-small-3.2-24b/w148.pt",
+      "sha256": "6961f812cd7737c31da22f2637ce5a449ed131d7f967f8e689e199a10f466fc8"
+    },
+    {
+      "address": 149,
+      "path": "artifacts/latest0924/predict/fits/mistral-small-3.2-24b/w149.pt",
+      "sha256": "cb23967401e92a8efdd853b4bc842ec0b0c807a162171f0a236d9675996a6f8c"
+    },
+    {
+      "address": 150,
+      "path": "artifacts/latest0924/predict/fits/mistral-small-3.2-24b/w150.pt",
+      "sha256": "9f135bd72bf4b95619cf20bf9b78874be424a0e00b908e119dfc8e10644d1f89"
+    },
+    {
+      "address": 151,
+      "path": "artifacts/latest0924/predict/fits/mistral-small-3.2-24b/w151.pt",
+      "sha256": "f338221f27b8ef7d96bb30b98aee60823b51aadbf42ee944610b0dea0c323b38"
+    },
+    {
+      "address": 152,
+      "path": "artifacts/latest0924/predict/fits/mistral-small-3.2-24b/w152.pt",
+      "sha256": "383f862ba79bc6fa08aeab6f06108301dcea9b8bf24578121bcf98e636cd2c2c"
+    },
+    {
+      "address": 153,
+      "path": "artifacts/latest0924/predict/fits/mistral-small-3.2-24b/w153.pt",
+      "sha256": "7b48858f3e3ba77f1e67573c4931fe44063676a63c9fc4c5fa11b5cf9c1b62cb"
+    },
+    {
+      "address": 154,
+      "path": "artifacts/latest0924/predict/fits/mistral-small-3.2-24b/w154.pt",
+      "sha256": "c2d87abbfdf145829e3a5708c50ffb8f70d3ed7fa0134e4779da5f940283cd3c"
+    },
+    {
+      "address": 155,
+      "path": "artifacts/latest0924/predict/fits/mistral-small-3.2-24b/w155.pt",
+      "sha256": "3c96636ad5cc7c3e0c2dd5a9b47033310e363a83479215621fdc84a37f217714"
+    },
+    {
+      "address": 156,
+      "path": "artifacts/latest0924/predict/fits/mistral-small-3.2-24b/w156.pt",
+      "sha256": "85b22dd856353e2c7051162818d52cc8fe3e8cdd47f428ef25881e3091767212"
+    },
+    {
+      "address": 157,
+      "path": "artifacts/latest0924/predict/fits/mistral-small-3.2-24b/w157.pt",
+      "sha256": "ff56ed220ae3637fd4839beb92e6d8a202176e6d72fb0cc78ef50c78ee66a4fd"
+    },
+    {
+      "address": 158,
+      "path": "artifacts/latest0924/predict/fits/mistral-small-3.2-24b/w158.pt",
+      "sha256": "d701e4c4985e3b02480deea2a996abf5a3d0c555450b8d5898d6c6c1cd39b31c"
+    },
+    {
+      "address": 159,
+      "path": "artifacts/latest0924/predict/fits/mistral-small-3.2-24b/w159.pt",
+      "sha256": "9228bd0975215f9a910622d5c49d6eaefbdb9f8505e01b062bc29ee7d31189de"
+    },
+    {
+      "address": 160,
+      "path": "artifacts/latest0924/predict/fits/mistral-small-3.2-24b/w160.pt",
+      "sha256": "670a46b81f41947fa4e80cd7aae9464cd7c500ccd4b4b04680f28286476ab685"
+    },
+    {
+      "address": 161,
+      "path": "artifacts/latest0924/predict/fits/mistral-small-3.2-24b/w161.pt",
+      "sha256": "a41caae56e4e3517a70cefe58630ae907489a641ab6efbfe975814e6faef376c"
+    },
+    {
+      "address": 162,
+      "path": "artifacts/latest0924/predict/fits/mistral-small-3.2-24b/w162.pt",
+      "sha256": "36140f631d681d6adea519f146072ad13ad237da4d8f9e8419f15596e0c86812"
+    },
+    {
+      "address": 163,
+      "path": "artifacts/latest0924/predict/fits/mistral-small-3.2-24b/w163.pt",
+      "sha256": "5c5fb169ef64dad3b9c2f813b5b19bb9e75c5a10ddd8ff66966e83b00fe13ddd"
+    },
+    {
+      "address": 164,
+      "path": "artifacts/latest0924/predict/fits/mistral-small-3.2-24b/w164.pt",
+      "sha256": "66ef588606b51aa5dbc3b6204c4917228ce6f5f3a020fb30770cca00dd0dad92"
+    },
+    {
+      "address": 165,
+      "path": "artifacts/latest0924/predict/fits/mistral-small-3.2-24b/w165.pt",
+      "sha256": "577c246a1f2a083a4c070aaf20db25383bf93f186320cd645e6eb82278b4e30e"
+    },
+    {
+      "address": 166,
+      "path": "artifacts/latest0924/predict/fits/mistral-small-3.2-24b/w166.pt",
+      "sha256": "5423ae0b90b55af3001fd6c090aac833ddcd5db5d1937b1cce7f00cf99807a1e"
+    },
+    {
+      "address": 167,
+      "path": "artifacts/latest0924/predict/fits/mistral-small-3.2-24b/w167.pt",
+      "sha256": "51a8102d1ddac8b147d1bb7de4437c143aefa8bbd7fa6498bbe997b0a6753741"
+    },
+    {
+      "address": 168,
+      "path": "artifacts/latest0924/predict/fits/mistral-small-3.2-24b/w168.pt",
+      "sha256": "a91a154fbff667e65a78b7fdafc458e22d9c661d789261e08074e158873a1621"
+    },
+    {
+      "address": 169,
+      "path": "artifacts/latest0924/predict/fits/mistral-small-3.2-24b/w169.pt",
+      "sha256": "7e0e2f2749739ebf4edf8c182373229e0f93e2d2fef00120d00e1200e8a9f9a1"
+    },
+    {
+      "address": 170,
+      "path": "artifacts/latest0924/predict/fits/mistral-small-3.2-24b/w170.pt",
+      "sha256": "762a94ec5e8fc791011671ef25213678349207c4363c449ee78845ffccd2aae9"
+    },
+    {
+      "address": 171,
+      "path": "artifacts/latest0924/predict/fits/mistral-small-3.2-24b/w171.pt",
+      "sha256": "1994dbcaf6c511ab14a28602b5f31b253f233622366b8d8f6f03f1a3d9d300df"
+    },
+    {
+      "address": 172,
+      "path": "artifacts/latest0924/predict/fits/mistral-small-3.2-24b/w172.pt",
+      "sha256": "ca3a375064c9cd00fa4aeb00d56174ff05fb5bccbb8c96efeda2e1e0cc38ca0f"
+    },
+    {
+      "address": 173,
+      "path": "artifacts/latest0924/predict/fits/mistral-small-3.2-24b/w173.pt",
+      "sha256": "79e367ae3f4072f9bb670d0ebc656e083e2aa7f746ba637d0f6ad486f6cc33a6"
+    },
+    {
+      "address": 174,
+      "path": "artifacts/latest0924/predict/fits/mistral-small-3.2-24b/w174.pt",
+      "sha256": "41446525cd18602c034df1be92eb4d881a8444a0a761016de9159b53092e70f2"
+    },
+    {
+      "address": 175,
+      "path": "artifacts/latest0924/predict/fits/mistral-small-3.2-24b/w175.pt",
+      "sha256": "d499b000ce336de19aaa554b3697f8d2c234e68c4eb0e38c08d994da2fa5cd95"
+    },
+    {
+      "address": 176,
+      "path": "artifacts/latest0924/predict/fits/mistral-small-3.2-24b/w176.pt",
+      "sha256": "be4f6e3b0d294be13c9530b1362cf926ca3970773994cbc7c2d0178ad75a5a6b"
+    },
+    {
+      "address": 177,
+      "path": "artifacts/latest0924/predict/fits/mistral-small-3.2-24b/w177.pt",
+      "sha256": "849ee53cd4b7b7034fff48d2d3d8cae9baa1e7cf4f35060fc0fca5ba61946cc6"
+    },
+    {
+      "address": 178,
+      "path": "artifacts/latest0924/predict/fits/mistral-small-3.2-24b/w178.pt",
+      "sha256": "c8927b9933bf14a345861c22bc4265a3c61c019ff8d04f1a9ff20efb5884b99e"
+    },
+    {
+      "address": 179,
+      "path": "artifacts/latest0924/predict/fits/mistral-small-3.2-24b/w179.pt",
+      "sha256": "e8384ce35e5769837574872abfa9d1955ab623ee5f7e39bcfe9ecbd5fcd2a5c4"
+    },
+    {
+      "address": 180,
+      "path": "artifacts/latest0924/predict/fits/mistral-small-3.2-24b/w180.pt",
+      "sha256": "7315dabecf8b22de22efebdd5d8fd76faf8f7ae226cd22c19db4da9d043b9986"
+    },
+    {
+      "address": 181,
+      "path": "artifacts/latest0924/predict/fits/mistral-small-3.2-24b/w181.pt",
+      "sha256": "350d212ceddbd6d4dd07ce08121e5af516d6eaaae04c96c049c365135b62aa66"
+    },
+    {
+      "address": 182,
+      "path": "artifacts/latest0924/predict/fits/mistral-small-3.2-24b/w182.pt",
+      "sha256": "24b539c83ccaf3a52cfe177e8ea19c63e13d4a7871f3463ca9b7e1ab855a5535"
+    },
+    {
+      "address": 183,
+      "path": "artifacts/latest0924/predict/fits/mistral-small-3.2-24b/w183.pt",
+      "sha256": "91af805a674ea21dfcb5f27a2612d7ddf6461b389ebb91726fbb059a0e29408a"
+    },
+    {
+      "address": 184,
+      "path": "artifacts/latest0924/predict/fits/mistral-small-3.2-24b/w184.pt",
+      "sha256": "9b43150abb2b6270a04053a414a9751da71c78966491cbd0511a393cf354716f"
+    },
+    {
+      "address": 185,
+      "path": "artifacts/latest0924/predict/fits/mistral-small-3.2-24b/w185.pt",
+      "sha256": "201af1b72ed53b1509cd43ebc97b55c3502fdd1b399a8f6445b87c2e137f58bc"
+    },
+    {
+      "address": 186,
+      "path": "artifacts/latest0924/predict/fits/mistral-small-3.2-24b/w186.pt",
+      "sha256": "19c93c5e0f5c4d0d7e53c00a40314f4e36498a9eff4d281dd6585be1ee8e07b7"
+    },
+    {
+      "address": 187,
+      "path": "artifacts/latest0924/predict/fits/mistral-small-3.2-24b/w187.pt",
+      "sha256": "f49e7fb3a89d5f526f6ed642e9caff18a825e5bcfd7318608f184a81c6d0a793"
+    },
+    {
+      "address": 188,
+      "path": "artifacts/latest0924/predict/fits/mistral-small-3.2-24b/w188.pt",
+      "sha256": "0e8a92e9f280a0495dedb47618bb4d1b056a7efb240fa8bfb5483832201a2bb1"
+    },
+    {
+      "address": 189,
+      "path": "artifacts/latest0924/predict/fits/mistral-small-3.2-24b/w189.pt",
+      "sha256": "659853e9e688c6c182880cfc35fcf215873ad85dbc9eafd140bac331dc680593"
+    },
+    {
+      "address": 190,
+      "path": "artifacts/latest0924/predict/fits/mistral-small-3.2-24b/w190.pt",
+      "sha256": "3d75931a6dc442906de78fd0028807ceebb68506d2fa454d0ac6c99439797e8e"
+    },
+    {
+      "address": 191,
+      "path": "artifacts/latest0924/predict/fits/mistral-small-3.2-24b/w191.pt",
+      "sha256": "2b53ff395e85f157fe2da9acdd675db19ef253bdc32ff0ff91dfe6f26ba52bee"
+    },
+    {
+      "address": 192,
+      "path": "artifacts/latest0924/predict/fits/mistral-small-3.2-24b/w192.pt",
+      "sha256": "253c990da9a30e83c3fc67c8552b13e3575fff4bb5709f977072ef32758f2d79"
+    },
+    {
+      "address": 193,
+      "path": "artifacts/latest0924/predict/fits/mistral-small-3.2-24b/w193.pt",
+      "sha256": "bbaf8d96f0eff1b83d5dc3eb41d12755b65068067b5e673d23c382b50dd17afd"
+    },
+    {
+      "address": 194,
+      "path": "artifacts/latest0924/predict/fits/mistral-small-3.2-24b/w194.pt",
+      "sha256": "1f499c294f15dd0a29057a54310628943dac204b99a07c96ecc4b7657fabd321"
+    },
+    {
+      "address": 195,
+      "path": "artifacts/latest0924/predict/fits/mistral-small-3.2-24b/w195.pt",
+      "sha256": "d828d936e205708060a12ec5cd540c9afaf9d2bb38167b31fdaebec1c193a77c"
+    },
+    {
+      "address": 196,
+      "path": "artifacts/latest0924/predict/fits/mistral-small-3.2-24b/w196.pt",
+      "sha256": "5cdf11bb0938dd0a87f4984c0986fa3984a90c51981ce2710f0c36e74b497d48"
+    },
+    {
+      "address": 197,
+      "path": "artifacts/latest0924/predict/fits/mistral-small-3.2-24b/w197.pt",
+      "sha256": "1f0b37b60728b316069dcd8132aebd9a8bee1aca31e24e2d47b6274faf09a867"
+    },
+    {
+      "address": 198,
+      "path": "artifacts/latest0924/predict/fits/mistral-small-3.2-24b/w198.pt",
+      "sha256": "869594b7209cb8aaa30473e44750de3161ad18c900e9014a48d661f2b64d4cb1"
+    },
+    {
+      "address": 199,
+      "path": "artifacts/latest0924/predict/fits/mistral-small-3.2-24b/w199.pt",
+      "sha256": "a26f4f8612d184cb775e73459a8dae816f78c81138a4f5627ff6b299d418066a"
+    },
+    {
+      "address": 200,
+      "path": "artifacts/latest0924/predict/fits/mistral-small-3.2-24b/w200.pt",
+      "sha256": "d78ef6a404a37b450dfdd857805a2833ebfe4ce5c345c2b5ca13a6ea72c34027"
+    },
+    {
+      "address": 201,
+      "path": "artifacts/latest0924/predict/fits/mistral-small-3.2-24b/w201.pt",
+      "sha256": "f22f1b0e8b0eda1998cbf4f0d673ff758929557da0196979d050dc57daa6bfbb"
+    },
+    {
+      "address": 202,
+      "path": "artifacts/latest0924/predict/fits/mistral-small-3.2-24b/w202.pt",
+      "sha256": "283090a13369275f828c1126215f08130ce678613d9ee8e328e6fcf9d45cbc75"
+    },
+    {
+      "address": 203,
+      "path": "artifacts/latest0924/predict/fits/mistral-small-3.2-24b/w203.pt",
+      "sha256": "0c97eaff4e6a1bdb9002ca7a7587a97ca567fb0a1258e261758f873b344d5e45"
+    },
+    {
+      "address": 204,
+      "path": "artifacts/latest0924/predict/fits/mistral-small-3.2-24b/w204.pt",
+      "sha256": "b0bf85413454318cab9543ad34f02944856c944d49651e9ba8cdaf42ef8461b0"
+    },
+    {
+      "address": 205,
+      "path": "artifacts/latest0924/predict/fits/mistral-small-3.2-24b/w205.pt",
+      "sha256": "df5ee4138f4e6aab640d5a851efce8fc893827bccf8538e53ff9a6cb2d836de3"
+    },
+    {
+      "address": 206,
+      "path": "artifacts/latest0924/predict/fits/mistral-small-3.2-24b/w206.pt",
+      "sha256": "7ffb7277c1ae3e4c8f1be9f6bdb5eedf5732a91b6ffbb65ab276380f4c7b7bcf"
+    },
+    {
+      "address": 207,
+      "path": "artifacts/latest0924/predict/fits/mistral-small-3.2-24b/w207.pt",
+      "sha256": "238a3d5b8e4f4ad8650473ccc73ba3c21ee9a09106aaa86fa019efb6699eaecc"
+    },
+    {
+      "address": 208,
+      "path": "artifacts/latest0924/predict/fits/mistral-small-3.2-24b/w208.pt",
+      "sha256": "ef7b511f3c32f256fb2bf01e8b533f6acc342095dc7296f10c412ed00672ba83"
+    },
+    {
+      "address": 209,
+      "path": "artifacts/latest0924/predict/fits/mistral-small-3.2-24b/w209.pt",
+      "sha256": "3e57935604939a7b2c5de9d4aecaf2994210c3575e89ba3182d5c46a3c4e1690"
+    },
+    {
+      "address": 210,
+      "path": "artifacts/latest0924/predict/fits/mistral-small-3.2-24b/w210.pt",
+      "sha256": "c86f17f128328604561cfc3f22615f109443018fb0619e72c8e37481edcd788e"
+    },
+    {
+      "address": 211,
+      "path": "artifacts/latest0924/predict/fits/mistral-small-3.2-24b/w211.pt",
+      "sha256": "48596d97115e0dd96a25253e7a5a7c4d3f5fd29e05f642f72c114024dceb8dd0"
+    },
+    {
+      "address": 212,
+      "path": "artifacts/latest0924/predict/fits/mistral-small-3.2-24b/w212.pt",
+      "sha256": "9013e8affc3436c1e4e70047635254a0129805b3e5750aa8ebfe4a95c5933b38"
+    },
+    {
+      "address": 213,
+      "path": "artifacts/latest0924/predict/fits/mistral-small-3.2-24b/w213.pt",
+      "sha256": "17f409cc0e41342445116768fe807d63b6d641e19fc7c014d2a7fb08adb5c2f4"
+    },
+    {
+      "address": 214,
+      "path": "artifacts/latest0924/predict/fits/mistral-small-3.2-24b/w214.pt",
+      "sha256": "e3b82aa761d43f9db9abedd55cddbd0031b5e6d66c190082175b0fdabf9de707"
+    },
+    {
+      "address": 215,
+      "path": "artifacts/latest0924/predict/fits/mistral-small-3.2-24b/w215.pt",
+      "sha256": "adff9cb713541565dc6016293a4ba26752bdaf619b834420b45215cf811e199d"
+    },
+    {
+      "address": 216,
+      "path": "artifacts/latest0924/predict/fits/mistral-small-3.2-24b/w216.pt",
+      "sha256": "872e90220a71150f5ed6bd7bf8b29ba53d2be115511b2363b88629dafcce222b"
+    },
+    {
+      "address": 217,
+      "path": "artifacts/latest0924/predict/fits/mistral-small-3.2-24b/w217.pt",
+      "sha256": "bbe562e714f56dca4c6bc13d6d93fc4e512b9d7697c54e7e85a8d77d445cb0cb"
+    },
+    {
+      "address": 218,
+      "path": "artifacts/latest0924/predict/fits/mistral-small-3.2-24b/w218.pt",
+      "sha256": "782f13a105383e78c7ddd7260f930c16272a858305ab4a6b6892bebcf27d3d49"
+    },
+    {
+      "address": 219,
+      "path": "artifacts/latest0924/predict/fits/mistral-small-3.2-24b/w219.pt",
+      "sha256": "5583f01d26a38946cbb760a57c2403d8a7019184cc47d6461a8f69dc011694ba"
+    },
+    {
+      "address": 220,
+      "path": "artifacts/latest0924/predict/fits/mistral-small-3.2-24b/w220.pt",
+      "sha256": "a83211cad692dcc6b0e8b417b41b1ac7a14c919caacb8f35697ec6a2696f6310"
+    }
+  ],
+  "shard": 0,
+  "shards": 1,
+  "status": "COMPLETE_RECEIVER_LOCAL_FIT_ONLY",
+  "verified_against": null,
+  "verified_cells": 0,
+  "words": 221
+}

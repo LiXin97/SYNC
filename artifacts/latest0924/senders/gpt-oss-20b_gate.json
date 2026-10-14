@@ -1,0 +1,187 @@
+{
+ "utc": "2026-09-24T13:38:23Z",
+ "script_sha256": "d26f188d492dc755c6f4032a46ff6a0fbf582e48a17cc1a4dc66ab38667eea2c",
+ "meta": {
+  "packets": "artifacts/latest0924/sender_packets/gpt-oss-20b_dev96.json",
+  "packets_sha256": "acf9c58325c96032296ed7cad4c00077ff6c2fbae905a3f62057ec1f06ada00d",
+  "bank": "artifacts/mechanism0919/discovery_v1/exposed_development.json",
+  "bank_sha256": "97b7622418ba13eaae739a45ba675a8d838821c01f3f169eee84092a77056177",
+  "sender": "latest0924/gpt-oss-20b",
+  "sender_checkpoint": "/path/to/models/gpt-oss-20b",
+  "split": "dev96",
+  "prompt_sha256": "328c8b5df9d196724cdabd6cc7a291c0cfc7ca13ab524bd3cb70239de7183e0b",
+  "chat_template_kwargs": {
+   "reasoning_effort": "low",
+   "strftime_now_pinned_date": "2026-09-24"
+  },
+  "exclude_scenes_from": null,
+  "excluded_scene_ids": [],
+  "n_bank_scenes": 96,
+  "n_bank_worlds": 192
+ },
+ "lock": {
+  "path": "gates/latest0924/sender_gate.lock.json",
+  "sha256": "96990ed60bc4ebc2ea6039e934fa5975c7002f9e8cb30ef3e920e0835adc3c1e",
+  "content": {
+   "name": "latest0924_sender_gate",
+   "utc": "2026-09-24T133200Z",
+   "derived_from": "gates/latest0924/expA_protocol.lock.json :: sender_gate (thresholds copied verbatim, frozen before any new-sender output exists)",
+   "population": "all",
+   "require_integrity": true,
+   "bank_sha256": "97b7622418ba13eaae739a45ba675a8d838821c01f3f169eee84092a77056177",
+   "thresholds": {
+    "parse_fully_rate": {
+     "op": ">=",
+     "value": 0.99
+    },
+    "required_fact_recall": {
+     "op": ">=",
+     "value": 0.95
+    },
+    "complete_packet_rate": {
+     "op": ">=",
+     "value": 0.9
+    }
+   },
+   "execution_choices": {
+    "loader": "direct for all three senders (BF16, checkpoint model class, default attention)",
+    "gptoss_mode": "analysis_low (template 'Reasoning: low', final channel parsed); this is the minimal reasoning the template supports, as the expA sender_protocol requires; final_prefill is not used",
+    "decoding": "greedy, 256 new tokens, batch 1"
+   }
+  }
+ },
+ "integrity": {
+  "ok": true,
+  "header": {
+   "bank_sha256_matches": true,
+   "prompt_sha256_frozen": true,
+   "inventory_matches_reference": true,
+   "inventory_size": 221
+  },
+  "counts": {
+   "missing_packets": 0,
+   "extra_packets": 0,
+   "sha256_mismatch": 0,
+   "bytes_mismatch": 0,
+   "decode_error": 0,
+   "lane_ids_not_ascending_unique": 0,
+   "weight_not_255": 0,
+   "lane_slots_not_objects": 0,
+   "log_missing": 0,
+   "selection_vs_packet_mismatch": 0,
+   "reparse_mismatch": 0
+  },
+  "file_summary_matches_recount": true,
+  "examples": {}
+ },
+ "populations": {
+  "all": {
+   "n_packets": 192,
+   "n_objects": 384,
+   "parse_ok": 191,
+   "parse_partial": 0,
+   "parse_empty": 1,
+   "parse_malformed": 0,
+   "parse_unknown": 0,
+   "parse_fully_rate": 0.9947916666666666,
+   "parse_partial_rate": 0.0,
+   "parse_failed_rate": 0.005208333333333333,
+   "required_fact_hits": 733,
+   "required_fact_total": 768,
+   "required_fact_recall": 0.9544270833333334,
+   "complete_objects": 351,
+   "complete_object_rate": 0.9140625,
+   "complete_packets": 173,
+   "complete_packet_rate": 0.9010416666666666,
+   "wrong_object_lanes": 0,
+   "wrong_object_words": 0,
+   "wrong_object_lane_rate": 0.0,
+   "unsupported_attribute_lanes": 0,
+   "unsupported_attribute_lane_rate": 0.0,
+   "extra_non_attribute_lanes": 24,
+   "extra_non_attribute_lane_rate": 0.0625,
+   "empty_lanes": 2,
+   "empty_lane_rate": 0.005208333333333333,
+   "mean_words_per_object": 1.9713541666666667,
+   "words_per_object_hist": {
+    "0": 2,
+    "1": 18,
+    "2": 353,
+    "3": 11
+   },
+   "precision": 0.9682959048877147,
+   "exact_set_rate": 0.8854166666666666,
+   "mean_bytes": 19.885416666666668,
+   "recall_by_field": {
+    "color": {
+     "hits": 382,
+     "total": 384,
+     "recall": 0.9947916666666666
+    },
+    "material": {
+     "hits": 33,
+     "total": 64,
+     "recall": 0.515625
+    },
+    "taste": {
+     "hits": 318,
+     "total": 320,
+     "recall": 0.99375
+    }
+   },
+   "mean_generated_tokens": 99.80208333333333,
+   "max_generated_tokens": 124,
+   "mean_decode_seconds": 1.5398834173878033,
+   "hit_max_new_tokens": 0,
+   "final_channel_missing": 0,
+   "reasoning_marker_in_output": null,
+   "greedy_argmax_mismatches": 0,
+   "required_fact_recall_ci_lo": 0.9270833333333334,
+   "required_fact_recall_ci_hi": 0.9778645833333334,
+   "complete_object_rate_ci_lo": 0.8645833333333334,
+   "complete_object_rate_ci_hi": 0.9583333333333334,
+   "complete_packet_rate_ci_lo": 0.84375,
+   "complete_packet_rate_ci_hi": 0.9479166666666666,
+   "parse_fully_rate_ci_lo": 0.984375,
+   "parse_fully_rate_ci_hi": 1.0,
+   "wrong_object_lane_rate_ci_lo": 0.0,
+   "wrong_object_lane_rate_ci_hi": 0.0,
+   "n_scenes": 96
+  }
+ },
+ "verdict": {
+  "status": "PASS",
+  "population": "all",
+  "checks": [
+   {
+    "metric": "parse_fully_rate",
+    "op": ">=",
+    "threshold": 0.99,
+    "observed": 0.9947916666666666,
+    "pass_": true
+   },
+   {
+    "metric": "required_fact_recall",
+    "op": ">=",
+    "threshold": 0.95,
+    "observed": 0.9544270833333334,
+    "pass_": true
+   },
+   {
+    "metric": "complete_packet_rate",
+    "op": ">=",
+    "threshold": 0.9,
+    "observed": 0.9010416666666666,
+    "pass_": true
+   }
+  ],
+  "require_integrity": true,
+  "bank_sha256_checked": true
+ },
+ "bootstrap": {
+  "unit": "scene",
+  "draws": 2000,
+  "seed": 0,
+  "interval": "95% percentile"
+ }
+}

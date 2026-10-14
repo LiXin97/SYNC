@@ -1,0 +1,32 @@
+{
+ "receiver": "qwen3.6-35b-a3b",
+ "layers": [
+  8,
+  16,
+  20,
+  24
+ ],
+ "file": "artifacts/latest0924/fits/directions_qwen3.6-35b-a3b.pt",
+ "sha256": "7bdea73a25b1e643be8fd99c0e620108d2fbccfd33f52b1b629e6e3ea8d60001",
+ "direction_norm_median_per_layer": {
+  "8": 2.2193377017974854,
+  "16": 3.0042665004730225,
+  "20": 3.2992160320281982,
+  "24": 4.178616046905518
+ },
+ "local_scale": {
+  "8": 1.082574486732483,
+  "16": 1.1605395078659058,
+  "20": 1.1829367876052856,
+  "24": 1.1807527542114258
+ },
+ "n_ratio_samples": {
+  "8": 2652,
+  "16": 2652,
+  "20": 2652,
+  "24": 2652
+ },
+ "excluded_rows": [],
+ "epsilon": 1e-08,
+ "rule": "c[l] = median over (word, template) of ||delta[l,w,t]|| / ||d[l,w]||; >= 1 by construction"
+}

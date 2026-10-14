@@ -1,0 +1,42 @@
+{
+  "adapter": {
+    "installed": true,
+    "path": "src/syncomm/latest/adapter.py",
+    "policy": "required",
+    "priors_patched": 1,
+    "sha256": "0f4cc649a611c3f985414e4b4f9b69a680829dbb35c25ec83f6de8763e777b19"
+  },
+  "arms": [
+    "none",
+    "textsorted_L000",
+    "texthedged_L000",
+    "emb_L000",
+    "textsorted_L064",
+    "texthedged_L064",
+    "emb_L064",
+    "textsorted_L128",
+    "texthedged_L128",
+    "emb_L128",
+    "textsorted_L191",
+    "texthedged_L191",
+    "emb_L191",
+    "textsorted_L255",
+    "texthedged_L255",
+    "emb_L255"
+  ],
+  "elapsed_seconds": 1776.189279794693,
+  "l255_world_mismatches": 0,
+  "manifest_sha256": "f169bf5ba1b297392d9a6617986e466b2d87b11228867a3c2cfc033f6f2b4606",
+  "model_dtype": "torch.float32",
+  "phase": "development",
+  "python": "python",
+  "raw_sha256": "bf19074602b6b8549eda2c005d4d9d099cdd40601cea9af7ed6542979f9578bf",
+  "receiver": "qwen3.5-27b",
+  "rows": 2304,
+  "scenes": 36,
+  "shard": 1,
+  "shards": 4,
+  "status": "PASS",
+  "study": "LATEST0924_GRADED_B_TEXTFMT_A1",
+  "transformers": "5.12.1"
+}

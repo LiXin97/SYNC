@@ -1,0 +1,675 @@
+"""Experiment B (latest0924) runner: can graded 8-bit weights be conveyed internally better than as text?
+
+Derived from src/syncomm/recovery/evaluate_confirm.py and imports its primitives (never copies them): the same neutral
+target prefix (public message, four `unknown [255/255]` slots per object), the same target positions (each active
+slot's word-final token), the same single write at the receiver's depth-0.2 layer with gamma = 1 and raw fitted word
+directions, the same cache branching per question, the same greedy decoding / strict parser / scores at 64 and 256
+tokens, the same engineering checks and the same resumable raw-JSONL + receipt convention. What is new is only the
+message: per world a GRADED packet read from artifacts/latest0924/graded/packets_L{level}.json (built by
+scripts/latest0924/build_graded_bank.py), in which each object carries its true X value at 255, the other object's X
+value at weight L and its Y value at 255.
+
+Arms (manifest-driven, per scene x world, in manifest order):
+  none                      no message (shared neutral prefix); four-answer success is 0 by construction
+  identity_write            engineering only: the captured neutral states written back at all eight slots -> must be
+                            exactly inert (logits and tokens equal to `none`)
+  internal_L{LLL}           h' = h_neutral + gamma * (q_w / q_max) * d_w at every active slot, selected layer only;
+                            the visible prompt is the neutral layout (constant "[255/255]", `unknown`), so no weight
+                            text leaks
+  text_L{LLL}               no write; the same words with their ACTUAL weights "[w/255]" in the same slots
+                            (render_weighted, byte-identical to memory_layout.render when every weight is 255)
+  sham{k}_L{LLL}            internal_L{LLL} with word -> direction reassigned by the manifest's frozen permutation k,
+                            per-layer edit norm matched to internal_L{LLL} of the same world (must follow it)
+
+Subcommands (see DESIGN.md for the protocol; nothing here is tuned):
+  make-manifest   write a receiver manifest from the declared constants, cross-checked against the Exp-A lock / R3
+  run             --phase engineering | development, --shard/--shards; resumable; writes raw/*.jsonl + .done.json
+  dry-run         tokenizer only, no model, no GPU: renders every prompt, maps every write position, checks the
+                  invariants and (for qwen3-32b) compares prompts/positions/packets with the R3 raw rows
+"""
+from __future__ import annotations
+try:
+    from syncomm.models import resolve_model
+except ImportError:  # run outside the package: references must already be local paths
+    def resolve_model(ref):
+        return str(ref)
+
+import argparse
+import contextlib
+import hashlib
+import importlib.util
+import json
+import sys
+import time
+from collections import Counter, defaultdict
+from pathlib import Path
+
+ROOT = next(p for p in Path(__file__).resolve().parents if (p / 'README.md').exists())
+if str(ROOT / 'src') not in sys.path:
+    sys.path.insert(0, str(ROOT / 'src'))
+
+import torch  # noqa: E402
+
+from syncomm.recovery.evaluate_depth import (  # noqa: E402  the frozen primitives, imported not copied
+    WIDTH, build_receiver, write_hooks, capture_hooks, forward, prompt_inputs, entry_positions, fitted_states,
+    message_block, parent, prior, base, task, render, packet_entries, token_spans)
+from syncomm.recovery.evaluate_confirm import permuted_states  # noqa: E402
+
+BUILDER = ROOT / 'scripts/latest0924/build_graded_bank.py'
+_bspec = importlib.util.spec_from_file_location('graded_bank_builder', BUILDER)
+graded_bank = importlib.util.module_from_spec(_bspec)
+_bspec.loader.exec_module(graded_bank)
+render_weighted = graded_bank.render_weighted
+
+STUDY = graded_bank.STUDY
+OUT = ROOT / 'artifacts/latest0924/graded'
+MODELS = Path('/path/to/models')
+ADAPTER = ROOT / 'src/syncomm/latest/adapter.py'
+LEVELS = (0, 64, 128, 191, 255)
+ARMS = ['none',
+        'internal_L000', 'text_L000',
+        'internal_L064', 'text_L064',
+        'internal_L128', 'sham0_L128', 'text_L128',
+        'internal_L191', 'text_L191',
+        'internal_L255', 'text_L255']
+ENGINEERING_ARMS = ['identity_write']            # inserted right after `none` in the engineering phase
+R3_MANIFEST = ROOT / 'artifacts/receiver_recovery/r3/qwen3-32b/manifest.json'
+EXPA_LOCK = ROOT / 'gates/latest0924/expA_protocol.lock.json'
+RECEIVERS = {
+    # continuity receiver: fitted directions and selected layer exactly as in the paper's R3 run
+    'qwen3-32b': dict(model_dir=MODELS / 'Qwen3-32B', n_blocks=64, selected_layers=[13], adapter='optional',
+                      directions=ROOT / 'artifacts/receiver_recovery/fits/directions_qwen3-32b.pt', provenance=R3_MANIFEST),
+    # new receivers: directions from the frozen fit_layers.py recipe (artifacts/latest0924/fit_manifest.json)
+    'qwen3.5-27b': dict(model_dir=MODELS / 'Qwen3.5-27B', n_blocks=64, selected_layers=[13], adapter='required',
+                        directions=ROOT / 'artifacts/latest0924/fits/directions_qwen3.5-27b.pt', provenance=EXPA_LOCK),
+    'qwen3.5-122b-a10b': dict(model_dir=MODELS / 'Qwen3.5-122B-A10B', n_blocks=48, selected_layers=[10], adapter='required',
+                              directions=ROOT / 'artifacts/latest0924/fits/directions_qwen3.5-122b-a10b.pt', provenance=EXPA_LOCK),
+    'gpt-oss-20b': dict(model_dir=MODELS / 'gpt-oss-20b', n_blocks=24, selected_layers=[5], adapter='required',
+                        directions=ROOT / 'artifacts/latest0924/fits/directions_gpt-oss-20b.pt', provenance=EXPA_LOCK),
+}
+PENDING = 'PENDING'
+
+
+def sha_file(path) -> str:
+    h = hashlib.sha256()
+    with open(path, 'rb') as f:
+        for block in iter(lambda: f.read(1 << 20), b''):
+            h.update(block)
+    return h.hexdigest()
+
+
+def parse_arm(arm):
+    """-> (route, level, permutation key). route in none | identity_write | internal | text | sham."""
+    if arm in ('none', 'identity_write'):
+        return arm, None, None
+    head, level = arm.split('_L')
+    level = int(level)
+    assert level in LEVELS and arm == f'{head}_L{level:03d}', arm
+    if head in ('internal', 'text'):
+        return head, level, None
+    assert head.startswith('sham') and head[4:].isdigit(), arm
+    return 'sham', level, head
+
+
+def validate_arms(arms, permutations):
+    assert arms and arms[0] == 'none' and len(set(arms)) == len(arms)
+    seen_internal = set()
+    for arm in arms:
+        route, level, key = parse_arm(arm)
+        if route == 'internal':
+            seen_internal.add(level)
+        if route == 'sham':
+            assert level in seen_internal, f'{arm} must follow internal_L{level:03d} (its norm reference)'
+            assert key in permutations, f'no permutation {key} in the manifest'
+    return arms
+
+
+def phase_arms(m, phase):
+    arms = list(m['arms'])
+    if phase == 'engineering':
+        arms = arms[:1] + list(m['engineering_arms']) + arms[1:]
+    return validate_arms(arms, m['permutations'])
+
+
+# ------------------------------------------------------------------------------------------------ adapter
+
+def install_adapter(policy):
+    """Install syncomm.latest.adapter (monkeypatches the frozen helpers for new architectures) when it exists.
+
+    The file's presence decides, not an ImportError: an adapter that exists but fails to import is a hard error.
+    policy 'required' (new receivers): a missing adapter aborts. policy 'optional' (Qwen3-32B): run with or without it;
+    whether it was installed is recorded in every receipt, and the qwen3-32b L0 rows are compared with R3 afterwards."""
+    info = dict(policy=policy, installed=False, path=str(ADAPTER), sha256=None)
+    if not ADAPTER.exists():
+        if policy == 'required':
+            raise SystemExit(f'adapter required for this receiver but {ADAPTER} does not exist')
+        return info
+    from syncomm.latest.adapter import install
+    result = install(sys.modules[__name__])       # this module holds `prior`/`parent`; evaluate_depth is found too
+    priors = (result or {}).get('priors', []) if isinstance(result, dict) else []
+    assert any(p is prior for p in priors), 'the adapter did not reach the frozen prior this runner uses'
+    assert prior.cache_fingerprint.__module__ == 'syncomm.latest.adapter', 'cache_fingerprint was not patched'
+    info.update(installed=True, sha256=sha_file(ADAPTER), priors_patched=len(priors))
+    return info
+
+
+def jsonable(x):
+    return json.loads(json.dumps(x, default=str))
+
+
+# ------------------------------------------------------------------------------------------------ manifest
+
+def make_manifest(key, tiers, out, allow_pending):
+    spec = RECEIVERS[key]
+    # cross-check the declared constants against their frozen sources
+    if spec['provenance'] == EXPA_LOCK:
+        lock = json.loads(EXPA_LOCK.read_text())['receivers'][key]
+        assert Path(lock['model_dir']) == spec['model_dir'] and lock['n_layers'] == spec['n_blocks']
+        assert [lock['selected_layer']] == spec['selected_layers']
+    else:
+        r3 = json.loads(R3_MANIFEST.read_text())
+        assert Path(r3['models'][key]) == spec['model_dir'] and r3['n_blocks'] == spec['n_blocks']
+        assert r3['selected_layers'] == spec['selected_layers'] and Path(r3['directions']) == spec['directions']
+    r3 = json.loads(R3_MANIFEST.read_text())
+    bank_path = OUT / 'bank.json'
+    bank = json.loads(bank_path.read_text())
+    assert bank['study'] == STUDY and set(tiers) <= {int(t) for t in bank['tiers']}
+    packets = {str(L): OUT / f'packets_L{L}.json' for L in LEVELS}
+    pins = {}
+    for path in [bank_path, *packets.values(), graded_bank.WORDS_FILE, Path(__file__).resolve(), BUILDER,
+                 ROOT / 'src/syncomm/recovery/evaluate_confirm.py', ROOT / 'src/syncomm/recovery/evaluate_depth.py',
+                 graded_bank.LAYOUT_FILE, graded_bank.PACKET_SRC]:
+        pins[str(path)] = sha_file(path)
+    for path in (spec['directions'], ADAPTER):
+        if path == ADAPTER and not path.exists() and spec['adapter'] == 'optional':
+            continue
+        if path.exists():
+            pins[str(path)] = sha_file(path)
+        else:
+            assert allow_pending, f'{path} does not exist yet (use --allow-pending for a DRAFT manifest)'
+            pins[str(path)] = PENDING
+    m = dict(study=STUDY, status=('DRAFT_PENDING_INPUTS' if PENDING in pins.values() else 'READY_FOR_LOCK'),
+             purpose=('Experiment B: graded 8-bit weights (the other object\'s X value at weight L) delivered by a magnitude-coded '
+                      'internal write at the depth-0.2 layer versus as weighted public text; complete facts, no sender.'),
+             design=str(OUT / 'DESIGN.md'), lock='gates/latest0924/expB_graded.lock.json (written by the controller before any output)',
+             receiver=key, root=str(out.resolve().parent), models={key: str(spec['model_dir'])}, base_models=[],
+             n_blocks=spec['n_blocks'], selected_depth=0.2, selected_layers=spec['selected_layers'], gamma=1,
+             scale_rule='raw fitted word-minus-unknown directions, no rescaling', directions=str(spec['directions']),
+             directions_provenance=str(spec['provenance']), words_file=str(graded_bank.WORDS_FILE), bank=str(bank_path),
+             tiers=sorted(tiers), engineering_scene_ids=bank['engineering_scene_ids'],
+             packets={L: str(p) for L, p in packets.items()}, levels=list(LEVELS), arms=list(ARMS),
+             engineering_arms=list(ENGINEERING_ARMS),
+             permutations={'sham0': r3['permutations'][0]},
+             permutation_provenance=dict(file=str(R3_MANIFEST), sha256=sha_file(R3_MANIFEST), index=0,
+                                         seed=r3['permutation_seeds'][0], note='the R3 reassignment sham0, a derangement of the 221 words'),
+             adapter=spec['adapter'], row_split='latest0924_graded',
+             numerics=dict(dtype='FP32 eager, TF32 off, batch 1 (any adapter deviation is recorded in the receipts)',
+                           budgets=[64, 256], parser='strict first-line alias'),
+             engineering_thresholds=dict(max_logit_difference=0.05, alias_gap_difference=0.1, parsed_equal=True,
+                                         identity_write='exact (logits sha and tokens)', l255_worlds='exact (logits sha and tokens)',
+                                         internal_slot_edit_relative_tolerance_fp32=0.01),
+             pins=pins)
+    text = json.dumps(m, indent=1, sort_keys=True) + '\n'
+    out.parent.mkdir(parents=True, exist_ok=True)
+    if out.exists() and out.read_text() != text:
+        raise SystemExit(f'REFUSE: {out} exists with different content')
+    out.write_text(text)
+    print('MANIFEST', out, m['status'], 'pending:', [p for p, v in pins.items() if v == PENDING])
+
+
+def load_manifest(path, allow_pending=False, mismatches=None):
+    """Strict by default (run): every pin must match. A dry run passes `mismatches=[]` to collect instead of abort."""
+    m = json.loads(Path(path).read_text())
+    assert m['study'] == STUDY, m['study']
+    pending = [p for p, v in m['pins'].items() if v == PENDING]
+    if pending and not allow_pending:
+        raise SystemExit(f'manifest has PENDING pins {pending}; regenerate it once the inputs exist')
+    for p, want in m['pins'].items():
+        if want != PENDING:
+            got = sha_file(p)
+            if mismatches is not None and got != want:
+                mismatches.append(dict(path=p, pinned=want, current=got))
+                continue
+            assert got == want, f'pinned input changed: {p}'
+    return m, pending
+
+
+def load_inputs(m):
+    words = json.loads(Path(m['words_file']).read_text())
+    bank = json.loads(Path(m['bank']).read_text())
+    assert bank['study'] == STUDY and bank['engineering_scene_ids'] == m['engineering_scene_ids']
+    packets = {}
+    for L, path in m['packets'].items():
+        body = json.loads(Path(path).read_text())
+        assert body['study'] == STUDY and body['level'] == int(L) and body['qbits'] == 8
+        assert body['inventory_digest'] == base.inventory_digest(words)
+        packets[int(L)] = body['packets']
+    assert sorted(packets) == sorted(m['levels'])
+    return words, bank, packets
+
+
+def select_scenes(m, bank, phase, shard, shards):
+    if phase == 'engineering':
+        scenes = list(bank['engineering_scenes'])
+        assert [s['scene'] for s in scenes] == m['engineering_scene_ids']
+        return scenes
+    tiers = set(m['tiers'])
+    scenes = [s for s in bank['scenes'] if bank['tier_of'][s['scene']] in tiers]
+    assert not {s['scene'] for s in scenes} & set(m['engineering_scene_ids'])
+    return scenes[shard::shards]
+
+
+# ------------------------------------------------------------------------------------------------ one scene
+
+def packet_view(packets, level, scene, wi, words):
+    rec = packets[level][f'{scene["scene"]}|{wi}']
+    packet = base.deserialize(bytes.fromhex(rec['hex']))
+    assert base.sha(base.serialize(packet)) == rec['sha256']
+    entries = packet_entries(packet, words)
+    words_obj = [[e['word'] for e in sorted(entries, key=lambda x: x['index']) if e['object'] == o] for o in (0, 1)]
+    weights_obj = [[e['weight'] for e in sorted(entries, key=lambda x: x['index']) if e['object'] == o] for o in (0, 1)]
+    assert words_obj == rec['words_by_object'] and weights_obj == rec['weights_by_object']
+    assert all(e['weight'] > 0 for e in entries)
+    return rec, packet, entries, words_obj, weights_obj
+
+
+def weight_gold(scene, rec, qi):
+    """The object the WEIGHTS single out for question qi (None when the weights tie, i.e. L = 255 on the X question)."""
+    v = scene['queried_values'][qi]
+    ws = [dict(zip(rec['words_by_object'][o], rec['weights_by_object'][o])).get(v, 0) for o in (0, 1)]
+    if ws[0] == ws[1]:
+        return None
+    return scene['aliases'][0 if ws[0] > ws[1] else 1]
+
+
+def slot_edit_report(states, neutral, layers, active, mapping, dirs, gamma, permutation=None):
+    out = []
+    for li, layer in enumerate(layers):
+        for e in active:
+            pos = mapping[e['object'], e['index']]['last_position']
+            delta = states[layer][0, pos].float() - neutral[layer][0, pos].float()
+            address = e['address'] if permutation is None else int(permutation[e['address']])
+            dnorm = float(dirs[li, address].float().norm())
+            out.append(dict(layer=layer, object=e['object'], index=e['index'], word=e['word'], weight=e['weight'],
+                            relative_weight=e['relative_weight'], position=pos, direction_address=address,
+                            direction_norm=dnorm, expected_edit_norm=gamma * e['relative_weight'] * dnorm,
+                            edit_norm=float(delta.norm())))
+    return out
+
+
+@torch.inference_mode()
+def scene_rows(receiver, scene, m, phase, packets, dirs, arms, fp32):
+    ni = prompt_inputs(receiver, scene, None)
+    layers = m['selected_layers']
+    neutral_states = {}
+    with capture_hooks(receiver.model, layers, neutral_states):
+        neutral_out = forward(receiver, ni['prefix'])
+    mapping = {(s['object'], s['index']): s for s in ni['slots']}
+    all_slots = sorted(s['last_position'] for s in ni['slots'])
+    records, zero_ref, l255_ref = [], {}, {}
+    for wi, world in enumerate(scene['worlds']):
+        internal_norms = {}
+        for arm in arms:
+            route, level, pkey = parse_arm(arm)
+            report, states, nt, slot_edits = {}, None, None, None
+            ids, suffixes, extra = ni['prefix'], ni['suffixes'], None
+            rec = packet = None
+            active, positions = [], []
+            if level is not None:
+                rec, packet, entries, words_obj, weights_obj = packet_view(packets, level, scene, wi, receiver.words)
+                active, positions, _ = entry_positions(entries, ni['slots'])
+            write_positions = positions
+            if route == 'none':
+                out = neutral_out
+            elif route == 'text':
+                extra = render_weighted(scene['aliases'], words_obj, weights_obj, width=WIDTH)[0]
+                assert extra == rec['text']
+                _, seqs, _, n = receiver.tokenized(scene, extra)
+                ids, suffixes = seqs[0][:n], [s[n:] for s in seqs]
+                out = forward(receiver, ids)
+            else:
+                neutral = {l: neutral_states[l] for l in layers}
+                if route == 'identity_write':
+                    states, write_positions = neutral, all_slots
+                elif route == 'internal':
+                    states = fitted_states(neutral, layers, dirs, [1.0] * len(layers), active, mapping, m['gamma'])
+                    slot_edits = slot_edit_report(states, neutral, layers, active, mapping, dirs, m['gamma'])
+                    if phase == 'engineering' and fp32:
+                        for s in slot_edits:
+                            assert abs(s['edit_norm'] - s['expected_edit_norm']) <= 1e-2 * s['expected_edit_norm'] + 1e-3, s
+                elif route == 'sham':
+                    nt = internal_norms.get(level)
+                    assert nt, f'internal_L{level:03d} must precede {arm}'
+                    perm = m['permutations'][pkey]
+                    states = permuted_states(neutral, layers, dirs, active, mapping, m['gamma'], perm)
+                    slot_edits = slot_edit_report(states, neutral, layers, active, mapping, dirs, m['gamma'], perm)
+                else:
+                    raise AssertionError(arm)
+                with write_hooks(receiver.model, layers, states, write_positions, report, nt):
+                    out = forward(receiver, ids)
+            if route == 'internal':
+                internal_norms[level] = {k: v['norm'] for k, v in report.items()}
+            cache = out.past_key_values
+            fp = prior.cache_fingerprint(cache)
+            for qi, suffix in enumerate(suffixes):
+                branch = prior.clone_cache(cache)
+                assert prior.cache_fingerprint(branch) == fp
+                end = receiver.model(torch.tensor([suffix], device='cuda:0'), past_key_values=branch, use_cache=True,
+                                     attention_mask=torch.ones((1, len(ids) + len(suffix)), device='cuda:0', dtype=torch.long))
+                logits = end.logits[0, -1].float()
+                value = receiver.decode(logits, end.past_key_values, scene, 256)
+                gold = world['answers'][qi]
+                wgold = weight_gold(scene, rec, qi) if rec is not None else None
+                if rec is not None:
+                    assert wgold in (gold, None) and (wgold is not None or (qi == 0 and level == 255))
+                checks = None
+                if phase == 'engineering':
+                    ctx = (write_hooks(receiver.model, layers, states, write_positions, {}, nt) if states is not None
+                           else contextlib.nullcontext())
+                    with ctx:
+                        full = forward(receiver, ids + suffix)
+                    direct = receiver.decode(full.logits[0, -1].float(), full.past_key_values, scene, 256)
+                    checks = dict(max_logit_difference=float((full.logits[0, -1].float() - logits).abs().max()),
+                                  alias_gap_difference=abs(direct['gap'] - value['gap']),
+                                  parsed_equal=all(task.score_answer(direct[f'text{b}'], scene['aliases'], gold) ==
+                                                   task.score_answer(value[f'text{b}'], scene['aliases'], gold) for b in (64, 256)))
+                    checks['pass'] = checks['max_logit_difference'] <= .05 and checks['alias_gap_difference'] <= .1 and checks['parsed_equal']
+                l255_identical = None
+                if level == 255:
+                    z = (value['logits_sha256'], value['tokens'])
+                    if wi == 0:
+                        l255_ref[arm, qi] = z
+                    else:
+                        l255_identical = l255_ref[arm, qi] == z
+                        if phase == 'engineering':
+                            assert l255_identical, f'{arm}: identical packets gave different outputs across worlds'
+                row = dict(scene=scene['scene'], family=scene['family'], domain=scene['domain'], template=scene['template'],
+                           world=wi, question=qi, aliases=scene['aliases'], gold=gold, gold_supplied=gold, weight_gold=wgold,
+                           split=m['row_split'], receiver=m['receiver'], source='graded', arm=arm, route=route, level=level,
+                           gamma=(m['gamma'] if route in ('internal', 'sham') else 0), layers=layers,
+                           depth_label=('selected' if route in ('internal', 'sham', 'identity_write') else 'shared'),
+                           width=WIDTH, layout='original', question_style='original',
+                           x_field=(rec['x_field'] if rec else scene['changed_field']), entries=active,
+                           words_by_object=(rec['words_by_object'] if rec else None),
+                           weights_by_object=(rec['weights_by_object'] if rec else None),
+                           patch_source_world=wi,
+                           source_packet_sha256=(rec['sha256'] if rec else None),
+                           condition_packet_sha256=(rec['sha256'] if rec else None),
+                           condition_packet_hex=(rec['hex'] if rec else None),
+                           wire_bytes=(len(extra.encode()) if extra is not None else
+                                       0 if route in ('none', 'identity_write') else rec['bytes']),
+                           extra_text=extra, prefix_ids=ids, suffix_ids=suffix, slots=ni['slots'],
+                           patch_positions=write_positions if states is not None else [], patch_report=report,
+                           slot_edits=slot_edits, alignment=None, prefix_cache_sha256=fp, branch_initial_cache_sha256=fp,
+                           l255_world_identical=l255_identical, engineering_checks=checks, **value)
+                row.update({f'score{b}': task.score_answer(value[f'text{b}'], scene['aliases'], gold) for b in (64, 256)})
+                row.update({f'score{b}_supplied': row[f'score{b}'] for b in (64, 256)})
+                if route == 'none':
+                    z = (fp, value['logits_sha256'], value['tokens'])
+                    assert zero_ref.setdefault(qi, z) == z, 'the no-message prefix depends on the world'
+                if route == 'identity_write':
+                    assert (fp, value['logits_sha256'], value['tokens']) == zero_ref[qi], 'identity write is not inert'
+                    assert report and all(v['norm'] <= 1e-6 for v in report.values())
+                if route == 'sham':
+                    ref = internal_norms[level]
+                    assert all(abs(report[k]['norm'] - ref[k]) <= max(1e-4, 1e-4 * ref[k]) for k in report), 'reassignment norm not matched'
+                records.append(row)
+            assert prior.cache_fingerprint(cache) == fp
+    return records
+
+
+# ------------------------------------------------------------------------------------------------ run
+
+def run(a):
+    m, _ = load_manifest(a.manifest)
+    root = Path(m['root'])
+    torch.set_num_threads(4); torch.backends.cuda.matmul.allow_tf32 = False; torch.backends.cudnn.allow_tf32 = False
+    adapter = install_adapter(m['adapter'])
+    words, bank, packets = load_inputs(m)
+    receiver = build_receiver(m, m['receiver'], words)
+    assert len(base.decoder_layers(receiver.model)) == m['n_blocks']
+    dtype = str(next(receiver.model.parameters()).dtype)
+    attn = getattr(receiver.model.config, '_attn_implementation', None)
+    print('RECEIVER', m['receiver'], dtype, attn, 'adapter', json.dumps(adapter), 'phase', a.phase,
+          'transformers', __import__('transformers').__version__, sys.executable, flush=True)
+    blob = torch.load(Path(m['directions']), map_location='cpu', weights_only=False)
+    assert blob['words'] == words and all(l in blob['layers'] for l in m['selected_layers'])
+    order = {l: i for i, l in enumerate(blob['layers'])}
+    dirs = blob['directions'].float()[[order[l] for l in m['selected_layers']]].to('cuda:0')
+    arms = phase_arms(m, a.phase)
+    scenes = select_scenes(m, bank, a.phase, a.shard, a.shards)
+    raw = root / 'raw' / f'{a.phase}_{m["receiver"]}_s{a.shard}.jsonl'
+    raw.parent.mkdir(parents=True, exist_ok=True)
+    seen = {r['key']: r for r in map(json.loads, raw.read_text().splitlines())} if raw.exists() else {}
+    assert all(not r['engineering_checks'] or r['engineering_checks']['pass'] for r in seen.values())
+    keyf = lambda r: '|'.join(str(r[f]) for f in ('scene', 'world', 'question', 'arm'))
+    started = time.time(); computed = 0
+    for i, scene in enumerate(scenes):
+        expected = {f'{scene["scene"]}|{w}|{q}|{arm}' for w in (0, 1) for q in (0, 1) for arm in arms}
+        if expected <= seen.keys():
+            continue
+        rows = scene_rows(receiver, scene, m, a.phase, packets, dirs, arms, fp32=(dtype == 'torch.float32'))
+        for row in rows:
+            row['key'] = keyf(row); row['phase'] = a.phase
+            if row['key'] in seen:
+                assert all(row[f] == seen[row['key']][f] for f in ('logits_sha256', 'tokens')), 'resume drift'
+            else:
+                with raw.open('a') as h:
+                    h.write(json.dumps(row) + '\n')
+                seen[row['key']] = row
+        computed += len(rows)
+        assert all(not r['engineering_checks'] or r['engineering_checks']['pass'] for r in rows), 'engineering failure'
+        el = time.time() - started
+        print('SCENE', i + 1, len(scenes), 'rows', len(seen), f'{el / max(computed, 1):.3f} s/row', flush=True)
+    want = len(scenes) * 4 * len(arms)
+    assert len(seen) == want, (len(seen), want)
+    elapsed = time.time() - started
+    prior.atomic_json(raw.with_suffix('.done.json'),
+                      dict(status='PASS', study=STUDY, phase=a.phase, receiver=m['receiver'], shard=a.shard, shards=a.shards,
+                           rows=len(seen), scenes=len(scenes), tiers=m['tiers'], arms=arms, rows_computed_this_process=computed,
+                           manifest_sha256=sha_file(a.manifest), raw_sha256=sha_file(raw), elapsed_seconds=elapsed,
+                           seconds_per_computed_row=(elapsed / computed if computed else None), adapter=adapter,
+                           model_dtype=dtype, attn_implementation=attn, cuda_devices=torch.cuda.device_count(),
+                           adapter_model_info=jsonable(getattr(receiver.model, '_syncomm_latest', None)),
+                           transformers=__import__('transformers').__version__, python=sys.executable,
+                           l255_world_mismatches=sum(1 for r in seen.values() if r.get('l255_world_identical') is False)))
+    print('COMPLETE', m['receiver'], a.phase, a.shard, flush=True)
+
+
+# ------------------------------------------------------------------------------------------------ dry run (CPU)
+
+def tokenizer_receiver(m, key, words, adapter_installed):
+    """prior.Receiver with the tokenizer only (the loader's tokenizer settings, no weights). For an adapter model the
+    adapter's own tokenizer loader is used, so e.g. gpt-oss gets the same harmony rendering as in the real run."""
+    r = prior.Receiver.__new__(prior.Receiver)
+    r.model = None
+    adapter_key = None
+    if adapter_installed:
+        from syncomm.latest import adapter as ad
+        adapter_key = ad.resolve_key(m['models'][key])
+    if adapter_key is not None:
+        r.tok = ad.load_tokenizer(adapter_key)
+    else:
+        from transformers import AutoTokenizer
+        r.tok = AutoTokenizer.from_pretrained(resolve_model(m['models'][key]))
+    if r.tok.pad_token_id is None:
+        r.tok.pad_token = r.tok.eos_token
+    r.tok.padding_side = 'left'
+    r.chat = key not in m['base_models']
+    r.task = parent.Scaffold
+    r.words = list(words)
+    r.cache = {}
+    r.key = key
+    return r
+
+
+def load_r3_reference(root, scene_ids):
+    ref = {}
+    want = {('actual', 'none'), ('literal', 'selected'), ('literal', 'packet_text')}
+    for raw in sorted(Path(root).glob('raw/*.jsonl')):
+        with open(raw) as f:
+            for line in f:
+                r = json.loads(line)
+                if r['scene'] in scene_ids and (r['source'], r['arm']) in want:
+                    ref[r['scene'], r['world'], r['question'], r['source'], r['arm']] = r
+    return ref
+
+
+def dry_run(a):
+    pin_mismatches = []
+    m, pending = load_manifest(a.manifest, allow_pending=True, mismatches=pin_mismatches)
+    adapter = dict(policy=m['adapter'], installed=False, error=None)
+    try:
+        adapter = install_adapter(m['adapter']) if not a.no_adapter else dict(policy=m['adapter'], installed=False, skipped=True)
+    except SystemExit as e:           # a dry run reports a missing required adapter instead of stopping
+        adapter['error'] = str(e)
+    words, bank, packets = load_inputs(m)
+    receiver = tokenizer_receiver(m, m['receiver'], words, adapter.get('installed', False))
+    stats = Counter(); problems = []
+    summary = dict(prefix_tokens=[], text_prefix_tokens=defaultdict(list), wire_bytes=defaultdict(list), active_positions=defaultdict(list))
+    ref = None
+    plan = {}
+    for phase in ('engineering', 'development'):
+        arms = phase_arms(m, phase)
+        scenes = select_scenes(m, bank, phase, 0, 1)
+        plan[phase] = dict(scenes=len(scenes), arms=arms, rows=len(scenes) * 4 * len(arms))
+        if a.compare_r3 and ref is None:
+            ids = {s['scene'] for ph in ('engineering', 'development') for s in select_scenes(m, bank, ph, 0, 1)}
+            ref = load_r3_reference(a.compare_r3, ids)
+            stats['r3_reference_rows_loaded'] = len(ref)
+        for scene in scenes:
+            ni = prompt_inputs(receiver, scene, None)
+            summary['prefix_tokens'].append(len(ni['prefix']))
+            if 'sample' not in summary:
+                texts, _, _, _ = receiver.tokenized(scene, ni['message'])
+                summary['sample'] = dict(scene=scene['scene'], neutral_prompt_question0=texts[0],
+                                         prefix_token_count=len(ni['prefix']),
+                                         slot_tokens=[receiver.tok.decode([ni['prefix'][p] for p in s['positions']]) for s in ni['slots']])
+            mapping = {(s['object'], s['index']): s for s in ni['slots']}
+            assert all(s['word'] == 'unknown' for s in ni['slots'])
+            texts_by_level = {}
+            for wi, world in enumerate(scene['worlds']):
+                for arm in arms:
+                    route, level, pkey = parse_arm(arm)
+                    stats[f'arm_rows:{arm}'] += 2
+                    if level is None:
+                        continue
+                    rec, packet, entries, words_obj, weights_obj = packet_view(packets, level, scene, wi, words)
+                    active, positions, _ = entry_positions(entries, ni['slots'])
+                    for qi in (0, 1):
+                        wg = weight_gold(scene, rec, qi)
+                        assert wg in (world['answers'][qi], None) and (wg is not None or (qi == 0 and level == 255))
+                    if route in ('internal', 'sham'):
+                        summary['active_positions'][level].append(len(positions))
+                        assert len(positions) == (4 if level == 0 else 6) and all(p < len(ni['prefix']) for p in positions)
+                        if route == 'sham':
+                            perm = m['permutations'][pkey]
+                            assert all(int(perm[e['address']]) != e['address'] for e in active)
+                        stats['internal_prompts_checked'] += 1
+                        if ref is not None and level == 0 and route == 'internal':
+                            for qi in (0, 1):
+                                r = ref.get((scene['scene'], wi, qi, 'literal', 'selected'))
+                                if r is None:
+                                    stats['r3_missing_literal_selected'] += 1; continue
+                                same = (r['prefix_ids'] == ni['prefix'] and r['suffix_ids'] == ni['suffixes'][qi]
+                                        and r['patch_positions'] == positions and r['entries'] == active
+                                        and r['condition_packet_hex'] == rec['hex'])
+                                stats['r3_L0_internal_identical' if same else 'r3_L0_internal_DIFFERENT'] += 1
+                                if not same:
+                                    problems.append(f'L0 internal differs from R3 literal/selected: {scene["scene"]}|{wi}|{qi}')
+                    elif route == 'text':
+                        extra = render_weighted(scene['aliases'], words_obj, weights_obj, width=WIDTH)[0]
+                        assert extra == rec['text']
+                        if level == 0:
+                            assert extra == render(scene['aliases'], words_obj, width=WIDTH)[0]
+                            stats['text_L0_equals_frozen_render'] += 1
+                        texts, seqs, _, n = receiver.tokenized(scene, extra)
+                        enc = receiver.tok(texts[0], return_offsets_mapping=True, add_special_tokens=not receiver.chat)
+                        assert enc['input_ids'] == seqs[0]
+                        lo, hi = message_block(enc, texts[0], extra)
+                        # outside the message block the text-route prompt is token-identical to the neutral prompt
+                        assert seqs[0][:lo] == ni['prefix'][:ni['lo']] and seqs[0][hi:n] == ni['prefix'][ni['hi']:]
+                        assert [s[n:] for s in seqs] == ni['suffixes']
+                        _, chars = render_weighted(scene['aliases'], words_obj, weights_obj, width=WIDTH)
+                        spans = token_spans(enc['offset_mapping'], chars, texts[0].index(extra))
+                        for sp in spans:
+                            piece = receiver.tok.decode([seqs[0][p] for p in sp['positions']])
+                            assert sp['word'] in piece and '[' not in piece, (sp, piece)
+                        summary['text_prefix_tokens'][level].append(n)
+                        summary['wire_bytes'][f'text_L{level:03d}'].append(len(extra.encode()))
+                        texts_by_level.setdefault(level, []).append(seqs[0][:n])
+                        stats['text_prompts_checked'] += 1
+                        if ref is not None and level == 0:
+                            for qi in (0, 1):
+                                r = ref.get((scene['scene'], wi, qi, 'literal', 'packet_text'))
+                                if r is None:
+                                    stats['r3_missing_literal_text'] += 1; continue
+                                same = r['prefix_ids'] == seqs[0][:n] and r['suffix_ids'] == seqs[qi][n:] and r['extra_text'] == extra
+                                stats['r3_L0_text_identical' if same else 'r3_L0_text_DIFFERENT'] += 1
+                                if not same:
+                                    problems.append(f'L0 text differs from R3 literal/packet_text: {scene["scene"]}|{wi}|{qi}')
+                    if route in ('internal', 'sham'):
+                        summary['wire_bytes'][arm].append(rec['bytes'])
+                if ref is not None:
+                    for qi in (0, 1):
+                        r = ref.get((scene['scene'], wi, qi, 'actual', 'none'))
+                        if r is not None:
+                            same = r['prefix_ids'] == ni['prefix'] and r['suffix_ids'] == ni['suffixes'][qi] and r['slots'] == ni['slots']
+                            stats['r3_neutral_identical' if same else 'r3_neutral_DIFFERENT'] += 1
+            # world structure of the text route: L=255 identical prompts; graded levels differ only in weight digits
+            for level, seqs in texts_by_level.items():
+                if len(seqs) == 2:
+                    if level == 255:
+                        assert seqs[0] == seqs[1]; stats['text_L255_worlds_token_identical'] += 1
+                    elif level > 0:
+                        assert seqs[0] != seqs[1]
+                        stats['text_graded_worlds_same_token_length' if len(seqs[0]) == len(seqs[1])
+                              else 'text_graded_worlds_different_token_length'] += 1
+            stats[f'scenes_{phase}'] += 1
+    def dist(v):
+        return dict(n=len(v), min=min(v), max=max(v), mean=sum(v) / len(v)) if v else None
+    report = dict(status='PASS_DRY_RUN' if not problems else 'DRY_RUN_PROBLEMS', study=STUDY, receiver=m['receiver'],
+                  manifest=str(a.manifest), manifest_sha256=sha_file(a.manifest), pending_pins=pending, pin_mismatches=pin_mismatches, adapter=adapter,
+                  tokenizer=str(m['models'][m['receiver']]), transformers=__import__('transformers').__version__,
+                  plan=plan, stats=dict(stats), problems=problems[:50],
+                  prefix_tokens=dist(summary['prefix_tokens']),
+                  text_prefix_tokens={f'L{k}': dist(v) for k, v in sorted(summary['text_prefix_tokens'].items())},
+                  wire_bytes={k: dist(v) for k, v in sorted(summary['wire_bytes'].items())},
+                  active_write_positions={f'L{k}': dist(v) for k, v in sorted(summary['active_positions'].items())},
+                  sample=summary.get('sample'),
+                  note='No model weights were loaded and no forward pass was run; GPU behaviour is untested by this report.')
+    text = json.dumps(report, indent=1, sort_keys=True) + '\n'
+    if a.report:
+        Path(a.report).parent.mkdir(parents=True, exist_ok=True)
+        Path(a.report).write_text(text)
+    print(json.dumps(dict(status=report['status'], plan=plan, stats=report['stats'], problems=report['problems'][:5]), indent=1))
+
+
+def main():
+    ap = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
+    sub = ap.add_subparsers(dest='cmd', required=True)
+    mk = sub.add_parser('make-manifest')
+    mk.add_argument('--receiver', required=True, choices=sorted(RECEIVERS))
+    mk.add_argument('--tiers', type=int, nargs='+', default=list(graded_bank.DEFAULT_TIERS))
+    mk.add_argument('--out', type=Path, default=None)
+    mk.add_argument('--allow-pending', action='store_true')
+    rn = sub.add_parser('run')
+    rn.add_argument('--manifest', type=Path, required=True)
+    rn.add_argument('--phase', choices=('engineering', 'development'), required=True)
+    rn.add_argument('--shard', type=int, default=0); rn.add_argument('--shards', type=int, default=1)
+    dr = sub.add_parser('dry-run')
+    dr.add_argument('--manifest', type=Path, required=True)
+    dr.add_argument('--report', type=Path, default=None)
+    dr.add_argument('--compare-r3', type=Path, default=None, help='an R3 receiver root whose raw rows the L0 prompts must reproduce')
+    dr.add_argument('--no-adapter', action='store_true')
+    a = ap.parse_args()
+    if a.cmd == 'make-manifest':
+        make_manifest(a.receiver, a.tiers, a.out or OUT / a.receiver / 'manifest.json', a.allow_pending)
+    elif a.cmd == 'run':
+        run(a)
+    else:
+        dry_run(a)
+
+
+if __name__ == '__main__':
+    main()

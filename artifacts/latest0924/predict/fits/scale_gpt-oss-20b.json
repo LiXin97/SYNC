@@ -1,0 +1,36 @@
+{
+ "receiver": "gpt-oss-20b",
+ "layers": [
+  5,
+  8,
+  12,
+  16,
+  19
+ ],
+ "file": "artifacts/latest0924/predict/fits/directions_gpt-oss-20b.pt",
+ "sha256": "925a7684acc3a9bae400eeb3595cc0b54d3765097984c74819d53fa6d1c6bdb1",
+ "direction_norm_median_per_layer": {
+  "5": 399.4542236328125,
+  "8": 632.984619140625,
+  "12": 1041.9119873046875,
+  "16": 1985.9541015625,
+  "19": 5262.3583984375
+ },
+ "local_scale": {
+  "5": 1.0342398881912231,
+  "8": 1.084040641784668,
+  "12": 1.152281403541565,
+  "16": 1.2527505159378052,
+  "19": 1.1075177192687988
+ },
+ "n_ratio_samples": {
+  "5": 2652,
+  "8": 2652,
+  "12": 2652,
+  "16": 2652,
+  "19": 2652
+ },
+ "excluded_rows": [],
+ "epsilon": 1e-08,
+ "rule": "c[l] = median over (word, template) of ||delta[l,w,t]|| / ||d[l,w]||; >= 1 by construction"
+}

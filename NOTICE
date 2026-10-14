@@ -1,0 +1,19 @@
+SYNC: Share the Symbol, Not the Vector
+Copyright 2026 The SYNC authors
+
+This product includes software developed by the SYNC authors, licensed under the Apache License 2.0 (see LICENSE).
+
+The experiments load the following third-party open-weight models, which are NOT included in this repository and are
+downloaded from their publishers under their own licenses:
+
+  Apache-2.0      Qwen/Qwen2.5, Qwen3, Qwen3.5, Qwen3.6 families; openai/gpt-oss-20b;
+                  mistralai/Mistral-Small-3.2-24B-Instruct-2506; mistralai/Mistral-Nemo-Instruct-2407;
+                  ibm-granite/granite-4.1-8b; allenai/Olmo-3-7B-Instruct; google/gemma-4-26B-A4B-it;
+                  Seed-OSS-36B-Instruct; 01-ai/Yi-1.5 chat models
+  MIT             zai-org/GLM-4-9B-0414; microsoft/phi-4; deepseek-ai/DeepSeek-R1-Distill models
+  Llama 3.1 Community License   meta-llama/Llama-3.1-8B, Llama-3.1-8B-Instruct, Llama-3.1-70B-Instruct
+                  (Built with Llama; see licenses/llama-3.1/)
+  Gemma Terms of Use            google/gemma-3-27b-it (see licenses/gemma/)
+
+The per-row experiment records released separately as a dataset (XINLI1997/SYNC-data) are licensed CC BY 4.0;
+model-generated text inside them remains subject to the license of the model that produced it.

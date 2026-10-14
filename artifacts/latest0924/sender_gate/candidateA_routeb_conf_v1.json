@@ -1,0 +1,137 @@
+{
+ "utc": "2026-09-24T13:10:37Z",
+ "script_sha256": "d26f188d492dc755c6f4032a46ff6a0fbf582e48a17cc1a4dc66ab38667eea2c",
+ "meta": {
+  "packets": "artifacts/routeb0922/conf_packets/candidateA_conf.json",
+  "packets_sha256": "3643f9f8101cf9e69959affc684694e021a54ec22ccceef24eb3e12aecf13bda",
+  "bank": "artifacts/routeb0922/confirmation_bank_v1/bank.json",
+  "bank_sha256": "5ddc27dec7e070aba7ab1d17d417f8fddd919ab2ce0607dff2ad44c16f25defe",
+  "sender": "candidate_A/llama-3.1-8b-instruct",
+  "sender_checkpoint": "/path/to/models/Llama-3.1-8B-Instruct",
+  "split": "dev",
+  "prompt_sha256": "328c8b5df9d196724cdabd6cc7a291c0cfc7ca13ab524bd3cb70239de7183e0b",
+  "chat_template_kwargs": null,
+  "exclude_scenes_from": null,
+  "excluded_scene_ids": [],
+  "n_bank_scenes": 576,
+  "n_bank_worlds": 1152
+ },
+ "lock": null,
+ "integrity": {
+  "ok": true,
+  "header": {
+   "bank_sha256_matches": true,
+   "prompt_sha256_frozen": true,
+   "inventory_matches_reference": true,
+   "inventory_size": 221
+  },
+  "counts": {
+   "missing_packets": 0,
+   "extra_packets": 0,
+   "sha256_mismatch": 0,
+   "bytes_mismatch": 0,
+   "decode_error": 0,
+   "lane_ids_not_ascending_unique": 0,
+   "weight_not_255": 0,
+   "lane_slots_not_objects": 0,
+   "log_missing": 0,
+   "selection_vs_packet_mismatch": 0,
+   "reparse_mismatch": 0
+  },
+  "file_summary_matches_recount": true,
+  "examples": {}
+ },
+ "populations": {
+  "all": {
+   "n_packets": 1152,
+   "n_objects": 2304,
+   "parse_ok": 1152,
+   "parse_partial": 0,
+   "parse_empty": 0,
+   "parse_malformed": 0,
+   "parse_unknown": 0,
+   "parse_fully_rate": 1.0,
+   "parse_partial_rate": 0.0,
+   "parse_failed_rate": 0.0,
+   "required_fact_hits": 4601,
+   "required_fact_total": 4608,
+   "required_fact_recall": 0.9984809027777778,
+   "complete_objects": 2297,
+   "complete_object_rate": 0.9969618055555556,
+   "complete_packets": 1145,
+   "complete_packet_rate": 0.9939236111111112,
+   "wrong_object_lanes": 0,
+   "wrong_object_words": 0,
+   "wrong_object_lane_rate": 0.0,
+   "unsupported_attribute_lanes": 0,
+   "unsupported_attribute_lane_rate": 0.0,
+   "extra_non_attribute_lanes": 1235,
+   "extra_non_attribute_lane_rate": 0.5360243055555556,
+   "empty_lanes": 0,
+   "empty_lane_rate": 0.0,
+   "mean_words_per_object": 2.532986111111111,
+   "words_per_object_hist": {
+    "2": 1076,
+    "3": 1228
+   },
+   "precision": 0.7883824537354353,
+   "exact_set_rate": 0.4639756944444444,
+   "mean_bytes": 22.131944444444443,
+   "recall_by_field": {
+    "buttons": {
+     "hits": 761,
+     "total": 768,
+     "recall": 0.9908854166666666
+    },
+    "color": {
+     "hits": 1536,
+     "total": 1536,
+     "recall": 1.0
+    },
+    "fibre": {
+     "hits": 768,
+     "total": 768,
+     "recall": 1.0
+    },
+    "material": {
+     "hits": 768,
+     "total": 768,
+     "recall": 1.0
+    },
+    "taste": {
+     "hits": 768,
+     "total": 768,
+     "recall": 1.0
+    }
+   },
+   "mean_generated_tokens": 28.86545138888889,
+   "max_generated_tokens": 68,
+   "mean_decode_seconds": 0.5207969751209021,
+   "hit_max_new_tokens": null,
+   "final_channel_missing": null,
+   "reasoning_marker_in_output": null,
+   "greedy_argmax_mismatches": null,
+   "required_fact_recall_ci_lo": 0.9973958333333334,
+   "required_fact_recall_ci_hi": 0.9995659722222222,
+   "complete_object_rate_ci_lo": 0.9947916666666666,
+   "complete_object_rate_ci_hi": 0.9991319444444444,
+   "complete_packet_rate_ci_lo": 0.9895833333333334,
+   "complete_packet_rate_ci_hi": 0.9982638888888888,
+   "parse_fully_rate_ci_lo": 1.0,
+   "parse_fully_rate_ci_hi": 1.0,
+   "wrong_object_lane_rate_ci_lo": 0.0,
+   "wrong_object_lane_rate_ci_hi": 0.0,
+   "n_scenes": 576
+  }
+ },
+ "verdict": {
+  "status": "NO_LOCK",
+  "checks": []
+ },
+ "bootstrap": {
+  "unit": "scene",
+  "draws": 2000,
+  "seed": 0,
+  "interval": "95% percentile"
+ }
+}

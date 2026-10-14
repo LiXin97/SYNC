@@ -1,0 +1,14 @@
+{
+ "worlds": 1184,
+ "conditions": {
+  "L0": 296,
+  "L1": 296,
+  "L2": 296,
+  "L3": 296
+ },
+ "l0_compared": 592,
+ "l0_prompt_mismatch": 0,
+ "l0_positions_mismatch": 0,
+ "pin_mismatches": [],
+ "status": "PASS"
+}

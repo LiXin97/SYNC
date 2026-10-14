@@ -1,0 +1,234 @@
+{
+ "lock": "latest_models_expA_20260924",
+ "utc": "2026-09-24T12:51:31.309479+00:00",
+ "status": "FROZEN_BEFORE_ANY_OUTPUT_OF_THE_NEW_SENDERS_OR_RECEIVERS",
+ "authority": "[internal approval note removed for anonymity]",
+ "question": "With the interface fixed (depth-0.2 single-layer write, gamma 1, raw scale, twelve-context word-minus-unknown directions fitted per receiver, four slots per object, frozen prompts and parser), do facts selected by NEW 2025-2026 senders reach NEW 2025-2026 receivers from several families, and how does internal delivery compare with the same message as text as receiver size grows?",
+ "bank": {
+  "path": "artifacts/receiver_recovery/r3_bank/bank.json",
+  "generated": 576,
+  "evaluated": 572,
+  "engineering_scene_ids": "as in artifacts/receiver_recovery/r3/qwen3-32b/manifest.json",
+  "disclosure": "The bank was already evaluated with four older receivers and the Llama-3.1-8B-Instruct sender (paper Table 1). Every new sender and receiver is unexposed to it and nothing in this study is selected or tuned on it; it is not a newly constructed bank."
+ },
+ "senders": {
+  "gemma-4-26b-a4b-it": {
+   "priority": 1,
+   "model_dir": "/path/to/models/gemma-4-26B-A4B-it"
+  },
+  "qwen3.6-27b": {
+   "priority": 2,
+   "model_dir": "/path/to/models/Qwen3.6-27B"
+  },
+  "gpt-oss-20b": {
+   "priority": 3,
+   "model_dir": "/path/to/models/gpt-oss-20b"
+  }
+ },
+ "sender_protocol": "Identical system/user prompt text, strict first-JSON parser, first four valid inventory words per object, ascending indices, equal 8-bit weights 255, greedy decoding, no retry, no prompt change. Thinking/reasoning disabled or minimal where the chat template supports it; the rendered prompt of each sender is recorded before generation.",
+ "sender_gate": {
+  "bank": "the 96-scene exposed development bank (all 96 scenes, both worlds)",
+  "thresholds": {
+   "fully_parsed_world_rate_min": 0.99,
+   "required_fact_recall_min": 0.95,
+   "complete_packet_world_rate_min": 0.9
+  },
+  "rule": "A sender that misses any threshold is reported as a gate failure and its confirmation messages are not used for receiver runs; thresholds are not revised after the gate is computed. If all three new senders fail, the frozen Llama-3.1-8B-Instruct candidate-A confirmation messages are used as the reference source and this is reported."
+ },
+ "receivers": {
+  "qwen3.5-2b": {
+   "model_dir": "/path/to/models/Qwen3.5-2B",
+   "family": "Qwen3.5 (Alibaba)",
+   "size": "2B dense hybrid-attention",
+   "n_layers": 24,
+   "selected_layer": 5,
+   "original_band": [
+    10,
+    12,
+    14
+   ]
+  },
+  "qwen3.5-4b": {
+   "model_dir": "/path/to/models/Qwen3.5-4B",
+   "family": "Qwen3.5 (Alibaba)",
+   "size": "4B dense hybrid-attention",
+   "n_layers": 32,
+   "selected_layer": 6,
+   "original_band": [
+    13,
+    16,
+    19
+   ]
+  },
+  "qwen3.5-9b": {
+   "model_dir": "/path/to/models/Qwen3.5-9B",
+   "family": "Qwen3.5 (Alibaba)",
+   "size": "9B dense hybrid-attention",
+   "n_layers": 32,
+   "selected_layer": 6,
+   "original_band": [
+    13,
+    16,
+    19
+   ]
+  },
+  "qwen3.5-27b": {
+   "model_dir": "/path/to/models/Qwen3.5-27B",
+   "family": "Qwen3.5 (Alibaba)",
+   "size": "27B dense hybrid-attention",
+   "n_layers": 64,
+   "selected_layer": 13,
+   "original_band": [
+    26,
+    32,
+    38
+   ]
+  },
+  "qwen3.6-27b": {
+   "model_dir": "/path/to/models/Qwen3.6-27B",
+   "family": "Qwen3.6 (Alibaba)",
+   "size": "27B dense hybrid-attention",
+   "n_layers": 64,
+   "selected_layer": 13,
+   "original_band": [
+    26,
+    32,
+    38
+   ]
+  },
+  "qwen3.6-35b-a3b": {
+   "model_dir": "/path/to/models/Qwen3.6-35B-A3B",
+   "family": "Qwen3.6 (Alibaba)",
+   "size": "35B MoE (3B active) hybrid-attention",
+   "n_layers": 40,
+   "selected_layer": 8,
+   "original_band": [
+    16,
+    20,
+    24
+   ]
+  },
+  "qwen3.5-122b-a10b": {
+   "model_dir": "/path/to/models/Qwen3.5-122B-A10B",
+   "family": "Qwen3.5 (Alibaba)",
+   "size": "122B MoE (10B active) hybrid-attention",
+   "n_layers": 48,
+   "selected_layer": 10,
+   "original_band": [
+    19,
+    24,
+    29
+   ]
+  },
+  "gpt-oss-20b": {
+   "model_dir": "/path/to/models/gpt-oss-20b",
+   "family": "gpt-oss (OpenAI)",
+   "size": "20B MoE",
+   "n_layers": 24,
+   "selected_layer": 5,
+   "original_band": [
+    10,
+    12,
+    14
+   ]
+  },
+  "olmo-3-7b-instruct": {
+   "model_dir": "/path/to/models/OLMo-3-7B-Instruct",
+   "family": "OLMo-3 (AI2)",
+   "size": "7B dense",
+   "n_layers": 32,
+   "selected_layer": 6,
+   "original_band": [
+    13,
+    16,
+    19
+   ]
+  },
+  "seed-oss-36b-instruct": {
+   "model_dir": "/path/to/models/Seed-OSS-36B-Instruct",
+   "family": "Seed-OSS (anon)",
+   "size": "36B dense",
+   "n_layers": 64,
+   "selected_layer": 13,
+   "original_band": [
+    26,
+    32,
+    38
+   ]
+  },
+  "mistral-small-3.2-24b": {
+   "model_dir": "/path/to/models/Mistral-Small-3.2-24B-Instruct-2506",
+   "family": "Mistral Small 3.2 (Mistral)",
+   "size": "24B dense",
+   "n_layers": 40,
+   "selected_layer": 8,
+   "original_band": [
+    16,
+    20,
+    24
+   ]
+  },
+  "granite-4.1-8b": {
+   "model_dir": "/path/to/models/granite-4.1-8b",
+   "family": "Granite 4.1 (IBM)",
+   "size": "8B dense",
+   "n_layers": 40,
+   "selected_layer": 8,
+   "original_band": [
+    16,
+    20,
+    24
+   ]
+  }
+ },
+ "same_model_pairs": [
+  "qwen3.6-27b -> qwen3.6-27b",
+  "gpt-oss-20b -> gpt-oss-20b"
+ ],
+ "same_model_rule": "Same-model pairs are reported separately and excluded from cross-family and cross-model claims.",
+ "conditions": {
+  "per_sender": [
+   "none",
+   "identity_write (engineering scenes only, must be exactly inert)",
+   "original (middle band at depths 0.4/0.5/0.6, gamma 1)",
+   "selected (single write at depth 0.2, gamma 1)",
+   "packet_text (same message as weighted public-layout text in the same slots)",
+   "sham0",
+   "sham1",
+   "sham2 (three fixed word-direction permutations, seeds 202609201-3, per-layer edit norm matched to selected)",
+   "other_world (the other world's message through the selected write; scored against both golds; consistency check)"
+  ],
+  "per_receiver_complete_facts": [
+   "selected",
+   "packet_text",
+   "full_text",
+   "native (receiver states for the complete facts at the selected layer)"
+  ]
+ },
+ "numerics": "FP32, eager attention where the architecture supports it, TF32 off, batch 1, greedy, answer budgets 64 (primary) and 256 (sensitivity). Any model that cannot run FP32 on the available GPUs, or needs a non-eager attention implementation, is listed with its dtype/implementation in the adapter report BEFORE its first outcome row; that is the only permitted deviation.",
+ "engineering_gate": "Per receiver, on the 4 engineering scenes: identity write reproduces no-message logits and tokens exactly; cached-prefix continuation vs complete forward max logit difference <= 0.05 with equal parsed answers. A receiver failing the gate is reported as an engineering failure with no outcome rows.",
+ "endpoints": {
+  "primary": "four-answer (joint) success, family-macro over 36 material families",
+  "others": [
+   "single-answer accuracy",
+   "valid-answer coverage",
+   "changed/unchanged components",
+   "score at 256 tokens"
+  ]
+ },
+ "hypotheses_and_decision_rules": {
+  "H1_fixed_rule_generalizes": "Per (receiver, cross-model sender): recovery = J(selected) >= 0.50 AND coverage >= 0.90 AND selected minus mean reassignment has positive lower limits under BOTH family and template clustering after Holm across that sender's receivers. Report the count of receivers passing, per sender; every receiver is reported.",
+  "H2_internal_vs_text": "Per (receiver, sender): internal (selected) minus text (packet_text). \"Internal better\" only if both clustering levels give lower limits > 0 after Holm across that sender's receivers; \"text better\" if both upper limits < 0 after Holm; \"similar\" if both intervals lie within [-3, +3] points; otherwise \"unresolved\". No equivalence claim beyond this margin.",
+  "H3_scale": "Within the Qwen ladder (qwen3.5-2b, -4b, -9b, -27b, qwen3.5-122b-a10b), primary scale contrast = gap(122B) minus gap(2B), where gap = selected minus packet_text, paired by scene (same messages, same scenes), family and template bootstrap; \"the gap grows with scale\" only if both lower limits > 0. Secondary (descriptive): Spearman rank correlation between log parameter count and gap across the five ladder points plus qwen3.6-27b and qwen3.6-35b-a3b, reported without a significance claim.",
+  "H4_depth": "Descriptive: selected minus original per receiver with intervals."
+ },
+ "ci": "20,000 cluster-bootstrap draws for each of three fixed seeds (20260924, 20260925, 20260926); report the interval enclosing all three; separately over 36 families and 12 parent templates.",
+ "execution_order": "Engineering screens and fits for all receivers; sender gates for all three senders in parallel; then priority 1 sender x all receivers, priority 2, priority 3; complete-fact rows once per receiver with the first sender run. Receivers run in parallel across GPUs. Cells not finished by the paper cut-off are reported as NOT RUN, never extrapolated.",
+ "not_claims": [
+  "No bandwidth, latency or privacy advantage is tested.",
+  "The bank is finite and constructed; results are not population estimates.",
+  "A prompted sender does not show reliable extraction from hidden states.",
+  "Same-model pairs do not count as cross-model communication."
+ ],
+ "evaluated_once": "Each (receiver, sender, condition) cell is evaluated once; reruns only resume interrupted shards and must reproduce existing rows exactly (resumable runner asserts logits/tokens equality)."
+}

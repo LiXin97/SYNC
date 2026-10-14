@@ -1,0 +1,36 @@
+{
+ "receiver": "mistral-small-3.2-24b",
+ "layers": [
+  8,
+  14,
+  20,
+  26,
+  32
+ ],
+ "file": "artifacts/latest0924/predict/fits/directions_mistral-small-3.2-24b.pt",
+ "sha256": "5eeeccd407db11ce0d935e9db1d4974a3c78655d1ff070fc5837d3507e6221c1",
+ "direction_norm_median_per_layer": {
+  "8": 3.5891456604003906,
+  "14": 5.139442443847656,
+  "20": 8.012112617492676,
+  "26": 13.600968360900879,
+  "32": 18.361785888671875
+ },
+ "local_scale": {
+  "8": 1.1038190126419067,
+  "14": 1.161429762840271,
+  "20": 1.1499543190002441,
+  "26": 1.126746416091919,
+  "32": 1.1139907836914062
+ },
+ "n_ratio_samples": {
+  "8": 2652,
+  "14": 2652,
+  "20": 2652,
+  "26": 2652,
+  "32": 2652
+ },
+ "excluded_rows": [],
+ "epsilon": 1e-08,
+ "rule": "c[l] = median over (word, template) of ||delta[l,w,t]|| / ||d[l,w]||; >= 1 by construction"
+}

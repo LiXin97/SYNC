@@ -1,0 +1,104 @@
+{
+  "arms": {
+    "actual": [
+      [
+        "packet_text",
+        0
+      ],
+      [
+        "w:c12",
+        1
+      ],
+      [
+        "w:single_t0",
+        1
+      ],
+      [
+        "w:single_t6",
+        1
+      ],
+      [
+        "w:single_t11",
+        1
+      ],
+      [
+        "emb1",
+        1
+      ]
+    ],
+    "literal": [
+      [
+        "none",
+        0
+      ],
+      [
+        "full_text",
+        0
+      ],
+      [
+        "packet_text",
+        0
+      ],
+      [
+        "w:c12",
+        1
+      ],
+      [
+        "w:single_t0",
+        1
+      ],
+      [
+        "w:single_t6",
+        1
+      ],
+      [
+        "w:single_t11",
+        1
+      ],
+      [
+        "emb1",
+        1
+      ]
+    ]
+  },
+  "bank": "artifacts/word_interface_followup/p0a_bank/bank.json",
+  "bank_size": 580,
+  "bank_split": "confirmation",
+  "base_models": [
+    "qwen3-14b-base"
+  ],
+  "directions": "artifacts/word_interface_followup/directions/p0a_directions_qwen3-14b-base.pt",
+  "engineering_scene_ids": [
+    "85870de89d18b9941127",
+    "517e7da136b042614bc8",
+    "8b3a975e56428187b935",
+    "6fcdc9119ee2fb8bdf39"
+  ],
+  "layer": 8,
+  "lock": "gates/word_interface_followup/p0a_confirm.lock.json",
+  "models": {
+    "gemma-3-27b-it": "/path/to/models/gemma-3-27b-it",
+    "glm-4-9b": "/path/to/models/GLM-4-9B-0414",
+    "qwen3-14b-base": "/path/to/models/Qwen3-14B-Base",
+    "qwen3-32b": "/path/to/models/Qwen3-32B"
+  },
+  "n_blocks": 40,
+  "pins": {
+    "artifacts/receiver_recovery/words_221.json": "b7c686ee1c47392ee2499f31c4784a4d3427e1d981a624e8ed77af49aca5767e",
+    "artifacts/word_interface_followup/directions/p0a_directions_qwen3-14b-base.pt": "0ba445b7aa07f444b1eab2b181217bc7dca948dc49da9aa54c405ca4c6ba9e9e",
+    "artifacts/word_interface_followup/p0a_bank/bank.json": "c03700d59c1272efbf819b983eb74952fc3552b110366201bf82987b1bbf1ffd",
+    "artifacts/word_interface_followup/p0a_packets/candidateA_p0a.json": "0fbf8d7c8b7ef9ae4c9450433581e1caa9d0ef05025997a6cd4de9a88a455f7f",
+    "src/syncomm/recovery/evaluate_confirm.py": "76796972e52e328b57b173a06d7ea6251aed2957d8020b47f8ac76b8332e4b75",
+    "src/syncomm/recovery/evaluate_depth.py": "9e8d153129e8b61bc496444558f0dfa4b6f6aff4be00eebb7589f613b8ce8a01",
+    "src/syncomm/wordif/evaluate_localrep.py": "e2eb4aaae2cc09a845fe17c861cdfd65453605040eef0668093d44774e96a5ed"
+  },
+  "receiver": "qwen3-14b-base",
+  "root": "artifacts/word_interface_followup/p0a_confirm/qwen3-14b-base",
+  "row_split": "p0a_confirm",
+  "sources": {
+    "actual": "artifacts/word_interface_followup/p0a_packets/candidateA_p0a.json",
+    "literal": null
+  },
+  "study": "WORDIF_P0A_CONFIRM_QWEN3_14B_BASE",
+  "words_file": "artifacts/receiver_recovery/words_221.json"
+}

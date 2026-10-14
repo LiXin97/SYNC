@@ -1,0 +1,308 @@
+{
+ "lock": "r3_bank_20260923",
+ "utc": "2026-09-22T20:04:28.607093+00:00",
+ "status": "FROZEN_BEFORE_ANY_R3_SENDER_OR_RECEIVER_OUTPUT",
+ "authority": "[internal approval note removed for anonymity]",
+ "generator": {
+  "path": "scripts/build_r3_bank_20260923.py",
+  "sha256": "1f13c72b0d62fba37ae126dc5c832327fc88e8abb556e36f270077ce50f1263c",
+  "deterministic": true,
+  "model_calls": 0,
+  "derived_from": "scripts/build_confirmation_bank_20260922.py with twelve new evidence constructions, twenty-four new aliases, a new namespace and the 2026-09-22 cells excluded"
+ },
+ "bank": {
+  "path": "artifacts/receiver_recovery/r3_bank/bank.json",
+  "sha256": "c88ff3197717a338eb84cbaec5c0a3c9fa9b5504f6ab077c1cb4ca78c5b15927",
+  "scenes": 576,
+  "families": 36,
+  "templates": 12,
+  "domains": 3,
+  "scenes_per_family": 16,
+  "split": "confirmation",
+  "namespace": "r3conf0923"
+ },
+ "constructions": {
+  "candy": "colour {green,orange,red,yellow} x taste {bitter,salty,sour,sweet}",
+  "block": "surface paint colour x material {gold,iron,silver,steel}",
+  "coat": "fibre {cotton,leather,silk,wool} x button material {copper,glass,plastic,wooden} (noun-adjunct only)"
+ },
+ "evidence_templates": "twelve new frames, four per domain; listed in the generator and in overlap_report.json skeletons",
+ "exclusion_reference": {
+  "path": "gates/receiver_recovery/prior_banks_exclusion_20260923.json",
+  "sha256": "60ef84c78e666f974df6821256074be28d32550a3ab34cc1d55376a85f77d832",
+  "banks": [
+   "dev96 (96)",
+   "rescreen96 (96)",
+   "materials_candidate_v1 (576)",
+   "materials_candidate_v2 (576)",
+   "confirmation_bank_v1 2026-09-22 (576)"
+  ]
+ },
+ "overlap": {
+  "scenes": {
+   "new": 576,
+   "prior": 1920,
+   "shared": 0
+  },
+  "evidence": {
+   "new": 1530,
+   "prior": 2325,
+   "shared": 0
+  },
+  "skeletons": {
+   "new": 12,
+   "prior": 20,
+   "shared": 0
+  },
+  "fact_tuples_field_aware": {
+   "new": 48,
+   "prior": 86,
+   "shared": 48
+  },
+  "fact_tuples_values_only": {
+   "new": 48,
+   "prior": 86,
+   "shared": 48
+  },
+  "world_combos": {
+   "new": 72,
+   "prior": 192,
+   "shared": 14
+  },
+  "value_cells": {
+   "new": 36,
+   "prior": 96,
+   "shared": 7
+  },
+  "aliases": {
+   "new": 24,
+   "prior": 56,
+   "shared": 0
+  },
+  "question_wordings": {
+   "new": 6,
+   "prior": 6,
+   "shared": 6
+  }
+ },
+ "value_cell_exclusion": {
+  "candy": "no balanced pattern exists avoiding the 21 cells earlier banks used (4 x 4 values give only 36 cells), so balance was kept and 6 of 12 cells repeat an earlier bank; scenes, two-object combinations, aliases and evidence constructions remain disjoint",
+  "block": "12 earlier cells avoided; balanced pattern found",
+  "coat": "12 earlier cells avoided; balanced pattern found"
+ },
+ "balance": {
+  "scenes_per_domain": {
+   "block": 192,
+   "candy": 192,
+   "coat": 192
+  },
+  "scenes_per_family": {
+   "16": 36
+  },
+  "scenes_per_template": {
+   "block/T0": 48,
+   "block/T1": 48,
+   "block/T2": 48,
+   "block/T3": 48,
+   "candy/T0": 48,
+   "candy/T1": 48,
+   "candy/T2": 48,
+   "candy/T3": 48,
+   "coat/T0": 48,
+   "coat/T1": 48,
+   "coat/T2": 48,
+   "coat/T3": 48
+  },
+  "changed_field": {
+   "block/color": 96,
+   "block/material": 96,
+   "candy/color": 96,
+   "candy/taste": 96,
+   "coat/buttons": 96,
+   "coat/fibre": 96
+  },
+  "answer_identity_world_question": {
+   "w0_q0_first": 288,
+   "w0_q0_second": 288,
+   "w0_q1_first": 288,
+   "w0_q1_second": 288,
+   "w1_q0_first": 288,
+   "w1_q0_second": 288,
+   "w1_q1_first": 288,
+   "w1_q1_second": 288
+  },
+  "alias_usage": {
+   "BANQ": {
+    "first": 24,
+    "second": 24,
+    "answers": 102
+   },
+   "CIRV": {
+    "first": 24,
+    "second": 24,
+    "answers": 106
+   },
+   "DOMP": {
+    "first": 24,
+    "second": 24,
+    "answers": 98
+   },
+   "FELK": {
+    "first": 24,
+    "second": 24,
+    "answers": 80
+   },
+   "GUTZ": {
+    "first": 24,
+    "second": 24,
+    "answers": 90
+   },
+   "HOBV": {
+    "first": 24,
+    "second": 24,
+    "answers": 96
+   },
+   "JIRM": {
+    "first": 24,
+    "second": 24,
+    "answers": 102
+   },
+   "KAWP": {
+    "first": 24,
+    "second": 24,
+    "answers": 90
+   },
+   "LONZ": {
+    "first": 24,
+    "second": 24,
+    "answers": 90
+   },
+   "MUVT": {
+    "first": 24,
+    "second": 24,
+    "answers": 106
+   },
+   "NEQL": {
+    "first": 24,
+    "second": 24,
+    "answers": 96
+   },
+   "PIRB": {
+    "first": 24,
+    "second": 24,
+    "answers": 86
+   },
+   "QUVO": {
+    "first": 24,
+    "second": 24,
+    "answers": 100
+   },
+   "RONK": {
+    "first": 24,
+    "second": 24,
+    "answers": 102
+   },
+   "SAMV": {
+    "first": 24,
+    "second": 24,
+    "answers": 106
+   },
+   "TIZP": {
+    "first": 24,
+    "second": 24,
+    "answers": 102
+   },
+   "VOLK": {
+    "first": 24,
+    "second": 24,
+    "answers": 96
+   },
+   "WERN": {
+    "first": 24,
+    "second": 24,
+    "answers": 84
+   },
+   "YUMB": {
+    "first": 24,
+    "second": 24,
+    "answers": 98
+   },
+   "ZAFP": {
+    "first": 24,
+    "second": 24,
+    "answers": 86
+   },
+   "DELV": {
+    "first": 24,
+    "second": 24,
+    "answers": 102
+   },
+   "GORM": {
+    "first": 24,
+    "second": 24,
+    "answers": 92
+   },
+   "KIVT": {
+    "first": 24,
+    "second": 24,
+    "answers": 102
+   },
+   "PUNZ": {
+    "first": 24,
+    "second": 24,
+    "answers": 92
+   }
+  },
+  "queried_values": {
+   "green": 96,
+   "gold": 48,
+   "bitter": 48,
+   "salty": 48,
+   "red": 96,
+   "copper": 48,
+   "cotton": 48,
+   "plastic": 48,
+   "wool": 48,
+   "leather": 48,
+   "glass": 48,
+   "wooden": 48,
+   "silk": 48,
+   "steel": 48,
+   "yellow": 96,
+   "orange": 96,
+   "sour": 48,
+   "sweet": 48,
+   "silver": 48,
+   "iron": 48
+  },
+  "object_values": {
+   "green": 192,
+   "gold": 96,
+   "red": 192,
+   "steel": 96,
+   "bitter": 96,
+   "sour": 96,
+   "yellow": 192,
+   "salty": 96,
+   "sweet": 96,
+   "silk": 96,
+   "copper": 96,
+   "cotton": 96,
+   "wooden": 96,
+   "wool": 96,
+   "plastic": 96,
+   "leather": 96,
+   "glass": 96,
+   "iron": 96,
+   "silver": 96,
+   "orange": 192
+  }
+ },
+ "attainable_design_decision": "Taken before generation and disclosed, as §8 requires. NEW and asserted disjoint: all 576 scene identities, all 1,530 evidence sentences, all twelve evidence constructions (skeletons) and all twenty-four aliases. MEASURED, not assertable: each approved domain has only 4x4 attribute values, hence exactly 72 distinct unordered two-object combinations, and earlier banks already used 44 (candy), 24 (block) and 24 (coat) of them, while a balanced 576-scene design needs the whole space per domain — so full combination novelty is impossible without abandoning the approved constructions or the balance. The design keeps the balance and the 2026-09-22 value cells were excluded wherever a balanced pattern still exists (block and coat: 12 cells each avoided; candy: none possible, 6 of 12 cells repeat). Result: 14 of 72 two-object combinations and 7 of 36 value cells repeat an earlier bank, all 48 single-object fact tuples repeat (the vocabulary is exhausted), and the six question wordings are the developed ones, held fixed on purpose. What this bank tests is generalization to unseen evidence constructions, unseen names and unseen compositions of those with the attribute space — not unseen facts.",
+ "cluster_levels": {
+  "primary": "36 families (evidence template x value cell)",
+  "secondary": "12 evidence templates",
+  "rule": "criteria evaluated at both levels"
+ },
+ "evaluated_once": "This bank is evaluated once, under the R3 protocol lock; any repair or retest afterwards needs a new, explicitly exploratory identity."
+}

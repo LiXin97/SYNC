@@ -1,0 +1,227 @@
+{
+ "utc": "2026-09-24T13:10:33Z",
+ "script_sha256": "d26f188d492dc755c6f4032a46ff6a0fbf582e48a17cc1a4dc66ab38667eea2c",
+ "meta": {
+  "packets": "artifacts/receiver_recovery/r3_packets/candidateA_r3.json",
+  "packets_sha256": "11c5edd9100a81f27bec4844d1743bb7c628db79c8a883ec4b53ad68276951a8",
+  "bank": "artifacts/receiver_recovery/r3_bank/bank.json",
+  "bank_sha256": "c88ff3197717a338eb84cbaec5c0a3c9fa9b5504f6ab077c1cb4ca78c5b15927",
+  "sender": "candidate_A/llama-3.1-8b-instruct",
+  "sender_checkpoint": "/path/to/models/Llama-3.1-8B-Instruct",
+  "split": "dev",
+  "prompt_sha256": "328c8b5df9d196724cdabd6cc7a291c0cfc7ca13ab524bd3cb70239de7183e0b",
+  "chat_template_kwargs": null,
+  "exclude_scenes_from": "artifacts/receiver_recovery/r3/qwen3-32b/manifest.json",
+  "excluded_scene_ids": [
+   "000ab0c6e25c722375c5",
+   "006580f74136c64f5667",
+   "013a221b69bb9e33fe59",
+   "01c022ca70dbfbd8c0a1"
+  ],
+  "n_bank_scenes": 576,
+  "n_bank_worlds": 1152
+ },
+ "lock": null,
+ "integrity": {
+  "ok": true,
+  "header": {
+   "bank_sha256_matches": true,
+   "prompt_sha256_frozen": true,
+   "inventory_matches_reference": true,
+   "inventory_size": 221
+  },
+  "counts": {
+   "missing_packets": 0,
+   "extra_packets": 0,
+   "sha256_mismatch": 0,
+   "bytes_mismatch": 0,
+   "decode_error": 0,
+   "lane_ids_not_ascending_unique": 0,
+   "weight_not_255": 0,
+   "lane_slots_not_objects": 0,
+   "log_missing": 0,
+   "selection_vs_packet_mismatch": 0,
+   "reparse_mismatch": 0
+  },
+  "file_summary_matches_recount": true,
+  "examples": {}
+ },
+ "populations": {
+  "all": {
+   "n_packets": 1152,
+   "n_objects": 2304,
+   "parse_ok": 1152,
+   "parse_partial": 0,
+   "parse_empty": 0,
+   "parse_malformed": 0,
+   "parse_unknown": 0,
+   "parse_fully_rate": 1.0,
+   "parse_partial_rate": 0.0,
+   "parse_failed_rate": 0.0,
+   "required_fact_hits": 4570,
+   "required_fact_total": 4608,
+   "required_fact_recall": 0.9917534722222222,
+   "complete_objects": 2269,
+   "complete_object_rate": 0.9848090277777778,
+   "complete_packets": 1132,
+   "complete_packet_rate": 0.9826388888888888,
+   "wrong_object_lanes": 5,
+   "wrong_object_words": 5,
+   "wrong_object_lane_rate": 0.002170138888888889,
+   "unsupported_attribute_lanes": 5,
+   "unsupported_attribute_lane_rate": 0.002170138888888889,
+   "extra_non_attribute_lanes": 1466,
+   "extra_non_attribute_lane_rate": 0.6362847222222222,
+   "empty_lanes": 0,
+   "empty_lane_rate": 0.0,
+   "mean_words_per_object": 2.6571180555555554,
+   "words_per_object_hist": {
+    "1": 5,
+    "2": 862,
+    "3": 1355,
+    "4": 82
+   },
+   "precision": 0.7464880757922248,
+   "exact_set_rate": 0.3628472222222222,
+   "mean_bytes": 22.62847222222222,
+   "recall_by_field": {
+    "buttons": {
+     "hits": 758,
+     "total": 768,
+     "recall": 0.9869791666666666
+    },
+    "color": {
+     "hits": 1536,
+     "total": 1536,
+     "recall": 1.0
+    },
+    "fibre": {
+     "hits": 741,
+     "total": 768,
+     "recall": 0.96484375
+    },
+    "material": {
+     "hits": 767,
+     "total": 768,
+     "recall": 0.9986979166666666
+    },
+    "taste": {
+     "hits": 768,
+     "total": 768,
+     "recall": 1.0
+    }
+   },
+   "mean_generated_tokens": 33.86631944444444,
+   "max_generated_tokens": 51,
+   "mean_decode_seconds": 0.6785805695172813,
+   "hit_max_new_tokens": null,
+   "final_channel_missing": null,
+   "reasoning_marker_in_output": null,
+   "greedy_argmax_mismatches": null,
+   "required_fact_recall_ci_lo": 0.9874131944444444,
+   "required_fact_recall_ci_hi": 0.9956597222222222,
+   "complete_object_rate_ci_lo": 0.9769965277777778,
+   "complete_object_rate_ci_hi": 0.9917534722222222,
+   "complete_packet_rate_ci_lo": 0.9739583333333334,
+   "complete_packet_rate_ci_hi": 0.9904513888888888,
+   "parse_fully_rate_ci_lo": 1.0,
+   "parse_fully_rate_ci_hi": 1.0,
+   "wrong_object_lane_rate_ci_lo": 0.00043402777777777775,
+   "wrong_object_lane_rate_ci_hi": 0.004340277777777778,
+   "n_scenes": 576
+  },
+  "evaluated": {
+   "n_packets": 1144,
+   "n_objects": 2288,
+   "parse_ok": 1144,
+   "parse_partial": 0,
+   "parse_empty": 0,
+   "parse_malformed": 0,
+   "parse_unknown": 0,
+   "parse_fully_rate": 1.0,
+   "parse_partial_rate": 0.0,
+   "parse_failed_rate": 0.0,
+   "required_fact_hits": 4538,
+   "required_fact_total": 4576,
+   "required_fact_recall": 0.9916958041958042,
+   "complete_objects": 2253,
+   "complete_object_rate": 0.9847027972027972,
+   "complete_packets": 1124,
+   "complete_packet_rate": 0.9825174825174825,
+   "wrong_object_lanes": 5,
+   "wrong_object_words": 5,
+   "wrong_object_lane_rate": 0.0021853146853146855,
+   "unsupported_attribute_lanes": 5,
+   "unsupported_attribute_lane_rate": 0.0021853146853146855,
+   "extra_non_attribute_lanes": 1456,
+   "extra_non_attribute_lane_rate": 0.6363636363636364,
+   "empty_lanes": 0,
+   "empty_lane_rate": 0.0,
+   "mean_words_per_object": 2.6573426573426575,
+   "words_per_object_hist": {
+    "1": 5,
+    "2": 856,
+    "3": 1345,
+    "4": 82
+   },
+   "precision": 0.7463815789473685,
+   "exact_set_rate": 0.36276223776223776,
+   "mean_bytes": 22.62937062937063,
+   "recall_by_field": {
+    "buttons": {
+     "hits": 754,
+     "total": 764,
+     "recall": 0.9869109947643979
+    },
+    "color": {
+     "hits": 1524,
+     "total": 1524,
+     "recall": 1.0
+    },
+    "fibre": {
+     "hits": 737,
+     "total": 764,
+     "recall": 0.9646596858638743
+    },
+    "material": {
+     "hits": 763,
+     "total": 764,
+     "recall": 0.9986910994764397
+    },
+    "taste": {
+     "hits": 760,
+     "total": 760,
+     "recall": 1.0
+    }
+   },
+   "mean_generated_tokens": 33.86888111888112,
+   "max_generated_tokens": 51,
+   "mean_decode_seconds": 0.6777556861614014,
+   "hit_max_new_tokens": null,
+   "final_channel_missing": null,
+   "reasoning_marker_in_output": null,
+   "greedy_argmax_mismatches": null,
+   "required_fact_recall_ci_lo": 0.9875437062937062,
+   "required_fact_recall_ci_hi": 0.9954108391608392,
+   "complete_object_rate_ci_lo": 0.9772727272727273,
+   "complete_object_rate_ci_hi": 0.9912587412587412,
+   "complete_packet_rate_ci_lo": 0.9737762237762237,
+   "complete_packet_rate_ci_hi": 0.9903846153846154,
+   "parse_fully_rate_ci_lo": 1.0,
+   "parse_fully_rate_ci_hi": 1.0,
+   "wrong_object_lane_rate_ci_lo": 0.00043706293706293706,
+   "wrong_object_lane_rate_ci_hi": 0.004370629370629371,
+   "n_scenes": 572
+  }
+ },
+ "verdict": {
+  "status": "NO_LOCK",
+  "checks": []
+ },
+ "bootstrap": {
+  "unit": "scene",
+  "draws": 2000,
+  "seed": 0,
+  "interval": "95% percentile"
+ }
+}

@@ -1,0 +1,155 @@
+{
+ "utc": "2026-09-25T012820Z",
+ "note": "Held-out predictions fixed BEFORE any held-out depth-scan row (the depth manifests do not exist yet; build_depth_manifests.py refuses to run unless this record is committed and matches predictions.json).",
+ "predictions_sha256": "1ce34d5de63e2c9ef9414638641d1b6d88c7d9699e25198eb211aecf564c48ee",
+ "tau": 0.7863636363636364,
+ "dev_balanced_accuracy": 1.0,
+ "d_star": 0.425,
+ "dev_balanced_accuracy_depth_only": 0.8958333333333333,
+ "metric": "bind_pair_success",
+ "calibration_sha256": {
+  "qwen3-32b": "d4b07abdc00b2ceb0683285114ebdee1a09a8cb931476223389db724bc837a61",
+  "qwen3-14b-base": "97c6e76bfea4f6fe5c30a0d3602cf188572086da008a8979c981e2096c7933bc",
+  "glm-4-9b": "5c23338e025146ab84600c0b20a7f168cb210dfbe0220e9438014052d44dcecb",
+  "gemma-3-27b-it": "18839fe3958b6e0d01fceeed261c5b297360c192e8b40850598ac9117afbead0",
+  "qwen3.5-2b": "bf9b015cb0936523346488793e62968002e9b18e1dc0da19fe7b99c04e07f55e",
+  "qwen3.5-4b": "84a6c867e48a85f6848f9edc4bae16f82b03ebe7ba7afe8f8d2922d51e3e74cf",
+  "qwen3.5-9b": "1f489649707de6c351abbb4010ecd9375cb12f64b4be4934f215d3bfc49dbdfe",
+  "qwen3.5-27b": "26519936ea92daef12fe9be94fd0adb7101066b909805b2b46107c37adf16e85",
+  "qwen3.6-27b": "270fd5a6120e8fc424d9113e391bbbfb9f8552c6e9983117ba85a94110386bb2",
+  "granite-4.1-8b": "91b4350a58a25f8672b91d8ef08c489eb1e3487610194f3cf3e182e56ca4b93b",
+  "olmo-3-7b-instruct": "7f9fe604b23d7373e5ea1de207c526367e93d81730ac1646035dc4d97077f447",
+  "gpt-oss-20b": "bb8801871cdb74adb60c4664c6a2ce2387f31095d332bb00c230ec48e664a462",
+  "mistral-small-3.2-24b": "942b85f4a13cce060d01f32845b5a6d5d54ed2cc02acd3a77c9d5e379a8687e6"
+ },
+ "predicted_usable": {
+  "qwen3.5-2b": {
+   "0.2": true,
+   "0.35": false,
+   "0.5": false,
+   "0.65": false,
+   "0.8": false
+  },
+  "qwen3.5-4b": {
+   "0.2": true,
+   "0.35": false,
+   "0.5": false,
+   "0.65": false,
+   "0.8": false
+  },
+  "qwen3.5-9b": {
+   "0.2": true,
+   "0.35": false,
+   "0.5": false,
+   "0.65": false,
+   "0.8": false
+  },
+  "qwen3.5-27b": {
+   "0.2": true,
+   "0.35": true,
+   "0.5": false,
+   "0.65": false,
+   "0.8": false
+  },
+  "qwen3.6-27b": {
+   "0.2": true,
+   "0.35": true,
+   "0.5": true,
+   "0.65": false,
+   "0.8": false
+  },
+  "granite-4.1-8b": {
+   "0.2": true,
+   "0.35": true,
+   "0.5": false,
+   "0.65": false,
+   "0.8": false
+  },
+  "olmo-3-7b-instruct": {
+   "0.2": true,
+   "0.35": false,
+   "0.5": false,
+   "0.65": false,
+   "0.8": false
+  },
+  "gpt-oss-20b": {
+   "0.2": true,
+   "0.35": false,
+   "0.5": false,
+   "0.65": false,
+   "0.8": false
+  },
+  "mistral-small-3.2-24b": {
+   "0.2": true,
+   "0.35": false,
+   "0.5": false,
+   "0.65": false,
+   "0.8": false
+  }
+ },
+ "metric_values": {
+  "qwen3.5-2b": {
+   "0.2": 0.9455,
+   "0.35": 0.2091,
+   "0.5": 0.0182,
+   "0.65": 0.0182,
+   "0.8": 0.0182
+  },
+  "qwen3.5-4b": {
+   "0.2": 0.9818,
+   "0.35": 0.0545,
+   "0.5": 0.0,
+   "0.65": 0.0,
+   "0.8": 0.0
+  },
+  "qwen3.5-9b": {
+   "0.2": 0.9909,
+   "0.35": 0.2818,
+   "0.5": 0.0,
+   "0.65": 0.0,
+   "0.8": 0.0
+  },
+  "qwen3.5-27b": {
+   "0.2": 1.0,
+   "0.35": 1.0,
+   "0.5": 0.3091,
+   "0.65": 0.0182,
+   "0.8": 0.0091
+  },
+  "qwen3.6-27b": {
+   "0.2": 1.0,
+   "0.35": 1.0,
+   "0.5": 0.9273,
+   "0.65": 0.1818,
+   "0.8": 0.0091
+  },
+  "granite-4.1-8b": {
+   "0.2": 1.0,
+   "0.35": 0.9909,
+   "0.5": 0.7636,
+   "0.65": 0.0091,
+   "0.8": 0.0
+  },
+  "olmo-3-7b-instruct": {
+   "0.2": 0.9818,
+   "0.35": 0.4091,
+   "0.5": 0.1091,
+   "0.65": 0.1,
+   "0.8": 0.1182
+  },
+  "gpt-oss-20b": {
+   "0.2": 0.9909,
+   "0.35": 0.4091,
+   "0.5": 0.0,
+   "0.65": 0.0,
+   "0.8": 0.0
+  },
+  "mistral-small-3.2-24b": {
+   "0.2": 0.9727,
+   "0.35": 0.3636,
+   "0.5": 0.0182,
+   "0.65": 0.0182,
+   "0.8": 0.0182
+  }
+ }
+}

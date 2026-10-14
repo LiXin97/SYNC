@@ -1,0 +1,179 @@
+{
+ "lock": "p0b_protocol_20260923",
+ "utc": "2026-09-23T10:52:36.073346+00:00",
+ "status": "FROZEN_BEFORE_ANY_P0B_OUTPUT",
+ "authority": "[internal approval note removed for anonymity]",
+ "question": "With sender, receiver directions, depth 0.2, gamma 1 and layout all fixed, can the automatic word-index message be used for CONJUNCTIVE fact use (only a color+material conjunction identifies the answer)?",
+ "sender": {
+  "identity": "candidate A4 (the frozen R4 four-object adaptation of candidate A: Llama-3.1-8B-Instruct, greedy, same inventory/parser/sorting/q=255)",
+  "code": "src/syncomm/recovery/sender_candidate_a4.py",
+  "code_sha256": "8fad218361d0e536e273dc182d7a12a39fc022220339c3d8470fb89b985a93cc",
+  "inputs": "one world's four evidence sentences and the four aliases only; never the question, gold or the other world",
+  "reuse": "encoded once per world; the same packet serves both queries and all four receivers",
+  "words_from": "artifacts/receiver_recovery/r4_packets/candidateA4_r4.json (221-word inventory list only)",
+  "outputs": {
+   "dev": "artifacts/word_interface_followup/p0b_packets/candidateA4_dev.json",
+   "eval": "artifacts/word_interface_followup/p0b_packets/candidateA4_eval.json"
+  },
+  "note": "the sender file records split=\"r4_four_object\" (a hardcoded label in the frozen R4 sender); it is not edited, the label is documentation only"
+ },
+ "receivers": {
+  "qwen3-32b": {
+   "selected_layers": [
+    13
+   ],
+   "original_layers": [
+    26,
+    32,
+    38
+   ],
+   "directions": "artifacts/receiver_recovery/fits/directions_qwen3-32b.pt",
+   "directions_sha256": "bc9b153ea0d01b9df638d5485d404e696372971b91b7fb83a2951c1fa60a1e75"
+  },
+  "qwen3-14b-base": {
+   "selected_layers": [
+    8
+   ],
+   "original_layers": [
+    16,
+    20,
+    24
+   ],
+   "directions": "artifacts/receiver_recovery/fits/directions_qwen3-14b-base.pt",
+   "directions_sha256": "75661419f45f3eec5697831bb75a1cf3811f3c79429828b15ad27aef0ae3a119"
+  },
+  "glm-4-9b": {
+   "selected_layers": [
+    8
+   ],
+   "original_layers": [
+    16,
+    20,
+    24
+   ],
+   "directions": "artifacts/receiver_recovery/fits/directions_glm-4-9b.pt",
+   "directions_sha256": "9096363f53235fc3ad8476a8a50b027ef9cb948d6d8982e3dc696bf91ffb94f3"
+  },
+  "gemma-3-27b-it": {
+   "selected_layers": [
+    12
+   ],
+   "original_layers": [
+    25,
+    31,
+    37
+   ],
+   "directions": "artifacts/receiver_recovery/fits/directions_gemma-3-27b-it.pt",
+   "directions_sha256": "aa43d9a84458454559baf7bcdd5f4b1fddb312e7e48e97d6d58f40a793980fc9"
+  }
+ },
+ "runner": {
+  "path": "src/syncomm/recovery/evaluate_confirm4.py",
+  "sha256": "23661790a79ee506fa31f10cdcc0f5d33c471669cfe9ed566f0b19b4e3812ada",
+  "note": "the R4 four-object runner unchanged; gold = world answers (the unique conjunction holder); questions are the scene questions"
+ },
+ "write": "raw fitted word-contrast write at the selected depth-0.2 layer, gamma 1, four public slots per object, word-final positions; no task-based receiver tuning",
+ "routes": {
+  "actual": [
+   "none",
+   "identity_write",
+   "selected",
+   "packet_text",
+   "full_text",
+   "sham0",
+   "sham1",
+   "sham2",
+   "other_world"
+  ],
+  "literal": [
+   "selected",
+   "packet_text",
+   "sham0",
+   "sham1",
+   "sham2",
+   "other_world"
+  ],
+  "dedup": "none, identity_write and full_text are source-independent and are run once (under actual); the literal rows reuse them by definition",
+  "meaning": {
+   "selected": "current internal write",
+   "packet_text": "the identical packet as weighted padded text",
+   "full_text": "the four evidence sentences verbatim",
+   "sham0-2": "three fixed word-to-direction reassignments (R-series permutation seeds 202609201-3), per-layer norm-matched to selected",
+   "other_world": "the same source's packet for the other world through selected, scored against current and supplied gold"
+  }
+ },
+ "phases": {
+  "dev": "96 development scenes (engineering once, then development) — engineering/task diagnostics only; nothing is tuned on them",
+  "eval": "576 evaluation scenes (engineering once on the 4 separate engineering scenes, then all 576)"
+ },
+ "endpoints": {
+  "primary": "scene-level four-answer joint correctness J at the 64-token budget; failed sender parses and invalid receiver outputs stay in the denominator (576 scenes)",
+  "secondary": [
+   "all-answer accuracy",
+   "valid-answer (strict first-line alias) rate",
+   "changed-query success in both worlds (R)",
+   "unchanged-query success in both worlds (U)",
+   "raw numerators/denominators",
+   "256-token sensitivity",
+   "edit norms",
+   "wire bytes",
+   "other-world supplied-gold scoring"
+  ],
+  "sender_content": [
+   "fact recall per object (gold color and material present in the lane)",
+   "complete-packet rate (all 8 facts in the right lanes)",
+   "object-assignment errors (a gold value of another object in a lane)",
+   "parse status counts"
+  ]
+ },
+ "contrasts": {
+  "primary": "selected - mean(sham0..2), per receiver, per source",
+  "descriptive": [
+   "selected - packet_text",
+   "selected - full_text",
+   "packet_text - full_text",
+   "actual - literal (per route)"
+  ]
+ },
+ "multiplicity": {
+  "families": {
+   "B_actual": "selected - mean reassignment on the automatic source across the four receivers (4 tests)",
+   "B_literal": "selected - mean reassignment on the complete-fact source across the four receivers (4 tests)"
+  },
+  "method": "Holm, familywise alpha 0.05 within each family; two-sided paired bootstrap p; text differences descriptive"
+ },
+ "ci": {
+  "method": "scene-paired cluster bootstrap of cluster means, 20000 draws x seeds [190919,290919,390919], envelope = min lower / max upper",
+  "levels": [
+   "36 color-pair x material-pair groups",
+   "12 evidence templates (crossed with groups, analysed separately, not nested)"
+  ],
+  "conservative_rule": "the claim uses the more conservative level: the lower of the two lower bounds and the larger of the two p values"
+ },
+ "claim_gate": {
+  "reliable_automatic_conjunction_use": "on the automatic source: selected J >= 0.50 AND valid-answer rate >= 0.90 AND selected - mean reassignment with positive conservative lower bound AND Holm rejection (adjusted p < .05) in B_actual",
+  "note": "research operational definitions, not acceptance criteria; absolute outcomes reported regardless; the complete-fact source is reported with its own family"
+ },
+ "interpretation": [
+  "no-message J is structurally 0 for deterministic answers to identical questions whose gold changes; 1/16 is not its reference",
+  "if full_text fails, the task may exceed the receiver under this prompt: result preserved, no negative communication claim",
+  "success establishes controlled conjunctive use only: not general multi-step reasoning, relational communication or agent-task utility",
+  "a missing fact in the packet is reported through the sender-content diagnostics, not attributed to delivery"
+ ],
+ "engineering": [
+  "question-free cache construction and cache-copy/full replay (runner checks on engineering scenes)",
+  "active identity-write exactness",
+  "packet/object mapping (audit re-derives entries per object)",
+  "conjunction gold re-derived from the bank facts and parsed query in the audit",
+  "strict parser re-applied",
+  "complete row accounting"
+ ],
+ "numerics": {
+  "dtype": "FP32 eager, TF32 off, batch 1",
+  "budgets": [
+   64,
+   256
+  ],
+  "parser": "strict first-line alias"
+ }
+}

@@ -1,0 +1,47 @@
+{
+  "adapter": {
+    "installed": true,
+    "path": "src/syncomm/latest/adapter.py",
+    "policy": "optional",
+    "priors_patched": 1,
+    "sha256": "0f4cc649a611c3f985414e4b4f9b69a680829dbb35c25ec83f6de8763e777b19"
+  },
+  "adapter_model_info": null,
+  "arms": [
+    "none",
+    "internal_L000",
+    "text_L000",
+    "internal_L064",
+    "text_L064",
+    "internal_L128",
+    "sham0_L128",
+    "text_L128",
+    "internal_L191",
+    "text_L191",
+    "internal_L255",
+    "text_L255"
+  ],
+  "attn_implementation": "eager",
+  "cuda_devices": 1,
+  "elapsed_seconds": 2175.5103044509888,
+  "l255_world_mismatches": 0,
+  "manifest_sha256": "2de5147dad482585438cd1a9f54c231b83330ef90f39ac2ecbbee4aae521a18f",
+  "model_dtype": "torch.float32",
+  "phase": "development",
+  "python": "/usr/bin/python3",
+  "raw_sha256": "146d3e63ad4f526bd19c3172341bbfa7ebee23d09d066e20055de55e15cc5aca",
+  "receiver": "qwen3-32b",
+  "rows": 3456,
+  "rows_computed_this_process": 3456,
+  "scenes": 72,
+  "seconds_per_computed_row": 0.6294879353156796,
+  "shard": 1,
+  "shards": 2,
+  "status": "PASS",
+  "study": "LATEST0924_GRADED_B_V1",
+  "tiers": [
+    1,
+    2
+  ],
+  "transformers": "5.3.0"
+}

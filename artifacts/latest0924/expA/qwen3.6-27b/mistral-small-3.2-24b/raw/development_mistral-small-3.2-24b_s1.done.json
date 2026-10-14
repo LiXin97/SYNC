@@ -1,0 +1,12 @@
+{
+  "elapsed_seconds": 2636.583444595337,
+  "manifest_sha256": "aadf270c35e68d0d0e9abd0d9b935c323a3579511805b8bb8e5fda3aa71ada02",
+  "phase": "development",
+  "raw_sha256": "a8187319119537311c6b4865fab88b360301e58a095ea529111c6a6cc5aedc7a",
+  "receiver": "mistral-small-3.2-24b",
+  "rows": 6876,
+  "scenes": 191,
+  "shard": 1,
+  "shards": 3,
+  "status": "PASS"
+}

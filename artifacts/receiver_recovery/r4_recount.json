@@ -1,0 +1,152 @@
+{
+  "status": "PASS_SECOND_COUNT_MATCHES_AUDIT",
+  "utc": "2026-09-23T02:12:18.840160+00:00",
+  "audit_sha256": "ad3b5e2cd3c9c8f0f07a8d622217b26fe41081fc2b5a95484968fe761375238f",
+  "holm": {},
+  "n_disagreements": 0,
+  "disagreements": [],
+  "results": {
+    "qwen3-32b": {
+      "receiver": "qwen3-32b",
+      "scenes": 188,
+      "J": {
+        "actual/identity_write": 0.0,
+        "actual/none": 0.0,
+        "actual/original": 0.7998511904761906,
+        "actual/packet_text": 0.8690476190476191,
+        "actual/selected": 0.8690476190476191,
+        "actual/sham0": 0.0,
+        "actual/sham1": 0.0,
+        "actual/sham2": 0.0,
+        "literal/full_text": 0.9836309523809524,
+        "literal/native": 0.9784226190476191,
+        "literal/original": 0.8727678571428572,
+        "literal/packet_text": 0.9680059523809524,
+        "literal/selected": 0.9732142857142857
+      },
+      "coverage_selected": 0.9527529761904763,
+      "contrasts": {
+        "actual_selected_minus_original": {
+          "family": {
+            "mean": 0.06919642857142856,
+            "lo": 0.026041666666666668,
+            "hi": 0.11309523809523808,
+            "clusters": 24,
+            "p_two_sided": 0.0013
+          },
+          "template": {
+            "mean": 0.06984755627505397,
+            "lo": 0.02105496453900709,
+            "hi": 0.11944958371877892,
+            "clusters": 4,
+            "p_two_sided": 1.6666666666666667e-05
+          }
+        },
+        "actual_selected_minus_mean_sham": {
+          "family": {
+            "mean": 0.8690476190476191,
+            "lo": 0.7797619047619048,
+            "hi": 0.9456845238095238,
+            "clusters": 24,
+            "p_two_sided": 1.6666666666666667e-05
+          },
+          "template": {
+            "mean": 0.8690063213074314,
+            "lo": 0.6768617021276596,
+            "hi": 0.973172987974098,
+            "clusters": 4,
+            "p_two_sided": 1.6666666666666667e-05
+          }
+        },
+        "actual_selected_minus_packet_text": {
+          "family": {
+            "mean": 0.0,
+            "lo": -0.015625,
+            "hi": 0.015625,
+            "clusters": 24,
+            "p_two_sided": 1.0
+          },
+          "template": {
+            "mean": 0.00011563367252543939,
+            "lo": -0.015957446808510637,
+            "hi": 0.016304347826086956,
+            "clusters": 4,
+            "p_two_sided": 0.8524666666666667
+          }
+        }
+      },
+      "verdict": "none: R4 declared no test family or target (plan \u00a79); nothing is adjudicated"
+    },
+    "gemma-3-27b-it": {
+      "receiver": "gemma-3-27b-it",
+      "scenes": 188,
+      "J": {
+        "actual/identity_write": 0.0,
+        "actual/none": 0.0,
+        "actual/original": 0.2619047619047619,
+        "actual/packet_text": 0.9114583333333334,
+        "actual/selected": 0.9114583333333334,
+        "actual/sham0": 0.005208333333333333,
+        "actual/sham1": 0.0,
+        "actual/sham2": 0.0,
+        "literal/full_text": 1.0,
+        "literal/native": 1.0,
+        "literal/original": 0.26711309523809523,
+        "literal/packet_text": 1.0,
+        "literal/selected": 1.0
+      },
+      "coverage_selected": 0.9934895833333334,
+      "contrasts": {
+        "actual_selected_minus_original": {
+          "family": {
+            "mean": 0.6495535714285715,
+            "lo": 0.5580357142857143,
+            "hi": 0.7313988095238096,
+            "clusters": 24,
+            "p_two_sided": 1.6666666666666667e-05
+          },
+          "template": {
+            "mean": 0.6504345898859082,
+            "lo": 0.5402260638297872,
+            "hi": 0.7421369102682702,
+            "clusters": 4,
+            "p_two_sided": 1.6666666666666667e-05
+          }
+        },
+        "actual_selected_minus_mean_sham": {
+          "family": {
+            "mean": 0.9097222222222223,
+            "lo": 0.8298611111111112,
+            "hi": 0.9739583333333334,
+            "clusters": 24,
+            "p_two_sided": 1.6666666666666667e-05
+          },
+          "template": {
+            "mean": 0.9096852836879432,
+            "lo": 0.734375,
+            "hi": 1.0,
+            "clusters": 4,
+            "p_two_sided": 1.6666666666666667e-05
+          }
+        },
+        "actual_selected_minus_packet_text": {
+          "family": {
+            "mean": 0.0,
+            "lo": 0.0,
+            "hi": 0.0,
+            "clusters": 24,
+            "p_two_sided": 1.0
+          },
+          "template": {
+            "mean": 0.0,
+            "lo": 0.0,
+            "hi": 0.0,
+            "clusters": 4,
+            "p_two_sided": 1.0
+          }
+        }
+      },
+      "verdict": "none: R4 declared no test family or target (plan \u00a79); nothing is adjudicated"
+    }
+  }
+}

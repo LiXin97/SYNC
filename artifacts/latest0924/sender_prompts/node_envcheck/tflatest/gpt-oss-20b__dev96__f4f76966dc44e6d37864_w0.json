@@ -1,0 +1,123 @@
+{
+ "sender": "gpt-oss-20b",
+ "checkpoint": "/path/to/models/gpt-oss-20b",
+ "split": "dev96",
+ "bank": "artifacts/mechanism0919/discovery_v1/exposed_development.json",
+ "bank_sha256": "97b7622418ba13eaae739a45ba675a8d838821c01f3f169eee84092a77056177",
+ "scene": "f4f76966dc44e6d37864",
+ "world": 0,
+ "aliases": [
+  "QUAN",
+  "FEP"
+ ],
+ "evidence": [
+  "QUAN is a red candy. It is sour.",
+  "FEP is a yellow candy. It is sweet."
+ ],
+ "prompt_file": "gpt-oss-20b__dev96__f4f76966dc44e6d37864_w0.txt",
+ "rendered_prompt_sha256": "c643eb1e1be86da821f72fecb4c419a49821ab5ba27463872ce52db72752f3c2",
+ "frozen_prompt_sha256": "328c8b5df9d196724cdabd6cc7a291c0cfc7ca13ab524bd3cb70239de7183e0b",
+ "chat_template_kwargs": {
+  "reasoning_effort": "low",
+  "strftime_now_pinned_date": "2026-09-24"
+ },
+ "chat_template_sha256": "a4c9919cbbd4acdd51ccffe22da049264b1b73e59055fa58811a99efbd7c8146",
+ "tokenizer_class": "TokenizersBackend",
+ "prompt_tokens": 676,
+ "first_ids": [
+  200006,
+  17360,
+  200008,
+  3575,
+  553,
+  17554,
+  162016,
+  11
+ ],
+ "last_ids": [
+  17695,
+  392,
+  37,
+  14880,
+  1243,
+  9129,
+  1801,
+  2601,
+  92,
+  200007,
+  200006,
+  173781
+ ],
+ "last_tokens": [
+  "\"],",
+  "\u0120\"",
+  "F",
+  "EP",
+  "\":",
+  "\u0120[\"",
+  "word",
+  "\"]",
+  "}",
+  "<|end|>",
+  "<|start|>",
+  "assistant"
+ ],
+ "rendered_prompt_head": "<|start|>system<|message|>You are ChatGPT, a large language model trained by OpenAI.\nKnowledge cutoff: 2024-06\nCurrent date: 2026-09-24\n\nReasoning: low\n\n# Valid channels: analysis, commentary, final. Channel must be included for every message.<|end|><|start|>developer<|message|># Instructions\n\nYou compress object descriptions into a fixed public vocabulary. You will be given a vocabulary of words and a description of two objects. For each object, choose up to four vocabulary words that the description explicitly supports. Use only words from the vocabulary, spelled exactly as given. Do not invent facts. Answer with one JSON object and nothing else.\n\n<|end|><|start|>user<|message|>",
+ "rendered_prompt_tail": "<|end|><|start|>assistant",
+ "scaffold_identical_across_bank": true,
+ "n_worlds_checked": 192,
+ "prompt_tokens_over_bank": {
+  "n": 192,
+  "min": 676,
+  "max": 693,
+  "mean": 683.9375,
+  "total": 131316
+ },
+ "template_checks": {
+  "reasoning_low_line": true,
+  "pinned_date_line": true,
+  "system_text_in_developer_instructions": true,
+  "ends_with_assistant_start": true,
+  "default_model_identity": true
+ },
+ "answer_rule": "gpt_oss",
+ "adapter": {
+  "key": "gpt-oss-20b",
+  "spec": {
+   "path": "/path/to/models/gpt-oss-20b",
+   "family": "gpt_oss",
+   "chat": "True",
+   "env": "system",
+   "python": "/usr/bin/python3",
+   "dtype": "float32",
+   "gpus": "1",
+   "n_layers": "24",
+   "loader": "gpt_oss_dequant",
+   "chat_render": "gpt_oss_final",
+   "turn_end": "<|return|>",
+   "roles": "('receiver', 'sender')",
+   "eos_token_ids": "None",
+   "ignorable_unexpected": "()",
+   "key_mapping": "None",
+   "tokenizer": "auto",
+   "max_memory_gib": "None",
+   "notes": "GptOssForCausalLM, 32-expert MoE, alternating 128-token sliding-window / full attention (12+12), attention sinks (eager path). MXFP4 experts dequantized (exact in bf16, then held in fp32; ~80 GiB). Harmony prompt: reasoning low, date pinned, final channel pre-opened. Also a sender."
+  },
+  "chat_kwargs": {
+   "reasoning_effort": "low"
+  }
+ },
+ "env": {
+  "python": "python",
+  "python_version": "3.11.2",
+  "hostname": "gpu-node",
+  "cuda_visible_devices": "",
+  "torch": "2.10.0+cu128",
+  "transformers": "5.12.1",
+  "tokenizers": "0.22.2",
+  "accelerate": "1.13.0",
+  "fla_available": false
+ },
+ "utc": "2026-09-24T13:26:15Z",
+ "script_sha256": "26945067fd587313afdc186c0318f9fdce406f000c334843871493320a000a0d"
+}

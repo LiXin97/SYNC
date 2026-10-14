@@ -1,0 +1,226 @@
+{
+  "qwen3-32b": {
+    "receiver": "qwen3-32b",
+    "selected_layers": [
+      13
+    ],
+    "gamma": 1,
+    "scenes": 8,
+    "items": 16,
+    "hardware": "one NVIDIA B200, FP32 eager, TF32 off, batch 1, 64-token answer budget, both questions per item",
+    "receiver_side": {
+      "write": {
+        "items": 16,
+        "reps": 5,
+        "cold_median_ms": 1292.8114654496312,
+        "warm_median_ms": 1300.7058217190206,
+        "warm_p90_ms": 1456.4233552664518,
+        "warm_n": 64
+      },
+      "text": {
+        "items": 16,
+        "reps": 5,
+        "cold_median_ms": 1016.9780063442886,
+        "warm_median_ms": 1018.2771696709096,
+        "warm_p90_ms": 1177.2693386301398,
+        "warm_n": 64
+      },
+      "none": {
+        "items": 16,
+        "reps": 5,
+        "cold_median_ms": 1035.5317112989724,
+        "warm_median_ms": 1038.9870051294565,
+        "warm_p90_ms": 1175.319915637374,
+        "warm_n": 64
+      }
+    },
+    "wire_bytes": {
+      "packet": {
+        "mean": 20,
+        "min": 20,
+        "max": 20
+      },
+      "text": {
+        "mean": 225.875,
+        "min": 224,
+        "max": 228
+      },
+      "evidence": {
+        "mean": 131.875,
+        "min": 97,
+        "max": 161
+      }
+    },
+    "offline_fit_note": "word-contrast fitting is offline and one-off per receiver: 221 words x 12 generic contexts at the required layers, 2-6 min on one B200 (R0 receipts); it is reused by every later item and is NOT included in the per-item numbers above",
+    "sender_note": "candidate A generation is common to the write and text routes and is measured separately from the frozen sender log (mean 0.68 s per world, mean 22.6 wire bytes on the R3 bank); it is not repeated here",
+    "not_claimed": "no engineering advantage is claimed; these are comparable measurements of the current implementation"
+  },
+  "qwen3-14b-base": {
+    "receiver": "qwen3-14b-base",
+    "selected_layers": [
+      8
+    ],
+    "gamma": 1,
+    "scenes": 8,
+    "items": 16,
+    "hardware": "one NVIDIA B200, FP32 eager, TF32 off, batch 1, 64-token answer budget, both questions per item",
+    "receiver_side": {
+      "write": {
+        "items": 16,
+        "reps": 5,
+        "cold_median_ms": 641.2448892369866,
+        "warm_median_ms": 640.1394973509014,
+        "warm_p90_ms": 717.3893470317125,
+        "warm_n": 64
+      },
+      "text": {
+        "items": 16,
+        "reps": 5,
+        "cold_median_ms": 515.1813575066626,
+        "warm_median_ms": 514.8565457202494,
+        "warm_p90_ms": 591.2505323067307,
+        "warm_n": 64
+      },
+      "none": {
+        "items": 16,
+        "reps": 5,
+        "cold_median_ms": 540.1422437280416,
+        "warm_median_ms": 540.1659617200494,
+        "warm_p90_ms": 589.7345403209329,
+        "warm_n": 64
+      }
+    },
+    "wire_bytes": {
+      "packet": {
+        "mean": 20,
+        "min": 20,
+        "max": 20
+      },
+      "text": {
+        "mean": 225.875,
+        "min": 224,
+        "max": 228
+      },
+      "evidence": {
+        "mean": 131.875,
+        "min": 97,
+        "max": 161
+      }
+    },
+    "offline_fit_note": "word-contrast fitting is offline and one-off per receiver: 221 words x 12 generic contexts at the required layers, 2-6 min on one B200 (R0 receipts); it is reused by every later item and is NOT included in the per-item numbers above",
+    "sender_note": "candidate A generation is common to the write and text routes and is measured separately from the frozen sender log (mean 0.68 s per world, mean 22.6 wire bytes on the R3 bank); it is not repeated here",
+    "not_claimed": "no engineering advantage is claimed; these are comparable measurements of the current implementation"
+  },
+  "glm-4-9b": {
+    "receiver": "glm-4-9b",
+    "selected_layers": [
+      8
+    ],
+    "gamma": 1,
+    "scenes": 8,
+    "items": 16,
+    "hardware": "one NVIDIA B200, FP32 eager, TF32 off, batch 1, 64-token answer budget, both questions per item",
+    "receiver_side": {
+      "write": {
+        "items": 16,
+        "reps": 5,
+        "cold_median_ms": 650.8817793801427,
+        "warm_median_ms": 650.9370682761073,
+        "warm_p90_ms": 736.3386014476418,
+        "warm_n": 64
+      },
+      "text": {
+        "items": 16,
+        "reps": 5,
+        "cold_median_ms": 546.2901429273188,
+        "warm_median_ms": 545.2503156848252,
+        "warm_p90_ms": 656.3274385407567,
+        "warm_n": 64
+      },
+      "none": {
+        "items": 16,
+        "reps": 5,
+        "cold_median_ms": 471.5068684890866,
+        "warm_median_ms": 470.85896972566843,
+        "warm_p90_ms": 532.6723558828235,
+        "warm_n": 64
+      }
+    },
+    "wire_bytes": {
+      "packet": {
+        "mean": 20,
+        "min": 20,
+        "max": 20
+      },
+      "text": {
+        "mean": 225.875,
+        "min": 224,
+        "max": 228
+      },
+      "evidence": {
+        "mean": 131.875,
+        "min": 97,
+        "max": 161
+      }
+    },
+    "offline_fit_note": "word-contrast fitting is offline and one-off per receiver: 221 words x 12 generic contexts at the required layers, 2-6 min on one B200 (R0 receipts); it is reused by every later item and is NOT included in the per-item numbers above",
+    "sender_note": "candidate A generation is common to the write and text routes and is measured separately from the frozen sender log (mean 0.68 s per world, mean 22.6 wire bytes on the R3 bank); it is not repeated here",
+    "not_claimed": "no engineering advantage is claimed; these are comparable measurements of the current implementation"
+  },
+  "gemma-3-27b-it": {
+    "receiver": "gemma-3-27b-it",
+    "selected_layers": [
+      12
+    ],
+    "gamma": 1,
+    "scenes": 8,
+    "items": 16,
+    "hardware": "one NVIDIA B200, FP32 eager, TF32 off, batch 1, 64-token answer budget, both questions per item",
+    "receiver_side": {
+      "write": {
+        "items": 16,
+        "reps": 5,
+        "cold_median_ms": 1298.60564135015,
+        "warm_median_ms": 1300.0992597080767,
+        "warm_p90_ms": 1406.3052600249648,
+        "warm_n": 64
+      },
+      "text": {
+        "items": 16,
+        "reps": 5,
+        "cold_median_ms": 1053.993009030819,
+        "warm_median_ms": 1050.8483536541462,
+        "warm_p90_ms": 1162.8522025421262,
+        "warm_n": 64
+      },
+      "none": {
+        "items": 16,
+        "reps": 5,
+        "cold_median_ms": 1051.076038274914,
+        "warm_median_ms": 1053.8389636203647,
+        "warm_p90_ms": 1161.1709920689464,
+        "warm_n": 64
+      }
+    },
+    "wire_bytes": {
+      "packet": {
+        "mean": 20,
+        "min": 20,
+        "max": 20
+      },
+      "text": {
+        "mean": 225.875,
+        "min": 224,
+        "max": 228
+      },
+      "evidence": {
+        "mean": 131.875,
+        "min": 97,
+        "max": 161
+      }
+    },
+    "offline_fit_note": "word-contrast fitting is offline and one-off per receiver: 221 words x 12 generic contexts at the required layers, 2-6 min on one B200 (R0 receipts); it is reused by every later item and is NOT included in the per-item numbers above",
+    "sender_note": "candidate A generation is common to the write and text routes and is measured separately from the frozen sender log (mean 0.68 s per world, mean 22.6 wire bytes on the R3 bank); it is not repeated here",
+    "not_claimed": "no engineering advantage is claimed; these are comparable measurements of the current implementation"
+  }
+}

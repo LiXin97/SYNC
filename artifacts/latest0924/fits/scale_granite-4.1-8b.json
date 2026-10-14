@@ -1,0 +1,32 @@
+{
+ "receiver": "granite-4.1-8b",
+ "layers": [
+  8,
+  16,
+  20,
+  24
+ ],
+ "file": "artifacts/latest0924/fits/directions_granite-4.1-8b.pt",
+ "sha256": "f35c74823c85c7598e43abb7451b9619210660c9dfe025f4adbd1d8589fd057f",
+ "direction_norm_median_per_layer": {
+  "8": 17.57300567626953,
+  "16": 20.93017578125,
+  "20": 23.478471755981445,
+  "24": 27.075672149658203
+ },
+ "local_scale": {
+  "8": 1.0307914018630981,
+  "16": 1.0481070280075073,
+  "20": 1.1124753952026367,
+  "24": 1.1266130208969116
+ },
+ "n_ratio_samples": {
+  "8": 2652,
+  "16": 2652,
+  "20": 2652,
+  "24": 2652
+ },
+ "excluded_rows": [],
+ "epsilon": 1e-08,
+ "rule": "c[l] = median over (word, template) of ||delta[l,w,t]|| / ||d[l,w]||; >= 1 by construction"
+}

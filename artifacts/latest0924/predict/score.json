@@ -1,0 +1,574 @@
+{
+ "lock_sha256": "2d7d85fe2b02bbed3cf147ac5aa3abd78063643e7814244c5d46600dd79ed39d",
+ "predictions_sha256": "1ce34d5de63e2c9ef9414638641d1b6d88c7d9699e25198eb211aecf564c48ee",
+ "tau": 0.7863636363636364,
+ "d_star": 0.425,
+ "results": {
+  "balanced_accuracy": 1.0,
+  "ba_ci": [
+   1.0,
+   1.0
+  ],
+  "accuracy": 1.0,
+  "acc_ci": [
+   1.0,
+   1.0
+  ],
+  "spearman": 0.9043478260869564,
+  "spearman_ci": [
+   0.7686396574440051,
+   0.9459815546772068
+  ],
+  "depth_only_ba": 0.8677884615384616,
+  "depth_only_ci": [
+   0.8137019230769231,
+   0.921875
+  ],
+  "ba_minus_depth_only": 0.13221153846153844,
+  "diff_ci": [
+   0.078125,
+   0.18629807692307687
+  ],
+  "success": true
+ },
+ "cells": [
+  {
+   "receiver": "qwen3.5-2b",
+   "depth": 0.2,
+   "metric": 0.9454545454545454,
+   "pred": true,
+   "depth_only": true,
+   "J": 89.58333333333333,
+   "usable": true,
+   "native": 92.70833333333333
+  },
+  {
+   "receiver": "qwen3.5-2b",
+   "depth": 0.35,
+   "metric": 0.20909090909090908,
+   "pred": false,
+   "depth_only": true,
+   "J": 35.416666666666664,
+   "usable": false,
+   "native": 41.666666666666664
+  },
+  {
+   "receiver": "qwen3.5-2b",
+   "depth": 0.5,
+   "metric": 0.01818181818181818,
+   "pred": false,
+   "depth_only": false,
+   "J": 0.0,
+   "usable": false,
+   "native": 1.0416666666666667
+  },
+  {
+   "receiver": "qwen3.5-2b",
+   "depth": 0.65,
+   "metric": 0.01818181818181818,
+   "pred": false,
+   "depth_only": false,
+   "J": 2.0833333333333335,
+   "usable": false,
+   "native": 1.0416666666666667
+  },
+  {
+   "receiver": "qwen3.5-2b",
+   "depth": 0.8,
+   "metric": 0.01818181818181818,
+   "pred": false,
+   "depth_only": false,
+   "J": 0.0,
+   "usable": false,
+   "native": 0.0
+  },
+  {
+   "receiver": "qwen3.5-4b",
+   "depth": 0.2,
+   "metric": 0.9818181818181818,
+   "pred": true,
+   "depth_only": true,
+   "J": 100.0,
+   "usable": true,
+   "native": 100.0
+  },
+  {
+   "receiver": "qwen3.5-4b",
+   "depth": 0.35,
+   "metric": 0.05454545454545454,
+   "pred": false,
+   "depth_only": true,
+   "J": 7.291666666666667,
+   "usable": false,
+   "native": 8.333333333333334
+  },
+  {
+   "receiver": "qwen3.5-4b",
+   "depth": 0.5,
+   "metric": 0.0,
+   "pred": false,
+   "depth_only": false,
+   "J": 0.0,
+   "usable": false,
+   "native": 0.0
+  },
+  {
+   "receiver": "qwen3.5-4b",
+   "depth": 0.65,
+   "metric": 0.0,
+   "pred": false,
+   "depth_only": false,
+   "J": 0.0,
+   "usable": false,
+   "native": 0.0
+  },
+  {
+   "receiver": "qwen3.5-4b",
+   "depth": 0.8,
+   "metric": 0.0,
+   "pred": false,
+   "depth_only": false,
+   "J": 0.0,
+   "usable": false,
+   "native": 0.0
+  },
+  {
+   "receiver": "qwen3.5-9b",
+   "depth": 0.2,
+   "metric": 0.990909090909091,
+   "pred": true,
+   "depth_only": true,
+   "J": 100.0,
+   "usable": true,
+   "native": 100.0
+  },
+  {
+   "receiver": "qwen3.5-9b",
+   "depth": 0.35,
+   "metric": 0.2818181818181818,
+   "pred": false,
+   "depth_only": true,
+   "J": 34.375,
+   "usable": false,
+   "native": 52.083333333333336
+  },
+  {
+   "receiver": "qwen3.5-9b",
+   "depth": 0.5,
+   "metric": 0.0,
+   "pred": false,
+   "depth_only": false,
+   "J": 0.0,
+   "usable": false,
+   "native": 0.0
+  },
+  {
+   "receiver": "qwen3.5-9b",
+   "depth": 0.65,
+   "metric": 0.0,
+   "pred": false,
+   "depth_only": false,
+   "J": 3.125,
+   "usable": false,
+   "native": 0.0
+  },
+  {
+   "receiver": "qwen3.5-9b",
+   "depth": 0.8,
+   "metric": 0.0,
+   "pred": false,
+   "depth_only": false,
+   "J": 0.0,
+   "usable": false,
+   "native": 0.0
+  },
+  {
+   "receiver": "qwen3.5-27b",
+   "depth": 0.2,
+   "metric": 1.0,
+   "pred": true,
+   "depth_only": true,
+   "J": 100.0,
+   "usable": true,
+   "native": 100.0
+  },
+  {
+   "receiver": "qwen3.5-27b",
+   "depth": 0.35,
+   "metric": 1.0,
+   "pred": true,
+   "depth_only": true,
+   "J": 100.0,
+   "usable": true,
+   "native": 100.0
+  },
+  {
+   "receiver": "qwen3.5-27b",
+   "depth": 0.5,
+   "metric": 0.3090909090909091,
+   "pred": false,
+   "depth_only": false,
+   "J": 18.75,
+   "usable": false,
+   "native": 46.875
+  },
+  {
+   "receiver": "qwen3.5-27b",
+   "depth": 0.65,
+   "metric": 0.01818181818181818,
+   "pred": false,
+   "depth_only": false,
+   "J": 0.0,
+   "usable": false,
+   "native": 0.0
+  },
+  {
+   "receiver": "qwen3.5-27b",
+   "depth": 0.8,
+   "metric": 0.00909090909090909,
+   "pred": false,
+   "depth_only": false,
+   "J": 0.0,
+   "usable": false,
+   "native": 0.0
+  },
+  {
+   "receiver": "qwen3.6-27b",
+   "depth": 0.2,
+   "metric": 1.0,
+   "pred": true,
+   "depth_only": true,
+   "J": 100.0,
+   "usable": true,
+   "native": 100.0
+  },
+  {
+   "receiver": "qwen3.6-27b",
+   "depth": 0.35,
+   "metric": 1.0,
+   "pred": true,
+   "depth_only": true,
+   "J": 100.0,
+   "usable": true,
+   "native": 100.0
+  },
+  {
+   "receiver": "qwen3.6-27b",
+   "depth": 0.5,
+   "metric": 0.9272727272727272,
+   "pred": true,
+   "depth_only": false,
+   "J": 85.41666666666667,
+   "usable": true,
+   "native": 100.0
+  },
+  {
+   "receiver": "qwen3.6-27b",
+   "depth": 0.65,
+   "metric": 0.18181818181818182,
+   "pred": false,
+   "depth_only": false,
+   "J": 11.458333333333334,
+   "usable": false,
+   "native": 35.416666666666664
+  },
+  {
+   "receiver": "qwen3.6-27b",
+   "depth": 0.8,
+   "metric": 0.00909090909090909,
+   "pred": false,
+   "depth_only": false,
+   "J": 0.0,
+   "usable": false,
+   "native": 0.0
+  },
+  {
+   "receiver": "granite-4.1-8b",
+   "depth": 0.2,
+   "metric": 1.0,
+   "pred": true,
+   "depth_only": true,
+   "J": 100.0,
+   "usable": true,
+   "native": 100.0
+  },
+  {
+   "receiver": "granite-4.1-8b",
+   "depth": 0.35,
+   "metric": 0.990909090909091,
+   "pred": true,
+   "depth_only": true,
+   "J": 98.95833333333333,
+   "usable": true,
+   "native": 98.95833333333333
+  },
+  {
+   "receiver": "granite-4.1-8b",
+   "depth": 0.5,
+   "metric": 0.7636363636363637,
+   "pred": false,
+   "depth_only": false,
+   "J": 21.875,
+   "usable": false,
+   "native": 88.54166666666667
+  },
+  {
+   "receiver": "granite-4.1-8b",
+   "depth": 0.65,
+   "metric": 0.00909090909090909,
+   "pred": false,
+   "depth_only": false,
+   "J": 0.0,
+   "usable": false,
+   "native": 0.0
+  },
+  {
+   "receiver": "granite-4.1-8b",
+   "depth": 0.8,
+   "metric": 0.0,
+   "pred": false,
+   "depth_only": false,
+   "J": 0.0,
+   "usable": false,
+   "native": 0.0
+  },
+  {
+   "receiver": "olmo-3-7b-instruct",
+   "depth": 0.2,
+   "metric": 0.9818181818181818,
+   "pred": true,
+   "depth_only": true,
+   "J": 100.0,
+   "usable": true,
+   "native": 100.0
+  },
+  {
+   "receiver": "olmo-3-7b-instruct",
+   "depth": 0.35,
+   "metric": 0.4090909090909091,
+   "pred": false,
+   "depth_only": true,
+   "J": 20.833333333333332,
+   "usable": false,
+   "native": 50.0
+  },
+  {
+   "receiver": "olmo-3-7b-instruct",
+   "depth": 0.5,
+   "metric": 0.10909090909090909,
+   "pred": false,
+   "depth_only": false,
+   "J": 2.0833333333333335,
+   "usable": false,
+   "native": 1.0416666666666667
+  },
+  {
+   "receiver": "olmo-3-7b-instruct",
+   "depth": 0.65,
+   "metric": 0.1,
+   "pred": false,
+   "depth_only": false,
+   "J": 2.0833333333333335,
+   "usable": false,
+   "native": 0.0
+  },
+  {
+   "receiver": "olmo-3-7b-instruct",
+   "depth": 0.8,
+   "metric": 0.11818181818181818,
+   "pred": false,
+   "depth_only": false,
+   "J": 0.0,
+   "usable": false,
+   "native": 0.0
+  },
+  {
+   "receiver": "gpt-oss-20b",
+   "depth": 0.2,
+   "metric": 0.990909090909091,
+   "pred": true,
+   "depth_only": true,
+   "J": 89.58333333333333,
+   "usable": true,
+   "native": 90.625
+  },
+  {
+   "receiver": "gpt-oss-20b",
+   "depth": 0.35,
+   "metric": 0.4090909090909091,
+   "pred": false,
+   "depth_only": true,
+   "J": 26.041666666666668,
+   "usable": false,
+   "native": 43.75
+  },
+  {
+   "receiver": "gpt-oss-20b",
+   "depth": 0.5,
+   "metric": 0.0,
+   "pred": false,
+   "depth_only": false,
+   "J": 2.0833333333333335,
+   "usable": false,
+   "native": 4.166666666666667
+  },
+  {
+   "receiver": "gpt-oss-20b",
+   "depth": 0.65,
+   "metric": 0.0,
+   "pred": false,
+   "depth_only": false,
+   "J": 1.0416666666666667,
+   "usable": false,
+   "native": 0.0
+  },
+  {
+   "receiver": "gpt-oss-20b",
+   "depth": 0.8,
+   "metric": 0.0,
+   "pred": false,
+   "depth_only": false,
+   "J": 0.0,
+   "usable": false,
+   "native": 0.0
+  },
+  {
+   "receiver": "mistral-small-3.2-24b",
+   "depth": 0.2,
+   "metric": 0.9727272727272728,
+   "pred": true,
+   "depth_only": true,
+   "J": 98.95833333333333,
+   "usable": true,
+   "native": 100.0
+  },
+  {
+   "receiver": "mistral-small-3.2-24b",
+   "depth": 0.35,
+   "metric": 0.36363636363636365,
+   "pred": false,
+   "depth_only": true,
+   "J": 10.416666666666666,
+   "usable": false,
+   "native": 21.875
+  },
+  {
+   "receiver": "mistral-small-3.2-24b",
+   "depth": 0.5,
+   "metric": 0.01818181818181818,
+   "pred": false,
+   "depth_only": false,
+   "J": 0.0,
+   "usable": false,
+   "native": 0.0
+  },
+  {
+   "receiver": "mistral-small-3.2-24b",
+   "depth": 0.65,
+   "metric": 0.01818181818181818,
+   "pred": false,
+   "depth_only": false,
+   "J": 0.0,
+   "usable": false,
+   "native": 0.0
+  },
+  {
+   "receiver": "mistral-small-3.2-24b",
+   "depth": 0.8,
+   "metric": 0.01818181818181818,
+   "pred": false,
+   "depth_only": false,
+   "J": 0.0,
+   "usable": false,
+   "native": 0.0
+  }
+ ],
+ "deepest_usable": {
+  "qwen3.5-2b": {
+   "observed": 0.2,
+   "predicted": 0.2
+  },
+  "qwen3.5-4b": {
+   "observed": 0.2,
+   "predicted": 0.2
+  },
+  "qwen3.5-9b": {
+   "observed": 0.2,
+   "predicted": 0.2
+  },
+  "qwen3.5-27b": {
+   "observed": 0.35,
+   "predicted": 0.35
+  },
+  "qwen3.6-27b": {
+   "observed": 0.5,
+   "predicted": 0.5
+  },
+  "granite-4.1-8b": {
+   "observed": 0.35,
+   "predicted": 0.35
+  },
+  "olmo-3-7b-instruct": {
+   "observed": 0.2,
+   "predicted": 0.2
+  },
+  "gpt-oss-20b": {
+   "observed": 0.2,
+   "predicted": 0.2
+  },
+  "mistral-small-3.2-24b": {
+   "observed": 0.2,
+   "predicted": 0.2
+  }
+ },
+ "non_blind_expA_check": {
+  "per_receiver": {
+   "qwen3.5-2b": {
+    "expA_middle_J": 4.710648148148148,
+    "expA_middle_usable": false,
+    "predicted_usable_at_0_5": false
+   },
+   "qwen3.5-4b": {
+    "expA_middle_J": 3.125,
+    "expA_middle_usable": false,
+    "predicted_usable_at_0_5": false
+   },
+   "qwen3.5-9b": {
+    "expA_middle_J": 4.884259259259259,
+    "expA_middle_usable": false,
+    "predicted_usable_at_0_5": false
+   },
+   "qwen3.5-27b": {
+    "expA_middle_J": 77.84722222222223,
+    "expA_middle_usable": true,
+    "predicted_usable_at_0_5": false
+   },
+   "qwen3.6-27b": {
+    "expA_middle_J": 82.53472222222223,
+    "expA_middle_usable": true,
+    "predicted_usable_at_0_5": true
+   },
+   "granite-4.1-8b": {
+    "expA_middle_J": 14.837962962962964,
+    "expA_middle_usable": false,
+    "predicted_usable_at_0_5": false
+   },
+   "olmo-3-7b-instruct": {
+    "expA_middle_J": 6.319444444444445,
+    "expA_middle_usable": false,
+    "predicted_usable_at_0_5": false
+   },
+   "gpt-oss-20b": {
+    "expA_middle_J": 4.548611111111111,
+    "expA_middle_usable": false,
+    "predicted_usable_at_0_5": false
+   },
+   "mistral-small-3.2-24b": {
+    "expA_middle_J": 0.7060185185185185,
+    "expA_middle_usable": false,
+    "predicted_usable_at_0_5": false
+   }
+  },
+  "agreement": 0.8888888888888888
+ }
+}

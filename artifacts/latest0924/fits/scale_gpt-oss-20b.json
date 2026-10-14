@@ -1,0 +1,32 @@
+{
+ "receiver": "gpt-oss-20b",
+ "layers": [
+  5,
+  10,
+  12,
+  14
+ ],
+ "file": "artifacts/latest0924/fits/directions_gpt-oss-20b.pt",
+ "sha256": "bf594f7018963916ced5791bc6d364b080dcbbd13b5074a56bd397a17a8159b0",
+ "direction_norm_median_per_layer": {
+  "5": 399.45428466796875,
+  "10": 824.15625,
+  "12": 1041.9119873046875,
+  "14": 1401.4857177734375
+ },
+ "local_scale": {
+  "5": 1.034239649772644,
+  "10": 1.1296863555908203,
+  "12": 1.152281403541565,
+  "14": 1.2065489292144775
+ },
+ "n_ratio_samples": {
+  "5": 2652,
+  "10": 2652,
+  "12": 2652,
+  "14": 2652
+ },
+ "excluded_rows": [],
+ "epsilon": 1e-08,
+ "rule": "c[l] = median over (word, template) of ||delta[l,w,t]|| / ||d[l,w]||; >= 1 by construction"
+}

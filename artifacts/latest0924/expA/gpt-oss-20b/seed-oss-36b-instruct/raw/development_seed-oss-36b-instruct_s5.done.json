@@ -1,0 +1,12 @@
+{
+  "elapsed_seconds": 4971.84855723381,
+  "manifest_sha256": "279756a52455510fba808b300e8937c1a8fac4a5f327070ecf49b9c80909f035",
+  "phase": "development",
+  "raw_sha256": "320f1c3e7320a3eafdd472c6c0653c60928e73dae46c719ed6336de32ed8b196",
+  "receiver": "seed-oss-36b-instruct",
+  "rows": 3420,
+  "scenes": 95,
+  "shard": 5,
+  "shards": 6,
+  "status": "PASS"
+}

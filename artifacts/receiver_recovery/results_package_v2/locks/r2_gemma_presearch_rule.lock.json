@@ -1,0 +1,73 @@
+{
+ "lock": "r2_gemma_presearch_rule",
+ "utc": "2026-09-22T18:54:07.557256+00:00",
+ "status": "FROZEN_BEFORE_ANY_GEMMA_FITTED_CELL_WAS_READ",
+ "authority": "[internal approval note removed for anonymity]",
+ "procedure": "This lock was produced by a script that reads only the native and no-message rows of artifacts/receiver_recovery/r1/gemma-3-27b-it; gemma fitted cells were not read, printed or inspected before it was written and committed.",
+ "native_grid": {
+  "band": {
+   "J": 0.4375,
+   "coverage": 1.0,
+   "scenes": 92,
+   "layers": [
+    25,
+    31,
+    37
+   ]
+  },
+  "d20": {
+   "J": 1.0,
+   "coverage": 1.0,
+   "scenes": 92,
+   "layers": [
+    12
+   ]
+  },
+  "d35": {
+   "J": 0.9688,
+   "coverage": 1.0,
+   "scenes": 92,
+   "layers": [
+    22
+   ]
+  },
+  "d50": {
+   "J": 0.0,
+   "coverage": 1.0,
+   "scenes": 92,
+   "layers": [
+    31
+   ]
+  },
+  "d65": {
+   "J": 0.0,
+   "coverage": 1.0,
+   "scenes": 92,
+   "layers": [
+    40
+   ]
+  },
+  "d80": {
+   "J": 0.0,
+   "coverage": 0.9948,
+   "scenes": 92,
+   "layers": [
+    50
+   ]
+  }
+ },
+ "no_message": {
+  "J": 0.0,
+  "coverage": 0.9792
+ },
+ "selected_depth": "d20",
+ "coverage_limited": false,
+ "layers": [
+  12
+ ],
+ "rule": "writer = h_neutral + 1.0 * c[layer] * relative_weight * d[layer, address] at the selected depth, c from artifacts/receiver_recovery/fits/scale_gemma-3-27b-it.json",
+ "local_scale": {
+  "12": 1.0282092094421387
+ },
+ "note": "A locally searched winner found afterwards does not retroactively make this rule successful; both are reported."
+}

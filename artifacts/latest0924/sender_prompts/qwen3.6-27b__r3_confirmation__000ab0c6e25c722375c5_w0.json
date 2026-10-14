@@ -1,0 +1,119 @@
+{
+ "sender": "qwen3.6-27b",
+ "checkpoint": "/path/to/models/Qwen3.6-27B",
+ "split": "r3_confirmation",
+ "bank": "artifacts/receiver_recovery/r3_bank/bank.json",
+ "bank_sha256": "c88ff3197717a338eb84cbaec5c0a3c9fa9b5504f6ab077c1cb4ca78c5b15927",
+ "scene": "000ab0c6e25c722375c5",
+ "world": 0,
+ "aliases": [
+  "BANQ",
+  "CIRV"
+ ],
+ "evidence": [
+  "Workshop tag on BANQ: sprayed green over a body cast in gold.",
+  "Workshop tag on CIRV: sprayed red over a body cast in steel."
+ ],
+ "prompt_file": "qwen3.6-27b__r3_confirmation__000ab0c6e25c722375c5_w0.txt",
+ "rendered_prompt_sha256": "e0e11014f0ec7a619fdd504f616c9fa9a616694ae0d7c588d794c24cc0663b8f",
+ "frozen_prompt_sha256": "328c8b5df9d196724cdabd6cc7a291c0cfc7ca13ab524bd3cb70239de7183e0b",
+ "chat_template_kwargs": {
+  "enable_thinking": false
+ },
+ "chat_template_sha256": "e84f32a23fdda27689f868aa4a1a5621f41133e51a48d7f3efcbea2839574259",
+ "tokenizer_class": "Qwen2Tokenizer",
+ "prompt_tokens": 633,
+ "first_ids": [
+  248045,
+  8678,
+  198,
+  2523,
+  23835,
+  1576,
+  26884,
+  1083
+ ],
+ "last_ids": [
+  4241,
+  1119,
+  89254,
+  248046,
+  198,
+  248045,
+  74455,
+  198,
+  248068,
+  271,
+  248069,
+  271
+ ],
+ "last_tokens": [
+  "\u0120[\"",
+  "word",
+  "\"]}",
+  "<|im_end|>",
+  "\u010a",
+  "<|im_start|>",
+  "assistant",
+  "\u010a",
+  "<think>",
+  "\u010a\u010a",
+  "</think>",
+  "\u010a\u010a"
+ ],
+ "rendered_prompt_head": "<|im_start|>system\nYou compress object descriptions into a fixed public vocabulary. You will be given a vocabulary of words and a description of two objects. For each object, choose up to four vocabulary words that the description explicitly supports. Use only words from the vocabulary, spelled exactly as given. Do not invent facts. Answer with one JSON object and nothing else.<|im_end|>\n<|im_start|>user\n",
+ "rendered_prompt_tail": "<|im_end|>\n<|im_start|>assistant\n<think>\n\n</think>\n\n",
+ "scaffold_identical_across_bank": true,
+ "n_worlds_checked": 1152,
+ "prompt_tokens_over_bank": {
+  "n": 1152,
+  "min": 622,
+  "max": 645,
+  "mean": 633.1666666666666,
+  "total": 729408
+ },
+ "template_checks": {
+  "ends_with_closed_empty_think": true,
+  "native_system_turn": true
+ },
+ "answer_rule": "qwen3_5",
+ "adapter": {
+  "key": "qwen3.6-27b",
+  "spec": {
+   "path": "/path/to/models/Qwen3.6-27B",
+   "family": "qwen3_5",
+   "chat": "True",
+   "env": "tflatest",
+   "python": "python",
+   "dtype": "float32",
+   "gpus": "1",
+   "n_layers": "64",
+   "loader": "qwen3_5_text",
+   "chat_render": "template",
+   "turn_end": "<|im_end|>",
+   "roles": "('receiver', 'sender')",
+   "eos_token_ids": "None",
+   "ignorable_unexpected": "('^model\\\\.visual\\\\.', '^mtp\\\\.')",
+   "key_mapping": "None",
+   "tokenizer": "auto",
+   "max_memory_gib": "None",
+   "notes": "Text-only Qwen3_5ForCausalLM through AutoModelForCausalLM (transformers maps the composite config to the text config and drops model.visual.* / mtp.*). Hybrid: 48 Gated-DeltaNet linear-attention + 16 full-attention layers; cache = DynamicCache of LinearAttentionLayer + DynamicLayer. tflatest required (5.3.0 cached-continuation bug). ~104 GiB fp32 on one card. Also a sender."
+  },
+  "chat_kwargs": {
+   "enable_thinking": false
+  }
+ },
+ "env": {
+  "python": "/path/to/miniconda3/envs/env-q35/bin/python",
+  "python_version": "3.12.12",
+  "hostname": "mlxlabvo9zh2uz6aa2425c-20260910053837-ood6ad-master",
+  "cuda_visible_devices": null,
+  "torch": "2.11.0+cu130",
+  "transformers": "5.12.1",
+  "tokenizers": "0.22.2",
+  "accelerate": "1.14.0",
+  "fla_available": true
+ },
+ "utc": "2026-09-24T13:24:47Z",
+ "script_sha256": "26945067fd587313afdc186c0318f9fdce406f000c334843871493320a000a0d"
+}

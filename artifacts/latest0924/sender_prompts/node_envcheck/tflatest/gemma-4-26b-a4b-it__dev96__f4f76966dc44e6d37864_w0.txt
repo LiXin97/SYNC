@@ -1,0 +1,15 @@
+<bos><|turn>system
+You compress object descriptions into a fixed public vocabulary. You will be given a vocabulary of words and a description of two objects. For each object, choose up to four vocabulary words that the description explicitly supports. Use only words from the vocabulary, spelled exactly as given. Do not invent facts. Answer with one JSON object and nothing else.<turn|>
+<|turn>user
+Vocabulary (221 words, in order):
+accordion, ambulance, axe, bakery, banana, barn, bed, beer, beetle, belt, bench, bicycle, blender, boat, boot, bowl, broccoli, broth, buffalo, bus, butterfly, cabbage, cabinet, camel, car, carpet, carrot, celery, cherry, chicken, church, cider, clam, clamp, coat, cocoa, coconut, cod, copper, cotton, cow, crab, crow, cucumber, curtain, deer, desk, dolphin, drawer, drill, elephant, espresso, factory, flea, flute, fork, fox, fridge, garlic, glass, glove, goat, gold, goose, grape, greenhouse, hat, hawk, helicopter, hoe, hospital, hotel, iron, jacket, jar, juice, kettle, leather, leopard, lettuce, library, lime, lobster, mango, mattress, mosquito, moth, mug, nail, needle, olive, onion, oven, pan, panda, peach, pear, pharmacy, pig, pigeon, pillow, pineapple, plane, plastic, plate, plum, potato, pumpkin, rake, rat, rubber, salmon, scarf, school, scissors, sheep, shelf, ship, shirt, shoe, shovel, shrimp, silk, silver, skirt, sock, soda, sofa, spinach, spoon, squid, squirrel, stadium, steel, stool, stove, strawberry, submarine, sweater, theater, toaster, tomato, tractor, train, truck, trumpet, tuna, turtle, violin, wardrobe, whisk, wool, wrench, alive, bitter, climb, crawl, edible, fly, furry, green, hop, hot, hunt, metallic, orange, red, run, salty, shell, sour, sweet, swim, transparent, walk, wooden, worn, yellow, above, after, before, behind, beside, bite, block, carry, chase, cover, eat, enter, fear, follow, guard, hit, hold, inside, near, own, protect, pull, push, touch, under, watch, all, always, both, either, every, if, maybe, most, must, neither, never, none, not, only, or, some, unless
+
+Objects: QUAN, FEP
+Description:
+QUAN is a red candy. It is sour. FEP is a yellow candy. It is sweet.
+
+Reply with exactly this JSON shape, listing up to four vocabulary words per object that the description explicitly supports (fewer is fine, an empty list if nothing applies):
+{"QUAN": ["word", "word"], "FEP": ["word"]}<turn|>
+<|turn>model
+<|channel>thought
+<channel|>

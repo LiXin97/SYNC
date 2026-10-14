@@ -1,0 +1,12 @@
+{
+ "np.mean (audit)": {
+  "p_two_sided": 0.3979666666666667,
+  "near_zero_draws": 1609,
+  "exact_zero_draws": 3
+ },
+ "sum/len (other order)": {
+  "p_two_sided": 0.39786666666666665,
+  "near_zero_draws": 1609,
+  "exact_zero_draws": 0
+ }
+}

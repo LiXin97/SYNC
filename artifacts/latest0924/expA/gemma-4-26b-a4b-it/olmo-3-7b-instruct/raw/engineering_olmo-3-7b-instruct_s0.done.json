@@ -1,0 +1,12 @@
+{
+  "elapsed_seconds": 106.37823414802551,
+  "manifest_sha256": "9b41ab135231028146486f83a059cdf625dff273c0afb7d1c1bfb6da826ef507",
+  "phase": "engineering",
+  "raw_sha256": "f044064a3ee8090023293af83da0ba2f0376de5d3d3d56110f42bd4f359a57d1",
+  "receiver": "olmo-3-7b-instruct",
+  "rows": 208,
+  "scenes": 4,
+  "shard": 0,
+  "shards": 1,
+  "status": "PASS"
+}

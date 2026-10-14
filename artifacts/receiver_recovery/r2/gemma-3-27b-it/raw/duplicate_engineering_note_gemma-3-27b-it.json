@@ -1,0 +1,13 @@
+{
+ "utc": "2026-09-22T19:26:59.911084+00:00",
+ "file": "artifacts/receiver_recovery/r2/gemma-3-27b-it/raw/engineering_gemma-3-27b-it_s0.jsonl",
+ "defect": "my R2 launcher ran the engineering phase once per development shard, so two processes appended the same engineering rows to one file (no claim protection on this stage).",
+ "rows_before": 448,
+ "keys": 224,
+ "duplicated_keys": 224,
+ "non_identical": 0,
+ "verification": "every duplicated key agreed on logits_sha256, generated tokens and the whole patch_report, i.e. the two runs were bit-identical replays; no row content was changed.",
+ "action": "original file preserved as engineering_gemma-3-27b-it_s0.jsonl.duplicate_preserved; the de-duplicated file keeps first occurrences in order; the receipt is then re-derived by re-running the engineering phase through the frozen runner.",
+ "rows_after": 224,
+ "file_sha256_after": "b11a002e46ca4200c178fb77e3baa7529bc96c7fce0b648b36f43668a949e059"
+}

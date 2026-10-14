@@ -1,0 +1,103 @@
+{
+ "lock": "latest0924_expF_predict",
+ "utc": "2026-09-25T003939Z",
+ "status": "LOCKED before any calibration value or held-out depth-scan row exists",
+ "authority": "[internal approval note removed for anonymity]",
+ "question": "Does a task-independent calibration probe, with a rule fixed on the four development receivers, predict at which single-write depths the nine held-out receivers can use complete facts, before their depth profiles are measured?",
+ "development_receivers": [
+  "qwen3-32b",
+  "qwen3-14b-base",
+  "glm-4-9b",
+  "gemma-3-27b-it"
+ ],
+ "heldout_receivers": [
+  "qwen3.5-2b",
+  "qwen3.5-4b",
+  "qwen3.5-9b",
+  "qwen3.5-27b",
+  "qwen3.6-27b",
+  "granite-4.1-8b",
+  "olmo-3-7b-instruct",
+  "gpt-oss-20b",
+  "mistral-small-3.2-24b"
+ ],
+ "depths": [
+  0.2,
+  0.35,
+  0.5,
+  0.65,
+  0.8
+ ],
+ "layer_rule": "round(depth x n_blocks); dev receivers use their R1 depth-scan layers",
+ "calibration": {
+  "script": "scripts/latest0924/predict/calibrate.py",
+  "primary_metric": "auc_mean",
+  "definition": "synthetic two-object prompt (XOPA/YUME, all slots neutral) from the frozen renderer and receiver scaffold, question \"What word is listed for XOPA?\"; for each of the 221 symbols write h0 + d_s (gamma 1, raw fitted direction) at XOPA slot 0 final token at the single depth layer; score = max over {no-space, leading-space} first token of the logit gain at the answer position vs the neutral prompt; AUC_s = share of other symbols (disjoint first tokens) with lower gain (ties 0.5); metric = mean AUC_s",
+  "secondary": [
+   "top1_rate",
+   "geometry_ratio_mean (||d_s|| / ||h0||)"
+  ],
+  "independence": "no scene, bank, task question, answer or outcome is used"
+ },
+ "outcome": {
+  "definition": "four-answer success, fitted gamma 1 single write, complete facts, 92 development scenes (exposed_development minus 4 engineering scenes), 64-token budget, family-macro over 12 families; frozen evaluator src/syncomm/recovery/evaluate_depth.py via scripts/latest0924/run_patched.py",
+  "usable": "J >= 50%",
+  "dev_source": "artifacts/receiver_recovery/r1/<dev>/raw (R1 depth scan)"
+ },
+ "rule": {
+  "primary": "usable iff auc_mean(receiver, depth) >= tau; tau chosen on the 20 development cells to maximize balanced accuracy over candidate thresholds at midpoints between consecutive sorted development metric values; ties resolved by the midpoint between the smallest and largest tied candidate",
+  "comparator": "depth-only rule fitted the same way on the development cells (usable iff depth <= d_star)",
+  "continuous": "the metric itself (rank prediction)"
+ },
+ "predictions_file": "artifacts/latest0924/predict/predictions.json, committed to git BEFORE the first held-out depth-scan outcome row (engineering rows allowed before)",
+ "scoring": {
+  "primary": "balanced accuracy of the primary rule over the 45 held-out receiver x depth cells",
+  "success_criterion": "balanced accuracy >= 0.80 AND 95% cluster-bootstrap lower limit > 0.50 (resampling the 9 held-out receivers, 20,000 draws x seeds 20260924-6, enclosing interval)",
+  "secondary": [
+   "accuracy",
+   "Spearman(auc_mean, J) over held-out cells with the same bootstrap",
+   "balanced accuracy of the depth-only comparator and the difference primary - comparator (bootstrap)",
+   "per-receiver deepest usable depth, predicted vs observed"
+  ],
+  "non_blind_check": "predicted usable at depth 0.5 vs Experiment A middle-band success (J >= 50%, already observed) -- labelled NOT blind"
+ },
+ "reporting": "all results reported whichever way they come out; misses reported as misses",
+ "pins": {
+  "scripts/latest0924/predict/calibrate.py": "94e375dee6e149cef0da241a4ed073c38b7cd8332afb1ccc0a424d78a07eceef",
+  "artifacts/latest0924/predict/fit_manifest.json": "7ff7fb0605a5dbc5286bbd060a80896245ff33f30184100b9855c2abf2829eca",
+  "artifacts/latest0924/predict/dev_depth_profiles.json": "3b5db5d5f8ce15eec0cde9303d9e1809d682b610702cac2b0c19465778094b3a",
+  "src/syncomm/recovery/evaluate_depth.py": "9e8d153129e8b61bc496444558f0dfa4b6f6aff4be00eebb7589f613b8ce8a01",
+  "src/syncomm/recovery/fit_layers.py": "0c5604102bc6b3af220fad5ce53e61e9f08686b69d41007589b17bb44dbc079f",
+  "src/syncomm/latest/adapter.py": "0f4cc649a611c3f985414e4b4f9b69a680829dbb35c25ec83f6de8763e777b19",
+  "artifacts/mechanism0919/discovery_v1/exposed_development.json": "97b7622418ba13eaae739a45ba675a8d838821c01f3f169eee84092a77056177"
+ },
+ "amendments": [
+  {
+   "utc": "2026-09-25T005405Z",
+   "before": "any held-out calibration value or held-out outcome row",
+   "adr": "a dated decision record",
+   "primary_metric": "bind_pair_success",
+   "calibration_dir": "calibration_binding",
+   "script": "scripts/latest0924/predict/calibrate_binding.py",
+   "n_pairs": 110,
+   "pairing_seed": 20260925,
+   "secondary": [
+    "bind_answer_accuracy",
+    "auc_mean (copy readout; saturated on GLM)",
+    "geometry_ratio_mean"
+   ],
+   "no_further_metric_search": true,
+   "pins": {
+    "a dated decision record": "df5e5df6c05897a993889186624e1e529751ce8cbfb81f3b2a56bd7a19092b7c",
+    "scripts/latest0924/predict/calibrate_binding.py": "c3a19cec57bc18db89ff31c19dc6a98351a09fa592313a85e3bf57901de0566d",
+    "scripts/latest0924/predict/calibrate.py": "94e375dee6e149cef0da241a4ed073c38b7cd8332afb1ccc0a424d78a07eceef",
+    "scripts/latest0924/predict/make_predictions.py": "93edf0a10bd7d00193edb3051c1408f827bef6f38d93e420efae4853620e2ef1",
+    "scripts/latest0924/predict/build_depth_manifests.py": "202676a0843cba4899e82a8c269a2360793a085d6931d2f6581ba980a81fbbec",
+    "scripts/latest0924/predict/score.py": "7b823fd73c42be466cd5935bc086a428f8ec268c1f1d50c1a2991f046aff5f2b",
+    "scripts/latest0924/predict/run_task.sh": "d653a156f212a2d0efb7d1a1932cd4f4b50f450f08a69fe188db944898a37a2a",
+    "artifacts/latest0924/predict/fit_manifest.json": "7ff7fb0605a5dbc5286bbd060a80896245ff33f30184100b9855c2abf2829eca",
+    "artifacts/latest0924/predict/dev_depth_profiles.json": "3b5db5d5f8ce15eec0cde9303d9e1809d682b610702cac2b0c19465778094b3a"
+   }
+  }
+ ]
+}

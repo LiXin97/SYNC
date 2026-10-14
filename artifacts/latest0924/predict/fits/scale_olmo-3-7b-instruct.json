@@ -1,0 +1,36 @@
+{
+ "receiver": "olmo-3-7b-instruct",
+ "layers": [
+  6,
+  11,
+  16,
+  21,
+  26
+ ],
+ "file": "artifacts/latest0924/predict/fits/directions_olmo-3-7b-instruct.pt",
+ "sha256": "f2f0de0917bd0ad2c61a89353f17af954a35104440d15e1be64fa6d3623a475a",
+ "direction_norm_median_per_layer": {
+  "6": 10.451997756958008,
+  "11": 12.437516212463379,
+  "16": 19.101011276245117,
+  "21": 30.609355926513672,
+  "26": 39.84231185913086
+ },
+ "local_scale": {
+  "6": 1.0530322790145874,
+  "11": 1.1724298000335693,
+  "16": 1.187493920326233,
+  "21": 1.14698326587677,
+  "26": 1.1622036695480347
+ },
+ "n_ratio_samples": {
+  "6": 2652,
+  "11": 2652,
+  "16": 2652,
+  "21": 2652,
+  "26": 2652
+ },
+ "excluded_rows": [],
+ "epsilon": 1e-08,
+ "rule": "c[l] = median over (word, template) of ||delta[l,w,t]|| / ||d[l,w]||; >= 1 by construction"
+}

@@ -1,0 +1,49 @@
+{
+ "study": "LATEST0924_REALTASK_FITS_V1",
+ "purpose": "Experiment D: symbol-minus-unknown fits (frozen twelve-context recipe, fit_layers_inv275 = fit_layers with the inventory-size assertion set to 275) for the 275-symbol Countries inventory, at each receiver's depth-0.2 layer and original middle band. No communication outcome.",
+ "lock": "gates/latest0924/expD_realtask.lock.json",
+ "root": "artifacts/latest0924/realtask",
+ "words_file": "artifacts/latest0924/realtask/inventory_275.json",
+ "pins": {
+  "artifacts/latest0924/realtask/inventory_275.json": "19ec5970550376c685cc023330c34b22752e46446b709d5a9080b998b67b1e83"
+ },
+ "models": {
+  "qwen3.5-27b": "/path/to/models/Qwen3.5-27B",
+  "qwen3.6-27b": "/path/to/models/Qwen3.6-27B",
+  "mistral-small-3.2-24b": "/path/to/models/Mistral-Small-3.2-24B-Instruct-2506",
+  "qwen3-32b": "/path/to/models/Qwen3-32B"
+ },
+ "base_models": [],
+ "n_blocks": {
+  "qwen3.5-27b": 64,
+  "qwen3.6-27b": 64,
+  "mistral-small-3.2-24b": 40,
+  "qwen3-32b": 64
+ },
+ "layers": {
+  "qwen3.5-27b": [
+   13,
+   26,
+   32,
+   38
+  ],
+  "qwen3.6-27b": [
+   13,
+   26,
+   32,
+   38
+  ],
+  "mistral-small-3.2-24b": [
+   8,
+   16,
+   20,
+   24
+  ],
+  "qwen3-32b": [
+   13,
+   26,
+   32,
+   38
+  ]
+ }
+}

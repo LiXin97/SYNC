@@ -1,0 +1,525 @@
+{
+ "analytic_floor_L255": "packets and texts are byte-identical across the two worlds of every scene, so a deterministic receiver gives identical answers in both worlds: the changed-question answer can be right in at most one world, hence four-answer success = 0 and R = 0 exactly, changed-question accuracy <= 1/2",
+ "builder_sha256": "62d3622e339f3ddab47cc1ed886812386a00eea337bdb3c2a6e7b7f1da01443d",
+ "checks": {
+  "L0_equals_complete_fact_packet": 1152,
+  "L255_worlds_byte_identical": 576,
+  "design_bits_rederived": 576,
+  "graded_text_differs_only_in_weak_digits": 3456,
+  "graded_worlds_same_words_different_weights": 1728,
+  "lanes_checked": 11520,
+  "order_uninformative_worlds": 3456,
+  "renderer_byte_identical_cases_at_255": 6880,
+  "sham0_images_outside_scene_values": 20
+ },
+ "counts": {
+  "default_scenes": 144,
+  "default_tiers": [
+   1,
+   2
+  ],
+  "engineering_scenes": 4,
+  "evaluated_scenes": 572,
+  "families": 36,
+  "levels": [
+   0,
+   64,
+   128,
+   191,
+   255
+  ],
+  "packets_per_level": 1152,
+  "source_scenes": 576,
+  "templates": 12,
+  "tier_scenes": {
+   "1": 72,
+   "2": 72,
+   "3": 144,
+   "4": 284
+  }
+ },
+ "inputs": {
+  "artifacts/mechanism0920/word_memory_fit_v1/snapshot/memory_layout.py": "774bbf465a772e4f3a7db3aa9de05304f8286e91d93edd73d5cab7bace1ee818",
+  "artifacts/receiver_recovery/r3/qwen3-32b/manifest.json": "976311f110bb917b741487a78590a125ecb155856c5c10120d4579ad99f5dd60",
+  "artifacts/receiver_recovery/r3_bank/bank.json": "c88ff3197717a338eb84cbaec5c0a3c9fa9b5504f6ab077c1cb4ca78c5b15927",
+  "artifacts/receiver_recovery/words_221.json": "b7c686ee1c47392ee2499f31c4784a4d3427e1d981a624e8ed77af49aca5767e"
+ },
+ "order_check": {
+  "L128": {
+   "object0_lists_strong_x_first": 576,
+   "rule": "in every world exactly one of the two lanes lists its strong X value first",
+   "worlds": 1152
+  },
+  "L191": {
+   "object0_lists_strong_x_first": 576,
+   "rule": "in every world exactly one of the two lanes lists its strong X value first",
+   "worlds": 1152
+  },
+  "L64": {
+   "object0_lists_strong_x_first": 576,
+   "rule": "in every world exactly one of the two lanes lists its strong X value first",
+   "worlds": 1152
+  }
+ },
+ "outputs": {
+  "bank.json": "b437e067d49b81e4071a8865938729af106cb6f03141efed444d1799f969df80",
+  "packets_L0.json": "c9801c0bae673f341521ecfb317c80a90ba2e72a880dcff67e403d9cc92cd454",
+  "packets_L128.json": "b953922e85fc37be601c882196571a6d30972ffbf743d541d2304ca137028d67",
+  "packets_L191.json": "f6fef2ebee6ee9d990ebe46160d8d3e05738caa5354e5fc5c008766a98757ce3",
+  "packets_L255.json": "c6cad1162c9a40f6f381c4c523f7445ab4943c1467fa958e30c656d529cbde0b",
+  "packets_L64.json": "dba2034904c29278c45bafb652c3f4189a3c3d3f1159770354631be2dc236e15"
+ },
+ "packet_module_sha256": "6376b5bc1d880ba9f61c6c66109e23f15bb023e06d0021eab1b8afb58df05138",
+ "status": "PASS_CONSTRUCTION",
+ "study": "LATEST0924_GRADED_B_V1",
+ "tier_selection": {
+  "avoided_engineering_design_points": [
+   [
+    0,
+    0,
+    0,
+    0
+   ],
+   [
+    1,
+    1,
+    0,
+    0
+   ]
+  ],
+  "balance": {
+   "all": {
+    "changed_field": {
+     "block/color": 95,
+     "block/material": 96,
+     "candy/color": 96,
+     "candy/taste": 94,
+     "coat/buttons": 95,
+     "coat/fibre": 96
+    },
+    "column_ones": {
+     "c": 285,
+     "fX": 288,
+     "fY": 285,
+     "fa": 285,
+     "fb": 288,
+     "q": 288,
+     "sX": 288,
+     "sY": 285
+    },
+    "per_domain": {
+     "block": 191,
+     "candy": 190,
+     "coat": 191
+    },
+    "per_template": {
+     "block/T0": 48,
+     "block/T1": 48,
+     "block/T2": 47,
+     "block/T3": 48,
+     "candy/T0": 48,
+     "candy/T1": 48,
+     "candy/T2": 47,
+     "candy/T3": 47,
+     "coat/T0": 48,
+     "coat/T1": 48,
+     "coat/T2": 47,
+     "coat/T3": 48
+    },
+    "scenes": 572,
+    "x_answer_first_alias_world0": 284,
+    "y_answer_first_alias": 287
+   },
+   "tier1": {
+    "changed_field": {
+     "block/color": 12,
+     "block/material": 12,
+     "candy/color": 12,
+     "candy/taste": 12,
+     "coat/buttons": 12,
+     "coat/fibre": 12
+    },
+    "column_ones": {
+     "c": 36,
+     "fX": 36,
+     "fY": 72,
+     "fa": 36,
+     "fb": 72,
+     "q": 36,
+     "sX": 0,
+     "sY": 36
+    },
+    "per_domain": {
+     "block": 24,
+     "candy": 24,
+     "coat": 24
+    },
+    "per_template": {
+     "block/T0": 6,
+     "block/T1": 6,
+     "block/T2": 6,
+     "block/T3": 6,
+     "candy/T0": 6,
+     "candy/T1": 6,
+     "candy/T2": 6,
+     "candy/T3": 6,
+     "coat/T0": 6,
+     "coat/T1": 6,
+     "coat/T2": 6,
+     "coat/T3": 6
+    },
+    "scenes": 72,
+    "x_answer_first_alias_world0": 72,
+    "y_answer_first_alias": 36
+   },
+   "tier2": {
+    "changed_field": {
+     "block/color": 12,
+     "block/material": 12,
+     "candy/color": 12,
+     "candy/taste": 12,
+     "coat/buttons": 12,
+     "coat/fibre": 12
+    },
+    "column_ones": {
+     "c": 36,
+     "fX": 36,
+     "fY": 0,
+     "fa": 36,
+     "fb": 0,
+     "q": 36,
+     "sX": 72,
+     "sY": 36
+    },
+    "per_domain": {
+     "block": 24,
+     "candy": 24,
+     "coat": 24
+    },
+    "per_template": {
+     "block/T0": 6,
+     "block/T1": 6,
+     "block/T2": 6,
+     "block/T3": 6,
+     "candy/T0": 6,
+     "candy/T1": 6,
+     "candy/T2": 6,
+     "candy/T3": 6,
+     "coat/T0": 6,
+     "coat/T1": 6,
+     "coat/T2": 6,
+     "coat/T3": 6
+    },
+    "scenes": 72,
+    "x_answer_first_alias_world0": 0,
+    "y_answer_first_alias": 36
+   },
+   "tier3": {
+    "changed_field": {
+     "block/color": 24,
+     "block/material": 24,
+     "candy/color": 24,
+     "candy/taste": 24,
+     "coat/buttons": 24,
+     "coat/fibre": 24
+    },
+    "column_ones": {
+     "c": 72,
+     "fX": 72,
+     "fY": 72,
+     "fa": 72,
+     "fb": 72,
+     "q": 72,
+     "sX": 72,
+     "sY": 72
+    },
+    "per_domain": {
+     "block": 48,
+     "candy": 48,
+     "coat": 48
+    },
+    "per_template": {
+     "block/T0": 12,
+     "block/T1": 12,
+     "block/T2": 12,
+     "block/T3": 12,
+     "candy/T0": 12,
+     "candy/T1": 12,
+     "candy/T2": 12,
+     "candy/T3": 12,
+     "coat/T0": 12,
+     "coat/T1": 12,
+     "coat/T2": 12,
+     "coat/T3": 12
+    },
+    "scenes": 144,
+    "x_answer_first_alias_world0": 72,
+    "y_answer_first_alias": 72
+   },
+   "tiers1+2": {
+    "changed_field": {
+     "block/color": 24,
+     "block/material": 24,
+     "candy/color": 24,
+     "candy/taste": 24,
+     "coat/buttons": 24,
+     "coat/fibre": 24
+    },
+    "column_ones": {
+     "c": 72,
+     "fX": 72,
+     "fY": 72,
+     "fa": 72,
+     "fb": 72,
+     "q": 72,
+     "sX": 72,
+     "sY": 72
+    },
+    "per_domain": {
+     "block": 48,
+     "candy": 48,
+     "coat": 48
+    },
+    "per_template": {
+     "block/T0": 12,
+     "block/T1": 12,
+     "block/T2": 12,
+     "block/T3": 12,
+     "candy/T0": 12,
+     "candy/T1": 12,
+     "candy/T2": 12,
+     "candy/T3": 12,
+     "coat/T0": 12,
+     "coat/T1": 12,
+     "coat/T2": 12,
+     "coat/T3": 12
+    },
+    "scenes": 144,
+    "x_answer_first_alias_world0": 72,
+    "y_answer_first_alias": 72
+   },
+   "tiers1-3": {
+    "changed_field": {
+     "block/color": 48,
+     "block/material": 48,
+     "candy/color": 48,
+     "candy/taste": 48,
+     "coat/buttons": 48,
+     "coat/fibre": 48
+    },
+    "column_ones": {
+     "c": 144,
+     "fX": 144,
+     "fY": 144,
+     "fa": 144,
+     "fb": 144,
+     "q": 144,
+     "sX": 144,
+     "sY": 144
+    },
+    "per_domain": {
+     "block": 96,
+     "candy": 96,
+     "coat": 96
+    },
+    "per_template": {
+     "block/T0": 24,
+     "block/T1": 24,
+     "block/T2": 24,
+     "block/T3": 24,
+     "candy/T0": 24,
+     "candy/T1": 24,
+     "candy/T2": 24,
+     "candy/T3": 24,
+     "coat/T0": 24,
+     "coat/T1": 24,
+     "coat/T2": 24,
+     "coat/T3": 24
+    },
+    "scenes": 288,
+    "x_answer_first_alias_world0": 144,
+    "y_answer_first_alias": 144
+   }
+  },
+  "meta": {
+   "candidates": 7,
+   "p1": [
+    [
+     0,
+     0,
+     1,
+     0
+    ],
+    [
+     0,
+     1,
+     0,
+     0
+    ],
+    [
+     1,
+     0,
+     0,
+     1
+    ],
+    [
+     1,
+     1,
+     1,
+     1
+    ]
+   ],
+   "p1_crossed_pairs": 21,
+   "p1p2_crossed_pairs": 26,
+   "p2": [
+    [
+     0,
+     0,
+     1,
+     1
+    ],
+    [
+     0,
+     1,
+     0,
+     1
+    ],
+    [
+     1,
+     0,
+     0,
+     0
+    ],
+    [
+     1,
+     1,
+     1,
+     0
+    ]
+   ]
+  },
+  "tiers": {
+   "1": [
+    [
+     0,
+     0,
+     1,
+     0
+    ],
+    [
+     1,
+     1,
+     1,
+     1
+    ]
+   ],
+   "2": [
+    [
+     0,
+     1,
+     0,
+     0
+    ],
+    [
+     1,
+     0,
+     0,
+     1
+    ]
+   ],
+   "3": [
+    [
+     0,
+     0,
+     1,
+     1
+    ],
+    [
+     0,
+     1,
+     0,
+     1
+    ],
+    [
+     1,
+     0,
+     0,
+     0
+    ],
+    [
+     1,
+     1,
+     1,
+     0
+    ]
+   ],
+   "4": [
+    [
+     0,
+     0,
+     0,
+     0
+    ],
+    [
+     0,
+     0,
+     0,
+     1
+    ],
+    [
+     0,
+     1,
+     1,
+     0
+    ],
+    [
+     0,
+     1,
+     1,
+     1
+    ],
+    [
+     1,
+     0,
+     1,
+     0
+    ],
+    [
+     1,
+     0,
+     1,
+     1
+    ],
+    [
+     1,
+     1,
+     0,
+     0
+    ],
+    [
+     1,
+     1,
+     0,
+     1
+    ]
+   ]
+  }
+ },
+ "wire_bytes": {
+  "L0": {
+   "20": 1152
+  },
+  "L128": {
+   "24": 1152
+  },
+  "L191": {
+   "24": 1152
+  },
+  "L255": {
+   "24": 1152
+  },
+  "L64": {
+   "24": 1152
+  }
+ }
+}

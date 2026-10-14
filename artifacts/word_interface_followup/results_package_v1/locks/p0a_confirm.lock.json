@@ -1,0 +1,1415 @@
+{
+ "lock": "p0a_confirm_20260923",
+ "utc": "2026-09-23T13:56:10.872507+00:00",
+ "status": "FROZEN_BEFORE_ANY_P0A_CONFIRMATION_OUTPUT",
+ "authority": "[internal approval note removed for anonymity]",
+ "development_audit": {
+  "path": "artifacts/word_interface_followup/p0a_dev_audit.json",
+  "sha256": "caad25548e5ee8f564a55d4814297c8af603f5d55b2be8178c344ed36a968ab1"
+ },
+ "selected": {
+  "qwen3-32b": {
+   "c12": 1,
+   "single_t0": 1,
+   "single_t6": 1,
+   "single_t11": 1,
+   "emb1": 1
+  },
+  "qwen3-14b-base": {
+   "c12": 1,
+   "single_t0": 1,
+   "single_t6": 1,
+   "single_t11": 1,
+   "emb1": 1
+  },
+  "glm-4-9b": {
+   "c12": 1,
+   "single_t0": 4,
+   "single_t6": 1,
+   "single_t11": 1,
+   "emb1": 2
+  },
+  "gemma-3-27b-it": {
+   "c12": 1,
+   "single_t0": 1,
+   "single_t6": 1,
+   "single_t11": 1,
+   "emb1": 1
+  }
+ },
+ "selection_detail": {
+  "qwen3-32b": {
+   "c12": {
+    "gamma": 1,
+    "status": "SELECTED",
+    "J": 1.0,
+    "U": 1.0,
+    "cov": 1.0,
+    "grid": {
+     "0.25": {
+      "J": 0.010869565217391304,
+      "U": 0.3804347826086957,
+      "cov": 0.8641304347826086
+     },
+     "0.5": {
+      "J": 0.14130434782608695,
+      "U": 0.5217391304347826,
+      "cov": 0.7907608695652174
+     },
+     "1": {
+      "J": 1.0,
+      "U": 1.0,
+      "cov": 1.0
+     },
+     "2": {
+      "J": 1.0,
+      "U": 1.0,
+      "cov": 1.0
+     },
+     "4": {
+      "J": 0.8369565217391305,
+      "U": 0.9347826086956522,
+      "cov": 1.0
+     }
+    }
+   },
+   "single_t0": {
+    "gamma": 1,
+    "status": "SELECTED",
+    "J": 1.0,
+    "U": 1.0,
+    "cov": 1.0,
+    "grid": {
+     "0.25": {
+      "J": 0.0,
+      "U": 0.391304347826087,
+      "cov": 0.8586956521739131
+     },
+     "0.5": {
+      "J": 0.2608695652173913,
+      "U": 0.6304347826086957,
+      "cov": 0.8668478260869565
+     },
+     "1": {
+      "J": 1.0,
+      "U": 1.0,
+      "cov": 1.0
+     },
+     "2": {
+      "J": 0.9891304347826086,
+      "U": 1.0,
+      "cov": 1.0
+     },
+     "4": {
+      "J": 0.8043478260869565,
+      "U": 0.9239130434782609,
+      "cov": 0.9972826086956522
+     }
+    }
+   },
+   "single_t6": {
+    "gamma": 1,
+    "status": "SELECTED",
+    "J": 1.0,
+    "U": 1.0,
+    "cov": 1.0,
+    "grid": {
+     "0.25": {
+      "J": 0.010869565217391304,
+      "U": 0.3804347826086957,
+      "cov": 0.8559782608695652
+     },
+     "0.5": {
+      "J": 0.07608695652173914,
+      "U": 0.4782608695652174,
+      "cov": 0.7309782608695652
+     },
+     "1": {
+      "J": 1.0,
+      "U": 1.0,
+      "cov": 1.0
+     },
+     "2": {
+      "J": 1.0,
+      "U": 1.0,
+      "cov": 1.0
+     },
+     "4": {
+      "J": 0.8478260869565217,
+      "U": 0.9347826086956522,
+      "cov": 1.0
+     }
+    }
+   },
+   "single_t11": {
+    "gamma": 1,
+    "status": "SELECTED",
+    "J": 1.0,
+    "U": 1.0,
+    "cov": 1.0,
+    "grid": {
+     "0.25": {
+      "J": 0.0,
+      "U": 0.3804347826086957,
+      "cov": 0.8478260869565217
+     },
+     "0.5": {
+      "J": 0.09782608695652174,
+      "U": 0.5434782608695652,
+      "cov": 0.7418478260869565
+     },
+     "1": {
+      "J": 1.0,
+      "U": 1.0,
+      "cov": 1.0
+     },
+     "2": {
+      "J": 1.0,
+      "U": 1.0,
+      "cov": 1.0
+     },
+     "4": {
+      "J": 0.8152173913043478,
+      "U": 0.9021739130434783,
+      "cov": 0.9972826086956522
+     }
+    }
+   },
+   "emb1": {
+    "gamma": 1,
+    "status": "SELECTED",
+    "J": 1.0,
+    "U": 1.0,
+    "cov": 1.0,
+    "grid": {
+     "0.25": {
+      "J": 0.010869565217391304,
+      "U": 0.41304347826086957,
+      "cov": 0.8668478260869565
+     },
+     "0.5": {
+      "J": 0.09782608695652174,
+      "U": 0.4782608695652174,
+      "cov": 0.7228260869565217
+     },
+     "1": {
+      "J": 1.0,
+      "U": 1.0,
+      "cov": 1.0
+     },
+     "2": {
+      "J": 1.0,
+      "U": 1.0,
+      "cov": 1.0
+     },
+     "4": {
+      "J": 1.0,
+      "U": 1.0,
+      "cov": 1.0
+     }
+    }
+   }
+  },
+  "qwen3-14b-base": {
+   "c12": {
+    "gamma": 1,
+    "status": "SELECTED",
+    "J": 1.0,
+    "U": 1.0,
+    "cov": 1.0,
+    "grid": {
+     "0.25": {
+      "J": 0.0,
+      "U": 0.5108695652173914,
+      "cov": 1.0
+     },
+     "0.5": {
+      "J": 0.41304347826086957,
+      "U": 0.7282608695652174,
+      "cov": 1.0
+     },
+     "1": {
+      "J": 1.0,
+      "U": 1.0,
+      "cov": 1.0
+     },
+     "2": {
+      "J": 0.9347826086956522,
+      "U": 0.967391304347826,
+      "cov": 1.0
+     },
+     "4": {
+      "J": 0.7065217391304348,
+      "U": 0.8695652173913043,
+      "cov": 1.0
+     }
+    }
+   },
+   "single_t0": {
+    "gamma": 1,
+    "status": "SELECTED",
+    "J": 0.967391304347826,
+    "U": 0.9782608695652174,
+    "cov": 1.0,
+    "grid": {
+     "0.25": {
+      "J": 0.0,
+      "U": 0.5217391304347826,
+      "cov": 1.0
+     },
+     "0.5": {
+      "J": 0.3695652173913043,
+      "U": 0.7282608695652174,
+      "cov": 1.0
+     },
+     "1": {
+      "J": 0.967391304347826,
+      "U": 0.9782608695652174,
+      "cov": 1.0
+     },
+     "2": {
+      "J": 0.8152173913043478,
+      "U": 0.9021739130434783,
+      "cov": 1.0
+     },
+     "4": {
+      "J": 0.4782608695652174,
+      "U": 0.782608695652174,
+      "cov": 1.0
+     }
+    }
+   },
+   "single_t6": {
+    "gamma": 1,
+    "status": "SELECTED",
+    "J": 1.0,
+    "U": 1.0,
+    "cov": 1.0,
+    "grid": {
+     "0.25": {
+      "J": 0.0,
+      "U": 0.5108695652173914,
+      "cov": 1.0
+     },
+     "0.5": {
+      "J": 0.391304347826087,
+      "U": 0.7065217391304348,
+      "cov": 1.0
+     },
+     "1": {
+      "J": 1.0,
+      "U": 1.0,
+      "cov": 1.0
+     },
+     "2": {
+      "J": 0.967391304347826,
+      "U": 0.9891304347826086,
+      "cov": 1.0
+     },
+     "4": {
+      "J": 0.6413043478260869,
+      "U": 0.8586956521739131,
+      "cov": 1.0
+     }
+    }
+   },
+   "single_t11": {
+    "gamma": 1,
+    "status": "SELECTED",
+    "J": 1.0,
+    "U": 1.0,
+    "cov": 1.0,
+    "grid": {
+     "0.25": {
+      "J": 0.010869565217391304,
+      "U": 0.5,
+      "cov": 0.9945652173913043
+     },
+     "0.5": {
+      "J": 0.34782608695652173,
+      "U": 0.6847826086956522,
+      "cov": 1.0
+     },
+     "1": {
+      "J": 1.0,
+      "U": 1.0,
+      "cov": 1.0
+     },
+     "2": {
+      "J": 0.9347826086956522,
+      "U": 0.9891304347826086,
+      "cov": 1.0
+     },
+     "4": {
+      "J": 0.6413043478260869,
+      "U": 0.8478260869565217,
+      "cov": 1.0
+     }
+    }
+   },
+   "emb1": {
+    "gamma": 1,
+    "status": "SELECTED",
+    "J": 1.0,
+    "U": 1.0,
+    "cov": 1.0,
+    "grid": {
+     "0.25": {
+      "J": 0.0,
+      "U": 0.5,
+      "cov": 1.0
+     },
+     "0.5": {
+      "J": 0.1956521739130435,
+      "U": 0.5978260869565217,
+      "cov": 0.9945652173913043
+     },
+     "1": {
+      "J": 1.0,
+      "U": 1.0,
+      "cov": 1.0
+     },
+     "2": {
+      "J": 1.0,
+      "U": 1.0,
+      "cov": 1.0
+     },
+     "4": {
+      "J": 1.0,
+      "U": 1.0,
+      "cov": 1.0
+     }
+    }
+   }
+  },
+  "glm-4-9b": {
+   "c12": {
+    "gamma": 1,
+    "status": "SELECTED",
+    "J": 0.8804347826086957,
+    "U": 0.9456521739130435,
+    "cov": 0.9836956521739131,
+    "grid": {
+     "0.25": {
+      "J": 0.0,
+      "U": 0.0,
+      "cov": 0.0
+     },
+     "0.5": {
+      "J": 0.0,
+      "U": 0.34782608695652173,
+      "cov": 0.8097826086956522
+     },
+     "1": {
+      "J": 0.8804347826086957,
+      "U": 0.9456521739130435,
+      "cov": 0.9836956521739131
+     },
+     "2": {
+      "J": 0.8152173913043478,
+      "U": 0.9130434782608695,
+      "cov": 0.9809782608695652
+     },
+     "4": {
+      "J": 0.32608695652173914,
+      "U": 0.6630434782608695,
+      "cov": 0.9619565217391305
+     }
+    }
+   },
+   "single_t0": {
+    "gamma": 4,
+    "status": "SELECTED",
+    "J": 0.07608695652173914,
+    "U": 0.5217391304347826,
+    "cov": 0.967391304347826,
+    "grid": {
+     "0.25": {
+      "J": 0.0,
+      "U": 0.0,
+      "cov": 0.005434782608695652
+     },
+     "0.5": {
+      "J": 0.0,
+      "U": 0.43478260869565216,
+      "cov": 0.9103260869565217
+     },
+     "1": {
+      "J": 0.010869565217391304,
+      "U": 0.4782608695652174,
+      "cov": 0.967391304347826
+     },
+     "2": {
+      "J": 0.05434782608695652,
+      "U": 0.4891304347826087,
+      "cov": 0.9836956521739131
+     },
+     "4": {
+      "J": 0.07608695652173914,
+      "U": 0.5217391304347826,
+      "cov": 0.967391304347826
+     }
+    }
+   },
+   "single_t6": {
+    "gamma": 1,
+    "status": "SELECTED",
+    "J": 0.8804347826086957,
+    "U": 0.9347826086956522,
+    "cov": 0.9864130434782609,
+    "grid": {
+     "0.25": {
+      "J": 0.0,
+      "U": 0.0,
+      "cov": 0.0
+     },
+     "0.5": {
+      "J": 0.010869565217391304,
+      "U": 0.32608695652173914,
+      "cov": 0.7690217391304348
+     },
+     "1": {
+      "J": 0.8804347826086957,
+      "U": 0.9347826086956522,
+      "cov": 0.9864130434782609
+     },
+     "2": {
+      "J": 0.6847826086956522,
+      "U": 0.8478260869565217,
+      "cov": 0.9619565217391305
+     },
+     "4": {
+      "J": 0.20652173913043478,
+      "U": 0.5217391304347826,
+      "cov": 0.8722826086956522
+     }
+    }
+   },
+   "single_t11": {
+    "gamma": 1,
+    "status": "SELECTED",
+    "J": 0.8478260869565217,
+    "U": 0.9456521739130435,
+    "cov": 0.9918478260869565,
+    "grid": {
+     "0.25": {
+      "J": 0.0,
+      "U": 0.0,
+      "cov": 0.0
+     },
+     "0.5": {
+      "J": 0.0,
+      "U": 0.1956521739130435,
+      "cov": 0.4266304347826087
+     },
+     "1": {
+      "J": 0.8478260869565217,
+      "U": 0.9456521739130435,
+      "cov": 0.9918478260869565
+     },
+     "2": {
+      "J": 0.75,
+      "U": 0.8586956521739131,
+      "cov": 0.9782608695652174
+     },
+     "4": {
+      "J": 0.15217391304347827,
+      "U": 0.5,
+      "cov": 0.8695652173913043
+     }
+    }
+   },
+   "emb1": {
+    "gamma": 2,
+    "status": "SELECTED",
+    "J": 1.0,
+    "U": 1.0,
+    "cov": 1.0,
+    "grid": {
+     "0.25": {
+      "J": 0.0,
+      "U": 0.0,
+      "cov": 0.0
+     },
+     "0.5": {
+      "J": 0.16304347826086957,
+      "U": 0.5,
+      "cov": 0.7282608695652174
+     },
+     "1": {
+      "J": 0.9891304347826086,
+      "U": 0.9891304347826086,
+      "cov": 1.0
+     },
+     "2": {
+      "J": 1.0,
+      "U": 1.0,
+      "cov": 1.0
+     },
+     "4": {
+      "J": 0.8804347826086957,
+      "U": 0.9565217391304348,
+      "cov": 0.9836956521739131
+     }
+    }
+   }
+  },
+  "gemma-3-27b-it": {
+   "c12": {
+    "gamma": 1,
+    "status": "SELECTED",
+    "J": 1.0,
+    "U": 1.0,
+    "cov": 1.0,
+    "grid": {
+     "0.25": {
+      "J": 0.0,
+      "U": 0.44565217391304346,
+      "cov": 0.9538043478260869
+     },
+     "0.5": {
+      "J": 0.8369565217391305,
+      "U": 0.9565217391304348,
+      "cov": 1.0
+     },
+     "1": {
+      "J": 1.0,
+      "U": 1.0,
+      "cov": 1.0
+     },
+     "2": {
+      "J": 1.0,
+      "U": 1.0,
+      "cov": 1.0
+     },
+     "4": {
+      "J": 1.0,
+      "U": 1.0,
+      "cov": 1.0
+     }
+    }
+   },
+   "single_t0": {
+    "gamma": 1,
+    "status": "SELECTED",
+    "J": 1.0,
+    "U": 1.0,
+    "cov": 1.0,
+    "grid": {
+     "0.25": {
+      "J": 0.0,
+      "U": 0.43478260869565216,
+      "cov": 0.9646739130434783
+     },
+     "0.5": {
+      "J": 0.6739130434782609,
+      "U": 0.8586956521739131,
+      "cov": 1.0
+     },
+     "1": {
+      "J": 1.0,
+      "U": 1.0,
+      "cov": 1.0
+     },
+     "2": {
+      "J": 0.9021739130434783,
+      "U": 0.9565217391304348,
+      "cov": 1.0
+     },
+     "4": {
+      "J": 0.9891304347826086,
+      "U": 1.0,
+      "cov": 1.0
+     }
+    }
+   },
+   "single_t6": {
+    "gamma": 1,
+    "status": "SELECTED",
+    "J": 1.0,
+    "U": 1.0,
+    "cov": 1.0,
+    "grid": {
+     "0.25": {
+      "J": 0.0,
+      "U": 0.44565217391304346,
+      "cov": 0.9538043478260869
+     },
+     "0.5": {
+      "J": 0.7934782608695652,
+      "U": 0.9239130434782609,
+      "cov": 1.0
+     },
+     "1": {
+      "J": 1.0,
+      "U": 1.0,
+      "cov": 1.0
+     },
+     "2": {
+      "J": 1.0,
+      "U": 1.0,
+      "cov": 1.0
+     },
+     "4": {
+      "J": 1.0,
+      "U": 1.0,
+      "cov": 1.0
+     }
+    }
+   },
+   "single_t11": {
+    "gamma": 1,
+    "status": "SELECTED",
+    "J": 1.0,
+    "U": 1.0,
+    "cov": 1.0,
+    "grid": {
+     "0.25": {
+      "J": 0.0,
+      "U": 0.45652173913043476,
+      "cov": 0.9510869565217391
+     },
+     "0.5": {
+      "J": 0.6086956521739131,
+      "U": 0.8695652173913043,
+      "cov": 1.0
+     },
+     "1": {
+      "J": 1.0,
+      "U": 1.0,
+      "cov": 1.0
+     },
+     "2": {
+      "J": 1.0,
+      "U": 1.0,
+      "cov": 1.0
+     },
+     "4": {
+      "J": 1.0,
+      "U": 1.0,
+      "cov": 1.0
+     }
+    }
+   },
+   "emb1": {
+    "gamma": 1,
+    "status": "SELECTED",
+    "J": 1.0,
+    "U": 1.0,
+    "cov": 1.0,
+    "grid": {
+     "0.25": {
+      "J": 0.0,
+      "U": 0.4673913043478261,
+      "cov": 0.9755434782608695
+     },
+     "0.5": {
+      "J": 0.8260869565217391,
+      "U": 0.9565217391304348,
+      "cov": 1.0
+     },
+     "1": {
+      "J": 1.0,
+      "U": 1.0,
+      "cov": 1.0
+     },
+     "2": {
+      "J": 1.0,
+      "U": 1.0,
+      "cov": 1.0
+     },
+     "4": {
+      "J": 1.0,
+      "U": 1.0,
+      "cov": 1.0
+     }
+    }
+   }
+  }
+ },
+ "selection_rule": "per receiver and construction on the development complete-fact source: coverage >= 0.90, highest J, then higher U, then smaller gamma; NO_ELIGIBLE_DOSE -> gamma 1 (declared in scripts/p0a_audit.py before any output)",
+ "arms": {
+  "qwen3-32b": {
+   "actual": [
+    [
+     "packet_text",
+     0
+    ],
+    [
+     "w:c12",
+     1
+    ],
+    [
+     "w:single_t0",
+     1
+    ],
+    [
+     "w:single_t6",
+     1
+    ],
+    [
+     "w:single_t11",
+     1
+    ],
+    [
+     "emb1",
+     1
+    ]
+   ],
+   "literal": [
+    [
+     "none",
+     0
+    ],
+    [
+     "full_text",
+     0
+    ],
+    [
+     "packet_text",
+     0
+    ],
+    [
+     "w:c12",
+     1
+    ],
+    [
+     "w:single_t0",
+     1
+    ],
+    [
+     "w:single_t6",
+     1
+    ],
+    [
+     "w:single_t11",
+     1
+    ],
+    [
+     "emb1",
+     1
+    ]
+   ]
+  },
+  "qwen3-14b-base": {
+   "actual": [
+    [
+     "packet_text",
+     0
+    ],
+    [
+     "w:c12",
+     1
+    ],
+    [
+     "w:single_t0",
+     1
+    ],
+    [
+     "w:single_t6",
+     1
+    ],
+    [
+     "w:single_t11",
+     1
+    ],
+    [
+     "emb1",
+     1
+    ]
+   ],
+   "literal": [
+    [
+     "none",
+     0
+    ],
+    [
+     "full_text",
+     0
+    ],
+    [
+     "packet_text",
+     0
+    ],
+    [
+     "w:c12",
+     1
+    ],
+    [
+     "w:single_t0",
+     1
+    ],
+    [
+     "w:single_t6",
+     1
+    ],
+    [
+     "w:single_t11",
+     1
+    ],
+    [
+     "emb1",
+     1
+    ]
+   ]
+  },
+  "glm-4-9b": {
+   "actual": [
+    [
+     "packet_text",
+     0
+    ],
+    [
+     "w:c12",
+     1
+    ],
+    [
+     "w:single_t0",
+     1
+    ],
+    [
+     "w:single_t0",
+     4
+    ],
+    [
+     "w:single_t6",
+     1
+    ],
+    [
+     "w:single_t11",
+     1
+    ],
+    [
+     "emb1",
+     1
+    ],
+    [
+     "emb1",
+     2
+    ]
+   ],
+   "literal": [
+    [
+     "none",
+     0
+    ],
+    [
+     "full_text",
+     0
+    ],
+    [
+     "packet_text",
+     0
+    ],
+    [
+     "w:c12",
+     1
+    ],
+    [
+     "w:single_t0",
+     1
+    ],
+    [
+     "w:single_t0",
+     4
+    ],
+    [
+     "w:single_t6",
+     1
+    ],
+    [
+     "w:single_t11",
+     1
+    ],
+    [
+     "emb1",
+     1
+    ],
+    [
+     "emb1",
+     2
+    ]
+   ]
+  },
+  "gemma-3-27b-it": {
+   "actual": [
+    [
+     "packet_text",
+     0
+    ],
+    [
+     "w:c12",
+     1
+    ],
+    [
+     "w:single_t0",
+     1
+    ],
+    [
+     "w:single_t6",
+     1
+    ],
+    [
+     "w:single_t11",
+     1
+    ],
+    [
+     "emb1",
+     1
+    ]
+   ],
+   "literal": [
+    [
+     "none",
+     0
+    ],
+    [
+     "full_text",
+     0
+    ],
+    [
+     "packet_text",
+     0
+    ],
+    [
+     "w:c12",
+     1
+    ],
+    [
+     "w:single_t0",
+     1
+    ],
+    [
+     "w:single_t6",
+     1
+    ],
+    [
+     "w:single_t11",
+     1
+    ],
+    [
+     "emb1",
+     1
+    ]
+   ]
+  }
+ },
+ "arms_file": {
+  "path": "artifacts/word_interface_followup/p0a_confirm_arms.json",
+  "sha256": "ad91fae768f2b28486a9664beae4960970e3feadfda60933c0ba7cebc8e5ebcd"
+ },
+ "manifests": {
+  "qwen3-32b": {
+   "path": "artifacts/word_interface_followup/p0a_confirm/qwen3-32b/manifest.json",
+   "sha256": "57d6f7aea54cc6a07edc41ea5228f4c28267acaf07c2088b1d89846c138d7068"
+  },
+  "qwen3-14b-base": {
+   "path": "artifacts/word_interface_followup/p0a_confirm/qwen3-14b-base/manifest.json",
+   "sha256": "99dc327ad153aee8209f3b52ff6f8953091fbbbc34aa960fea8886b38ccfb809"
+  },
+  "glm-4-9b": {
+   "path": "artifacts/word_interface_followup/p0a_confirm/glm-4-9b/manifest.json",
+   "sha256": "9cecaa9d5648eb211f1278beaf3db0ba7e921b2b66a2da413cec8f86d90634aa"
+  },
+  "gemma-3-27b-it": {
+   "path": "artifacts/word_interface_followup/p0a_confirm/gemma-3-27b-it/manifest.json",
+   "sha256": "0729e82fabda2bc6b8f035dca0e8f5f57becdb3f9524a73b3db4841df7035b68"
+  }
+ },
+ "sender": {
+  "packets": "artifacts/word_interface_followup/p0a_packets/candidateA_p0a.json",
+  "sha256": "0fbf8d7c8b7ef9ae4c9450433581e1caa9d0ef05025997a6cd4de9a88a455f7f",
+  "summary": {
+   "n": 1160,
+   "ok": 1160,
+   "partial": 0,
+   "empty": 0,
+   "malformed": 0,
+   "mean_decode_seconds": 0.531830088229015,
+   "mean_bytes": 22.458620689655174
+  },
+  "prompt_sha256": "328c8b5df9d196724cdabd6cc7a291c0cfc7ca13ab524bd3cb70239de7183e0b"
+ },
+ "bank": {
+  "path": "artifacts/word_interface_followup/p0a_bank/bank.json",
+  "sha256": "c03700d59c1272efbf819b983eb74952fc3552b110366201bf82987b1bbf1ffd",
+  "analysed_scenes": 576,
+  "engineering": "4 separate scenes (first four of the list)"
+ },
+ "token_strata": {
+  "path": "artifacts/word_interface_followup/p0a_confirm_token_strata.json",
+  "sha256": "ccec4c993c3fe4942d9c69df774f094789d989741b87c2eb6f18f592752efea6",
+  "counts": {
+   "gemma-3-27b-it": {
+    "actual": [
+     576,
+     576
+    ],
+    "literal": [
+     576,
+     576
+    ]
+   },
+   "glm-4-9b": {
+    "actual": [
+     576,
+     576
+    ],
+    "literal": [
+     576,
+     576
+    ]
+   },
+   "qwen3-14b-base": {
+    "actual": [
+     576,
+     576
+    ],
+    "literal": [
+     576,
+     576
+    ]
+   },
+   "qwen3-32b": {
+    "actual": [
+     576,
+     576
+    ],
+    "literal": [
+     576,
+     576
+    ]
+   }
+  },
+  "meaning": "where every active word is one token in its field context, emb1@1 is exactly the packet-text route (an identity, not an independent baseline); multi-token words make emb1 a mean-pooling adaptation that must not be read as a complete word; results are reported by stratum"
+ },
+ "full_span": "full token-span embedding replacement == the text route (engineering identity on packet_text rows, |dlogit| <= 1e-4); no separate row",
+ "contrasts": [
+  {
+   "name": "actual_A1_twelve_minus_mean_single_selected",
+   "family": "A1_actual",
+   "source": "actual",
+   "a": [
+    "w:c12",
+    "c12"
+   ],
+   "b": [
+    [
+     "w:single_t0",
+     "single_t0"
+    ],
+    [
+     "w:single_t6",
+     "single_t6"
+    ],
+    [
+     "w:single_t11",
+     "single_t11"
+    ]
+   ]
+  },
+  {
+   "name": "actual_A2_twelve_minus_emb1_selected",
+   "family": "A2_actual",
+   "source": "actual",
+   "a": [
+    "w:c12",
+    "c12"
+   ],
+   "b": [
+    [
+     "emb1",
+     "emb1"
+    ]
+   ]
+  },
+  {
+   "name": "actual_A1_twelve_minus_mean_single_gamma1",
+   "source": "actual",
+   "a": [
+    "w:c12",
+    1
+   ],
+   "b": [
+    [
+     "w:single_t0",
+     1
+    ],
+    [
+     "w:single_t6",
+     1
+    ],
+    [
+     "w:single_t11",
+     1
+    ]
+   ]
+  },
+  {
+   "name": "actual_A2_twelve_minus_emb1_gamma1",
+   "source": "actual",
+   "a": [
+    "w:c12",
+    1
+   ],
+   "b": [
+    [
+     "emb1",
+     1
+    ]
+   ]
+  },
+  {
+   "name": "actual_twelve_selected_minus_packet_text",
+   "source": "actual",
+   "a": [
+    "w:c12",
+    "c12"
+   ],
+   "b": [
+    [
+     "packet_text",
+     0
+    ]
+   ]
+  },
+  {
+   "name": "actual_emb1_selected_minus_packet_text",
+   "source": "actual",
+   "a": [
+    "emb1",
+    "emb1"
+   ],
+   "b": [
+    [
+     "packet_text",
+     0
+    ]
+   ]
+  },
+  {
+   "name": "actual_twelve_minus_single_t0_selected",
+   "source": "actual",
+   "a": [
+    "w:c12",
+    "c12"
+   ],
+   "b": [
+    [
+     "w:single_t0",
+     "single_t0"
+    ]
+   ]
+  },
+  {
+   "name": "actual_twelve_minus_single_t6_selected",
+   "source": "actual",
+   "a": [
+    "w:c12",
+    "c12"
+   ],
+   "b": [
+    [
+     "w:single_t6",
+     "single_t6"
+    ]
+   ]
+  },
+  {
+   "name": "actual_twelve_minus_single_t11_selected",
+   "source": "actual",
+   "a": [
+    "w:c12",
+    "c12"
+   ],
+   "b": [
+    [
+     "w:single_t11",
+     "single_t11"
+    ]
+   ]
+  },
+  {
+   "name": "literal_A1_twelve_minus_mean_single_selected",
+   "family": "A1_literal",
+   "source": "literal",
+   "a": [
+    "w:c12",
+    "c12"
+   ],
+   "b": [
+    [
+     "w:single_t0",
+     "single_t0"
+    ],
+    [
+     "w:single_t6",
+     "single_t6"
+    ],
+    [
+     "w:single_t11",
+     "single_t11"
+    ]
+   ]
+  },
+  {
+   "name": "literal_A2_twelve_minus_emb1_selected",
+   "family": "A2_literal",
+   "source": "literal",
+   "a": [
+    "w:c12",
+    "c12"
+   ],
+   "b": [
+    [
+     "emb1",
+     "emb1"
+    ]
+   ]
+  },
+  {
+   "name": "literal_A1_twelve_minus_mean_single_gamma1",
+   "source": "literal",
+   "a": [
+    "w:c12",
+    1
+   ],
+   "b": [
+    [
+     "w:single_t0",
+     1
+    ],
+    [
+     "w:single_t6",
+     1
+    ],
+    [
+     "w:single_t11",
+     1
+    ]
+   ]
+  },
+  {
+   "name": "literal_A2_twelve_minus_emb1_gamma1",
+   "source": "literal",
+   "a": [
+    "w:c12",
+    1
+   ],
+   "b": [
+    [
+     "emb1",
+     1
+    ]
+   ]
+  },
+  {
+   "name": "literal_twelve_selected_minus_packet_text",
+   "source": "literal",
+   "a": [
+    "w:c12",
+    "c12"
+   ],
+   "b": [
+    [
+     "packet_text",
+     0
+    ]
+   ]
+  },
+  {
+   "name": "literal_emb1_selected_minus_packet_text",
+   "source": "literal",
+   "a": [
+    "emb1",
+    "emb1"
+   ],
+   "b": [
+    [
+     "packet_text",
+     0
+    ]
+   ]
+  },
+  {
+   "name": "literal_twelve_minus_single_t0_selected",
+   "source": "literal",
+   "a": [
+    "w:c12",
+    "c12"
+   ],
+   "b": [
+    [
+     "w:single_t0",
+     "single_t0"
+    ]
+   ]
+  },
+  {
+   "name": "literal_twelve_minus_single_t6_selected",
+   "source": "literal",
+   "a": [
+    "w:c12",
+    "c12"
+   ],
+   "b": [
+    [
+     "w:single_t6",
+     "single_t6"
+    ]
+   ]
+  },
+  {
+   "name": "literal_twelve_minus_single_t11_selected",
+   "source": "literal",
+   "a": [
+    "w:c12",
+    "c12"
+   ],
+   "b": [
+    [
+     "w:single_t11",
+     "single_t11"
+    ]
+   ]
+  }
+ ],
+ "multiplicity": {
+  "families": {
+   "A1_actual": "twelve - mean(single t0,t6,t11) at selected doses, automatic source, four receivers",
+   "A1_literal": "the same on the complete-fact source",
+   "A2_actual": "twelve - emb1 at selected doses, automatic source, four receivers",
+   "A2_literal": "the same on the complete-fact source"
+  },
+  "method": "Holm within each family at 0.05 on the conservative p (the larger of the family- and template-level two-sided paired bootstrap p)"
+ },
+ "ci": {
+  "method": "scene-paired cluster bootstrap of cluster means, 20000 draws x seeds [190919,290919,390919], envelope",
+  "levels": [
+   "36 families",
+   "12 evidence templates"
+  ],
+  "conservative": "lower of the two lower bounds"
+ },
+ "claim_rules": [
+  "an advantage of the twelve-context mean over simpler representations needs a positive conservative lower bound AND Holm rejection in its family",
+  "otherwise construction differences are reported as estimates without forcing a winner; overlapping intervals do not establish equivalence",
+  "text-route differences are descriptive",
+  "all receivers and all cells are reported, including failures"
+ ],
+ "numerics": "FP32 eager, TF32 off, batch 1; 64-token primary, 256-token sensitivity; strict first-line parser",
+ "code": {
+  "runner": {
+   "path": "src/syncomm/wordif/evaluate_localrep.py",
+   "sha256": "e2eb4aaae2cc09a845fe17c861cdfd65453605040eef0668093d44774e96a5ed"
+  },
+  "audit": {
+   "path": "scripts/p0a_audit.py",
+   "sha256": "ed76b409125ed0888b733682a5720f394ea14e28d001db78979e59bc6d6226f0"
+  },
+  "setup": {
+   "path": "scripts/p0a_confirm_setup.py",
+   "sha256": "4c3de341fcc1836e6650b731b72818dfe9571770b0a3c44ad320eac21bd76330"
+  }
+ }
+}

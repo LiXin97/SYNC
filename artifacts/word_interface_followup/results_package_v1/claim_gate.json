@@ -1,0 +1,128 @@
+{
+ "definition": {
+  "reliable_automatic_conjunction_use": "on the automatic source: selected J >= 0.50 AND valid-answer rate >= 0.90 AND selected - mean reassignment with positive conservative lower bound AND Holm rejection (adjusted p < .05) in B_actual",
+  "note": "research operational definitions, not acceptance criteria; absolute outcomes reported regardless; the complete-fact source is reported with its own family"
+ },
+ "per_receiver": {
+  "qwen3-32b": {
+   "J": 0.953125,
+   "valid": 0.9952256944444444,
+   "sham_contrast": {
+    "lo": 0.9288194444444446,
+    "hi": 0.9756944444444443,
+    "p": 1.6666666666666667e-05,
+    "estimate": 0.953125,
+    "scenes": 576
+   },
+   "holm": {
+    "p": 1.6666666666666667e-05,
+    "threshold": 0.0125,
+    "reject": true
+   },
+   "reliable_automatic_conjunction_use": true
+  },
+  "qwen3-14b-base": {
+   "J": 0.9565972222222222,
+   "valid": 1.0,
+   "sham_contrast": {
+    "lo": 0.9340277777777778,
+    "hi": 0.9756944444444444,
+    "p": 1.6666666666666667e-05,
+    "estimate": 0.9565972222222222,
+    "scenes": 576
+   },
+   "holm": {
+    "p": 1.6666666666666667e-05,
+    "threshold": 0.016666666666666666,
+    "reject": true
+   },
+   "reliable_automatic_conjunction_use": true
+  },
+  "glm-4-9b": {
+   "J": 0.4184027777777778,
+   "valid": 0.9913194444444444,
+   "sham_contrast": {
+    "lo": 0.3611111111111111,
+    "hi": 0.4756944444444444,
+    "p": 1.6666666666666667e-05,
+    "estimate": 0.4184027777777778,
+    "scenes": 576
+   },
+   "holm": {
+    "p": 1.6666666666666667e-05,
+    "threshold": 0.025,
+    "reject": true
+   },
+   "reliable_automatic_conjunction_use": false
+  },
+  "gemma-3-27b-it": {
+   "J": 0.9444444444444444,
+   "valid": 1.0,
+   "sham_contrast": {
+    "lo": 0.9212962962962963,
+    "hi": 0.9641203703703705,
+    "p": 1.6666666666666667e-05,
+    "estimate": 0.9438657407407409,
+    "scenes": 576
+   },
+   "holm": {
+    "p": 1.6666666666666667e-05,
+    "threshold": 0.05,
+    "reject": true
+   },
+   "reliable_automatic_conjunction_use": true
+  }
+ },
+ "holm": {
+  "B_actual": {
+   "qwen3-32b": {
+    "p": 1.6666666666666667e-05,
+    "threshold": 0.0125,
+    "reject": true
+   },
+   "qwen3-14b-base": {
+    "p": 1.6666666666666667e-05,
+    "threshold": 0.016666666666666666,
+    "reject": true
+   },
+   "glm-4-9b": {
+    "p": 1.6666666666666667e-05,
+    "threshold": 0.025,
+    "reject": true
+   },
+   "gemma-3-27b-it": {
+    "p": 1.6666666666666667e-05,
+    "threshold": 0.05,
+    "reject": true
+   }
+  },
+  "B_literal": {
+   "qwen3-32b": {
+    "p": 1.6666666666666667e-05,
+    "threshold": 0.0125,
+    "reject": true
+   },
+   "qwen3-14b-base": {
+    "p": 1.6666666666666667e-05,
+    "threshold": 0.016666666666666666,
+    "reject": true
+   },
+   "glm-4-9b": {
+    "p": 1.6666666666666667e-05,
+    "threshold": 0.025,
+    "reject": true
+   },
+   "gemma-3-27b-it": {
+    "p": 1.6666666666666667e-05,
+    "threshold": 0.05,
+    "reject": true
+   }
+  }
+ },
+ "recount": {
+  "qwen3-32b": true,
+  "qwen3-14b-base": true,
+  "glm-4-9b": false,
+  "gemma-3-27b-it": true
+ }
+}

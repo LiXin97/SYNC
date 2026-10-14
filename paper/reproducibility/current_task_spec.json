@@ -1,0 +1,171 @@
+{
+  "scope": "current two-object confirmation; exact source specification, no model outputs",
+  "domains": {
+    "candy": {
+      "fields": [
+        "color",
+        "taste"
+      ],
+      "A": [
+        "green",
+        "orange",
+        "red",
+        "yellow"
+      ],
+      "B": [
+        "bitter",
+        "salty",
+        "sour",
+        "sweet"
+      ],
+      "frames": [
+        "One candy, {a}, has a {taste} flavour and a {color} shell.",
+        "Candy {a} — shell {color}; flavour {taste}.",
+        "Tasting note for {a}: the flavour comes out {taste}; the shell reads {color}.",
+        "They wrapped {a}, a {color}-shelled candy, after confirming it tastes {taste}."
+      ],
+      "questions": {
+        "color": "Which object has a {v} color?",
+        "taste": "Which object is {v}?"
+      }
+    },
+    "block": {
+      "fields": [
+        "color",
+        "material"
+      ],
+      "A": [
+        "green",
+        "orange",
+        "red",
+        "yellow"
+      ],
+      "B": [
+        "gold",
+        "iron",
+        "silver",
+        "steel"
+      ],
+      "frames": [
+        "Block {a} came out of the {material} mould and was later sprayed {color}.",
+        "Block {a} — spray coat {color}; cast in {material}.",
+        "Workshop tag on {a}: sprayed {color} over a body cast in {material}.",
+        "Cast in {material} and sprayed {color}, block {a} left the workshop that morning."
+      ],
+      "questions": {
+        "color": "Which object has {v} surface paint?",
+        "material": "Which object is made of {v}?"
+      }
+    },
+    "coat": {
+      "fields": [
+        "fibre",
+        "buttons"
+      ],
+      "A": [
+        "cotton",
+        "leather",
+        "silk",
+        "wool"
+      ],
+      "B": [
+        "copper",
+        "glass",
+        "plastic",
+        "wooden"
+      ],
+      "frames": [
+        "The tailor cut {a} from {fibre} and sewed {buttons} buttons onto it.",
+        "Coat {a} — cloth {fibre}; fasteners {buttons} buttons.",
+        "Ticket from the tailor for {a}: {buttons} buttons sewn onto a coat cut from {fibre}.",
+        "Cut from {fibre}, the coat {a} carries {buttons} buttons down its front."
+      ],
+      "questions": {
+        "fibre": "Which object is made of {v}?",
+        "buttons": "Which object has {v} buttons?"
+      }
+    }
+  },
+  "aliases": [
+    "BANQ",
+    "CIRV",
+    "DELV",
+    "DOMP",
+    "FELK",
+    "GORM",
+    "GUTZ",
+    "HOBV",
+    "JIRM",
+    "KAWP",
+    "KIVT",
+    "LONZ",
+    "MUVT",
+    "NEQL",
+    "PIRB",
+    "PUNZ",
+    "QUVO",
+    "RONK",
+    "SAMV",
+    "TIZP",
+    "VOLK",
+    "WERN",
+    "YUMB",
+    "ZAFP"
+  ],
+  "generated_scenes": 576,
+  "engineering_scenes": 4,
+  "evaluated_scenes": 572,
+  "families": 36,
+  "templates": 12,
+  "scenes_per_family": 16,
+  "design": "changed attribute x assignment of first attribute x assignment of second attribute x queried value index",
+  "query_order": "changed attribute, then unchanged attribute",
+  "question_article_rule": "a orange becomes an orange",
+  "overlap_summary": {
+    "scenes": {
+      "new": 576,
+      "prior": 1920,
+      "shared": 0
+    },
+    "evidence": {
+      "new": 1530,
+      "prior": 2325,
+      "shared": 0
+    },
+    "skeletons": {
+      "new": 12,
+      "prior": 20,
+      "shared": 0
+    },
+    "fact_tuples_field_aware": {
+      "new": 48,
+      "prior": 86,
+      "shared": 48
+    },
+    "fact_tuples_values_only": {
+      "new": 48,
+      "prior": 86,
+      "shared": 48
+    },
+    "world_combos": {
+      "new": 72,
+      "prior": 192,
+      "shared": 14
+    },
+    "value_cells": {
+      "new": 36,
+      "prior": 96,
+      "shared": 7
+    },
+    "aliases": {
+      "new": 24,
+      "prior": 56,
+      "shared": 0
+    },
+    "question_wordings": {
+      "new": 6,
+      "prior": 6,
+      "shared": 6
+    }
+  }
+}

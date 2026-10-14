@@ -1,0 +1,146 @@
+{
+ "lock": "r3_protocol_20260923",
+ "utc": "2026-09-22T20:54:22.919361+00:00",
+ "status": "FROZEN_BEFORE_ANY_R3_RECEIVER_OUTPUT",
+ "authority": "[internal approval note removed for anonymity]",
+ "question": "Does the bounded receiver-side change (moving the fitted word-contrast write from the original three-layer mid band to one early layer at relative depth 0.2, raw scale, gamma 1) let the FROZEN automatic word-index sender deliver facts on receivers that previously failed, on a bank of unseen evidence constructions and names?",
+ "sender": {
+  "identity": "candidate A, Llama-3.1-8B-Instruct, prompt/parse/weights/ordering unchanged from a dated decision record",
+  "packets": "artifacts/receiver_recovery/r3_packets/candidateA_r3.json",
+  "sha256": "11c5edd9100a81f27bec4844d1743bb7c628db79c8a883ec4b53ad68276951a8",
+  "n": 1152,
+  "parse": {
+   "n": 1152,
+   "ok": 1152,
+   "partial": 0,
+   "empty": 0,
+   "malformed": 0,
+   "mean_decode_seconds": 0.6785805695172813,
+   "mean_bytes": 22.62847222222222
+  },
+  "prompt_sha256": "328c8b5df9d196724cdabd6cc7a291c0cfc7ca13ab524bd3cb70239de7183e0b",
+  "mean_bytes": 22.62847222222222
+ },
+ "receivers": {
+  "qwen3-32b": {
+   "manifest_sha256": "976311f110bb917b741487a78590a125ecb155856c5c10120d4579ad99f5dd60",
+   "original_layers": [
+    26,
+    32,
+    38
+   ],
+   "selected_layers": [
+    13
+   ],
+   "root": "artifacts/receiver_recovery/r3/qwen3-32b"
+  },
+  "qwen3-14b-base": {
+   "manifest_sha256": "cf0e20b263bbc9f5fe352679f865149d6b733c7c1937a33223f17184a793e79f",
+   "original_layers": [
+    16,
+    20,
+    24
+   ],
+   "selected_layers": [
+    8
+   ],
+   "root": "artifacts/receiver_recovery/r3/qwen3-14b-base"
+  },
+  "glm-4-9b": {
+   "manifest_sha256": "8d8a17e85455415140177652a84d9dc29b3733f15adccba3807fdce62c16d31c",
+   "original_layers": [
+    16,
+    20,
+    24
+   ],
+   "selected_layers": [
+    8
+   ],
+   "root": "artifacts/receiver_recovery/r3/glm-4-9b"
+  },
+  "gemma-3-27b-it": {
+   "manifest_sha256": "8fbff8d24bf752ed17744e7387d80e0cc52e7995746887760776515e54eced19",
+   "original_layers": [
+    25,
+    31,
+    37
+   ],
+   "selected_layers": [
+    12
+   ],
+   "root": "artifacts/receiver_recovery/r3/gemma-3-27b-it"
+  }
+ },
+ "selected_configuration": {
+  "rule": "raw fitted word-contrast write at relative depth 0.2, gamma 1, four public slot positions per object",
+  "provenance": "chosen on R1/R2 development by the pre-declared rule (largest development J with coverage >= 0.90 across the R1 raw cells and the five R2 local cells; ties -> higher U, fewer layers, raw scale, smaller gamma, R1 order); identical choice for all four receivers; the generic local-scale rule never advanced a cell",
+  "gemma_presearch_rule": "gates/receiver_recovery/r2_gemma_presearch_rule.lock.json — frozen from native development only before any Gemma fitted cell was read; it selects the same depth, so selected == pre-search rule up to the scale factor c=1.028, and both are reported"
+ },
+ "conditions": {
+  "1 no message + active identity-write integrity": "actual/none and actual/identity_write",
+  "2 automatic packet through the ORIGINAL configuration": "actual/original",
+  "3 the identical packet through the SELECTED configuration": "actual/selected",
+  "4 that identical packet as weighted padded text": "actual/packet_text",
+  "5 three fixed norm-matched word reassignments of (3)": "actual/sham0-2",
+  "6 the other world's independently generated packet through (3)": "actual/other_world, scored against both the current and the supplied gold",
+  "7 complete facts through original/selected/text plus evidence text": "literal/original, literal/selected, literal/packet_text, literal/full_text",
+  "8 native fact states at the selected depth": "literal/native"
+ },
+ "endpoints": {
+  "primary": "scene-level four-answer joint correctness J at the 64-token budget, all 572 development scenes in the denominator (4 engineering scenes excluded)",
+  "secondary": [
+   "per-answer accuracy",
+   "strict format coverage",
+   "R (changed question, both worlds)",
+   "U (unchanged question, both worlds)",
+   "256-token sensitivity",
+   "realized edit norms per layer",
+   "wire bytes",
+   "other-world supplied-gold scoring"
+  ]
+ },
+ "primary_contrasts": [
+  "selected - original (per receiver)",
+  "selected - mean(sham0..2) (per receiver)"
+ ],
+ "multiplicity": {
+  "family": "six tests: {selected-original, selected-mean-reassignment} x {qwen3-14b-base, glm-4-9b, gemma-3-27b-it}",
+  "method": "Holm, familywise alpha 0.05, two-sided paired bootstrap p",
+  "anchor": "qwen3-32b is the retained successful anchor and is NOT in the family; its rows are reported",
+  "note": "identical selected/original configurations would receive p=1; none are identical here"
+ },
+ "ci": {
+  "method": "scene-paired cluster bootstrap of cluster means, 20000 draws x seeds [190919,290919,390919], envelope = min lower / max upper",
+  "levels": [
+   "36 families",
+   "12 evidence templates"
+  ],
+  "rule": "both levels reported; a claimed improvement needs the paired estimate and its 95% interval lower bound positive"
+ },
+ "targets": {
+  "useful_additional_receiver": "selected automatic J >= 0.50 AND strict coverage >= 0.90 AND selected - mean reassignment positive with interval lower bound > 0 and Holm-adjusted p <= 0.05",
+  "substantial_recovery": "additionally selected - original >= +0.20 with the same interval and adjusted-p requirements",
+  "note": "these are this campaign targets, not publication standards; raw magnitudes and every criterion are reported even when a clause fails"
+ },
+ "not_claims": [
+  "no-message J = 0 is structural for identical deterministic receiver inputs across the two worlds and is not evidence of communication",
+  "other-world rows are repeated measures on the same scenes and add no independent N",
+  "no text superiority or noninferiority claim follows from an insignificant contrast",
+  "native transplantation reads scene-specific states and is an instrument, not a deployable map-free method"
+ ],
+ "code": {
+  "src/syncomm/recovery/evaluate_confirm.py": {
+   "path": "src/syncomm/recovery/evaluate_confirm.py",
+   "sha256": "76796972e52e328b57b173a06d7ea6251aed2957d8020b47f8ac76b8332e4b75"
+  },
+  "src/syncomm/recovery/evaluate_depth.py": {
+   "path": "src/syncomm/recovery/evaluate_depth.py",
+   "sha256": "9e8d153129e8b61bc496444558f0dfa4b6f6aff4be00eebb7589f613b8ce8a01"
+  },
+  "scripts/audit_r1_20260923.py": {
+   "path": "scripts/audit_r1_20260923.py",
+   "sha256": "10581b5d52146cf12eff9a81fdd85d70026879b8869e4c7170baf4856579b753"
+  }
+ },
+ "evaluated_once": "One evaluation of this bank per receiver; no re-selection, no threshold movement, no prompt or dose search here."
+}

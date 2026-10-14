@@ -1,0 +1,32 @@
+{
+ "receiver": "seed-oss-36b-instruct",
+ "layers": [
+  13,
+  26,
+  32,
+  38
+ ],
+ "file": "artifacts/latest0924/fits/directions_seed-oss-36b-instruct.pt",
+ "sha256": "8d842847f60609a15a082ed2c3a1a2f3b2aed19ce5623079064599f8fc407143",
+ "direction_norm_median_per_layer": {
+  "13": 168.41152954101562,
+  "26": 245.84840393066406,
+  "32": 297.5785217285156,
+  "38": 369.4510192871094
+ },
+ "local_scale": {
+  "13": 1.03188157081604,
+  "26": 1.1068726778030396,
+  "32": 1.1397367715835571,
+  "38": 1.1553590297698975
+ },
+ "n_ratio_samples": {
+  "13": 2652,
+  "26": 2652,
+  "32": 2652,
+  "38": 2652
+ },
+ "excluded_rows": [],
+ "epsilon": 1e-08,
+ "rule": "c[l] = median over (word, template) of ||delta[l,w,t]|| / ||d[l,w]||; >= 1 by construction"
+}

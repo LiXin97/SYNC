@@ -1,0 +1,124 @@
+{
+ "lock": "p0b_bank_20260923",
+ "utc": "2026-09-23T10:52:36.073346+00:00",
+ "status": "FROZEN_BEFORE_ANY_P0B_OUTPUT (no sender or receiver output exists for either bank)",
+ "authority": "[internal approval note removed for anonymity]",
+ "generator": {
+  "path": "scripts/p0b_build_banks.py",
+  "sha256": "dba5bc37ebd68707029d16a0ad59e38d2501cef9884cb642724dc323fce3107e",
+  "command": "python3 -B scripts/p0b_build_banks.py --out-dir artifacts/word_interface_followup/p0b_banks --words artifacts/receiver_recovery/words_221.json --exclusions gates/word_interface_followup/prior_banks_exclusion_wi_20260923.json"
+ },
+ "files": {
+  "artifacts/word_interface_followup/p0b_banks/eval_bank.json": "68f5ce7498b3e74380dd6f57a21635bf34ae003e4a5b41944be95629f30ec43b",
+  "artifacts/word_interface_followup/p0b_banks/dev_bank.json": "424981827a29da333f2e6fd37312f116a9e49358722ed6483aa83ceadc2144a8",
+  "artifacts/word_interface_followup/p0b_banks/eval_bank_list.json": "d22826e50e3aa7d5d52d7fc513633c2e1c68a7ebfa31518beaf193f68202507d",
+  "artifacts/word_interface_followup/p0b_banks/dev_bank_list.json": "1fbf3adad96313143cb39d363acd7f5420efcd8f6a11837ce5cd9377efdded68",
+  "artifacts/word_interface_followup/p0b_banks/eval_engineering_ids.json": "27b1dddd5e6deed35122dd17ac4185e291bcacb993c3f4e3a9cefdeb387c0390",
+  "artifacts/word_interface_followup/p0b_banks/dev_engineering_ids.json": "d82ba2585930b7e9b7e57ef1dfcea29260d001ca5c768b803b8ac115d691cb13",
+  "artifacts/word_interface_followup/p0b_banks/report.json": "66744269b36f8b6ccbd3ff373932e2cda8707af16c78a1e7a666fa555c0240f7"
+ },
+ "runner_format": "*_bank_list.json = the same scenes as a list (4 engineering scenes first, flagged engineering=true); byte content of every scene unchanged apart from that flag",
+ "design": {
+  "objects": "four painted blocks; every scene carries ALL FOUR combinations of two colors x two materials, so each single color and each single material is held by exactly two objects",
+  "world1": "one attribute (color or material) exchanged between the two objects that share the other attribute value; all four combinations stay present",
+  "queries": "q0 CHANGED conjunction (world-0 combination of one swapped object; its answer moves), q1 UNCHANGED conjunction (combination of a non-swapped object; same answer in both worlds); four answers per scene",
+  "eval": "576 scenes = 36 groups (6 color pairs x 6 material pairs) x 16 (changed attribute 2 x swapped pair 2 x changed-query target 2 x unchanged-query target 2); 12 evidence templates crossed with groups (48 scenes each); two query wordings (color-first / material-first) 288/288; answer positions 144 each; object order by a per-scene permutation (all 24 used; position-by-combination counts balanced); 4 separate engineering scenes",
+  "dev": "96 scenes = 6 groups x 16, disjoint namespace and alias pool, 4 separate engineering scenes; development/engineering diagnostics only",
+  "vocabulary": "colors green/orange/red/yellow and the approved materials plastic/glass/rubber/copper (inventory words, deliberately reused); painted surface color vs constitutive material spelled out in every template and query",
+  "verification": "asserted per scene and world: conjunction answer unique; each queried color and each queried material held by exactly two objects; all four combinations present in both worlds; changed answer moves, unchanged answer stays; query wording parsed back symbolically",
+  "perm_choice": "PERM_A, PERM_B = 1, 6 chosen by a design-only search (no model output) for full permutation use and exact position balance"
+ },
+ "balance": {
+  "eval": {
+   "scenes": 576,
+   "groups": 36,
+   "templates": {
+    "0": 48,
+    "1": 48,
+    "2": 48,
+    "3": 48,
+    "4": 48,
+    "5": 48,
+    "6": 48,
+    "7": 48,
+    "8": 48,
+    "9": 48,
+    "10": 48,
+    "11": 48
+   },
+   "changed_field": {
+    "color": 288,
+    "material": 288
+   },
+   "wording": {
+    "0": 288,
+    "1": 288
+   },
+   "changed_answer_position_w0": {
+    "0": 144,
+    "1": 144,
+    "3": 144,
+    "2": 144
+   },
+   "unchanged_answer_position": {
+    "1": 144,
+    "3": 144,
+    "2": 144,
+    "0": 144
+   },
+   "group_x_template_counts": {
+    "2": 144,
+    "1": 288
+   }
+  },
+  "dev": {
+   "scenes": 96,
+   "groups": 6,
+   "templates": {
+    "5": 7,
+    "6": 8,
+    "7": 9,
+    "8": 10,
+    "9": 10,
+    "10": 10,
+    "11": 9,
+    "0": 8,
+    "1": 7,
+    "2": 6,
+    "3": 6,
+    "4": 6
+   },
+   "changed_field": {
+    "color": 48,
+    "material": 48
+   },
+   "wording": {
+    "0": 48,
+    "1": 48
+   },
+   "changed_answer_position_w0": {
+    "0": 24,
+    "1": 24,
+    "3": 24,
+    "2": 24
+   },
+   "unchanged_answer_position": {
+    "1": 24,
+    "3": 24,
+    "2": 24,
+    "0": 24
+   },
+   "group_x_template_counts": {
+    "2": 24,
+    "1": 48
+   }
+  }
+ },
+ "overlap": {
+  "aliases_shared_with_prior": [],
+  "skeletons_shared_with_prior": [],
+  "prior_reference": "gates/word_interface_followup/prior_banks_exclusion_wi_20260923.json (all earlier banks incl. R3 and R4)",
+  "reused_by_design": "the four colors and the four approved materials (inventory words), the painted-block object class and the \"surface paint\"/\"made of\" question vocabulary; not an open-vocabulary test"
+ },
+ "no_edits": "templates, assignment and sampling frozen here; no template or scene is dropped after text or internal results are seen"
+}

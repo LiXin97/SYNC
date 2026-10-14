@@ -1,0 +1,45 @@
+{
+  "package": "artifacts/word_interface_followup/results_package_v1",
+  "inputs": {
+    "p0a_dev": {
+      "path": "artifacts/word_interface_followup/p0a_dev_audit.json",
+      "sha256": "caad25548e5ee8f564a55d4814297c8af603f5d55b2be8178c344ed36a968ab1",
+      "status": null
+    },
+    "p0a_confirm": {
+      "path": "artifacts/word_interface_followup/p0a_confirm_audit.json",
+      "sha256": "b63c7ecf76d220aa4499e3a7dc229dd87c4b585956df5ebcbcb74856298cc2b6",
+      "status": null
+    },
+    "p0a_recount": {
+      "path": "artifacts/word_interface_followup/p0a_confirm_recount.json",
+      "sha256": "9e8c3ebcb659f59f4f4e88ca4068be600e00006181f8258e529b64056a143fda",
+      "status": "FAIL_SECOND_COUNT_DISAGREES"
+    },
+    "p0b_dev": {
+      "path": "artifacts/word_interface_followup/p0b_dev_audit.json",
+      "sha256": "0606fcc6e8495979353e40c9e206b402a6fa51308269df44a6ad54fdcdc78545",
+      "status": "PASS_INDEPENDENT_P0B_AUDIT"
+    },
+    "p0b_eval": {
+      "path": "artifacts/word_interface_followup/p0b_eval_audit.json",
+      "sha256": "b4e023c4da43701f56abf9c14e4c7eb1d54062c012b0a8f50b5c8b6ff6eb13f0",
+      "status": "PASS_INDEPENDENT_P0B_AUDIT"
+    },
+    "p0b_recount": {
+      "path": "artifacts/word_interface_followup/p0b_eval_recount.json",
+      "sha256": "4a6d9c6cebf61c71e8939c4461e5ee3feeb87b0c7f72b441d6ba1d87254245b2",
+      "status": "PASS_SECOND_COUNT_MATCHES_AUDIT"
+    }
+  },
+  "p0a_recount": "ACCEPTED_WITH_DOCUMENTED_FLOAT_TIE (the recount status string stays FAIL as produced; tolerances were not changed after the fact)",
+  "conditions_sha256": "8299e751ade24f202dbe4a521add64bb70b7a61b0c367d6ea7d991124e0b47ba",
+  "contrasts_sha256": "510ac5085ffd95048b610815b82e8d02516cdbb665819d0caa02f06018614b4e",
+  "primary_scene_counts": {
+    "qwen3-32b": 549,
+    "qwen3-14b-base": 551,
+    "glm-4-9b": 241,
+    "gemma-3-27b-it": 544
+  },
+  "note": "No new model execution or statistical tests; tables use frozen exported contrasts."
+}

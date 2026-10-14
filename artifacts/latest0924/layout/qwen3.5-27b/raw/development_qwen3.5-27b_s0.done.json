@@ -1,0 +1,37 @@
+{
+  "adapter": {
+    "installed": true,
+    "path": "src/syncomm/latest/adapter.py",
+    "policy": "required",
+    "priors_patched": 1,
+    "sha256": "0f4cc649a611c3f985414e4b4f9b69a680829dbb35c25ec83f6de8763e777b19"
+  },
+  "arms": [
+    "none",
+    "internal",
+    "text",
+    "sham0"
+  ],
+  "conditions": [
+    "L0",
+    "L1",
+    "L2",
+    "L3"
+  ],
+  "elapsed_seconds": 3692.4079418182373,
+  "manifest_sha256": "a07246b609adef9ea3f9c6e500da997f2332a143c1aeb6357bec61962b8397d4",
+  "model_dtype": "torch.float32",
+  "phase": "development",
+  "python": "python",
+  "raw_sha256": "f595d1e7e4b1756f76e12bf5e9a99d08ed02922a32b682df6fdafae2bd7ba672",
+  "receiver": "qwen3.5-27b",
+  "rows": 4608,
+  "rows_computed_this_process": 4608,
+  "scenes": 72,
+  "seconds_per_computed_row": 0.8013038068181939,
+  "shard": 0,
+  "shards": 2,
+  "status": "PASS",
+  "study": "latest0924_layout",
+  "transformers": "5.12.1"
+}

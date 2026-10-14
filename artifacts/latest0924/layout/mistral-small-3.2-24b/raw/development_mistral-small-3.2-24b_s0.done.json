@@ -1,0 +1,37 @@
+{
+  "adapter": {
+    "installed": true,
+    "path": "src/syncomm/latest/adapter.py",
+    "policy": "required",
+    "priors_patched": 1,
+    "sha256": "0f4cc649a611c3f985414e4b4f9b69a680829dbb35c25ec83f6de8763e777b19"
+  },
+  "arms": [
+    "none",
+    "internal",
+    "text",
+    "sham0"
+  ],
+  "conditions": [
+    "L0",
+    "L1",
+    "L2",
+    "L3"
+  ],
+  "elapsed_seconds": 3716.808204650879,
+  "manifest_sha256": "0131c4d9af2d947f3c84347e5235a8bc7937e158100f77ec138c1fee45eeb6b5",
+  "model_dtype": "torch.float32",
+  "phase": "development",
+  "python": "python",
+  "raw_sha256": "d8b695fe3905f908ffeebc169d284159ce177c0f6108ef61817bc9b4bf1db29c",
+  "receiver": "mistral-small-3.2-24b",
+  "rows": 9216,
+  "rows_computed_this_process": 9216,
+  "scenes": 144,
+  "seconds_per_computed_row": 0.4032995013727082,
+  "shard": 0,
+  "shards": 1,
+  "status": "PASS",
+  "study": "latest0924_layout",
+  "transformers": "5.12.1"
+}

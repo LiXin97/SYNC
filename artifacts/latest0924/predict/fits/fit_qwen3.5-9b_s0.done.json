@@ -1,0 +1,1127 @@
+{
+  "elapsed_seconds": 353.4196457862854,
+  "layers": [
+    6,
+    11,
+    16,
+    21,
+    26
+  ],
+  "manifest_sha256": "7ff7fb0605a5dbc5286bbd060a80896245ff33f30184100b9855c2abf2829eca",
+  "n_blocks": 32,
+  "no_communication_outcomes": true,
+  "receiver": "qwen3.5-9b",
+  "rows": [
+    {
+      "address": 0,
+      "path": "artifacts/latest0924/predict/fits/qwen3.5-9b/w000.pt",
+      "sha256": "71fc119498bdfc3ae91559a1826f58a63465cee64c037a7993b8a9113c8a8f81"
+    },
+    {
+      "address": 1,
+      "path": "artifacts/latest0924/predict/fits/qwen3.5-9b/w001.pt",
+      "sha256": "02571dd969922cc20357a7add25aacebdba01e58ea338456b8d8989d8181c0af"
+    },
+    {
+      "address": 2,
+      "path": "artifacts/latest0924/predict/fits/qwen3.5-9b/w002.pt",
+      "sha256": "47b4e199c4aef982bad6d9a27a5b04fbe24a8a373bbf9eaef163e606668206cd"
+    },
+    {
+      "address": 3,
+      "path": "artifacts/latest0924/predict/fits/qwen3.5-9b/w003.pt",
+      "sha256": "d66072bdcd271ddb91d89d2e45ebf6fa4178bae1169f8b7c1e9dafb069380d93"
+    },
+    {
+      "address": 4,
+      "path": "artifacts/latest0924/predict/fits/qwen3.5-9b/w004.pt",
+      "sha256": "8847e36ad6e4f94e9db53d55ec271a1541b8b07cba79ebb05a40a3428d106bf2"
+    },
+    {
+      "address": 5,
+      "path": "artifacts/latest0924/predict/fits/qwen3.5-9b/w005.pt",
+      "sha256": "4a738f52431f06900db1ff7c0e791780d6f035390b8a9e50381272b59905f576"
+    },
+    {
+      "address": 6,
+      "path": "artifacts/latest0924/predict/fits/qwen3.5-9b/w006.pt",
+      "sha256": "37e56f6fe9cce0b1ea78275c1d5b8b23dff5abc6ea3791abcbb7d65a4e9e9e7b"
+    },
+    {
+      "address": 7,
+      "path": "artifacts/latest0924/predict/fits/qwen3.5-9b/w007.pt",
+      "sha256": "52dbb6bee8863215794f3207fd0c651806b0925fb801858ceec92950f602f351"
+    },
+    {
+      "address": 8,
+      "path": "artifacts/latest0924/predict/fits/qwen3.5-9b/w008.pt",
+      "sha256": "2df11b877dd907a972985e2efa855765f8898f5ca81fe7970448c6401b1431cd"
+    },
+    {
+      "address": 9,
+      "path": "artifacts/latest0924/predict/fits/qwen3.5-9b/w009.pt",
+      "sha256": "4e58ac21d84f23d81adce2e4852673f502f626753a3989248be20dd3147d5f0f"
+    },
+    {
+      "address": 10,
+      "path": "artifacts/latest0924/predict/fits/qwen3.5-9b/w010.pt",
+      "sha256": "2d2d63ac17fe4704f39e897a82db2b3b453bcc63ff511e46a961dc500d5ca8f5"
+    },
+    {
+      "address": 11,
+      "path": "artifacts/latest0924/predict/fits/qwen3.5-9b/w011.pt",
+      "sha256": "0a1fe6e514b22041b94d08a26a9087a248c59930bd4b7113e2e7ace1f282bd7d"
+    },
+    {
+      "address": 12,
+      "path": "artifacts/latest0924/predict/fits/qwen3.5-9b/w012.pt",
+      "sha256": "797f3e05c93076af54adb6404bb61d5b919c3634eadb8a5f4ae7992f1f4d9533"
+    },
+    {
+      "address": 13,
+      "path": "artifacts/latest0924/predict/fits/qwen3.5-9b/w013.pt",
+      "sha256": "223c13bec3f74a49b164e7c761e0c6bcbebd7163a8902bad63e0d768306782e7"
+    },
+    {
+      "address": 14,
+      "path": "artifacts/latest0924/predict/fits/qwen3.5-9b/w014.pt",
+      "sha256": "17200cf0d151f622f49470df91ac03af15d8982a202d102ee6408307f3ca35c5"
+    },
+    {
+      "address": 15,
+      "path": "artifacts/latest0924/predict/fits/qwen3.5-9b/w015.pt",
+      "sha256": "39a1632116fbe9b4760e329cbfefaa611a1a2234f2b5ea057181f80a5dcf6791"
+    },
+    {
+      "address": 16,
+      "path": "artifacts/latest0924/predict/fits/qwen3.5-9b/w016.pt",
+      "sha256": "690e681f705dc8cd88e6bb6d28b24fd8749aa150b6ae88e18cab461cab350d72"
+    },
+    {
+      "address": 17,
+      "path": "artifacts/latest0924/predict/fits/qwen3.5-9b/w017.pt",
+      "sha256": "f15eb35b69e3efc07a3b4ab5220d3cf92ad4bd80038fa1c32924b6835718f43a"
+    },
+    {
+      "address": 18,
+      "path": "artifacts/latest0924/predict/fits/qwen3.5-9b/w018.pt",
+      "sha256": "c03548cac7e1cbd3e5420733aa496381ae84f26ce3e28ed28c589b2405b72a73"
+    },
+    {
+      "address": 19,
+      "path": "artifacts/latest0924/predict/fits/qwen3.5-9b/w019.pt",
+      "sha256": "b2b53be108a68d52c1019e4430ac0ae67b918257f2c30a9cb056de69b3f6593c"
+    },
+    {
+      "address": 20,
+      "path": "artifacts/latest0924/predict/fits/qwen3.5-9b/w020.pt",
+      "sha256": "b097698bb4e93dc39cba3047339a63180391f62b7c9c09ff076dade8de1f6dac"
+    },
+    {
+      "address": 21,
+      "path": "artifacts/latest0924/predict/fits/qwen3.5-9b/w021.pt",
+      "sha256": "c7c9b3e55e22da15dfa0a4e0fdeb1235502329b518625a5088db22037ccfb901"
+    },
+    {
+      "address": 22,
+      "path": "artifacts/latest0924/predict/fits/qwen3.5-9b/w022.pt",
+      "sha256": "c5cad430864e349f692a149b91939981979dc022946e1e370780724ccdb82e66"
+    },
+    {
+      "address": 23,
+      "path": "artifacts/latest0924/predict/fits/qwen3.5-9b/w023.pt",
+      "sha256": "81a111b4b0d88671e0215f997b13638eca102fb801ece9c4af0c366b74d77767"
+    },
+    {
+      "address": 24,
+      "path": "artifacts/latest0924/predict/fits/qwen3.5-9b/w024.pt",
+      "sha256": "272a37c6e1d642ca87f6bc96579b648e4a9512f1a3535ddbe396d3a19f3191a9"
+    },
+    {
+      "address": 25,
+      "path": "artifacts/latest0924/predict/fits/qwen3.5-9b/w025.pt",
+      "sha256": "de305a55b059a42364d98897db372caa6e002c52011dae83fae294d579f58a30"
+    },
+    {
+      "address": 26,
+      "path": "artifacts/latest0924/predict/fits/qwen3.5-9b/w026.pt",
+      "sha256": "8d2e0838829986177a8a1ce99fec689ab0719e6b333ca506993bf13d606b4477"
+    },
+    {
+      "address": 27,
+      "path": "artifacts/latest0924/predict/fits/qwen3.5-9b/w027.pt",
+      "sha256": "2ae3b0e26a6315cb80951d8dbde0e6a1c73274622d3d47f9eb6708d630d353ca"
+    },
+    {
+      "address": 28,
+      "path": "artifacts/latest0924/predict/fits/qwen3.5-9b/w028.pt",
+      "sha256": "5bea69d2d076eed8cd3a133f76c125e13583456f306d5b85dbee95d3a0839ce4"
+    },
+    {
+      "address": 29,
+      "path": "artifacts/latest0924/predict/fits/qwen3.5-9b/w029.pt",
+      "sha256": "9b52ab6bbdf922df5c22b7a20d46352c9425ed6f98f401a55aeb136db0bcc0ef"
+    },
+    {
+      "address": 30,
+      "path": "artifacts/latest0924/predict/fits/qwen3.5-9b/w030.pt",
+      "sha256": "e8c19866a696f9df94a1ca326a4f412f317df9fccb8dd8340d7d14683e7e651b"
+    },
+    {
+      "address": 31,
+      "path": "artifacts/latest0924/predict/fits/qwen3.5-9b/w031.pt",
+      "sha256": "be00a271eca1acbcdcb253049c6ced26924616f0ea401cab774b40c99d387856"
+    },
+    {
+      "address": 32,
+      "path": "artifacts/latest0924/predict/fits/qwen3.5-9b/w032.pt",
+      "sha256": "103f08f93ff870239738614ba1bb47f7398c98163a115327b8421403c84b7409"
+    },
+    {
+      "address": 33,
+      "path": "artifacts/latest0924/predict/fits/qwen3.5-9b/w033.pt",
+      "sha256": "5f1467bf0aa0fd53648b1251d860d6a80d536945c0654671c6ed1c4af6f69b45"
+    },
+    {
+      "address": 34,
+      "path": "artifacts/latest0924/predict/fits/qwen3.5-9b/w034.pt",
+      "sha256": "53d584236c90cfe0fce1f23f7db79a632900935aea192438b9dcde5cc245e6ca"
+    },
+    {
+      "address": 35,
+      "path": "artifacts/latest0924/predict/fits/qwen3.5-9b/w035.pt",
+      "sha256": "01117987afb5cc345fa8b5ed25d7cf90d8cc408bc888a6b3d3485941ff1dd64c"
+    },
+    {
+      "address": 36,
+      "path": "artifacts/latest0924/predict/fits/qwen3.5-9b/w036.pt",
+      "sha256": "4d654e34d8fef80fea54b4e4099d756d590699bb0c8805851f7fe39700c61315"
+    },
+    {
+      "address": 37,
+      "path": "artifacts/latest0924/predict/fits/qwen3.5-9b/w037.pt",
+      "sha256": "9a5e4516545d93d0c80b35f1f918e48f661b698cac552f69c0ac49db3c35267c"
+    },
+    {
+      "address": 38,
+      "path": "artifacts/latest0924/predict/fits/qwen3.5-9b/w038.pt",
+      "sha256": "83cc9cb37fa026c81500ebc4e090510cfb9443e946b3d5486338b4daa015a843"
+    },
+    {
+      "address": 39,
+      "path": "artifacts/latest0924/predict/fits/qwen3.5-9b/w039.pt",
+      "sha256": "5ff2e8522d654661b0f3f850f439f1ddffad0da2ebc67fca1fd7a1e95623fb33"
+    },
+    {
+      "address": 40,
+      "path": "artifacts/latest0924/predict/fits/qwen3.5-9b/w040.pt",
+      "sha256": "9a6fd66d101862dabf41af3051a5bf256bc8e7ef7cfeae259424519500921475"
+    },
+    {
+      "address": 41,
+      "path": "artifacts/latest0924/predict/fits/qwen3.5-9b/w041.pt",
+      "sha256": "29d7da1576237f6bd1cdf47d96caf00adc70faf8a34c4af327334b86f7394ddf"
+    },
+    {
+      "address": 42,
+      "path": "artifacts/latest0924/predict/fits/qwen3.5-9b/w042.pt",
+      "sha256": "223bc30a4789b823cea7519f035b27750b65e2a2804a54a07cc093721432a3f7"
+    },
+    {
+      "address": 43,
+      "path": "artifacts/latest0924/predict/fits/qwen3.5-9b/w043.pt",
+      "sha256": "3b3f0a0d6f5c09b92f4158b1ab9479eb7cb5ba7d04e062d35d4c1d260b02e142"
+    },
+    {
+      "address": 44,
+      "path": "artifacts/latest0924/predict/fits/qwen3.5-9b/w044.pt",
+      "sha256": "6ce4186c8f9e4aa989f942cdd22a2618469172662b8e964d51c226757af12c55"
+    },
+    {
+      "address": 45,
+      "path": "artifacts/latest0924/predict/fits/qwen3.5-9b/w045.pt",
+      "sha256": "4bf3421f9177b9cf79bed26de915dae427ec0f1aac43da11916e83ba3a1781bd"
+    },
+    {
+      "address": 46,
+      "path": "artifacts/latest0924/predict/fits/qwen3.5-9b/w046.pt",
+      "sha256": "72ae99882e6c719d890ad8c5855fe6809c39bcb0a75ec6dde08e5601d28926b3"
+    },
+    {
+      "address": 47,
+      "path": "artifacts/latest0924/predict/fits/qwen3.5-9b/w047.pt",
+      "sha256": "88cf5e14749831b0abc6a9a5431889925e53a320872b7abe38237a503be091d1"
+    },
+    {
+      "address": 48,
+      "path": "artifacts/latest0924/predict/fits/qwen3.5-9b/w048.pt",
+      "sha256": "197e5ab49095f36cfb257a4df3c8feb2b3107938bfcf3a92481662676fd0a490"
+    },
+    {
+      "address": 49,
+      "path": "artifacts/latest0924/predict/fits/qwen3.5-9b/w049.pt",
+      "sha256": "139d1fbbba0ec9bef86ca6c715941203d5da08e569b4a6815d323cf3bdbf7e8f"
+    },
+    {
+      "address": 50,
+      "path": "artifacts/latest0924/predict/fits/qwen3.5-9b/w050.pt",
+      "sha256": "058a34a401411713abcb0547c19074ce6f453703b68b68e027e367a72c6613b6"
+    },
+    {
+      "address": 51,
+      "path": "artifacts/latest0924/predict/fits/qwen3.5-9b/w051.pt",
+      "sha256": "2b75d83a67eb41386716b070d77dea0ae31a332c15b906bca45771cf03b71b86"
+    },
+    {
+      "address": 52,
+      "path": "artifacts/latest0924/predict/fits/qwen3.5-9b/w052.pt",
+      "sha256": "73a0bcedada1234eb96719bf45e6e65fd74f681924735f53397ef313ee1d524f"
+    },
+    {
+      "address": 53,
+      "path": "artifacts/latest0924/predict/fits/qwen3.5-9b/w053.pt",
+      "sha256": "e361aadfb405a330b4c9de5a8f9d2bacae82f5d50cf4b9b82c7ac8baed52b3ff"
+    },
+    {
+      "address": 54,
+      "path": "artifacts/latest0924/predict/fits/qwen3.5-9b/w054.pt",
+      "sha256": "a497d4c538d4f62e7e303c62d29b76ae7e2d1fc2283e82a34b095341c81dbf79"
+    },
+    {
+      "address": 55,
+      "path": "artifacts/latest0924/predict/fits/qwen3.5-9b/w055.pt",
+      "sha256": "e5697c97f84b20bf79d37bd0c13b54fdc6d0dec727faefa75d3da6a061646447"
+    },
+    {
+      "address": 56,
+      "path": "artifacts/latest0924/predict/fits/qwen3.5-9b/w056.pt",
+      "sha256": "f4d25364113d41b2e91aaec545d21e36eb9a164f57039173517ef930012aa380"
+    },
+    {
+      "address": 57,
+      "path": "artifacts/latest0924/predict/fits/qwen3.5-9b/w057.pt",
+      "sha256": "52c642687c416b1782397d1aeb52815046a2e2f4a4c13a92454642514c82d946"
+    },
+    {
+      "address": 58,
+      "path": "artifacts/latest0924/predict/fits/qwen3.5-9b/w058.pt",
+      "sha256": "f7f9dc111a61f8519dbb3f03f927f8d2221615630b1aeb9eba01b5215b444249"
+    },
+    {
+      "address": 59,
+      "path": "artifacts/latest0924/predict/fits/qwen3.5-9b/w059.pt",
+      "sha256": "b3a47c4b4d747cf4ab7e0b3e3213924347720c00f44d587b8a73e58fbd060ae5"
+    },
+    {
+      "address": 60,
+      "path": "artifacts/latest0924/predict/fits/qwen3.5-9b/w060.pt",
+      "sha256": "e38e38d6032f61c0dbc2eb0228b0d8c5152b0ee843b0c0dceeda8953486330af"
+    },
+    {
+      "address": 61,
+      "path": "artifacts/latest0924/predict/fits/qwen3.5-9b/w061.pt",
+      "sha256": "ed1a8241827fa69040c332901ed57e2b6d66ef6fead4586890c4bd28247b459c"
+    },
+    {
+      "address": 62,
+      "path": "artifacts/latest0924/predict/fits/qwen3.5-9b/w062.pt",
+      "sha256": "a3a9fbad6f25f5275b387ca90166862138af4096ab0536307774a55a6e73bf59"
+    },
+    {
+      "address": 63,
+      "path": "artifacts/latest0924/predict/fits/qwen3.5-9b/w063.pt",
+      "sha256": "eaaaec53bce74dba7827d2180cbab8f506e5d343b4bfa6bc39b368e15d062945"
+    },
+    {
+      "address": 64,
+      "path": "artifacts/latest0924/predict/fits/qwen3.5-9b/w064.pt",
+      "sha256": "7682fd5dfb535090d001ef428c9003717120f32af75ed0523ce0844092d457d3"
+    },
+    {
+      "address": 65,
+      "path": "artifacts/latest0924/predict/fits/qwen3.5-9b/w065.pt",
+      "sha256": "093b62ed87aa104544dcdecb43b254b6616e7100c054ab57d7071d945cd36081"
+    },
+    {
+      "address": 66,
+      "path": "artifacts/latest0924/predict/fits/qwen3.5-9b/w066.pt",
+      "sha256": "900cd05b7efad8a4a97b55e04842980deb6353f414591b57cf7b6135a1b1bae5"
+    },
+    {
+      "address": 67,
+      "path": "artifacts/latest0924/predict/fits/qwen3.5-9b/w067.pt",
+      "sha256": "308a3a751aaf4f656374e9c7a1ad151faf05edc6b4189a9c34c37330201d84d1"
+    },
+    {
+      "address": 68,
+      "path": "artifacts/latest0924/predict/fits/qwen3.5-9b/w068.pt",
+      "sha256": "d29d6f53769ee027e65117df924681c9e98ef7882b8badf4da8fcf6576b6cccc"
+    },
+    {
+      "address": 69,
+      "path": "artifacts/latest0924/predict/fits/qwen3.5-9b/w069.pt",
+      "sha256": "0ef2b77f0340a3452d2473851d7572e4637fae4956246efbd05579c92e2590d9"
+    },
+    {
+      "address": 70,
+      "path": "artifacts/latest0924/predict/fits/qwen3.5-9b/w070.pt",
+      "sha256": "5b619e65d6b2f1fef4c1eb4a1d9d820865e31017482a5a1cb38c2dca2f632dd1"
+    },
+    {
+      "address": 71,
+      "path": "artifacts/latest0924/predict/fits/qwen3.5-9b/w071.pt",
+      "sha256": "ff79a1176f7f6082f2df92648ac6f5c727b44d3006188f7ba58d3ad3641e95ae"
+    },
+    {
+      "address": 72,
+      "path": "artifacts/latest0924/predict/fits/qwen3.5-9b/w072.pt",
+      "sha256": "84e914f2b7f6951bebc23e7533cbd945966926172a98ee988f84ff93e27f765e"
+    },
+    {
+      "address": 73,
+      "path": "artifacts/latest0924/predict/fits/qwen3.5-9b/w073.pt",
+      "sha256": "89987a8f97031474dcb34616a275f8917a134c91d2419695d6f152d0f0803434"
+    },
+    {
+      "address": 74,
+      "path": "artifacts/latest0924/predict/fits/qwen3.5-9b/w074.pt",
+      "sha256": "27d7ec0f28317bb83b1a7ce2634a89a66bb902aa7345927f969152d51fffc4c1"
+    },
+    {
+      "address": 75,
+      "path": "artifacts/latest0924/predict/fits/qwen3.5-9b/w075.pt",
+      "sha256": "3a289e73227b4618f5dd3becc2747775f097ee1e309002bdf15d98ca383921d7"
+    },
+    {
+      "address": 76,
+      "path": "artifacts/latest0924/predict/fits/qwen3.5-9b/w076.pt",
+      "sha256": "46580a57fe7a11115b441a08422096558d9f8232f8887b60fa5d77d84a82591b"
+    },
+    {
+      "address": 77,
+      "path": "artifacts/latest0924/predict/fits/qwen3.5-9b/w077.pt",
+      "sha256": "97fd1b12df2f4e2eb3f07be67eae5fcf6ec0c1c94b9cfd0a18ee94cbf913225c"
+    },
+    {
+      "address": 78,
+      "path": "artifacts/latest0924/predict/fits/qwen3.5-9b/w078.pt",
+      "sha256": "0ee95d219d43dddb85ae95021a3e1efdcfe4958812cc70bfa14c9090a32c92e2"
+    },
+    {
+      "address": 79,
+      "path": "artifacts/latest0924/predict/fits/qwen3.5-9b/w079.pt",
+      "sha256": "591eac6dacfdc752dcdc2191f82288745c29738ac4ae838ecbea27ec7d7806fe"
+    },
+    {
+      "address": 80,
+      "path": "artifacts/latest0924/predict/fits/qwen3.5-9b/w080.pt",
+      "sha256": "610c2d3a50eecf33bd07f3c35cd60d11498f0726d558ff29f769e356f5f83b77"
+    },
+    {
+      "address": 81,
+      "path": "artifacts/latest0924/predict/fits/qwen3.5-9b/w081.pt",
+      "sha256": "44d70df0a210b19ad93dd798d83b2a2145a955f05029fef5f261bb84568c0434"
+    },
+    {
+      "address": 82,
+      "path": "artifacts/latest0924/predict/fits/qwen3.5-9b/w082.pt",
+      "sha256": "2a2a49e1d44a569a0cb73a5e19bb4420534096684ade5496ecc9edb98255d9a4"
+    },
+    {
+      "address": 83,
+      "path": "artifacts/latest0924/predict/fits/qwen3.5-9b/w083.pt",
+      "sha256": "51b720fbd14dd57d03b6e77d7ac34926045c7f47bf5715a0a086106df3e9b1c4"
+    },
+    {
+      "address": 84,
+      "path": "artifacts/latest0924/predict/fits/qwen3.5-9b/w084.pt",
+      "sha256": "71be450e51d32a3fdd26b703173b777b0cd9475963d36a13875beb6347578d7b"
+    },
+    {
+      "address": 85,
+      "path": "artifacts/latest0924/predict/fits/qwen3.5-9b/w085.pt",
+      "sha256": "2934ef8a384aac75c8e1c6e5d393179305821f23f8af61b817b7060f616fc4e5"
+    },
+    {
+      "address": 86,
+      "path": "artifacts/latest0924/predict/fits/qwen3.5-9b/w086.pt",
+      "sha256": "096375d13f2d3e20d7eb6fcb81b821e3e109bc0d38af247723ba7fa16d2fd141"
+    },
+    {
+      "address": 87,
+      "path": "artifacts/latest0924/predict/fits/qwen3.5-9b/w087.pt",
+      "sha256": "e4e6e84704159c8126460cd385b5f23e68593b241af886386fe14e6031b5b295"
+    },
+    {
+      "address": 88,
+      "path": "artifacts/latest0924/predict/fits/qwen3.5-9b/w088.pt",
+      "sha256": "ebd82fa3552f06fcde15349aa8d1343023d5291643b0cd8ad5e55a9325883d0e"
+    },
+    {
+      "address": 89,
+      "path": "artifacts/latest0924/predict/fits/qwen3.5-9b/w089.pt",
+      "sha256": "5e7ca09b4d906863c6e60d3cd3c0e3f28363c522479fda9a396d749b600342c1"
+    },
+    {
+      "address": 90,
+      "path": "artifacts/latest0924/predict/fits/qwen3.5-9b/w090.pt",
+      "sha256": "db42555c7c43caef22352f61715d7874974779d12a3bea929348fcc1e7e8a3c1"
+    },
+    {
+      "address": 91,
+      "path": "artifacts/latest0924/predict/fits/qwen3.5-9b/w091.pt",
+      "sha256": "7190a853a50b42a8c0008cd37a34754a0d6112a9ffa148195933eb91fb4ff4b2"
+    },
+    {
+      "address": 92,
+      "path": "artifacts/latest0924/predict/fits/qwen3.5-9b/w092.pt",
+      "sha256": "54eddf165e1993002e8b7539851721154b9528cf8e14313046012b4096eb6617"
+    },
+    {
+      "address": 93,
+      "path": "artifacts/latest0924/predict/fits/qwen3.5-9b/w093.pt",
+      "sha256": "70017d52d9cabf8a69ef9be0fc33cd5969cd8c9a1f1d5e06a77a46891644bd8f"
+    },
+    {
+      "address": 94,
+      "path": "artifacts/latest0924/predict/fits/qwen3.5-9b/w094.pt",
+      "sha256": "fe0854ff7a3b52214673689965a3463c686d5f2967c9fe7b1e46d673fd17b257"
+    },
+    {
+      "address": 95,
+      "path": "artifacts/latest0924/predict/fits/qwen3.5-9b/w095.pt",
+      "sha256": "bec4c852e251152b12b9ee50d68bdf63b53442a393d070f4170098b703bef2cb"
+    },
+    {
+      "address": 96,
+      "path": "artifacts/latest0924/predict/fits/qwen3.5-9b/w096.pt",
+      "sha256": "350b3cb15f1704fa74daa1441d1f7689c36ecbb2666f38d24d3d03795d96e731"
+    },
+    {
+      "address": 97,
+      "path": "artifacts/latest0924/predict/fits/qwen3.5-9b/w097.pt",
+      "sha256": "730d40cd044a755a56b6ce60e48f77336e5e84d742d6d05a93328d91349e2aa3"
+    },
+    {
+      "address": 98,
+      "path": "artifacts/latest0924/predict/fits/qwen3.5-9b/w098.pt",
+      "sha256": "4b7d26e825d430c1e70fef12359d3227bebde40f8beb0bd25557a8954ff3ab0a"
+    },
+    {
+      "address": 99,
+      "path": "artifacts/latest0924/predict/fits/qwen3.5-9b/w099.pt",
+      "sha256": "7b2fe95a76dac2c29c804b119f7792a6d075269f2f3888ff2c04e32efd1e5302"
+    },
+    {
+      "address": 100,
+      "path": "artifacts/latest0924/predict/fits/qwen3.5-9b/w100.pt",
+      "sha256": "935de39bb44722c8596e446bf066a9611a69f4e0f8b669f0c75b98a673191268"
+    },
+    {
+      "address": 101,
+      "path": "artifacts/latest0924/predict/fits/qwen3.5-9b/w101.pt",
+      "sha256": "f659fa2c044cece96687aaf33905b5b413a9847f72247ea2b1ee6671f7528edb"
+    },
+    {
+      "address": 102,
+      "path": "artifacts/latest0924/predict/fits/qwen3.5-9b/w102.pt",
+      "sha256": "59baaedeea7a60c0e5b959078c1ac16b735ea983cd427fd15535e379c9d24c0c"
+    },
+    {
+      "address": 103,
+      "path": "artifacts/latest0924/predict/fits/qwen3.5-9b/w103.pt",
+      "sha256": "2b9998dc5310fc94713ae620801b3904caa95ca0e7f88be7b873f1c49dd041c2"
+    },
+    {
+      "address": 104,
+      "path": "artifacts/latest0924/predict/fits/qwen3.5-9b/w104.pt",
+      "sha256": "08a168d913fa941ccc76a4fa884a19ba800bfbee61258b434b7b461564d00cc9"
+    },
+    {
+      "address": 105,
+      "path": "artifacts/latest0924/predict/fits/qwen3.5-9b/w105.pt",
+      "sha256": "4d888c5bcf876e44d1f095022ba961843aeab77c7bf1abdb225737c752d5ae31"
+    },
+    {
+      "address": 106,
+      "path": "artifacts/latest0924/predict/fits/qwen3.5-9b/w106.pt",
+      "sha256": "d2211963c9043afc090acb3463ee34a10d5c6bc8591bbbb40552ccb411f68947"
+    },
+    {
+      "address": 107,
+      "path": "artifacts/latest0924/predict/fits/qwen3.5-9b/w107.pt",
+      "sha256": "57b6704f0bc5ed5423568d2fa4a6b2f8a8bd7fb902e1bad1e9f2c6a0c101b7ce"
+    },
+    {
+      "address": 108,
+      "path": "artifacts/latest0924/predict/fits/qwen3.5-9b/w108.pt",
+      "sha256": "6e95d45eb12799ee63032cb534c0c46e9d69dc24b13d6555f564f01d4661a411"
+    },
+    {
+      "address": 109,
+      "path": "artifacts/latest0924/predict/fits/qwen3.5-9b/w109.pt",
+      "sha256": "7aeb4d773754720f0db7a36c7711be88f0ffd88026f67eeb49ea95934872fd61"
+    },
+    {
+      "address": 110,
+      "path": "artifacts/latest0924/predict/fits/qwen3.5-9b/w110.pt",
+      "sha256": "2a444793acc3cad3ab3482087f578e17b6dd04f47854bc77ba26f5c43de18279"
+    },
+    {
+      "address": 111,
+      "path": "artifacts/latest0924/predict/fits/qwen3.5-9b/w111.pt",
+      "sha256": "a66edd18197637f5412b3a46ab1e34a0ba678ec82e00492ade2fc0c6d44674eb"
+    },
+    {
+      "address": 112,
+      "path": "artifacts/latest0924/predict/fits/qwen3.5-9b/w112.pt",
+      "sha256": "d66bf8cf23b7ff338f2c8f2003af088ef33cf3401be49c4cb77a556f8a3b16a4"
+    },
+    {
+      "address": 113,
+      "path": "artifacts/latest0924/predict/fits/qwen3.5-9b/w113.pt",
+      "sha256": "ea292b7060b26e404fb7ace07aa84526ffaa50e0e77ba29bfb206ca6fcf7f272"
+    },
+    {
+      "address": 114,
+      "path": "artifacts/latest0924/predict/fits/qwen3.5-9b/w114.pt",
+      "sha256": "bdfc782683029ff4762d99db4d1c8afa5afda977c81bdd5f1dc449b12b233245"
+    },
+    {
+      "address": 115,
+      "path": "artifacts/latest0924/predict/fits/qwen3.5-9b/w115.pt",
+      "sha256": "bbc93513de31a70602ca8d18a0c5f5089b1f55675415e53e7710287bdd2d9613"
+    },
+    {
+      "address": 116,
+      "path": "artifacts/latest0924/predict/fits/qwen3.5-9b/w116.pt",
+      "sha256": "1def3fd264046c241154c77c66e204bb63a869404cc958435b74f20f2532cf90"
+    },
+    {
+      "address": 117,
+      "path": "artifacts/latest0924/predict/fits/qwen3.5-9b/w117.pt",
+      "sha256": "a505e65ce1d2532fa9f2f8fbb1cae1f418142d912e9fced5ecd88fa5f606af42"
+    },
+    {
+      "address": 118,
+      "path": "artifacts/latest0924/predict/fits/qwen3.5-9b/w118.pt",
+      "sha256": "ed86c483a40dca72b7f5ffb1996ebb2f988840a4ec20336ef807b4d5b7d314a8"
+    },
+    {
+      "address": 119,
+      "path": "artifacts/latest0924/predict/fits/qwen3.5-9b/w119.pt",
+      "sha256": "7157bdd9c5ffa28ca6eb4c32de0d26ec5f913efb8aae22d4a06d2463bf25684e"
+    },
+    {
+      "address": 120,
+      "path": "artifacts/latest0924/predict/fits/qwen3.5-9b/w120.pt",
+      "sha256": "9af3bff71979a0c87c98cc394ee634bb0c9470366f98f663994f1a6628c76482"
+    },
+    {
+      "address": 121,
+      "path": "artifacts/latest0924/predict/fits/qwen3.5-9b/w121.pt",
+      "sha256": "ba7b126c4bcc8d5a8a6ac6c273cc81866e95e7d2a9b7510caf750ebf24079f49"
+    },
+    {
+      "address": 122,
+      "path": "artifacts/latest0924/predict/fits/qwen3.5-9b/w122.pt",
+      "sha256": "1ecfd388c1a9a82cc7824e0590e44cb525f93a73d0fa4162e004915441fced11"
+    },
+    {
+      "address": 123,
+      "path": "artifacts/latest0924/predict/fits/qwen3.5-9b/w123.pt",
+      "sha256": "d32a2ac2e75e07e6b438035894bc84aeb40bd53c34cfed04e0c32be83bbb9ea0"
+    },
+    {
+      "address": 124,
+      "path": "artifacts/latest0924/predict/fits/qwen3.5-9b/w124.pt",
+      "sha256": "7070b712b5eb1a11e09907566887c09cdfdf030a5310266cedca5a5af5092377"
+    },
+    {
+      "address": 125,
+      "path": "artifacts/latest0924/predict/fits/qwen3.5-9b/w125.pt",
+      "sha256": "d6b94bea9e248020bf055aaed8b6bf7244c47cff11f19d19a1d8a0f141433181"
+    },
+    {
+      "address": 126,
+      "path": "artifacts/latest0924/predict/fits/qwen3.5-9b/w126.pt",
+      "sha256": "a93335930c108a5a8309b46dedc60f7ba21ba9324210b5c5f114a83693c5ad5d"
+    },
+    {
+      "address": 127,
+      "path": "artifacts/latest0924/predict/fits/qwen3.5-9b/w127.pt",
+      "sha256": "5df7666004e6dbd7aafb2b33c124b0bfb221bd1f6b7e9c28c8d8358e6e843c9d"
+    },
+    {
+      "address": 128,
+      "path": "artifacts/latest0924/predict/fits/qwen3.5-9b/w128.pt",
+      "sha256": "ba64510b37b5343079324d789e9080fe255a99efe68371058f162aba6c648e99"
+    },
+    {
+      "address": 129,
+      "path": "artifacts/latest0924/predict/fits/qwen3.5-9b/w129.pt",
+      "sha256": "d33161ccccd752561f53cdc52d84e131d92610de0b566a1206721467bcabf97f"
+    },
+    {
+      "address": 130,
+      "path": "artifacts/latest0924/predict/fits/qwen3.5-9b/w130.pt",
+      "sha256": "9067bc1dcd7485c24dab836cc6fbb65e04e49296b6a4528f16e33e264b17230f"
+    },
+    {
+      "address": 131,
+      "path": "artifacts/latest0924/predict/fits/qwen3.5-9b/w131.pt",
+      "sha256": "de114144f844ed144e2840b5529b0cb0928912a5e57e777ed59b35c0b47ce4b9"
+    },
+    {
+      "address": 132,
+      "path": "artifacts/latest0924/predict/fits/qwen3.5-9b/w132.pt",
+      "sha256": "0d8abd1afca560e9d1828f6b8da065609a8ec87e4474bfe1c5c603b2d51195c3"
+    },
+    {
+      "address": 133,
+      "path": "artifacts/latest0924/predict/fits/qwen3.5-9b/w133.pt",
+      "sha256": "8ac550c54b4318b9b9bb5ba9128ff6b36dd8e8f19e5f64d7787bdc243e9fc66e"
+    },
+    {
+      "address": 134,
+      "path": "artifacts/latest0924/predict/fits/qwen3.5-9b/w134.pt",
+      "sha256": "185ecfd9e187658da0fbc5f799e6798ed862e7f292f512ea1e498655fc1534ab"
+    },
+    {
+      "address": 135,
+      "path": "artifacts/latest0924/predict/fits/qwen3.5-9b/w135.pt",
+      "sha256": "dcd1d953ae3f10505af0dab7410076d192f6251967457e537c9823c95e0cfc44"
+    },
+    {
+      "address": 136,
+      "path": "artifacts/latest0924/predict/fits/qwen3.5-9b/w136.pt",
+      "sha256": "e4baec48f70a601476411558fcbb2d2edae88ac1205649cf6e8991a754a1c424"
+    },
+    {
+      "address": 137,
+      "path": "artifacts/latest0924/predict/fits/qwen3.5-9b/w137.pt",
+      "sha256": "8906f8ca857cf708361d7bf6aaa7aadfb15a717c523a2b48fd7fcae91456d165"
+    },
+    {
+      "address": 138,
+      "path": "artifacts/latest0924/predict/fits/qwen3.5-9b/w138.pt",
+      "sha256": "22e94c0f0924361950d1c37b98170552b7c80da095580d70c04e699fbbcd7fa5"
+    },
+    {
+      "address": 139,
+      "path": "artifacts/latest0924/predict/fits/qwen3.5-9b/w139.pt",
+      "sha256": "0d509ec565aff2134d4ddb6765069cef304e3ed44e806f900362fd7a251cd7e7"
+    },
+    {
+      "address": 140,
+      "path": "artifacts/latest0924/predict/fits/qwen3.5-9b/w140.pt",
+      "sha256": "ea36ad6c136671277401eea0c65fba87fdd3ad31e85186eae7b244fee3e95b86"
+    },
+    {
+      "address": 141,
+      "path": "artifacts/latest0924/predict/fits/qwen3.5-9b/w141.pt",
+      "sha256": "e2cd5442bd369f834187772793319962b4f56fd61b2a8302ee64176b21e7a6c8"
+    },
+    {
+      "address": 142,
+      "path": "artifacts/latest0924/predict/fits/qwen3.5-9b/w142.pt",
+      "sha256": "e1a4e0d7da557072c5cb023872ce353f8b4526717c56460e95ced45d6c27af5a"
+    },
+    {
+      "address": 143,
+      "path": "artifacts/latest0924/predict/fits/qwen3.5-9b/w143.pt",
+      "sha256": "36195b93d96b5f2148d8ee9e7974bf53fb0215f0269aeb3b3c7b09f385a3ded5"
+    },
+    {
+      "address": 144,
+      "path": "artifacts/latest0924/predict/fits/qwen3.5-9b/w144.pt",
+      "sha256": "82d6416965555872d07df33a875fbca0ff471bf284dabab6c9ee17919205d1f3"
+    },
+    {
+      "address": 145,
+      "path": "artifacts/latest0924/predict/fits/qwen3.5-9b/w145.pt",
+      "sha256": "8c5973ff0a45ae03f2b2e7e369b6ad7b99de7da6b54ade2613930b7aed0e204b"
+    },
+    {
+      "address": 146,
+      "path": "artifacts/latest0924/predict/fits/qwen3.5-9b/w146.pt",
+      "sha256": "9eec5c227f631188a2a7d369d5599c1975bf1296dc24a3a550f8551839208619"
+    },
+    {
+      "address": 147,
+      "path": "artifacts/latest0924/predict/fits/qwen3.5-9b/w147.pt",
+      "sha256": "c4891337bbdb033f7c3949a28a99c2593256c8252633952cf8872f42aaf9aa8a"
+    },
+    {
+      "address": 148,
+      "path": "artifacts/latest0924/predict/fits/qwen3.5-9b/w148.pt",
+      "sha256": "23c3c4be35447a0b18a69b720a2b8e3bbcc47dd448b17a07c961c07f68fd4c5d"
+    },
+    {
+      "address": 149,
+      "path": "artifacts/latest0924/predict/fits/qwen3.5-9b/w149.pt",
+      "sha256": "a4752f07a90d4c66ad39d3d7280d324caf03f5352392c7ef3f52191152d66d31"
+    },
+    {
+      "address": 150,
+      "path": "artifacts/latest0924/predict/fits/qwen3.5-9b/w150.pt",
+      "sha256": "3d29162e849784061817aad2f2c930d7606c4af8d0ceab990fb6581aa47f4132"
+    },
+    {
+      "address": 151,
+      "path": "artifacts/latest0924/predict/fits/qwen3.5-9b/w151.pt",
+      "sha256": "5fc0b402ef46785adc636955e8edc565ccea96a0e822b6dbc6833749cf9fd8e9"
+    },
+    {
+      "address": 152,
+      "path": "artifacts/latest0924/predict/fits/qwen3.5-9b/w152.pt",
+      "sha256": "222a75ca1eb68b9b7454216f33c3e5bcdacd8734ca9f0bd92b63b7d9880e5b4a"
+    },
+    {
+      "address": 153,
+      "path": "artifacts/latest0924/predict/fits/qwen3.5-9b/w153.pt",
+      "sha256": "f9292976c7d1b01ecc04d5fa5e41c02ea77cabebd0ea593f5c745458fae25cd0"
+    },
+    {
+      "address": 154,
+      "path": "artifacts/latest0924/predict/fits/qwen3.5-9b/w154.pt",
+      "sha256": "edf6b21675650a7fa24be580a1fed6cb76ecf6a3ba5fc647ff906ac4e78a2d9a"
+    },
+    {
+      "address": 155,
+      "path": "artifacts/latest0924/predict/fits/qwen3.5-9b/w155.pt",
+      "sha256": "27929e157100ced87485833ed2f4a376df83d2292c84ba7c394d3bfab712a798"
+    },
+    {
+      "address": 156,
+      "path": "artifacts/latest0924/predict/fits/qwen3.5-9b/w156.pt",
+      "sha256": "42316919f4c9e616e4cbe0f6541c72d2f272afc19253b7b70ae8a24cda66b9de"
+    },
+    {
+      "address": 157,
+      "path": "artifacts/latest0924/predict/fits/qwen3.5-9b/w157.pt",
+      "sha256": "5045178a647866022680f6590aa0ab7748db94165173ae182cd20cfcc74ea837"
+    },
+    {
+      "address": 158,
+      "path": "artifacts/latest0924/predict/fits/qwen3.5-9b/w158.pt",
+      "sha256": "f442aaf8f8736959f302a69451549a32bad512fd476151c31c1ab81fb3861fc9"
+    },
+    {
+      "address": 159,
+      "path": "artifacts/latest0924/predict/fits/qwen3.5-9b/w159.pt",
+      "sha256": "eecf1e9d0802892c505a7dd28abbab913821929082e0ad1a7e756cf955b4372e"
+    },
+    {
+      "address": 160,
+      "path": "artifacts/latest0924/predict/fits/qwen3.5-9b/w160.pt",
+      "sha256": "50d4425e71ad2472353ebbb2c56c07804c349485a2d1c28c1cdcd226ceeb4edf"
+    },
+    {
+      "address": 161,
+      "path": "artifacts/latest0924/predict/fits/qwen3.5-9b/w161.pt",
+      "sha256": "d16fb34171bece4acfb85ec7daa2f07ff6727da2e9c45710013a995c0e397bd7"
+    },
+    {
+      "address": 162,
+      "path": "artifacts/latest0924/predict/fits/qwen3.5-9b/w162.pt",
+      "sha256": "835b9f7cba40916964acc12a67123f27a34912929b0383cbeee6c74bfe975070"
+    },
+    {
+      "address": 163,
+      "path": "artifacts/latest0924/predict/fits/qwen3.5-9b/w163.pt",
+      "sha256": "742327b4364005a60107b91a02013a3f8951cf938c0b386aa6ab7415b757d688"
+    },
+    {
+      "address": 164,
+      "path": "artifacts/latest0924/predict/fits/qwen3.5-9b/w164.pt",
+      "sha256": "dec60c0b783391595b61bb343b0d1b629238a6da49852bacf19e81d6e606a476"
+    },
+    {
+      "address": 165,
+      "path": "artifacts/latest0924/predict/fits/qwen3.5-9b/w165.pt",
+      "sha256": "026cf5b617b8a7646938a25df9bacc5b38ffbe2fba4044d99ea176f7d0b74d89"
+    },
+    {
+      "address": 166,
+      "path": "artifacts/latest0924/predict/fits/qwen3.5-9b/w166.pt",
+      "sha256": "a316dcaad16c38825b7ab662b0098b07b1204f387af191b45c51bd27e95a9baf"
+    },
+    {
+      "address": 167,
+      "path": "artifacts/latest0924/predict/fits/qwen3.5-9b/w167.pt",
+      "sha256": "384f80296763980b6553a231d597fd35dcacfa637f460773f37d683abf807fec"
+    },
+    {
+      "address": 168,
+      "path": "artifacts/latest0924/predict/fits/qwen3.5-9b/w168.pt",
+      "sha256": "e3281d33cd868f80252468264dcd46865d1ddde19ad9fed61c422267e1cd8de6"
+    },
+    {
+      "address": 169,
+      "path": "artifacts/latest0924/predict/fits/qwen3.5-9b/w169.pt",
+      "sha256": "38fa62039cbdb3e51307c43763aa86132fdf93869e5e4e2cc83478f3211b9051"
+    },
+    {
+      "address": 170,
+      "path": "artifacts/latest0924/predict/fits/qwen3.5-9b/w170.pt",
+      "sha256": "b0f3cc74895f1e809edbc7dd85702db41534b248534cba01e43a3778e3a33405"
+    },
+    {
+      "address": 171,
+      "path": "artifacts/latest0924/predict/fits/qwen3.5-9b/w171.pt",
+      "sha256": "5705d6b3870de8cee17b89c6116c4c892bca4c615a70743cd34f3a78aa1cbd7d"
+    },
+    {
+      "address": 172,
+      "path": "artifacts/latest0924/predict/fits/qwen3.5-9b/w172.pt",
+      "sha256": "726e60240ee1a3312a39bfdfc0cd764d351fcd3b0f973fdc3044b1b36d25d307"
+    },
+    {
+      "address": 173,
+      "path": "artifacts/latest0924/predict/fits/qwen3.5-9b/w173.pt",
+      "sha256": "ed388840502366c83fe962367ec7acfa2e276214b886c8b4d984e8937d70c2cc"
+    },
+    {
+      "address": 174,
+      "path": "artifacts/latest0924/predict/fits/qwen3.5-9b/w174.pt",
+      "sha256": "7b2f65e9785e939147a9d8904cfe7374c34878fc3515b38b7bb455627afc2e27"
+    },
+    {
+      "address": 175,
+      "path": "artifacts/latest0924/predict/fits/qwen3.5-9b/w175.pt",
+      "sha256": "ddcd731369654b344d61e00132923bffe30d3d8ba44307026396eaef052acee8"
+    },
+    {
+      "address": 176,
+      "path": "artifacts/latest0924/predict/fits/qwen3.5-9b/w176.pt",
+      "sha256": "122cf80db5288897bf6a39063054038e36bb858a4f62c863066f7ea3e2b83a74"
+    },
+    {
+      "address": 177,
+      "path": "artifacts/latest0924/predict/fits/qwen3.5-9b/w177.pt",
+      "sha256": "f25669730839058b475c01e9a796c07517898735ef91e2632f55c92c1cc71177"
+    },
+    {
+      "address": 178,
+      "path": "artifacts/latest0924/predict/fits/qwen3.5-9b/w178.pt",
+      "sha256": "c1832b9a61aa2dcf4061178ca312054b9913b54bbe9bee0009fb43d3dd1a4fcc"
+    },
+    {
+      "address": 179,
+      "path": "artifacts/latest0924/predict/fits/qwen3.5-9b/w179.pt",
+      "sha256": "a7703cb54b159abd78b0559ed171ef23452991d550c14b22246171567b53cc77"
+    },
+    {
+      "address": 180,
+      "path": "artifacts/latest0924/predict/fits/qwen3.5-9b/w180.pt",
+      "sha256": "b5707bdb1e52c4838d96ea4a7615981b3057fe822317d2a4f54d12b7b42dec76"
+    },
+    {
+      "address": 181,
+      "path": "artifacts/latest0924/predict/fits/qwen3.5-9b/w181.pt",
+      "sha256": "269edcc321973b4ba8a2a39995fa69564b7f6fa15e27f9c1617bd16d12a3ca7a"
+    },
+    {
+      "address": 182,
+      "path": "artifacts/latest0924/predict/fits/qwen3.5-9b/w182.pt",
+      "sha256": "51a7ebde75c6aa95cbc45065d3b5935c63fbd6f7011f6e8a03b19f9268e599d9"
+    },
+    {
+      "address": 183,
+      "path": "artifacts/latest0924/predict/fits/qwen3.5-9b/w183.pt",
+      "sha256": "c59212aaaff70224070aaf64050b57ff53dfe0bee7ca0ccd18af6c281c083a6a"
+    },
+    {
+      "address": 184,
+      "path": "artifacts/latest0924/predict/fits/qwen3.5-9b/w184.pt",
+      "sha256": "89897742ce5130c17490ef99958bd581921de05c4e4f0959862bed773bbba6a2"
+    },
+    {
+      "address": 185,
+      "path": "artifacts/latest0924/predict/fits/qwen3.5-9b/w185.pt",
+      "sha256": "d0048124a0d0513775e3f5e0264e6fbbc97bd4d8bbb821b601291d68c9692ac3"
+    },
+    {
+      "address": 186,
+      "path": "artifacts/latest0924/predict/fits/qwen3.5-9b/w186.pt",
+      "sha256": "077bd6a06fec681e7bb09981d3566372f3494baa2de9f1b53ee3bcd06ec742b2"
+    },
+    {
+      "address": 187,
+      "path": "artifacts/latest0924/predict/fits/qwen3.5-9b/w187.pt",
+      "sha256": "96ee4541b243bc282271f3a247ef8c084ee66075f9c30f85111be0a3aa7b1bca"
+    },
+    {
+      "address": 188,
+      "path": "artifacts/latest0924/predict/fits/qwen3.5-9b/w188.pt",
+      "sha256": "69027a9edc042dbd0b58193f85e15f38f6898326431fbefdeba21f1989952c4b"
+    },
+    {
+      "address": 189,
+      "path": "artifacts/latest0924/predict/fits/qwen3.5-9b/w189.pt",
+      "sha256": "ce942fd786c4ec3aac0066ccec40be6c12162e1a45e7fd765c53623c9db105f5"
+    },
+    {
+      "address": 190,
+      "path": "artifacts/latest0924/predict/fits/qwen3.5-9b/w190.pt",
+      "sha256": "7015668435dc7a90ad46a17a0da6cc70d1e2b735ac1c0a74d2e1b595fc249e20"
+    },
+    {
+      "address": 191,
+      "path": "artifacts/latest0924/predict/fits/qwen3.5-9b/w191.pt",
+      "sha256": "0e9ba2d3e713f244e9d6cdecbf02059acb872af196a80501000ab6e8736b734e"
+    },
+    {
+      "address": 192,
+      "path": "artifacts/latest0924/predict/fits/qwen3.5-9b/w192.pt",
+      "sha256": "fa83dea70ff25c51d1c5cda019d3f7e30fef091cefdcc0d9156398d66de4949c"
+    },
+    {
+      "address": 193,
+      "path": "artifacts/latest0924/predict/fits/qwen3.5-9b/w193.pt",
+      "sha256": "ee9a1f893104af14d7964c7613c356f42f3dbbef5d8b768dd53955f5406b8512"
+    },
+    {
+      "address": 194,
+      "path": "artifacts/latest0924/predict/fits/qwen3.5-9b/w194.pt",
+      "sha256": "57d07f541dbc9541df17002a552c241eab3fbf3c36a7f0010ae2a4585bbbcde5"
+    },
+    {
+      "address": 195,
+      "path": "artifacts/latest0924/predict/fits/qwen3.5-9b/w195.pt",
+      "sha256": "8ac078a1b52f449d43072e139a276e43f62d8aa292d7f6cb1635f68837ebb0ce"
+    },
+    {
+      "address": 196,
+      "path": "artifacts/latest0924/predict/fits/qwen3.5-9b/w196.pt",
+      "sha256": "cbda28a6f8898f1a6f3c0263be29fad005f62fd9548b011e96f15cc5b2beefc7"
+    },
+    {
+      "address": 197,
+      "path": "artifacts/latest0924/predict/fits/qwen3.5-9b/w197.pt",
+      "sha256": "216aba28b23e03143867da05913ce4694b50ee54a63adb4b29b120ab15e61d68"
+    },
+    {
+      "address": 198,
+      "path": "artifacts/latest0924/predict/fits/qwen3.5-9b/w198.pt",
+      "sha256": "fc78abc9f973a26f888aedf02461b1a74b966e929420979c3e24492b41498230"
+    },
+    {
+      "address": 199,
+      "path": "artifacts/latest0924/predict/fits/qwen3.5-9b/w199.pt",
+      "sha256": "3777284e96aa8d5496dd595ee5eebe35411fb7abb60ed5bd7267193ecf1287fa"
+    },
+    {
+      "address": 200,
+      "path": "artifacts/latest0924/predict/fits/qwen3.5-9b/w200.pt",
+      "sha256": "7116634052d4e951ed4a06910531609e10423ccc0559664e530a6a80339e6e06"
+    },
+    {
+      "address": 201,
+      "path": "artifacts/latest0924/predict/fits/qwen3.5-9b/w201.pt",
+      "sha256": "8bfc407119022037f53c1f3176489a42177a9196ea13faf79d7f652ee486460d"
+    },
+    {
+      "address": 202,
+      "path": "artifacts/latest0924/predict/fits/qwen3.5-9b/w202.pt",
+      "sha256": "6164b6e2ebeb0f7c75bd88a5b6d64147f70f01e9e5785140c436226a85fe8d75"
+    },
+    {
+      "address": 203,
+      "path": "artifacts/latest0924/predict/fits/qwen3.5-9b/w203.pt",
+      "sha256": "ffe147cb04e758f8dbd4197fac7a9aa97f791efbd7104413704fdec334df1ba9"
+    },
+    {
+      "address": 204,
+      "path": "artifacts/latest0924/predict/fits/qwen3.5-9b/w204.pt",
+      "sha256": "3880e31f8efb44bac094ed013f0e4f658d3077a1aae669b6caed5b1d009739a3"
+    },
+    {
+      "address": 205,
+      "path": "artifacts/latest0924/predict/fits/qwen3.5-9b/w205.pt",
+      "sha256": "81faddd28fc3169f3f69436816b060358522b31e1ac76bdc041027b3e2f75804"
+    },
+    {
+      "address": 206,
+      "path": "artifacts/latest0924/predict/fits/qwen3.5-9b/w206.pt",
+      "sha256": "3e35a2f499cd10709ec43cbb352fd7b896f7e981e6f4e0195e369df6b6c033c4"
+    },
+    {
+      "address": 207,
+      "path": "artifacts/latest0924/predict/fits/qwen3.5-9b/w207.pt",
+      "sha256": "2a5d5020d02ac42804dff935b9b51b3a1ecd0e0475742d8bc27f7a255ecb9226"
+    },
+    {
+      "address": 208,
+      "path": "artifacts/latest0924/predict/fits/qwen3.5-9b/w208.pt",
+      "sha256": "b17094512418408dee516e1c279a230084b6985298a4f4e76df11dfcae32fc1d"
+    },
+    {
+      "address": 209,
+      "path": "artifacts/latest0924/predict/fits/qwen3.5-9b/w209.pt",
+      "sha256": "41aee7e55c7b71bf1528c37cc96ca2d2faaa0bcea8fe1935bb6e039825392410"
+    },
+    {
+      "address": 210,
+      "path": "artifacts/latest0924/predict/fits/qwen3.5-9b/w210.pt",
+      "sha256": "97df6505314e0f80e8ac7e070bd6687a3b53048956ed990af2ead7426507e6a2"
+    },
+    {
+      "address": 211,
+      "path": "artifacts/latest0924/predict/fits/qwen3.5-9b/w211.pt",
+      "sha256": "518a8b93e95445e822328c53fbda7714587fa7e6879b8700c672b5034e131be4"
+    },
+    {
+      "address": 212,
+      "path": "artifacts/latest0924/predict/fits/qwen3.5-9b/w212.pt",
+      "sha256": "3429994e4d728a419c417ef2494ab9a8f48fb54cae80c992a3b78c9505297af1"
+    },
+    {
+      "address": 213,
+      "path": "artifacts/latest0924/predict/fits/qwen3.5-9b/w213.pt",
+      "sha256": "2a09ebeca6a8cab6157b06852b81edafb9dd2042c9d48481225be9128a7df8e1"
+    },
+    {
+      "address": 214,
+      "path": "artifacts/latest0924/predict/fits/qwen3.5-9b/w214.pt",
+      "sha256": "93825fe3dc4962453ed922fa9aa540351fdfc414740915941b43e352071191bd"
+    },
+    {
+      "address": 215,
+      "path": "artifacts/latest0924/predict/fits/qwen3.5-9b/w215.pt",
+      "sha256": "8b252e3f33fe4153a40be054de3c223151bbcd29d70b21d3c7e062391d61896d"
+    },
+    {
+      "address": 216,
+      "path": "artifacts/latest0924/predict/fits/qwen3.5-9b/w216.pt",
+      "sha256": "9b409ba15e6f589d2a3d6dd392981d6f0ae93bce244adf3b661c3ebc2fcb5acc"
+    },
+    {
+      "address": 217,
+      "path": "artifacts/latest0924/predict/fits/qwen3.5-9b/w217.pt",
+      "sha256": "e9b0217c34ba188ef29e8744a5d60f31471b473d6ae5d466caa2d65e523f069e"
+    },
+    {
+      "address": 218,
+      "path": "artifacts/latest0924/predict/fits/qwen3.5-9b/w218.pt",
+      "sha256": "27d4709d681171ba24705de98fb366d98361bf3c4505ae9dfe8f6d4213cd70fb"
+    },
+    {
+      "address": 219,
+      "path": "artifacts/latest0924/predict/fits/qwen3.5-9b/w219.pt",
+      "sha256": "bf873ee020309f0f1e420016041fe29916bd404f3b9b4511936975e922684a2e"
+    },
+    {
+      "address": 220,
+      "path": "artifacts/latest0924/predict/fits/qwen3.5-9b/w220.pt",
+      "sha256": "91042ee72a79b775637d062d103d997468712d9bb992fe116f813ab027e4ebee"
+    }
+  ],
+  "shard": 0,
+  "shards": 1,
+  "status": "COMPLETE_RECEIVER_LOCAL_FIT_ONLY",
+  "verified_against": null,
+  "verified_cells": 0,
+  "words": 221
+}

@@ -1,0 +1,106 @@
+{
+ "lock": "p0b_manifests_20260923",
+ "utc": "2026-09-23T11:32:49.851707+00:00",
+ "status": "FROZEN_BEFORE_ANY_P0B_EVALUATION_RECEIVER_OUTPUT (development engineering rows exist; no evaluation row)",
+ "protocol_lock": {
+  "path": "gates/word_interface_followup/p0b_protocol.lock.json",
+  "sha256": "7c899be3544bb448b89e14f9197f73632e7db27e47af2a66252601549934ca26"
+ },
+ "builder": {
+  "path": "scripts/p0b_build_manifests.py",
+  "sha256": "f3401f51c850fa754c494f9334d37222d7ffa1341088727b6b6ff0b1aef10082"
+ },
+ "dev": {
+  "packets": "artifacts/word_interface_followup/p0b_packets/candidateA4_dev.json",
+  "packets_sha256": "c87331f6b2ed83669eba84ddddc7d9c61e0bd91d7533101be9471a6daa122944",
+  "sender_summary": {
+   "n": 200,
+   "ok": 199,
+   "partial": 1,
+   "empty": 0,
+   "malformed": 0,
+   "mean_decode_seconds": 1.0500570034980774,
+   "mean_bytes": 37.28
+  },
+  "prompt_sha256": "bc796522ac1d8739be671c27f7f847810dc5163855999553fa380dd583fe81bf",
+  "content": {
+   "n_packets": 192,
+   "parse_status": {
+    "ok": 191,
+    "partial": 1
+   },
+   "fact_recall": 0.9973958333333334,
+   "complete_packet_rate": 0.9895833333333334,
+   "complete_packets": 190,
+   "object_assignment_errors_per_packet": 0.005208333333333333,
+   "packets_with_assignment_error": 1,
+   "extraneous_words_per_packet": 2.625,
+   "note": "recall = gold values present in the right object lane / 8; an assignment error = a scene attribute value placed in a lane whose object does not hold it; extraneous = inventory words that are no attribute value of the scene"
+  },
+  "manifests": {
+   "qwen3-32b": {
+    "path": "artifacts/word_interface_followup/p0b_dev/qwen3-32b/manifest.json",
+    "sha256": "3b936780292b33a0cda69d110a446231019588b8994ae68b71b119488685a607"
+   },
+   "qwen3-14b-base": {
+    "path": "artifacts/word_interface_followup/p0b_dev/qwen3-14b-base/manifest.json",
+    "sha256": "041051d5ae7a98b73e738db616218008da5ae9f1245f09669ebf6f2514bb58c4"
+   },
+   "glm-4-9b": {
+    "path": "artifacts/word_interface_followup/p0b_dev/glm-4-9b/manifest.json",
+    "sha256": "f88952092800607cec4157976763661f5b533627b6628d4961285b8c7d6fa7cf"
+   },
+   "gemma-3-27b-it": {
+    "path": "artifacts/word_interface_followup/p0b_dev/gemma-3-27b-it/manifest.json",
+    "sha256": "4a29764cbef11d12ea4faf5e8ded7bc1d389e463b7f3137adce5b76bf9340146"
+   }
+  }
+ },
+ "eval": {
+  "packets": "artifacts/word_interface_followup/p0b_packets/candidateA4_eval.json",
+  "packets_sha256": "f501d7be9269a68a66b4852cc971ec265124a378907bce0de4cc57715ec57695",
+  "sender_summary": {
+   "n": 1160,
+   "ok": 1158,
+   "partial": 2,
+   "empty": 0,
+   "malformed": 0,
+   "mean_decode_seconds": 0.988353472742541,
+   "mean_bytes": 36.71896551724138
+  },
+  "prompt_sha256": "bc796522ac1d8739be671c27f7f847810dc5163855999553fa380dd583fe81bf",
+  "content": {
+   "n_packets": 1152,
+   "parse_status": {
+    "ok": 1150,
+    "partial": 2
+   },
+   "fact_recall": 0.9985894097222222,
+   "complete_packet_rate": 0.9913194444444444,
+   "complete_packets": 1142,
+   "object_assignment_errors_per_packet": 0.003472222222222222,
+   "packets_with_assignment_error": 4,
+   "extraneous_words_per_packet": 2.359375,
+   "note": "recall = gold values present in the right object lane / 8; an assignment error = a scene attribute value placed in a lane whose object does not hold it; extraneous = inventory words that are no attribute value of the scene"
+  },
+  "manifests": {
+   "qwen3-32b": {
+    "path": "artifacts/word_interface_followup/p0b_eval/qwen3-32b/manifest.json",
+    "sha256": "18063ca5fab0266e073814bc488514b88d0f4487a12d4c2d80e6f4ecc93b5677"
+   },
+   "qwen3-14b-base": {
+    "path": "artifacts/word_interface_followup/p0b_eval/qwen3-14b-base/manifest.json",
+    "sha256": "eb6735fb9eb8b13652d4d4404d1b72320f22c5b44c5e5ac09ea0a157e39f3fe6"
+   },
+   "glm-4-9b": {
+    "path": "artifacts/word_interface_followup/p0b_eval/glm-4-9b/manifest.json",
+    "sha256": "0342183621e7daacc2390190e98a8cade94fe16bf7b761768bd9e75631551903"
+   },
+   "gemma-3-27b-it": {
+    "path": "artifacts/word_interface_followup/p0b_eval/gemma-3-27b-it/manifest.json",
+    "sha256": "ac4203bf20b2a56416b2f1a50d7b68610fb4bfb952242c3c6d95a2dced86c72d"
+   }
+  }
+ },
+ "note": "sender content is a pre-receiver property of the frozen sender (not a receiver outcome); failed/partial parses stay in the denominator"
+}

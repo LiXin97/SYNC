@@ -1,0 +1,51 @@
+cff-version: 1.2.0
+message: "If you use this code or the released data, please cite the paper below."
+title: "SYNC: Share the Symbol, Not the Vector"
+type: software
+license: Apache-2.0
+url: "https://lixin.ai/SYNC/"
+repository-code: "https://github.com/LiXin97/SYNC"
+keywords:
+  - multi-agent communication
+  - language models
+  - representation steering
+  - interpretability
+authors:
+  - given-names: Xin
+    family-names: Li
+  - given-names: Mengbing
+    family-names: Liu
+  - given-names: Hao
+    family-names: Jiang
+  - given-names: Xin
+    family-names: Gao
+  - given-names: Annan
+    family-names: Wang
+  - given-names: Xingwei
+    family-names: Qu
+  - given-names: Yichi
+    family-names: Zhang
+  - given-names: Chau
+    family-names: Yuen
+preferred-citation:
+  type: article
+  title: "Share the Symbol, Not the Vector: Training-Free Fact Communication Across Language Models"
+  authors:
+    - given-names: Xin
+      family-names: Li
+    - given-names: Mengbing
+      family-names: Liu
+    - given-names: Hao
+      family-names: Jiang
+    - given-names: Xin
+      family-names: Gao
+    - given-names: Annan
+      family-names: Wang
+    - given-names: Xingwei
+      family-names: Qu
+    - given-names: Yichi
+      family-names: Zhang
+    - given-names: Chau
+      family-names: Yuen
+  year: 2026
+  notes: "Preprint; arXiv identifier to be added."

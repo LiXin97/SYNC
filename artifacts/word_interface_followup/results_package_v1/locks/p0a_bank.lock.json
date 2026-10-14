@@ -1,0 +1,471 @@
+{
+ "lock": "p0a_bank_20260923",
+ "utc": "2026-09-23T10:55:33.077456+00:00",
+ "status": "FROZEN_BEFORE_ANY_P0A_CONFIRMATION_OUTPUT (no sender or receiver output on this bank)",
+ "authority": "[internal approval note removed for anonymity]",
+ "generator": {
+  "derived_from": "scripts/build_r3_bank_20260923.py",
+  "path": "scripts/p0a_build_bank.py",
+  "sha256": "fa4f3dcca3a6201b24a6ef16208648732bd2c1be13282bca91770b0a8acaef3e",
+  "changes": "new namespace p0aconf0923; 12 new evidence frames (4 per domain); 24 new aliases (hash-derived, disjoint from every earlier bank incl. P0-B); the R3 value cells added to the per-domain exclusions where a balanced pattern still exists",
+  "finalizer": {
+   "path": "scripts/p0a_finalize_bank.py",
+   "sha256": "e261d078433ad3cc605fd047d96b022de2209e1998b9e8fa190f61394d813b96",
+   "engineering": "4 separate engineering scenes = copies of 4 confirmation scenes with reserved aliases and new ids; never analysed"
+  }
+ },
+ "files": {
+  "artifacts/word_interface_followup/p0a_bank/bank.json": "c03700d59c1272efbf819b983eb74952fc3552b110366201bf82987b1bbf1ffd",
+  "artifacts/word_interface_followup/p0a_bank/bank_core.json": "bce4a4663f8d7c0750adb2b526bed2ac775010f2b460510d027bcb401806613d",
+  "artifacts/word_interface_followup/p0a_bank/overlap_report.json": "330906a5f43a57dca907452ed00add0d2efd24273844fdac991051bbd6fb2a54",
+  "artifacts/word_interface_followup/p0a_alias_pools.json": "eda21880236446a219606f5f03b328604319da032b589cb29e94b1a5e71a9e56"
+ },
+ "bank_size": 580,
+ "analysed_scenes": 576,
+ "engineering_scene_ids": [
+  "85870de89d18b9941127",
+  "517e7da136b042614bc8",
+  "8b3a975e56428187b935",
+  "6fcdc9119ee2fb8bdf39"
+ ],
+ "split": "confirmation",
+ "row_split": "p0a_confirmation",
+ "overlap_with_prior": {
+  "overlap": {
+   "scenes": {
+    "new": 576,
+    "prior": 1920,
+    "shared": 0,
+    "shared_items": []
+   },
+   "evidence": {
+    "new": 1486,
+    "prior": 2325,
+    "shared": 0,
+    "shared_items": []
+   },
+   "skeletons": {
+    "new": 12,
+    "prior": 36,
+    "shared": 0,
+    "shared_items": []
+   },
+   "fact_tuples_field_aware": {
+    "new": 48,
+    "prior": 86,
+    "shared": 48,
+    "shared_items": [
+     "[[\"buttons\", \"copper\"], [\"fibre\", \"cotton\"]]",
+     "[[\"buttons\", \"copper\"], [\"fibre\", \"leather\"]]",
+     "[[\"buttons\", \"copper\"], [\"fibre\", \"silk\"]]",
+     "[[\"buttons\", \"copper\"], [\"fibre\", \"wool\"]]",
+     "[[\"buttons\", \"glass\"], [\"fibre\", \"cotton\"]]",
+     "[[\"buttons\", \"glass\"], [\"fibre\", \"leather\"]]",
+     "[[\"buttons\", \"glass\"], [\"fibre\", \"silk\"]]",
+     "[[\"buttons\", \"glass\"], [\"fibre\", \"wool\"]]",
+     "[[\"buttons\", \"plastic\"], [\"fibre\", \"cotton\"]]",
+     "[[\"buttons\", \"plastic\"], [\"fibre\", \"leather\"]]",
+     "[[\"buttons\", \"plastic\"], [\"fibre\", \"silk\"]]",
+     "[[\"buttons\", \"plastic\"], [\"fibre\", \"wool\"]]",
+     "[[\"buttons\", \"wooden\"], [\"fibre\", \"cotton\"]]",
+     "[[\"buttons\", \"wooden\"], [\"fibre\", \"leather\"]]",
+     "[[\"buttons\", \"wooden\"], [\"fibre\", \"silk\"]]",
+     "[[\"buttons\", \"wooden\"], [\"fibre\", \"wool\"]]",
+     "[[\"color\", \"green\"], [\"material\", \"gold\"]]",
+     "[[\"color\", \"green\"], [\"material\", \"iron\"]]",
+     "[[\"color\", \"green\"], [\"material\", \"silver\"]]",
+     "[[\"color\", \"green\"], [\"material\", \"steel\"]]",
+     "[[\"color\", \"green\"], [\"taste\", \"bitter\"]]",
+     "[[\"color\", \"green\"], [\"taste\", \"salty\"]]",
+     "[[\"color\", \"green\"], [\"taste\", \"sour\"]]",
+     "[[\"color\", \"green\"], [\"taste\", \"sweet\"]]",
+     "[[\"color\", \"orange\"], [\"material\", \"gold\"]]",
+     "[[\"color\", \"orange\"], [\"material\", \"iron\"]]",
+     "[[\"color\", \"orange\"], [\"material\", \"silver\"]]",
+     "[[\"color\", \"orange\"], [\"material\", \"steel\"]]",
+     "[[\"color\", \"orange\"], [\"taste\", \"bitter\"]]",
+     "[[\"color\", \"orange\"], [\"taste\", \"salty\"]]",
+     "[[\"color\", \"orange\"], [\"taste\", \"sour\"]]",
+     "[[\"color\", \"orange\"], [\"taste\", \"sweet\"]]",
+     "[[\"color\", \"red\"], [\"material\", \"gold\"]]",
+     "[[\"color\", \"red\"], [\"material\", \"iron\"]]",
+     "[[\"color\", \"red\"], [\"material\", \"silver\"]]",
+     "[[\"color\", \"red\"], [\"material\", \"steel\"]]",
+     "[[\"color\", \"red\"], [\"taste\", \"bitter\"]]",
+     "[[\"color\", \"red\"], [\"taste\", \"salty\"]]",
+     "[[\"color\", \"red\"], [\"taste\", \"sour\"]]",
+     "[[\"color\", \"red\"], [\"taste\", \"sweet\"]]"
+    ]
+   },
+   "fact_tuples_values_only": {
+    "new": 48,
+    "prior": 86,
+    "shared": 48,
+    "shared_items": [
+     "[\"bitter\", \"green\"]",
+     "[\"bitter\", \"orange\"]",
+     "[\"bitter\", \"red\"]",
+     "[\"bitter\", \"yellow\"]",
+     "[\"copper\", \"cotton\"]",
+     "[\"copper\", \"leather\"]",
+     "[\"copper\", \"silk\"]",
+     "[\"copper\", \"wool\"]",
+     "[\"cotton\", \"glass\"]",
+     "[\"cotton\", \"plastic\"]",
+     "[\"cotton\", \"wooden\"]",
+     "[\"glass\", \"leather\"]",
+     "[\"glass\", \"silk\"]",
+     "[\"glass\", \"wool\"]",
+     "[\"gold\", \"green\"]",
+     "[\"gold\", \"orange\"]",
+     "[\"gold\", \"red\"]",
+     "[\"gold\", \"yellow\"]",
+     "[\"green\", \"iron\"]",
+     "[\"green\", \"salty\"]",
+     "[\"green\", \"silver\"]",
+     "[\"green\", \"sour\"]",
+     "[\"green\", \"steel\"]",
+     "[\"green\", \"sweet\"]",
+     "[\"iron\", \"orange\"]",
+     "[\"iron\", \"red\"]",
+     "[\"iron\", \"yellow\"]",
+     "[\"leather\", \"plastic\"]",
+     "[\"leather\", \"wooden\"]",
+     "[\"orange\", \"salty\"]",
+     "[\"orange\", \"silver\"]",
+     "[\"orange\", \"sour\"]",
+     "[\"orange\", \"steel\"]",
+     "[\"orange\", \"sweet\"]",
+     "[\"plastic\", \"silk\"]",
+     "[\"plastic\", \"wool\"]",
+     "[\"red\", \"salty\"]",
+     "[\"red\", \"silver\"]",
+     "[\"red\", \"sour\"]",
+     "[\"red\", \"steel\"]"
+    ]
+   },
+   "world_combos": {
+    "new": 72,
+    "prior": 192,
+    "shared": 14,
+    "shared_items": [
+     "('candy', ((('color', 'green'), ('taste', 'bitter')), (('color', 'orange'), ('taste', 'salty'))))",
+     "('candy', ((('color', 'green'), ('taste', 'bitter')), (('color', 'orange'), ('taste', 'sour'))))",
+     "('candy', ((('color', 'green'), ('taste', 'bitter')), (('color', 'red'), ('taste', 'salty'))))",
+     "('candy', ((('color', 'green'), ('taste', 'bitter')), (('color', 'red'), ('taste', 'sour'))))",
+     "('candy', ((('color', 'green'), ('taste', 'salty')), (('color', 'orange'), ('taste', 'bitter'))))",
+     "('candy', ((('color', 'green'), ('taste', 'salty')), (('color', 'red'), ('taste', 'bitter'))))",
+     "('candy', ((('color', 'green'), ('taste', 'sour')), (('color', 'orange'), ('taste', 'bitter'))))",
+     "('candy', ((('color', 'green'), ('taste', 'sour')), (('color', 'red'), ('taste', 'bitter'))))",
+     "('candy', ((('color', 'orange'), ('taste', 'sour')), (('color', 'yellow'), ('taste', 'sweet'))))",
+     "('candy', ((('color', 'orange'), ('taste', 'sweet')), (('color', 'yellow'), ('taste', 'sour'))))",
+     "('candy', ((('color', 'red'), ('taste', 'salty')), (('color', 'yellow'), ('taste', 'sweet'))))",
+     "('candy', ((('color', 'red'), ('taste', 'sour')), (('color', 'yellow'), ('taste', 'sweet'))))",
+     "('candy', ((('color', 'red'), ('taste', 'sweet')), (('color', 'yellow'), ('taste', 'salty'))))",
+     "('candy', ((('color', 'red'), ('taste', 'sweet')), (('color', 'yellow'), ('taste', 'sour'))))"
+    ]
+   },
+   "value_cells": {
+    "new": 36,
+    "prior": 96,
+    "shared": 7,
+    "shared_items": [
+     "('candy', ('green', 'orange'), ('bitter', 'salty'))",
+     "('candy', ('green', 'orange'), ('bitter', 'sour'))",
+     "('candy', ('green', 'red'), ('bitter', 'salty'))",
+     "('candy', ('green', 'red'), ('bitter', 'sour'))",
+     "('candy', ('orange', 'yellow'), ('sour', 'sweet'))",
+     "('candy', ('red', 'yellow'), ('salty', 'sweet'))",
+     "('candy', ('red', 'yellow'), ('sour', 'sweet'))"
+    ]
+   },
+   "aliases": {
+    "new": 24,
+    "prior": 104,
+    "shared": 0,
+    "shared_items": []
+   },
+   "question_wordings": {
+    "new": 6,
+    "prior": 6,
+    "shared": 6,
+    "shared_items": [
+     "Which object has <V> buttons?",
+     "Which object has <V> surface paint?",
+     "Which object has a <V> color?",
+     "Which object has an <V> color?",
+     "Which object is <V>?",
+     "Which object is made of <V>?"
+    ]
+   },
+   "fact_tuples_by_domain": {
+    "candy": {
+     "fact_tuples": 16,
+     "recycled": 16
+    },
+    "block": {
+     "fact_tuples": 16,
+     "recycled": 16
+    },
+    "coat": {
+     "fact_tuples": 16,
+     "recycled": 16
+    }
+   },
+   "inventory_words_used": [
+    "bitter",
+    "copper",
+    "cotton",
+    "glass",
+    "gold",
+    "green",
+    "iron",
+    "leather",
+    "orange",
+    "plastic",
+    "red",
+    "salty",
+    "silk",
+    "silver",
+    "sour",
+    "steel",
+    "sweet",
+    "wooden",
+    "wool",
+    "yellow"
+   ],
+   "inventory_words_shared_with_prior_banks": [
+    "bitter",
+    "copper",
+    "cotton",
+    "glass",
+    "gold",
+    "green",
+    "iron",
+    "leather",
+    "orange",
+    "plastic",
+    "red",
+    "salty",
+    "silk",
+    "silver",
+    "sour",
+    "steel",
+    "sweet",
+    "wooden",
+    "wool",
+    "yellow"
+   ]
+  },
+  "balance": {
+   "scenes_per_domain": {
+    "coat": 192,
+    "candy": 192,
+    "block": 192
+   },
+   "scenes_per_family": {
+    "16": 36
+   },
+   "scenes_per_template": {
+    "block/T0": 48,
+    "block/T1": 48,
+    "block/T2": 48,
+    "block/T3": 48,
+    "candy/T0": 48,
+    "candy/T1": 48,
+    "candy/T2": 48,
+    "candy/T3": 48,
+    "coat/T0": 48,
+    "coat/T1": 48,
+    "coat/T2": 48,
+    "coat/T3": 48
+   },
+   "changed_field": {
+    "block/color": 96,
+    "block/material": 96,
+    "candy/color": 96,
+    "candy/taste": 96,
+    "coat/buttons": 96,
+    "coat/fibre": 96
+   },
+   "answer_identity_world_question": {
+    "w0_q0_first": 288,
+    "w0_q0_second": 288,
+    "w0_q1_first": 288,
+    "w0_q1_second": 288,
+    "w1_q0_first": 288,
+    "w1_q0_second": 288,
+    "w1_q1_first": 288,
+    "w1_q1_second": 288
+   },
+   "alias_usage": {
+    "VOKR": {
+     "first": 24,
+     "second": 24,
+     "answers": 96
+    },
+    "PUVN": {
+     "first": 24,
+     "second": 24,
+     "answers": 96
+    },
+    "GEFH": {
+     "first": 24,
+     "second": 24,
+     "answers": 96
+    },
+    "TODZ": {
+     "first": 24,
+     "second": 24,
+     "answers": 92
+    },
+    "MALH": {
+     "first": 24,
+     "second": 24,
+     "answers": 88
+    },
+    "FAKB": {
+     "first": 24,
+     "second": 24,
+     "answers": 94
+    },
+    "DOND": {
+     "first": 24,
+     "second": 24,
+     "answers": 94
+    },
+    "POLN": {
+     "first": 24,
+     "second": 24,
+     "answers": 96
+    },
+    "LIZS": {
+     "first": 24,
+     "second": 24,
+     "answers": 86
+    },
+    "TUHV": {
+     "first": 24,
+     "second": 24,
+     "answers": 110
+    },
+    "SOFM": {
+     "first": 24,
+     "second": 24,
+     "answers": 98
+    },
+    "MITG": {
+     "first": 24,
+     "second": 24,
+     "answers": 92
+    },
+    "NAMZ": {
+     "first": 24,
+     "second": 24,
+     "answers": 98
+    },
+    "BEFD": {
+     "first": 24,
+     "second": 24,
+     "answers": 94
+    },
+    "DASV": {
+     "first": 24,
+     "second": 24,
+     "answers": 100
+    },
+    "HODV": {
+     "first": 24,
+     "second": 24,
+     "answers": 98
+    },
+    "ROLG": {
+     "first": 24,
+     "second": 24,
+     "answers": 104
+    },
+    "KEBR": {
+     "first": 24,
+     "second": 24,
+     "answers": 100
+    },
+    "SUPL": {
+     "first": 24,
+     "second": 24,
+     "answers": 96
+    },
+    "MUPS": {
+     "first": 24,
+     "second": 24,
+     "answers": 94
+    },
+    "LEFN": {
+     "first": 24,
+     "second": 24,
+     "answers": 104
+    },
+    "MOKZ": {
+     "first": 24,
+     "second": 24,
+     "answers": 80
+    },
+    "TARK": {
+     "first": 24,
+     "second": 24,
+     "answers": 100
+    },
+    "PENT": {
+     "first": 24,
+     "second": 24,
+     "answers": 98
+    }
+   },
+   "queried_values": {
+    "plastic": 48,
+    "wool": 48,
+    "copper": 48,
+    "leather": 48,
+    "glass": 48,
+    "silk": 48,
+    "red": 96,
+    "sour": 48,
+    "orange": 96,
+    "bitter": 48,
+    "cotton": 48,
+    "green": 96,
+    "iron": 48,
+    "steel": 48,
+    "yellow": 96,
+    "salty": 48,
+    "sweet": 48,
+    "gold": 48,
+    "silver": 48,
+    "wooden": 48
+   },
+   "object_values": {
+    "wool": 96,
+    "plastic": 96,
+    "leather": 96,
+    "glass": 96,
+    "wooden": 96,
+    "copper": 96,
+    "silk": 96,
+    "orange": 192,
+    "salty": 96,
+    "red": 192,
+    "sour": 96,
+    "sweet": 96,
+    "bitter": 96,
+    "cotton": 96,
+    "steel": 96,
+    "green": 192,
+    "iron": 96,
+    "yellow": 192,
+    "gold": 96,
+    "silver": 96
+   }
+  }
+ },
+ "disclosure": "NEW: evidence sentences, scene ids, skeletons (12 frames) and aliases (0 shared). REUSED BY DESIGN: the finite fact vocabulary — all 48 field-aware fact tuples occur in earlier banks, 14/72 world combinations and 7/36 value cells too; the six question wordings are the standing ones. This is a new-construction/new-name confirmation, not open-vocabulary generalization.",
+ "sender": "frozen two-object candidate A (src/syncomm/routeb/sender_candidate_a.py, ADR-b6-candidate-a-20260922) run once on bank.json -> artifacts/word_interface_followup/p0a_packets/candidateA_p0a.json"
+}

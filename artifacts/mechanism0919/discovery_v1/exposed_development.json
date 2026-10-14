@@ -1,0 +1,6530 @@
+[
+  {
+    "aliases": [
+      "QUAN",
+      "FEP"
+    ],
+    "changed_field": "color",
+    "domain": "candy",
+    "family": "34b39f544f227bfe",
+    "fields": [
+      "color",
+      "taste"
+    ],
+    "queried_values": [
+      "red",
+      "sour"
+    ],
+    "questions": [
+      "Which object has a red color?",
+      "Which object is sour?"
+    ],
+    "scene": "f4f76966dc44e6d37864",
+    "split": "dev",
+    "template": 0,
+    "worlds": [
+      {
+        "answers": [
+          "QUAN",
+          "QUAN"
+        ],
+        "evidence": [
+          "QUAN is a red candy. It is sour.",
+          "FEP is a yellow candy. It is sweet."
+        ],
+        "facts": [
+          {
+            "color": "red",
+            "taste": "sour"
+          },
+          {
+            "color": "yellow",
+            "taste": "sweet"
+          }
+        ],
+        "world": 0
+      },
+      {
+        "answers": [
+          "FEP",
+          "QUAN"
+        ],
+        "evidence": [
+          "QUAN is a yellow candy. It is sour.",
+          "FEP is a red candy. It is sweet."
+        ],
+        "facts": [
+          {
+            "color": "yellow",
+            "taste": "sour"
+          },
+          {
+            "color": "red",
+            "taste": "sweet"
+          }
+        ],
+        "world": 1
+      }
+    ]
+  },
+  {
+    "aliases": [
+      "QUAN",
+      "LORP"
+    ],
+    "changed_field": "color",
+    "domain": "candy",
+    "family": "34b39f544f227bfe",
+    "fields": [
+      "color",
+      "taste"
+    ],
+    "queried_values": [
+      "red",
+      "sour"
+    ],
+    "questions": [
+      "Which object has a red color?",
+      "Which object is sour?"
+    ],
+    "scene": "b73fde4e7a35ca546d46",
+    "split": "dev",
+    "template": 0,
+    "worlds": [
+      {
+        "answers": [
+          "LORP",
+          "QUAN"
+        ],
+        "evidence": [
+          "QUAN is a yellow candy. It is sour.",
+          "LORP is a red candy. It is sweet."
+        ],
+        "facts": [
+          {
+            "color": "yellow",
+            "taste": "sour"
+          },
+          {
+            "color": "red",
+            "taste": "sweet"
+          }
+        ],
+        "world": 0
+      },
+      {
+        "answers": [
+          "QUAN",
+          "QUAN"
+        ],
+        "evidence": [
+          "QUAN is a red candy. It is sour.",
+          "LORP is a yellow candy. It is sweet."
+        ],
+        "facts": [
+          {
+            "color": "red",
+            "taste": "sour"
+          },
+          {
+            "color": "yellow",
+            "taste": "sweet"
+          }
+        ],
+        "world": 1
+      }
+    ]
+  },
+  {
+    "aliases": [
+      "LORP",
+      "ZANE"
+    ],
+    "changed_field": "taste",
+    "domain": "candy",
+    "family": "34b39f544f227bfe",
+    "fields": [
+      "color",
+      "taste"
+    ],
+    "queried_values": [
+      "sour",
+      "red"
+    ],
+    "questions": [
+      "Which object is sour?",
+      "Which object has a red color?"
+    ],
+    "scene": "db403b268b2fefe0481d",
+    "split": "dev",
+    "template": 0,
+    "worlds": [
+      {
+        "answers": [
+          "LORP",
+          "LORP"
+        ],
+        "evidence": [
+          "LORP is a red candy. It is sour.",
+          "ZANE is a yellow candy. It is sweet."
+        ],
+        "facts": [
+          {
+            "color": "red",
+            "taste": "sour"
+          },
+          {
+            "color": "yellow",
+            "taste": "sweet"
+          }
+        ],
+        "world": 0
+      },
+      {
+        "answers": [
+          "ZANE",
+          "LORP"
+        ],
+        "evidence": [
+          "LORP is a red candy. It is sweet.",
+          "ZANE is a yellow candy. It is sour."
+        ],
+        "facts": [
+          {
+            "color": "red",
+            "taste": "sweet"
+          },
+          {
+            "color": "yellow",
+            "taste": "sour"
+          }
+        ],
+        "world": 1
+      }
+    ]
+  },
+  {
+    "aliases": [
+      "VOTH",
+      "LORP"
+    ],
+    "changed_field": "taste",
+    "domain": "candy",
+    "family": "34b39f544f227bfe",
+    "fields": [
+      "color",
+      "taste"
+    ],
+    "queried_values": [
+      "sour",
+      "red"
+    ],
+    "questions": [
+      "Which object is sour?",
+      "Which object has a red color?"
+    ],
+    "scene": "c33d9d12d547e1a6fef8",
+    "split": "dev",
+    "template": 0,
+    "worlds": [
+      {
+        "answers": [
+          "VOTH",
+          "LORP"
+        ],
+        "evidence": [
+          "VOTH is a yellow candy. It is sour.",
+          "LORP is a red candy. It is sweet."
+        ],
+        "facts": [
+          {
+            "color": "yellow",
+            "taste": "sour"
+          },
+          {
+            "color": "red",
+            "taste": "sweet"
+          }
+        ],
+        "world": 0
+      },
+      {
+        "answers": [
+          "LORP",
+          "LORP"
+        ],
+        "evidence": [
+          "VOTH is a yellow candy. It is sweet.",
+          "LORP is a red candy. It is sour."
+        ],
+        "facts": [
+          {
+            "color": "yellow",
+            "taste": "sweet"
+          },
+          {
+            "color": "red",
+            "taste": "sour"
+          }
+        ],
+        "world": 1
+      }
+    ]
+  },
+  {
+    "aliases": [
+      "LORP",
+      "BLIX"
+    ],
+    "changed_field": "color",
+    "domain": "candy",
+    "family": "34b39f544f227bfe",
+    "fields": [
+      "color",
+      "taste"
+    ],
+    "queried_values": [
+      "red",
+      "sour"
+    ],
+    "questions": [
+      "Which object has a red color?",
+      "Which object is sour?"
+    ],
+    "scene": "5d5888d2929a63c9b881",
+    "split": "dev",
+    "template": 1,
+    "worlds": [
+      {
+        "answers": [
+          "LORP",
+          "BLIX"
+        ],
+        "evidence": [
+          "Private record: LORP has a red color and is sweet. It is a candy.",
+          "Private record: BLIX has a yellow color and is sour. It is a candy."
+        ],
+        "facts": [
+          {
+            "color": "red",
+            "taste": "sweet"
+          },
+          {
+            "color": "yellow",
+            "taste": "sour"
+          }
+        ],
+        "world": 0
+      },
+      {
+        "answers": [
+          "BLIX",
+          "BLIX"
+        ],
+        "evidence": [
+          "Private record: LORP has a yellow color and is sweet. It is a candy.",
+          "Private record: BLIX has a red color and is sour. It is a candy."
+        ],
+        "facts": [
+          {
+            "color": "yellow",
+            "taste": "sweet"
+          },
+          {
+            "color": "red",
+            "taste": "sour"
+          }
+        ],
+        "world": 1
+      }
+    ]
+  },
+  {
+    "aliases": [
+      "BLIX",
+      "FEP"
+    ],
+    "changed_field": "color",
+    "domain": "candy",
+    "family": "34b39f544f227bfe",
+    "fields": [
+      "color",
+      "taste"
+    ],
+    "queried_values": [
+      "red",
+      "sour"
+    ],
+    "questions": [
+      "Which object has a red color?",
+      "Which object is sour?"
+    ],
+    "scene": "de8e2d54da9b489d223f",
+    "split": "dev",
+    "template": 1,
+    "worlds": [
+      {
+        "answers": [
+          "FEP",
+          "FEP"
+        ],
+        "evidence": [
+          "Private record: BLIX has a yellow color and is sweet. It is a candy.",
+          "Private record: FEP has a red color and is sour. It is a candy."
+        ],
+        "facts": [
+          {
+            "color": "yellow",
+            "taste": "sweet"
+          },
+          {
+            "color": "red",
+            "taste": "sour"
+          }
+        ],
+        "world": 0
+      },
+      {
+        "answers": [
+          "BLIX",
+          "FEP"
+        ],
+        "evidence": [
+          "Private record: BLIX has a red color and is sweet. It is a candy.",
+          "Private record: FEP has a yellow color and is sour. It is a candy."
+        ],
+        "facts": [
+          {
+            "color": "red",
+            "taste": "sweet"
+          },
+          {
+            "color": "yellow",
+            "taste": "sour"
+          }
+        ],
+        "world": 1
+      }
+    ]
+  },
+  {
+    "aliases": [
+      "FEP",
+      "KRUL"
+    ],
+    "changed_field": "taste",
+    "domain": "candy",
+    "family": "34b39f544f227bfe",
+    "fields": [
+      "color",
+      "taste"
+    ],
+    "queried_values": [
+      "sour",
+      "red"
+    ],
+    "questions": [
+      "Which object is sour?",
+      "Which object has a red color?"
+    ],
+    "scene": "63cc7a86fc72f745438e",
+    "split": "dev",
+    "template": 1,
+    "worlds": [
+      {
+        "answers": [
+          "KRUL",
+          "FEP"
+        ],
+        "evidence": [
+          "Private record: FEP has a red color and is sweet. It is a candy.",
+          "Private record: KRUL has a yellow color and is sour. It is a candy."
+        ],
+        "facts": [
+          {
+            "color": "red",
+            "taste": "sweet"
+          },
+          {
+            "color": "yellow",
+            "taste": "sour"
+          }
+        ],
+        "world": 0
+      },
+      {
+        "answers": [
+          "FEP",
+          "FEP"
+        ],
+        "evidence": [
+          "Private record: FEP has a red color and is sour. It is a candy.",
+          "Private record: KRUL has a yellow color and is sweet. It is a candy."
+        ],
+        "facts": [
+          {
+            "color": "red",
+            "taste": "sour"
+          },
+          {
+            "color": "yellow",
+            "taste": "sweet"
+          }
+        ],
+        "world": 1
+      }
+    ]
+  },
+  {
+    "aliases": [
+      "FEP",
+      "BLIX"
+    ],
+    "changed_field": "taste",
+    "domain": "candy",
+    "family": "34b39f544f227bfe",
+    "fields": [
+      "color",
+      "taste"
+    ],
+    "queried_values": [
+      "sour",
+      "red"
+    ],
+    "questions": [
+      "Which object is sour?",
+      "Which object has a red color?"
+    ],
+    "scene": "1684712e8b296bcdc423",
+    "split": "dev",
+    "template": 1,
+    "worlds": [
+      {
+        "answers": [
+          "BLIX",
+          "BLIX"
+        ],
+        "evidence": [
+          "Private record: FEP has a yellow color and is sweet. It is a candy.",
+          "Private record: BLIX has a red color and is sour. It is a candy."
+        ],
+        "facts": [
+          {
+            "color": "yellow",
+            "taste": "sweet"
+          },
+          {
+            "color": "red",
+            "taste": "sour"
+          }
+        ],
+        "world": 0
+      },
+      {
+        "answers": [
+          "FEP",
+          "BLIX"
+        ],
+        "evidence": [
+          "Private record: FEP has a yellow color and is sour. It is a candy.",
+          "Private record: BLIX has a red color and is sweet. It is a candy."
+        ],
+        "facts": [
+          {
+            "color": "yellow",
+            "taste": "sour"
+          },
+          {
+            "color": "red",
+            "taste": "sweet"
+          }
+        ],
+        "world": 1
+      }
+    ]
+  },
+  {
+    "aliases": [
+      "LORP",
+      "ZANE"
+    ],
+    "changed_field": "color",
+    "domain": "block",
+    "family": "35bdd56ea9bd035d",
+    "fields": [
+      "color",
+      "material"
+    ],
+    "queried_values": [
+      "red",
+      "metallic"
+    ],
+    "questions": [
+      "Which object has a red color?",
+      "Which object is metallic?"
+    ],
+    "scene": "edb00732ff7f7a30e657",
+    "split": "dev",
+    "template": 0,
+    "worlds": [
+      {
+        "answers": [
+          "LORP",
+          "LORP"
+        ],
+        "evidence": [
+          "LORP is a red block. It is metallic.",
+          "ZANE is a yellow block. It is wooden."
+        ],
+        "facts": [
+          {
+            "color": "red",
+            "material": "metallic"
+          },
+          {
+            "color": "yellow",
+            "material": "wooden"
+          }
+        ],
+        "world": 0
+      },
+      {
+        "answers": [
+          "ZANE",
+          "LORP"
+        ],
+        "evidence": [
+          "LORP is a yellow block. It is metallic.",
+          "ZANE is a red block. It is wooden."
+        ],
+        "facts": [
+          {
+            "color": "yellow",
+            "material": "metallic"
+          },
+          {
+            "color": "red",
+            "material": "wooden"
+          }
+        ],
+        "world": 1
+      }
+    ]
+  },
+  {
+    "aliases": [
+      "FEP",
+      "LORP"
+    ],
+    "changed_field": "color",
+    "domain": "block",
+    "family": "35bdd56ea9bd035d",
+    "fields": [
+      "color",
+      "material"
+    ],
+    "queried_values": [
+      "red",
+      "metallic"
+    ],
+    "questions": [
+      "Which object has a red color?",
+      "Which object is metallic?"
+    ],
+    "scene": "a7f496c9eac7b504a306",
+    "split": "dev",
+    "template": 0,
+    "worlds": [
+      {
+        "answers": [
+          "LORP",
+          "FEP"
+        ],
+        "evidence": [
+          "FEP is a yellow block. It is metallic.",
+          "LORP is a red block. It is wooden."
+        ],
+        "facts": [
+          {
+            "color": "yellow",
+            "material": "metallic"
+          },
+          {
+            "color": "red",
+            "material": "wooden"
+          }
+        ],
+        "world": 0
+      },
+      {
+        "answers": [
+          "FEP",
+          "FEP"
+        ],
+        "evidence": [
+          "FEP is a red block. It is metallic.",
+          "LORP is a yellow block. It is wooden."
+        ],
+        "facts": [
+          {
+            "color": "red",
+            "material": "metallic"
+          },
+          {
+            "color": "yellow",
+            "material": "wooden"
+          }
+        ],
+        "world": 1
+      }
+    ]
+  },
+  {
+    "aliases": [
+      "QUAN",
+      "VOTH"
+    ],
+    "changed_field": "material",
+    "domain": "block",
+    "family": "35bdd56ea9bd035d",
+    "fields": [
+      "color",
+      "material"
+    ],
+    "queried_values": [
+      "metallic",
+      "red"
+    ],
+    "questions": [
+      "Which object is metallic?",
+      "Which object has a red color?"
+    ],
+    "scene": "660f5b0c7fc3ac91c008",
+    "split": "dev",
+    "template": 0,
+    "worlds": [
+      {
+        "answers": [
+          "QUAN",
+          "QUAN"
+        ],
+        "evidence": [
+          "QUAN is a red block. It is metallic.",
+          "VOTH is a yellow block. It is wooden."
+        ],
+        "facts": [
+          {
+            "color": "red",
+            "material": "metallic"
+          },
+          {
+            "color": "yellow",
+            "material": "wooden"
+          }
+        ],
+        "world": 0
+      },
+      {
+        "answers": [
+          "VOTH",
+          "QUAN"
+        ],
+        "evidence": [
+          "QUAN is a red block. It is wooden.",
+          "VOTH is a yellow block. It is metallic."
+        ],
+        "facts": [
+          {
+            "color": "red",
+            "material": "wooden"
+          },
+          {
+            "color": "yellow",
+            "material": "metallic"
+          }
+        ],
+        "world": 1
+      }
+    ]
+  },
+  {
+    "aliases": [
+      "FEP",
+      "BLIX"
+    ],
+    "changed_field": "material",
+    "domain": "block",
+    "family": "35bdd56ea9bd035d",
+    "fields": [
+      "color",
+      "material"
+    ],
+    "queried_values": [
+      "metallic",
+      "red"
+    ],
+    "questions": [
+      "Which object is metallic?",
+      "Which object has a red color?"
+    ],
+    "scene": "63a450961e9388fc3220",
+    "split": "dev",
+    "template": 0,
+    "worlds": [
+      {
+        "answers": [
+          "FEP",
+          "BLIX"
+        ],
+        "evidence": [
+          "FEP is a yellow block. It is metallic.",
+          "BLIX is a red block. It is wooden."
+        ],
+        "facts": [
+          {
+            "color": "yellow",
+            "material": "metallic"
+          },
+          {
+            "color": "red",
+            "material": "wooden"
+          }
+        ],
+        "world": 0
+      },
+      {
+        "answers": [
+          "BLIX",
+          "BLIX"
+        ],
+        "evidence": [
+          "FEP is a yellow block. It is wooden.",
+          "BLIX is a red block. It is metallic."
+        ],
+        "facts": [
+          {
+            "color": "yellow",
+            "material": "wooden"
+          },
+          {
+            "color": "red",
+            "material": "metallic"
+          }
+        ],
+        "world": 1
+      }
+    ]
+  },
+  {
+    "aliases": [
+      "KRUL",
+      "MIV"
+    ],
+    "changed_field": "color",
+    "domain": "block",
+    "family": "35bdd56ea9bd035d",
+    "fields": [
+      "color",
+      "material"
+    ],
+    "queried_values": [
+      "red",
+      "metallic"
+    ],
+    "questions": [
+      "Which object has a red color?",
+      "Which object is metallic?"
+    ],
+    "scene": "d1ab668f768216c32a7c",
+    "split": "dev",
+    "template": 1,
+    "worlds": [
+      {
+        "answers": [
+          "KRUL",
+          "MIV"
+        ],
+        "evidence": [
+          "Private record: KRUL has a red color and is wooden. It is a block.",
+          "Private record: MIV has a yellow color and is metallic. It is a block."
+        ],
+        "facts": [
+          {
+            "color": "red",
+            "material": "wooden"
+          },
+          {
+            "color": "yellow",
+            "material": "metallic"
+          }
+        ],
+        "world": 0
+      },
+      {
+        "answers": [
+          "MIV",
+          "MIV"
+        ],
+        "evidence": [
+          "Private record: KRUL has a yellow color and is wooden. It is a block.",
+          "Private record: MIV has a red color and is metallic. It is a block."
+        ],
+        "facts": [
+          {
+            "color": "yellow",
+            "material": "wooden"
+          },
+          {
+            "color": "red",
+            "material": "metallic"
+          }
+        ],
+        "world": 1
+      }
+    ]
+  },
+  {
+    "aliases": [
+      "MIV",
+      "BLIX"
+    ],
+    "changed_field": "color",
+    "domain": "block",
+    "family": "35bdd56ea9bd035d",
+    "fields": [
+      "color",
+      "material"
+    ],
+    "queried_values": [
+      "red",
+      "metallic"
+    ],
+    "questions": [
+      "Which object has a red color?",
+      "Which object is metallic?"
+    ],
+    "scene": "186130f6e96743fe4cc1",
+    "split": "dev",
+    "template": 1,
+    "worlds": [
+      {
+        "answers": [
+          "BLIX",
+          "BLIX"
+        ],
+        "evidence": [
+          "Private record: MIV has a yellow color and is wooden. It is a block.",
+          "Private record: BLIX has a red color and is metallic. It is a block."
+        ],
+        "facts": [
+          {
+            "color": "yellow",
+            "material": "wooden"
+          },
+          {
+            "color": "red",
+            "material": "metallic"
+          }
+        ],
+        "world": 0
+      },
+      {
+        "answers": [
+          "MIV",
+          "BLIX"
+        ],
+        "evidence": [
+          "Private record: MIV has a red color and is wooden. It is a block.",
+          "Private record: BLIX has a yellow color and is metallic. It is a block."
+        ],
+        "facts": [
+          {
+            "color": "red",
+            "material": "wooden"
+          },
+          {
+            "color": "yellow",
+            "material": "metallic"
+          }
+        ],
+        "world": 1
+      }
+    ]
+  },
+  {
+    "aliases": [
+      "BLIX",
+      "ZANE"
+    ],
+    "changed_field": "material",
+    "domain": "block",
+    "family": "35bdd56ea9bd035d",
+    "fields": [
+      "color",
+      "material"
+    ],
+    "queried_values": [
+      "metallic",
+      "red"
+    ],
+    "questions": [
+      "Which object is metallic?",
+      "Which object has a red color?"
+    ],
+    "scene": "0c56547a9d4a511c7733",
+    "split": "dev",
+    "template": 1,
+    "worlds": [
+      {
+        "answers": [
+          "ZANE",
+          "BLIX"
+        ],
+        "evidence": [
+          "Private record: BLIX has a red color and is wooden. It is a block.",
+          "Private record: ZANE has a yellow color and is metallic. It is a block."
+        ],
+        "facts": [
+          {
+            "color": "red",
+            "material": "wooden"
+          },
+          {
+            "color": "yellow",
+            "material": "metallic"
+          }
+        ],
+        "world": 0
+      },
+      {
+        "answers": [
+          "BLIX",
+          "BLIX"
+        ],
+        "evidence": [
+          "Private record: BLIX has a red color and is metallic. It is a block.",
+          "Private record: ZANE has a yellow color and is wooden. It is a block."
+        ],
+        "facts": [
+          {
+            "color": "red",
+            "material": "metallic"
+          },
+          {
+            "color": "yellow",
+            "material": "wooden"
+          }
+        ],
+        "world": 1
+      }
+    ]
+  },
+  {
+    "aliases": [
+      "KRUL",
+      "BLIX"
+    ],
+    "changed_field": "material",
+    "domain": "block",
+    "family": "35bdd56ea9bd035d",
+    "fields": [
+      "color",
+      "material"
+    ],
+    "queried_values": [
+      "metallic",
+      "red"
+    ],
+    "questions": [
+      "Which object is metallic?",
+      "Which object has a red color?"
+    ],
+    "scene": "f063628030806b9ba453",
+    "split": "dev",
+    "template": 1,
+    "worlds": [
+      {
+        "answers": [
+          "BLIX",
+          "BLIX"
+        ],
+        "evidence": [
+          "Private record: KRUL has a yellow color and is wooden. It is a block.",
+          "Private record: BLIX has a red color and is metallic. It is a block."
+        ],
+        "facts": [
+          {
+            "color": "yellow",
+            "material": "wooden"
+          },
+          {
+            "color": "red",
+            "material": "metallic"
+          }
+        ],
+        "world": 0
+      },
+      {
+        "answers": [
+          "KRUL",
+          "BLIX"
+        ],
+        "evidence": [
+          "Private record: KRUL has a yellow color and is metallic. It is a block.",
+          "Private record: BLIX has a red color and is wooden. It is a block."
+        ],
+        "facts": [
+          {
+            "color": "yellow",
+            "material": "metallic"
+          },
+          {
+            "color": "red",
+            "material": "wooden"
+          }
+        ],
+        "world": 1
+      }
+    ]
+  },
+  {
+    "aliases": [
+      "QUAN",
+      "BLIX"
+    ],
+    "changed_field": "color",
+    "domain": "candy",
+    "family": "4f0711148c3d3551",
+    "fields": [
+      "color",
+      "taste"
+    ],
+    "queried_values": [
+      "orange",
+      "bitter"
+    ],
+    "questions": [
+      "Which object has a orange color?",
+      "Which object is bitter?"
+    ],
+    "scene": "55f7edb9fdce4b0a0d23",
+    "split": "dev",
+    "template": 0,
+    "worlds": [
+      {
+        "answers": [
+          "QUAN",
+          "QUAN"
+        ],
+        "evidence": [
+          "QUAN is a orange candy. It is bitter.",
+          "BLIX is a yellow candy. It is salty."
+        ],
+        "facts": [
+          {
+            "color": "orange",
+            "taste": "bitter"
+          },
+          {
+            "color": "yellow",
+            "taste": "salty"
+          }
+        ],
+        "world": 0
+      },
+      {
+        "answers": [
+          "BLIX",
+          "QUAN"
+        ],
+        "evidence": [
+          "QUAN is a yellow candy. It is bitter.",
+          "BLIX is a orange candy. It is salty."
+        ],
+        "facts": [
+          {
+            "color": "yellow",
+            "taste": "bitter"
+          },
+          {
+            "color": "orange",
+            "taste": "salty"
+          }
+        ],
+        "world": 1
+      }
+    ]
+  },
+  {
+    "aliases": [
+      "BLIX",
+      "LORP"
+    ],
+    "changed_field": "color",
+    "domain": "candy",
+    "family": "4f0711148c3d3551",
+    "fields": [
+      "color",
+      "taste"
+    ],
+    "queried_values": [
+      "orange",
+      "bitter"
+    ],
+    "questions": [
+      "Which object has a orange color?",
+      "Which object is bitter?"
+    ],
+    "scene": "bc368d9096f0413905e9",
+    "split": "dev",
+    "template": 0,
+    "worlds": [
+      {
+        "answers": [
+          "LORP",
+          "BLIX"
+        ],
+        "evidence": [
+          "BLIX is a yellow candy. It is bitter.",
+          "LORP is a orange candy. It is salty."
+        ],
+        "facts": [
+          {
+            "color": "yellow",
+            "taste": "bitter"
+          },
+          {
+            "color": "orange",
+            "taste": "salty"
+          }
+        ],
+        "world": 0
+      },
+      {
+        "answers": [
+          "BLIX",
+          "BLIX"
+        ],
+        "evidence": [
+          "BLIX is a orange candy. It is bitter.",
+          "LORP is a yellow candy. It is salty."
+        ],
+        "facts": [
+          {
+            "color": "orange",
+            "taste": "bitter"
+          },
+          {
+            "color": "yellow",
+            "taste": "salty"
+          }
+        ],
+        "world": 1
+      }
+    ]
+  },
+  {
+    "aliases": [
+      "BLIX",
+      "LORP"
+    ],
+    "changed_field": "taste",
+    "domain": "candy",
+    "family": "4f0711148c3d3551",
+    "fields": [
+      "color",
+      "taste"
+    ],
+    "queried_values": [
+      "bitter",
+      "orange"
+    ],
+    "questions": [
+      "Which object is bitter?",
+      "Which object has a orange color?"
+    ],
+    "scene": "6fee0c8098633f4eded9",
+    "split": "dev",
+    "template": 0,
+    "worlds": [
+      {
+        "answers": [
+          "BLIX",
+          "BLIX"
+        ],
+        "evidence": [
+          "BLIX is a orange candy. It is bitter.",
+          "LORP is a yellow candy. It is salty."
+        ],
+        "facts": [
+          {
+            "color": "orange",
+            "taste": "bitter"
+          },
+          {
+            "color": "yellow",
+            "taste": "salty"
+          }
+        ],
+        "world": 0
+      },
+      {
+        "answers": [
+          "LORP",
+          "BLIX"
+        ],
+        "evidence": [
+          "BLIX is a orange candy. It is salty.",
+          "LORP is a yellow candy. It is bitter."
+        ],
+        "facts": [
+          {
+            "color": "orange",
+            "taste": "salty"
+          },
+          {
+            "color": "yellow",
+            "taste": "bitter"
+          }
+        ],
+        "world": 1
+      }
+    ]
+  },
+  {
+    "aliases": [
+      "LORP",
+      "KRUL"
+    ],
+    "changed_field": "taste",
+    "domain": "candy",
+    "family": "4f0711148c3d3551",
+    "fields": [
+      "color",
+      "taste"
+    ],
+    "queried_values": [
+      "bitter",
+      "orange"
+    ],
+    "questions": [
+      "Which object is bitter?",
+      "Which object has a orange color?"
+    ],
+    "scene": "74b0334e8ee913d4b0f0",
+    "split": "dev",
+    "template": 0,
+    "worlds": [
+      {
+        "answers": [
+          "LORP",
+          "KRUL"
+        ],
+        "evidence": [
+          "LORP is a yellow candy. It is bitter.",
+          "KRUL is a orange candy. It is salty."
+        ],
+        "facts": [
+          {
+            "color": "yellow",
+            "taste": "bitter"
+          },
+          {
+            "color": "orange",
+            "taste": "salty"
+          }
+        ],
+        "world": 0
+      },
+      {
+        "answers": [
+          "KRUL",
+          "KRUL"
+        ],
+        "evidence": [
+          "LORP is a yellow candy. It is salty.",
+          "KRUL is a orange candy. It is bitter."
+        ],
+        "facts": [
+          {
+            "color": "yellow",
+            "taste": "salty"
+          },
+          {
+            "color": "orange",
+            "taste": "bitter"
+          }
+        ],
+        "world": 1
+      }
+    ]
+  },
+  {
+    "aliases": [
+      "LORP",
+      "VOTH"
+    ],
+    "changed_field": "color",
+    "domain": "candy",
+    "family": "4f0711148c3d3551",
+    "fields": [
+      "color",
+      "taste"
+    ],
+    "queried_values": [
+      "orange",
+      "bitter"
+    ],
+    "questions": [
+      "Which object has a orange color?",
+      "Which object is bitter?"
+    ],
+    "scene": "62902b691a277868e88f",
+    "split": "dev",
+    "template": 1,
+    "worlds": [
+      {
+        "answers": [
+          "LORP",
+          "VOTH"
+        ],
+        "evidence": [
+          "Private record: LORP has a orange color and is salty. It is a candy.",
+          "Private record: VOTH has a yellow color and is bitter. It is a candy."
+        ],
+        "facts": [
+          {
+            "color": "orange",
+            "taste": "salty"
+          },
+          {
+            "color": "yellow",
+            "taste": "bitter"
+          }
+        ],
+        "world": 0
+      },
+      {
+        "answers": [
+          "VOTH",
+          "VOTH"
+        ],
+        "evidence": [
+          "Private record: LORP has a yellow color and is salty. It is a candy.",
+          "Private record: VOTH has a orange color and is bitter. It is a candy."
+        ],
+        "facts": [
+          {
+            "color": "yellow",
+            "taste": "salty"
+          },
+          {
+            "color": "orange",
+            "taste": "bitter"
+          }
+        ],
+        "world": 1
+      }
+    ]
+  },
+  {
+    "aliases": [
+      "BLIX",
+      "LORP"
+    ],
+    "changed_field": "color",
+    "domain": "candy",
+    "family": "4f0711148c3d3551",
+    "fields": [
+      "color",
+      "taste"
+    ],
+    "queried_values": [
+      "orange",
+      "bitter"
+    ],
+    "questions": [
+      "Which object has a orange color?",
+      "Which object is bitter?"
+    ],
+    "scene": "5a564384ba3609d58c93",
+    "split": "dev",
+    "template": 1,
+    "worlds": [
+      {
+        "answers": [
+          "LORP",
+          "LORP"
+        ],
+        "evidence": [
+          "Private record: BLIX has a yellow color and is salty. It is a candy.",
+          "Private record: LORP has a orange color and is bitter. It is a candy."
+        ],
+        "facts": [
+          {
+            "color": "yellow",
+            "taste": "salty"
+          },
+          {
+            "color": "orange",
+            "taste": "bitter"
+          }
+        ],
+        "world": 0
+      },
+      {
+        "answers": [
+          "BLIX",
+          "LORP"
+        ],
+        "evidence": [
+          "Private record: BLIX has a orange color and is salty. It is a candy.",
+          "Private record: LORP has a yellow color and is bitter. It is a candy."
+        ],
+        "facts": [
+          {
+            "color": "orange",
+            "taste": "salty"
+          },
+          {
+            "color": "yellow",
+            "taste": "bitter"
+          }
+        ],
+        "world": 1
+      }
+    ]
+  },
+  {
+    "aliases": [
+      "FEP",
+      "QUAN"
+    ],
+    "changed_field": "taste",
+    "domain": "candy",
+    "family": "4f0711148c3d3551",
+    "fields": [
+      "color",
+      "taste"
+    ],
+    "queried_values": [
+      "bitter",
+      "orange"
+    ],
+    "questions": [
+      "Which object is bitter?",
+      "Which object has a orange color?"
+    ],
+    "scene": "91743fbf59e3dfec9d4f",
+    "split": "dev",
+    "template": 1,
+    "worlds": [
+      {
+        "answers": [
+          "QUAN",
+          "FEP"
+        ],
+        "evidence": [
+          "Private record: FEP has a orange color and is salty. It is a candy.",
+          "Private record: QUAN has a yellow color and is bitter. It is a candy."
+        ],
+        "facts": [
+          {
+            "color": "orange",
+            "taste": "salty"
+          },
+          {
+            "color": "yellow",
+            "taste": "bitter"
+          }
+        ],
+        "world": 0
+      },
+      {
+        "answers": [
+          "FEP",
+          "FEP"
+        ],
+        "evidence": [
+          "Private record: FEP has a orange color and is bitter. It is a candy.",
+          "Private record: QUAN has a yellow color and is salty. It is a candy."
+        ],
+        "facts": [
+          {
+            "color": "orange",
+            "taste": "bitter"
+          },
+          {
+            "color": "yellow",
+            "taste": "salty"
+          }
+        ],
+        "world": 1
+      }
+    ]
+  },
+  {
+    "aliases": [
+      "KRUL",
+      "VOTH"
+    ],
+    "changed_field": "taste",
+    "domain": "candy",
+    "family": "4f0711148c3d3551",
+    "fields": [
+      "color",
+      "taste"
+    ],
+    "queried_values": [
+      "bitter",
+      "orange"
+    ],
+    "questions": [
+      "Which object is bitter?",
+      "Which object has a orange color?"
+    ],
+    "scene": "489bc2cd947837a397eb",
+    "split": "dev",
+    "template": 1,
+    "worlds": [
+      {
+        "answers": [
+          "VOTH",
+          "VOTH"
+        ],
+        "evidence": [
+          "Private record: KRUL has a yellow color and is salty. It is a candy.",
+          "Private record: VOTH has a orange color and is bitter. It is a candy."
+        ],
+        "facts": [
+          {
+            "color": "yellow",
+            "taste": "salty"
+          },
+          {
+            "color": "orange",
+            "taste": "bitter"
+          }
+        ],
+        "world": 0
+      },
+      {
+        "answers": [
+          "KRUL",
+          "VOTH"
+        ],
+        "evidence": [
+          "Private record: KRUL has a yellow color and is bitter. It is a candy.",
+          "Private record: VOTH has a orange color and is salty. It is a candy."
+        ],
+        "facts": [
+          {
+            "color": "yellow",
+            "taste": "bitter"
+          },
+          {
+            "color": "orange",
+            "taste": "salty"
+          }
+        ],
+        "world": 1
+      }
+    ]
+  },
+  {
+    "aliases": [
+      "VOTH",
+      "FEP"
+    ],
+    "changed_field": "color",
+    "domain": "candy",
+    "family": "5066fbe3774b007a",
+    "fields": [
+      "color",
+      "taste"
+    ],
+    "queried_values": [
+      "red",
+      "bitter"
+    ],
+    "questions": [
+      "Which object has a red color?",
+      "Which object is bitter?"
+    ],
+    "scene": "cc3d261d0ddab515d7a0",
+    "split": "dev",
+    "template": 0,
+    "worlds": [
+      {
+        "answers": [
+          "VOTH",
+          "VOTH"
+        ],
+        "evidence": [
+          "VOTH is a red candy. It is bitter.",
+          "FEP is a yellow candy. It is salty."
+        ],
+        "facts": [
+          {
+            "color": "red",
+            "taste": "bitter"
+          },
+          {
+            "color": "yellow",
+            "taste": "salty"
+          }
+        ],
+        "world": 0
+      },
+      {
+        "answers": [
+          "FEP",
+          "VOTH"
+        ],
+        "evidence": [
+          "VOTH is a yellow candy. It is bitter.",
+          "FEP is a red candy. It is salty."
+        ],
+        "facts": [
+          {
+            "color": "yellow",
+            "taste": "bitter"
+          },
+          {
+            "color": "red",
+            "taste": "salty"
+          }
+        ],
+        "world": 1
+      }
+    ]
+  },
+  {
+    "aliases": [
+      "LORP",
+      "QUAN"
+    ],
+    "changed_field": "color",
+    "domain": "candy",
+    "family": "5066fbe3774b007a",
+    "fields": [
+      "color",
+      "taste"
+    ],
+    "queried_values": [
+      "red",
+      "bitter"
+    ],
+    "questions": [
+      "Which object has a red color?",
+      "Which object is bitter?"
+    ],
+    "scene": "1b7068b2afc06ea43cb4",
+    "split": "dev",
+    "template": 0,
+    "worlds": [
+      {
+        "answers": [
+          "QUAN",
+          "LORP"
+        ],
+        "evidence": [
+          "LORP is a yellow candy. It is bitter.",
+          "QUAN is a red candy. It is salty."
+        ],
+        "facts": [
+          {
+            "color": "yellow",
+            "taste": "bitter"
+          },
+          {
+            "color": "red",
+            "taste": "salty"
+          }
+        ],
+        "world": 0
+      },
+      {
+        "answers": [
+          "LORP",
+          "LORP"
+        ],
+        "evidence": [
+          "LORP is a red candy. It is bitter.",
+          "QUAN is a yellow candy. It is salty."
+        ],
+        "facts": [
+          {
+            "color": "red",
+            "taste": "bitter"
+          },
+          {
+            "color": "yellow",
+            "taste": "salty"
+          }
+        ],
+        "world": 1
+      }
+    ]
+  },
+  {
+    "aliases": [
+      "ZANE",
+      "VOTH"
+    ],
+    "changed_field": "taste",
+    "domain": "candy",
+    "family": "5066fbe3774b007a",
+    "fields": [
+      "color",
+      "taste"
+    ],
+    "queried_values": [
+      "bitter",
+      "red"
+    ],
+    "questions": [
+      "Which object is bitter?",
+      "Which object has a red color?"
+    ],
+    "scene": "b21af231c7e6158be548",
+    "split": "dev",
+    "template": 0,
+    "worlds": [
+      {
+        "answers": [
+          "ZANE",
+          "ZANE"
+        ],
+        "evidence": [
+          "ZANE is a red candy. It is bitter.",
+          "VOTH is a yellow candy. It is salty."
+        ],
+        "facts": [
+          {
+            "color": "red",
+            "taste": "bitter"
+          },
+          {
+            "color": "yellow",
+            "taste": "salty"
+          }
+        ],
+        "world": 0
+      },
+      {
+        "answers": [
+          "VOTH",
+          "ZANE"
+        ],
+        "evidence": [
+          "ZANE is a red candy. It is salty.",
+          "VOTH is a yellow candy. It is bitter."
+        ],
+        "facts": [
+          {
+            "color": "red",
+            "taste": "salty"
+          },
+          {
+            "color": "yellow",
+            "taste": "bitter"
+          }
+        ],
+        "world": 1
+      }
+    ]
+  },
+  {
+    "aliases": [
+      "KRUL",
+      "MIV"
+    ],
+    "changed_field": "taste",
+    "domain": "candy",
+    "family": "5066fbe3774b007a",
+    "fields": [
+      "color",
+      "taste"
+    ],
+    "queried_values": [
+      "bitter",
+      "red"
+    ],
+    "questions": [
+      "Which object is bitter?",
+      "Which object has a red color?"
+    ],
+    "scene": "3b3b74b9758f4a61135d",
+    "split": "dev",
+    "template": 0,
+    "worlds": [
+      {
+        "answers": [
+          "KRUL",
+          "MIV"
+        ],
+        "evidence": [
+          "KRUL is a yellow candy. It is bitter.",
+          "MIV is a red candy. It is salty."
+        ],
+        "facts": [
+          {
+            "color": "yellow",
+            "taste": "bitter"
+          },
+          {
+            "color": "red",
+            "taste": "salty"
+          }
+        ],
+        "world": 0
+      },
+      {
+        "answers": [
+          "MIV",
+          "MIV"
+        ],
+        "evidence": [
+          "KRUL is a yellow candy. It is salty.",
+          "MIV is a red candy. It is bitter."
+        ],
+        "facts": [
+          {
+            "color": "yellow",
+            "taste": "salty"
+          },
+          {
+            "color": "red",
+            "taste": "bitter"
+          }
+        ],
+        "world": 1
+      }
+    ]
+  },
+  {
+    "aliases": [
+      "KRUL",
+      "QUAN"
+    ],
+    "changed_field": "color",
+    "domain": "candy",
+    "family": "5066fbe3774b007a",
+    "fields": [
+      "color",
+      "taste"
+    ],
+    "queried_values": [
+      "red",
+      "bitter"
+    ],
+    "questions": [
+      "Which object has a red color?",
+      "Which object is bitter?"
+    ],
+    "scene": "4ab32303f21c63e8e9c4",
+    "split": "dev",
+    "template": 1,
+    "worlds": [
+      {
+        "answers": [
+          "KRUL",
+          "QUAN"
+        ],
+        "evidence": [
+          "Private record: KRUL has a red color and is salty. It is a candy.",
+          "Private record: QUAN has a yellow color and is bitter. It is a candy."
+        ],
+        "facts": [
+          {
+            "color": "red",
+            "taste": "salty"
+          },
+          {
+            "color": "yellow",
+            "taste": "bitter"
+          }
+        ],
+        "world": 0
+      },
+      {
+        "answers": [
+          "QUAN",
+          "QUAN"
+        ],
+        "evidence": [
+          "Private record: KRUL has a yellow color and is salty. It is a candy.",
+          "Private record: QUAN has a red color and is bitter. It is a candy."
+        ],
+        "facts": [
+          {
+            "color": "yellow",
+            "taste": "salty"
+          },
+          {
+            "color": "red",
+            "taste": "bitter"
+          }
+        ],
+        "world": 1
+      }
+    ]
+  },
+  {
+    "aliases": [
+      "LORP",
+      "BLIX"
+    ],
+    "changed_field": "color",
+    "domain": "candy",
+    "family": "5066fbe3774b007a",
+    "fields": [
+      "color",
+      "taste"
+    ],
+    "queried_values": [
+      "red",
+      "bitter"
+    ],
+    "questions": [
+      "Which object has a red color?",
+      "Which object is bitter?"
+    ],
+    "scene": "a828af2ff9e4318e5fcb",
+    "split": "dev",
+    "template": 1,
+    "worlds": [
+      {
+        "answers": [
+          "BLIX",
+          "BLIX"
+        ],
+        "evidence": [
+          "Private record: LORP has a yellow color and is salty. It is a candy.",
+          "Private record: BLIX has a red color and is bitter. It is a candy."
+        ],
+        "facts": [
+          {
+            "color": "yellow",
+            "taste": "salty"
+          },
+          {
+            "color": "red",
+            "taste": "bitter"
+          }
+        ],
+        "world": 0
+      },
+      {
+        "answers": [
+          "LORP",
+          "BLIX"
+        ],
+        "evidence": [
+          "Private record: LORP has a red color and is salty. It is a candy.",
+          "Private record: BLIX has a yellow color and is bitter. It is a candy."
+        ],
+        "facts": [
+          {
+            "color": "red",
+            "taste": "salty"
+          },
+          {
+            "color": "yellow",
+            "taste": "bitter"
+          }
+        ],
+        "world": 1
+      }
+    ]
+  },
+  {
+    "aliases": [
+      "FEP",
+      "VOTH"
+    ],
+    "changed_field": "taste",
+    "domain": "candy",
+    "family": "5066fbe3774b007a",
+    "fields": [
+      "color",
+      "taste"
+    ],
+    "queried_values": [
+      "bitter",
+      "red"
+    ],
+    "questions": [
+      "Which object is bitter?",
+      "Which object has a red color?"
+    ],
+    "scene": "39f41c077ee87d8d73f7",
+    "split": "dev",
+    "template": 1,
+    "worlds": [
+      {
+        "answers": [
+          "VOTH",
+          "FEP"
+        ],
+        "evidence": [
+          "Private record: FEP has a red color and is salty. It is a candy.",
+          "Private record: VOTH has a yellow color and is bitter. It is a candy."
+        ],
+        "facts": [
+          {
+            "color": "red",
+            "taste": "salty"
+          },
+          {
+            "color": "yellow",
+            "taste": "bitter"
+          }
+        ],
+        "world": 0
+      },
+      {
+        "answers": [
+          "FEP",
+          "FEP"
+        ],
+        "evidence": [
+          "Private record: FEP has a red color and is bitter. It is a candy.",
+          "Private record: VOTH has a yellow color and is salty. It is a candy."
+        ],
+        "facts": [
+          {
+            "color": "red",
+            "taste": "bitter"
+          },
+          {
+            "color": "yellow",
+            "taste": "salty"
+          }
+        ],
+        "world": 1
+      }
+    ]
+  },
+  {
+    "aliases": [
+      "VOTH",
+      "BLIX"
+    ],
+    "changed_field": "taste",
+    "domain": "candy",
+    "family": "5066fbe3774b007a",
+    "fields": [
+      "color",
+      "taste"
+    ],
+    "queried_values": [
+      "bitter",
+      "red"
+    ],
+    "questions": [
+      "Which object is bitter?",
+      "Which object has a red color?"
+    ],
+    "scene": "fdb5f00dd8b7c514018d",
+    "split": "dev",
+    "template": 1,
+    "worlds": [
+      {
+        "answers": [
+          "BLIX",
+          "BLIX"
+        ],
+        "evidence": [
+          "Private record: VOTH has a yellow color and is salty. It is a candy.",
+          "Private record: BLIX has a red color and is bitter. It is a candy."
+        ],
+        "facts": [
+          {
+            "color": "yellow",
+            "taste": "salty"
+          },
+          {
+            "color": "red",
+            "taste": "bitter"
+          }
+        ],
+        "world": 0
+      },
+      {
+        "answers": [
+          "VOTH",
+          "BLIX"
+        ],
+        "evidence": [
+          "Private record: VOTH has a yellow color and is bitter. It is a candy.",
+          "Private record: BLIX has a red color and is salty. It is a candy."
+        ],
+        "facts": [
+          {
+            "color": "yellow",
+            "taste": "bitter"
+          },
+          {
+            "color": "red",
+            "taste": "salty"
+          }
+        ],
+        "world": 1
+      }
+    ]
+  },
+  {
+    "aliases": [
+      "FEP",
+      "VOTH"
+    ],
+    "changed_field": "color",
+    "domain": "candy",
+    "family": "5bd398c788c4799b",
+    "fields": [
+      "color",
+      "taste"
+    ],
+    "queried_values": [
+      "green",
+      "salty"
+    ],
+    "questions": [
+      "Which object has a green color?",
+      "Which object is salty?"
+    ],
+    "scene": "95fc88483d164778870c",
+    "split": "dev",
+    "template": 0,
+    "worlds": [
+      {
+        "answers": [
+          "FEP",
+          "FEP"
+        ],
+        "evidence": [
+          "FEP is a green candy. It is salty.",
+          "VOTH is a orange candy. It is sour."
+        ],
+        "facts": [
+          {
+            "color": "green",
+            "taste": "salty"
+          },
+          {
+            "color": "orange",
+            "taste": "sour"
+          }
+        ],
+        "world": 0
+      },
+      {
+        "answers": [
+          "VOTH",
+          "FEP"
+        ],
+        "evidence": [
+          "FEP is a orange candy. It is salty.",
+          "VOTH is a green candy. It is sour."
+        ],
+        "facts": [
+          {
+            "color": "orange",
+            "taste": "salty"
+          },
+          {
+            "color": "green",
+            "taste": "sour"
+          }
+        ],
+        "world": 1
+      }
+    ]
+  },
+  {
+    "aliases": [
+      "KRUL",
+      "QUAN"
+    ],
+    "changed_field": "color",
+    "domain": "candy",
+    "family": "5bd398c788c4799b",
+    "fields": [
+      "color",
+      "taste"
+    ],
+    "queried_values": [
+      "green",
+      "salty"
+    ],
+    "questions": [
+      "Which object has a green color?",
+      "Which object is salty?"
+    ],
+    "scene": "fa232b76830947842263",
+    "split": "dev",
+    "template": 0,
+    "worlds": [
+      {
+        "answers": [
+          "QUAN",
+          "KRUL"
+        ],
+        "evidence": [
+          "KRUL is a orange candy. It is salty.",
+          "QUAN is a green candy. It is sour."
+        ],
+        "facts": [
+          {
+            "color": "orange",
+            "taste": "salty"
+          },
+          {
+            "color": "green",
+            "taste": "sour"
+          }
+        ],
+        "world": 0
+      },
+      {
+        "answers": [
+          "KRUL",
+          "KRUL"
+        ],
+        "evidence": [
+          "KRUL is a green candy. It is salty.",
+          "QUAN is a orange candy. It is sour."
+        ],
+        "facts": [
+          {
+            "color": "green",
+            "taste": "salty"
+          },
+          {
+            "color": "orange",
+            "taste": "sour"
+          }
+        ],
+        "world": 1
+      }
+    ]
+  },
+  {
+    "aliases": [
+      "LORP",
+      "BLIX"
+    ],
+    "changed_field": "taste",
+    "domain": "candy",
+    "family": "5bd398c788c4799b",
+    "fields": [
+      "color",
+      "taste"
+    ],
+    "queried_values": [
+      "salty",
+      "green"
+    ],
+    "questions": [
+      "Which object is salty?",
+      "Which object has a green color?"
+    ],
+    "scene": "2620f6a9a54be1109515",
+    "split": "dev",
+    "template": 0,
+    "worlds": [
+      {
+        "answers": [
+          "LORP",
+          "LORP"
+        ],
+        "evidence": [
+          "LORP is a green candy. It is salty.",
+          "BLIX is a orange candy. It is sour."
+        ],
+        "facts": [
+          {
+            "color": "green",
+            "taste": "salty"
+          },
+          {
+            "color": "orange",
+            "taste": "sour"
+          }
+        ],
+        "world": 0
+      },
+      {
+        "answers": [
+          "BLIX",
+          "LORP"
+        ],
+        "evidence": [
+          "LORP is a green candy. It is sour.",
+          "BLIX is a orange candy. It is salty."
+        ],
+        "facts": [
+          {
+            "color": "green",
+            "taste": "sour"
+          },
+          {
+            "color": "orange",
+            "taste": "salty"
+          }
+        ],
+        "world": 1
+      }
+    ]
+  },
+  {
+    "aliases": [
+      "ZANE",
+      "BLIX"
+    ],
+    "changed_field": "taste",
+    "domain": "candy",
+    "family": "5bd398c788c4799b",
+    "fields": [
+      "color",
+      "taste"
+    ],
+    "queried_values": [
+      "salty",
+      "green"
+    ],
+    "questions": [
+      "Which object is salty?",
+      "Which object has a green color?"
+    ],
+    "scene": "ecf24340c18de882cb6d",
+    "split": "dev",
+    "template": 0,
+    "worlds": [
+      {
+        "answers": [
+          "ZANE",
+          "BLIX"
+        ],
+        "evidence": [
+          "ZANE is a orange candy. It is salty.",
+          "BLIX is a green candy. It is sour."
+        ],
+        "facts": [
+          {
+            "color": "orange",
+            "taste": "salty"
+          },
+          {
+            "color": "green",
+            "taste": "sour"
+          }
+        ],
+        "world": 0
+      },
+      {
+        "answers": [
+          "BLIX",
+          "BLIX"
+        ],
+        "evidence": [
+          "ZANE is a orange candy. It is sour.",
+          "BLIX is a green candy. It is salty."
+        ],
+        "facts": [
+          {
+            "color": "orange",
+            "taste": "sour"
+          },
+          {
+            "color": "green",
+            "taste": "salty"
+          }
+        ],
+        "world": 1
+      }
+    ]
+  },
+  {
+    "aliases": [
+      "VOTH",
+      "QUAN"
+    ],
+    "changed_field": "color",
+    "domain": "candy",
+    "family": "5bd398c788c4799b",
+    "fields": [
+      "color",
+      "taste"
+    ],
+    "queried_values": [
+      "green",
+      "salty"
+    ],
+    "questions": [
+      "Which object has a green color?",
+      "Which object is salty?"
+    ],
+    "scene": "0a4de5d462c46a12dd3d",
+    "split": "dev",
+    "template": 1,
+    "worlds": [
+      {
+        "answers": [
+          "VOTH",
+          "QUAN"
+        ],
+        "evidence": [
+          "Private record: VOTH has a green color and is sour. It is a candy.",
+          "Private record: QUAN has a orange color and is salty. It is a candy."
+        ],
+        "facts": [
+          {
+            "color": "green",
+            "taste": "sour"
+          },
+          {
+            "color": "orange",
+            "taste": "salty"
+          }
+        ],
+        "world": 0
+      },
+      {
+        "answers": [
+          "QUAN",
+          "QUAN"
+        ],
+        "evidence": [
+          "Private record: VOTH has a orange color and is sour. It is a candy.",
+          "Private record: QUAN has a green color and is salty. It is a candy."
+        ],
+        "facts": [
+          {
+            "color": "orange",
+            "taste": "sour"
+          },
+          {
+            "color": "green",
+            "taste": "salty"
+          }
+        ],
+        "world": 1
+      }
+    ]
+  },
+  {
+    "aliases": [
+      "LORP",
+      "QUAN"
+    ],
+    "changed_field": "color",
+    "domain": "candy",
+    "family": "5bd398c788c4799b",
+    "fields": [
+      "color",
+      "taste"
+    ],
+    "queried_values": [
+      "green",
+      "salty"
+    ],
+    "questions": [
+      "Which object has a green color?",
+      "Which object is salty?"
+    ],
+    "scene": "7bf0aea43e2ef9764369",
+    "split": "dev",
+    "template": 1,
+    "worlds": [
+      {
+        "answers": [
+          "QUAN",
+          "QUAN"
+        ],
+        "evidence": [
+          "Private record: LORP has a orange color and is sour. It is a candy.",
+          "Private record: QUAN has a green color and is salty. It is a candy."
+        ],
+        "facts": [
+          {
+            "color": "orange",
+            "taste": "sour"
+          },
+          {
+            "color": "green",
+            "taste": "salty"
+          }
+        ],
+        "world": 0
+      },
+      {
+        "answers": [
+          "LORP",
+          "QUAN"
+        ],
+        "evidence": [
+          "Private record: LORP has a green color and is sour. It is a candy.",
+          "Private record: QUAN has a orange color and is salty. It is a candy."
+        ],
+        "facts": [
+          {
+            "color": "green",
+            "taste": "sour"
+          },
+          {
+            "color": "orange",
+            "taste": "salty"
+          }
+        ],
+        "world": 1
+      }
+    ]
+  },
+  {
+    "aliases": [
+      "FEP",
+      "BLIX"
+    ],
+    "changed_field": "taste",
+    "domain": "candy",
+    "family": "5bd398c788c4799b",
+    "fields": [
+      "color",
+      "taste"
+    ],
+    "queried_values": [
+      "salty",
+      "green"
+    ],
+    "questions": [
+      "Which object is salty?",
+      "Which object has a green color?"
+    ],
+    "scene": "8d34df988f48b8783a6e",
+    "split": "dev",
+    "template": 1,
+    "worlds": [
+      {
+        "answers": [
+          "BLIX",
+          "FEP"
+        ],
+        "evidence": [
+          "Private record: FEP has a green color and is sour. It is a candy.",
+          "Private record: BLIX has a orange color and is salty. It is a candy."
+        ],
+        "facts": [
+          {
+            "color": "green",
+            "taste": "sour"
+          },
+          {
+            "color": "orange",
+            "taste": "salty"
+          }
+        ],
+        "world": 0
+      },
+      {
+        "answers": [
+          "FEP",
+          "FEP"
+        ],
+        "evidence": [
+          "Private record: FEP has a green color and is salty. It is a candy.",
+          "Private record: BLIX has a orange color and is sour. It is a candy."
+        ],
+        "facts": [
+          {
+            "color": "green",
+            "taste": "salty"
+          },
+          {
+            "color": "orange",
+            "taste": "sour"
+          }
+        ],
+        "world": 1
+      }
+    ]
+  },
+  {
+    "aliases": [
+      "KRUL",
+      "BLIX"
+    ],
+    "changed_field": "taste",
+    "domain": "candy",
+    "family": "5bd398c788c4799b",
+    "fields": [
+      "color",
+      "taste"
+    ],
+    "queried_values": [
+      "salty",
+      "green"
+    ],
+    "questions": [
+      "Which object is salty?",
+      "Which object has a green color?"
+    ],
+    "scene": "de9bab19edd7695e7c81",
+    "split": "dev",
+    "template": 1,
+    "worlds": [
+      {
+        "answers": [
+          "BLIX",
+          "BLIX"
+        ],
+        "evidence": [
+          "Private record: KRUL has a orange color and is sour. It is a candy.",
+          "Private record: BLIX has a green color and is salty. It is a candy."
+        ],
+        "facts": [
+          {
+            "color": "orange",
+            "taste": "sour"
+          },
+          {
+            "color": "green",
+            "taste": "salty"
+          }
+        ],
+        "world": 0
+      },
+      {
+        "answers": [
+          "KRUL",
+          "BLIX"
+        ],
+        "evidence": [
+          "Private record: KRUL has a orange color and is salty. It is a candy.",
+          "Private record: BLIX has a green color and is sour. It is a candy."
+        ],
+        "facts": [
+          {
+            "color": "orange",
+            "taste": "salty"
+          },
+          {
+            "color": "green",
+            "taste": "sour"
+          }
+        ],
+        "world": 1
+      }
+    ]
+  },
+  {
+    "aliases": [
+      "QUAN",
+      "MIV"
+    ],
+    "changed_field": "color",
+    "domain": "candy",
+    "family": "7f605fe459814032",
+    "fields": [
+      "color",
+      "taste"
+    ],
+    "queried_values": [
+      "green",
+      "bitter"
+    ],
+    "questions": [
+      "Which object has a green color?",
+      "Which object is bitter?"
+    ],
+    "scene": "77a7855cd3c64b11e1b6",
+    "split": "dev",
+    "template": 0,
+    "worlds": [
+      {
+        "answers": [
+          "QUAN",
+          "QUAN"
+        ],
+        "evidence": [
+          "QUAN is a green candy. It is bitter.",
+          "MIV is a red candy. It is sour."
+        ],
+        "facts": [
+          {
+            "color": "green",
+            "taste": "bitter"
+          },
+          {
+            "color": "red",
+            "taste": "sour"
+          }
+        ],
+        "world": 0
+      },
+      {
+        "answers": [
+          "MIV",
+          "QUAN"
+        ],
+        "evidence": [
+          "QUAN is a red candy. It is bitter.",
+          "MIV is a green candy. It is sour."
+        ],
+        "facts": [
+          {
+            "color": "red",
+            "taste": "bitter"
+          },
+          {
+            "color": "green",
+            "taste": "sour"
+          }
+        ],
+        "world": 1
+      }
+    ]
+  },
+  {
+    "aliases": [
+      "VOTH",
+      "QUAN"
+    ],
+    "changed_field": "color",
+    "domain": "candy",
+    "family": "7f605fe459814032",
+    "fields": [
+      "color",
+      "taste"
+    ],
+    "queried_values": [
+      "green",
+      "bitter"
+    ],
+    "questions": [
+      "Which object has a green color?",
+      "Which object is bitter?"
+    ],
+    "scene": "c0ed76ec8f9c53ef800c",
+    "split": "dev",
+    "template": 0,
+    "worlds": [
+      {
+        "answers": [
+          "QUAN",
+          "VOTH"
+        ],
+        "evidence": [
+          "VOTH is a red candy. It is bitter.",
+          "QUAN is a green candy. It is sour."
+        ],
+        "facts": [
+          {
+            "color": "red",
+            "taste": "bitter"
+          },
+          {
+            "color": "green",
+            "taste": "sour"
+          }
+        ],
+        "world": 0
+      },
+      {
+        "answers": [
+          "VOTH",
+          "VOTH"
+        ],
+        "evidence": [
+          "VOTH is a green candy. It is bitter.",
+          "QUAN is a red candy. It is sour."
+        ],
+        "facts": [
+          {
+            "color": "green",
+            "taste": "bitter"
+          },
+          {
+            "color": "red",
+            "taste": "sour"
+          }
+        ],
+        "world": 1
+      }
+    ]
+  },
+  {
+    "aliases": [
+      "BLIX",
+      "ZANE"
+    ],
+    "changed_field": "taste",
+    "domain": "candy",
+    "family": "7f605fe459814032",
+    "fields": [
+      "color",
+      "taste"
+    ],
+    "queried_values": [
+      "bitter",
+      "green"
+    ],
+    "questions": [
+      "Which object is bitter?",
+      "Which object has a green color?"
+    ],
+    "scene": "49463b28e4050a980be8",
+    "split": "dev",
+    "template": 0,
+    "worlds": [
+      {
+        "answers": [
+          "BLIX",
+          "BLIX"
+        ],
+        "evidence": [
+          "BLIX is a green candy. It is bitter.",
+          "ZANE is a red candy. It is sour."
+        ],
+        "facts": [
+          {
+            "color": "green",
+            "taste": "bitter"
+          },
+          {
+            "color": "red",
+            "taste": "sour"
+          }
+        ],
+        "world": 0
+      },
+      {
+        "answers": [
+          "ZANE",
+          "BLIX"
+        ],
+        "evidence": [
+          "BLIX is a green candy. It is sour.",
+          "ZANE is a red candy. It is bitter."
+        ],
+        "facts": [
+          {
+            "color": "green",
+            "taste": "sour"
+          },
+          {
+            "color": "red",
+            "taste": "bitter"
+          }
+        ],
+        "world": 1
+      }
+    ]
+  },
+  {
+    "aliases": [
+      "FEP",
+      "ZANE"
+    ],
+    "changed_field": "taste",
+    "domain": "candy",
+    "family": "7f605fe459814032",
+    "fields": [
+      "color",
+      "taste"
+    ],
+    "queried_values": [
+      "bitter",
+      "green"
+    ],
+    "questions": [
+      "Which object is bitter?",
+      "Which object has a green color?"
+    ],
+    "scene": "b2dc64892ad7e1e97469",
+    "split": "dev",
+    "template": 0,
+    "worlds": [
+      {
+        "answers": [
+          "FEP",
+          "ZANE"
+        ],
+        "evidence": [
+          "FEP is a red candy. It is bitter.",
+          "ZANE is a green candy. It is sour."
+        ],
+        "facts": [
+          {
+            "color": "red",
+            "taste": "bitter"
+          },
+          {
+            "color": "green",
+            "taste": "sour"
+          }
+        ],
+        "world": 0
+      },
+      {
+        "answers": [
+          "ZANE",
+          "ZANE"
+        ],
+        "evidence": [
+          "FEP is a red candy. It is sour.",
+          "ZANE is a green candy. It is bitter."
+        ],
+        "facts": [
+          {
+            "color": "red",
+            "taste": "sour"
+          },
+          {
+            "color": "green",
+            "taste": "bitter"
+          }
+        ],
+        "world": 1
+      }
+    ]
+  },
+  {
+    "aliases": [
+      "LORP",
+      "ZANE"
+    ],
+    "changed_field": "color",
+    "domain": "candy",
+    "family": "7f605fe459814032",
+    "fields": [
+      "color",
+      "taste"
+    ],
+    "queried_values": [
+      "green",
+      "bitter"
+    ],
+    "questions": [
+      "Which object has a green color?",
+      "Which object is bitter?"
+    ],
+    "scene": "d42022dee92e38e6cf6a",
+    "split": "dev",
+    "template": 1,
+    "worlds": [
+      {
+        "answers": [
+          "LORP",
+          "ZANE"
+        ],
+        "evidence": [
+          "Private record: LORP has a green color and is sour. It is a candy.",
+          "Private record: ZANE has a red color and is bitter. It is a candy."
+        ],
+        "facts": [
+          {
+            "color": "green",
+            "taste": "sour"
+          },
+          {
+            "color": "red",
+            "taste": "bitter"
+          }
+        ],
+        "world": 0
+      },
+      {
+        "answers": [
+          "ZANE",
+          "ZANE"
+        ],
+        "evidence": [
+          "Private record: LORP has a red color and is sour. It is a candy.",
+          "Private record: ZANE has a green color and is bitter. It is a candy."
+        ],
+        "facts": [
+          {
+            "color": "red",
+            "taste": "sour"
+          },
+          {
+            "color": "green",
+            "taste": "bitter"
+          }
+        ],
+        "world": 1
+      }
+    ]
+  },
+  {
+    "aliases": [
+      "BLIX",
+      "VOTH"
+    ],
+    "changed_field": "color",
+    "domain": "candy",
+    "family": "7f605fe459814032",
+    "fields": [
+      "color",
+      "taste"
+    ],
+    "queried_values": [
+      "green",
+      "bitter"
+    ],
+    "questions": [
+      "Which object has a green color?",
+      "Which object is bitter?"
+    ],
+    "scene": "b026eaa9736af6bb62ab",
+    "split": "dev",
+    "template": 1,
+    "worlds": [
+      {
+        "answers": [
+          "VOTH",
+          "VOTH"
+        ],
+        "evidence": [
+          "Private record: BLIX has a red color and is sour. It is a candy.",
+          "Private record: VOTH has a green color and is bitter. It is a candy."
+        ],
+        "facts": [
+          {
+            "color": "red",
+            "taste": "sour"
+          },
+          {
+            "color": "green",
+            "taste": "bitter"
+          }
+        ],
+        "world": 0
+      },
+      {
+        "answers": [
+          "BLIX",
+          "VOTH"
+        ],
+        "evidence": [
+          "Private record: BLIX has a green color and is sour. It is a candy.",
+          "Private record: VOTH has a red color and is bitter. It is a candy."
+        ],
+        "facts": [
+          {
+            "color": "green",
+            "taste": "sour"
+          },
+          {
+            "color": "red",
+            "taste": "bitter"
+          }
+        ],
+        "world": 1
+      }
+    ]
+  },
+  {
+    "aliases": [
+      "QUAN",
+      "VOTH"
+    ],
+    "changed_field": "taste",
+    "domain": "candy",
+    "family": "7f605fe459814032",
+    "fields": [
+      "color",
+      "taste"
+    ],
+    "queried_values": [
+      "bitter",
+      "green"
+    ],
+    "questions": [
+      "Which object is bitter?",
+      "Which object has a green color?"
+    ],
+    "scene": "d06fcc08760efb56eab0",
+    "split": "dev",
+    "template": 1,
+    "worlds": [
+      {
+        "answers": [
+          "VOTH",
+          "QUAN"
+        ],
+        "evidence": [
+          "Private record: QUAN has a green color and is sour. It is a candy.",
+          "Private record: VOTH has a red color and is bitter. It is a candy."
+        ],
+        "facts": [
+          {
+            "color": "green",
+            "taste": "sour"
+          },
+          {
+            "color": "red",
+            "taste": "bitter"
+          }
+        ],
+        "world": 0
+      },
+      {
+        "answers": [
+          "QUAN",
+          "QUAN"
+        ],
+        "evidence": [
+          "Private record: QUAN has a green color and is bitter. It is a candy.",
+          "Private record: VOTH has a red color and is sour. It is a candy."
+        ],
+        "facts": [
+          {
+            "color": "green",
+            "taste": "bitter"
+          },
+          {
+            "color": "red",
+            "taste": "sour"
+          }
+        ],
+        "world": 1
+      }
+    ]
+  },
+  {
+    "aliases": [
+      "VOTH",
+      "FEP"
+    ],
+    "changed_field": "taste",
+    "domain": "candy",
+    "family": "7f605fe459814032",
+    "fields": [
+      "color",
+      "taste"
+    ],
+    "queried_values": [
+      "bitter",
+      "green"
+    ],
+    "questions": [
+      "Which object is bitter?",
+      "Which object has a green color?"
+    ],
+    "scene": "3ee514d55dba4cf842a1",
+    "split": "dev",
+    "template": 1,
+    "worlds": [
+      {
+        "answers": [
+          "FEP",
+          "FEP"
+        ],
+        "evidence": [
+          "Private record: VOTH has a red color and is sour. It is a candy.",
+          "Private record: FEP has a green color and is bitter. It is a candy."
+        ],
+        "facts": [
+          {
+            "color": "red",
+            "taste": "sour"
+          },
+          {
+            "color": "green",
+            "taste": "bitter"
+          }
+        ],
+        "world": 0
+      },
+      {
+        "answers": [
+          "VOTH",
+          "FEP"
+        ],
+        "evidence": [
+          "Private record: VOTH has a red color and is bitter. It is a candy.",
+          "Private record: FEP has a green color and is sour. It is a candy."
+        ],
+        "facts": [
+          {
+            "color": "red",
+            "taste": "bitter"
+          },
+          {
+            "color": "green",
+            "taste": "sour"
+          }
+        ],
+        "world": 1
+      }
+    ]
+  },
+  {
+    "aliases": [
+      "MIV",
+      "FEP"
+    ],
+    "changed_field": "color",
+    "domain": "candy",
+    "family": "b148d16f48686307",
+    "fields": [
+      "color",
+      "taste"
+    ],
+    "queried_values": [
+      "red",
+      "bitter"
+    ],
+    "questions": [
+      "Which object has a red color?",
+      "Which object is bitter?"
+    ],
+    "scene": "11f922bc798457b90968",
+    "split": "dev",
+    "template": 0,
+    "worlds": [
+      {
+        "answers": [
+          "MIV",
+          "MIV"
+        ],
+        "evidence": [
+          "MIV is a red candy. It is bitter.",
+          "FEP is a yellow candy. It is sour."
+        ],
+        "facts": [
+          {
+            "color": "red",
+            "taste": "bitter"
+          },
+          {
+            "color": "yellow",
+            "taste": "sour"
+          }
+        ],
+        "world": 0
+      },
+      {
+        "answers": [
+          "FEP",
+          "MIV"
+        ],
+        "evidence": [
+          "MIV is a yellow candy. It is bitter.",
+          "FEP is a red candy. It is sour."
+        ],
+        "facts": [
+          {
+            "color": "yellow",
+            "taste": "bitter"
+          },
+          {
+            "color": "red",
+            "taste": "sour"
+          }
+        ],
+        "world": 1
+      }
+    ]
+  },
+  {
+    "aliases": [
+      "KRUL",
+      "LORP"
+    ],
+    "changed_field": "color",
+    "domain": "candy",
+    "family": "b148d16f48686307",
+    "fields": [
+      "color",
+      "taste"
+    ],
+    "queried_values": [
+      "red",
+      "bitter"
+    ],
+    "questions": [
+      "Which object has a red color?",
+      "Which object is bitter?"
+    ],
+    "scene": "1a5b037dafc4dcba9f93",
+    "split": "dev",
+    "template": 0,
+    "worlds": [
+      {
+        "answers": [
+          "LORP",
+          "KRUL"
+        ],
+        "evidence": [
+          "KRUL is a yellow candy. It is bitter.",
+          "LORP is a red candy. It is sour."
+        ],
+        "facts": [
+          {
+            "color": "yellow",
+            "taste": "bitter"
+          },
+          {
+            "color": "red",
+            "taste": "sour"
+          }
+        ],
+        "world": 0
+      },
+      {
+        "answers": [
+          "KRUL",
+          "KRUL"
+        ],
+        "evidence": [
+          "KRUL is a red candy. It is bitter.",
+          "LORP is a yellow candy. It is sour."
+        ],
+        "facts": [
+          {
+            "color": "red",
+            "taste": "bitter"
+          },
+          {
+            "color": "yellow",
+            "taste": "sour"
+          }
+        ],
+        "world": 1
+      }
+    ]
+  },
+  {
+    "aliases": [
+      "LORP",
+      "FEP"
+    ],
+    "changed_field": "taste",
+    "domain": "candy",
+    "family": "b148d16f48686307",
+    "fields": [
+      "color",
+      "taste"
+    ],
+    "queried_values": [
+      "bitter",
+      "red"
+    ],
+    "questions": [
+      "Which object is bitter?",
+      "Which object has a red color?"
+    ],
+    "scene": "60b8940d51636d2c9a1f",
+    "split": "dev",
+    "template": 0,
+    "worlds": [
+      {
+        "answers": [
+          "LORP",
+          "LORP"
+        ],
+        "evidence": [
+          "LORP is a red candy. It is bitter.",
+          "FEP is a yellow candy. It is sour."
+        ],
+        "facts": [
+          {
+            "color": "red",
+            "taste": "bitter"
+          },
+          {
+            "color": "yellow",
+            "taste": "sour"
+          }
+        ],
+        "world": 0
+      },
+      {
+        "answers": [
+          "FEP",
+          "LORP"
+        ],
+        "evidence": [
+          "LORP is a red candy. It is sour.",
+          "FEP is a yellow candy. It is bitter."
+        ],
+        "facts": [
+          {
+            "color": "red",
+            "taste": "sour"
+          },
+          {
+            "color": "yellow",
+            "taste": "bitter"
+          }
+        ],
+        "world": 1
+      }
+    ]
+  },
+  {
+    "aliases": [
+      "FEP",
+      "KRUL"
+    ],
+    "changed_field": "taste",
+    "domain": "candy",
+    "family": "b148d16f48686307",
+    "fields": [
+      "color",
+      "taste"
+    ],
+    "queried_values": [
+      "bitter",
+      "red"
+    ],
+    "questions": [
+      "Which object is bitter?",
+      "Which object has a red color?"
+    ],
+    "scene": "5614552c5329c4ae9117",
+    "split": "dev",
+    "template": 0,
+    "worlds": [
+      {
+        "answers": [
+          "FEP",
+          "KRUL"
+        ],
+        "evidence": [
+          "FEP is a yellow candy. It is bitter.",
+          "KRUL is a red candy. It is sour."
+        ],
+        "facts": [
+          {
+            "color": "yellow",
+            "taste": "bitter"
+          },
+          {
+            "color": "red",
+            "taste": "sour"
+          }
+        ],
+        "world": 0
+      },
+      {
+        "answers": [
+          "KRUL",
+          "KRUL"
+        ],
+        "evidence": [
+          "FEP is a yellow candy. It is sour.",
+          "KRUL is a red candy. It is bitter."
+        ],
+        "facts": [
+          {
+            "color": "yellow",
+            "taste": "sour"
+          },
+          {
+            "color": "red",
+            "taste": "bitter"
+          }
+        ],
+        "world": 1
+      }
+    ]
+  },
+  {
+    "aliases": [
+      "VOTH",
+      "LORP"
+    ],
+    "changed_field": "color",
+    "domain": "candy",
+    "family": "b148d16f48686307",
+    "fields": [
+      "color",
+      "taste"
+    ],
+    "queried_values": [
+      "red",
+      "bitter"
+    ],
+    "questions": [
+      "Which object has a red color?",
+      "Which object is bitter?"
+    ],
+    "scene": "8a4dadd5e5a961029a2d",
+    "split": "dev",
+    "template": 1,
+    "worlds": [
+      {
+        "answers": [
+          "VOTH",
+          "LORP"
+        ],
+        "evidence": [
+          "Private record: VOTH has a red color and is sour. It is a candy.",
+          "Private record: LORP has a yellow color and is bitter. It is a candy."
+        ],
+        "facts": [
+          {
+            "color": "red",
+            "taste": "sour"
+          },
+          {
+            "color": "yellow",
+            "taste": "bitter"
+          }
+        ],
+        "world": 0
+      },
+      {
+        "answers": [
+          "LORP",
+          "LORP"
+        ],
+        "evidence": [
+          "Private record: VOTH has a yellow color and is sour. It is a candy.",
+          "Private record: LORP has a red color and is bitter. It is a candy."
+        ],
+        "facts": [
+          {
+            "color": "yellow",
+            "taste": "sour"
+          },
+          {
+            "color": "red",
+            "taste": "bitter"
+          }
+        ],
+        "world": 1
+      }
+    ]
+  },
+  {
+    "aliases": [
+      "MIV",
+      "BLIX"
+    ],
+    "changed_field": "color",
+    "domain": "candy",
+    "family": "b148d16f48686307",
+    "fields": [
+      "color",
+      "taste"
+    ],
+    "queried_values": [
+      "red",
+      "bitter"
+    ],
+    "questions": [
+      "Which object has a red color?",
+      "Which object is bitter?"
+    ],
+    "scene": "b4a1c9c2333288835712",
+    "split": "dev",
+    "template": 1,
+    "worlds": [
+      {
+        "answers": [
+          "BLIX",
+          "BLIX"
+        ],
+        "evidence": [
+          "Private record: MIV has a yellow color and is sour. It is a candy.",
+          "Private record: BLIX has a red color and is bitter. It is a candy."
+        ],
+        "facts": [
+          {
+            "color": "yellow",
+            "taste": "sour"
+          },
+          {
+            "color": "red",
+            "taste": "bitter"
+          }
+        ],
+        "world": 0
+      },
+      {
+        "answers": [
+          "MIV",
+          "BLIX"
+        ],
+        "evidence": [
+          "Private record: MIV has a red color and is sour. It is a candy.",
+          "Private record: BLIX has a yellow color and is bitter. It is a candy."
+        ],
+        "facts": [
+          {
+            "color": "red",
+            "taste": "sour"
+          },
+          {
+            "color": "yellow",
+            "taste": "bitter"
+          }
+        ],
+        "world": 1
+      }
+    ]
+  },
+  {
+    "aliases": [
+      "BLIX",
+      "KRUL"
+    ],
+    "changed_field": "taste",
+    "domain": "candy",
+    "family": "b148d16f48686307",
+    "fields": [
+      "color",
+      "taste"
+    ],
+    "queried_values": [
+      "bitter",
+      "red"
+    ],
+    "questions": [
+      "Which object is bitter?",
+      "Which object has a red color?"
+    ],
+    "scene": "103e5bf2e8d19d28d8f2",
+    "split": "dev",
+    "template": 1,
+    "worlds": [
+      {
+        "answers": [
+          "KRUL",
+          "BLIX"
+        ],
+        "evidence": [
+          "Private record: BLIX has a red color and is sour. It is a candy.",
+          "Private record: KRUL has a yellow color and is bitter. It is a candy."
+        ],
+        "facts": [
+          {
+            "color": "red",
+            "taste": "sour"
+          },
+          {
+            "color": "yellow",
+            "taste": "bitter"
+          }
+        ],
+        "world": 0
+      },
+      {
+        "answers": [
+          "BLIX",
+          "BLIX"
+        ],
+        "evidence": [
+          "Private record: BLIX has a red color and is bitter. It is a candy.",
+          "Private record: KRUL has a yellow color and is sour. It is a candy."
+        ],
+        "facts": [
+          {
+            "color": "red",
+            "taste": "bitter"
+          },
+          {
+            "color": "yellow",
+            "taste": "sour"
+          }
+        ],
+        "world": 1
+      }
+    ]
+  },
+  {
+    "aliases": [
+      "VOTH",
+      "FEP"
+    ],
+    "changed_field": "taste",
+    "domain": "candy",
+    "family": "b148d16f48686307",
+    "fields": [
+      "color",
+      "taste"
+    ],
+    "queried_values": [
+      "bitter",
+      "red"
+    ],
+    "questions": [
+      "Which object is bitter?",
+      "Which object has a red color?"
+    ],
+    "scene": "56ad7ac591f28c8d932d",
+    "split": "dev",
+    "template": 1,
+    "worlds": [
+      {
+        "answers": [
+          "FEP",
+          "FEP"
+        ],
+        "evidence": [
+          "Private record: VOTH has a yellow color and is sour. It is a candy.",
+          "Private record: FEP has a red color and is bitter. It is a candy."
+        ],
+        "facts": [
+          {
+            "color": "yellow",
+            "taste": "sour"
+          },
+          {
+            "color": "red",
+            "taste": "bitter"
+          }
+        ],
+        "world": 0
+      },
+      {
+        "answers": [
+          "VOTH",
+          "FEP"
+        ],
+        "evidence": [
+          "Private record: VOTH has a yellow color and is bitter. It is a candy.",
+          "Private record: FEP has a red color and is sour. It is a candy."
+        ],
+        "facts": [
+          {
+            "color": "yellow",
+            "taste": "bitter"
+          },
+          {
+            "color": "red",
+            "taste": "sour"
+          }
+        ],
+        "world": 1
+      }
+    ]
+  },
+  {
+    "aliases": [
+      "VOTH",
+      "ZANE"
+    ],
+    "changed_field": "color",
+    "domain": "candy",
+    "family": "bddce7e0890cedf5",
+    "fields": [
+      "color",
+      "taste"
+    ],
+    "queried_values": [
+      "green",
+      "bitter"
+    ],
+    "questions": [
+      "Which object has a green color?",
+      "Which object is bitter?"
+    ],
+    "scene": "16fd9ee9aa3e76f34965",
+    "split": "dev",
+    "template": 0,
+    "worlds": [
+      {
+        "answers": [
+          "VOTH",
+          "VOTH"
+        ],
+        "evidence": [
+          "VOTH is a green candy. It is bitter.",
+          "ZANE is a red candy. It is salty."
+        ],
+        "facts": [
+          {
+            "color": "green",
+            "taste": "bitter"
+          },
+          {
+            "color": "red",
+            "taste": "salty"
+          }
+        ],
+        "world": 0
+      },
+      {
+        "answers": [
+          "ZANE",
+          "VOTH"
+        ],
+        "evidence": [
+          "VOTH is a red candy. It is bitter.",
+          "ZANE is a green candy. It is salty."
+        ],
+        "facts": [
+          {
+            "color": "red",
+            "taste": "bitter"
+          },
+          {
+            "color": "green",
+            "taste": "salty"
+          }
+        ],
+        "world": 1
+      }
+    ]
+  },
+  {
+    "aliases": [
+      "VOTH",
+      "FEP"
+    ],
+    "changed_field": "color",
+    "domain": "candy",
+    "family": "bddce7e0890cedf5",
+    "fields": [
+      "color",
+      "taste"
+    ],
+    "queried_values": [
+      "green",
+      "bitter"
+    ],
+    "questions": [
+      "Which object has a green color?",
+      "Which object is bitter?"
+    ],
+    "scene": "9efd62066ecc7cecce2a",
+    "split": "dev",
+    "template": 0,
+    "worlds": [
+      {
+        "answers": [
+          "FEP",
+          "VOTH"
+        ],
+        "evidence": [
+          "VOTH is a red candy. It is bitter.",
+          "FEP is a green candy. It is salty."
+        ],
+        "facts": [
+          {
+            "color": "red",
+            "taste": "bitter"
+          },
+          {
+            "color": "green",
+            "taste": "salty"
+          }
+        ],
+        "world": 0
+      },
+      {
+        "answers": [
+          "VOTH",
+          "VOTH"
+        ],
+        "evidence": [
+          "VOTH is a green candy. It is bitter.",
+          "FEP is a red candy. It is salty."
+        ],
+        "facts": [
+          {
+            "color": "green",
+            "taste": "bitter"
+          },
+          {
+            "color": "red",
+            "taste": "salty"
+          }
+        ],
+        "world": 1
+      }
+    ]
+  },
+  {
+    "aliases": [
+      "LORP",
+      "FEP"
+    ],
+    "changed_field": "taste",
+    "domain": "candy",
+    "family": "bddce7e0890cedf5",
+    "fields": [
+      "color",
+      "taste"
+    ],
+    "queried_values": [
+      "bitter",
+      "green"
+    ],
+    "questions": [
+      "Which object is bitter?",
+      "Which object has a green color?"
+    ],
+    "scene": "45a8fdc359037e2abd6e",
+    "split": "dev",
+    "template": 0,
+    "worlds": [
+      {
+        "answers": [
+          "LORP",
+          "LORP"
+        ],
+        "evidence": [
+          "LORP is a green candy. It is bitter.",
+          "FEP is a red candy. It is salty."
+        ],
+        "facts": [
+          {
+            "color": "green",
+            "taste": "bitter"
+          },
+          {
+            "color": "red",
+            "taste": "salty"
+          }
+        ],
+        "world": 0
+      },
+      {
+        "answers": [
+          "FEP",
+          "LORP"
+        ],
+        "evidence": [
+          "LORP is a green candy. It is salty.",
+          "FEP is a red candy. It is bitter."
+        ],
+        "facts": [
+          {
+            "color": "green",
+            "taste": "salty"
+          },
+          {
+            "color": "red",
+            "taste": "bitter"
+          }
+        ],
+        "world": 1
+      }
+    ]
+  },
+  {
+    "aliases": [
+      "ZANE",
+      "FEP"
+    ],
+    "changed_field": "taste",
+    "domain": "candy",
+    "family": "bddce7e0890cedf5",
+    "fields": [
+      "color",
+      "taste"
+    ],
+    "queried_values": [
+      "bitter",
+      "green"
+    ],
+    "questions": [
+      "Which object is bitter?",
+      "Which object has a green color?"
+    ],
+    "scene": "10fae1901bc366f114fb",
+    "split": "dev",
+    "template": 0,
+    "worlds": [
+      {
+        "answers": [
+          "ZANE",
+          "FEP"
+        ],
+        "evidence": [
+          "ZANE is a red candy. It is bitter.",
+          "FEP is a green candy. It is salty."
+        ],
+        "facts": [
+          {
+            "color": "red",
+            "taste": "bitter"
+          },
+          {
+            "color": "green",
+            "taste": "salty"
+          }
+        ],
+        "world": 0
+      },
+      {
+        "answers": [
+          "FEP",
+          "FEP"
+        ],
+        "evidence": [
+          "ZANE is a red candy. It is salty.",
+          "FEP is a green candy. It is bitter."
+        ],
+        "facts": [
+          {
+            "color": "red",
+            "taste": "salty"
+          },
+          {
+            "color": "green",
+            "taste": "bitter"
+          }
+        ],
+        "world": 1
+      }
+    ]
+  },
+  {
+    "aliases": [
+      "FEP",
+      "LORP"
+    ],
+    "changed_field": "color",
+    "domain": "candy",
+    "family": "bddce7e0890cedf5",
+    "fields": [
+      "color",
+      "taste"
+    ],
+    "queried_values": [
+      "green",
+      "bitter"
+    ],
+    "questions": [
+      "Which object has a green color?",
+      "Which object is bitter?"
+    ],
+    "scene": "e6c49ff22c96d3a77c3d",
+    "split": "dev",
+    "template": 1,
+    "worlds": [
+      {
+        "answers": [
+          "FEP",
+          "LORP"
+        ],
+        "evidence": [
+          "Private record: FEP has a green color and is salty. It is a candy.",
+          "Private record: LORP has a red color and is bitter. It is a candy."
+        ],
+        "facts": [
+          {
+            "color": "green",
+            "taste": "salty"
+          },
+          {
+            "color": "red",
+            "taste": "bitter"
+          }
+        ],
+        "world": 0
+      },
+      {
+        "answers": [
+          "LORP",
+          "LORP"
+        ],
+        "evidence": [
+          "Private record: FEP has a red color and is salty. It is a candy.",
+          "Private record: LORP has a green color and is bitter. It is a candy."
+        ],
+        "facts": [
+          {
+            "color": "red",
+            "taste": "salty"
+          },
+          {
+            "color": "green",
+            "taste": "bitter"
+          }
+        ],
+        "world": 1
+      }
+    ]
+  },
+  {
+    "aliases": [
+      "KRUL",
+      "LORP"
+    ],
+    "changed_field": "color",
+    "domain": "candy",
+    "family": "bddce7e0890cedf5",
+    "fields": [
+      "color",
+      "taste"
+    ],
+    "queried_values": [
+      "green",
+      "bitter"
+    ],
+    "questions": [
+      "Which object has a green color?",
+      "Which object is bitter?"
+    ],
+    "scene": "ff3b82f0ac741c1e58fa",
+    "split": "dev",
+    "template": 1,
+    "worlds": [
+      {
+        "answers": [
+          "LORP",
+          "LORP"
+        ],
+        "evidence": [
+          "Private record: KRUL has a red color and is salty. It is a candy.",
+          "Private record: LORP has a green color and is bitter. It is a candy."
+        ],
+        "facts": [
+          {
+            "color": "red",
+            "taste": "salty"
+          },
+          {
+            "color": "green",
+            "taste": "bitter"
+          }
+        ],
+        "world": 0
+      },
+      {
+        "answers": [
+          "KRUL",
+          "LORP"
+        ],
+        "evidence": [
+          "Private record: KRUL has a green color and is salty. It is a candy.",
+          "Private record: LORP has a red color and is bitter. It is a candy."
+        ],
+        "facts": [
+          {
+            "color": "green",
+            "taste": "salty"
+          },
+          {
+            "color": "red",
+            "taste": "bitter"
+          }
+        ],
+        "world": 1
+      }
+    ]
+  },
+  {
+    "aliases": [
+      "MIV",
+      "BLIX"
+    ],
+    "changed_field": "taste",
+    "domain": "candy",
+    "family": "bddce7e0890cedf5",
+    "fields": [
+      "color",
+      "taste"
+    ],
+    "queried_values": [
+      "bitter",
+      "green"
+    ],
+    "questions": [
+      "Which object is bitter?",
+      "Which object has a green color?"
+    ],
+    "scene": "d811e5bb930ca0bc7a9b",
+    "split": "dev",
+    "template": 1,
+    "worlds": [
+      {
+        "answers": [
+          "BLIX",
+          "MIV"
+        ],
+        "evidence": [
+          "Private record: MIV has a green color and is salty. It is a candy.",
+          "Private record: BLIX has a red color and is bitter. It is a candy."
+        ],
+        "facts": [
+          {
+            "color": "green",
+            "taste": "salty"
+          },
+          {
+            "color": "red",
+            "taste": "bitter"
+          }
+        ],
+        "world": 0
+      },
+      {
+        "answers": [
+          "MIV",
+          "MIV"
+        ],
+        "evidence": [
+          "Private record: MIV has a green color and is bitter. It is a candy.",
+          "Private record: BLIX has a red color and is salty. It is a candy."
+        ],
+        "facts": [
+          {
+            "color": "green",
+            "taste": "bitter"
+          },
+          {
+            "color": "red",
+            "taste": "salty"
+          }
+        ],
+        "world": 1
+      }
+    ]
+  },
+  {
+    "aliases": [
+      "QUAN",
+      "KRUL"
+    ],
+    "changed_field": "taste",
+    "domain": "candy",
+    "family": "bddce7e0890cedf5",
+    "fields": [
+      "color",
+      "taste"
+    ],
+    "queried_values": [
+      "bitter",
+      "green"
+    ],
+    "questions": [
+      "Which object is bitter?",
+      "Which object has a green color?"
+    ],
+    "scene": "af5fb9a6447fbb5ebc02",
+    "split": "dev",
+    "template": 1,
+    "worlds": [
+      {
+        "answers": [
+          "KRUL",
+          "KRUL"
+        ],
+        "evidence": [
+          "Private record: QUAN has a red color and is salty. It is a candy.",
+          "Private record: KRUL has a green color and is bitter. It is a candy."
+        ],
+        "facts": [
+          {
+            "color": "red",
+            "taste": "salty"
+          },
+          {
+            "color": "green",
+            "taste": "bitter"
+          }
+        ],
+        "world": 0
+      },
+      {
+        "answers": [
+          "QUAN",
+          "KRUL"
+        ],
+        "evidence": [
+          "Private record: QUAN has a red color and is bitter. It is a candy.",
+          "Private record: KRUL has a green color and is salty. It is a candy."
+        ],
+        "facts": [
+          {
+            "color": "red",
+            "taste": "bitter"
+          },
+          {
+            "color": "green",
+            "taste": "salty"
+          }
+        ],
+        "world": 1
+      }
+    ]
+  },
+  {
+    "aliases": [
+      "MIV",
+      "QUAN"
+    ],
+    "changed_field": "color",
+    "domain": "block",
+    "family": "cb18d7aed59d4c53",
+    "fields": [
+      "color",
+      "material"
+    ],
+    "queried_values": [
+      "orange",
+      "metallic"
+    ],
+    "questions": [
+      "Which object has a orange color?",
+      "Which object is metallic?"
+    ],
+    "scene": "e3b9e036cd1d2d8e7452",
+    "split": "dev",
+    "template": 0,
+    "worlds": [
+      {
+        "answers": [
+          "MIV",
+          "MIV"
+        ],
+        "evidence": [
+          "MIV is a orange block. It is metallic.",
+          "QUAN is a red block. It is wooden."
+        ],
+        "facts": [
+          {
+            "color": "orange",
+            "material": "metallic"
+          },
+          {
+            "color": "red",
+            "material": "wooden"
+          }
+        ],
+        "world": 0
+      },
+      {
+        "answers": [
+          "QUAN",
+          "MIV"
+        ],
+        "evidence": [
+          "MIV is a red block. It is metallic.",
+          "QUAN is a orange block. It is wooden."
+        ],
+        "facts": [
+          {
+            "color": "red",
+            "material": "metallic"
+          },
+          {
+            "color": "orange",
+            "material": "wooden"
+          }
+        ],
+        "world": 1
+      }
+    ]
+  },
+  {
+    "aliases": [
+      "KRUL",
+      "QUAN"
+    ],
+    "changed_field": "color",
+    "domain": "block",
+    "family": "cb18d7aed59d4c53",
+    "fields": [
+      "color",
+      "material"
+    ],
+    "queried_values": [
+      "orange",
+      "metallic"
+    ],
+    "questions": [
+      "Which object has a orange color?",
+      "Which object is metallic?"
+    ],
+    "scene": "f8fbf0aa1cafa971bd56",
+    "split": "dev",
+    "template": 0,
+    "worlds": [
+      {
+        "answers": [
+          "QUAN",
+          "KRUL"
+        ],
+        "evidence": [
+          "KRUL is a red block. It is metallic.",
+          "QUAN is a orange block. It is wooden."
+        ],
+        "facts": [
+          {
+            "color": "red",
+            "material": "metallic"
+          },
+          {
+            "color": "orange",
+            "material": "wooden"
+          }
+        ],
+        "world": 0
+      },
+      {
+        "answers": [
+          "KRUL",
+          "KRUL"
+        ],
+        "evidence": [
+          "KRUL is a orange block. It is metallic.",
+          "QUAN is a red block. It is wooden."
+        ],
+        "facts": [
+          {
+            "color": "orange",
+            "material": "metallic"
+          },
+          {
+            "color": "red",
+            "material": "wooden"
+          }
+        ],
+        "world": 1
+      }
+    ]
+  },
+  {
+    "aliases": [
+      "ZANE",
+      "BLIX"
+    ],
+    "changed_field": "material",
+    "domain": "block",
+    "family": "cb18d7aed59d4c53",
+    "fields": [
+      "color",
+      "material"
+    ],
+    "queried_values": [
+      "metallic",
+      "orange"
+    ],
+    "questions": [
+      "Which object is metallic?",
+      "Which object has a orange color?"
+    ],
+    "scene": "053a9a26b0f4680b2757",
+    "split": "dev",
+    "template": 0,
+    "worlds": [
+      {
+        "answers": [
+          "ZANE",
+          "ZANE"
+        ],
+        "evidence": [
+          "ZANE is a orange block. It is metallic.",
+          "BLIX is a red block. It is wooden."
+        ],
+        "facts": [
+          {
+            "color": "orange",
+            "material": "metallic"
+          },
+          {
+            "color": "red",
+            "material": "wooden"
+          }
+        ],
+        "world": 0
+      },
+      {
+        "answers": [
+          "BLIX",
+          "ZANE"
+        ],
+        "evidence": [
+          "ZANE is a orange block. It is wooden.",
+          "BLIX is a red block. It is metallic."
+        ],
+        "facts": [
+          {
+            "color": "orange",
+            "material": "wooden"
+          },
+          {
+            "color": "red",
+            "material": "metallic"
+          }
+        ],
+        "world": 1
+      }
+    ]
+  },
+  {
+    "aliases": [
+      "VOTH",
+      "FEP"
+    ],
+    "changed_field": "material",
+    "domain": "block",
+    "family": "cb18d7aed59d4c53",
+    "fields": [
+      "color",
+      "material"
+    ],
+    "queried_values": [
+      "metallic",
+      "orange"
+    ],
+    "questions": [
+      "Which object is metallic?",
+      "Which object has a orange color?"
+    ],
+    "scene": "e34d18409500accd8b10",
+    "split": "dev",
+    "template": 0,
+    "worlds": [
+      {
+        "answers": [
+          "VOTH",
+          "FEP"
+        ],
+        "evidence": [
+          "VOTH is a red block. It is metallic.",
+          "FEP is a orange block. It is wooden."
+        ],
+        "facts": [
+          {
+            "color": "red",
+            "material": "metallic"
+          },
+          {
+            "color": "orange",
+            "material": "wooden"
+          }
+        ],
+        "world": 0
+      },
+      {
+        "answers": [
+          "FEP",
+          "FEP"
+        ],
+        "evidence": [
+          "VOTH is a red block. It is wooden.",
+          "FEP is a orange block. It is metallic."
+        ],
+        "facts": [
+          {
+            "color": "red",
+            "material": "wooden"
+          },
+          {
+            "color": "orange",
+            "material": "metallic"
+          }
+        ],
+        "world": 1
+      }
+    ]
+  },
+  {
+    "aliases": [
+      "VOTH",
+      "ZANE"
+    ],
+    "changed_field": "color",
+    "domain": "block",
+    "family": "cb18d7aed59d4c53",
+    "fields": [
+      "color",
+      "material"
+    ],
+    "queried_values": [
+      "orange",
+      "metallic"
+    ],
+    "questions": [
+      "Which object has a orange color?",
+      "Which object is metallic?"
+    ],
+    "scene": "36fd0973368cb59d946e",
+    "split": "dev",
+    "template": 1,
+    "worlds": [
+      {
+        "answers": [
+          "VOTH",
+          "ZANE"
+        ],
+        "evidence": [
+          "Private record: VOTH has a orange color and is wooden. It is a block.",
+          "Private record: ZANE has a red color and is metallic. It is a block."
+        ],
+        "facts": [
+          {
+            "color": "orange",
+            "material": "wooden"
+          },
+          {
+            "color": "red",
+            "material": "metallic"
+          }
+        ],
+        "world": 0
+      },
+      {
+        "answers": [
+          "ZANE",
+          "ZANE"
+        ],
+        "evidence": [
+          "Private record: VOTH has a red color and is wooden. It is a block.",
+          "Private record: ZANE has a orange color and is metallic. It is a block."
+        ],
+        "facts": [
+          {
+            "color": "red",
+            "material": "wooden"
+          },
+          {
+            "color": "orange",
+            "material": "metallic"
+          }
+        ],
+        "world": 1
+      }
+    ]
+  },
+  {
+    "aliases": [
+      "BLIX",
+      "VOTH"
+    ],
+    "changed_field": "color",
+    "domain": "block",
+    "family": "cb18d7aed59d4c53",
+    "fields": [
+      "color",
+      "material"
+    ],
+    "queried_values": [
+      "orange",
+      "metallic"
+    ],
+    "questions": [
+      "Which object has a orange color?",
+      "Which object is metallic?"
+    ],
+    "scene": "ab1e4f98f526a845cb3c",
+    "split": "dev",
+    "template": 1,
+    "worlds": [
+      {
+        "answers": [
+          "VOTH",
+          "VOTH"
+        ],
+        "evidence": [
+          "Private record: BLIX has a red color and is wooden. It is a block.",
+          "Private record: VOTH has a orange color and is metallic. It is a block."
+        ],
+        "facts": [
+          {
+            "color": "red",
+            "material": "wooden"
+          },
+          {
+            "color": "orange",
+            "material": "metallic"
+          }
+        ],
+        "world": 0
+      },
+      {
+        "answers": [
+          "BLIX",
+          "VOTH"
+        ],
+        "evidence": [
+          "Private record: BLIX has a orange color and is wooden. It is a block.",
+          "Private record: VOTH has a red color and is metallic. It is a block."
+        ],
+        "facts": [
+          {
+            "color": "orange",
+            "material": "wooden"
+          },
+          {
+            "color": "red",
+            "material": "metallic"
+          }
+        ],
+        "world": 1
+      }
+    ]
+  },
+  {
+    "aliases": [
+      "KRUL",
+      "VOTH"
+    ],
+    "changed_field": "material",
+    "domain": "block",
+    "family": "cb18d7aed59d4c53",
+    "fields": [
+      "color",
+      "material"
+    ],
+    "queried_values": [
+      "metallic",
+      "orange"
+    ],
+    "questions": [
+      "Which object is metallic?",
+      "Which object has a orange color?"
+    ],
+    "scene": "008bc9c69cea72517e5c",
+    "split": "dev",
+    "template": 1,
+    "worlds": [
+      {
+        "answers": [
+          "VOTH",
+          "KRUL"
+        ],
+        "evidence": [
+          "Private record: KRUL has a orange color and is wooden. It is a block.",
+          "Private record: VOTH has a red color and is metallic. It is a block."
+        ],
+        "facts": [
+          {
+            "color": "orange",
+            "material": "wooden"
+          },
+          {
+            "color": "red",
+            "material": "metallic"
+          }
+        ],
+        "world": 0
+      },
+      {
+        "answers": [
+          "KRUL",
+          "KRUL"
+        ],
+        "evidence": [
+          "Private record: KRUL has a orange color and is metallic. It is a block.",
+          "Private record: VOTH has a red color and is wooden. It is a block."
+        ],
+        "facts": [
+          {
+            "color": "orange",
+            "material": "metallic"
+          },
+          {
+            "color": "red",
+            "material": "wooden"
+          }
+        ],
+        "world": 1
+      }
+    ]
+  },
+  {
+    "aliases": [
+      "KRUL",
+      "LORP"
+    ],
+    "changed_field": "material",
+    "domain": "block",
+    "family": "cb18d7aed59d4c53",
+    "fields": [
+      "color",
+      "material"
+    ],
+    "queried_values": [
+      "metallic",
+      "orange"
+    ],
+    "questions": [
+      "Which object is metallic?",
+      "Which object has a orange color?"
+    ],
+    "scene": "f93ba85fa6bfb354fbba",
+    "split": "dev",
+    "template": 1,
+    "worlds": [
+      {
+        "answers": [
+          "LORP",
+          "LORP"
+        ],
+        "evidence": [
+          "Private record: KRUL has a red color and is wooden. It is a block.",
+          "Private record: LORP has a orange color and is metallic. It is a block."
+        ],
+        "facts": [
+          {
+            "color": "red",
+            "material": "wooden"
+          },
+          {
+            "color": "orange",
+            "material": "metallic"
+          }
+        ],
+        "world": 0
+      },
+      {
+        "answers": [
+          "KRUL",
+          "LORP"
+        ],
+        "evidence": [
+          "Private record: KRUL has a red color and is metallic. It is a block.",
+          "Private record: LORP has a orange color and is wooden. It is a block."
+        ],
+        "facts": [
+          {
+            "color": "red",
+            "material": "metallic"
+          },
+          {
+            "color": "orange",
+            "material": "wooden"
+          }
+        ],
+        "world": 1
+      }
+    ]
+  },
+  {
+    "aliases": [
+      "QUAN",
+      "MIV"
+    ],
+    "changed_field": "color",
+    "domain": "candy",
+    "family": "d8f52f7bb3fca1e0",
+    "fields": [
+      "color",
+      "taste"
+    ],
+    "queried_values": [
+      "orange",
+      "bitter"
+    ],
+    "questions": [
+      "Which object has a orange color?",
+      "Which object is bitter?"
+    ],
+    "scene": "67bf0ea25be3147e4630",
+    "split": "dev",
+    "template": 0,
+    "worlds": [
+      {
+        "answers": [
+          "QUAN",
+          "QUAN"
+        ],
+        "evidence": [
+          "QUAN is a orange candy. It is bitter.",
+          "MIV is a red candy. It is sour."
+        ],
+        "facts": [
+          {
+            "color": "orange",
+            "taste": "bitter"
+          },
+          {
+            "color": "red",
+            "taste": "sour"
+          }
+        ],
+        "world": 0
+      },
+      {
+        "answers": [
+          "MIV",
+          "QUAN"
+        ],
+        "evidence": [
+          "QUAN is a red candy. It is bitter.",
+          "MIV is a orange candy. It is sour."
+        ],
+        "facts": [
+          {
+            "color": "red",
+            "taste": "bitter"
+          },
+          {
+            "color": "orange",
+            "taste": "sour"
+          }
+        ],
+        "world": 1
+      }
+    ]
+  },
+  {
+    "aliases": [
+      "ZANE",
+      "FEP"
+    ],
+    "changed_field": "color",
+    "domain": "candy",
+    "family": "d8f52f7bb3fca1e0",
+    "fields": [
+      "color",
+      "taste"
+    ],
+    "queried_values": [
+      "orange",
+      "bitter"
+    ],
+    "questions": [
+      "Which object has a orange color?",
+      "Which object is bitter?"
+    ],
+    "scene": "405a7d0ced7f98bad1a3",
+    "split": "dev",
+    "template": 0,
+    "worlds": [
+      {
+        "answers": [
+          "FEP",
+          "ZANE"
+        ],
+        "evidence": [
+          "ZANE is a red candy. It is bitter.",
+          "FEP is a orange candy. It is sour."
+        ],
+        "facts": [
+          {
+            "color": "red",
+            "taste": "bitter"
+          },
+          {
+            "color": "orange",
+            "taste": "sour"
+          }
+        ],
+        "world": 0
+      },
+      {
+        "answers": [
+          "ZANE",
+          "ZANE"
+        ],
+        "evidence": [
+          "ZANE is a orange candy. It is bitter.",
+          "FEP is a red candy. It is sour."
+        ],
+        "facts": [
+          {
+            "color": "orange",
+            "taste": "bitter"
+          },
+          {
+            "color": "red",
+            "taste": "sour"
+          }
+        ],
+        "world": 1
+      }
+    ]
+  },
+  {
+    "aliases": [
+      "KRUL",
+      "LORP"
+    ],
+    "changed_field": "taste",
+    "domain": "candy",
+    "family": "d8f52f7bb3fca1e0",
+    "fields": [
+      "color",
+      "taste"
+    ],
+    "queried_values": [
+      "bitter",
+      "orange"
+    ],
+    "questions": [
+      "Which object is bitter?",
+      "Which object has a orange color?"
+    ],
+    "scene": "bee3af97d0d079ac5f58",
+    "split": "dev",
+    "template": 0,
+    "worlds": [
+      {
+        "answers": [
+          "KRUL",
+          "KRUL"
+        ],
+        "evidence": [
+          "KRUL is a orange candy. It is bitter.",
+          "LORP is a red candy. It is sour."
+        ],
+        "facts": [
+          {
+            "color": "orange",
+            "taste": "bitter"
+          },
+          {
+            "color": "red",
+            "taste": "sour"
+          }
+        ],
+        "world": 0
+      },
+      {
+        "answers": [
+          "LORP",
+          "KRUL"
+        ],
+        "evidence": [
+          "KRUL is a orange candy. It is sour.",
+          "LORP is a red candy. It is bitter."
+        ],
+        "facts": [
+          {
+            "color": "orange",
+            "taste": "sour"
+          },
+          {
+            "color": "red",
+            "taste": "bitter"
+          }
+        ],
+        "world": 1
+      }
+    ]
+  },
+  {
+    "aliases": [
+      "MIV",
+      "BLIX"
+    ],
+    "changed_field": "taste",
+    "domain": "candy",
+    "family": "d8f52f7bb3fca1e0",
+    "fields": [
+      "color",
+      "taste"
+    ],
+    "queried_values": [
+      "bitter",
+      "orange"
+    ],
+    "questions": [
+      "Which object is bitter?",
+      "Which object has a orange color?"
+    ],
+    "scene": "5be98e6ce0626ea04efd",
+    "split": "dev",
+    "template": 0,
+    "worlds": [
+      {
+        "answers": [
+          "MIV",
+          "BLIX"
+        ],
+        "evidence": [
+          "MIV is a red candy. It is bitter.",
+          "BLIX is a orange candy. It is sour."
+        ],
+        "facts": [
+          {
+            "color": "red",
+            "taste": "bitter"
+          },
+          {
+            "color": "orange",
+            "taste": "sour"
+          }
+        ],
+        "world": 0
+      },
+      {
+        "answers": [
+          "BLIX",
+          "BLIX"
+        ],
+        "evidence": [
+          "MIV is a red candy. It is sour.",
+          "BLIX is a orange candy. It is bitter."
+        ],
+        "facts": [
+          {
+            "color": "red",
+            "taste": "sour"
+          },
+          {
+            "color": "orange",
+            "taste": "bitter"
+          }
+        ],
+        "world": 1
+      }
+    ]
+  },
+  {
+    "aliases": [
+      "BLIX",
+      "FEP"
+    ],
+    "changed_field": "color",
+    "domain": "candy",
+    "family": "d8f52f7bb3fca1e0",
+    "fields": [
+      "color",
+      "taste"
+    ],
+    "queried_values": [
+      "orange",
+      "bitter"
+    ],
+    "questions": [
+      "Which object has a orange color?",
+      "Which object is bitter?"
+    ],
+    "scene": "2b36dcd970dd28a18c9e",
+    "split": "dev",
+    "template": 1,
+    "worlds": [
+      {
+        "answers": [
+          "BLIX",
+          "FEP"
+        ],
+        "evidence": [
+          "Private record: BLIX has a orange color and is sour. It is a candy.",
+          "Private record: FEP has a red color and is bitter. It is a candy."
+        ],
+        "facts": [
+          {
+            "color": "orange",
+            "taste": "sour"
+          },
+          {
+            "color": "red",
+            "taste": "bitter"
+          }
+        ],
+        "world": 0
+      },
+      {
+        "answers": [
+          "FEP",
+          "FEP"
+        ],
+        "evidence": [
+          "Private record: BLIX has a red color and is sour. It is a candy.",
+          "Private record: FEP has a orange color and is bitter. It is a candy."
+        ],
+        "facts": [
+          {
+            "color": "red",
+            "taste": "sour"
+          },
+          {
+            "color": "orange",
+            "taste": "bitter"
+          }
+        ],
+        "world": 1
+      }
+    ]
+  },
+  {
+    "aliases": [
+      "KRUL",
+      "MIV"
+    ],
+    "changed_field": "color",
+    "domain": "candy",
+    "family": "d8f52f7bb3fca1e0",
+    "fields": [
+      "color",
+      "taste"
+    ],
+    "queried_values": [
+      "orange",
+      "bitter"
+    ],
+    "questions": [
+      "Which object has a orange color?",
+      "Which object is bitter?"
+    ],
+    "scene": "a73bb858e56e2268fe2a",
+    "split": "dev",
+    "template": 1,
+    "worlds": [
+      {
+        "answers": [
+          "MIV",
+          "MIV"
+        ],
+        "evidence": [
+          "Private record: KRUL has a red color and is sour. It is a candy.",
+          "Private record: MIV has a orange color and is bitter. It is a candy."
+        ],
+        "facts": [
+          {
+            "color": "red",
+            "taste": "sour"
+          },
+          {
+            "color": "orange",
+            "taste": "bitter"
+          }
+        ],
+        "world": 0
+      },
+      {
+        "answers": [
+          "KRUL",
+          "MIV"
+        ],
+        "evidence": [
+          "Private record: KRUL has a orange color and is sour. It is a candy.",
+          "Private record: MIV has a red color and is bitter. It is a candy."
+        ],
+        "facts": [
+          {
+            "color": "orange",
+            "taste": "sour"
+          },
+          {
+            "color": "red",
+            "taste": "bitter"
+          }
+        ],
+        "world": 1
+      }
+    ]
+  },
+  {
+    "aliases": [
+      "QUAN",
+      "FEP"
+    ],
+    "changed_field": "taste",
+    "domain": "candy",
+    "family": "d8f52f7bb3fca1e0",
+    "fields": [
+      "color",
+      "taste"
+    ],
+    "queried_values": [
+      "bitter",
+      "orange"
+    ],
+    "questions": [
+      "Which object is bitter?",
+      "Which object has a orange color?"
+    ],
+    "scene": "d9cf16d9b0224b07fa44",
+    "split": "dev",
+    "template": 1,
+    "worlds": [
+      {
+        "answers": [
+          "FEP",
+          "QUAN"
+        ],
+        "evidence": [
+          "Private record: QUAN has a orange color and is sour. It is a candy.",
+          "Private record: FEP has a red color and is bitter. It is a candy."
+        ],
+        "facts": [
+          {
+            "color": "orange",
+            "taste": "sour"
+          },
+          {
+            "color": "red",
+            "taste": "bitter"
+          }
+        ],
+        "world": 0
+      },
+      {
+        "answers": [
+          "QUAN",
+          "QUAN"
+        ],
+        "evidence": [
+          "Private record: QUAN has a orange color and is bitter. It is a candy.",
+          "Private record: FEP has a red color and is sour. It is a candy."
+        ],
+        "facts": [
+          {
+            "color": "orange",
+            "taste": "bitter"
+          },
+          {
+            "color": "red",
+            "taste": "sour"
+          }
+        ],
+        "world": 1
+      }
+    ]
+  },
+  {
+    "aliases": [
+      "ZANE",
+      "BLIX"
+    ],
+    "changed_field": "taste",
+    "domain": "candy",
+    "family": "d8f52f7bb3fca1e0",
+    "fields": [
+      "color",
+      "taste"
+    ],
+    "queried_values": [
+      "bitter",
+      "orange"
+    ],
+    "questions": [
+      "Which object is bitter?",
+      "Which object has a orange color?"
+    ],
+    "scene": "0d3a7122207b748c32b0",
+    "split": "dev",
+    "template": 1,
+    "worlds": [
+      {
+        "answers": [
+          "BLIX",
+          "BLIX"
+        ],
+        "evidence": [
+          "Private record: ZANE has a red color and is sour. It is a candy.",
+          "Private record: BLIX has a orange color and is bitter. It is a candy."
+        ],
+        "facts": [
+          {
+            "color": "red",
+            "taste": "sour"
+          },
+          {
+            "color": "orange",
+            "taste": "bitter"
+          }
+        ],
+        "world": 0
+      },
+      {
+        "answers": [
+          "ZANE",
+          "BLIX"
+        ],
+        "evidence": [
+          "Private record: ZANE has a red color and is bitter. It is a candy.",
+          "Private record: BLIX has a orange color and is sour. It is a candy."
+        ],
+        "facts": [
+          {
+            "color": "red",
+            "taste": "bitter"
+          },
+          {
+            "color": "orange",
+            "taste": "sour"
+          }
+        ],
+        "world": 1
+      }
+    ]
+  },
+  {
+    "aliases": [
+      "LORP",
+      "FEP"
+    ],
+    "changed_field": "color",
+    "domain": "candy",
+    "family": "e306051f2a63f88a",
+    "fields": [
+      "color",
+      "taste"
+    ],
+    "queried_values": [
+      "green",
+      "sour"
+    ],
+    "questions": [
+      "Which object has a green color?",
+      "Which object is sour?"
+    ],
+    "scene": "1fe853d25a3e43fb92e3",
+    "split": "dev",
+    "template": 0,
+    "worlds": [
+      {
+        "answers": [
+          "LORP",
+          "LORP"
+        ],
+        "evidence": [
+          "LORP is a green candy. It is sour.",
+          "FEP is a orange candy. It is sweet."
+        ],
+        "facts": [
+          {
+            "color": "green",
+            "taste": "sour"
+          },
+          {
+            "color": "orange",
+            "taste": "sweet"
+          }
+        ],
+        "world": 0
+      },
+      {
+        "answers": [
+          "FEP",
+          "LORP"
+        ],
+        "evidence": [
+          "LORP is a orange candy. It is sour.",
+          "FEP is a green candy. It is sweet."
+        ],
+        "facts": [
+          {
+            "color": "orange",
+            "taste": "sour"
+          },
+          {
+            "color": "green",
+            "taste": "sweet"
+          }
+        ],
+        "world": 1
+      }
+    ]
+  },
+  {
+    "aliases": [
+      "MIV",
+      "BLIX"
+    ],
+    "changed_field": "color",
+    "domain": "candy",
+    "family": "e306051f2a63f88a",
+    "fields": [
+      "color",
+      "taste"
+    ],
+    "queried_values": [
+      "green",
+      "sour"
+    ],
+    "questions": [
+      "Which object has a green color?",
+      "Which object is sour?"
+    ],
+    "scene": "058938197f798e0bc521",
+    "split": "dev",
+    "template": 0,
+    "worlds": [
+      {
+        "answers": [
+          "BLIX",
+          "MIV"
+        ],
+        "evidence": [
+          "MIV is a orange candy. It is sour.",
+          "BLIX is a green candy. It is sweet."
+        ],
+        "facts": [
+          {
+            "color": "orange",
+            "taste": "sour"
+          },
+          {
+            "color": "green",
+            "taste": "sweet"
+          }
+        ],
+        "world": 0
+      },
+      {
+        "answers": [
+          "MIV",
+          "MIV"
+        ],
+        "evidence": [
+          "MIV is a green candy. It is sour.",
+          "BLIX is a orange candy. It is sweet."
+        ],
+        "facts": [
+          {
+            "color": "green",
+            "taste": "sour"
+          },
+          {
+            "color": "orange",
+            "taste": "sweet"
+          }
+        ],
+        "world": 1
+      }
+    ]
+  },
+  {
+    "aliases": [
+      "BLIX",
+      "ZANE"
+    ],
+    "changed_field": "taste",
+    "domain": "candy",
+    "family": "e306051f2a63f88a",
+    "fields": [
+      "color",
+      "taste"
+    ],
+    "queried_values": [
+      "sour",
+      "green"
+    ],
+    "questions": [
+      "Which object is sour?",
+      "Which object has a green color?"
+    ],
+    "scene": "75fea3b83c0bdfe85a28",
+    "split": "dev",
+    "template": 0,
+    "worlds": [
+      {
+        "answers": [
+          "BLIX",
+          "BLIX"
+        ],
+        "evidence": [
+          "BLIX is a green candy. It is sour.",
+          "ZANE is a orange candy. It is sweet."
+        ],
+        "facts": [
+          {
+            "color": "green",
+            "taste": "sour"
+          },
+          {
+            "color": "orange",
+            "taste": "sweet"
+          }
+        ],
+        "world": 0
+      },
+      {
+        "answers": [
+          "ZANE",
+          "BLIX"
+        ],
+        "evidence": [
+          "BLIX is a green candy. It is sweet.",
+          "ZANE is a orange candy. It is sour."
+        ],
+        "facts": [
+          {
+            "color": "green",
+            "taste": "sweet"
+          },
+          {
+            "color": "orange",
+            "taste": "sour"
+          }
+        ],
+        "world": 1
+      }
+    ]
+  },
+  {
+    "aliases": [
+      "LORP",
+      "KRUL"
+    ],
+    "changed_field": "taste",
+    "domain": "candy",
+    "family": "e306051f2a63f88a",
+    "fields": [
+      "color",
+      "taste"
+    ],
+    "queried_values": [
+      "sour",
+      "green"
+    ],
+    "questions": [
+      "Which object is sour?",
+      "Which object has a green color?"
+    ],
+    "scene": "eee858af52b2c3527675",
+    "split": "dev",
+    "template": 0,
+    "worlds": [
+      {
+        "answers": [
+          "LORP",
+          "KRUL"
+        ],
+        "evidence": [
+          "LORP is a orange candy. It is sour.",
+          "KRUL is a green candy. It is sweet."
+        ],
+        "facts": [
+          {
+            "color": "orange",
+            "taste": "sour"
+          },
+          {
+            "color": "green",
+            "taste": "sweet"
+          }
+        ],
+        "world": 0
+      },
+      {
+        "answers": [
+          "KRUL",
+          "KRUL"
+        ],
+        "evidence": [
+          "LORP is a orange candy. It is sweet.",
+          "KRUL is a green candy. It is sour."
+        ],
+        "facts": [
+          {
+            "color": "orange",
+            "taste": "sweet"
+          },
+          {
+            "color": "green",
+            "taste": "sour"
+          }
+        ],
+        "world": 1
+      }
+    ]
+  },
+  {
+    "aliases": [
+      "QUAN",
+      "BLIX"
+    ],
+    "changed_field": "color",
+    "domain": "candy",
+    "family": "e306051f2a63f88a",
+    "fields": [
+      "color",
+      "taste"
+    ],
+    "queried_values": [
+      "green",
+      "sour"
+    ],
+    "questions": [
+      "Which object has a green color?",
+      "Which object is sour?"
+    ],
+    "scene": "7c9fd7fc19bee10c8540",
+    "split": "dev",
+    "template": 1,
+    "worlds": [
+      {
+        "answers": [
+          "QUAN",
+          "BLIX"
+        ],
+        "evidence": [
+          "Private record: QUAN has a green color and is sweet. It is a candy.",
+          "Private record: BLIX has a orange color and is sour. It is a candy."
+        ],
+        "facts": [
+          {
+            "color": "green",
+            "taste": "sweet"
+          },
+          {
+            "color": "orange",
+            "taste": "sour"
+          }
+        ],
+        "world": 0
+      },
+      {
+        "answers": [
+          "BLIX",
+          "BLIX"
+        ],
+        "evidence": [
+          "Private record: QUAN has a orange color and is sweet. It is a candy.",
+          "Private record: BLIX has a green color and is sour. It is a candy."
+        ],
+        "facts": [
+          {
+            "color": "orange",
+            "taste": "sweet"
+          },
+          {
+            "color": "green",
+            "taste": "sour"
+          }
+        ],
+        "world": 1
+      }
+    ]
+  },
+  {
+    "aliases": [
+      "QUAN",
+      "FEP"
+    ],
+    "changed_field": "color",
+    "domain": "candy",
+    "family": "e306051f2a63f88a",
+    "fields": [
+      "color",
+      "taste"
+    ],
+    "queried_values": [
+      "green",
+      "sour"
+    ],
+    "questions": [
+      "Which object has a green color?",
+      "Which object is sour?"
+    ],
+    "scene": "5b8feb4ffaf24b014b99",
+    "split": "dev",
+    "template": 1,
+    "worlds": [
+      {
+        "answers": [
+          "FEP",
+          "FEP"
+        ],
+        "evidence": [
+          "Private record: QUAN has a orange color and is sweet. It is a candy.",
+          "Private record: FEP has a green color and is sour. It is a candy."
+        ],
+        "facts": [
+          {
+            "color": "orange",
+            "taste": "sweet"
+          },
+          {
+            "color": "green",
+            "taste": "sour"
+          }
+        ],
+        "world": 0
+      },
+      {
+        "answers": [
+          "QUAN",
+          "FEP"
+        ],
+        "evidence": [
+          "Private record: QUAN has a green color and is sweet. It is a candy.",
+          "Private record: FEP has a orange color and is sour. It is a candy."
+        ],
+        "facts": [
+          {
+            "color": "green",
+            "taste": "sweet"
+          },
+          {
+            "color": "orange",
+            "taste": "sour"
+          }
+        ],
+        "world": 1
+      }
+    ]
+  },
+  {
+    "aliases": [
+      "QUAN",
+      "FEP"
+    ],
+    "changed_field": "taste",
+    "domain": "candy",
+    "family": "e306051f2a63f88a",
+    "fields": [
+      "color",
+      "taste"
+    ],
+    "queried_values": [
+      "sour",
+      "green"
+    ],
+    "questions": [
+      "Which object is sour?",
+      "Which object has a green color?"
+    ],
+    "scene": "70675213150ec0af6f6b",
+    "split": "dev",
+    "template": 1,
+    "worlds": [
+      {
+        "answers": [
+          "FEP",
+          "QUAN"
+        ],
+        "evidence": [
+          "Private record: QUAN has a green color and is sweet. It is a candy.",
+          "Private record: FEP has a orange color and is sour. It is a candy."
+        ],
+        "facts": [
+          {
+            "color": "green",
+            "taste": "sweet"
+          },
+          {
+            "color": "orange",
+            "taste": "sour"
+          }
+        ],
+        "world": 0
+      },
+      {
+        "answers": [
+          "QUAN",
+          "QUAN"
+        ],
+        "evidence": [
+          "Private record: QUAN has a green color and is sour. It is a candy.",
+          "Private record: FEP has a orange color and is sweet. It is a candy."
+        ],
+        "facts": [
+          {
+            "color": "green",
+            "taste": "sour"
+          },
+          {
+            "color": "orange",
+            "taste": "sweet"
+          }
+        ],
+        "world": 1
+      }
+    ]
+  },
+  {
+    "aliases": [
+      "MIV",
+      "KRUL"
+    ],
+    "changed_field": "taste",
+    "domain": "candy",
+    "family": "e306051f2a63f88a",
+    "fields": [
+      "color",
+      "taste"
+    ],
+    "queried_values": [
+      "sour",
+      "green"
+    ],
+    "questions": [
+      "Which object is sour?",
+      "Which object has a green color?"
+    ],
+    "scene": "1b29317f63f4338ccc3a",
+    "split": "dev",
+    "template": 1,
+    "worlds": [
+      {
+        "answers": [
+          "KRUL",
+          "KRUL"
+        ],
+        "evidence": [
+          "Private record: MIV has a orange color and is sweet. It is a candy.",
+          "Private record: KRUL has a green color and is sour. It is a candy."
+        ],
+        "facts": [
+          {
+            "color": "orange",
+            "taste": "sweet"
+          },
+          {
+            "color": "green",
+            "taste": "sour"
+          }
+        ],
+        "world": 0
+      },
+      {
+        "answers": [
+          "MIV",
+          "KRUL"
+        ],
+        "evidence": [
+          "Private record: MIV has a orange color and is sour. It is a candy.",
+          "Private record: KRUL has a green color and is sweet. It is a candy."
+        ],
+        "facts": [
+          {
+            "color": "orange",
+            "taste": "sour"
+          },
+          {
+            "color": "green",
+            "taste": "sweet"
+          }
+        ],
+        "world": 1
+      }
+    ]
+  },
+  {
+    "aliases": [
+      "LORP",
+      "VOTH"
+    ],
+    "changed_field": "color",
+    "domain": "candy",
+    "family": "eb1f67104ea0e00d",
+    "fields": [
+      "color",
+      "taste"
+    ],
+    "queried_values": [
+      "green",
+      "bitter"
+    ],
+    "questions": [
+      "Which object has a green color?",
+      "Which object is bitter?"
+    ],
+    "scene": "e460322a6b586d0d9861",
+    "split": "dev",
+    "template": 0,
+    "worlds": [
+      {
+        "answers": [
+          "LORP",
+          "LORP"
+        ],
+        "evidence": [
+          "LORP is a green candy. It is bitter.",
+          "VOTH is a orange candy. It is sour."
+        ],
+        "facts": [
+          {
+            "color": "green",
+            "taste": "bitter"
+          },
+          {
+            "color": "orange",
+            "taste": "sour"
+          }
+        ],
+        "world": 0
+      },
+      {
+        "answers": [
+          "VOTH",
+          "LORP"
+        ],
+        "evidence": [
+          "LORP is a orange candy. It is bitter.",
+          "VOTH is a green candy. It is sour."
+        ],
+        "facts": [
+          {
+            "color": "orange",
+            "taste": "bitter"
+          },
+          {
+            "color": "green",
+            "taste": "sour"
+          }
+        ],
+        "world": 1
+      }
+    ]
+  },
+  {
+    "aliases": [
+      "BLIX",
+      "FEP"
+    ],
+    "changed_field": "color",
+    "domain": "candy",
+    "family": "eb1f67104ea0e00d",
+    "fields": [
+      "color",
+      "taste"
+    ],
+    "queried_values": [
+      "green",
+      "bitter"
+    ],
+    "questions": [
+      "Which object has a green color?",
+      "Which object is bitter?"
+    ],
+    "scene": "609eb9d96783aa6c6632",
+    "split": "dev",
+    "template": 0,
+    "worlds": [
+      {
+        "answers": [
+          "FEP",
+          "BLIX"
+        ],
+        "evidence": [
+          "BLIX is a orange candy. It is bitter.",
+          "FEP is a green candy. It is sour."
+        ],
+        "facts": [
+          {
+            "color": "orange",
+            "taste": "bitter"
+          },
+          {
+            "color": "green",
+            "taste": "sour"
+          }
+        ],
+        "world": 0
+      },
+      {
+        "answers": [
+          "BLIX",
+          "BLIX"
+        ],
+        "evidence": [
+          "BLIX is a green candy. It is bitter.",
+          "FEP is a orange candy. It is sour."
+        ],
+        "facts": [
+          {
+            "color": "green",
+            "taste": "bitter"
+          },
+          {
+            "color": "orange",
+            "taste": "sour"
+          }
+        ],
+        "world": 1
+      }
+    ]
+  },
+  {
+    "aliases": [
+      "FEP",
+      "QUAN"
+    ],
+    "changed_field": "taste",
+    "domain": "candy",
+    "family": "eb1f67104ea0e00d",
+    "fields": [
+      "color",
+      "taste"
+    ],
+    "queried_values": [
+      "bitter",
+      "green"
+    ],
+    "questions": [
+      "Which object is bitter?",
+      "Which object has a green color?"
+    ],
+    "scene": "2cccebcb3f71dbd4c5c4",
+    "split": "dev",
+    "template": 0,
+    "worlds": [
+      {
+        "answers": [
+          "FEP",
+          "FEP"
+        ],
+        "evidence": [
+          "FEP is a green candy. It is bitter.",
+          "QUAN is a orange candy. It is sour."
+        ],
+        "facts": [
+          {
+            "color": "green",
+            "taste": "bitter"
+          },
+          {
+            "color": "orange",
+            "taste": "sour"
+          }
+        ],
+        "world": 0
+      },
+      {
+        "answers": [
+          "QUAN",
+          "FEP"
+        ],
+        "evidence": [
+          "FEP is a green candy. It is sour.",
+          "QUAN is a orange candy. It is bitter."
+        ],
+        "facts": [
+          {
+            "color": "green",
+            "taste": "sour"
+          },
+          {
+            "color": "orange",
+            "taste": "bitter"
+          }
+        ],
+        "world": 1
+      }
+    ]
+  },
+  {
+    "aliases": [
+      "QUAN",
+      "LORP"
+    ],
+    "changed_field": "taste",
+    "domain": "candy",
+    "family": "eb1f67104ea0e00d",
+    "fields": [
+      "color",
+      "taste"
+    ],
+    "queried_values": [
+      "bitter",
+      "green"
+    ],
+    "questions": [
+      "Which object is bitter?",
+      "Which object has a green color?"
+    ],
+    "scene": "f8cfbfe6abab65d53301",
+    "split": "dev",
+    "template": 0,
+    "worlds": [
+      {
+        "answers": [
+          "QUAN",
+          "LORP"
+        ],
+        "evidence": [
+          "QUAN is a orange candy. It is bitter.",
+          "LORP is a green candy. It is sour."
+        ],
+        "facts": [
+          {
+            "color": "orange",
+            "taste": "bitter"
+          },
+          {
+            "color": "green",
+            "taste": "sour"
+          }
+        ],
+        "world": 0
+      },
+      {
+        "answers": [
+          "LORP",
+          "LORP"
+        ],
+        "evidence": [
+          "QUAN is a orange candy. It is sour.",
+          "LORP is a green candy. It is bitter."
+        ],
+        "facts": [
+          {
+            "color": "orange",
+            "taste": "sour"
+          },
+          {
+            "color": "green",
+            "taste": "bitter"
+          }
+        ],
+        "world": 1
+      }
+    ]
+  },
+  {
+    "aliases": [
+      "BLIX",
+      "MIV"
+    ],
+    "changed_field": "color",
+    "domain": "candy",
+    "family": "eb1f67104ea0e00d",
+    "fields": [
+      "color",
+      "taste"
+    ],
+    "queried_values": [
+      "green",
+      "bitter"
+    ],
+    "questions": [
+      "Which object has a green color?",
+      "Which object is bitter?"
+    ],
+    "scene": "49b642c1121453c94642",
+    "split": "dev",
+    "template": 1,
+    "worlds": [
+      {
+        "answers": [
+          "BLIX",
+          "MIV"
+        ],
+        "evidence": [
+          "Private record: BLIX has a green color and is sour. It is a candy.",
+          "Private record: MIV has a orange color and is bitter. It is a candy."
+        ],
+        "facts": [
+          {
+            "color": "green",
+            "taste": "sour"
+          },
+          {
+            "color": "orange",
+            "taste": "bitter"
+          }
+        ],
+        "world": 0
+      },
+      {
+        "answers": [
+          "MIV",
+          "MIV"
+        ],
+        "evidence": [
+          "Private record: BLIX has a orange color and is sour. It is a candy.",
+          "Private record: MIV has a green color and is bitter. It is a candy."
+        ],
+        "facts": [
+          {
+            "color": "orange",
+            "taste": "sour"
+          },
+          {
+            "color": "green",
+            "taste": "bitter"
+          }
+        ],
+        "world": 1
+      }
+    ]
+  },
+  {
+    "aliases": [
+      "KRUL",
+      "LORP"
+    ],
+    "changed_field": "color",
+    "domain": "candy",
+    "family": "eb1f67104ea0e00d",
+    "fields": [
+      "color",
+      "taste"
+    ],
+    "queried_values": [
+      "green",
+      "bitter"
+    ],
+    "questions": [
+      "Which object has a green color?",
+      "Which object is bitter?"
+    ],
+    "scene": "34c34690dede07a568e3",
+    "split": "dev",
+    "template": 1,
+    "worlds": [
+      {
+        "answers": [
+          "LORP",
+          "LORP"
+        ],
+        "evidence": [
+          "Private record: KRUL has a orange color and is sour. It is a candy.",
+          "Private record: LORP has a green color and is bitter. It is a candy."
+        ],
+        "facts": [
+          {
+            "color": "orange",
+            "taste": "sour"
+          },
+          {
+            "color": "green",
+            "taste": "bitter"
+          }
+        ],
+        "world": 0
+      },
+      {
+        "answers": [
+          "KRUL",
+          "LORP"
+        ],
+        "evidence": [
+          "Private record: KRUL has a green color and is sour. It is a candy.",
+          "Private record: LORP has a orange color and is bitter. It is a candy."
+        ],
+        "facts": [
+          {
+            "color": "green",
+            "taste": "sour"
+          },
+          {
+            "color": "orange",
+            "taste": "bitter"
+          }
+        ],
+        "world": 1
+      }
+    ]
+  },
+  {
+    "aliases": [
+      "MIV",
+      "LORP"
+    ],
+    "changed_field": "taste",
+    "domain": "candy",
+    "family": "eb1f67104ea0e00d",
+    "fields": [
+      "color",
+      "taste"
+    ],
+    "queried_values": [
+      "bitter",
+      "green"
+    ],
+    "questions": [
+      "Which object is bitter?",
+      "Which object has a green color?"
+    ],
+    "scene": "cc5957165e3a0d604e9e",
+    "split": "dev",
+    "template": 1,
+    "worlds": [
+      {
+        "answers": [
+          "LORP",
+          "MIV"
+        ],
+        "evidence": [
+          "Private record: MIV has a green color and is sour. It is a candy.",
+          "Private record: LORP has a orange color and is bitter. It is a candy."
+        ],
+        "facts": [
+          {
+            "color": "green",
+            "taste": "sour"
+          },
+          {
+            "color": "orange",
+            "taste": "bitter"
+          }
+        ],
+        "world": 0
+      },
+      {
+        "answers": [
+          "MIV",
+          "MIV"
+        ],
+        "evidence": [
+          "Private record: MIV has a green color and is bitter. It is a candy.",
+          "Private record: LORP has a orange color and is sour. It is a candy."
+        ],
+        "facts": [
+          {
+            "color": "green",
+            "taste": "bitter"
+          },
+          {
+            "color": "orange",
+            "taste": "sour"
+          }
+        ],
+        "world": 1
+      }
+    ]
+  },
+  {
+    "aliases": [
+      "VOTH",
+      "MIV"
+    ],
+    "changed_field": "taste",
+    "domain": "candy",
+    "family": "eb1f67104ea0e00d",
+    "fields": [
+      "color",
+      "taste"
+    ],
+    "queried_values": [
+      "bitter",
+      "green"
+    ],
+    "questions": [
+      "Which object is bitter?",
+      "Which object has a green color?"
+    ],
+    "scene": "b2ed3afeeaf5e134e774",
+    "split": "dev",
+    "template": 1,
+    "worlds": [
+      {
+        "answers": [
+          "MIV",
+          "MIV"
+        ],
+        "evidence": [
+          "Private record: VOTH has a orange color and is sour. It is a candy.",
+          "Private record: MIV has a green color and is bitter. It is a candy."
+        ],
+        "facts": [
+          {
+            "color": "orange",
+            "taste": "sour"
+          },
+          {
+            "color": "green",
+            "taste": "bitter"
+          }
+        ],
+        "world": 0
+      },
+      {
+        "answers": [
+          "VOTH",
+          "MIV"
+        ],
+        "evidence": [
+          "Private record: VOTH has a orange color and is bitter. It is a candy.",
+          "Private record: MIV has a green color and is sour. It is a candy."
+        ],
+        "facts": [
+          {
+            "color": "orange",
+            "taste": "bitter"
+          },
+          {
+            "color": "green",
+            "taste": "sour"
+          }
+        ],
+        "world": 1
+      }
+    ]
+  }
+]

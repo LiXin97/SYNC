@@ -1,0 +1,95 @@
+{
+ "lock": "latest0924_expE_layout",
+ "utc": "2026-09-25T010138Z",
+ "status": "LOCKED before any GPU row (engineering included)",
+ "authority": "[internal approval note removed for anonymity]",
+ "protocol": "artifacts/latest0924/layout/DESIGN.md",
+ "receivers": [
+  "qwen3-32b",
+  "qwen3.5-27b",
+  "qwen3.6-27b",
+  "mistral-small-3.2-24b",
+  "qwen3.5-9b",
+  "granite-4.1-8b"
+ ],
+ "conditions": [
+  "L0",
+  "L1",
+  "L2",
+  "L3"
+ ],
+ "relational_roles": "L4 out of scope (not run)",
+ "material": "complete facts, no sender; 144 prespecified two-object scenes (Experiment B tiers 1+2) + 4 engineering scenes; three-object versions derived per DESIGN.md",
+ "arms": [
+  "none",
+  "internal",
+  "text",
+  "sham0"
+ ],
+ "engineering_arms": [
+  "identity_write"
+ ],
+ "engineering_gate": "identity write exactly inert; cached vs complete forward: max logit <= 0.05, alias gap <= 0.1, equal parses at 64/256; per receiver on all conditions",
+ "primary": "per receiver x condition c in {L1,L2,L3}: Delta_c = J_internal(c) - J_internal(L0), paired by scene, family-macro four-answer success at 64 tokens",
+ "decision_rule": "non-inferiority margin 5 points: H0 Delta_c <= -5; one-sided p = max over (36 families, 12 domain x template clusters) x seeds 20260924-6 of the bootstrap fraction of Delta* <= -5 (20,000 draws); Holm across the 18 receiver x condition cells at alpha 0.05; transfers if Holm rejects, fails to transfer if the enclosing upper limit < -5, else inconclusive; receivers failing engineering are not interpretable",
+ "secondary": "internal - text and internal - sham0 per condition; text(c) - text(L0); J ratio internal(c)/internal(L0); all descriptive",
+ "checks": "receipts and exact row sets; L0 rows identical in tokens and logits to Experiment A complete-fact rows (R3 for qwen3-32b)",
+ "cpu_dry_run": {
+  "qwen3-32b": {
+   "status": "PASS",
+   "l0_compared": 592,
+   "l0_prompt_mismatch": 0,
+   "l0_positions_mismatch": 0
+  },
+  "qwen3.5-27b": {
+   "status": "PASS",
+   "l0_compared": 592,
+   "l0_prompt_mismatch": 0,
+   "l0_positions_mismatch": 0
+  },
+  "qwen3.6-27b": {
+   "status": "PASS",
+   "l0_compared": 592,
+   "l0_prompt_mismatch": 0,
+   "l0_positions_mismatch": 0
+  },
+  "mistral-small-3.2-24b": {
+   "status": "PASS",
+   "l0_compared": 592,
+   "l0_prompt_mismatch": 0,
+   "l0_positions_mismatch": 0
+  },
+  "qwen3.5-9b": {
+   "status": "PASS",
+   "l0_compared": 592,
+   "l0_prompt_mismatch": 0,
+   "l0_positions_mismatch": 0
+  },
+  "granite-4.1-8b": {
+   "status": "PASS",
+   "l0_compared": 592,
+   "l0_prompt_mismatch": 0,
+   "l0_positions_mismatch": 0
+  }
+ },
+ "reporting": "all receivers and conditions are reported whichever way they come out; nothing is tuned after this lock",
+ "pins": {
+  "artifacts/latest0924/layout/DESIGN.md": "81f5953f7c4c67d1c70cfab2d952c846dda99c00a277bce4e5ef8e1caecafec9",
+  "artifacts/latest0924/layout/bank.json": "bd7971104f5314f849adaf3ef89d96c7ced93013e0757013f12029daf40c1049",
+  "src/syncomm/latest/layout_render.py": "7906a687507e7f2485d04b05da2bab722dc1b3c4ab4e99a12f7cc2f7d8742619",
+  "scripts/latest0924/layout/build_layout_bank.py": "01703ae88a13163569ed41a51f7dbbe7213d9044211d298befa8caaf32176f80",
+  "src/syncomm/latest/evaluate_layout.py": "56a235bc03bc0f401b20f0fde506d736306a7b08ff78b7bd1b106197ede57987",
+  "scripts/latest0924/layout/analyze_layout.py": "c5c622e34306d204b64c5e9fb99bd6bce1ebe9f908048b629c34fbd903e957e1",
+  "scripts/latest0924/layout/run_layout.sh": "6150d84bc3a335eef86df7ccc449956acc9078ddbfe630a7df9ddd07a74787d3",
+  "src/syncomm/latest/evaluate_graded.py": "39644f2bf3e99ffe062f56b950011fdc259d97e9720f4ba618214fd5fce979ca",
+  "src/syncomm/recovery/evaluate_confirm.py": "76796972e52e328b57b173a06d7ea6251aed2957d8020b47f8ac76b8332e4b75",
+  "src/syncomm/recovery/evaluate_depth.py": "9e8d153129e8b61bc496444558f0dfa4b6f6aff4be00eebb7589f613b8ce8a01",
+  "src/syncomm/latest/adapter.py": "0f4cc649a611c3f985414e4b4f9b69a680829dbb35c25ec83f6de8763e777b19",
+  "artifacts/latest0924/layout/qwen3-32b/manifest.json": "619dbb8fc521f0d7feb59e54448ce92f5415a80565dff069a40ffb309a71b027",
+  "artifacts/latest0924/layout/qwen3.5-27b/manifest.json": "a07246b609adef9ea3f9c6e500da997f2332a143c1aeb6357bec61962b8397d4",
+  "artifacts/latest0924/layout/qwen3.6-27b/manifest.json": "9792d3896429edfadec313ba3aabfa04fd5b6cc2cfb1723c6688efde7bbb0458",
+  "artifacts/latest0924/layout/mistral-small-3.2-24b/manifest.json": "0131c4d9af2d947f3c84347e5235a8bc7937e158100f77ec138c1fee45eeb6b5",
+  "artifacts/latest0924/layout/qwen3.5-9b/manifest.json": "c12e06b2b72153b8992705729372f47295626dc78aba2870855457b80818952c",
+  "artifacts/latest0924/layout/granite-4.1-8b/manifest.json": "9f813765cc098c53a8d1abf047a713bfbba851d0a0ee0291be3f4c8d0f7fc8a1"
+ }
+}

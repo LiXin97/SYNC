@@ -1,0 +1,97 @@
+{
+  "all_layers": [
+    8,
+    14,
+    16,
+    20,
+    24,
+    26,
+    32
+  ],
+  "bank": "artifacts/mechanism0919/discovery_v1/exposed_development.json",
+  "bank_size": 96,
+  "bank_split": "dev",
+  "base_models": [
+    "qwen3-14b-base"
+  ],
+  "configs": [
+    [
+      "d20",
+      [
+        0.2
+      ],
+      [
+        8
+      ]
+    ]
+  ],
+  "directions": "artifacts/receiver_recovery/fits/directions_glm-4-9b.pt",
+  "engineering_scene_ids": [
+    "f4f76966dc44e6d37864",
+    "b73fde4e7a35ca546d46",
+    "db403b268b2fefe0481d",
+    "c33d9d12d547e1a6fef8"
+  ],
+  "gammas": [
+    1
+  ],
+  "local_gammas": [
+    0.25,
+    0.5,
+    1,
+    2,
+    4
+  ],
+  "local_scale_labels": [
+    "d20"
+  ],
+  "lock": "artifacts/receiver_recovery/locks/r2_scale_rule.lock.json",
+  "match_labels": [
+    "d20"
+  ],
+  "models": {
+    "gemma-3-27b-it": "/path/to/models/gemma-3-27b-it",
+    "glm-4-9b": "/path/to/models/GLM-4-9B-0414",
+    "qwen3-14b-base": "/path/to/models/Qwen3-14B-Base",
+    "qwen3-32b": "/path/to/models/Qwen3-32B"
+  },
+  "n_blocks": 40,
+  "native_selected_depth": "d20",
+  "numerics": {
+    "budgets": [
+      64,
+      256
+    ],
+    "dtype": "FP32 eager, TF32 off, batch 1",
+    "parser": "strict first-line alias"
+  },
+  "pins": {
+    "artifacts/mechanism0919/discovery_v1/exposed_development.json": "97b7622418ba13eaae739a45ba675a8d838821c01f3f169eee84092a77056177",
+    "artifacts/receiver_recovery/fits/directions_glm-4-9b.pt": "9096363f53235fc3ad8476a8a50b027ef9cb948d6d8982e3dc696bf91ffb94f3",
+    "artifacts/receiver_recovery/words_221.json": "b7c686ee1c47392ee2499f31c4784a4d3427e1d981a624e8ed77af49aca5767e",
+    "src/syncomm/recovery/evaluate_depth.py": "9e8d153129e8b61bc496444558f0dfa4b6f6aff4be00eebb7589f613b8ce8a01"
+  },
+  "plan": "the study protocol \u00a77",
+  "purpose": "R2 on glm-4-9b: at the NATIVE-selected depth d20 (chosen on development by J among coverage>=0.90 native cells), the generic local-scale rule at the five frozen gammas plus the two realized-edit-norm matching diagnostics; complete-fact packets, exposed dev-96 minus the 4 engineering scenes. Development.",
+  "r2_local_gammas": [
+    0.25,
+    0.5,
+    1,
+    2,
+    4
+  ],
+  "receiver": "glm-4-9b",
+  "root": "artifacts/receiver_recovery/r2/glm-4-9b",
+  "row_split": "exposed_development_r2",
+  "scale": {
+    "14": 1.1298041343688965,
+    "16": 1.149944543838501,
+    "20": 1.2500030994415283,
+    "24": 1.174652338027954,
+    "26": 1.1212214231491089,
+    "32": 1.0982697010040283,
+    "8": 1.0595723390579224
+  },
+  "study": "RECEIVER_RECOVERY_R2_GLM_4_9B_V1",
+  "words_file": "artifacts/receiver_recovery/words_221.json"
+}

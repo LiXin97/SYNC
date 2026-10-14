@@ -1,0 +1,12 @@
+{
+  "elapsed_seconds": 6703.791722536087,
+  "manifest_sha256": "7523f13dd860ef5fd197a3b2d0ddd66545dc2bf1b1051081f72e4802d809dd5f",
+  "phase": "development",
+  "raw_sha256": "fe4242e16cf6f5fb1a06698507bfd6b006ea52f0b6beb8eee4c5b9e899e61be1",
+  "receiver": "gpt-oss-20b",
+  "rows": 14872,
+  "scenes": 286,
+  "shard": 0,
+  "shards": 2,
+  "status": "PASS"
+}

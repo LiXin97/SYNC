@@ -1,0 +1,32 @@
+{
+ "receiver": "mistral-small-3.2-24b",
+ "layers": [
+  8,
+  16,
+  20,
+  24
+ ],
+ "file": "artifacts/latest0924/fits/directions_mistral-small-3.2-24b.pt",
+ "sha256": "841c5a95cf482dc63a3dbd9f5288047ad98334ca272f53ae14c8e1a3937cc108",
+ "direction_norm_median_per_layer": {
+  "8": 3.5891456604003906,
+  "16": 5.9545793533325195,
+  "20": 8.012112617492676,
+  "24": 11.862652778625488
+ },
+ "local_scale": {
+  "8": 1.1038190126419067,
+  "16": 1.1862869262695312,
+  "20": 1.1499543190002441,
+  "24": 1.1329001188278198
+ },
+ "n_ratio_samples": {
+  "8": 2652,
+  "16": 2652,
+  "20": 2652,
+  "24": 2652
+ },
+ "excluded_rows": [],
+ "epsilon": 1e-08,
+ "rule": "c[l] = median over (word, template) of ||delta[l,w,t]|| / ||d[l,w]||; >= 1 by construction"
+}

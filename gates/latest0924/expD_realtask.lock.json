@@ -1,0 +1,89 @@
+{
+ "lock": "latest0924_expD_realtask",
+ "utc": "2026-09-25T002553Z",
+ "status": "LOCKED before the sender gate and before any GPU outcome row",
+ "authority": "[internal approval note removed for anonymity]",
+ "design": "artifacts/latest0924/realtask/DESIGN.md",
+ "task": "Countries dev split (400 items -> 24 gate + 4 engineering + 172 evaluation two-person scenes); test split untouched",
+ "sender": "gemma-4-26b-a4b-it",
+ "sender_gate": {
+  "scenes": "artifacts/latest0924/realtask/gate_bank.json",
+  "thresholds": {
+   "parse_fully_rate_min": 0.99,
+   "landmark_recall_min": 0.9,
+   "wrong_object_lane_rate_max": 0.02
+  },
+  "rule": "a failing sender gate stops the experiment (reported)"
+ },
+ "receivers": [
+  "qwen3.5-27b",
+  "qwen3.6-27b",
+  "mistral-small-3.2-24b",
+  "qwen3-32b"
+ ],
+ "interface": "depth 0.2 single write, gamma 1, raw fitted 275-symbol directions, four slots per object, frozen prompts/parser/evaluator",
+ "arms": [
+  "none",
+  "identity_write (engineering)",
+  "original",
+  "selected",
+  "packet_text",
+  "full_text",
+  "sham0",
+  "sham1",
+  "sham2",
+  "other_world"
+ ],
+ "endpoint": "four-answer success (64 tokens), family (country pair) macro",
+ "ci": "cluster bootstrap over country pairs and over continent pairs, 20,000 draws x seeds 20260924-6, enclosing; p = max",
+ "positive_rule": "per receiver: Holm (alpha 0.05, evaluated receivers) rejects selected-none AND selected-mean(reassignment), both enclosing lower limits > 0",
+ "secondary": [
+  "selected-packet_text",
+  "selected-full_text",
+  "selected-original",
+  "accuracy",
+  "coverage",
+  "J256"
+ ],
+ "engineering_gate": "identity inert; cached vs complete: max logit <= 0.05, alias gap <= 0.1, equal parses; failing receiver = engineering failure, no outcomes",
+ "reporting": "results reported whichever way they come out; not claims: population estimates, calibrated confidence, other tasks",
+ "pins": {
+  "artifacts/latest0924/realtask/DESIGN.md": "0988d391f6c8c06b043cb4a42d1cf33611789981ebcba3eadf7215dbcbbddb87",
+  "artifacts/latest0924/realtask/bank.json": "8a24a9c1d6ea85aa2e96e33de2c7065ba4bb21a934b98ee56de62c8eb2378056",
+  "artifacts/latest0924/realtask/gate_bank.json": "7f8a3e19f7c2f547da0012d92e4d962b440d3e31f22e54d50419508393b8b0c4",
+  "artifacts/latest0924/realtask/inventory_275.json": "19ec5970550376c685cc023330c34b22752e46446b709d5a9080b998b67b1e83",
+  "artifacts/latest0924/realtask/engineering_scene_ids.json": "541ab173a3025591f0303c2025923fa6083aca7b280ba4d92f6cacd0aebb9a9f",
+  "artifacts/latest0924/realtask/fit_manifest.json": "7e19fae8e872736c213329ef687abe574af9e991ac979493ccf074e23eb65ceb",
+  "scripts/latest0924/realtask/build_countries_bank.py": "5a896541dd29dbf4fb16946b967daa6e661114f8e74f26bb39c650c1382de39b",
+  "scripts/latest0924/realtask/make_inventory_variants.py": "1ae06444344e92e06069e63d15dcbdc8470bbdeabae2371fd670988abe6de452",
+  "scripts/latest0924/realtask/build_manifests.py": "0071c34a49b3abe1ca5e3392a915ca22743a5afb2a2692987cd0a18735ba2c46",
+  "scripts/latest0924/realtask/sender_gate_countries.py": "86e716a414578c96e161c7d869710c43359053c662de2f50c510c3196c6e50ee",
+  "scripts/latest0924/realtask/analyze.py": "309a761d8b9a9f31c7a182549e60f1d1db779598cb1ba49f4c7e4260f7332503",
+  "src/syncomm/recovery/fit_layers_inv275.py": "fb50e1d859039d5fea7182ae408693d7ebfa48e2be2f4feb80cf4ad5ad38a8ac",
+  "src/syncomm/latest/sender_inv275.py": "eb5ac23ab694b4af84e7efce4784305045db8f486b9e5b0f28156a4d8a1b1ede",
+  "src/syncomm/recovery/evaluate_confirm.py": "76796972e52e328b57b173a06d7ea6251aed2957d8020b47f8ac76b8332e4b75",
+  "src/syncomm/recovery/evaluate_depth.py": "9e8d153129e8b61bc496444558f0dfa4b6f6aff4be00eebb7589f613b8ce8a01",
+  "src/syncomm/latest/adapter.py": "0f4cc649a611c3f985414e4b4f9b69a680829dbb35c25ec83f6de8763e777b19",
+  "scripts/latest0924/run_patched.py": "520da277d8c6cf85f5b9af484c1e19e3dfbbefbb59002f3ebed91f0dce71a8c2",
+  "data/bench/ac-countries_dev.jsonl": "35e461a333ed3ccd232f86b506c6004901ef20d9053a8a0f156216c46bd5b088"
+ },
+ "amendments": [
+  {
+   "utc": "2026-09-25T002719Z",
+   "before": "any GPU row (node not yet allocated)",
+   "what": "analyze.py: cast bootstrap percentiles/p and Holm outputs to Python float/bool (numpy bool was not JSON-serializable; found by a synthetic planted-outcome test). No rule changed.",
+   "pins": {
+    "scripts/latest0924/realtask/analyze.py": "5b5515231f8e671ddef05ed87aae3f51ee408955d6a4dd2fa7c500b2e4048e3f"
+   },
+   "previous_sha256": "309a761d8b9a9f31c7a182549e60f1d1db779598cb1ba49f4c7e4260f7332503"
+  },
+  {
+   "utc": "2026-09-25T005234Z",
+   "before": "any analysis run on real rows (development rows were being written; ~16 early Mistral scenes had been inspected per arm for a pipeline sanity check)",
+   "what": "analyze.py expected-row count includes identity_write development rows, which the frozen evaluator writes in every phase (as in Experiment A). Bookkeeping only; endpoints, arms and decision rule unchanged.",
+   "pins": {
+    "scripts/latest0924/realtask/analyze.py": "8a1bf27467fd29a1b25ce1d6b3324c5655a721d3a0a8aac7a5fbb7415cfc1a68"
+   }
+  }
+ ]
+}

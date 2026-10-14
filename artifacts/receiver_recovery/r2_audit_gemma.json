@@ -1,0 +1,2359 @@
+{
+  "status": "PASS_INDEPENDENT_R1_AUDIT",
+  "utc": "2026-09-22T19:54:33.041911+00:00",
+  "script_sha256": "10581b5d52146cf12eff9a81fdd85d70026879b8869e4c7170baf4856579b753",
+  "receivers": {
+    "gemma-3-27b-it": {
+      "root": "artifacts/receiver_recovery/r2/gemma-3-27b-it",
+      "receiver": "gemma-3-27b-it",
+      "manifest_sha256": "ff5052abc63d78022f889e0428e3e58c95e07ccc65b599a787ee897caeb46416",
+      "receipts": 3,
+      "n_blocks": 62,
+      "configs": {
+        "d20": [
+          12
+        ]
+      },
+      "gammas": [
+        1
+      ],
+      "scale": {
+        "12": 1.0282092094421387,
+        "22": 1.089351773262024,
+        "25": 1.1192673444747925,
+        "31": 1.214199185371399,
+        "37": 1.1722631454467773,
+        "40": 1.1504015922546387,
+        "50": 1.1536171436309814
+      },
+      "phases": {
+        "engineering": {
+          "scenes": 4,
+          "rows": 224,
+          "cells": 14,
+          "conditions": [
+            {
+              "arm": "fitted",
+              "depth_label": "d20",
+              "gamma": 1,
+              "budget": 64,
+              "layers": [
+                12
+              ],
+              "accuracy": {
+                "mean": 1.0,
+                "lo": 1.0,
+                "hi": 1.0,
+                "clusters": 1
+              },
+              "all_four": {
+                "mean": 1.0,
+                "lo": 1.0,
+                "hi": 1.0,
+                "clusters": 1
+              },
+              "coverage": {
+                "mean": 1.0,
+                "lo": 1.0,
+                "hi": 1.0,
+                "clusters": 1
+              },
+              "relevant_both": {
+                "mean": 1.0,
+                "lo": 1.0,
+                "hi": 1.0,
+                "clusters": 1
+              },
+              "unrelated_both": {
+                "mean": 1.0,
+                "lo": 1.0,
+                "hi": 1.0,
+                "clusters": 1
+              }
+            },
+            {
+              "arm": "fitted",
+              "depth_label": "d20",
+              "gamma": 1,
+              "budget": 256,
+              "layers": [
+                12
+              ],
+              "accuracy": {
+                "mean": 1.0,
+                "lo": 1.0,
+                "hi": 1.0,
+                "clusters": 1
+              },
+              "all_four": {
+                "mean": 1.0,
+                "lo": 1.0,
+                "hi": 1.0,
+                "clusters": 1
+              },
+              "coverage": {
+                "mean": 1.0,
+                "lo": 1.0,
+                "hi": 1.0,
+                "clusters": 1
+              },
+              "relevant_both": {
+                "mean": 1.0,
+                "lo": 1.0,
+                "hi": 1.0,
+                "clusters": 1
+              },
+              "unrelated_both": {
+                "mean": 1.0,
+                "lo": 1.0,
+                "hi": 1.0,
+                "clusters": 1
+              }
+            },
+            {
+              "arm": "fitted_matchnative",
+              "depth_label": "d20",
+              "gamma": 1,
+              "budget": 64,
+              "layers": [
+                12
+              ],
+              "accuracy": {
+                "mean": 1.0,
+                "lo": 1.0,
+                "hi": 1.0,
+                "clusters": 1
+              },
+              "all_four": {
+                "mean": 1.0,
+                "lo": 1.0,
+                "hi": 1.0,
+                "clusters": 1
+              },
+              "coverage": {
+                "mean": 1.0,
+                "lo": 1.0,
+                "hi": 1.0,
+                "clusters": 1
+              },
+              "relevant_both": {
+                "mean": 1.0,
+                "lo": 1.0,
+                "hi": 1.0,
+                "clusters": 1
+              },
+              "unrelated_both": {
+                "mean": 1.0,
+                "lo": 1.0,
+                "hi": 1.0,
+                "clusters": 1
+              }
+            },
+            {
+              "arm": "fitted_matchnative",
+              "depth_label": "d20",
+              "gamma": 1,
+              "budget": 256,
+              "layers": [
+                12
+              ],
+              "accuracy": {
+                "mean": 1.0,
+                "lo": 1.0,
+                "hi": 1.0,
+                "clusters": 1
+              },
+              "all_four": {
+                "mean": 1.0,
+                "lo": 1.0,
+                "hi": 1.0,
+                "clusters": 1
+              },
+              "coverage": {
+                "mean": 1.0,
+                "lo": 1.0,
+                "hi": 1.0,
+                "clusters": 1
+              },
+              "relevant_both": {
+                "mean": 1.0,
+                "lo": 1.0,
+                "hi": 1.0,
+                "clusters": 1
+              },
+              "unrelated_both": {
+                "mean": 1.0,
+                "lo": 1.0,
+                "hi": 1.0,
+                "clusters": 1
+              }
+            },
+            {
+              "arm": "full_text",
+              "depth_label": "shared",
+              "gamma": 0,
+              "budget": 64,
+              "layers": [],
+              "accuracy": {
+                "mean": 1.0,
+                "lo": 1.0,
+                "hi": 1.0,
+                "clusters": 1
+              },
+              "all_four": {
+                "mean": 1.0,
+                "lo": 1.0,
+                "hi": 1.0,
+                "clusters": 1
+              },
+              "coverage": {
+                "mean": 1.0,
+                "lo": 1.0,
+                "hi": 1.0,
+                "clusters": 1
+              },
+              "relevant_both": {
+                "mean": 1.0,
+                "lo": 1.0,
+                "hi": 1.0,
+                "clusters": 1
+              },
+              "unrelated_both": {
+                "mean": 1.0,
+                "lo": 1.0,
+                "hi": 1.0,
+                "clusters": 1
+              }
+            },
+            {
+              "arm": "full_text",
+              "depth_label": "shared",
+              "gamma": 0,
+              "budget": 256,
+              "layers": [],
+              "accuracy": {
+                "mean": 1.0,
+                "lo": 1.0,
+                "hi": 1.0,
+                "clusters": 1
+              },
+              "all_four": {
+                "mean": 1.0,
+                "lo": 1.0,
+                "hi": 1.0,
+                "clusters": 1
+              },
+              "coverage": {
+                "mean": 1.0,
+                "lo": 1.0,
+                "hi": 1.0,
+                "clusters": 1
+              },
+              "relevant_both": {
+                "mean": 1.0,
+                "lo": 1.0,
+                "hi": 1.0,
+                "clusters": 1
+              },
+              "unrelated_both": {
+                "mean": 1.0,
+                "lo": 1.0,
+                "hi": 1.0,
+                "clusters": 1
+              }
+            },
+            {
+              "arm": "identity_write",
+              "depth_label": "d20",
+              "gamma": 0,
+              "budget": 64,
+              "layers": [
+                12
+              ],
+              "accuracy": {
+                "mean": 0.625,
+                "lo": 0.625,
+                "hi": 0.625,
+                "clusters": 1
+              },
+              "all_four": {
+                "mean": 0.0,
+                "lo": 0.0,
+                "hi": 0.0,
+                "clusters": 1
+              },
+              "coverage": {
+                "mean": 1.0,
+                "lo": 1.0,
+                "hi": 1.0,
+                "clusters": 1
+              },
+              "relevant_both": {
+                "mean": 0.0,
+                "lo": 0.0,
+                "hi": 0.0,
+                "clusters": 1
+              },
+              "unrelated_both": {
+                "mean": 0.75,
+                "lo": 0.75,
+                "hi": 0.75,
+                "clusters": 1
+              }
+            },
+            {
+              "arm": "identity_write",
+              "depth_label": "d20",
+              "gamma": 0,
+              "budget": 256,
+              "layers": [
+                12
+              ],
+              "accuracy": {
+                "mean": 0.625,
+                "lo": 0.625,
+                "hi": 0.625,
+                "clusters": 1
+              },
+              "all_four": {
+                "mean": 0.0,
+                "lo": 0.0,
+                "hi": 0.0,
+                "clusters": 1
+              },
+              "coverage": {
+                "mean": 1.0,
+                "lo": 1.0,
+                "hi": 1.0,
+                "clusters": 1
+              },
+              "relevant_both": {
+                "mean": 0.0,
+                "lo": 0.0,
+                "hi": 0.0,
+                "clusters": 1
+              },
+              "unrelated_both": {
+                "mean": 0.75,
+                "lo": 0.75,
+                "hi": 0.75,
+                "clusters": 1
+              }
+            },
+            {
+              "arm": "local",
+              "depth_label": "d20",
+              "gamma": 0.25,
+              "budget": 64,
+              "layers": [
+                12
+              ],
+              "accuracy": {
+                "mean": 0.625,
+                "lo": 0.625,
+                "hi": 0.625,
+                "clusters": 1
+              },
+              "all_four": {
+                "mean": 0.0,
+                "lo": 0.0,
+                "hi": 0.0,
+                "clusters": 1
+              },
+              "coverage": {
+                "mean": 1.0,
+                "lo": 1.0,
+                "hi": 1.0,
+                "clusters": 1
+              },
+              "relevant_both": {
+                "mean": 0.0,
+                "lo": 0.0,
+                "hi": 0.0,
+                "clusters": 1
+              },
+              "unrelated_both": {
+                "mean": 0.75,
+                "lo": 0.75,
+                "hi": 0.75,
+                "clusters": 1
+              }
+            },
+            {
+              "arm": "local",
+              "depth_label": "d20",
+              "gamma": 0.25,
+              "budget": 256,
+              "layers": [
+                12
+              ],
+              "accuracy": {
+                "mean": 0.625,
+                "lo": 0.625,
+                "hi": 0.625,
+                "clusters": 1
+              },
+              "all_four": {
+                "mean": 0.0,
+                "lo": 0.0,
+                "hi": 0.0,
+                "clusters": 1
+              },
+              "coverage": {
+                "mean": 1.0,
+                "lo": 1.0,
+                "hi": 1.0,
+                "clusters": 1
+              },
+              "relevant_both": {
+                "mean": 0.0,
+                "lo": 0.0,
+                "hi": 0.0,
+                "clusters": 1
+              },
+              "unrelated_both": {
+                "mean": 0.75,
+                "lo": 0.75,
+                "hi": 0.75,
+                "clusters": 1
+              }
+            },
+            {
+              "arm": "local",
+              "depth_label": "d20",
+              "gamma": 0.5,
+              "budget": 64,
+              "layers": [
+                12
+              ],
+              "accuracy": {
+                "mean": 1.0,
+                "lo": 1.0,
+                "hi": 1.0,
+                "clusters": 1
+              },
+              "all_four": {
+                "mean": 1.0,
+                "lo": 1.0,
+                "hi": 1.0,
+                "clusters": 1
+              },
+              "coverage": {
+                "mean": 1.0,
+                "lo": 1.0,
+                "hi": 1.0,
+                "clusters": 1
+              },
+              "relevant_both": {
+                "mean": 1.0,
+                "lo": 1.0,
+                "hi": 1.0,
+                "clusters": 1
+              },
+              "unrelated_both": {
+                "mean": 1.0,
+                "lo": 1.0,
+                "hi": 1.0,
+                "clusters": 1
+              }
+            },
+            {
+              "arm": "local",
+              "depth_label": "d20",
+              "gamma": 0.5,
+              "budget": 256,
+              "layers": [
+                12
+              ],
+              "accuracy": {
+                "mean": 1.0,
+                "lo": 1.0,
+                "hi": 1.0,
+                "clusters": 1
+              },
+              "all_four": {
+                "mean": 1.0,
+                "lo": 1.0,
+                "hi": 1.0,
+                "clusters": 1
+              },
+              "coverage": {
+                "mean": 1.0,
+                "lo": 1.0,
+                "hi": 1.0,
+                "clusters": 1
+              },
+              "relevant_both": {
+                "mean": 1.0,
+                "lo": 1.0,
+                "hi": 1.0,
+                "clusters": 1
+              },
+              "unrelated_both": {
+                "mean": 1.0,
+                "lo": 1.0,
+                "hi": 1.0,
+                "clusters": 1
+              }
+            },
+            {
+              "arm": "local",
+              "depth_label": "d20",
+              "gamma": 1,
+              "budget": 64,
+              "layers": [
+                12
+              ],
+              "accuracy": {
+                "mean": 1.0,
+                "lo": 1.0,
+                "hi": 1.0,
+                "clusters": 1
+              },
+              "all_four": {
+                "mean": 1.0,
+                "lo": 1.0,
+                "hi": 1.0,
+                "clusters": 1
+              },
+              "coverage": {
+                "mean": 1.0,
+                "lo": 1.0,
+                "hi": 1.0,
+                "clusters": 1
+              },
+              "relevant_both": {
+                "mean": 1.0,
+                "lo": 1.0,
+                "hi": 1.0,
+                "clusters": 1
+              },
+              "unrelated_both": {
+                "mean": 1.0,
+                "lo": 1.0,
+                "hi": 1.0,
+                "clusters": 1
+              }
+            },
+            {
+              "arm": "local",
+              "depth_label": "d20",
+              "gamma": 1,
+              "budget": 256,
+              "layers": [
+                12
+              ],
+              "accuracy": {
+                "mean": 1.0,
+                "lo": 1.0,
+                "hi": 1.0,
+                "clusters": 1
+              },
+              "all_four": {
+                "mean": 1.0,
+                "lo": 1.0,
+                "hi": 1.0,
+                "clusters": 1
+              },
+              "coverage": {
+                "mean": 1.0,
+                "lo": 1.0,
+                "hi": 1.0,
+                "clusters": 1
+              },
+              "relevant_both": {
+                "mean": 1.0,
+                "lo": 1.0,
+                "hi": 1.0,
+                "clusters": 1
+              },
+              "unrelated_both": {
+                "mean": 1.0,
+                "lo": 1.0,
+                "hi": 1.0,
+                "clusters": 1
+              }
+            },
+            {
+              "arm": "local",
+              "depth_label": "d20",
+              "gamma": 2,
+              "budget": 64,
+              "layers": [
+                12
+              ],
+              "accuracy": {
+                "mean": 1.0,
+                "lo": 1.0,
+                "hi": 1.0,
+                "clusters": 1
+              },
+              "all_four": {
+                "mean": 1.0,
+                "lo": 1.0,
+                "hi": 1.0,
+                "clusters": 1
+              },
+              "coverage": {
+                "mean": 1.0,
+                "lo": 1.0,
+                "hi": 1.0,
+                "clusters": 1
+              },
+              "relevant_both": {
+                "mean": 1.0,
+                "lo": 1.0,
+                "hi": 1.0,
+                "clusters": 1
+              },
+              "unrelated_both": {
+                "mean": 1.0,
+                "lo": 1.0,
+                "hi": 1.0,
+                "clusters": 1
+              }
+            },
+            {
+              "arm": "local",
+              "depth_label": "d20",
+              "gamma": 2,
+              "budget": 256,
+              "layers": [
+                12
+              ],
+              "accuracy": {
+                "mean": 1.0,
+                "lo": 1.0,
+                "hi": 1.0,
+                "clusters": 1
+              },
+              "all_four": {
+                "mean": 1.0,
+                "lo": 1.0,
+                "hi": 1.0,
+                "clusters": 1
+              },
+              "coverage": {
+                "mean": 1.0,
+                "lo": 1.0,
+                "hi": 1.0,
+                "clusters": 1
+              },
+              "relevant_both": {
+                "mean": 1.0,
+                "lo": 1.0,
+                "hi": 1.0,
+                "clusters": 1
+              },
+              "unrelated_both": {
+                "mean": 1.0,
+                "lo": 1.0,
+                "hi": 1.0,
+                "clusters": 1
+              }
+            },
+            {
+              "arm": "local",
+              "depth_label": "d20",
+              "gamma": 4,
+              "budget": 64,
+              "layers": [
+                12
+              ],
+              "accuracy": {
+                "mean": 1.0,
+                "lo": 1.0,
+                "hi": 1.0,
+                "clusters": 1
+              },
+              "all_four": {
+                "mean": 1.0,
+                "lo": 1.0,
+                "hi": 1.0,
+                "clusters": 1
+              },
+              "coverage": {
+                "mean": 1.0,
+                "lo": 1.0,
+                "hi": 1.0,
+                "clusters": 1
+              },
+              "relevant_both": {
+                "mean": 1.0,
+                "lo": 1.0,
+                "hi": 1.0,
+                "clusters": 1
+              },
+              "unrelated_both": {
+                "mean": 1.0,
+                "lo": 1.0,
+                "hi": 1.0,
+                "clusters": 1
+              }
+            },
+            {
+              "arm": "local",
+              "depth_label": "d20",
+              "gamma": 4,
+              "budget": 256,
+              "layers": [
+                12
+              ],
+              "accuracy": {
+                "mean": 1.0,
+                "lo": 1.0,
+                "hi": 1.0,
+                "clusters": 1
+              },
+              "all_four": {
+                "mean": 1.0,
+                "lo": 1.0,
+                "hi": 1.0,
+                "clusters": 1
+              },
+              "coverage": {
+                "mean": 1.0,
+                "lo": 1.0,
+                "hi": 1.0,
+                "clusters": 1
+              },
+              "relevant_both": {
+                "mean": 1.0,
+                "lo": 1.0,
+                "hi": 1.0,
+                "clusters": 1
+              },
+              "unrelated_both": {
+                "mean": 1.0,
+                "lo": 1.0,
+                "hi": 1.0,
+                "clusters": 1
+              }
+            },
+            {
+              "arm": "native",
+              "depth_label": "d20",
+              "gamma": 0,
+              "budget": 64,
+              "layers": [
+                12
+              ],
+              "accuracy": {
+                "mean": 1.0,
+                "lo": 1.0,
+                "hi": 1.0,
+                "clusters": 1
+              },
+              "all_four": {
+                "mean": 1.0,
+                "lo": 1.0,
+                "hi": 1.0,
+                "clusters": 1
+              },
+              "coverage": {
+                "mean": 1.0,
+                "lo": 1.0,
+                "hi": 1.0,
+                "clusters": 1
+              },
+              "relevant_both": {
+                "mean": 1.0,
+                "lo": 1.0,
+                "hi": 1.0,
+                "clusters": 1
+              },
+              "unrelated_both": {
+                "mean": 1.0,
+                "lo": 1.0,
+                "hi": 1.0,
+                "clusters": 1
+              }
+            },
+            {
+              "arm": "native",
+              "depth_label": "d20",
+              "gamma": 0,
+              "budget": 256,
+              "layers": [
+                12
+              ],
+              "accuracy": {
+                "mean": 1.0,
+                "lo": 1.0,
+                "hi": 1.0,
+                "clusters": 1
+              },
+              "all_four": {
+                "mean": 1.0,
+                "lo": 1.0,
+                "hi": 1.0,
+                "clusters": 1
+              },
+              "coverage": {
+                "mean": 1.0,
+                "lo": 1.0,
+                "hi": 1.0,
+                "clusters": 1
+              },
+              "relevant_both": {
+                "mean": 1.0,
+                "lo": 1.0,
+                "hi": 1.0,
+                "clusters": 1
+              },
+              "unrelated_both": {
+                "mean": 1.0,
+                "lo": 1.0,
+                "hi": 1.0,
+                "clusters": 1
+              }
+            },
+            {
+              "arm": "native_matchfitted",
+              "depth_label": "d20",
+              "gamma": 0,
+              "budget": 64,
+              "layers": [
+                12
+              ],
+              "accuracy": {
+                "mean": 1.0,
+                "lo": 1.0,
+                "hi": 1.0,
+                "clusters": 1
+              },
+              "all_four": {
+                "mean": 1.0,
+                "lo": 1.0,
+                "hi": 1.0,
+                "clusters": 1
+              },
+              "coverage": {
+                "mean": 1.0,
+                "lo": 1.0,
+                "hi": 1.0,
+                "clusters": 1
+              },
+              "relevant_both": {
+                "mean": 1.0,
+                "lo": 1.0,
+                "hi": 1.0,
+                "clusters": 1
+              },
+              "unrelated_both": {
+                "mean": 1.0,
+                "lo": 1.0,
+                "hi": 1.0,
+                "clusters": 1
+              }
+            },
+            {
+              "arm": "native_matchfitted",
+              "depth_label": "d20",
+              "gamma": 0,
+              "budget": 256,
+              "layers": [
+                12
+              ],
+              "accuracy": {
+                "mean": 1.0,
+                "lo": 1.0,
+                "hi": 1.0,
+                "clusters": 1
+              },
+              "all_four": {
+                "mean": 1.0,
+                "lo": 1.0,
+                "hi": 1.0,
+                "clusters": 1
+              },
+              "coverage": {
+                "mean": 1.0,
+                "lo": 1.0,
+                "hi": 1.0,
+                "clusters": 1
+              },
+              "relevant_both": {
+                "mean": 1.0,
+                "lo": 1.0,
+                "hi": 1.0,
+                "clusters": 1
+              },
+              "unrelated_both": {
+                "mean": 1.0,
+                "lo": 1.0,
+                "hi": 1.0,
+                "clusters": 1
+              }
+            },
+            {
+              "arm": "none",
+              "depth_label": "shared",
+              "gamma": 0,
+              "budget": 64,
+              "layers": [],
+              "accuracy": {
+                "mean": 0.625,
+                "lo": 0.625,
+                "hi": 0.625,
+                "clusters": 1
+              },
+              "all_four": {
+                "mean": 0.0,
+                "lo": 0.0,
+                "hi": 0.0,
+                "clusters": 1
+              },
+              "coverage": {
+                "mean": 1.0,
+                "lo": 1.0,
+                "hi": 1.0,
+                "clusters": 1
+              },
+              "relevant_both": {
+                "mean": 0.0,
+                "lo": 0.0,
+                "hi": 0.0,
+                "clusters": 1
+              },
+              "unrelated_both": {
+                "mean": 0.75,
+                "lo": 0.75,
+                "hi": 0.75,
+                "clusters": 1
+              }
+            },
+            {
+              "arm": "none",
+              "depth_label": "shared",
+              "gamma": 0,
+              "budget": 256,
+              "layers": [],
+              "accuracy": {
+                "mean": 0.625,
+                "lo": 0.625,
+                "hi": 0.625,
+                "clusters": 1
+              },
+              "all_four": {
+                "mean": 0.0,
+                "lo": 0.0,
+                "hi": 0.0,
+                "clusters": 1
+              },
+              "coverage": {
+                "mean": 1.0,
+                "lo": 1.0,
+                "hi": 1.0,
+                "clusters": 1
+              },
+              "relevant_both": {
+                "mean": 0.0,
+                "lo": 0.0,
+                "hi": 0.0,
+                "clusters": 1
+              },
+              "unrelated_both": {
+                "mean": 0.75,
+                "lo": 0.75,
+                "hi": 0.75,
+                "clusters": 1
+              }
+            },
+            {
+              "arm": "packet_text_compact",
+              "depth_label": "shared",
+              "gamma": 0,
+              "budget": 64,
+              "layers": [],
+              "accuracy": {
+                "mean": 1.0,
+                "lo": 1.0,
+                "hi": 1.0,
+                "clusters": 1
+              },
+              "all_four": {
+                "mean": 1.0,
+                "lo": 1.0,
+                "hi": 1.0,
+                "clusters": 1
+              },
+              "coverage": {
+                "mean": 1.0,
+                "lo": 1.0,
+                "hi": 1.0,
+                "clusters": 1
+              },
+              "relevant_both": {
+                "mean": 1.0,
+                "lo": 1.0,
+                "hi": 1.0,
+                "clusters": 1
+              },
+              "unrelated_both": {
+                "mean": 1.0,
+                "lo": 1.0,
+                "hi": 1.0,
+                "clusters": 1
+              }
+            },
+            {
+              "arm": "packet_text_compact",
+              "depth_label": "shared",
+              "gamma": 0,
+              "budget": 256,
+              "layers": [],
+              "accuracy": {
+                "mean": 1.0,
+                "lo": 1.0,
+                "hi": 1.0,
+                "clusters": 1
+              },
+              "all_four": {
+                "mean": 1.0,
+                "lo": 1.0,
+                "hi": 1.0,
+                "clusters": 1
+              },
+              "coverage": {
+                "mean": 1.0,
+                "lo": 1.0,
+                "hi": 1.0,
+                "clusters": 1
+              },
+              "relevant_both": {
+                "mean": 1.0,
+                "lo": 1.0,
+                "hi": 1.0,
+                "clusters": 1
+              },
+              "unrelated_both": {
+                "mean": 1.0,
+                "lo": 1.0,
+                "hi": 1.0,
+                "clusters": 1
+              }
+            },
+            {
+              "arm": "packet_text_padded",
+              "depth_label": "shared",
+              "gamma": 0,
+              "budget": 64,
+              "layers": [],
+              "accuracy": {
+                "mean": 1.0,
+                "lo": 1.0,
+                "hi": 1.0,
+                "clusters": 1
+              },
+              "all_four": {
+                "mean": 1.0,
+                "lo": 1.0,
+                "hi": 1.0,
+                "clusters": 1
+              },
+              "coverage": {
+                "mean": 1.0,
+                "lo": 1.0,
+                "hi": 1.0,
+                "clusters": 1
+              },
+              "relevant_both": {
+                "mean": 1.0,
+                "lo": 1.0,
+                "hi": 1.0,
+                "clusters": 1
+              },
+              "unrelated_both": {
+                "mean": 1.0,
+                "lo": 1.0,
+                "hi": 1.0,
+                "clusters": 1
+              }
+            },
+            {
+              "arm": "packet_text_padded",
+              "depth_label": "shared",
+              "gamma": 0,
+              "budget": 256,
+              "layers": [],
+              "accuracy": {
+                "mean": 1.0,
+                "lo": 1.0,
+                "hi": 1.0,
+                "clusters": 1
+              },
+              "all_four": {
+                "mean": 1.0,
+                "lo": 1.0,
+                "hi": 1.0,
+                "clusters": 1
+              },
+              "coverage": {
+                "mean": 1.0,
+                "lo": 1.0,
+                "hi": 1.0,
+                "clusters": 1
+              },
+              "relevant_both": {
+                "mean": 1.0,
+                "lo": 1.0,
+                "hi": 1.0,
+                "clusters": 1
+              },
+              "unrelated_both": {
+                "mean": 1.0,
+                "lo": 1.0,
+                "hi": 1.0,
+                "clusters": 1
+              }
+            }
+          ],
+          "realized_norms": {
+            "fitted@d20@1": {
+              "L12": {
+                "edit_norm": 1799.658462524414,
+                "residual_norm": 2162.7264404296875,
+                "ratio": 0.8321448704147598,
+                "delta_state_cosine": 0.4050449728965759,
+                "n": 16
+              }
+            },
+            "fitted_matchnative@d20@1": {
+              "L12": {
+                "edit_norm": 1814.181884765625,
+                "residual_norm": 2162.7264404296875,
+                "ratio": 0.8388273542036029,
+                "delta_state_cosine": 0.4050449728965759,
+                "n": 16
+              }
+            },
+            "identity_write@d20@0": {
+              "L12": {
+                "edit_norm": 0.0,
+                "residual_norm": 2162.7264404296875,
+                "ratio": 0.0,
+                "delta_state_cosine": 0.0,
+                "n": 16
+              }
+            },
+            "local@anon@example.org": {
+              "L12": {
+                "edit_norm": 462.6063690185547,
+                "residual_norm": 2162.7264404296875,
+                "ratio": 0.21390476302849393,
+                "delta_state_cosine": -0.23588940501213074,
+                "n": 16
+              }
+            },
+            "local@anon@example.org": {
+              "L12": {
+                "edit_norm": 925.2127227783203,
+                "residual_norm": 2162.7264404296875,
+                "ratio": 0.42780951906026465,
+                "delta_state_cosine": -0.005473513156175613,
+                "n": 16
+              }
+            },
+            "local@d20@1": {
+              "L12": {
+                "edit_norm": 1850.4254150390625,
+                "residual_norm": 2162.7264404296875,
+                "ratio": 0.8556190239742025,
+                "delta_state_cosine": 0.42465639114379883,
+                "n": 16
+              }
+            },
+            "local@d20@2": {
+              "L12": {
+                "edit_norm": 3700.850860595703,
+                "residual_norm": 2162.7264404296875,
+                "ratio": 1.7112380619418515,
+                "delta_state_cosine": 0.8172418475151062,
+                "n": 16
+              }
+            },
+            "local@d20@4": {
+              "L12": {
+                "edit_norm": 7401.70166015625,
+                "residual_norm": 2162.7264404296875,
+                "ratio": 3.42247609589681,
+                "delta_state_cosine": 0.957417294383049,
+                "n": 16
+              }
+            },
+            "native@d20@0": {
+              "L12": {
+                "edit_norm": 1814.181884765625,
+                "residual_norm": 2162.7264404296875,
+                "ratio": 0.8388273541715119,
+                "delta_state_cosine": 0.39538387209177017,
+                "n": 16
+              }
+            },
+            "native_matchfitted@d20@0": {
+              "L12": {
+                "edit_norm": 1799.658462524414,
+                "residual_norm": 2162.7264404296875,
+                "ratio": 0.8321448704147598,
+                "delta_state_cosine": 0.39538387209177017,
+                "n": 16
+              }
+            }
+          }
+        },
+        "development": {
+          "scenes": 92,
+          "rows": 4784,
+          "cells": 13,
+          "conditions": [
+            {
+              "arm": "fitted",
+              "depth_label": "d20",
+              "gamma": 1,
+              "budget": 64,
+              "layers": [
+                12
+              ],
+              "accuracy": {
+                "mean": 1.0,
+                "lo": 1.0,
+                "hi": 1.0,
+                "clusters": 12
+              },
+              "all_four": {
+                "mean": 1.0,
+                "lo": 1.0,
+                "hi": 1.0,
+                "clusters": 12
+              },
+              "coverage": {
+                "mean": 1.0,
+                "lo": 1.0,
+                "hi": 1.0,
+                "clusters": 12
+              },
+              "relevant_both": {
+                "mean": 1.0,
+                "lo": 1.0,
+                "hi": 1.0,
+                "clusters": 12
+              },
+              "unrelated_both": {
+                "mean": 1.0,
+                "lo": 1.0,
+                "hi": 1.0,
+                "clusters": 12
+              }
+            },
+            {
+              "arm": "fitted",
+              "depth_label": "d20",
+              "gamma": 1,
+              "budget": 256,
+              "layers": [
+                12
+              ],
+              "accuracy": {
+                "mean": 1.0,
+                "lo": 1.0,
+                "hi": 1.0,
+                "clusters": 12
+              },
+              "all_four": {
+                "mean": 1.0,
+                "lo": 1.0,
+                "hi": 1.0,
+                "clusters": 12
+              },
+              "coverage": {
+                "mean": 1.0,
+                "lo": 1.0,
+                "hi": 1.0,
+                "clusters": 12
+              },
+              "relevant_both": {
+                "mean": 1.0,
+                "lo": 1.0,
+                "hi": 1.0,
+                "clusters": 12
+              },
+              "unrelated_both": {
+                "mean": 1.0,
+                "lo": 1.0,
+                "hi": 1.0,
+                "clusters": 12
+              }
+            },
+            {
+              "arm": "fitted_matchnative",
+              "depth_label": "d20",
+              "gamma": 1,
+              "budget": 64,
+              "layers": [
+                12
+              ],
+              "accuracy": {
+                "mean": 1.0,
+                "lo": 1.0,
+                "hi": 1.0,
+                "clusters": 12
+              },
+              "all_four": {
+                "mean": 1.0,
+                "lo": 1.0,
+                "hi": 1.0,
+                "clusters": 12
+              },
+              "coverage": {
+                "mean": 1.0,
+                "lo": 1.0,
+                "hi": 1.0,
+                "clusters": 12
+              },
+              "relevant_both": {
+                "mean": 1.0,
+                "lo": 1.0,
+                "hi": 1.0,
+                "clusters": 12
+              },
+              "unrelated_both": {
+                "mean": 1.0,
+                "lo": 1.0,
+                "hi": 1.0,
+                "clusters": 12
+              }
+            },
+            {
+              "arm": "fitted_matchnative",
+              "depth_label": "d20",
+              "gamma": 1,
+              "budget": 256,
+              "layers": [
+                12
+              ],
+              "accuracy": {
+                "mean": 1.0,
+                "lo": 1.0,
+                "hi": 1.0,
+                "clusters": 12
+              },
+              "all_four": {
+                "mean": 1.0,
+                "lo": 1.0,
+                "hi": 1.0,
+                "clusters": 12
+              },
+              "coverage": {
+                "mean": 1.0,
+                "lo": 1.0,
+                "hi": 1.0,
+                "clusters": 12
+              },
+              "relevant_both": {
+                "mean": 1.0,
+                "lo": 1.0,
+                "hi": 1.0,
+                "clusters": 12
+              },
+              "unrelated_both": {
+                "mean": 1.0,
+                "lo": 1.0,
+                "hi": 1.0,
+                "clusters": 12
+              }
+            },
+            {
+              "arm": "full_text",
+              "depth_label": "shared",
+              "gamma": 0,
+              "budget": 64,
+              "layers": [],
+              "accuracy": {
+                "mean": 1.0,
+                "lo": 1.0,
+                "hi": 1.0,
+                "clusters": 12
+              },
+              "all_four": {
+                "mean": 1.0,
+                "lo": 1.0,
+                "hi": 1.0,
+                "clusters": 12
+              },
+              "coverage": {
+                "mean": 1.0,
+                "lo": 1.0,
+                "hi": 1.0,
+                "clusters": 12
+              },
+              "relevant_both": {
+                "mean": 1.0,
+                "lo": 1.0,
+                "hi": 1.0,
+                "clusters": 12
+              },
+              "unrelated_both": {
+                "mean": 1.0,
+                "lo": 1.0,
+                "hi": 1.0,
+                "clusters": 12
+              }
+            },
+            {
+              "arm": "full_text",
+              "depth_label": "shared",
+              "gamma": 0,
+              "budget": 256,
+              "layers": [],
+              "accuracy": {
+                "mean": 1.0,
+                "lo": 1.0,
+                "hi": 1.0,
+                "clusters": 12
+              },
+              "all_four": {
+                "mean": 1.0,
+                "lo": 1.0,
+                "hi": 1.0,
+                "clusters": 12
+              },
+              "coverage": {
+                "mean": 1.0,
+                "lo": 1.0,
+                "hi": 1.0,
+                "clusters": 12
+              },
+              "relevant_both": {
+                "mean": 1.0,
+                "lo": 1.0,
+                "hi": 1.0,
+                "clusters": 12
+              },
+              "unrelated_both": {
+                "mean": 1.0,
+                "lo": 1.0,
+                "hi": 1.0,
+                "clusters": 12
+              }
+            },
+            {
+              "arm": "local",
+              "depth_label": "d20",
+              "gamma": 0.25,
+              "budget": 64,
+              "layers": [
+                12
+              ],
+              "accuracy": {
+                "mean": 0.4557291666666667,
+                "lo": 0.4270833333333333,
+                "hi": 0.4817708333333333,
+                "clusters": 12
+              },
+              "all_four": {
+                "mean": 0.0,
+                "lo": 0.0,
+                "hi": 0.0,
+                "clusters": 12
+              },
+              "coverage": {
+                "mean": 0.9557291666666666,
+                "lo": 0.9270833333333334,
+                "hi": 0.9791666666666666,
+                "clusters": 12
+              },
+              "relevant_both": {
+                "mean": 0.0,
+                "lo": 0.0,
+                "hi": 0.0,
+                "clusters": 12
+              },
+              "unrelated_both": {
+                "mean": 0.4375,
+                "lo": 0.375,
+                "hi": 0.5,
+                "clusters": 12
+              }
+            },
+            {
+              "arm": "local",
+              "depth_label": "d20",
+              "gamma": 0.25,
+              "budget": 256,
+              "layers": [
+                12
+              ],
+              "accuracy": {
+                "mean": 0.4557291666666667,
+                "lo": 0.4270833333333333,
+                "hi": 0.4817708333333333,
+                "clusters": 12
+              },
+              "all_four": {
+                "mean": 0.0,
+                "lo": 0.0,
+                "hi": 0.0,
+                "clusters": 12
+              },
+              "coverage": {
+                "mean": 0.9557291666666666,
+                "lo": 0.9270833333333334,
+                "hi": 0.9791666666666666,
+                "clusters": 12
+              },
+              "relevant_both": {
+                "mean": 0.0,
+                "lo": 0.0,
+                "hi": 0.0,
+                "clusters": 12
+              },
+              "unrelated_both": {
+                "mean": 0.4375,
+                "lo": 0.375,
+                "hi": 0.5,
+                "clusters": 12
+              }
+            },
+            {
+              "arm": "local",
+              "depth_label": "d20",
+              "gamma": 0.5,
+              "budget": 64,
+              "layers": [
+                12
+              ],
+              "accuracy": {
+                "mean": 0.9947916666666666,
+                "lo": 0.9869791666666666,
+                "hi": 1.0,
+                "clusters": 12
+              },
+              "all_four": {
+                "mean": 0.9791666666666666,
+                "lo": 0.9479166666666666,
+                "hi": 1.0,
+                "clusters": 12
+              },
+              "coverage": {
+                "mean": 1.0,
+                "lo": 1.0,
+                "hi": 1.0,
+                "clusters": 12
+              },
+              "relevant_both": {
+                "mean": 0.9791666666666666,
+                "lo": 0.9479166666666666,
+                "hi": 1.0,
+                "clusters": 12
+              },
+              "unrelated_both": {
+                "mean": 1.0,
+                "lo": 1.0,
+                "hi": 1.0,
+                "clusters": 12
+              }
+            },
+            {
+              "arm": "local",
+              "depth_label": "d20",
+              "gamma": 0.5,
+              "budget": 256,
+              "layers": [
+                12
+              ],
+              "accuracy": {
+                "mean": 0.9947916666666666,
+                "lo": 0.9869791666666666,
+                "hi": 1.0,
+                "clusters": 12
+              },
+              "all_four": {
+                "mean": 0.9791666666666666,
+                "lo": 0.9479166666666666,
+                "hi": 1.0,
+                "clusters": 12
+              },
+              "coverage": {
+                "mean": 1.0,
+                "lo": 1.0,
+                "hi": 1.0,
+                "clusters": 12
+              },
+              "relevant_both": {
+                "mean": 0.9791666666666666,
+                "lo": 0.9479166666666666,
+                "hi": 1.0,
+                "clusters": 12
+              },
+              "unrelated_both": {
+                "mean": 1.0,
+                "lo": 1.0,
+                "hi": 1.0,
+                "clusters": 12
+              }
+            },
+            {
+              "arm": "local",
+              "depth_label": "d20",
+              "gamma": 1,
+              "budget": 64,
+              "layers": [
+                12
+              ],
+              "accuracy": {
+                "mean": 1.0,
+                "lo": 1.0,
+                "hi": 1.0,
+                "clusters": 12
+              },
+              "all_four": {
+                "mean": 1.0,
+                "lo": 1.0,
+                "hi": 1.0,
+                "clusters": 12
+              },
+              "coverage": {
+                "mean": 1.0,
+                "lo": 1.0,
+                "hi": 1.0,
+                "clusters": 12
+              },
+              "relevant_both": {
+                "mean": 1.0,
+                "lo": 1.0,
+                "hi": 1.0,
+                "clusters": 12
+              },
+              "unrelated_both": {
+                "mean": 1.0,
+                "lo": 1.0,
+                "hi": 1.0,
+                "clusters": 12
+              }
+            },
+            {
+              "arm": "local",
+              "depth_label": "d20",
+              "gamma": 1,
+              "budget": 256,
+              "layers": [
+                12
+              ],
+              "accuracy": {
+                "mean": 1.0,
+                "lo": 1.0,
+                "hi": 1.0,
+                "clusters": 12
+              },
+              "all_four": {
+                "mean": 1.0,
+                "lo": 1.0,
+                "hi": 1.0,
+                "clusters": 12
+              },
+              "coverage": {
+                "mean": 1.0,
+                "lo": 1.0,
+                "hi": 1.0,
+                "clusters": 12
+              },
+              "relevant_both": {
+                "mean": 1.0,
+                "lo": 1.0,
+                "hi": 1.0,
+                "clusters": 12
+              },
+              "unrelated_both": {
+                "mean": 1.0,
+                "lo": 1.0,
+                "hi": 1.0,
+                "clusters": 12
+              }
+            },
+            {
+              "arm": "local",
+              "depth_label": "d20",
+              "gamma": 2,
+              "budget": 64,
+              "layers": [
+                12
+              ],
+              "accuracy": {
+                "mean": 1.0,
+                "lo": 1.0,
+                "hi": 1.0,
+                "clusters": 12
+              },
+              "all_four": {
+                "mean": 1.0,
+                "lo": 1.0,
+                "hi": 1.0,
+                "clusters": 12
+              },
+              "coverage": {
+                "mean": 1.0,
+                "lo": 1.0,
+                "hi": 1.0,
+                "clusters": 12
+              },
+              "relevant_both": {
+                "mean": 1.0,
+                "lo": 1.0,
+                "hi": 1.0,
+                "clusters": 12
+              },
+              "unrelated_both": {
+                "mean": 1.0,
+                "lo": 1.0,
+                "hi": 1.0,
+                "clusters": 12
+              }
+            },
+            {
+              "arm": "local",
+              "depth_label": "d20",
+              "gamma": 2,
+              "budget": 256,
+              "layers": [
+                12
+              ],
+              "accuracy": {
+                "mean": 1.0,
+                "lo": 1.0,
+                "hi": 1.0,
+                "clusters": 12
+              },
+              "all_four": {
+                "mean": 1.0,
+                "lo": 1.0,
+                "hi": 1.0,
+                "clusters": 12
+              },
+              "coverage": {
+                "mean": 1.0,
+                "lo": 1.0,
+                "hi": 1.0,
+                "clusters": 12
+              },
+              "relevant_both": {
+                "mean": 1.0,
+                "lo": 1.0,
+                "hi": 1.0,
+                "clusters": 12
+              },
+              "unrelated_both": {
+                "mean": 1.0,
+                "lo": 1.0,
+                "hi": 1.0,
+                "clusters": 12
+              }
+            },
+            {
+              "arm": "local",
+              "depth_label": "d20",
+              "gamma": 4,
+              "budget": 64,
+              "layers": [
+                12
+              ],
+              "accuracy": {
+                "mean": 1.0,
+                "lo": 1.0,
+                "hi": 1.0,
+                "clusters": 12
+              },
+              "all_four": {
+                "mean": 1.0,
+                "lo": 1.0,
+                "hi": 1.0,
+                "clusters": 12
+              },
+              "coverage": {
+                "mean": 1.0,
+                "lo": 1.0,
+                "hi": 1.0,
+                "clusters": 12
+              },
+              "relevant_both": {
+                "mean": 1.0,
+                "lo": 1.0,
+                "hi": 1.0,
+                "clusters": 12
+              },
+              "unrelated_both": {
+                "mean": 1.0,
+                "lo": 1.0,
+                "hi": 1.0,
+                "clusters": 12
+              }
+            },
+            {
+              "arm": "local",
+              "depth_label": "d20",
+              "gamma": 4,
+              "budget": 256,
+              "layers": [
+                12
+              ],
+              "accuracy": {
+                "mean": 1.0,
+                "lo": 1.0,
+                "hi": 1.0,
+                "clusters": 12
+              },
+              "all_four": {
+                "mean": 1.0,
+                "lo": 1.0,
+                "hi": 1.0,
+                "clusters": 12
+              },
+              "coverage": {
+                "mean": 1.0,
+                "lo": 1.0,
+                "hi": 1.0,
+                "clusters": 12
+              },
+              "relevant_both": {
+                "mean": 1.0,
+                "lo": 1.0,
+                "hi": 1.0,
+                "clusters": 12
+              },
+              "unrelated_both": {
+                "mean": 1.0,
+                "lo": 1.0,
+                "hi": 1.0,
+                "clusters": 12
+              }
+            },
+            {
+              "arm": "native",
+              "depth_label": "d20",
+              "gamma": 0,
+              "budget": 64,
+              "layers": [
+                12
+              ],
+              "accuracy": {
+                "mean": 1.0,
+                "lo": 1.0,
+                "hi": 1.0,
+                "clusters": 12
+              },
+              "all_four": {
+                "mean": 1.0,
+                "lo": 1.0,
+                "hi": 1.0,
+                "clusters": 12
+              },
+              "coverage": {
+                "mean": 1.0,
+                "lo": 1.0,
+                "hi": 1.0,
+                "clusters": 12
+              },
+              "relevant_both": {
+                "mean": 1.0,
+                "lo": 1.0,
+                "hi": 1.0,
+                "clusters": 12
+              },
+              "unrelated_both": {
+                "mean": 1.0,
+                "lo": 1.0,
+                "hi": 1.0,
+                "clusters": 12
+              }
+            },
+            {
+              "arm": "native",
+              "depth_label": "d20",
+              "gamma": 0,
+              "budget": 256,
+              "layers": [
+                12
+              ],
+              "accuracy": {
+                "mean": 1.0,
+                "lo": 1.0,
+                "hi": 1.0,
+                "clusters": 12
+              },
+              "all_four": {
+                "mean": 1.0,
+                "lo": 1.0,
+                "hi": 1.0,
+                "clusters": 12
+              },
+              "coverage": {
+                "mean": 1.0,
+                "lo": 1.0,
+                "hi": 1.0,
+                "clusters": 12
+              },
+              "relevant_both": {
+                "mean": 1.0,
+                "lo": 1.0,
+                "hi": 1.0,
+                "clusters": 12
+              },
+              "unrelated_both": {
+                "mean": 1.0,
+                "lo": 1.0,
+                "hi": 1.0,
+                "clusters": 12
+              }
+            },
+            {
+              "arm": "native_matchfitted",
+              "depth_label": "d20",
+              "gamma": 0,
+              "budget": 64,
+              "layers": [
+                12
+              ],
+              "accuracy": {
+                "mean": 1.0,
+                "lo": 1.0,
+                "hi": 1.0,
+                "clusters": 12
+              },
+              "all_four": {
+                "mean": 1.0,
+                "lo": 1.0,
+                "hi": 1.0,
+                "clusters": 12
+              },
+              "coverage": {
+                "mean": 1.0,
+                "lo": 1.0,
+                "hi": 1.0,
+                "clusters": 12
+              },
+              "relevant_both": {
+                "mean": 1.0,
+                "lo": 1.0,
+                "hi": 1.0,
+                "clusters": 12
+              },
+              "unrelated_both": {
+                "mean": 1.0,
+                "lo": 1.0,
+                "hi": 1.0,
+                "clusters": 12
+              }
+            },
+            {
+              "arm": "native_matchfitted",
+              "depth_label": "d20",
+              "gamma": 0,
+              "budget": 256,
+              "layers": [
+                12
+              ],
+              "accuracy": {
+                "mean": 1.0,
+                "lo": 1.0,
+                "hi": 1.0,
+                "clusters": 12
+              },
+              "all_four": {
+                "mean": 1.0,
+                "lo": 1.0,
+                "hi": 1.0,
+                "clusters": 12
+              },
+              "coverage": {
+                "mean": 1.0,
+                "lo": 1.0,
+                "hi": 1.0,
+                "clusters": 12
+              },
+              "relevant_both": {
+                "mean": 1.0,
+                "lo": 1.0,
+                "hi": 1.0,
+                "clusters": 12
+              },
+              "unrelated_both": {
+                "mean": 1.0,
+                "lo": 1.0,
+                "hi": 1.0,
+                "clusters": 12
+              }
+            },
+            {
+              "arm": "none",
+              "depth_label": "shared",
+              "gamma": 0,
+              "budget": 64,
+              "layers": [],
+              "accuracy": {
+                "mean": 0.4739583333333333,
+                "lo": 0.4479166666666667,
+                "hi": 0.5,
+                "clusters": 12
+              },
+              "all_four": {
+                "mean": 0.0,
+                "lo": 0.0,
+                "hi": 0.0,
+                "clusters": 12
+              },
+              "coverage": {
+                "mean": 0.9791666666666666,
+                "lo": 0.9635416666666666,
+                "hi": 0.9947916666666666,
+                "clusters": 12
+              },
+              "relevant_both": {
+                "mean": 0.0,
+                "lo": 0.0,
+                "hi": 0.0,
+                "clusters": 12
+              },
+              "unrelated_both": {
+                "mean": 0.4583333333333333,
+                "lo": 0.40625,
+                "hi": 0.5104166666666666,
+                "clusters": 12
+              }
+            },
+            {
+              "arm": "none",
+              "depth_label": "shared",
+              "gamma": 0,
+              "budget": 256,
+              "layers": [],
+              "accuracy": {
+                "mean": 0.4739583333333333,
+                "lo": 0.4479166666666667,
+                "hi": 0.5,
+                "clusters": 12
+              },
+              "all_four": {
+                "mean": 0.0,
+                "lo": 0.0,
+                "hi": 0.0,
+                "clusters": 12
+              },
+              "coverage": {
+                "mean": 0.9791666666666666,
+                "lo": 0.9635416666666666,
+                "hi": 0.9947916666666666,
+                "clusters": 12
+              },
+              "relevant_both": {
+                "mean": 0.0,
+                "lo": 0.0,
+                "hi": 0.0,
+                "clusters": 12
+              },
+              "unrelated_both": {
+                "mean": 0.4583333333333333,
+                "lo": 0.40625,
+                "hi": 0.5104166666666666,
+                "clusters": 12
+              }
+            },
+            {
+              "arm": "packet_text_compact",
+              "depth_label": "shared",
+              "gamma": 0,
+              "budget": 64,
+              "layers": [],
+              "accuracy": {
+                "mean": 1.0,
+                "lo": 1.0,
+                "hi": 1.0,
+                "clusters": 12
+              },
+              "all_four": {
+                "mean": 1.0,
+                "lo": 1.0,
+                "hi": 1.0,
+                "clusters": 12
+              },
+              "coverage": {
+                "mean": 1.0,
+                "lo": 1.0,
+                "hi": 1.0,
+                "clusters": 12
+              },
+              "relevant_both": {
+                "mean": 1.0,
+                "lo": 1.0,
+                "hi": 1.0,
+                "clusters": 12
+              },
+              "unrelated_both": {
+                "mean": 1.0,
+                "lo": 1.0,
+                "hi": 1.0,
+                "clusters": 12
+              }
+            },
+            {
+              "arm": "packet_text_compact",
+              "depth_label": "shared",
+              "gamma": 0,
+              "budget": 256,
+              "layers": [],
+              "accuracy": {
+                "mean": 1.0,
+                "lo": 1.0,
+                "hi": 1.0,
+                "clusters": 12
+              },
+              "all_four": {
+                "mean": 1.0,
+                "lo": 1.0,
+                "hi": 1.0,
+                "clusters": 12
+              },
+              "coverage": {
+                "mean": 1.0,
+                "lo": 1.0,
+                "hi": 1.0,
+                "clusters": 12
+              },
+              "relevant_both": {
+                "mean": 1.0,
+                "lo": 1.0,
+                "hi": 1.0,
+                "clusters": 12
+              },
+              "unrelated_both": {
+                "mean": 1.0,
+                "lo": 1.0,
+                "hi": 1.0,
+                "clusters": 12
+              }
+            },
+            {
+              "arm": "packet_text_padded",
+              "depth_label": "shared",
+              "gamma": 0,
+              "budget": 64,
+              "layers": [],
+              "accuracy": {
+                "mean": 1.0,
+                "lo": 1.0,
+                "hi": 1.0,
+                "clusters": 12
+              },
+              "all_four": {
+                "mean": 1.0,
+                "lo": 1.0,
+                "hi": 1.0,
+                "clusters": 12
+              },
+              "coverage": {
+                "mean": 1.0,
+                "lo": 1.0,
+                "hi": 1.0,
+                "clusters": 12
+              },
+              "relevant_both": {
+                "mean": 1.0,
+                "lo": 1.0,
+                "hi": 1.0,
+                "clusters": 12
+              },
+              "unrelated_both": {
+                "mean": 1.0,
+                "lo": 1.0,
+                "hi": 1.0,
+                "clusters": 12
+              }
+            },
+            {
+              "arm": "packet_text_padded",
+              "depth_label": "shared",
+              "gamma": 0,
+              "budget": 256,
+              "layers": [],
+              "accuracy": {
+                "mean": 1.0,
+                "lo": 1.0,
+                "hi": 1.0,
+                "clusters": 12
+              },
+              "all_four": {
+                "mean": 1.0,
+                "lo": 1.0,
+                "hi": 1.0,
+                "clusters": 12
+              },
+              "coverage": {
+                "mean": 1.0,
+                "lo": 1.0,
+                "hi": 1.0,
+                "clusters": 12
+              },
+              "relevant_both": {
+                "mean": 1.0,
+                "lo": 1.0,
+                "hi": 1.0,
+                "clusters": 12
+              },
+              "unrelated_both": {
+                "mean": 1.0,
+                "lo": 1.0,
+                "hi": 1.0,
+                "clusters": 12
+              }
+            }
+          ],
+          "realized_norms": {
+            "fitted@d20@1": {
+              "L12": {
+                "edit_norm": 1843.4246540898862,
+                "residual_norm": 2165.864592179008,
+                "ratio": 0.85113757410844,
+                "delta_state_cosine": 0.4342865104908529,
+                "n": 368
+              }
+            },
+            "fitted_matchnative@d20@1": {
+              "L12": {
+                "edit_norm": 1861.4829466446586,
+                "residual_norm": 2165.864592179008,
+                "ratio": 0.8594712991316299,
+                "delta_state_cosine": 0.4342865104908529,
+                "n": 368
+              }
+            },
+            "local@anon@example.org": {
+              "L12": {
+                "edit_norm": 473.85655212402344,
+                "residual_norm": 2165.864592179008,
+                "ratio": 0.21878687330921834,
+                "delta_state_cosine": -0.20693807247216287,
+                "n": 368
+              }
+            },
+            "local@anon@example.org": {
+              "L12": {
+                "edit_norm": 947.7131032529085,
+                "residual_norm": 2165.864592179008,
+                "ratio": 0.43757374615695693,
+                "delta_state_cosine": 0.028435816603672247,
+                "n": 368
+              }
+            },
+            "local@d20@1": {
+              "L12": {
+                "edit_norm": 1895.4262025252633,
+                "residual_norm": 2165.864592179008,
+                "ratio": 0.8751474904741832,
+                "delta_state_cosine": 0.4532424509525299,
+                "n": 368
+              }
+            },
+            "local@d20@2": {
+              "L12": {
+                "edit_norm": 3790.8524037236753,
+                "residual_norm": 2165.864592179008,
+                "ratio": 1.750294980336702,
+                "delta_state_cosine": 0.8266048998288487,
+                "n": 368
+              }
+            },
+            "local@d20@4": {
+              "L12": {
+                "edit_norm": 7581.704815408458,
+                "residual_norm": 2165.864592179008,
+                "ratio": 3.5005899643454357,
+                "delta_state_cosine": 0.9591259059050808,
+                "n": 368
+              }
+            },
+            "native@d20@0": {
+              "L12": {
+                "edit_norm": 1861.482954605766,
+                "residual_norm": 2165.864592179008,
+                "ratio": 0.8594713028150026,
+                "delta_state_cosine": 0.4263624537574208,
+                "n": 368
+              }
+            },
+            "native_matchfitted@d20@0": {
+              "L12": {
+                "edit_norm": 1843.4246494459069,
+                "residual_norm": 2165.864592179008,
+                "ratio": 0.8511375719610753,
+                "delta_state_cosine": 0.4263624537574208,
+                "n": 368
+              }
+            }
+          }
+        }
+      },
+      "selection": {
+        "native_grid": {
+          "d20": {
+            "J": 1.0,
+            "coverage": 1.0,
+            "accuracy": 1.0,
+            "U": 1.0,
+            "layers": [
+              12
+            ],
+            "eligible": true
+          }
+        },
+        "fitted_grid": {
+          "d20": {
+            "1": {
+              "J": 1.0,
+              "coverage": 1.0,
+              "accuracy": 1.0,
+              "U": 1.0,
+              "eligible": true
+            }
+          }
+        },
+        "best_native_depth": "d20",
+        "coverage_limited": false,
+        "best_fitted_cell": {
+          "depth": "d20",
+          "gamma": 1
+        },
+        "rule": "best native depth: J among coverage>=0.90 cells, tie-break fewer layers then the frozen R1 order; best fitted cell: J, then U, then fewer layers, then smaller gamma, then R1 order; both on development only"
+      },
+      "contrasts": {
+        "native@d20_minus_none": {
+          "mean": 1.0,
+          "lo": 1.0,
+          "hi": 1.0,
+          "clusters": 12,
+          "p_two_sided": 1.6666666666666667e-05
+        },
+        "fitted@d20_bestgamma1_minus_none": {
+          "mean": 1.0,
+          "lo": 1.0,
+          "hi": 1.0,
+          "clusters": 12,
+          "p_two_sided": 1.6666666666666667e-05
+        },
+        "native@d20_minus_fitted@d20_g1": {
+          "mean": 0.0,
+          "lo": 0.0,
+          "hi": 0.0,
+          "clusters": 12,
+          "p_two_sided": 1.0
+        }
+      },
+      "references": {
+        "none": 0.0,
+        "packet_text_padded": 1.0,
+        "packet_text_compact": 1.0,
+        "full_text": 1.0
+      },
+      "status": "PASS_INDEPENDENT_R1_ROOT_AUDIT"
+    }
+  },
+  "limits": "Development rows on the 92 exposed dev scenes (4 engineering scenes excluded from every reported sample), 12 families; depth x arm x gamma are repeated measures on the same scenes and add no independent N. Intervals are descriptive family-bootstrap envelopes. Native transplantation reads scene-specific states and is an instrument, not a deployable map-free method. Nothing here is confirmation."
+}

@@ -4,672 +4,526 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>SYNC: Share the Symbol, Not the Vector</title>
-<meta name="description" content="SYNC lets heterogeneous language models communicate facts without fine-tuning or a learned translator: the sender sends indices of words from a shared list, and each receiver writes them into its hidden states with its own word directions.">
-<meta property="og:title" content="SYNC: Share the Symbol, Not the Vector">
-<meta property="og:description" content="Training-free fact communication across language models: shared word indices plus each receiver's own word directions.">
-<meta property="og:type" content="website">
-<meta property="og:url" content="https://lixin.ai/SYNC/">
-<meta property="og:image" content="https://lixin.ai/SYNC/assets/SYNC-teaser.webp">
-<meta name="twitter:card" content="summary_large_image">
-<meta name="color-scheme" content="light dark">
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%23059669'/%3E%3Cpath d='M21 10.5c-1-1.3-2.7-2-4.6-2-2.8 0-4.6 1.5-4.6 3.5 0 4.6 9.6 2.6 9.6 7.5 0 2.1-2 3.8-5 3.8-2.2 0-4-.9-5-2.3' fill='none' stroke='%23fff' stroke-width='2.8' stroke-linecap='round'/%3E%3C/svg%3E">
+<meta name="description" content="SYNC: training-free fact communication across language models. The sender sends word indices from a shared list; each receiver writes them with its own word directions.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:ital,wght@0,400;0,500;0,600;1,400&family=JetBrains+Mono:wght@500;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
-<script>try { var t = localStorage.getItem('sync-theme'); if (t) document.documentElement.dataset.theme = t; } catch (e) {}</script>
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,300..600;1,6..72,300..500&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
 <style>
-  :root {
-    --bg: #f3f5f8;
-    --bg-grid: rgba(15, 23, 42, .045);
-    --surface: #ffffff;
-    --surface-2: #f8fafc;
-    --ink: #0b1220;
-    --ink-2: #334155;
-    --muted: #64748b;
-    --line: #e2e8f0;
-    --line-2: #cbd5e1;
-    --accent: #047857;
-    --accent-fill: #059669;
-    --accent-ink: #ffffff;
-    --accent-soft: #e7f6ef;
-    --accent-line: #a7e3c8;
-    --dot-rk: #8494aa;
-    --dot-re: #047857;
-    --code-bg: #0b1220;
-    --code-ink: #d9e2ee;
-    --code-key: #6ee7b7;
-    --shadow-sm: 0 1px 2px rgba(15, 23, 42, .06);
-    --shadow: 0 1px 2px rgba(15, 23, 42, .05), 0 8px 24px -8px rgba(15, 23, 42, .12);
-    --r: 16px;
-    --r-sm: 10px;
-    --head: "Space Grotesk", "Helvetica Neue", Arial, sans-serif;
-    --sans: "IBM Plex Sans", system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
-    --mono: "JetBrains Mono", ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
-  }
-  @media (prefers-color-scheme: dark) {
-    :root:not([data-theme="light"]) {
-      --bg: #0a0f17; --bg-grid: rgba(148, 163, 184, .05); --surface: #111824; --surface-2: #0e141e;
-      --ink: #e8eef6; --ink-2: #b8c4d4; --muted: #8a98ad; --line: #1f2a3a; --line-2: #2c3a4f;
-      --accent: #34d399; --accent-fill: #10b981; --accent-ink: #04140d; --accent-soft: rgba(52, 211, 153, .1); --accent-line: rgba(52, 211, 153, .35);
-      --dot-rk: #8a98ad; --dot-re: #34d399;
-      --code-bg: #070b11; --code-ink: #d9e2ee;
-      --shadow-sm: 0 1px 2px rgba(0, 0, 0, .4); --shadow: 0 1px 2px rgba(0, 0, 0, .35), 0 10px 28px -10px rgba(0, 0, 0, .6);
-    }
-  }
-  :root[data-theme="dark"] {
-    --bg: #0a0f17; --bg-grid: rgba(148, 163, 184, .05); --surface: #111824; --surface-2: #0e141e;
-    --ink: #e8eef6; --ink-2: #b8c4d4; --muted: #8a98ad; --line: #1f2a3a; --line-2: #2c3a4f;
-    --accent: #34d399; --accent-fill: #10b981; --accent-ink: #04140d; --accent-soft: rgba(52, 211, 153, .1); --accent-line: rgba(52, 211, 153, .35);
-    --dot-rk: #8a98ad; --dot-re: #34d399;
-    --code-bg: #070b11; --code-ink: #d9e2ee;
-    --shadow-sm: 0 1px 2px rgba(0, 0, 0, .4); --shadow: 0 1px 2px rgba(0, 0, 0, .35), 0 10px 28px -10px rgba(0, 0, 0, .6);
-  }
+:root{
+  --bg:#f7f5f0; --paper:#fbfaf7; --ink:#1b1a17; --ink2:#46433c; --muted:#857f73; --faint:#b9b2a5;
+  --rule:#e3ded3; --rule2:#d3ccbf;
+  --accent:#2c3a8a; --accent2:#5a67b3; --clay:#b4643f; --parity:#ece5d3;
+  --serif:"Newsreader", Georgia, "Times New Roman", serif;
+  --sans:"Inter", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  --wide:1120px; --col:680px; --gut:32px;
+}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%; scroll-behavior:smooth}
+body{margin:0; background:var(--bg); color:var(--ink); font-family:var(--serif); font-size:19px; line-height:1.62;
+  font-optical-sizing:auto; -webkit-font-smoothing:antialiased; text-rendering:optimizeLegibility}
+a{color:inherit; text-decoration-color:var(--rule2); text-underline-offset:3px; text-decoration-thickness:1px}
+a:hover{text-decoration-color:var(--accent); color:var(--accent)}
+img{max-width:100%; height:auto; display:block}
+.wrap{max-width:calc(var(--wide) + 2*var(--gut)); margin:0 auto; padding:0 var(--gut)}
+.sans{font-family:var(--sans)}
+.caps{font-family:var(--sans); font-size:12px; font-weight:500; letter-spacing:.13em; text-transform:uppercase}
 
-  * { box-sizing: border-box; }
-  html { scroll-behavior: smooth; scroll-padding-top: 72px; -webkit-text-size-adjust: 100%; }
-  body { margin: 0; background: var(--bg); color: var(--ink); font: 16.5px/1.65 var(--sans); overflow-x: hidden; }
-  a { color: var(--accent); text-decoration: none; }
-  a:hover { text-decoration: underline; text-underline-offset: 3px; }
-  img { display: block; max-width: 100%; height: auto; }
-  button { font: inherit; }
-  :focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
-  .wrap { width: min(1160px, calc(100% - 32px)); margin: 0 auto; }
-  .narrow { width: min(780px, 100%); }
+/* top strip */
+.top{display:flex; align-items:center; justify-content:space-between; height:68px}
+.mark{font-family:var(--sans); font-weight:600; font-size:15px; letter-spacing:.16em; text-decoration:none}
+.mark span{color:var(--muted); font-weight:400; letter-spacing:.02em; margin-left:10px; font-size:13.5px}
+.nav{display:flex; gap:28px; font-family:var(--sans); font-size:13.5px; color:var(--ink2)}
+.nav a{text-decoration:none}
 
-  .top { position: sticky; top: 0; z-index: 20; background: color-mix(in srgb, var(--bg) 82%, transparent);
-         backdrop-filter: saturate(1.5) blur(12px); -webkit-backdrop-filter: saturate(1.5) blur(12px); border-bottom: 1px solid var(--line); }
-  .top .wrap { display: flex; align-items: center; gap: 18px; height: 60px; }
-  .brand { display: inline-flex; align-items: center; gap: 10px; font: 700 18px/1 var(--head); color: var(--ink); letter-spacing: -.01em; white-space: nowrap; flex: none; }
-  .brand:hover { text-decoration: none; }
-  .brand .mark { width: 26px; height: 26px; border-radius: 7px; background: var(--accent-fill); display: grid; place-items: center; }
-  .brand .mark svg { width: 16px; height: 16px; }
-  .nav { display: flex; gap: 4px; margin-left: auto; min-width: 0; overflow-x: auto; scrollbar-width: none; }
-  .nav::-webkit-scrollbar { display: none; }
-  .nav a { color: var(--muted); font-size: 14px; font-weight: 500; padding: 6px 11px; border-radius: 8px; white-space: nowrap; }
-  .nav a:hover { color: var(--ink); background: var(--surface); text-decoration: none; }
-  .nav a.on { color: var(--accent); background: var(--accent-soft); }
-  .theme { border: 1px solid var(--line-2); background: var(--surface); color: var(--ink-2); width: 36px; height: 36px; border-radius: 10px;
-           display: grid; place-items: center; cursor: pointer; flex: none; }
-  .theme svg { width: 17px; height: 17px; }
-  .theme .sun { display: none; }
-  :root[data-theme="dark"] .theme .sun { display: block; } :root[data-theme="dark"] .theme .moon { display: none; }
-  @media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) .theme .sun { display: block; } :root:not([data-theme="light"]) .theme .moon { display: none; } }
+/* hero */
+.hero{padding:48px 0 0}
+.kicker{color:var(--muted); margin:0 0 22px}
+.kicker b{color:var(--accent); font-weight:600}
+h1{font-family:var(--serif); font-weight:350; font-size:clamp(40px,5.9vw,84px); line-height:1.0; letter-spacing:-.022em;
+  margin:0; font-variation-settings:"opsz" 72; max-width:1100px}
+h1 .sub{display:block; font-style:italic; font-weight:300; font-size:.47em; line-height:1.18; letter-spacing:-.01em;
+  color:var(--ink2); margin-top:.38em}
+.hero-row{display:grid; grid-template-columns:minmax(0,1.42fr) minmax(0,1fr); gap:64px; margin-top:34px; align-items:start}
+.dek{font-size:21.5px; line-height:1.5; color:var(--ink2); margin:0; font-weight:380}
+.dek strong{color:var(--ink); font-weight:500}
+.byline{font-family:var(--sans); font-size:13.5px; line-height:1.75; color:var(--ink)}
+.byline .authors a{text-decoration:none; border-bottom:1px solid var(--rule2)}
+.byline .authors a:hover{border-color:var(--accent)}
+.byline .nm{white-space:nowrap}
+.byline sup{font-size:.68em; color:var(--muted); margin-left:1px}
+.byline .aff{color:var(--muted); font-size:12.5px; margin-top:8px; line-height:1.6}
+.links{display:flex; flex-wrap:wrap; gap:8px 20px; margin-top:16px; font-family:var(--sans); font-size:13px}
+.links .l{color:var(--ink); font-weight:500}
+.links .l i{font-family:var(--serif); font-style:italic; font-weight:400; color:var(--muted); font-size:14px; margin-left:4px}
+.links a.l{color:var(--accent); text-decoration:none; border-bottom:1px solid currentColor}
 
-  .hero { position: relative; padding: 52px 0 28px;
-          background-image: linear-gradient(var(--bg-grid) 1px, transparent 1px), linear-gradient(90deg, var(--bg-grid) 1px, transparent 1px);
-          background-size: 32px 32px; background-position: -1px -1px; }
-  .hero::after { content: ""; position: absolute; inset: auto 0 0 0; height: 90px; background: linear-gradient(transparent, var(--bg)); pointer-events: none; }
-  .hero .wrap { position: relative; z-index: 1; }
-  .hero-grid { display: grid; grid-template-columns: minmax(0, 1.12fr) minmax(0, 1fr); gap: 40px; align-items: center; }
-  .venue { display: inline-flex; gap: 8px; align-items: center; font: 600 12px/1 var(--mono); letter-spacing: .04em; text-transform: uppercase;
-           color: var(--ink-2); border: 1px solid var(--line-2); border-radius: 999px; padding: 7px 12px; background: var(--surface); }
-  .venue i { width: 7px; height: 7px; border-radius: 50%; background: var(--accent-fill); box-shadow: 0 0 0 3px var(--accent-soft); }
-  h1 { font-family: var(--head); font-weight: 700; margin: 20px 0 0; letter-spacing: -.025em; line-height: 1.04; }
-  h1 .name { display: block; font-size: clamp(46px, 6.6vw, 76px); color: var(--ink); }
-  h1 .name span { color: var(--accent); }
-  h1 .q { display: block; font-size: clamp(20px, 2.3vw, 26px); line-height: 1.25; font-weight: 600; color: var(--ink-2); margin-top: 14px; letter-spacing: -.012em; max-width: 30ch; }
-  .authors { margin: 24px 0 2px; font-size: 16.5px; color: var(--ink-2); display: flex; flex-wrap: wrap; gap: 4px 16px; }
-  .authors a { color: var(--ink); font-weight: 600; border-bottom: 1.5px solid var(--accent-line); }
-  .authors a:hover { text-decoration: none; border-color: var(--accent); }
-  .affil { margin: 4px 0 0; color: var(--muted); font-size: 15px; }
-  .buttons { display: flex; flex-wrap: wrap; gap: 8px; margin: 26px 0 0; }
-  .btn { display: inline-flex; align-items: center; gap: 8px; height: 40px; padding: 0 15px; border-radius: 999px; font: 600 14px/1 var(--sans);
-         border: 1px solid var(--line-2); background: var(--surface); color: var(--ink); white-space: nowrap; transition: transform .12s ease, box-shadow .12s ease, border-color .12s ease; }
-  .btn svg { width: 16px; height: 16px; flex: none; }
-  .btn.primary { background: var(--accent-fill); border-color: var(--accent-fill); color: var(--accent-ink); }
-  a.btn:hover { text-decoration: none; transform: translateY(-1px); box-shadow: var(--shadow); border-color: var(--accent); }
-  .soon-row { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 10px; }
-  .btn.is-disabled { height: 34px; padding: 0 10px; gap: 5px; background: transparent; color: var(--muted); border-style: dashed; cursor: not-allowed; font-weight: 500; font-size: 13.5px; }
-  .btn.is-disabled .soon { font: 500 10.5px/1 var(--mono); letter-spacing: .02em; color: var(--muted); }
+/* figures */
+figure{margin:0}
+.fig img{mix-blend-mode:multiply}
+.teaser{margin-top:34px}
+figcaption, .cap{font-family:var(--sans); font-size:13px; line-height:1.6; color:var(--muted); max-width:var(--col); margin-top:14px}
+figcaption b, .cap b{color:var(--ink); font-weight:600}
 
-  .tldr { margin-top: 26px; background: var(--surface); border: 1px solid var(--line); border-left: 3px solid var(--accent-fill); border-radius: var(--r-sm);
-          padding: 16px 18px; color: var(--ink-2); font-size: 15.5px; line-height: 1.6; box-shadow: var(--shadow-sm); }
-  .tldr b { color: var(--ink); font-weight: 600; }
-  .label { display: block; font: 700 11px/1 var(--mono); letter-spacing: .1em; text-transform: uppercase; color: var(--accent); margin-bottom: 9px; }
-  .m { font-weight: 600; color: var(--ink); white-space: nowrap; text-decoration: underline; text-decoration-color: var(--d); text-decoration-thickness: 2px; text-underline-offset: 4px; }
-  .panel-head .m { text-decoration: none; }
-  .panel-head .m::before { content: ""; display: inline-block; width: 8px; height: 8px; border-radius: 50%; margin: 0 8px 2px 0; background: var(--d); vertical-align: middle; }
-  .m.rk { --d: var(--dot-rk); } .m.re { --d: var(--dot-re); }
+/* sections */
+section{padding:112px 0 0}
+.sec{display:grid; grid-template-columns:200px minmax(0,var(--col)) minmax(0,1fr); column-gap:48px}
+.sec > *{grid-column:2}
+.sec > .wide{grid-column:1 / -1}
+.sec > .label{grid-column:1; grid-row:1 / span 2; padding-top:12px}
+.label .n{display:block; font-family:var(--serif); font-style:italic; font-size:15px; color:var(--accent); letter-spacing:0; text-transform:none; margin-bottom:4px}
+.label{color:var(--muted)}
+h2{font-family:var(--serif); font-weight:380; font-size:clamp(30px,3.4vw,44px); line-height:1.1; letter-spacing:-.015em; margin:0 0 22px; font-variation-settings:"opsz" 60}
+h3{font-family:var(--serif); font-weight:420; font-size:28px; line-height:1.18; letter-spacing:-.01em; margin:6px 0 14px}
+p{margin:0 0 1.05em}
+.lede{font-size:21px; color:var(--ink2); line-height:1.52}
+.eyebrow{color:var(--accent); margin-top:8px}
 
-  figure { margin: 0; }
-  .fig { background: var(--surface); border: 1px solid var(--line); border-radius: var(--r); overflow: hidden; box-shadow: var(--shadow); }
-  .fig .plate { background: var(--surface); padding: 14px; border-bottom: 1px solid var(--line); }
-  .zoom { display: block; width: 100%; padding: 0; margin: 0 auto; border: 0; background: none; cursor: zoom-in; position: relative; }
-  .zoom img { width: 100%; }
-  .zoom::after { content: ""; position: absolute; right: 6px; top: 6px; width: 30px; height: 30px; border-radius: 8px; opacity: 0; transition: opacity .15s ease;
-                 background: rgba(11, 18, 32, .72) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23fff' stroke-width='2' stroke-linecap='round'%3E%3Cpath d='M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7'/%3E%3C/svg%3E") center/15px no-repeat; }
-  .zoom:hover::after, .zoom:focus-visible::after { opacity: 1; }
-  .fig figcaption { padding: 13px 16px 15px; color: var(--muted); font-size: 14px; line-height: 1.55; }
-  .fig figcaption b { color: var(--ink-2); font-weight: 600; }
-  .fig.teaser .plate { padding: 10px; }
-  .zoom picture { display: block; max-width: var(--fw, 100%); margin: 0 auto; }
-  .zoom .fig-dark { display: none; }
-  :root[data-theme="dark"] .zoom .fig-light { display: none; } :root[data-theme="dark"] .zoom .fig-dark { display: block; }
-  @media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) .zoom .fig-light { display: none; } :root:not([data-theme="light"]) .zoom .fig-dark { display: block; } }
-  .figtag { display: inline-block; font: 600 10.5px/1 var(--mono); letter-spacing: .06em; text-transform: uppercase; color: var(--muted); border: 1px solid var(--line-2);
-            border-radius: 6px; padding: 4px 6px; margin-right: 6px; vertical-align: 1px; }
-  .w-md { max-width: 980px; margin-left: auto; margin-right: auto; }
-  .w-sm { max-width: 640px; margin-left: auto; margin-right: auto; }
+/* findings */
+.stats{display:grid; grid-template-columns:repeat(4,minmax(0,1fr)); gap:40px; margin-top:44px}
+.stat{border-top:1px solid var(--ink); padding-top:16px}
+.stat .caps{color:var(--muted); font-size:11.5px}
+.big{font-family:var(--serif); font-weight:330; font-size:clamp(40px,3.9vw,54px); line-height:1.05; letter-spacing:-.025em;
+  margin:14px 0 12px; white-space:nowrap; font-variant-numeric:lining-nums; font-variation-settings:"opsz" 72; color:var(--ink)}
+.big small{font-size:.5em; letter-spacing:0; color:var(--ink2); font-weight:400}
+.big .pre{font-size:.4em; font-style:italic; color:var(--muted); letter-spacing:0; margin-right:.25em}
+.stat p{font-size:16.5px; line-height:1.5; color:var(--ink2); margin:0}
 
-  section { padding: 68px 0; }
-  section + section { border-top: 1px solid var(--line); }
-  .sec-head { display: grid; grid-template-columns: minmax(0, 1fr); gap: 8px; margin-bottom: 30px; max-width: 800px; }
-  .kicker { display: inline-flex; align-items: center; gap: 10px; font: 600 12px/1 var(--mono); letter-spacing: .08em; text-transform: uppercase; color: var(--accent); margin: 0; }
-  .kicker .idx { color: var(--muted); }
-  h2 { font: 700 clamp(27px, 3.3vw, 38px)/1.12 var(--head); letter-spacing: -.022em; margin: 4px 0 0; }
-  h3 { font: 600 19px/1.3 var(--head); letter-spacing: -.01em; margin: 0 0 6px; }
-  .lead { color: var(--ink-2); margin: 6px 0 0; font-size: 17px; }
+/* abstract */
+.abstract p{font-size:19.5px}
+.abstract p:first-of-type::first-line{font-variant:small-caps; letter-spacing:.03em}
 
-  .stats { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 14px; }
-  .stat { background: var(--surface); border: 1px solid var(--line); border-radius: var(--r); padding: 20px 20px 18px; box-shadow: var(--shadow-sm);
-          display: flex; flex-direction: column; gap: 8px; position: relative; }
-  .stat .what { font: 600 11.5px/1.3 var(--mono); letter-spacing: .05em; text-transform: uppercase; color: var(--muted); display: flex; align-items: center; gap: 8px; }
-  .stat .what i { width: 8px; height: 8px; border-radius: 2px; background: var(--accent-fill); flex: none; }
-  .stat .num { font: 700 clamp(28px, 2.9vw, 36px)/1.05 var(--mono); letter-spacing: -.035em; color: var(--ink); overflow-wrap: anywhere; margin: 6px 0 2px; }
-  .stat .num small { font-size: .46em; font-weight: 500; letter-spacing: 0; color: var(--accent); margin-left: 4px; }
-  .stat p { margin: 0; font-size: 14.5px; line-height: 1.55; color: var(--ink-2); }
-  .stat.hl { border-color: var(--accent-line); background: linear-gradient(180deg, var(--accent-soft), var(--surface) 70%); }
+/* method roles */
+.roles{display:grid; grid-template-columns:1fr 1fr; gap:48px; margin-top:40px}
+.role .caps{color:var(--accent)}
+.role h4{font-family:var(--serif); font-weight:420; font-style:italic; font-size:22px; margin:6px 0 14px; line-height:1.25}
+.role ol{list-style:none; padding:0; margin:0; counter-reset:s}
+.role li{counter-increment:s; position:relative; padding:12px 0 12px 34px; border-top:1px solid var(--rule); font-size:17px; line-height:1.55; color:var(--ink2)}
+.role li::before{content:counter(s); position:absolute; left:0; top:13px; font-family:var(--sans); font-size:12px; font-weight:600; color:var(--accent)}
+.role li b{color:var(--ink); font-weight:550}
 
-  .abstract-card { max-width: 900px; background: var(--surface); border: 1px solid var(--line); border-radius: var(--r); padding: 30px 34px; box-shadow: var(--shadow-sm); }
-  .abstract-card p { margin: 0 0 1em; color: var(--ink-2); font-size: 16.5px; }
-  .abstract-card p:last-child { margin-bottom: 0; }
+.points{margin:28px 0 0; padding:0}
+.points div{padding:14px 0; border-top:1px solid var(--rule); font-size:17.5px; line-height:1.55; color:var(--ink2)}
+.points b{color:var(--ink); font-weight:550}
+.mid-fig{margin-top:52px}
 
-  .compare { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px; margin-top: 18px; }
-  .panel { background: var(--surface); border: 1px solid var(--line); border-radius: var(--r); padding: 18px 20px 20px; box-shadow: var(--shadow-sm); }
-  .panel.ours { border-color: var(--accent-line); }
-  .panel-head { display: flex; align-items: center; justify-content: space-between; gap: 10px; margin-bottom: 14px; padding-bottom: 12px; border-bottom: 1px dashed var(--line-2); }
-  .panel-head .m { font: 600 16px/1 var(--head); }
-  .chip { font: 600 10.5px/1 var(--mono); letter-spacing: .06em; text-transform: uppercase; padding: 5px 8px; border-radius: 6px; color: var(--muted); background: var(--surface-2); border: 1px solid var(--line); white-space: nowrap; }
-  .panel.ours .chip { color: var(--accent); background: var(--accent-soft); border-color: var(--accent-line); }
-  .steps { margin: 0; padding: 0; list-style: none; display: grid; gap: 12px; }
-  .steps li { display: grid; grid-template-columns: 28px minmax(0, 1fr); gap: 12px; color: var(--ink-2); font-size: 15px; line-height: 1.55; }
-  .steps li::before { content: attr(data-n); width: 28px; height: 28px; border-radius: 8px; display: grid; place-items: center; font: 700 12.5px/1 var(--mono);
-                      color: var(--ink-2); background: var(--surface-2); border: 1px solid var(--line-2); }
-  .panel.ours .steps li::before, .steps.good li::before { color: var(--accent-ink); background: var(--accent-fill); border-color: var(--accent-fill); }
-  .steps li.warn::before { color: var(--ink); background: var(--surface-2); border-color: var(--line-2); }
-  .steps b { color: var(--ink); font-weight: 600; }
+/* results */
+.sub-sec{margin-top:72px}
+h2 + .sub-sec{margin-top:8px}
+h1 .nb{white-space:nowrap}
+.chart-head{display:flex; align-items:flex-end; justify-content:space-between; gap:24px; flex-wrap:wrap; margin:34px 0 10px}
+.legend{display:flex; flex-wrap:wrap; gap:6px 22px; font-family:var(--sans); font-size:12.5px; color:var(--ink2); align-items:center}
+.legend svg{vertical-align:-2px; margin-right:6px}
+.toggle{display:inline-flex; font-family:var(--sans); font-size:12.5px; gap:2px; background:#efebe3; border-radius:999px; padding:3px}
+.toggle button{all:unset; cursor:pointer; padding:5px 14px; border-radius:999px; color:var(--ink2)}
+.toggle button[aria-pressed="true"]{background:var(--paper); color:var(--ink); box-shadow:0 1px 2px rgba(0,0,0,.08)}
+.toggle button:focus-visible{outline:2px solid var(--accent)}
+#chart{width:100%}
+#chart svg{display:block; overflow:visible}
+#chart text{font-family:var(--sans)}
+.tablewrap{overflow-x:auto; -webkit-overflow-scrolling:touch}
+table{border-collapse:collapse; width:100%; font-family:var(--sans); font-size:13.5px; font-variant-numeric:tabular-nums; min-width:760px}
+th,td{padding:8px 10px; text-align:right; white-space:nowrap}
+thead th{font-weight:500; color:var(--muted); font-size:11.5px; letter-spacing:.06em; text-transform:uppercase; border-bottom:1px solid var(--ink)}
+thead tr:first-child th{border-bottom:1px solid var(--rule2); text-transform:none; letter-spacing:0; font-size:12.5px; color:var(--ink); font-weight:600; text-align:center}
+tbody td{border-bottom:1px solid var(--rule)}
+td:first-child, th:first-child{text-align:left}
+td.sz{color:var(--muted); text-align:left}
+tr.grp td{color:var(--accent); font-size:11px; letter-spacing:.12em; text-transform:uppercase; padding-top:16px; border-bottom:1px solid var(--rule2)}
+td.par{background:var(--parity); background-clip:padding-box}
+td.same{font-style:italic; color:var(--faint)}
+td.int{color:var(--ink); font-weight:500}
+td.txt{color:var(--ink2)}
+td.mid{color:var(--clay)}
+td.same.int, td.same.txt{font-style:italic; color:var(--faint); font-weight:400}
+.gap-l{border-left:12px solid transparent}
+.note{font-family:var(--sans); font-size:13px; line-height:1.6; color:var(--muted); margin-top:16px; max-width:var(--col)}
+.note .sw{display:inline-block; width:22px; height:11px; background:var(--parity); vertical-align:-1px; margin-right:4px; border-radius:2px}
+.caveat{margin:40px 0 0; padding:4px 0 4px 24px; border-left:2px solid var(--clay)}
+.caveat p{font-size:18px; line-height:1.58; color:var(--ink2); margin:0}
+.caveat b{font-family:var(--sans); font-size:12px; letter-spacing:.13em; text-transform:uppercase; color:var(--clay); font-weight:600; display:block; margin-bottom:6px}
+.plot{padding:8px 0 0}
+.pscroll{overflow-x:auto; -webkit-overflow-scrolling:touch}
+.hint{display:none}
 
-  .why { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 28px; align-items: start; }
-  .why .prose { font-size: 17px; color: var(--ink-2); margin: 0; }
-  .why .panel { padding: 20px; }
+/* citation */
+.bibhead{display:flex; justify-content:space-between; align-items:center; gap:16px; font-family:var(--sans); font-size:13px; color:var(--muted); border-bottom:1px solid var(--rule2); padding-bottom:10px}
+.copy{all:unset; cursor:pointer; font-family:var(--sans); font-size:12.5px; font-weight:500; color:var(--accent); border-bottom:1px solid currentColor}
+.copy:focus-visible{outline:2px solid var(--accent)}
+pre{margin:0; padding:18px 0 0; font-family:ui-monospace, "SF Mono", Menlo, Consolas, monospace; font-size:13.5px; line-height:1.7; color:var(--ink2);
+  white-space:pre-wrap; overflow-wrap:anywhere}
 
-  .results { display: grid; grid-template-columns: minmax(0, 1.12fr) minmax(0, 1fr); gap: 18px; align-items: start; }
-  .rcard { background: var(--surface); border: 1px solid var(--line); border-radius: var(--r); box-shadow: var(--shadow); overflow: hidden; }
-  .rcard .rtext { padding: 20px 22px 16px; }
-  .rcard .rtext p { margin: 0; color: var(--ink-2); font-size: 15px; }
-  .rcard .rnum { font: 700 11px/1 var(--mono); letter-spacing: .08em; color: var(--accent); margin-bottom: 10px; display: block; }
-  .rcard .fig { border: 0; border-radius: 0; box-shadow: none; border-top: 1px solid var(--line); }
-  .rcard .fig .plate { padding: 14px 16px; }
-  .rcard.full { grid-column: 1 / -1; }
-  .rcard.full .rtext { display: grid; grid-template-columns: minmax(0, 300px) minmax(0, 1fr); gap: 8px 28px; align-items: baseline; }
-  .stack { display: grid; gap: 18px; }
+/* resources */
+.res{margin-top:12px}
+.res-row{display:grid; grid-template-columns:200px minmax(0,1fr) auto; gap:24px; padding:22px 0; border-top:1px solid var(--rule); align-items:baseline}
+.res-row:last-child{border-bottom:1px solid var(--rule)}
+.res-row .caps{color:var(--muted); font-size:11.5px}
+.res-row h4{margin:0 0 4px; font-family:var(--serif); font-weight:450; font-size:21px; line-height:1.3}
+.res-row p{margin:0; font-size:16.5px; color:var(--ink2); line-height:1.5}
+.soon{font-family:var(--serif); font-style:italic; color:var(--muted); font-size:15.5px; white-space:nowrap}
 
-  .callout { display: grid; grid-template-columns: 40px minmax(0, 1fr); gap: 14px; align-items: start; margin-top: 18px; padding: 18px 20px;
-             border-radius: var(--r); background: var(--surface); border: 1px solid var(--line-2); border-style: dashed; }
-  .callout .ic { width: 40px; height: 40px; border-radius: 10px; background: var(--surface-2); border: 1px solid var(--line); display: grid; place-items: center; color: var(--ink-2); }
-  .callout svg { width: 20px; height: 20px; }
-  .callout p { margin: 0; color: var(--ink-2); font-size: 15.5px; }
-  .callout b { color: var(--ink); font-weight: 600; }
+footer{margin-top:120px; padding:28px 0 56px; border-top:1px solid var(--rule2); font-family:var(--sans); font-size:12.5px; color:var(--muted);
+  display:flex; justify-content:space-between; gap:16px; flex-wrap:wrap}
 
-  .bib { max-width: 980px; position: relative; background: var(--code-bg); border-radius: var(--r); border: 1px solid var(--line); box-shadow: var(--shadow); overflow: hidden; }
-  .bib-bar { display: flex; align-items: center; justify-content: space-between; gap: 10px; padding: 10px 12px 10px 18px; border-bottom: 1px solid rgba(255, 255, 255, .08); }
-  .bib-bar span { font: 600 11.5px/1 var(--mono); color: #8a98ad; letter-spacing: .04em; }
-  pre { margin: 0; color: var(--code-ink); padding: 18px 20px 20px; overflow-x: auto; font: 500 13.5px/1.7 var(--mono); }
-  .copy { height: 30px; padding: 0 11px; border-radius: 8px; border: 1px solid rgba(255, 255, 255, .16); background: rgba(255, 255, 255, .06); color: #e8eef6;
-          font: 600 12.5px/1 var(--sans); cursor: pointer; display: inline-flex; gap: 6px; align-items: center; }
-  .copy:hover { background: rgba(255, 255, 255, .14); }
-  .copy svg { width: 14px; height: 14px; }
+@media (max-width:1000px){
+  .sec{grid-template-columns:minmax(0,1fr); }
+  .sec > *, .sec > .wide, .sec > .label{grid-column:1; grid-row:auto}
+  .sec > .label{padding:0; margin-bottom:14px; display:flex; gap:10px; align-items:baseline}
+  .label .n{display:inline; margin:0}
+  .stats{grid-template-columns:repeat(2,minmax(0,1fr)); gap:36px 32px}
+  .hero-row{grid-template-columns:1fr; gap:28px}
+  .res-row{grid-template-columns:minmax(0,1fr) auto}
+  .res-row .caps{grid-column:1 / -1}
+}
+@media (max-width:640px){
+  :root{--gut:18px}
+  body{font-size:17.5px}
+  .top{height:56px}
+  .mark span{display:none}
+  .nav{gap:16px; font-size:12.5px}
+  .nav .opt{display:none}
+  .hero{padding-top:30px}
+  .kicker{margin-bottom:16px; font-size:11px}
+  h1{font-size:40px; letter-spacing:-.02em}
+  h1 .sub{font-size:22px; margin-top:.5em}
+  .dek{font-size:18.5px}
+  .teaser{margin-top:30px}
+  section{padding-top:76px}
+  .lede{font-size:18.5px}
+  .stats{grid-template-columns:1fr; gap:28px}
+  .big{font-size:46px}
+  .roles{grid-template-columns:1fr; gap:32px}
+  .abstract p{font-size:17.5px}
+  h3{font-size:24px}
+  .caveat p{font-size:16.5px}
+  .res-row{grid-template-columns:1fr; gap:6px}
+  pre{font-size:12px}
+  .pscroll img{width:660px; max-width:none}
+  .hint{display:inline; color:var(--accent)}
+}
 
-  .res { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 14px; }
-  .res .item { background: var(--surface); border: 1px solid var(--line); border-radius: var(--r); padding: 18px 18px 18px; display: flex; flex-direction: column; gap: 8px; color: inherit; box-shadow: var(--shadow-sm); }
-  .res a.item { transition: transform .12s ease, border-color .12s ease, box-shadow .12s ease; border-color: var(--accent-line); }
-  .res a.item:hover { text-decoration: none; transform: translateY(-2px); border-color: var(--accent); box-shadow: var(--shadow); }
-  .res .item.off { background: transparent; border-style: dashed; border-color: var(--line-2); box-shadow: none; }
-  .res .what { font: 600 11px/1.3 var(--mono); letter-spacing: .06em; text-transform: uppercase; color: var(--muted); display: flex; justify-content: space-between; gap: 8px; }
-  .res .status { color: var(--accent); }
-  .res .off .status { color: var(--muted); }
-  .res .rname { font: 600 15px/1.3 var(--mono); color: var(--ink); overflow-wrap: anywhere; }
-  .res .off .rname { color: var(--muted); }
-  .res p { margin: 0; font-size: 14px; line-height: 1.55; color: var(--ink-2); }
+.pgrid{display:grid; gap:10px 22px; margin-top:6px}
+.pgrid.g4{grid-template-columns:repeat(4,minmax(0,1fr))}
+.pgrid.g2{grid-template-columns:repeat(2,minmax(0,1fr)); max-width:820px}
+.pnl .pt-title{font-family:var(--sans); font-size:13px; font-weight:600; color:var(--ink); margin:0 0 2px 34px}
+svg.pp{display:block; width:100%; height:auto; overflow:visible}
+svg.pp .g{stroke:var(--rule); stroke-width:1}
+svg.pp .ty, svg.pp .tx{font-family:var(--sans); font-size:10.5px; fill:var(--muted)}
+svg.pp .mk{stroke:var(--faint); stroke-width:1; stroke-dasharray:2 3}
+.ln{fill:none; stroke-width:1.9; stroke-linejoin:round; stroke-linecap:round}
+.ln.a{stroke:var(--accent)} .ln.b{stroke:var(--clay); stroke-dasharray:5 3.5}
+.band{stroke:none} .band.a{fill:var(--accent); opacity:.10} .band.b{fill:var(--clay); opacity:.12}
+.pt.a{fill:var(--accent)} .pt.b{fill:var(--bg); stroke:var(--clay); stroke-width:1.6}
+.plegend{display:flex; flex-wrap:wrap; gap:6px 22px; font-family:var(--sans); font-size:12.5px; color:var(--ink2); margin:0 0 10px}
+.plegend span{display:inline-flex; align-items:center; gap:7px}
+.paxis{font-family:var(--sans); font-size:12px; color:var(--muted); text-align:center; margin-top:4px}
+@media (max-width:760px){ .pgrid.g4{grid-template-columns:repeat(2,minmax(0,1fr))} .pgrid.g4 svg.pp .ty, .pgrid.g4 svg.pp .tx{font-size:17px} .pgrid.g4 .pnl .pt-title{margin-left:20px} }
+@media (max-width:480px){ .pgrid.g2{grid-template-columns:1fr} }
 
-  footer { padding: 30px 0 44px; color: var(--muted); font-size: 13.5px; border-top: 1px solid var(--line); }
-  footer .wrap { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 10px; }
-
-  .lb { position: fixed; inset: 0; z-index: 50; background: rgba(5, 9, 15, .86); display: grid; place-items: center; padding: 56px 16px 24px; cursor: zoom-out; }
-  .lb[hidden] { display: none; }
-  .lb img { max-width: min(1600px, 100%); max-height: 100%; width: auto; height: auto; background: var(--surface); padding: 10px; border-radius: 10px; box-shadow: 0 20px 60px rgba(0, 0, 0, .5); }
-  .lb-close { position: absolute; top: 12px; right: 12px; width: 40px; height: 40px; border-radius: 10px; border: 1px solid rgba(255, 255, 255, .25);
-              background: rgba(255, 255, 255, .1); color: #fff; cursor: pointer; display: grid; place-items: center; }
-  .lb-close svg { width: 18px; height: 18px; }
-  .lb-hint { position: absolute; top: 22px; left: 16px; font: 500 12px/1 var(--mono); color: rgba(255, 255, 255, .7); }
-
-  @media (max-width: 1020px) {
-    .hero-grid { grid-template-columns: minmax(0, 1fr); gap: 32px; }
-    h1 .q { max-width: 36ch; }
-    .stats, .res { grid-template-columns: repeat(2, minmax(0, 1fr)); }
-    .results, .why { grid-template-columns: minmax(0, 1fr); }
-    .rcard.full .rtext { grid-template-columns: minmax(0, 1fr); }
-  }
-  @media (max-width: 760px) {
-    .nav { display: none; }
-    .top .theme { margin-left: auto; }
-  }
-  @media (max-width: 640px) {
-    body { font-size: 16px; }
-    .top .wrap { height: 54px; }
-    .hero { padding: 32px 0 24px; }
-    h1 .q { font-size: 19px; }
-    .authors { font-size: 15.5px; gap: 2px 12px; }
-    .buttons { gap: 7px; }
-    .btn { height: 38px; padding: 0 12px; font-size: 13.5px; }
-    .tldr { font-size: 15px; padding: 14px 15px; }
-    section { padding: 52px 0; }
-    .sec-head { margin-bottom: 22px; }
-    .stats, .res, .compare { grid-template-columns: minmax(0, 1fr); }
-    .stat .num { font-size: 32px; }
-    .abstract-card { padding: 20px 18px; }
-    .abstract-card p { font-size: 15.5px; }
-    .fig .plate, .rcard .fig .plate { padding: 8px; }
-    .zoom picture { max-width: 440px; }
-    .fig figcaption { font-size: 13.5px; padding: 11px 14px 13px; }
-    .rcard .rtext { padding: 16px 16px 14px; }
-    .why .prose, .lead { font-size: 16px; }
-    pre { font-size: 12px; padding: 14px 14px 16px; white-space: pre-wrap; overflow-wrap: anywhere; }
-    .soon-row { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 7px; }
-    .soon-row .btn { justify-content: center; padding: 0 8px; font-size: 13px; }
-    .callout { grid-template-columns: minmax(0, 1fr); gap: 10px; }
-  }
-  @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } .btn, .res a.item, .zoom::after { transition: none; } }
 </style>
-
-<style>
-  /* SYNC additions */
-  .hero-one { display: block; }
-  .hero-one .tldr { max-width: 860px; }
-  .fig.wide { margin-top: 34px; }
-  .fig .plate.paper { background: #ffffff; }
-  .fig .plate.paper img { display: block; width: 100%; height: auto; }
-  .btn.soon { opacity: .62; cursor: default; pointer-events: none; }
-  .btn .tag { font: 600 10px/1 var(--mono); letter-spacing: .06em; text-transform: uppercase; padding: 3px 6px; border-radius: 999px;
-              background: var(--surface-2); border: 1px solid var(--line); color: var(--muted); }
-  .authors sup, .affil sup { font-size: .68em; margin-left: 1px; }
-  .affil span + span::before { content: "\00a0\00a0·\00a0\00a0"; color: var(--muted); }
-  .res .item.soon { cursor: default; }
-  .res .item.soon .status { color: var(--muted); }
-  .tablewrap { overflow-x: auto; -webkit-overflow-scrolling: touch; padding: 6px 4px 2px; }
-  table.t1 { border-collapse: collapse; width: 100%; min-width: 620px; font: 500 13.5px/1.35 var(--sans); color: var(--ink-2); }
-  table.t1 th, table.t1 td { padding: 6px 8px; text-align: right; border-bottom: 1px solid var(--line); white-space: nowrap; }
-  table.t1 thead th { color: var(--ink); font-weight: 600; text-align: center; border-bottom: 1px solid var(--line-2); }
-  table.t1 tbody th { text-align: left; color: var(--ink); font-weight: 600; }
-  table.t1 td.int { color: var(--ink); font-weight: 700; }
-  table.t1 td.par { background: color-mix(in srgb, var(--accent-fill) 14%, transparent); }
-  table.t1 td.self { font-style: italic; color: var(--muted); font-weight: 500; }
-  table.t1 tr.sep td { padding: 0; border-bottom: 2px solid var(--line-2); }
-  #bib-text { white-space: pre-wrap; overflow-wrap: anywhere; }
-  .tnote { font-size: 12.5px; color: var(--muted); margin: 10px 4px 0; line-height: 1.5; }
-  .rcard.full .tablewrap { margin: 0 18px 16px; }
-  @media (max-width: 640px) {
-    .affil span { display: inline-block; }
-    .affil span + span::before { content: ""; }
-    .affil span { margin-right: 10px; }
-  }
-</style>
-
 </head>
 <body>
-<header class="top">
-  <div class="wrap">
-    <a class="brand" href="#top" aria-label="SYNC, back to top">
-      <span class="mark"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.6" stroke-linecap="round"><path d="M16.5 7.5c-.8-1-2.1-1.6-3.6-1.6-2.2 0-3.6 1.2-3.6 2.7 0 3.6 7.4 2 7.4 5.8 0 1.6-1.6 3-3.9 3-1.7 0-3.1-.7-3.9-1.8"/></svg></span>SYNC
-    </a>
-    <nav class="nav" aria-label="Sections">
-      <a href="#findings">Findings</a>
-      <a href="#abstract">Abstract</a>
-      <a href="#method">Method</a>
-      <a href="#test">Test</a>
-      <a href="#results">Results</a>
-      <a href="#bibtex">BibTeX</a>
-      <a href="#resources">Resources</a>
-    </nav>
-    <button class="theme" type="button" aria-label="Toggle dark mode" title="Toggle dark mode">
-      <svg class="moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></svg>
-      <svg class="sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="4.2"/><path d="M12 2v2.2M12 19.8V22M4.9 4.9l1.6 1.6M17.5 17.5l1.6 1.6M2 12h2.2M19.8 12H22M4.9 19.1l1.6-1.6M17.5 6.5l1.6-1.6"/></svg>
-    </button>
-  </div>
-</header>
+<div class="wrap">
+  <header class="top">
+    <a class="mark" href="#top">SYNC<span>Symbol-Indexed Neural Communication</span></a>
+    <nav class="nav"><a href="#findings">Findings</a><a class="opt" href="#method">Method</a><a href="#results">Results</a><a href="#citation">Citation</a></nav>
+  </header>
 
-<main id="top">
+  <main id="top">
   <div class="hero">
-    <div class="wrap hero-one">
-      <div class="venue"><i></i>arXiv preprint · 2026</div>
-      <h1><span class="name"><span>SYNC</span></span><span class="q">Share the Symbol, Not the Vector: Training-Free Fact Communication Across Language Models</span></h1>
-      <p class="authors">
-        <a href="https://lixin.ai">Xin Li<sup>1</sup></a><span>Mengbing Liu<sup>1</sup></span><span>Hao Jiang<sup>1</sup></span><a href="https://gaoxin492.github.io/">Xin Gao<sup>2</sup></a><span>Annan Wang<sup>1</sup></span><span>Xingwei Qu<sup>3</sup></span><span>Yichi Zhang</span><a href="https://blogs.ntu.edu.sg/chau-yuen/">Chau Yuen<sup>1</sup></a>
-      </p>
-      <p class="affil"><span><sup>1</sup>Nanyang Technological University</span><span><sup>2</sup>Yale University</span><span><sup>3</sup>University of Manchester</span></p>
-      <div class="buttons">
-        <span class="btn soon" aria-disabled="true" title="Coming soon"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 .5a11.5 11.5 0 0 0-3.64 22.41c.58.1.79-.25.79-.56v-2c-3.2.7-3.88-1.37-3.88-1.37-.52-1.33-1.28-1.69-1.28-1.69-1.05-.72.08-.7.08-.7 1.16.08 1.77 1.19 1.77 1.19 1.03 1.77 2.71 1.26 3.37.96.1-.75.4-1.26.73-1.55-2.55-.29-5.24-1.28-5.24-5.69 0-1.26.45-2.29 1.19-3.1-.12-.29-.52-1.46.11-3.05 0 0 .97-.31 3.17 1.18a11 11 0 0 1 5.77 0c2.2-1.49 3.17-1.18 3.17-1.18.63 1.59.23 2.76.11 3.05.74.81 1.19 1.84 1.19 3.1 0 4.42-2.7 5.39-5.26 5.68.41.36.78 1.06.78 2.14v3.17c0 .31.21.67.8.56A11.5 11.5 0 0 0 12 .5z"/></svg>Code<span class="tag">soon</span></span>
-        <span class="btn soon" aria-disabled="true" title="Coming soon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 3H6a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V9z"/><path d="M14 3v6h6M8 13h8M8 17h5"/></svg>arXiv<span class="tag">soon</span></span>
-        <span class="btn soon" aria-disabled="true" title="Coming soon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v12M7 10l5 5 5-5"/><path d="M5 21h14"/></svg>PDF<span class="tag">soon</span></span>
-        <a class="btn" href="#bibtex"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 8 3 12l4 4M17 8l4 4-4 4M14 4l-4 16"/></svg>BibTeX</a>
-        <span class="btn soon" aria-disabled="true" title="Coming soon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 2 3 7v10l9 5 9-5V7z"/><path d="M3 7l9 5 9-5M12 12v10"/></svg>Directions<span class="tag">soon</span></span>
-      </div>
-      <div class="tldr">
-        <span class="label">TL;DR</span>
-        Language models with different architectures can pass facts to each other <b>without fine-tuning or a learned translator</b>.
-        The sender sends only the <b>indices of words</b> from a shared list; each receiver writes those words into its own hidden states
-        with <b>its own word directions</b>, fitted once from its activations. With three new senders and nine newer receivers from five families,
-        four-answer success on new scenes reaches <b>72.0–98.3%</b>, and the two largest receivers match plain text.
-      </div>
-      <figure class="fig wide">
-        <div class="plate paper">
-          <button class="zoom" type="button" aria-label="Enlarge figure"><picture><source media="(max-width: 640px)" srcset="assets/SYNC-teaser-narrow.webp" width="1100" height="1991"><img src="assets/SYNC-teaser.webp" width="2200" height="634" fetchpriority="high" alt="The sender reads private facts and sends the indices of selected words, grouped by object, without seeing the question. Each receiver writes these words into its hidden states with its own word directions, then answers."></picture></button>
+    <p class="caps kicker"><b>Research</b>&nbsp;&nbsp;·&nbsp;&nbsp;arXiv preprint&nbsp;&nbsp;·&nbsp;&nbsp;2026</p>
+    <h1><span class="nb">Share the Symbol,</span> <span class="nb">Not the Vector:</span><span class="sub">Training-Free Fact Communication Across Language Models</span></h1>
+    <div class="hero-row">
+      <p class="dek">Language models with different architectures can pass facts to each other <strong>without fine-tuning or a learned translator</strong>. The sender sends only the indices of words from a shared list; each receiver writes those words into its own hidden states with its own word directions, fitted once from its activations.</p>
+      <div class="byline">
+        <div class="authors"><span class="nm"><a href="https://lixin.ai">Xin Li</a><sup>1</sup></span>, <span class="nm"><a href="https://liumengbing.com/">Mengbing Liu</a><sup>1</sup></span>, <span class="nm">Hao Jiang<sup>1</sup></span>, <span class="nm"><a href="https://gaoxin492.github.io/">Xin Gao</a><sup>2</sup></span>, <span class="nm">Annan Wang<sup>1</sup></span>, <span class="nm">Xingwei Qu<sup>3</sup></span>, <span class="nm">Yichi Zhang</span>, <span class="nm"><a href="https://blogs.ntu.edu.sg/chau-yuen/">Chau Yuen</a><sup>1</sup></span></div>
+        <div class="aff"><sup>1</sup>Nanyang Technological University&ensp;<sup>2</sup>Yale University&ensp;<sup>3</sup>University of Manchester</div>
+        <div class="links">
+          <span class="l">Code<i>soon</i></span>
+          <span class="l">arXiv<i>soon</i></span>
+          <span class="l">PDF<i>soon</i></span>
+          <span class="l">Directions<i>soon</i></span>
+          <a class="l" href="#citation">BibTeX</a>
         </div>
-        <figcaption><b>Shared words, each receiver's own directions.</b> The sender reads private facts and sends the indices of selected words, grouped by object, without seeing the question. Each receiver writes these words into its hidden states with its own word directions, then answers. Colors mark the same word across models; models and vectors are schematic, and answers are task ground truth.</figcaption>
-      </figure>
+      </div>
     </div>
   </div>
 
-  <section id="findings">
-    <div class="wrap">
-      <div class="sec-head">
-        <p class="kicker"><span class="idx">01</span>Key findings</p>
-        <h2>What crosses between the models is the symbol.</h2>
-        <p class="lead">Both models stay frozen. The message is a list of word indices per object; each receiver supplies its own vector for every word.</p>
+  <figure class="fig teaser">
+    <picture>
+      <source media="(max-width:640px)" srcset="assets/SYNC-teaser-narrow.webp">
+      <img src="assets/SYNC-teaser.webp" width="2200" height="634" alt="The sender reads private facts and sends the indices of selected words, grouped by object, without seeing the question. Each receiver writes these words into its hidden states with its own word directions, then answers.">
+    </picture>
+    <figcaption><b>Shared words, each receiver's own directions.</b> The sender reads private facts and sends the indices of selected words, grouped by object, without seeing the question. Each receiver writes these words into its hidden states with its own word directions, then answers. Colors mark the same word across models; models and vectors are schematic, and answers are task ground truth.</figcaption>
+  </figure>
+
+  <!-- 01 -->
+  <section id="findings" class="sec">
+    <div class="label caps"><span class="n">01</span>Key findings</div>
+    <h2>What crosses between the models is the symbol.</h2>
+    <p class="lede">Both models stay frozen. The message is a list of word indices per object; each receiver supplies its own vector for every word.</p>
+    <div class="wide stats">
+      <div class="stat"><div class="caps">New senders and receivers</div><div class="big">72.0–98.3<small>%</small></div><p>four-answer success on 572 new scenes, with three different senders and nine newer receivers from five families, without retuning.</p></div>
+      <div class="stat"><div class="caps">Early versus middle writing</div><div class="big"><span class="pre">up to</span>96<small>pts</small></div><p>above middle-layer writing, at an early write layer chosen on four development receivers and then fixed.</p></div>
+      <div class="stat"><div class="caps">Depth predicted in advance</div><div class="big">45<small>/</small>45</div><p>cases where a task-free probe predicted, before measurement, which depths each new receiver can use.</p></div>
+      <div class="stat"><div class="caps">Beyond the development task</div><div class="big">89.6–100<small>%</small></div><p>success under new layouts for messages listing every fact; on a landmark task, sender messages reach 23.9–64.0% from 0% without a message, below text.</p></div>
+    </div>
+  </section>
+
+  <!-- 02 -->
+  <section id="abstract" class="sec abstract">
+    <div class="label caps"><span class="n">02</span>Abstract</div>
+    <div>
+    <p>Multi-agent systems allow language models to solve tasks collaboratively by sharing complementary information. These systems typically communicate through text, while recent approaches also explore exchanging internal model states. However, sharing these states across architectures often requires learned translators or assumptions about model compatibility. We introduce SYNC (Symbol-Indexed Neural Communication), a word-indexed interface that connects heterogeneous models without fine-tuning or a learned translator. From descriptions only it can see, the sender selects words from a shared list and sends their indices for each object, without seeing the questions. The receiver writes the described facts into its hidden states using its own word directions, vectors fitted once from its activations.</p>
+    <p>We test selective use by swapping one attribute between two objects and requiring correct answers about both changed and unchanged attributes before and after the swap, four answers in total. We choose an early write layer on four development receivers and then fix it. With three different senders and nine newer receivers from five families, four-answer success on new scenes reaches 72.0–98.3%, up to 96 percentage points above middle-layer writing, and the two largest receivers match plain text. A task-free probe predicted in advance which depths each new receiver can use (45 of 45 cases).</p>
+    <p>Without retuning, messages listing every fact keep 89.6–100% success under new layouts, and sender messages reach 23.9–64.0% on a landmark task with multi-token symbols, below text but from 0% without a message. These results show that shared word indices and receiver-local directions can support selective fact use across model families without additional training.</p>
+    </div>
+  </section>
+
+  <!-- 03 -->
+  <section id="method" class="sec">
+    <div class="label caps"><span class="n">03</span>Method</div>
+    <h2>Construct directions once, then write and reuse facts.</h2>
+    <p class="lede">Words provide shared references even when the models' internal representations differ. Nothing is trained: building the directions and choosing where to write them use forward passes only.</p>
+    <figure class="fig wide mid-fig">
+      <img src="assets/SYNC-method.webp" width="2400" height="929" alt="(a) Each symbol's direction averages the receiver's hidden-state difference from a neutral filler over twelve generic contexts. (b) Retrieved directions are added once to saved neutral states at relative depth 0.2.">
+      <figcaption><b>Construct directions once, then write and reuse facts.</b> (a) Each symbol's direction averages the receiver's hidden-state difference from a neutral filler over twelve generic contexts. (b) Retrieved directions are added once to saved neutral states at relative depth 0.2 (γ = 1); the resulting prefix cache is copied for each question. Answers shown are task ground truth.</figcaption>
+    </figure>
+    <div class="roles">
+      <div class="role">
+        <div class="caps">Sender</div>
+        <h4>Sees the evidence, not the question</h4>
+        <ol>
+          <li><b>Select words.</b> A prompted sender chooses, for each object, up to four symbols from a fixed list of 221 words that the description supports.</li>
+          <li><b>Send indices.</b> The message carries only the word indices and their object assignments, not vectors or activations.</li>
+        </ol>
       </div>
-      <div class="stats">
-        <article class="stat hl">
-          <div class="what"><i></i>New senders and receivers</div>
-          <div class="num">72.0–98.3<small>%</small></div>
-          <p>four-answer success on 572 new scenes, with three different senders and nine newer receivers from five families, without retuning.</p>
-        </article>
-        <article class="stat hl">
-          <div class="what"><i></i>Early versus middle writing</div>
-          <div class="num">up to 96<small>pts</small></div>
-          <p>above middle-layer writing, at an early write layer chosen on four development receivers and then fixed.</p>
-        </article>
-        <article class="stat">
-          <div class="what"><i></i>Depth predicted in advance</div>
-          <div class="num">45<small>/45</small></div>
-          <p>cases where a task-free probe predicted, before measurement, which depths each new receiver can use.</p>
-        </article>
-        <article class="stat">
-          <div class="what"><i style="background: var(--muted)"></i>Beyond the development task</div>
-          <div class="num">89.6–100<small>%</small></div>
-          <p>success under new layouts for messages listing every fact; on a landmark task, sender messages reach 23.9–64.0% from 0% without a message, below text.</p>
-        </article>
+      <div class="role">
+        <div class="caps">Receiver</div>
+        <h4>Uses its own directions</h4>
+        <ol>
+          <li><b>Look up directions.</b> Each word's direction is the receiver's own hidden-state change when a neutral filler is replaced by the word, averaged over twelve generic contexts and fitted once.</li>
+          <li><b>Write, then answer.</b> The directions are added to slots reserved for each object at an early layer; the receiver answers from the written prefix.</li>
+        </ol>
       </div>
     </div>
   </section>
 
-  <section id="abstract">
-    <div class="wrap">
-      <div class="sec-head" style="margin-bottom: 18px">
-        <p class="kicker"><span class="idx">02</span>Abstract</p>
-      </div>
-      <div class="abstract-card">
-        <p>Multi-agent systems allow language models to solve tasks collaboratively by sharing complementary information. These systems typically communicate through text, while recent approaches also explore exchanging internal model states. However, sharing these states across architectures often requires learned translators or assumptions about model compatibility. We introduce SYNC (<b>Sy</b>mbol-Indexed <b>N</b>eural <b>C</b>ommunication), a word-indexed interface that connects heterogeneous models without fine-tuning or a learned translator. From descriptions only it can see, the sender selects words from a shared list and sends their indices for each object, without seeing the questions. The receiver writes the described facts into its hidden states using its own word directions, vectors fitted once from its activations.</p>
-        <p>We test selective use by swapping one attribute between two objects and requiring correct answers about both changed and unchanged attributes before and after the swap, four answers in total. We choose an early write layer on four development receivers and then fix it. With three different senders and nine newer receivers from five families, four-answer success on new scenes reaches 72.0–98.3%, up to 96 percentage points above middle-layer writing, and the two largest receivers match plain text. A task-free probe predicted in advance which depths each new receiver can use (45 of 45 cases).</p>
-        <p>Without retuning, messages listing every fact keep 89.6–100% success under new layouts, and sender messages reach 23.9–64.0% on a landmark task with multi-token symbols, below text but from 0% without a message. These results show that shared word indices and receiver-local directions can support selective fact use across model families without additional training.</p>
-      </div>
+  <!-- 04 -->
+  <section id="test" class="sec">
+    <div class="label caps"><span class="n">04</span>How we test</div>
+    <h2>One changed attribute, four required answers.</h2>
+    <p>Each scene has two worlds that describe the same two objects with two attributes. One attribute is swapped between the objects and the other is kept. The sender sees only the descriptions and never the questions; the receiver answers a question about each attribute in each world from the same message. A scene counts only if all four answers are correct, so reacting to every edit, or to none, fails.</p>
+    <div class="points">
+      <div><b>Controls separate selection from use.</b> Plain text, complete facts and the receiver's own native states test the sender and the receiver separately.</div>
+      <div><b>Reassigning symbols breaks it.</b> Any single reassignment of symbols to other symbols' directions leaves at most 4.4% in every cell of Table 1.</div>
+      <div><b>Prespecified.</b> Settings were chosen on development scenes and fixed before the confirmation scenes were run.</div>
     </div>
+    <figure class="fig wide mid-fig">
+      <img src="assets/SYNC-q.webp" width="1800" height="616" alt="Two worlds with two candies; one attribute is swapped. Four-answer success requires both questions correct in both worlds.">
+      <figcaption><b>One changed attribute, four required answers.</b> Only the sender sees the descriptions. Four-answer success requires both questions correct in both worlds. Shown answers are task ground truth, not model outputs.</figcaption>
+    </figure>
   </section>
 
-  <section id="method">
-    <div class="wrap">
-      <div class="sec-head">
-        <p class="kicker"><span class="idx">03</span>Method</p>
-        <h2>Construct directions once, then write and reuse facts.</h2>
-        <p class="lead">Words provide shared references even when the models' internal representations differ. Nothing is trained: building the directions and choosing where to write them use forward passes only.</p>
-      </div>
-      <figure class="fig w-md">
-        <div class="plate paper">
-          <button class="zoom" type="button" aria-label="Enlarge figure"><img src="assets/SYNC-method.webp" width="2400" height="929" alt="(a) Each symbol's direction averages the receiver's hidden-state difference from a neutral filler over twelve generic contexts. (b) Retrieved directions are added once to saved neutral states at relative depth 0.2."></button>
-        </div>
-        <figcaption><b>Construct directions once, then write and reuse facts.</b> (a) Each symbol's direction averages the receiver's hidden-state difference from a neutral filler over twelve generic contexts. (b) Retrieved directions are added once to saved neutral states at relative depth 0.2 (γ = 1); the resulting prefix cache is copied for each question. Answers shown are task ground truth.</figcaption>
-      </figure>
-      <div class="compare w-md">
-        <div class="panel">
-          <div class="panel-head"><span class="m rk">Sender</span><span class="chip">Sees the evidence, not the question</span></div>
-          <ul class="steps">
-            <li data-n="1"><span><b>Select words.</b> A prompted sender chooses, for each object, up to four symbols from a fixed list of 221 words that the description supports.</span></li>
-            <li data-n="2"><span><b>Send indices.</b> The message carries only the word indices and their object assignments, not vectors or activations.</span></li>
-          </ul>
-        </div>
-        <div class="panel ours">
-          <div class="panel-head"><span class="m re">Receiver</span><span class="chip">Uses its own directions</span></div>
-          <ul class="steps">
-            <li data-n="3"><span><b>Look up directions.</b> Each word's direction is the receiver's own hidden-state change when a neutral filler is replaced by the word, averaged over twelve generic contexts and fitted once.</span></li>
-            <li data-n="4"><span><b>Write, then answer.</b> The directions are added to slots reserved for each object at an early layer; the receiver answers from the written prefix.</span></li>
-          </ul>
-        </div>
-      </div>
-    </div>
-  </section>
+  <!-- 05 -->
+  <section id="results" class="sec">
+    <div class="label caps"><span class="n">05</span>Results</div>
+    <h2>What the experiments show.</h2>
 
-  <section id="test">
-    <div class="wrap">
-      <div class="sec-head">
-        <p class="kicker"><span class="idx">04</span>How we test</p>
-        <h2>One changed attribute, four required answers.</h2>
-      </div>
-      <div class="why">
-        <p class="prose">Each scene has two worlds that describe the same two objects with two attributes. One attribute is swapped between the objects and the other is kept. The sender sees only the descriptions and never the questions; the receiver answers a question about each attribute in each world from the same message. A scene counts only if all four answers are correct, so reacting to every edit, or to none, fails.</p>
-        <div class="panel">
-          <ul class="steps good">
-            <li data-n="✓"><span><b>Controls separate selection from use.</b> Plain text, complete facts and the receiver's own native states test the sender and the receiver separately.</span></li>
-            <li data-n="✓"><span><b>Reassigning symbols breaks it.</b> Any single reassignment of symbols to other symbols' directions leaves at most 4.4% in every cell of Table 1.</span></li>
-            <li data-n="!" class="warn"><span><b>Prespecified.</b> Settings were chosen on development scenes and fixed before the confirmation scenes were run.</span></li>
-          </ul>
-        </div>
-      </div>
-      <figure class="fig w-md wide">
-        <div class="plate paper">
-          <button class="zoom" type="button" aria-label="Enlarge figure"><img src="assets/SYNC-q.webp" width="1800" height="616" alt="Two worlds with two candies; one attribute is swapped. Four-answer success requires both questions correct in both worlds."></button>
-        </div>
-        <figcaption><b>One changed attribute, four required answers.</b> Only the sender sees the descriptions. Four-answer success requires both questions correct in both worlds. Shown answers are task ground truth, not model outputs.</figcaption>
-      </figure>
+    <div class="sub-sec">
+      <div class="caps eyebrow">R1 · New models</div>
+      <h3>A fixed interface carries to new senders and receivers.</h3>
+      <p>Four-answer success (%) on 572 confirmation scenes. Internal delivery writes at the early layer fixed on the development receivers, without retuning; the last column writes the Gemma-4 sender's messages at middle layers.</p>
     </div>
-  </section>
-
-  <section id="results">
-    <div class="wrap">
-      <div class="sec-head">
-        <p class="kicker"><span class="idx">05</span>Results</p>
-        <h2>What the experiments show.</h2>
+    <div class="wide">
+      <div class="chart-head">
+        <div class="legend" id="legend">
+          <span><svg width="12" height="12"><circle cx="6" cy="6" r="4.6" fill="#2c3a8a"/></svg>Internal (early layer)</span>
+          <span><svg width="12" height="12"><circle cx="6" cy="6" r="4" fill="#fbfaf7" stroke="#9a9283" stroke-width="1.6"/></svg>Text</span>
+          <span><svg width="22" height="12"><rect x="0" y="1" width="22" height="10" rx="5" fill="#ece5d3"/></svg>Internal ≈ text</span>
+          <span><svg width="22" height="12"><rect x="0" y="4" width="22" height="4" rx="2" fill="#b4643f" opacity=".75"/></svg>Middle layers</span>
+        </div>
+        <div class="toggle" role="group" aria-label="View">
+          <button type="button" aria-pressed="true" data-view="chart">Chart</button>
+          <button type="button" aria-pressed="false" data-view="table">Table</button>
+        </div>
       </div>
-      <div class="results">
-        <article class="rcard full">
-          <div class="rtext">
-            <div><span class="rnum">R1 · NEW MODELS</span><h3>A fixed interface carries to new senders and receivers.</h3></div>
-            <p>Four-answer success (%) on 572 confirmation scenes. Internal delivery writes at the early layer fixed on the development receivers, without retuning; the last column writes the Gemma-4 sender's messages at middle layers.</p>
-          </div>
-          <div class="tablewrap">
-<table class="t1"><thead>
-<tr><th rowspan="2">Receiver</th><th rowspan="2">Size</th><th colspan="2">Gemma-4 sender</th><th colspan="2">Qwen3.6 sender</th><th colspan="2">gpt-oss sender</th><th rowspan="2">Middle<br><small>(Gemma-4)</small></th></tr>
-<tr><th class="int">Internal</th><th>Text</th><th class="int">Internal</th><th>Text</th><th class="int">Internal</th><th>Text</th></tr></thead><tbody>
-<tr><th>Qwen3.5-2B</th><td>2B</td><td class="int">81.2</td><td>86.7</td><td class="int">79.3</td><td>83.8</td><td class="int">77.5</td><td>81.5</td><td>4.7</td></tr>
-<tr><th>Qwen3.5-4B</th><td>4B</td><td class="int">96.0</td><td>96.7</td><td class="int">93.4</td><td>94.3</td><td class="int">89.9</td><td>88.0</td><td>3.1</td></tr>
-<tr><th>Qwen3.5-9B</th><td>9B</td><td class="int">93.4</td><td>94.7</td><td class="int">93.6</td><td>96.2</td><td class="int">86.6</td><td>88.5</td><td>4.9</td></tr>
-<tr><th>Qwen3.5-27B</th><td>27B</td><td class="par int">98.3</td><td class="par">98.6</td><td class="par int">96.4</td><td class="par">96.7</td><td class="par int">88.8</td><td class="par">89.1</td><td>77.8</td></tr>
-<tr><th>Qwen3.6-27B</th><td>27B</td><td class="par int">97.7</td><td class="par">98.2</td><td class="self">96.0</td><td class="self">96.0</td><td class="par int">90.6</td><td class="par">89.5</td><td>82.5</td></tr>
-<tr class="sep"><td colspan="9"></td></tr>
-<tr><th>Granite-4.1</th><td>8B</td><td class="int">92.0</td><td>94.2</td><td class="int">90.6</td><td>94.4</td><td class="int">83.1</td><td>86.0</td><td>14.8</td></tr>
-<tr><th>OLMo-3</th><td>7B</td><td class="int">76.0</td><td>87.8</td><td class="int">72.0</td><td>86.1</td><td class="int">77.1</td><td>84.6</td><td>6.3</td></tr>
-<tr><th>gpt-oss</th><td>20B</td><td class="int">85.3</td><td>97.7</td><td class="int">83.8</td><td>95.8</td><td class="self">77.5</td><td class="self">90.9</td><td>4.5</td></tr>
-<tr><th>Mistral-Small-3.2</th><td>24B</td><td class="int">96.9</td><td>96.7</td><td class="int">94.1</td><td>96.0</td><td class="par int">89.0</td><td class="par">88.8</td><td>0.7</td></tr>
+      <div id="chart" role="img" aria-label="Dot plot of four-answer success, internal versus text, for nine receivers and three senders, plus middle-layer writing for the Gemma-4 sender."></div>
+      <div id="table1" class="tablewrap" hidden>
+<table>
+<thead><tr><th rowspan="1"></th><th></th><th colspan="2" class="gap-l">Gemma-4 sender</th><th colspan="2" class="gap-l">Qwen3.6 sender</th><th colspan="2" class="gap-l">gpt-oss sender</th><th class="gap-l">Gemma-4 sender</th></tr>
+<tr><th>Receiver</th><th style="text-align:left">Size</th><th class="gap-l">Internal</th><th>Text</th><th class="gap-l">Internal</th><th>Text</th><th class="gap-l">Internal</th><th>Text</th><th class="gap-l">Middle</th></tr></thead><tbody>
+<tr class="grp"><td colspan="9">Qwen</td></tr>
+<tr><td>Qwen3.5-2B</td><td class="sz">2B</td><td class="int gap-l">81.2</td><td class="txt">86.7</td><td class="int gap-l">79.3</td><td class="txt">83.8</td><td class="int gap-l">77.5</td><td class="txt">81.5</td><td class="mid gap-l">4.7</td></tr>
+<tr><td>Qwen3.5-4B</td><td class="sz">4B</td><td class="int gap-l">96.0</td><td class="txt">96.7</td><td class="int gap-l">93.4</td><td class="txt">94.3</td><td class="int gap-l">89.9</td><td class="txt">88.0</td><td class="mid gap-l">3.1</td></tr>
+<tr><td>Qwen3.5-9B</td><td class="sz">9B</td><td class="int gap-l">93.4</td><td class="txt">94.7</td><td class="int gap-l">93.6</td><td class="txt">96.2</td><td class="int gap-l">86.6</td><td class="txt">88.5</td><td class="mid gap-l">4.9</td></tr>
+<tr><td>Qwen3.5-27B</td><td class="sz">27B</td><td class="int gap-l par">98.3</td><td class="txt par">98.6</td><td class="int gap-l par">96.4</td><td class="txt par">96.7</td><td class="int gap-l par">88.8</td><td class="txt par">89.1</td><td class="mid gap-l">77.8</td></tr>
+<tr><td>Qwen3.6-27B</td><td class="sz">27B</td><td class="int gap-l par">97.7</td><td class="txt par">98.2</td><td class="int gap-l same">96.0</td><td class="txt same">96.0</td><td class="int gap-l par">90.6</td><td class="txt par">89.5</td><td class="mid gap-l">82.5</td></tr>
+<tr class="grp"><td colspan="9">Other families</td></tr>
+<tr><td>Granite-4.1</td><td class="sz">8B</td><td class="int gap-l">92.0</td><td class="txt">94.2</td><td class="int gap-l">90.6</td><td class="txt">94.4</td><td class="int gap-l">83.1</td><td class="txt">86.0</td><td class="mid gap-l">14.8</td></tr>
+<tr><td>OLMo-3</td><td class="sz">7B</td><td class="int gap-l">76.0</td><td class="txt">87.8</td><td class="int gap-l">72.0</td><td class="txt">86.1</td><td class="int gap-l">77.1</td><td class="txt">84.6</td><td class="mid gap-l">6.3</td></tr>
+<tr><td>gpt-oss</td><td class="sz">20B</td><td class="int gap-l">85.3</td><td class="txt">97.7</td><td class="int gap-l">83.8</td><td class="txt">95.8</td><td class="int gap-l same">77.5</td><td class="txt same">90.9</td><td class="mid gap-l">4.5</td></tr>
+<tr><td>Mistral-Small-3.2</td><td class="sz">24B</td><td class="int gap-l">96.9</td><td class="txt">96.7</td><td class="int gap-l">94.1</td><td class="txt">96.0</td><td class="int gap-l par">89.0</td><td class="txt par">88.8</td><td class="mid gap-l">0.7</td></tr>
 </tbody></table>
-
-          </div>
-          <p class="tnote" style="margin: 0 22px 18px">Shaded: internal and text within ±3 points at both clustering levels. Italic: sender and receiver are the same model, excluded from all counts. Any single symbol–direction reassignment leaves at most 4.4% in every cell.</p>
-        </article>
-
-        <article class="rcard">
-          <div class="rtext">
-            <span class="rnum">R2 · WHERE TO WRITE</span>
-            <h3>Usable depth ranges differ across receivers.</h3>
-            <p>Complete-fact four-answer success on 92 development scenes, one write per depth. Early writing recovers delivery where middle-layer writing fails.</p>
-          </div>
-          <figure class="fig ">
-        <div class="plate paper">
-          <button class="zoom" type="button" aria-label="Enlarge figure"><img src="assets/receiver_recovery_depth.svg" width="1557" height="545" alt="Four-answer success against relative write depth for four development receivers, fitted directions versus native states."></button>
-        </div>
-        <figcaption>Fitted directions use γ = 1; native states come from the receiver reading the facts. Shading: 95% family-bootstrap intervals.</figcaption>
-      </figure>
-        </article>
-
-        <div class="stack">
-          <article class="rcard">
-            <div class="rtext">
-              <span class="rnum">R3 · GRADED WEIGHTS</span>
-              <h3>Write strength versus printed weights.</h3>
-              <p>When facts carry weights, write strength beats printed numbers and most other text formats.</p>
-            </div>
-            <figure class="fig ">
-        <div class="plate paper">
-          <button class="zoom" type="button" aria-label="Enlarge figure"><img src="assets/latest_graded.svg" width="1557" height="558" alt="Four-answer success as the competing value's weight rises, internal write strength versus printed weights."></button>
-        </div>
-        <figcaption>Four-answer success with complete facts as the competing value's weight L rises. At L = 255 both worlds receive identical messages, so success is zero by construction. Shading: 95% family-bootstrap intervals.</figcaption>
-      </figure>
-          </article>
-          <div class="callout">
-            <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M10.3 3.9 1.8 18a2 2 0 0 0 1.7 3h17a2 2 0 0 0 1.7-3L13.7 3.9a2 2 0 0 0-3.4 0zM12 9v4M12 17h.01"/></svg></div>
-            <p><b>Relation to text.</b> For facts with equal weights, internal writing shows no consistent advantage: text is similar or up to 14.1 points better on the smaller receivers, the two largest reach parity, internal delivery takes 1.19–1.28 times as long, and on the landmark task text leads by 31.7–63.2 points. The clearest advantage is with graded weights.</p>
-          </div>
-        </div>
       </div>
+      <p class="note"><span class="sw"></span>Shaded: internal and text within ±3 points at both clustering levels. Italic / “same model”: sender and receiver are the same model, excluded from all counts. Any single symbol–direction reassignment leaves at most 4.4% in every cell.</p>
+    </div>
+    <div class="caveat">
+      <b>Relation to text</b>
+      <p>For facts with equal weights, internal writing shows no consistent advantage: text is similar or up to 14.1 points better on the smaller receivers, the two largest reach parity, internal delivery takes 1.19–1.28 times as long, and on the landmark task text leads by 31.7–63.2 points. The clearest advantage is with graded weights.</p>
+    </div>
+
+    <div class="sub-sec">
+      <div class="caps eyebrow">R2 · Where to write</div>
+      <h3>Usable depth ranges differ across receivers.</h3>
+      <p>Complete-fact four-answer success on 92 development scenes, one write per depth. Early writing recovers delivery where middle-layer writing fails.</p>
+    </div>
+    <figure class="fig wide plot">
+      <div class="plegend"><span><svg width="26" height="10" aria-hidden="true"><line class="ln a" x1="1" x2="25" y1="5" y2="5"/><circle class="pt a" cx="13" cy="5" r="3.4"/></svg>Fitted symbol directions</span><span><svg width="26" height="10" aria-hidden="true"><line class="ln b" x1="1" x2="25" y1="5" y2="5"/><circle class="pt b" cx="13" cy="5" r="3.4"/></svg>Native fact states</span></div><div class="pgrid g4"><div class="pnl"><div class="pt-title">Qwen3-32B</div><svg class="pp" viewBox="0 0 300 210" role="img" aria-label="Qwen3-32B"><line class="g" x1="34" x2="290" y1="180.0" y2="180.0"/><text class="ty" x="28" y="183.5" text-anchor="end">0</text><line class="g" x1="34" x2="290" y1="96.0" y2="96.0"/><text class="ty" x="28" y="99.5" text-anchor="end">50</text><line class="g" x1="34" x2="290" y1="12.0" y2="12.0"/><text class="ty" x="28" y="15.5" text-anchor="end">100</text><text class="tx" x="45.6" y="196" text-anchor="middle">0.2</text><text class="tx" x="162.0" y="196" text-anchor="middle">0.5</text><text class="tx" x="278.4" y="196" text-anchor="middle">0.8</text><line class="mk" x1="45.6" x2="45.6" y1="12" y2="180"/><polygon class="band b" points="45.6,12.0 103.8,12.0 162.0,12.0 220.2,169.5 278.4,180.0 278.4,180.0 220.2,180.0 162.0,20.8 103.8,12.0 45.6,12.0"/><polyline class="ln b" points="45.6,12.0 103.8,12.0 162.0,15.5 220.2,176.5 278.4,180.0"/><circle class="pt b" cx="45.6" cy="12.0" r="3.4"><title>100.0%</title></circle><circle class="pt b" cx="103.8" cy="12.0" r="3.4"><title>100.0%</title></circle><circle class="pt b" cx="162.0" cy="15.5" r="3.4"><title>97.9%</title></circle><circle class="pt b" cx="220.2" cy="176.5" r="3.4"><title>2.1%</title></circle><circle class="pt b" cx="278.4" cy="180.0" r="3.4"><title>0.0%</title></circle><polygon class="band a" points="45.6,12.0 103.8,12.0 162.0,12.0 220.2,174.8 278.4,180.0 278.4,180.0 220.2,180.0 162.0,22.5 103.8,12.0 45.6,12.0"/><polyline class="ln a" points="45.6,12.0 103.8,12.0 162.0,17.2 220.2,178.2 278.4,180.0"/><circle class="pt a" cx="45.6" cy="12.0" r="3.4"><title>100.0%</title></circle><circle class="pt a" cx="103.8" cy="12.0" r="3.4"><title>100.0%</title></circle><circle class="pt a" cx="162.0" cy="17.2" r="3.4"><title>96.9%</title></circle><circle class="pt a" cx="220.2" cy="178.2" r="3.4"><title>1.0%</title></circle><circle class="pt a" cx="278.4" cy="180.0" r="3.4"><title>0.0%</title></circle></svg></div><div class="pnl"><div class="pt-title">Qwen3-14B-Base</div><svg class="pp" viewBox="0 0 300 210" role="img" aria-label="Qwen3-14B-Base"><line class="g" x1="34" x2="290" y1="180.0" y2="180.0"/><text class="ty" x="28" y="183.5" text-anchor="end">0</text><line class="g" x1="34" x2="290" y1="96.0" y2="96.0"/><text class="ty" x="28" y="99.5" text-anchor="end">50</text><line class="g" x1="34" x2="290" y1="12.0" y2="12.0"/><text class="ty" x="28" y="15.5" text-anchor="end">100</text><text class="tx" x="45.6" y="196" text-anchor="middle">0.2</text><text class="tx" x="162.0" y="196" text-anchor="middle">0.5</text><text class="tx" x="278.4" y="196" text-anchor="middle">0.8</text><line class="mk" x1="45.6" x2="45.6" y1="12" y2="180"/><polygon class="band b" points="45.6,12.0 103.8,12.0 162.0,125.7 220.2,180.0 278.4,180.0 278.4,180.0 220.2,180.0 162.0,155.5 103.8,22.5 45.6,12.0"/><polyline class="ln b" points="45.6,12.0 103.8,17.2 162.0,141.5 220.2,180.0 278.4,180.0"/><circle class="pt b" cx="45.6" cy="12.0" r="3.4"><title>100.0%</title></circle><circle class="pt b" cx="103.8" cy="17.2" r="3.4"><title>96.9%</title></circle><circle class="pt b" cx="162.0" cy="141.5" r="3.4"><title>22.9%</title></circle><circle class="pt b" cx="220.2" cy="180.0" r="3.4"><title>0.0%</title></circle><circle class="pt b" cx="278.4" cy="180.0" r="3.4"><title>0.0%</title></circle><polygon class="band a" points="45.6,12.0 103.8,17.2 162.0,157.2 220.2,174.8 278.4,180.0 278.4,180.0 220.2,180.0 162.0,178.2 103.8,52.3 45.6,12.0"/><polyline class="ln a" points="45.6,12.0 103.8,33.0 162.0,169.5 220.2,178.2 278.4,180.0"/><circle class="pt a" cx="45.6" cy="12.0" r="3.4"><title>100.0%</title></circle><circle class="pt a" cx="103.8" cy="33.0" r="3.4"><title>87.5%</title></circle><circle class="pt a" cx="162.0" cy="169.5" r="3.4"><title>6.2%</title></circle><circle class="pt a" cx="220.2" cy="178.2" r="3.4"><title>1.0%</title></circle><circle class="pt a" cx="278.4" cy="180.0" r="3.4"><title>0.0%</title></circle></svg></div><div class="pnl"><div class="pt-title">GLM-4-9B</div><svg class="pp" viewBox="0 0 300 210" role="img" aria-label="GLM-4-9B"><line class="g" x1="34" x2="290" y1="180.0" y2="180.0"/><text class="ty" x="28" y="183.5" text-anchor="end">0</text><line class="g" x1="34" x2="290" y1="96.0" y2="96.0"/><text class="ty" x="28" y="99.5" text-anchor="end">50</text><line class="g" x1="34" x2="290" y1="12.0" y2="12.0"/><text class="ty" x="28" y="15.5" text-anchor="end">100</text><text class="tx" x="45.6" y="196" text-anchor="middle">0.2</text><text class="tx" x="162.0" y="196" text-anchor="middle">0.5</text><text class="tx" x="278.4" y="196" text-anchor="middle">0.8</text><line class="mk" x1="45.6" x2="45.6" y1="12" y2="180"/><polygon class="band b" points="45.6,15.5 103.8,47.0 162.0,180.0 220.2,180.0 278.4,180.0 278.4,180.0 220.2,180.0 162.0,180.0 103.8,90.8 45.6,43.5"/><polyline class="ln b" points="45.6,27.8 103.8,68.0 162.0,180.0 220.2,180.0 278.4,180.0"/><circle class="pt b" cx="45.6" cy="27.8" r="3.4"><title>90.6%</title></circle><circle class="pt b" cx="103.8" cy="68.0" r="3.4"><title>66.7%</title></circle><circle class="pt b" cx="162.0" cy="180.0" r="3.4"><title>0.0%</title></circle><circle class="pt b" cx="220.2" cy="180.0" r="3.4"><title>0.0%</title></circle><circle class="pt b" cx="278.4" cy="180.0" r="3.4"><title>0.0%</title></circle><polygon class="band a" points="45.6,19.0 103.8,155.5 162.0,180.0 220.2,180.0 278.4,180.0 278.4,180.0 220.2,180.0 162.0,180.0 103.8,174.8 45.6,47.0"/><polyline class="ln a" points="45.6,31.3 103.8,166.0 162.0,180.0 220.2,180.0 278.4,180.0"/><circle class="pt a" cx="45.6" cy="31.3" r="3.4"><title>88.5%</title></circle><circle class="pt a" cx="103.8" cy="166.0" r="3.4"><title>8.3%</title></circle><circle class="pt a" cx="162.0" cy="180.0" r="3.4"><title>0.0%</title></circle><circle class="pt a" cx="220.2" cy="180.0" r="3.4"><title>0.0%</title></circle><circle class="pt a" cx="278.4" cy="180.0" r="3.4"><title>0.0%</title></circle></svg></div><div class="pnl"><div class="pt-title">Gemma-3-27B-IT</div><svg class="pp" viewBox="0 0 300 210" role="img" aria-label="Gemma-3-27B-IT"><line class="g" x1="34" x2="290" y1="180.0" y2="180.0"/><text class="ty" x="28" y="183.5" text-anchor="end">0</text><line class="g" x1="34" x2="290" y1="96.0" y2="96.0"/><text class="ty" x="28" y="99.5" text-anchor="end">50</text><line class="g" x1="34" x2="290" y1="12.0" y2="12.0"/><text class="ty" x="28" y="15.5" text-anchor="end">100</text><text class="tx" x="45.6" y="196" text-anchor="middle">0.2</text><text class="tx" x="162.0" y="196" text-anchor="middle">0.5</text><text class="tx" x="278.4" y="196" text-anchor="middle">0.8</text><line class="mk" x1="45.6" x2="45.6" y1="12" y2="180"/><polygon class="band b" points="45.6,12.0 103.8,12.0 162.0,180.0 220.2,180.0 278.4,180.0 278.4,180.0 220.2,180.0 162.0,180.0 103.8,26.0 45.6,12.0"/><polyline class="ln b" points="45.6,12.0 103.8,17.2 162.0,180.0 220.2,180.0 278.4,180.0"/><circle class="pt b" cx="45.6" cy="12.0" r="3.4"><title>100.0%</title></circle><circle class="pt b" cx="103.8" cy="17.2" r="3.4"><title>96.9%</title></circle><circle class="pt b" cx="162.0" cy="180.0" r="3.4"><title>0.0%</title></circle><circle class="pt b" cx="220.2" cy="180.0" r="3.4"><title>0.0%</title></circle><circle class="pt b" cx="278.4" cy="180.0" r="3.4"><title>0.0%</title></circle><polygon class="band a" points="45.6,12.0 103.8,22.5 162.0,180.0 220.2,180.0 278.4,180.0 278.4,180.0 220.2,180.0 162.0,180.0 103.8,52.3 45.6,12.0"/><polyline class="ln a" points="45.6,12.0 103.8,36.5 162.0,180.0 220.2,180.0 278.4,180.0"/><circle class="pt a" cx="45.6" cy="12.0" r="3.4"><title>100.0%</title></circle><circle class="pt a" cx="103.8" cy="36.5" r="3.4"><title>85.4%</title></circle><circle class="pt a" cx="162.0" cy="180.0" r="3.4"><title>0.0%</title></circle><circle class="pt a" cx="220.2" cy="180.0" r="3.4"><title>0.0%</title></circle><circle class="pt a" cx="278.4" cy="180.0" r="3.4"><title>0.0%</title></circle></svg></div></div><div class="paxis">Relative write depth</div>
+      <figcaption>Fitted directions use γ = 1; native states come from the receiver reading the facts. Shading: 95% family-bootstrap intervals.</figcaption>
+    </figure>
+
+    <div class="sub-sec">
+      <div class="caps eyebrow">R3 · Graded weights</div>
+      <h3>Write strength versus printed weights.</h3>
+      <p>When facts carry weights, write strength beats printed numbers and most other text formats.</p>
+    </div>
+    <figure class="fig wide plot">
+      <div class="plegend"><span><svg width="26" height="10" aria-hidden="true"><line class="ln a" x1="1" x2="25" y1="5" y2="5"/><circle class="pt a" cx="13" cy="5" r="3.4"/></svg>Internal write (weight as strength)</span><span><svg width="26" height="10" aria-hidden="true"><line class="ln b" x1="1" x2="25" y1="5" y2="5"/><circle class="pt b" cx="13" cy="5" r="3.4"/></svg>Text (weight printed as [w/255])</span></div><div class="pgrid g2"><div class="pnl"><div class="pt-title">Qwen3-32B</div><svg class="pp" viewBox="0 0 300 210" role="img" aria-label="Qwen3-32B"><line class="g" x1="34" x2="290" y1="180.0" y2="180.0"/><text class="ty" x="28" y="183.5" text-anchor="end">0</text><line class="g" x1="34" x2="290" y1="138.0" y2="138.0"/><text class="ty" x="28" y="141.5" text-anchor="end">25</text><line class="g" x1="34" x2="290" y1="96.0" y2="96.0"/><text class="ty" x="28" y="99.5" text-anchor="end">50</text><line class="g" x1="34" x2="290" y1="54.0" y2="54.0"/><text class="ty" x="28" y="57.5" text-anchor="end">75</text><line class="g" x1="34" x2="290" y1="12.0" y2="12.0"/><text class="ty" x="28" y="15.5" text-anchor="end">100</text><text class="tx" x="41.6" y="196" text-anchor="middle">0</text><text class="tx" x="102.0" y="196" text-anchor="middle">64</text><text class="tx" x="162.5" y="196" text-anchor="middle">128</text><text class="tx" x="222.0" y="196" text-anchor="middle">191</text><text class="tx" x="282.4" y="196" text-anchor="middle">255</text><polygon class="band b" points="41.6,12.0 102.0,115.8 162.5,138.0 222.0,140.3 282.4,180.0 282.4,180.0 222.0,159.0 162.5,155.5 102.0,139.2 41.6,15.5"/><polyline class="ln b" points="41.6,13.2 102.0,127.5 162.5,147.3 222.0,149.7 282.4,180.0"/><circle class="pt b" cx="41.6" cy="13.2" r="3.4"><title>99.3%</title></circle><circle class="pt b" cx="102.0" cy="127.5" r="3.4"><title>31.2%</title></circle><circle class="pt b" cx="162.5" cy="147.3" r="3.4"><title>19.4%</title></circle><circle class="pt b" cx="222.0" cy="149.7" r="3.4"><title>18.1%</title></circle><circle class="pt b" cx="282.4" cy="180.0" r="3.4"><title>0.0%</title></circle><polygon class="band a" points="41.6,12.0 102.0,12.0 162.5,45.8 222.0,164.8 282.4,180.0 282.4,180.0 222.0,177.7 162.5,69.2 102.0,15.5 41.6,12.0"/><polyline class="ln a" points="41.6,12.0 102.0,13.2 162.5,57.5 222.0,171.8 282.4,180.0"/><circle class="pt a" cx="41.6" cy="12.0" r="3.4"><title>100.0%</title></circle><circle class="pt a" cx="102.0" cy="13.2" r="3.4"><title>99.3%</title></circle><circle class="pt a" cx="162.5" cy="57.5" r="3.4"><title>72.9%</title></circle><circle class="pt a" cx="222.0" cy="171.8" r="3.4"><title>4.9%</title></circle><circle class="pt a" cx="282.4" cy="180.0" r="3.4"><title>0.0%</title></circle></svg></div><div class="pnl"><div class="pt-title">Qwen3.5-27B</div><svg class="pp" viewBox="0 0 300 210" role="img" aria-label="Qwen3.5-27B"><line class="g" x1="34" x2="290" y1="180.0" y2="180.0"/><text class="ty" x="28" y="183.5" text-anchor="end">0</text><line class="g" x1="34" x2="290" y1="138.0" y2="138.0"/><text class="ty" x="28" y="141.5" text-anchor="end">25</text><line class="g" x1="34" x2="290" y1="96.0" y2="96.0"/><text class="ty" x="28" y="99.5" text-anchor="end">50</text><line class="g" x1="34" x2="290" y1="54.0" y2="54.0"/><text class="ty" x="28" y="57.5" text-anchor="end">75</text><line class="g" x1="34" x2="290" y1="12.0" y2="12.0"/><text class="ty" x="28" y="15.5" text-anchor="end">100</text><text class="tx" x="41.6" y="196" text-anchor="middle">0</text><text class="tx" x="102.0" y="196" text-anchor="middle">64</text><text class="tx" x="162.5" y="196" text-anchor="middle">128</text><text class="tx" x="222.0" y="196" text-anchor="middle">191</text><text class="tx" x="282.4" y="196" text-anchor="middle">255</text><polygon class="band b" points="41.6,12.0 102.0,55.2 162.5,94.8 222.0,96.0 282.4,180.0 282.4,180.0 222.0,133.3 162.5,126.3 102.0,87.8 41.6,12.0"/><polyline class="ln b" points="41.6,12.0 102.0,71.5 162.5,111.2 222.0,114.7 282.4,180.0"/><circle class="pt b" cx="41.6" cy="12.0" r="3.4"><title>100.0%</title></circle><circle class="pt b" cx="102.0" cy="71.5" r="3.4"><title>64.6%</title></circle><circle class="pt b" cx="162.5" cy="111.2" r="3.4"><title>41.0%</title></circle><circle class="pt b" cx="222.0" cy="114.7" r="3.4"><title>38.9%</title></circle><circle class="pt b" cx="282.4" cy="180.0" r="3.4"><title>0.0%</title></circle><polygon class="band a" points="41.6,12.0 102.0,12.0 162.5,13.2 222.0,78.5 282.4,180.0 282.4,180.0 222.0,111.2 162.5,28.3 102.0,12.0 41.6,12.0"/><polyline class="ln a" points="41.6,12.0 102.0,12.0 162.5,20.2 222.0,94.8 282.4,180.0"/><circle class="pt a" cx="41.6" cy="12.0" r="3.4"><title>100.0%</title></circle><circle class="pt a" cx="102.0" cy="12.0" r="3.4"><title>100.0%</title></circle><circle class="pt a" cx="162.5" cy="20.2" r="3.4"><title>95.1%</title></circle><circle class="pt a" cx="222.0" cy="94.8" r="3.4"><title>50.7%</title></circle><circle class="pt a" cx="282.4" cy="180.0" r="3.4"><title>0.0%</title></circle></svg></div></div><div class="paxis">Weight L of the competing value (own value at 255)</div>
+      <figcaption>Four-answer success with complete facts as the competing value's weight L rises. At L = 255 both worlds receive identical messages, so success is zero by construction. Shading: 95% family-bootstrap intervals.</figcaption>
+    </figure>
+    <div class="caveat">
+      <b>Relation to text</b>
+      <p>For facts with equal weights, internal writing shows no consistent advantage (see R1 above). The clearest advantage is with graded weights.</p>
     </div>
   </section>
 
-  <section id="bibtex">
-    <div class="wrap">
-      <div class="sec-head">
-        <p class="kicker"><span class="idx">06</span>Citation</p>
-        <h2>BibTeX</h2>
-      </div>
-      <div class="bib">
-        <div class="bib-bar"><span>li2026sync.bib · arXiv ID coming soon</span>
-          <button class="copy" type="button" data-copy>
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="9" y="9" width="12" height="12" rx="2"/><path d="M5 15V5a2 2 0 0 1 2-2h10"/></svg><span>Copy</span></button>
-        </div>
-<pre id="bib-text">@misc{li2026sync,
-      title={Share the Symbol, Not the Vector: Training-Free Fact Communication Across Language Models},
-      author={Xin Li and Mengbing Liu and Hao Jiang and Xin Gao and Annan Wang and Xingwei Qu and Yichi Zhang and Chau Yuen},
-      year={2026},
-      note={Preprint},
+  <!-- 06 -->
+  <section id="citation" class="sec">
+    <div class="label caps"><span class="n">06</span>Citation</div>
+    <h2>BibTeX</h2>
+    <div>
+      <div class="bibhead"><span>li2026sync.bib · arXiv ID coming soon</span><button class="copy" type="button" id="copy">Copy</button></div>
+<pre id="bib">@misc{li2026sync,
+  title={Share the Symbol, Not the Vector: Training-Free Fact Communication Across Language Models},
+  author={Xin Li and Mengbing Liu and Hao Jiang and Xin Gao and Annan Wang and Xingwei Qu and Yichi Zhang and Chau Yuen},
+  year={2026},
+  note={Preprint},
 }</pre>
-      </div>
     </div>
   </section>
 
-  <section id="resources">
-    <div class="wrap">
-      <div class="sec-head">
-        <p class="kicker"><span class="idx">07</span>Resources</p>
-        <h2>Code, directions and paper.</h2>
-      </div>
-      <div class="res">
-        <div class="item soon">
-          <div class="what"><span>Code · GitHub</span><span class="status">Coming soon</span></div>
-          <div class="rname">LiXin97/SYNC</div>
-          <p>Direction fitting, sender and receiver code, scene-bank generators and the scripts that regenerate every table from per-row records.</p>
-        </div>
-        <div class="item soon">
-          <div class="what"><span>Paper · arXiv</span><span class="status">Coming soon</span></div>
-          <div class="rname">arXiv preprint</div>
-          <p>Full paper with the appendix: protocols, preregistration, controls, uncertainty estimates and numerical checks.</p>
-        </div>
-        <div class="item soon">
-          <div class="what"><span>Directions · Hugging Face</span><span class="status">Coming soon</span></div>
-          <div class="rname">Receiver word directions</div>
-          <p>The fitted word directions for each receiver, released under each base model's license.</p>
-        </div>
-        <div class="item soon">
-          <div class="what"><span>Data · records</span><span class="status">Coming soon</span></div>
-          <div class="rname">Scene banks and per-row records</div>
-          <p>Mechanically generated scene banks, sender messages, per-row records and preregistration locks.</p>
-        </div>
-      </div>
+  <!-- 07 -->
+  <section id="resources" class="sec">
+    <div class="label caps"><span class="n">07</span>Resources</div>
+    <h2>Code, directions and paper.</h2>
+    <div class="wide res">
+      <div class="res-row"><div class="caps">Code · GitHub</div><div><h4>LiXin97/SYNC</h4><p>Direction fitting, sender and receiver code, scene-bank generators and the scripts that regenerate every table from per-row records.</p></div><span class="soon">Coming soon</span></div>
+      <div class="res-row"><div class="caps">Paper · arXiv</div><div><h4>arXiv preprint</h4><p>Full paper with the appendix: protocols, preregistration, controls, uncertainty estimates and numerical checks.</p></div><span class="soon">Coming soon</span></div>
+      <div class="res-row"><div class="caps">Directions · Hugging Face</div><div><h4>Receiver word directions</h4><p>The fitted word directions for each receiver, released under each base model's license.</p></div><span class="soon">Coming soon</span></div>
+      <div class="res-row"><div class="caps">Data · records</div><div><h4>Scene banks and per-row records</h4><p>Mechanically generated scene banks, sender messages, per-row records and preregistration locks.</p></div><span class="soon">Coming soon</span></div>
     </div>
   </section>
-</main>
+  </main>
 
-<footer>
-  <div class="wrap">
-    <span>SYNC · Nanyang Technological University · Yale University · University of Manchester</span>
-    <span>Static page, no tracking</span>
-  </div>
-</footer>
-
-<div class="lb" id="lb" hidden role="dialog" aria-modal="true" aria-label="Enlarged figure">
-  <span class="lb-hint">Esc or click to close</span>
-  <button class="lb-close" type="button" aria-label="Close">
-    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><path d="M6 6l12 12M18 6 6 18"/></svg>
-  </button>
-  <img alt="">
+  <footer><span>SYNC · Symbol-Indexed Neural Communication</span><span>Nanyang Technological University · Yale University · University of Manchester</span></footer>
 </div>
 
+<script type="application/json" id="t1">[{"receiver":"Qwen3.5-2B","size":"2B","group":"Qwen","gemma4":{"internal":{"v":81.2,"parity":false,"same_model":false},"text":{"v":86.7,"parity":false,"same_model":false}},"qwen36":{"internal":{"v":79.3,"parity":false,"same_model":false},"text":{"v":83.8,"parity":false,"same_model":false}},"gptoss":{"internal":{"v":77.5,"parity":false,"same_model":false},"text":{"v":81.5,"parity":false,"same_model":false}},"middle_gemma4":4.7},{"receiver":"Qwen3.5-4B","size":"4B","group":"Qwen","gemma4":{"internal":{"v":96.0,"parity":false,"same_model":false},"text":{"v":96.7,"parity":false,"same_model":false}},"qwen36":{"internal":{"v":93.4,"parity":false,"same_model":false},"text":{"v":94.3,"parity":false,"same_model":false}},"gptoss":{"internal":{"v":89.9,"parity":false,"same_model":false},"text":{"v":88.0,"parity":false,"same_model":false}},"middle_gemma4":3.1},{"receiver":"Qwen3.5-9B","size":"9B","group":"Qwen","gemma4":{"internal":{"v":93.4,"parity":false,"same_model":false},"text":{"v":94.7,"parity":false,"same_model":false}},"qwen36":{"internal":{"v":93.6,"parity":false,"same_model":false},"text":{"v":96.2,"parity":false,"same_model":false}},"gptoss":{"internal":{"v":86.6,"parity":false,"same_model":false},"text":{"v":88.5,"parity":false,"same_model":false}},"middle_gemma4":4.9},{"receiver":"Qwen3.5-27B","size":"27B","group":"Qwen","gemma4":{"internal":{"v":98.3,"parity":true,"same_model":false},"text":{"v":98.6,"parity":true,"same_model":false}},"qwen36":{"internal":{"v":96.4,"parity":true,"same_model":false},"text":{"v":96.7,"parity":true,"same_model":false}},"gptoss":{"internal":{"v":88.8,"parity":true,"same_model":false},"text":{"v":89.1,"parity":true,"same_model":false}},"middle_gemma4":77.8},{"receiver":"Qwen3.6-27B","size":"27B","group":"Qwen","gemma4":{"internal":{"v":97.7,"parity":true,"same_model":false},"text":{"v":98.2,"parity":true,"same_model":false}},"qwen36":{"internal":{"v":96.0,"parity":false,"same_model":true},"text":{"v":96.0,"parity":false,"same_model":true}},"gptoss":{"internal":{"v":90.6,"parity":true,"same_model":false},"text":{"v":89.5,"parity":true,"same_model":false}},"middle_gemma4":82.5},{"receiver":"Granite-4.1","size":"8B","group":"Other families","gemma4":{"internal":{"v":92.0,"parity":false,"same_model":false},"text":{"v":94.2,"parity":false,"same_model":false}},"qwen36":{"internal":{"v":90.6,"parity":false,"same_model":false},"text":{"v":94.4,"parity":false,"same_model":false}},"gptoss":{"internal":{"v":83.1,"parity":false,"same_model":false},"text":{"v":86.0,"parity":false,"same_model":false}},"middle_gemma4":14.8},{"receiver":"OLMo-3","size":"7B","group":"Other families","gemma4":{"internal":{"v":76.0,"parity":false,"same_model":false},"text":{"v":87.8,"parity":false,"same_model":false}},"qwen36":{"internal":{"v":72.0,"parity":false,"same_model":false},"text":{"v":86.1,"parity":false,"same_model":false}},"gptoss":{"internal":{"v":77.1,"parity":false,"same_model":false},"text":{"v":84.6,"parity":false,"same_model":false}},"middle_gemma4":6.3},{"receiver":"gpt-oss","size":"20B","group":"Other families","gemma4":{"internal":{"v":85.3,"parity":false,"same_model":false},"text":{"v":97.7,"parity":false,"same_model":false}},"qwen36":{"internal":{"v":83.8,"parity":false,"same_model":false},"text":{"v":95.8,"parity":false,"same_model":false}},"gptoss":{"internal":{"v":77.5,"parity":false,"same_model":true},"text":{"v":90.9,"parity":false,"same_model":true}},"middle_gemma4":4.5},{"receiver":"Mistral-Small-3.2","size":"24B","group":"Other families","gemma4":{"internal":{"v":96.9,"parity":false,"same_model":false},"text":{"v":96.7,"parity":false,"same_model":false}},"qwen36":{"internal":{"v":94.1,"parity":false,"same_model":false},"text":{"v":96.0,"parity":false,"same_model":false}},"gptoss":{"internal":{"v":89.0,"parity":true,"same_model":false},"text":{"v":88.8,"parity":true,"same_model":false}},"middle_gemma4":0.7}]</script>
 <script>
-  (function () {
-    var root = document.documentElement;
-    document.querySelector('.theme').addEventListener('click', function () {
-      var dark = root.dataset.theme ? root.dataset.theme === 'dark' : matchMedia('(prefers-color-scheme: dark)').matches;
-      root.dataset.theme = dark ? 'light' : 'dark';
-      try { localStorage.setItem('sync-theme', root.dataset.theme); } catch (e) {}
-    });
+(function(){
+  var rows = JSON.parse(document.getElementById('t1').textContent);
+  var S = [['gemma4','Gemma-4 sender'],['qwen36','Qwen3.6 sender'],['gptoss','gpt-oss sender']];
+  var C = {accent:'#2c3a8a', ink:'#1b1a17', ink2:'#46433c', muted:'#857f73', faint:'#b9b2a5', grid:'#e8e3d9', axis:'#cfc8ba', parity:'#ece5d3', clay:'#b4643f', ring:'#9a9283', paper:'#fbfaf7', conn:'#c9c1b2'};
+  var NS = 'http://www.w3.org/2000/svg';
+  function el(tag, attrs, parent, text){ var e = document.createElementNS(NS, tag); for (var k in attrs) e.setAttribute(k, attrs[k]); if (text != null) e.textContent = text; if (parent) parent.appendChild(e); return e; }
+  // insert group breaks
+  var items = []; var g = null;
+  rows.forEach(function(r){ if (r.group !== g){ items.push({hdr:r.group}); g = r.group; } items.push(r); });
 
-    var btn = document.querySelector('[data-copy]');
-    btn.addEventListener('click', function () {
-      var pre = document.getElementById('bib-text'), text = pre.innerText, label = btn.querySelector('span');
-      function done(ok) { label.textContent = ok ? 'Copied' : 'Select & copy'; setTimeout(function () { label.textContent = 'Copy'; }, 1600); }
-      if (navigator.clipboard) navigator.clipboard.writeText(text).then(function () { done(true); }, function () { done(false); });
-      else {
-        var r = document.createRange(); r.selectNodeContents(pre);
-        var s = getSelection(); s.removeAllRanges(); s.addRange(r);
-        try { done(document.execCommand('copy')); } catch (e) { done(false); }
-      }
-    });
-
-    var lb = document.getElementById('lb'), lbImg = lb.querySelector('img'), closeBtn = lb.querySelector('.lb-close'), opener = null;
-    function openLb(img, trigger) {
-      opener = trigger;
-      lbImg.src = img.currentSrc || img.src;
-      lbImg.alt = img.alt;
-      if (img.naturalWidth) {
-        var ar = img.naturalWidth / img.naturalHeight;
-        lbImg.style.width = Math.round(Math.min(innerWidth - 32, (innerHeight - 90) * ar, img.naturalWidth * 1.8)) + 'px';
-      } else { lbImg.style.width = ''; }
-      lb.hidden = false;
-      document.body.style.overflow = 'hidden';
-      closeBtn.focus();
-    }
-    function closeLb() {
-      if (lb.hidden) return;
-      lb.hidden = true;
-      lbImg.removeAttribute('src');
-      document.body.style.overflow = '';
-      if (opener) opener.focus();
-    }
-    Array.prototype.forEach.call(document.querySelectorAll('.zoom'), function (z) {
-      z.addEventListener('click', function () {
-        var imgs = Array.prototype.slice.call(z.querySelectorAll('img'));
-        openLb(imgs.filter(function (i) { return i.offsetParent !== null; })[0] || imgs[0], z);
+  function draw(){
+    var host = document.getElementById('chart'); if (!host) return;
+    var W = Math.max(300, host.clientWidth); host.innerHTML = '';
+    var narrow = W < 760;
+    var labelW = narrow ? 118 : 150, gap = narrow ? 0 : 26, rowH = narrow ? 25 : 30, grpH = narrow ? 26 : 30, headH = 44, axisH = 28;
+    var panels = S.map(function(s){ return {key:s[0], title:s[1], sub:'early layer · 70–100%', dom:[70,100], ticks:[70,80,90,100]}; });
+    panels.push({key:'middle', title:'Gemma-4 sender', sub:'bar: middle layers · dot: early', dom:[0,100], ticks:[0,50,100]});
+    var bodyH = 0; items.forEach(function(it){ bodyH += it.hdr ? grpH : rowH; });
+    var blockH = headH + bodyH + axisH;
+    var cols = narrow ? 1 : 4, pw = narrow ? (W - labelW - 12) : (W - labelW - gap*3) / 4;
+    var H = narrow ? blockH*4 + 3*22 : blockH;
+    var svg = el('svg', {width:W, height:H, viewBox:'0 0 '+W+' '+H}, host);
+    panels.forEach(function(p, pi){
+      var ox = narrow ? labelW : labelW + pi*(pw+gap), oy = narrow ? pi*(blockH+22) : 0;
+      var x = function(v){ return ox + 6 + (v - p.dom[0])/(p.dom[1]-p.dom[0])*(pw-12); };
+      // header
+      el('text', {x:ox+6, y:oy+16, 'font-size':13, 'font-weight':600, fill: p.key==='middle'?C.clay:C.ink}, svg, p.title);
+      el('text', {x:ox+6, y:oy+32, 'font-size':11, fill:C.muted}, svg, p.sub);
+      var top = oy + headH, bot = top + bodyH;
+      p.ticks.forEach(function(t){
+        el('line', {x1:x(t), x2:x(t), y1:top-2, y2:bot, stroke:C.grid, 'stroke-width':1}, svg);
+        el('text', {x:x(t), y:bot+17, 'font-size':10.5, fill:C.muted, 'text-anchor':'middle'}, svg, String(t));
+      });
+      el('line', {x1:ox+6, x2:ox+pw-6, y1:bot, y2:bot, stroke:C.axis, 'stroke-width':1}, svg);
+      var y = top;
+      items.forEach(function(it){
+        if (it.hdr){
+          if (pi===0 || narrow) el('text', {x: narrow?8:0, y:y+grpH-9, 'font-size':10, 'letter-spacing':'1.2', 'font-weight':600, fill:C.accent}, svg, it.hdr.toUpperCase());
+          y += grpH; return;
+        }
+        var cy = y + rowH/2;
+        if (pi===0 || narrow){
+          var lt = el('text', {x: narrow?8:0, y:cy+4, 'font-size': narrow?11.5:12.5, fill:C.ink}, svg, it.receiver);
+          if (!narrow) el('text', {x:labelW-14, y:cy+4, 'font-size':11, fill:C.faint, 'text-anchor':'end'}, svg, it.size);
+        }
+        if (p.key === 'middle'){
+          var mv = it.middle_gemma4, ev = it.gemma4.internal.v;
+          el('line', {x1:x(0), x2:x(mv), y1:cy, y2:cy, stroke:C.clay, 'stroke-width':4, 'stroke-linecap':'round', opacity:.75}, svg);
+          el('line', {x1:x(mv), x2:x(ev), y1:cy, y2:cy, stroke:C.conn, 'stroke-width':1, 'stroke-dasharray':'2 3'}, svg);
+          var d = el('circle', {cx:x(ev), cy:cy, r:3.4, fill:C.accent, opacity:.35}, svg);
+          var tg = el('g', {}, svg); el('title', {}, tg, it.receiver+' · Gemma-4 sender: middle layers '+mv+'%, early layer '+ev+'%');
+          el('rect', {x:ox, y:y, width:pw, height:rowH, fill:'transparent'}, tg);
+        } else {
+          var c = it[p.key], vi = c.internal.v, vt = c.text.v;
+          if (c.internal.same_model){
+            el('text', {x:ox+pw/2, y:cy+4, 'font-size':11, 'font-style':'italic', fill:C.faint, 'text-anchor':'middle'}, svg, 'same model');
+          } else {
+            var a = Math.min(x(vi), x(vt)), b = Math.max(x(vi), x(vt));
+            if (c.internal.parity) el('rect', {x:a-9, y:cy-8, width:b-a+18, height:16, rx:8, fill:C.parity}, svg);
+            el('line', {x1:a, x2:b, y1:cy, y2:cy, stroke:C.conn, 'stroke-width':2}, svg);
+            el('circle', {cx:x(vt), cy:cy, r:4, fill:C.paper, stroke:C.ring, 'stroke-width':1.6}, svg);
+            el('circle', {cx:x(vi), cy:cy, r:4.6, fill:C.accent}, svg);
+            var tg2 = el('g', {}, svg); el('title', {}, tg2, it.receiver+' · '+p.title+': internal '+vi+'%, text '+vt+'%'+(c.internal.parity?' (parity)':''));
+            el('rect', {x:ox, y:y, width:pw, height:rowH, fill:'transparent'}, tg2);
+          }
+        }
+        if (pi===0 || narrow) el('line', {x1: narrow?8:0, x2: ox+pw-6, y1:y+rowH, y2:y+rowH, stroke:C.grid, 'stroke-width':1, opacity: .0}, svg);
+        y += rowH;
       });
     });
-    lb.addEventListener('click', closeLb);
-    document.addEventListener('keydown', function (e) { if (e.key === 'Escape') closeLb(); });
+  }
+  var t; window.addEventListener('resize', function(){ clearTimeout(t); t = setTimeout(draw, 120); });
+  draw();
 
-    var links = Array.prototype.slice.call(document.querySelectorAll('.nav a'));
-    if ('IntersectionObserver' in window) {
-      var io = new IntersectionObserver(function (entries) {
-        entries.forEach(function (en) {
-          if (!en.isIntersecting) return;
-          links.forEach(function (a) { a.classList.toggle('on', a.getAttribute('href') === '#' + en.target.id); });
-        });
-      }, { rootMargin: '-45% 0px -50% 0px' });
-      links.forEach(function (a) { var t = document.querySelector(a.getAttribute('href')); if (t) io.observe(t); });
-    }
-  })();
+  // chart / table toggle
+  var btns = document.querySelectorAll('.toggle button');
+  Array.prototype.forEach.call(btns, function(b){ b.addEventListener('click', function(){
+    var v = b.getAttribute('data-view');
+    Array.prototype.forEach.call(btns, function(o){ o.setAttribute('aria-pressed', String(o === b)); });
+    document.getElementById('chart').hidden = v !== 'chart';
+    document.getElementById('table1').hidden = v !== 'table';
+    document.getElementById('legend').style.visibility = v === 'chart' ? 'visible' : 'hidden';
+    if (v === 'chart') draw();
+  }); });
+
+  // copy bibtex
+  var cb = document.getElementById('copy');
+  cb.addEventListener('click', function(){
+    var txt = document.getElementById('bib').textContent;
+    function done(){ cb.textContent = 'Copied'; setTimeout(function(){ cb.textContent = 'Copy'; }, 1600); }
+    function fallback(){ try { var r = document.createRange(); r.selectNodeContents(document.getElementById('bib')); var s = window.getSelection(); s.removeAllRanges(); s.addRange(r); document.execCommand('copy'); done(); } catch(e){} }
+    try { if (navigator.clipboard && window.isSecureContext) navigator.clipboard.writeText(txt).then(done, fallback); else fallback(); } catch(e){ fallback(); }
+  });
+})();
 </script>
 </body>
 </html>

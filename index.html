@@ -1,0 +1,675 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>SYNC: Share the Symbol, Not the Vector</title>
+<meta name="description" content="SYNC lets heterogeneous language models communicate facts without fine-tuning or a learned translator: the sender sends indices of words from a shared list, and each receiver writes them into its hidden states with its own word directions.">
+<meta property="og:title" content="SYNC: Share the Symbol, Not the Vector">
+<meta property="og:description" content="Training-free fact communication across language models: shared word indices plus each receiver's own word directions.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://lixin.ai/SYNC/">
+<meta property="og:image" content="https://lixin.ai/SYNC/assets/SYNC-teaser.webp">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="color-scheme" content="light dark">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%23059669'/%3E%3Cpath d='M21 10.5c-1-1.3-2.7-2-4.6-2-2.8 0-4.6 1.5-4.6 3.5 0 4.6 9.6 2.6 9.6 7.5 0 2.1-2 3.8-5 3.8-2.2 0-4-.9-5-2.3' fill='none' stroke='%23fff' stroke-width='2.8' stroke-linecap='round'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:ital,wght@0,400;0,500;0,600;1,400&family=JetBrains+Mono:wght@500;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+<script>try { var t = localStorage.getItem('sync-theme'); if (t) document.documentElement.dataset.theme = t; } catch (e) {}</script>
+<style>
+  :root {
+    --bg: #f3f5f8;
+    --bg-grid: rgba(15, 23, 42, .045);
+    --surface: #ffffff;
+    --surface-2: #f8fafc;
+    --ink: #0b1220;
+    --ink-2: #334155;
+    --muted: #64748b;
+    --line: #e2e8f0;
+    --line-2: #cbd5e1;
+    --accent: #047857;
+    --accent-fill: #059669;
+    --accent-ink: #ffffff;
+    --accent-soft: #e7f6ef;
+    --accent-line: #a7e3c8;
+    --dot-rk: #8494aa;
+    --dot-re: #047857;
+    --code-bg: #0b1220;
+    --code-ink: #d9e2ee;
+    --code-key: #6ee7b7;
+    --shadow-sm: 0 1px 2px rgba(15, 23, 42, .06);
+    --shadow: 0 1px 2px rgba(15, 23, 42, .05), 0 8px 24px -8px rgba(15, 23, 42, .12);
+    --r: 16px;
+    --r-sm: 10px;
+    --head: "Space Grotesk", "Helvetica Neue", Arial, sans-serif;
+    --sans: "IBM Plex Sans", system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
+    --mono: "JetBrains Mono", ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --bg: #0a0f17; --bg-grid: rgba(148, 163, 184, .05); --surface: #111824; --surface-2: #0e141e;
+      --ink: #e8eef6; --ink-2: #b8c4d4; --muted: #8a98ad; --line: #1f2a3a; --line-2: #2c3a4f;
+      --accent: #34d399; --accent-fill: #10b981; --accent-ink: #04140d; --accent-soft: rgba(52, 211, 153, .1); --accent-line: rgba(52, 211, 153, .35);
+      --dot-rk: #8a98ad; --dot-re: #34d399;
+      --code-bg: #070b11; --code-ink: #d9e2ee;
+      --shadow-sm: 0 1px 2px rgba(0, 0, 0, .4); --shadow: 0 1px 2px rgba(0, 0, 0, .35), 0 10px 28px -10px rgba(0, 0, 0, .6);
+    }
+  }
+  :root[data-theme="dark"] {
+    --bg: #0a0f17; --bg-grid: rgba(148, 163, 184, .05); --surface: #111824; --surface-2: #0e141e;
+    --ink: #e8eef6; --ink-2: #b8c4d4; --muted: #8a98ad; --line: #1f2a3a; --line-2: #2c3a4f;
+    --accent: #34d399; --accent-fill: #10b981; --accent-ink: #04140d; --accent-soft: rgba(52, 211, 153, .1); --accent-line: rgba(52, 211, 153, .35);
+    --dot-rk: #8a98ad; --dot-re: #34d399;
+    --code-bg: #070b11; --code-ink: #d9e2ee;
+    --shadow-sm: 0 1px 2px rgba(0, 0, 0, .4); --shadow: 0 1px 2px rgba(0, 0, 0, .35), 0 10px 28px -10px rgba(0, 0, 0, .6);
+  }
+
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; scroll-padding-top: 72px; -webkit-text-size-adjust: 100%; }
+  body { margin: 0; background: var(--bg); color: var(--ink); font: 16.5px/1.65 var(--sans); overflow-x: hidden; }
+  a { color: var(--accent); text-decoration: none; }
+  a:hover { text-decoration: underline; text-underline-offset: 3px; }
+  img { display: block; max-width: 100%; height: auto; }
+  button { font: inherit; }
+  :focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+  .wrap { width: min(1160px, calc(100% - 32px)); margin: 0 auto; }
+  .narrow { width: min(780px, 100%); }
+
+  .top { position: sticky; top: 0; z-index: 20; background: color-mix(in srgb, var(--bg) 82%, transparent);
+         backdrop-filter: saturate(1.5) blur(12px); -webkit-backdrop-filter: saturate(1.5) blur(12px); border-bottom: 1px solid var(--line); }
+  .top .wrap { display: flex; align-items: center; gap: 18px; height: 60px; }
+  .brand { display: inline-flex; align-items: center; gap: 10px; font: 700 18px/1 var(--head); color: var(--ink); letter-spacing: -.01em; white-space: nowrap; flex: none; }
+  .brand:hover { text-decoration: none; }
+  .brand .mark { width: 26px; height: 26px; border-radius: 7px; background: var(--accent-fill); display: grid; place-items: center; }
+  .brand .mark svg { width: 16px; height: 16px; }
+  .nav { display: flex; gap: 4px; margin-left: auto; min-width: 0; overflow-x: auto; scrollbar-width: none; }
+  .nav::-webkit-scrollbar { display: none; }
+  .nav a { color: var(--muted); font-size: 14px; font-weight: 500; padding: 6px 11px; border-radius: 8px; white-space: nowrap; }
+  .nav a:hover { color: var(--ink); background: var(--surface); text-decoration: none; }
+  .nav a.on { color: var(--accent); background: var(--accent-soft); }
+  .theme { border: 1px solid var(--line-2); background: var(--surface); color: var(--ink-2); width: 36px; height: 36px; border-radius: 10px;
+           display: grid; place-items: center; cursor: pointer; flex: none; }
+  .theme svg { width: 17px; height: 17px; }
+  .theme .sun { display: none; }
+  :root[data-theme="dark"] .theme .sun { display: block; } :root[data-theme="dark"] .theme .moon { display: none; }
+  @media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) .theme .sun { display: block; } :root:not([data-theme="light"]) .theme .moon { display: none; } }
+
+  .hero { position: relative; padding: 52px 0 28px;
+          background-image: linear-gradient(var(--bg-grid) 1px, transparent 1px), linear-gradient(90deg, var(--bg-grid) 1px, transparent 1px);
+          background-size: 32px 32px; background-position: -1px -1px; }
+  .hero::after { content: ""; position: absolute; inset: auto 0 0 0; height: 90px; background: linear-gradient(transparent, var(--bg)); pointer-events: none; }
+  .hero .wrap { position: relative; z-index: 1; }
+  .hero-grid { display: grid; grid-template-columns: minmax(0, 1.12fr) minmax(0, 1fr); gap: 40px; align-items: center; }
+  .venue { display: inline-flex; gap: 8px; align-items: center; font: 600 12px/1 var(--mono); letter-spacing: .04em; text-transform: uppercase;
+           color: var(--ink-2); border: 1px solid var(--line-2); border-radius: 999px; padding: 7px 12px; background: var(--surface); }
+  .venue i { width: 7px; height: 7px; border-radius: 50%; background: var(--accent-fill); box-shadow: 0 0 0 3px var(--accent-soft); }
+  h1 { font-family: var(--head); font-weight: 700; margin: 20px 0 0; letter-spacing: -.025em; line-height: 1.04; }
+  h1 .name { display: block; font-size: clamp(46px, 6.6vw, 76px); color: var(--ink); }
+  h1 .name span { color: var(--accent); }
+  h1 .q { display: block; font-size: clamp(20px, 2.3vw, 26px); line-height: 1.25; font-weight: 600; color: var(--ink-2); margin-top: 14px; letter-spacing: -.012em; max-width: 30ch; }
+  .authors { margin: 24px 0 2px; font-size: 16.5px; color: var(--ink-2); display: flex; flex-wrap: wrap; gap: 4px 16px; }
+  .authors a { color: var(--ink); font-weight: 600; border-bottom: 1.5px solid var(--accent-line); }
+  .authors a:hover { text-decoration: none; border-color: var(--accent); }
+  .affil { margin: 4px 0 0; color: var(--muted); font-size: 15px; }
+  .buttons { display: flex; flex-wrap: wrap; gap: 8px; margin: 26px 0 0; }
+  .btn { display: inline-flex; align-items: center; gap: 8px; height: 40px; padding: 0 15px; border-radius: 999px; font: 600 14px/1 var(--sans);
+         border: 1px solid var(--line-2); background: var(--surface); color: var(--ink); white-space: nowrap; transition: transform .12s ease, box-shadow .12s ease, border-color .12s ease; }
+  .btn svg { width: 16px; height: 16px; flex: none; }
+  .btn.primary { background: var(--accent-fill); border-color: var(--accent-fill); color: var(--accent-ink); }
+  a.btn:hover { text-decoration: none; transform: translateY(-1px); box-shadow: var(--shadow); border-color: var(--accent); }
+  .soon-row { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 10px; }
+  .btn.is-disabled { height: 34px; padding: 0 10px; gap: 5px; background: transparent; color: var(--muted); border-style: dashed; cursor: not-allowed; font-weight: 500; font-size: 13.5px; }
+  .btn.is-disabled .soon { font: 500 10.5px/1 var(--mono); letter-spacing: .02em; color: var(--muted); }
+
+  .tldr { margin-top: 26px; background: var(--surface); border: 1px solid var(--line); border-left: 3px solid var(--accent-fill); border-radius: var(--r-sm);
+          padding: 16px 18px; color: var(--ink-2); font-size: 15.5px; line-height: 1.6; box-shadow: var(--shadow-sm); }
+  .tldr b { color: var(--ink); font-weight: 600; }
+  .label { display: block; font: 700 11px/1 var(--mono); letter-spacing: .1em; text-transform: uppercase; color: var(--accent); margin-bottom: 9px; }
+  .m { font-weight: 600; color: var(--ink); white-space: nowrap; text-decoration: underline; text-decoration-color: var(--d); text-decoration-thickness: 2px; text-underline-offset: 4px; }
+  .panel-head .m { text-decoration: none; }
+  .panel-head .m::before { content: ""; display: inline-block; width: 8px; height: 8px; border-radius: 50%; margin: 0 8px 2px 0; background: var(--d); vertical-align: middle; }
+  .m.rk { --d: var(--dot-rk); } .m.re { --d: var(--dot-re); }
+
+  figure { margin: 0; }
+  .fig { background: var(--surface); border: 1px solid var(--line); border-radius: var(--r); overflow: hidden; box-shadow: var(--shadow); }
+  .fig .plate { background: var(--surface); padding: 14px; border-bottom: 1px solid var(--line); }
+  .zoom { display: block; width: 100%; padding: 0; margin: 0 auto; border: 0; background: none; cursor: zoom-in; position: relative; }
+  .zoom img { width: 100%; }
+  .zoom::after { content: ""; position: absolute; right: 6px; top: 6px; width: 30px; height: 30px; border-radius: 8px; opacity: 0; transition: opacity .15s ease;
+                 background: rgba(11, 18, 32, .72) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23fff' stroke-width='2' stroke-linecap='round'%3E%3Cpath d='M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7'/%3E%3C/svg%3E") center/15px no-repeat; }
+  .zoom:hover::after, .zoom:focus-visible::after { opacity: 1; }
+  .fig figcaption { padding: 13px 16px 15px; color: var(--muted); font-size: 14px; line-height: 1.55; }
+  .fig figcaption b { color: var(--ink-2); font-weight: 600; }
+  .fig.teaser .plate { padding: 10px; }
+  .zoom picture { display: block; max-width: var(--fw, 100%); margin: 0 auto; }
+  .zoom .fig-dark { display: none; }
+  :root[data-theme="dark"] .zoom .fig-light { display: none; } :root[data-theme="dark"] .zoom .fig-dark { display: block; }
+  @media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) .zoom .fig-light { display: none; } :root:not([data-theme="light"]) .zoom .fig-dark { display: block; } }
+  .figtag { display: inline-block; font: 600 10.5px/1 var(--mono); letter-spacing: .06em; text-transform: uppercase; color: var(--muted); border: 1px solid var(--line-2);
+            border-radius: 6px; padding: 4px 6px; margin-right: 6px; vertical-align: 1px; }
+  .w-md { max-width: 980px; margin-left: auto; margin-right: auto; }
+  .w-sm { max-width: 640px; margin-left: auto; margin-right: auto; }
+
+  section { padding: 68px 0; }
+  section + section { border-top: 1px solid var(--line); }
+  .sec-head { display: grid; grid-template-columns: minmax(0, 1fr); gap: 8px; margin-bottom: 30px; max-width: 800px; }
+  .kicker { display: inline-flex; align-items: center; gap: 10px; font: 600 12px/1 var(--mono); letter-spacing: .08em; text-transform: uppercase; color: var(--accent); margin: 0; }
+  .kicker .idx { color: var(--muted); }
+  h2 { font: 700 clamp(27px, 3.3vw, 38px)/1.12 var(--head); letter-spacing: -.022em; margin: 4px 0 0; }
+  h3 { font: 600 19px/1.3 var(--head); letter-spacing: -.01em; margin: 0 0 6px; }
+  .lead { color: var(--ink-2); margin: 6px 0 0; font-size: 17px; }
+
+  .stats { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 14px; }
+  .stat { background: var(--surface); border: 1px solid var(--line); border-radius: var(--r); padding: 20px 20px 18px; box-shadow: var(--shadow-sm);
+          display: flex; flex-direction: column; gap: 8px; position: relative; }
+  .stat .what { font: 600 11.5px/1.3 var(--mono); letter-spacing: .05em; text-transform: uppercase; color: var(--muted); display: flex; align-items: center; gap: 8px; }
+  .stat .what i { width: 8px; height: 8px; border-radius: 2px; background: var(--accent-fill); flex: none; }
+  .stat .num { font: 700 clamp(28px, 2.9vw, 36px)/1.05 var(--mono); letter-spacing: -.035em; color: var(--ink); overflow-wrap: anywhere; margin: 6px 0 2px; }
+  .stat .num small { font-size: .46em; font-weight: 500; letter-spacing: 0; color: var(--accent); margin-left: 4px; }
+  .stat p { margin: 0; font-size: 14.5px; line-height: 1.55; color: var(--ink-2); }
+  .stat.hl { border-color: var(--accent-line); background: linear-gradient(180deg, var(--accent-soft), var(--surface) 70%); }
+
+  .abstract-card { max-width: 900px; background: var(--surface); border: 1px solid var(--line); border-radius: var(--r); padding: 30px 34px; box-shadow: var(--shadow-sm); }
+  .abstract-card p { margin: 0 0 1em; color: var(--ink-2); font-size: 16.5px; }
+  .abstract-card p:last-child { margin-bottom: 0; }
+
+  .compare { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px; margin-top: 18px; }
+  .panel { background: var(--surface); border: 1px solid var(--line); border-radius: var(--r); padding: 18px 20px 20px; box-shadow: var(--shadow-sm); }
+  .panel.ours { border-color: var(--accent-line); }
+  .panel-head { display: flex; align-items: center; justify-content: space-between; gap: 10px; margin-bottom: 14px; padding-bottom: 12px; border-bottom: 1px dashed var(--line-2); }
+  .panel-head .m { font: 600 16px/1 var(--head); }
+  .chip { font: 600 10.5px/1 var(--mono); letter-spacing: .06em; text-transform: uppercase; padding: 5px 8px; border-radius: 6px; color: var(--muted); background: var(--surface-2); border: 1px solid var(--line); white-space: nowrap; }
+  .panel.ours .chip { color: var(--accent); background: var(--accent-soft); border-color: var(--accent-line); }
+  .steps { margin: 0; padding: 0; list-style: none; display: grid; gap: 12px; }
+  .steps li { display: grid; grid-template-columns: 28px minmax(0, 1fr); gap: 12px; color: var(--ink-2); font-size: 15px; line-height: 1.55; }
+  .steps li::before { content: attr(data-n); width: 28px; height: 28px; border-radius: 8px; display: grid; place-items: center; font: 700 12.5px/1 var(--mono);
+                      color: var(--ink-2); background: var(--surface-2); border: 1px solid var(--line-2); }
+  .panel.ours .steps li::before, .steps.good li::before { color: var(--accent-ink); background: var(--accent-fill); border-color: var(--accent-fill); }
+  .steps li.warn::before { color: var(--ink); background: var(--surface-2); border-color: var(--line-2); }
+  .steps b { color: var(--ink); font-weight: 600; }
+
+  .why { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 28px; align-items: start; }
+  .why .prose { font-size: 17px; color: var(--ink-2); margin: 0; }
+  .why .panel { padding: 20px; }
+
+  .results { display: grid; grid-template-columns: minmax(0, 1.12fr) minmax(0, 1fr); gap: 18px; align-items: start; }
+  .rcard { background: var(--surface); border: 1px solid var(--line); border-radius: var(--r); box-shadow: var(--shadow); overflow: hidden; }
+  .rcard .rtext { padding: 20px 22px 16px; }
+  .rcard .rtext p { margin: 0; color: var(--ink-2); font-size: 15px; }
+  .rcard .rnum { font: 700 11px/1 var(--mono); letter-spacing: .08em; color: var(--accent); margin-bottom: 10px; display: block; }
+  .rcard .fig { border: 0; border-radius: 0; box-shadow: none; border-top: 1px solid var(--line); }
+  .rcard .fig .plate { padding: 14px 16px; }
+  .rcard.full { grid-column: 1 / -1; }
+  .rcard.full .rtext { display: grid; grid-template-columns: minmax(0, 300px) minmax(0, 1fr); gap: 8px 28px; align-items: baseline; }
+  .stack { display: grid; gap: 18px; }
+
+  .callout { display: grid; grid-template-columns: 40px minmax(0, 1fr); gap: 14px; align-items: start; margin-top: 18px; padding: 18px 20px;
+             border-radius: var(--r); background: var(--surface); border: 1px solid var(--line-2); border-style: dashed; }
+  .callout .ic { width: 40px; height: 40px; border-radius: 10px; background: var(--surface-2); border: 1px solid var(--line); display: grid; place-items: center; color: var(--ink-2); }
+  .callout svg { width: 20px; height: 20px; }
+  .callout p { margin: 0; color: var(--ink-2); font-size: 15.5px; }
+  .callout b { color: var(--ink); font-weight: 600; }
+
+  .bib { max-width: 980px; position: relative; background: var(--code-bg); border-radius: var(--r); border: 1px solid var(--line); box-shadow: var(--shadow); overflow: hidden; }
+  .bib-bar { display: flex; align-items: center; justify-content: space-between; gap: 10px; padding: 10px 12px 10px 18px; border-bottom: 1px solid rgba(255, 255, 255, .08); }
+  .bib-bar span { font: 600 11.5px/1 var(--mono); color: #8a98ad; letter-spacing: .04em; }
+  pre { margin: 0; color: var(--code-ink); padding: 18px 20px 20px; overflow-x: auto; font: 500 13.5px/1.7 var(--mono); }
+  .copy { height: 30px; padding: 0 11px; border-radius: 8px; border: 1px solid rgba(255, 255, 255, .16); background: rgba(255, 255, 255, .06); color: #e8eef6;
+          font: 600 12.5px/1 var(--sans); cursor: pointer; display: inline-flex; gap: 6px; align-items: center; }
+  .copy:hover { background: rgba(255, 255, 255, .14); }
+  .copy svg { width: 14px; height: 14px; }
+
+  .res { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 14px; }
+  .res .item { background: var(--surface); border: 1px solid var(--line); border-radius: var(--r); padding: 18px 18px 18px; display: flex; flex-direction: column; gap: 8px; color: inherit; box-shadow: var(--shadow-sm); }
+  .res a.item { transition: transform .12s ease, border-color .12s ease, box-shadow .12s ease; border-color: var(--accent-line); }
+  .res a.item:hover { text-decoration: none; transform: translateY(-2px); border-color: var(--accent); box-shadow: var(--shadow); }
+  .res .item.off { background: transparent; border-style: dashed; border-color: var(--line-2); box-shadow: none; }
+  .res .what { font: 600 11px/1.3 var(--mono); letter-spacing: .06em; text-transform: uppercase; color: var(--muted); display: flex; justify-content: space-between; gap: 8px; }
+  .res .status { color: var(--accent); }
+  .res .off .status { color: var(--muted); }
+  .res .rname { font: 600 15px/1.3 var(--mono); color: var(--ink); overflow-wrap: anywhere; }
+  .res .off .rname { color: var(--muted); }
+  .res p { margin: 0; font-size: 14px; line-height: 1.55; color: var(--ink-2); }
+
+  footer { padding: 30px 0 44px; color: var(--muted); font-size: 13.5px; border-top: 1px solid var(--line); }
+  footer .wrap { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 10px; }
+
+  .lb { position: fixed; inset: 0; z-index: 50; background: rgba(5, 9, 15, .86); display: grid; place-items: center; padding: 56px 16px 24px; cursor: zoom-out; }
+  .lb[hidden] { display: none; }
+  .lb img { max-width: min(1600px, 100%); max-height: 100%; width: auto; height: auto; background: var(--surface); padding: 10px; border-radius: 10px; box-shadow: 0 20px 60px rgba(0, 0, 0, .5); }
+  .lb-close { position: absolute; top: 12px; right: 12px; width: 40px; height: 40px; border-radius: 10px; border: 1px solid rgba(255, 255, 255, .25);
+              background: rgba(255, 255, 255, .1); color: #fff; cursor: pointer; display: grid; place-items: center; }
+  .lb-close svg { width: 18px; height: 18px; }
+  .lb-hint { position: absolute; top: 22px; left: 16px; font: 500 12px/1 var(--mono); color: rgba(255, 255, 255, .7); }
+
+  @media (max-width: 1020px) {
+    .hero-grid { grid-template-columns: minmax(0, 1fr); gap: 32px; }
+    h1 .q { max-width: 36ch; }
+    .stats, .res { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    .results, .why { grid-template-columns: minmax(0, 1fr); }
+    .rcard.full .rtext { grid-template-columns: minmax(0, 1fr); }
+  }
+  @media (max-width: 760px) {
+    .nav { display: none; }
+    .top .theme { margin-left: auto; }
+  }
+  @media (max-width: 640px) {
+    body { font-size: 16px; }
+    .top .wrap { height: 54px; }
+    .hero { padding: 32px 0 24px; }
+    h1 .q { font-size: 19px; }
+    .authors { font-size: 15.5px; gap: 2px 12px; }
+    .buttons { gap: 7px; }
+    .btn { height: 38px; padding: 0 12px; font-size: 13.5px; }
+    .tldr { font-size: 15px; padding: 14px 15px; }
+    section { padding: 52px 0; }
+    .sec-head { margin-bottom: 22px; }
+    .stats, .res, .compare { grid-template-columns: minmax(0, 1fr); }
+    .stat .num { font-size: 32px; }
+    .abstract-card { padding: 20px 18px; }
+    .abstract-card p { font-size: 15.5px; }
+    .fig .plate, .rcard .fig .plate { padding: 8px; }
+    .zoom picture { max-width: 440px; }
+    .fig figcaption { font-size: 13.5px; padding: 11px 14px 13px; }
+    .rcard .rtext { padding: 16px 16px 14px; }
+    .why .prose, .lead { font-size: 16px; }
+    pre { font-size: 12px; padding: 14px 14px 16px; white-space: pre-wrap; overflow-wrap: anywhere; }
+    .soon-row { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 7px; }
+    .soon-row .btn { justify-content: center; padding: 0 8px; font-size: 13px; }
+    .callout { grid-template-columns: minmax(0, 1fr); gap: 10px; }
+  }
+  @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } .btn, .res a.item, .zoom::after { transition: none; } }
+</style>
+
+<style>
+  /* SYNC additions */
+  .hero-one { display: block; }
+  .hero-one .tldr { max-width: 860px; }
+  .fig.wide { margin-top: 34px; }
+  .fig .plate.paper { background: #ffffff; }
+  .fig .plate.paper img { display: block; width: 100%; height: auto; }
+  .btn.soon { opacity: .62; cursor: default; pointer-events: none; }
+  .btn .tag { font: 600 10px/1 var(--mono); letter-spacing: .06em; text-transform: uppercase; padding: 3px 6px; border-radius: 999px;
+              background: var(--surface-2); border: 1px solid var(--line); color: var(--muted); }
+  .authors sup, .affil sup { font-size: .68em; margin-left: 1px; }
+  .affil span + span::before { content: "\00a0\00a0·\00a0\00a0"; color: var(--muted); }
+  .res .item.soon { cursor: default; }
+  .res .item.soon .status { color: var(--muted); }
+  .tablewrap { overflow-x: auto; -webkit-overflow-scrolling: touch; padding: 6px 4px 2px; }
+  table.t1 { border-collapse: collapse; width: 100%; min-width: 620px; font: 500 13.5px/1.35 var(--sans); color: var(--ink-2); }
+  table.t1 th, table.t1 td { padding: 6px 8px; text-align: right; border-bottom: 1px solid var(--line); white-space: nowrap; }
+  table.t1 thead th { color: var(--ink); font-weight: 600; text-align: center; border-bottom: 1px solid var(--line-2); }
+  table.t1 tbody th { text-align: left; color: var(--ink); font-weight: 600; }
+  table.t1 td.int { color: var(--ink); font-weight: 700; }
+  table.t1 td.par { background: color-mix(in srgb, var(--accent-fill) 14%, transparent); }
+  table.t1 td.self { font-style: italic; color: var(--muted); font-weight: 500; }
+  table.t1 tr.sep td { padding: 0; border-bottom: 2px solid var(--line-2); }
+  #bib-text { white-space: pre-wrap; overflow-wrap: anywhere; }
+  .tnote { font-size: 12.5px; color: var(--muted); margin: 10px 4px 0; line-height: 1.5; }
+  .rcard.full .tablewrap { margin: 0 18px 16px; }
+  @media (max-width: 640px) {
+    .affil span { display: inline-block; }
+    .affil span + span::before { content: ""; }
+    .affil span { margin-right: 10px; }
+  }
+</style>
+
+</head>
+<body>
+<header class="top">
+  <div class="wrap">
+    <a class="brand" href="#top" aria-label="SYNC, back to top">
+      <span class="mark"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.6" stroke-linecap="round"><path d="M16.5 7.5c-.8-1-2.1-1.6-3.6-1.6-2.2 0-3.6 1.2-3.6 2.7 0 3.6 7.4 2 7.4 5.8 0 1.6-1.6 3-3.9 3-1.7 0-3.1-.7-3.9-1.8"/></svg></span>SYNC
+    </a>
+    <nav class="nav" aria-label="Sections">
+      <a href="#findings">Findings</a>
+      <a href="#abstract">Abstract</a>
+      <a href="#method">Method</a>
+      <a href="#test">Test</a>
+      <a href="#results">Results</a>
+      <a href="#bibtex">BibTeX</a>
+      <a href="#resources">Resources</a>
+    </nav>
+    <button class="theme" type="button" aria-label="Toggle dark mode" title="Toggle dark mode">
+      <svg class="moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></svg>
+      <svg class="sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="4.2"/><path d="M12 2v2.2M12 19.8V22M4.9 4.9l1.6 1.6M17.5 17.5l1.6 1.6M2 12h2.2M19.8 12H22M4.9 19.1l1.6-1.6M17.5 6.5l1.6-1.6"/></svg>
+    </button>
+  </div>
+</header>
+
+<main id="top">
+  <div class="hero">
+    <div class="wrap hero-one">
+      <div class="venue"><i></i>arXiv preprint · 2026</div>
+      <h1><span class="name"><span>SYNC</span></span><span class="q">Share the Symbol, Not the Vector: Training-Free Fact Communication Across Language Models</span></h1>
+      <p class="authors">
+        <a href="https://lixin.ai">Xin Li<sup>1</sup></a><span>Mengbing Liu<sup>1</sup></span><span>Hao Jiang<sup>1</sup></span><a href="https://gaoxin492.github.io/">Xin Gao<sup>2</sup></a><span>Annan Wang<sup>1</sup></span><span>Xingwei Qu<sup>3</sup></span><span>Yichi Zhang</span><a href="https://blogs.ntu.edu.sg/chau-yuen/">Chau Yuen<sup>1</sup></a>
+      </p>
+      <p class="affil"><span><sup>1</sup>Nanyang Technological University</span><span><sup>2</sup>Yale University</span><span><sup>3</sup>University of Manchester</span></p>
+      <div class="buttons">
+        <span class="btn soon" aria-disabled="true" title="Coming soon"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 .5a11.5 11.5 0 0 0-3.64 22.41c.58.1.79-.25.79-.56v-2c-3.2.7-3.88-1.37-3.88-1.37-.52-1.33-1.28-1.69-1.28-1.69-1.05-.72.08-.7.08-.7 1.16.08 1.77 1.19 1.77 1.19 1.03 1.77 2.71 1.26 3.37.96.1-.75.4-1.26.73-1.55-2.55-.29-5.24-1.28-5.24-5.69 0-1.26.45-2.29 1.19-3.1-.12-.29-.52-1.46.11-3.05 0 0 .97-.31 3.17 1.18a11 11 0 0 1 5.77 0c2.2-1.49 3.17-1.18 3.17-1.18.63 1.59.23 2.76.11 3.05.74.81 1.19 1.84 1.19 3.1 0 4.42-2.7 5.39-5.26 5.68.41.36.78 1.06.78 2.14v3.17c0 .31.21.67.8.56A11.5 11.5 0 0 0 12 .5z"/></svg>Code<span class="tag">soon</span></span>
+        <span class="btn soon" aria-disabled="true" title="Coming soon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 3H6a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V9z"/><path d="M14 3v6h6M8 13h8M8 17h5"/></svg>arXiv<span class="tag">soon</span></span>
+        <span class="btn soon" aria-disabled="true" title="Coming soon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v12M7 10l5 5 5-5"/><path d="M5 21h14"/></svg>PDF<span class="tag">soon</span></span>
+        <a class="btn" href="#bibtex"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 8 3 12l4 4M17 8l4 4-4 4M14 4l-4 16"/></svg>BibTeX</a>
+        <span class="btn soon" aria-disabled="true" title="Coming soon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 2 3 7v10l9 5 9-5V7z"/><path d="M3 7l9 5 9-5M12 12v10"/></svg>Directions<span class="tag">soon</span></span>
+      </div>
+      <div class="tldr">
+        <span class="label">TL;DR</span>
+        Language models with different architectures can pass facts to each other <b>without fine-tuning or a learned translator</b>.
+        The sender sends only the <b>indices of words</b> from a shared list; each receiver writes those words into its own hidden states
+        with <b>its own word directions</b>, fitted once from its activations. With three new senders and nine newer receivers from five families,
+        four-answer success on new scenes reaches <b>72.0–98.3%</b>, and the two largest receivers match plain text.
+      </div>
+      <figure class="fig wide">
+        <div class="plate paper">
+          <button class="zoom" type="button" aria-label="Enlarge figure"><img src="assets/SYNC-teaser.webp" width="2200" height="634" fetchpriority="high" alt="The sender reads private facts and sends the indices of selected words, grouped by object, without seeing the question. Each receiver writes these words into its hidden states with its own word directions, then answers."></button>
+        </div>
+        <figcaption><b>Shared words, each receiver's own directions.</b> The sender reads private facts and sends the indices of selected words, grouped by object, without seeing the question. Each receiver writes these words into its hidden states with its own word directions, then answers. Colors mark the same word across models; models and vectors are schematic, and answers are task ground truth.</figcaption>
+      </figure>
+    </div>
+  </div>
+
+  <section id="findings">
+    <div class="wrap">
+      <div class="sec-head">
+        <p class="kicker"><span class="idx">01</span>Key findings</p>
+        <h2>What crosses between the models is the symbol.</h2>
+        <p class="lead">Both models stay frozen. The message is a list of word indices per object; each receiver supplies its own vector for every word.</p>
+      </div>
+      <div class="stats">
+        <article class="stat hl">
+          <div class="what"><i></i>New senders and receivers</div>
+          <div class="num">72.0–98.3<small>%</small></div>
+          <p>four-answer success on 572 new scenes, with three different senders and nine newer receivers from five families, without retuning.</p>
+        </article>
+        <article class="stat hl">
+          <div class="what"><i></i>Early versus middle writing</div>
+          <div class="num">up to 96<small>pts</small></div>
+          <p>above middle-layer writing, at an early write layer chosen on four development receivers and then fixed.</p>
+        </article>
+        <article class="stat">
+          <div class="what"><i></i>Depth predicted in advance</div>
+          <div class="num">45<small>/45</small></div>
+          <p>cases where a task-free probe predicted, before measurement, which depths each new receiver can use.</p>
+        </article>
+        <article class="stat">
+          <div class="what"><i style="background: var(--muted)"></i>Beyond the development task</div>
+          <div class="num">89.6–100<small>%</small></div>
+          <p>success under new layouts for messages listing every fact; on a landmark task, sender messages reach 23.9–64.0% from 0% without a message, below text.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section id="abstract">
+    <div class="wrap">
+      <div class="sec-head" style="margin-bottom: 18px">
+        <p class="kicker"><span class="idx">02</span>Abstract</p>
+      </div>
+      <div class="abstract-card">
+        <p>Multi-agent systems allow language models to solve tasks collaboratively by sharing complementary information. These systems typically communicate through text, while recent approaches also explore exchanging internal model states. However, sharing these states across architectures often requires learned translators or assumptions about model compatibility. We introduce SYNC (<b>Sy</b>mbol-Indexed <b>N</b>eural <b>C</b>ommunication), a word-indexed interface that connects heterogeneous models without fine-tuning or a learned translator. From descriptions only it can see, the sender selects words from a shared list and sends their indices for each object, without seeing the questions. The receiver writes the described facts into its hidden states using its own word directions, vectors fitted once from its activations.</p>
+        <p>We test selective use by swapping one attribute between two objects and requiring correct answers about both changed and unchanged attributes before and after the swap, four answers in total. We choose an early write layer on four development receivers and then fix it. With three different senders and nine newer receivers from five families, four-answer success on new scenes reaches 72.0–98.3%, up to 96 percentage points above middle-layer writing, and the two largest receivers match plain text. A task-free probe predicted in advance which depths each new receiver can use (45 of 45 cases).</p>
+        <p>Without retuning, messages listing every fact keep 89.6–100% success under new layouts, and sender messages reach 23.9–64.0% on a landmark task with multi-token symbols, below text but from 0% without a message. These results show that shared word indices and receiver-local directions can support selective fact use across model families without additional training.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="method">
+    <div class="wrap">
+      <div class="sec-head">
+        <p class="kicker"><span class="idx">03</span>Method</p>
+        <h2>Construct directions once, then write and reuse facts.</h2>
+        <p class="lead">Words provide shared references even when the models' internal representations differ. Nothing is trained: building the directions and choosing where to write them use forward passes only.</p>
+      </div>
+      <figure class="fig w-md">
+        <div class="plate paper">
+          <button class="zoom" type="button" aria-label="Enlarge figure"><img src="assets/SYNC-method.webp" width="2400" height="929" alt="(a) Each symbol's direction averages the receiver's hidden-state difference from a neutral filler over twelve generic contexts. (b) Retrieved directions are added once to saved neutral states at relative depth 0.2."></button>
+        </div>
+        <figcaption><b>Construct directions once, then write and reuse facts.</b> (a) Each symbol's direction averages the receiver's hidden-state difference from a neutral filler over twelve generic contexts. (b) Retrieved directions are added once to saved neutral states at relative depth 0.2 (γ = 1); the resulting prefix cache is copied for each question. Answers shown are task ground truth.</figcaption>
+      </figure>
+      <div class="compare w-md">
+        <div class="panel">
+          <div class="panel-head"><span class="m rk">Sender</span><span class="chip">Sees the evidence, not the question</span></div>
+          <ul class="steps">
+            <li data-n="1"><span><b>Select words.</b> A prompted sender chooses, for each object, up to four symbols from a fixed list of 221 words that the description supports.</span></li>
+            <li data-n="2"><span><b>Send indices.</b> The message carries only the word indices and their object assignments, not vectors or activations.</span></li>
+          </ul>
+        </div>
+        <div class="panel ours">
+          <div class="panel-head"><span class="m re">Receiver</span><span class="chip">Uses its own directions</span></div>
+          <ul class="steps">
+            <li data-n="3"><span><b>Look up directions.</b> Each word's direction is the receiver's own hidden-state change when a neutral filler is replaced by the word, averaged over twelve generic contexts and fitted once.</span></li>
+            <li data-n="4"><span><b>Write, then answer.</b> The directions are added to slots reserved for each object at an early layer; the receiver answers from the written prefix.</span></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="test">
+    <div class="wrap">
+      <div class="sec-head">
+        <p class="kicker"><span class="idx">04</span>How we test</p>
+        <h2>One changed attribute, four required answers.</h2>
+      </div>
+      <div class="why">
+        <p class="prose">Each scene has two worlds that describe the same two objects with two attributes. One attribute is swapped between the objects and the other is kept. The sender sees only the descriptions and never the questions; the receiver answers a question about each attribute in each world from the same message. A scene counts only if all four answers are correct, so reacting to every edit, or to none, fails.</p>
+        <div class="panel">
+          <ul class="steps good">
+            <li data-n="✓"><span><b>Controls separate selection from use.</b> Plain text, complete facts and the receiver's own native states test the sender and the receiver separately.</span></li>
+            <li data-n="✓"><span><b>Reassigning symbols breaks it.</b> Any single reassignment of symbols to other symbols' directions leaves at most 4.4% in every cell of Table 1.</span></li>
+            <li data-n="!" class="warn"><span><b>Prespecified.</b> Settings were chosen on development scenes and fixed before the confirmation scenes were run.</span></li>
+          </ul>
+        </div>
+      </div>
+      <figure class="fig w-md wide">
+        <div class="plate paper">
+          <button class="zoom" type="button" aria-label="Enlarge figure"><img src="assets/SYNC-q.webp" width="1800" height="616" alt="Two worlds with two candies; one attribute is swapped. Four-answer success requires both questions correct in both worlds."></button>
+        </div>
+        <figcaption><b>One changed attribute, four required answers.</b> Only the sender sees the descriptions. Four-answer success requires both questions correct in both worlds. Shown answers are task ground truth, not model outputs.</figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <section id="results">
+    <div class="wrap">
+      <div class="sec-head">
+        <p class="kicker"><span class="idx">05</span>Results</p>
+        <h2>What the experiments show.</h2>
+      </div>
+      <div class="results">
+        <article class="rcard full">
+          <div class="rtext">
+            <div><span class="rnum">R1 · NEW MODELS</span><h3>A fixed interface carries to new senders and receivers.</h3></div>
+            <p>Four-answer success (%) on 572 confirmation scenes. Internal delivery writes at the early layer fixed on the development receivers, without retuning; the last column writes the Gemma-4 sender's messages at middle layers.</p>
+          </div>
+          <div class="tablewrap">
+<table class="t1"><thead>
+<tr><th rowspan="2">Receiver</th><th rowspan="2">Size</th><th colspan="2">Gemma-4 sender</th><th colspan="2">Qwen3.6 sender</th><th colspan="2">gpt-oss sender</th><th rowspan="2">Middle<br><small>(Gemma-4)</small></th></tr>
+<tr><th class="int">Internal</th><th>Text</th><th class="int">Internal</th><th>Text</th><th class="int">Internal</th><th>Text</th></tr></thead><tbody>
+<tr><th>Qwen3.5-2B</th><td>2B</td><td class="int">81.2</td><td>86.7</td><td class="int">79.3</td><td>83.8</td><td class="int">77.5</td><td>81.5</td><td>4.7</td></tr>
+<tr><th>Qwen3.5-4B</th><td>4B</td><td class="int">96.0</td><td>96.7</td><td class="int">93.4</td><td>94.3</td><td class="int">89.9</td><td>88.0</td><td>3.1</td></tr>
+<tr><th>Qwen3.5-9B</th><td>9B</td><td class="int">93.4</td><td>94.7</td><td class="int">93.6</td><td>96.2</td><td class="int">86.6</td><td>88.5</td><td>4.9</td></tr>
+<tr><th>Qwen3.5-27B</th><td>27B</td><td class="par int">98.3</td><td class="par">98.6</td><td class="par int">96.4</td><td class="par">96.7</td><td class="par int">88.8</td><td class="par">89.1</td><td>77.8</td></tr>
+<tr><th>Qwen3.6-27B</th><td>27B</td><td class="par int">97.7</td><td class="par">98.2</td><td class="self">96.0</td><td class="self">96.0</td><td class="par int">90.6</td><td class="par">89.5</td><td>82.5</td></tr>
+<tr class="sep"><td colspan="9"></td></tr>
+<tr><th>Granite-4.1</th><td>8B</td><td class="int">92.0</td><td>94.2</td><td class="int">90.6</td><td>94.4</td><td class="int">83.1</td><td>86.0</td><td>14.8</td></tr>
+<tr><th>OLMo-3</th><td>7B</td><td class="int">76.0</td><td>87.8</td><td class="int">72.0</td><td>86.1</td><td class="int">77.1</td><td>84.6</td><td>6.3</td></tr>
+<tr><th>gpt-oss</th><td>20B</td><td class="int">85.3</td><td>97.7</td><td class="int">83.8</td><td>95.8</td><td class="self">77.5</td><td class="self">90.9</td><td>4.5</td></tr>
+<tr><th>Mistral-Small-3.2</th><td>24B</td><td class="int">96.9</td><td>96.7</td><td class="int">94.1</td><td>96.0</td><td class="par int">89.0</td><td class="par">88.8</td><td>0.7</td></tr>
+</tbody></table>
+
+          </div>
+          <p class="tnote" style="margin: 0 22px 18px">Shaded: internal and text within ±3 points at both clustering levels. Italic: sender and receiver are the same model, excluded from all counts. Any single symbol–direction reassignment leaves at most 4.4% in every cell.</p>
+        </article>
+
+        <article class="rcard">
+          <div class="rtext">
+            <span class="rnum">R2 · WHERE TO WRITE</span>
+            <h3>Usable depth ranges differ across receivers.</h3>
+            <p>Complete-fact four-answer success on 92 development scenes, one write per depth. Early writing recovers delivery where middle-layer writing fails.</p>
+          </div>
+          <figure class="fig ">
+        <div class="plate paper">
+          <button class="zoom" type="button" aria-label="Enlarge figure"><img src="assets/receiver_recovery_depth.svg" width="1557" height="545" alt="Four-answer success against relative write depth for four development receivers, fitted directions versus native states."></button>
+        </div>
+        <figcaption>Fitted directions use γ = 1; native states come from the receiver reading the facts. Shading: 95% family-bootstrap intervals.</figcaption>
+      </figure>
+        </article>
+
+        <div class="stack">
+          <article class="rcard">
+            <div class="rtext">
+              <span class="rnum">R3 · GRADED WEIGHTS</span>
+              <h3>Write strength versus printed weights.</h3>
+              <p>When facts carry weights, write strength beats printed numbers and most other text formats.</p>
+            </div>
+            <figure class="fig ">
+        <div class="plate paper">
+          <button class="zoom" type="button" aria-label="Enlarge figure"><img src="assets/latest_graded.svg" width="1557" height="558" alt="Four-answer success as the competing value's weight rises, internal write strength versus printed weights."></button>
+        </div>
+        <figcaption>Four-answer success with complete facts as the competing value's weight L rises. At L = 255 both worlds receive identical messages, so success is zero by construction. Shading: 95% family-bootstrap intervals.</figcaption>
+      </figure>
+          </article>
+          <div class="callout">
+            <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M10.3 3.9 1.8 18a2 2 0 0 0 1.7 3h17a2 2 0 0 0 1.7-3L13.7 3.9a2 2 0 0 0-3.4 0zM12 9v4M12 17h.01"/></svg></div>
+            <p><b>Relation to text.</b> For facts with equal weights, internal writing shows no consistent advantage: text is similar or up to 14.1 points better on the smaller receivers, the two largest reach parity, internal delivery takes 1.19–1.28 times as long, and on the landmark task text leads by 31.7–63.2 points. The clearest advantage is with graded weights.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="bibtex">
+    <div class="wrap">
+      <div class="sec-head">
+        <p class="kicker"><span class="idx">06</span>Citation</p>
+        <h2>BibTeX</h2>
+      </div>
+      <div class="bib">
+        <div class="bib-bar"><span>li2026sync.bib · arXiv ID coming soon</span>
+          <button class="copy" type="button" data-copy>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="9" y="9" width="12" height="12" rx="2"/><path d="M5 15V5a2 2 0 0 1 2-2h10"/></svg><span>Copy</span></button>
+        </div>
+<pre id="bib-text">@misc{li2026sync,
+      title={Share the Symbol, Not the Vector: Training-Free Fact Communication Across Language Models},
+      author={Xin Li and Mengbing Liu and Hao Jiang and Xin Gao and Annan Wang and Xingwei Qu and Yichi Zhang and Chau Yuen},
+      year={2026},
+      note={Preprint},
+}</pre>
+      </div>
+    </div>
+  </section>
+
+  <section id="resources">
+    <div class="wrap">
+      <div class="sec-head">
+        <p class="kicker"><span class="idx">07</span>Resources</p>
+        <h2>Code, directions and paper.</h2>
+      </div>
+      <div class="res">
+        <div class="item soon">
+          <div class="what"><span>Code · GitHub</span><span class="status">Coming soon</span></div>
+          <div class="rname">LiXin97/SYNC</div>
+          <p>Direction fitting, sender and receiver code, scene-bank generators and the scripts that regenerate every table from per-row records.</p>
+        </div>
+        <div class="item soon">
+          <div class="what"><span>Paper · arXiv</span><span class="status">Coming soon</span></div>
+          <div class="rname">arXiv preprint</div>
+          <p>Full paper with the appendix: protocols, preregistration, controls, uncertainty estimates and numerical checks.</p>
+        </div>
+        <div class="item soon">
+          <div class="what"><span>Directions · Hugging Face</span><span class="status">Coming soon</span></div>
+          <div class="rname">Receiver word directions</div>
+          <p>The fitted word directions for each receiver, released under each base model's license.</p>
+        </div>
+        <div class="item soon">
+          <div class="what"><span>Data · records</span><span class="status">Coming soon</span></div>
+          <div class="rname">Scene banks and per-row records</div>
+          <p>Mechanically generated scene banks, sender messages, per-row records and preregistration locks.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <span>SYNC · Nanyang Technological University · Yale University · University of Manchester</span>
+    <span>Static page, no tracking</span>
+  </div>
+</footer>
+
+<div class="lb" id="lb" hidden role="dialog" aria-modal="true" aria-label="Enlarged figure">
+  <span class="lb-hint">Esc or click to close</span>
+  <button class="lb-close" type="button" aria-label="Close">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><path d="M6 6l12 12M18 6 6 18"/></svg>
+  </button>
+  <img alt="">
+</div>
+
+<script>
+  (function () {
+    var root = document.documentElement;
+    document.querySelector('.theme').addEventListener('click', function () {
+      var dark = root.dataset.theme ? root.dataset.theme === 'dark' : matchMedia('(prefers-color-scheme: dark)').matches;
+      root.dataset.theme = dark ? 'light' : 'dark';
+      try { localStorage.setItem('sync-theme', root.dataset.theme); } catch (e) {}
+    });
+
+    var btn = document.querySelector('[data-copy]');
+    btn.addEventListener('click', function () {
+      var pre = document.getElementById('bib-text'), text = pre.innerText, label = btn.querySelector('span');
+      function done(ok) { label.textContent = ok ? 'Copied' : 'Select & copy'; setTimeout(function () { label.textContent = 'Copy'; }, 1600); }
+      if (navigator.clipboard) navigator.clipboard.writeText(text).then(function () { done(true); }, function () { done(false); });
+      else {
+        var r = document.createRange(); r.selectNodeContents(pre);
+        var s = getSelection(); s.removeAllRanges(); s.addRange(r);
+        try { done(document.execCommand('copy')); } catch (e) { done(false); }
+      }
+    });
+
+    var lb = document.getElementById('lb'), lbImg = lb.querySelector('img'), closeBtn = lb.querySelector('.lb-close'), opener = null;
+    function openLb(img, trigger) {
+      opener = trigger;
+      lbImg.src = img.currentSrc || img.src;
+      lbImg.alt = img.alt;
+      if (img.naturalWidth) {
+        var ar = img.naturalWidth / img.naturalHeight;
+        lbImg.style.width = Math.round(Math.min(innerWidth - 32, (innerHeight - 90) * ar, img.naturalWidth * 1.8)) + 'px';
+      } else { lbImg.style.width = ''; }
+      lb.hidden = false;
+      document.body.style.overflow = 'hidden';
+      closeBtn.focus();
+    }
+    function closeLb() {
+      if (lb.hidden) return;
+      lb.hidden = true;
+      lbImg.removeAttribute('src');
+      document.body.style.overflow = '';
+      if (opener) opener.focus();
+    }
+    Array.prototype.forEach.call(document.querySelectorAll('.zoom'), function (z) {
+      z.addEventListener('click', function () {
+        var imgs = Array.prototype.slice.call(z.querySelectorAll('img'));
+        openLb(imgs.filter(function (i) { return i.offsetParent !== null; })[0] || imgs[0], z);
+      });
+    });
+    lb.addEventListener('click', closeLb);
+    document.addEventListener('keydown', function (e) { if (e.key === 'Escape') closeLb(); });
+
+    var links = Array.prototype.slice.call(document.querySelectorAll('.nav a'));
+    if ('IntersectionObserver' in window) {
+      var io = new IntersectionObserver(function (entries) {
+        entries.forEach(function (en) {
+          if (!en.isIntersecting) return;
+          links.forEach(function (a) { a.classList.toggle('on', a.getAttribute('href') === '#' + en.target.id); });
+        });
+      }, { rootMargin: '-45% 0px -50% 0px' });
+      links.forEach(function (a) { var t = document.querySelector(a.getAttribute('href')); if (t) io.observe(t); });
+    }
+  })();
+</script>
+</body>
+</html>

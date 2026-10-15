@@ -6,7 +6,7 @@
 
 <sup>1</sup>Nanyang Technological University &nbsp; <sup>2</sup>Yale University &nbsp; <sup>3</sup>University of Manchester
 
-[Project page](https://lixin.ai/SYNC/) · [Data (per-row records)](https://huggingface.co/datasets/XINLI1997/SYNC-data) · [Fitted word directions](https://huggingface.co/XINLI1997/SYNC-directions) · [Hugging Face collection](https://huggingface.co/collections/XINLI1997/sync-share-the-symbol-not-the-vector-6acf26edd5d52fb91ae87350) · Paper: arXiv link coming soon
+[Project page](https://lixin.ai/SYNC/) · [Paper (arXiv:2610.19696)](https://arxiv.org/abs/2610.19696) · [Data (per-row records)](https://huggingface.co/datasets/XINLI1997/SYNC-data) · [Fitted word directions](https://huggingface.co/XINLI1997/SYNC-directions) · [Hugging Face collection](https://huggingface.co/collections/XINLI1997/sync-share-the-symbol-not-the-vector-6acf26edd5d52fb91ae87350)
 
 SYNC (**Sy**mbol-Indexed **N**eural **C**ommunication) lets language models with different architectures pass facts
 to each other without fine-tuning or a learned translator. From descriptions only it can see, the sender selects words
@@ -179,9 +179,12 @@ fitted word directions are derived from the base models and follow each base mod
 
 ```bibtex
 @misc{li2026sync,
-  title  = {Share the Symbol, Not the Vector: Training-Free Fact Communication Across Language Models},
-  author = {Xin Li and Mengbing Liu and Hao Jiang and Xin Gao and Annan Wang and Xingwei Qu and Yichi Zhang and Chau Yuen},
-  year   = {2026},
-  note   = {Preprint}
+  title         = {Share the Symbol, Not the Vector: Training-Free Fact Communication Across Language Models},
+  author        = {Xin Li and Mengbing Liu and Hao Jiang and Xin Gao and Annan Wang and Xingwei Qu and Yichi Zhang and Chau Yuen},
+  year          = {2026},
+  eprint        = {2610.19696},
+  archivePrefix = {arXiv},
+  primaryClass  = {cs.CL},
+  url           = {https://arxiv.org/abs/2610.19696}
 }
 ```
